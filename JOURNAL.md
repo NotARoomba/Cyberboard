@@ -31,3 +31,15 @@ Extras:
 ![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjE0NiwicHVyIjoiYmxvYl9pZCJ9fQ==--56d85a1a33d10cf902e22c7f6eaffa15ef3ebc50/image.png)
   
 
+## 10/15/2025 - Finish Schematic and PCB Routing  
+
+I started looking through all of the datasheets of all of the parts that I used to get the reference designs for each of the chips and then started wiring up each component.
+
+I then ended up with this:
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjI5MCwicHVyIjoiYmxvYl9pZCJ9fQ==--7e9fd5016f1598f53da14cb4da7e65df2c8ae757/image.png)
+
+I still have to wire out the headers but I'm planning on doing that last after I have all the passive components in place.
+
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjI5MSwicHVyIjoiYmxvYl9pZCJ9fQ==--5c71dd018c46b06d1b4ad477c20f0dac9140fc65/image.png)
+  
+
