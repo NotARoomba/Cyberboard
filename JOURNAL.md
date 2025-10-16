@@ -31,7 +31,7 @@ Extras:
 ![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjE0NiwicHVyIjoiYmxvYl9pZCJ9fQ==--56d85a1a33d10cf902e22c7f6eaffa15ef3ebc50/image.png)
   
 
-## 10/15/2025 - Finish Schematic and PCB Routing  
+## 10/15/2025 12 AM - Finish Schematic and PCB Routing  
 
 I started looking through all of the datasheets of all of the parts that I used to get the reference designs for each of the chips and then started wiring up each component.
 
@@ -41,5 +41,38 @@ I then ended up with this:
 I still have to wire out the headers but I'm planning on doing that last after I have all the passive components in place.
 
 ![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjI5MSwicHVyIjoiYmxvYl9pZCJ9fQ==--5c71dd018c46b06d1b4ad477c20f0dac9140fc65/image.png)
+  
+
+## 10/15/2025 10 PM - Layout and Finish Board  
+
+I decided to finish the layout and during, I wanted to add an LED and also the debugging pins as test points on the bottom of the board.
+
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQzMiwicHVyIjoiYmxvYl9pZCJ9fQ==--112dd087281849b4809601a72c1e95b8259416ca/image.png)
+
+I then started routing all of the GPIO's first, then the clocks and then the power stuff. I used .2mm traces for everything that wasn't power and .4mm traces for power.
+
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQzMywicHVyIjoiYmxvYl9pZCJ9fQ==--6b26a75ae867de93401ac9a273f6dccc0e82a911/image.png)
+
+I also had to impedance match the antenna so basing it off this datasheet:
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQzNCwicHVyIjoiYmxvYl9pZCJ9fQ==--6fe7802ff5522970416dfaf0142bda1fe8ab5947/image.png)
+
+I then added the traces and also put stitching vias on the side. I also added the keepout zone and made sure that the ground plane on either side had the right clearance.
+
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQzNSwicHVyIjoiYmxvYl9pZCJ9fQ==--ed4a1f11a4b77efb12c7438e27f2d53b7a86344c/image.png)
+
+After that I finished adding the ground pours and ran DRC to fix the remaining errors and finally got this.
+
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQzNiwicHVyIjoiYmxvYl9pZCJ9fQ==--5393cd550d684cd08f26d7520e67cb55009b96d1/image.png)
+
+After finishing the board I decided to do some renders in Blender and here are the photos.
+
+![CyberboardLight.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQzOSwicHVyIjoiYmxvYl9pZCJ9fQ==--0e40f0e3e02df0d3623e49b6a048985105e0a88f/CyberboardLight.png)
+![Cyberboard2.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQzNywicHVyIjoiYmxvYl9pZCJ9fQ==--0f7bcd34039d5855103f026234150fb0eac1fa59/Cyberboard2.png)
+![Cyberboard.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQzOCwicHVyIjoiYmxvYl9pZCJ9fQ==--61a0edd693f86a98079fe7fba625afcbb7b25a9d/Cyberboard.png)
+
+
+
+
+
   
 
