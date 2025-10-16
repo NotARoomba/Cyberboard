@@ -76,3 +76,16 @@ After finishing the board I decided to do some renders in Blender and here are t
 
   
 
+## 10/16/2025 - Resized Keep-out zone  
+
+I decided to resize the keep-out zone after some advice from my informatics teacher and looking online at the datasheet. It originally says to have a 6.5mm space but I don't have that much space horizontally as I do vertically so the most I could do was 4.3mm.
+
+Before: 
+
+![WhatsApp Image 2025-10-15 at 16.54.22_8be48b74.jpg](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQ4MSwicHVyIjoiYmxvYl9pZCJ9fQ==--afbc8d7c5427cae3a0aa33655753bee44c9e9f0e/WhatsApp%20Image%202025-10-15%20at%2016.54.22_8be48b74.jpg)
+
+After:
+
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQ4MywicHVyIjoiYmxvYl9pZCJ9fQ==--a7190d1decd4297d3a22a325258b947dfc716853/image.png)
+  
+
