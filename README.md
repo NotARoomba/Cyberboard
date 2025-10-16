@@ -53,6 +53,10 @@ Designed in KiCad with attention to RF design and power management.
 **Back:**
 <img src="assets/pcb_back.png" alt="PCB Back" width="800"/>
 
+### JLCPCB Order
+
+<img src="assets/jlcpcb.png" alt="PCB Back" width="800"/>
+
 ### 3D Renders
 
 <img src="assets/CyberboardBG.png" alt="Cyberboard Render 1" width="800"/>
