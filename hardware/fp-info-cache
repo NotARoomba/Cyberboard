@@ -1,4 +1,4 @@
-26732982223713850
+26736503367429758
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -106371,6 +106371,20 @@ FILTER-SMD_6P-L1.6-W1.0-P0.50-BL
 0
 6
 6
+lcsc
+LED-ARRAY-SMD_4P-L1.6-W1.5-BR_XL-1615RGBC-RF
+
+
+0
+4
+4
+lcsc
+LED-SMD_4P-L1.6-W0.8-BL
+
+
+0
+4
+4
 lcsc
 LED0402-FD_YELLOW
 
