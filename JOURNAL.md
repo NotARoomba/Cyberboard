@@ -89,3 +89,14 @@ After:
 ![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjQ4MywicHVyIjoiYmxvYl9pZCJ9fQ==--a7190d1decd4297d3a22a325258b947dfc716853/image.png)
   
 
+## 10/17/2025 - Rerouted PCB on single side to save costs  
+
+![Banner.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjU4OSwicHVyIjoiYmxvYl9pZCJ9fQ==--9c4125c5295b92dd5bb4bd266fb80045ed278b0c/Banner.png)
+
+I had to reroute everything as the board was too expensive for double sided PCBA. So I decided to reduce the sizes down to 0201 for some components like the decoupling capacitors to try and save space and it worked. I then had enough space to move the battery charging IC to the other layer and I had to remove the JST connector and replaced it with 2 exposed pads on the bottom.
+
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjU4NSwicHVyIjoiYmxvYl9pZCJ9fQ==--7ac980313a5dce8e76b065ca021ac27b7e3485aa/image.png)
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjU4NiwicHVyIjoiYmxvYl9pZCJ9fQ==--afe0d03d1c7978641ad84def1e3fef29902351e9/image.png)
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjU4NywicHVyIjoiYmxvYl9pZCJ9fQ==--0ea09bfaf6cad50952fa2eacc917f46d81d1a35e/image.png)
+![image.png](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6MjU4OCwicHVyIjoiYmxvYl9pZCJ9fQ==--d1de2e4e4c3c83d7c9e55a62eb6446f19a0313bc/image.png)  
+
