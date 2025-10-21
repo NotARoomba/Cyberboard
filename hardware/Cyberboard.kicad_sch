@@ -3871,6 +3871,150 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "lcsc:FTC252012S1R5MBCA"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "FTC252012S1R5MBCA"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "lcsc:IND-SMD_L2.5-W2.0_MEKK2520TR47M"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C5832371"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "FTC252012S1R5MBCA_0_1"
+				(arc
+					(start -4.06 -0.01)
+					(mid -2.83 0.99)
+					(end -2.03 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.03 -0.01)
+					(mid -0.8 0.99)
+					(end 0 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.01)
+					(mid 1.23 0.99)
+					(end 2.03 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.03 -0.01)
+					(mid 3.26 0.99)
+					(end 4.06 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 1.016)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 1.016)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "lcsc:MLPF-WB55-01E3"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -7125,6 +7269,16 @@
 	)
 	(wire
 		(pts
+			(xy 240.03 78.74) (xy 243.84 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "184e3c0b-f38a-45e9-9b1e-53c720be2270")
+	)
+	(wire
+		(pts
 			(xy 86.36 55.88) (xy 100.33 55.88)
 		)
 		(stroke
@@ -8821,6 +8975,16 @@
 	)
 	(wire
 		(pts
+			(xy 240.03 88.9) (xy 243.84 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a2e7577-00ee-4cc5-9c19-eeb7d36ba3b1")
+	)
+	(wire
+		(pts
 			(xy 106.68 168.91) (xy 119.38 168.91)
 		)
 		(stroke
@@ -9009,6 +9173,16 @@
 			(type default)
 		)
 		(uuid "a8a303fb-fb2a-4705-a0fc-f333fa3d14ea")
+	)
+	(wire
+		(pts
+			(xy 240.03 87.63) (xy 240.03 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa261d18-5d69-445c-b67e-1512ef239888")
 	)
 	(wire
 		(pts
@@ -9499,6 +9673,16 @@
 			(type default)
 		)
 		(uuid "ca7ae57b-001d-47c8-95ad-40978da683f0")
+	)
+	(wire
+		(pts
+			(xy 240.03 80.01) (xy 240.03 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cac55ace-2000-4463-9bc2-1f6e39138d6c")
 	)
 	(wire
 		(pts
@@ -13610,7 +13794,7 @@
 				)
 			)
 		)
-		(property "Value" "150"
+		(property "Value" "150K"
 			(at 188.722 85.09 90)
 			(effects
 				(font
@@ -13889,7 +14073,7 @@
 				)
 			)
 		)
-		(property "Value" "470"
+		(property "Value" "470K"
 			(at 200.406 88.9 0)
 			(effects
 				(font
@@ -14476,76 +14660,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:L")
-		(at 240.03 83.82 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "78969344-cf03-4b39-9ea0-18ee51b7b778")
-		(property "Reference" "L3"
-			(at 241.3 82.5499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1.5uH"
-			(at 241.3 85.0899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
-			(at 240.03 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 240.03 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Inductor"
-			(at 240.03 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "92684e28-61d5-4a63-b574-8a772d5c135d")
-		)
-		(pin "1"
-			(uuid "e3edba03-9541-4e0d-b5c9-3df8f0ce0f82")
-		)
-		(instances
-			(project ""
-				(path "/3bb22019-5160-4958-be00-a0bb623b71d1"
-					(reference "L3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+3.3V")
 		(at 116.84 21.59 0)
 		(unit 1)
@@ -14873,6 +14987,85 @@
 			(project "Cyberboard"
 				(path "/3bb22019-5160-4958-be00-a0bb623b71d1"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "lcsc:FTC252012S1R5MBCA")
+		(at 243.84 83.82 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8313ce3c-65e9-4f98-a68f-42151fe3d3ee")
+		(property "Reference" "U8"
+			(at 245.11 82.5499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "FTC252012S1R5MBCA"
+			(at 245.11 85.0899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "lcsc:IND-SMD_L2.5-W2.0_MEKK2520TR47M"
+			(at 251.46 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 243.84 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 243.84 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C5832371"
+			(at 254 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "87dd6422-3e3f-48b6-b917-88eb7b33b214")
+		)
+		(pin "2"
+			(uuid "f77683ae-a7fd-4065-9ab4-7888150697a2")
+		)
+		(instances
+			(project ""
+				(path "/3bb22019-5160-4958-be00-a0bb623b71d1"
+					(reference "U8")
 					(unit 1)
 				)
 			)
