@@ -26,6 +26,9 @@ A Raspberry Pi Pico-sized STM32 development board with Bluetooth, battery suppor
 
 <img src="assets/banner.png" alt="Cyberboard Banner" width="800"/>
 
+
+> **⚠️ Looking for V1?** The first version of the Cyberboard is available in the [v1 branch](https://github.com/notaroomba/cyberboard/tree/v1), but be warned: it doesn't work. V2 is a complete redesign with proper functionality.
+
 ## Key Features
 
 - **STM32WB55CG** microcontroller with Bluetooth support
