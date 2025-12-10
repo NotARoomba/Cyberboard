@@ -1,13 +1,13 @@
 <h1 align="center">
   <br>
-  <a href="https://notaroomba.dev"><img src="https://raw.githubusercontent.com/NotARoomba/cyberboard-v2/main/assets/logo.png" alt="Cyberboard V2" width="200"></a>
+  <a href="https://notaroomba.dev"><img src="https://raw.githubusercontent.com/NotARoomba/Cyberboard/main/assets/logo.png" alt="Cyberboard" width="200"></a>
   <br>
-  Cyberboard V2
+  Cyberboard
   <br>
 </h1>
 
 <h4 align="center">
-A Raspberry Pi Pico-sized STM32 development board with Bluetooth, battery support, IMU and a barometer!
+A Raspberry Pi Pico-sized STM32 development board with Bluetooth and battery support!
 </h4>
 
 <div align="center">
@@ -24,52 +24,28 @@ A Raspberry Pi Pico-sized STM32 development board with Bluetooth, battery suppor
   <a href="#license">License</a>
 </p>
 
-<img src="assets/banner.png" alt="Cyberboard Banner" width="800"/>
+<img src="assets/Cyberboard.png" alt="Cyberboard Render" width="800"/>
 
 ## Key Features
 
 - **STM32WB55CG** microcontroller with Bluetooth support
 - **Raspberry Pi Pico form factor** for compatibility
-- **IMU and Barometer** - ICM-42688 (6-axis) and BMP580 pressure sensor for environmental/motion sensing
-- **Battery charging** with BQ24072RGTR IC and JST connector for 1S LiPo
-- **Buck-Boost converter** (TPS631000) for efficient power management
-- **Multiple Status LEDs** for visual feedback
+- **Battery charging** with BQ24074 IC and JST connector for 1S LiPo
+- **Buck-Boost converter** (TPS630701RNMR) for efficient power management
+- **LED** for visual feedback
 - **USB-C** connectivity
 - **Ceramic Bluetooth antenna** with impedance matching
 - **SWD test points** on the bottom for easy programming
-- **4-layer PCB** design with optimized RF layout and routing
-- **Panelized design** for cost-effective manufacturing
 
 ## PCB
 
-Designed in KiCad with attention to RF design, power management, and sensor integration. The board features a 4-layer stackup (SIG/GND/PWR/SIG) with optimized routing for the Bluetooth antenna and sensitive analog signals.
-
-### Features
-
-- Efficient antenna routing with impedance matching
-- Optimized sensor placement (IMU and Barometer) away from RF components
-- SPI interface for IMU (ICM-42688) and I2C interface for Barometer (BMP580)
-- Improved power delivery with optimized buck-boost converter
+Designed in KiCad with attention to RF design and power management.
 
 ### Schematic
 
 <img src="assets/schematic.png" alt="Schematic" width="800"/>
 
-### PCB Layers
-
-The 4-layer stackup (SIG/GND/PWR/SIG) provides optimal signal integrity and power distribution:
-
-**Layer 1 (Signal):**
-<img src="assets/layer_1.png" alt="PCB Layer 1" width="800"/>
-
-**Layer 2 (Ground):**
-<img src="assets/layer_2.png" alt="PCB Layer 2" width="800"/>
-
-**Layer 3 (Power):**
-<img src="assets/layer_3.png" alt="PCB Layer 3" width="800"/>
-
-**Layer 4 (Signal):**
-<img src="assets/layer_4.png" alt="PCB Layer 4" width="800"/>
+### PCB Layout
 
 **Front:**
 <img src="assets/pcb_front.png" alt="PCB Front" width="800"/>
@@ -80,6 +56,12 @@ The 4-layer stackup (SIG/GND/PWR/SIG) provides optimal signal integrity and powe
 ### JLCPCB Order
 
 <img src="assets/jlcpcb.png" alt="PCB Back" width="800"/>
+
+### 3D Renders (Old Layout)
+
+<img src="assets/CyberboardBG.png" alt="Cyberboard Render 1" width="800"/>
+<img src="assets/CyberboardDark.png" alt="Cyberboard Render 2" width="800"/>
+<img src="assets/CyberboardYellow.png" alt="Cyberboard Render 1" width="800"/>
 
 ## Credits
 
