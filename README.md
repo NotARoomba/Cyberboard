@@ -49,10 +49,10 @@ Designed in KiCad with attention to RF design, power management, and sensor inte
 
 ### Features
 
-- Efficient antenna routing with impedance matching
+- Bluetooth antenna routing with impedance matching
 - Optimized sensor placement (IMU and Barometer) away from RF components
 - SPI interface for IMU (ICM-42688) and I2C interface for Barometer (BMP580)
-- Improved power delivery with optimized buck-boost converter
+- Efficient buck-boost converter with power path
 
 ### Schematic
 
