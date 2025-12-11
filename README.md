@@ -47,13 +47,6 @@ A Raspberry Pi Pico-sized STM32 development board with Bluetooth, battery suppor
 
 Designed in KiCad with attention to RF design, power management, and sensor integration. The board features a 4-layer stackup (SIG/GND/PWR/SIG) with optimized routing for the Bluetooth antenna and sensitive analog signals.
 
-### Features
-
-- Bluetooth antenna routing with impedance matching
-- Optimized sensor placement (IMU and Barometer) away from RF components
-- SPI interface for IMU (ICM-42688) and I2C interface for Barometer (BMP580)
-- Efficient buck-boost converter with power path
-
 ### Schematic
 
 <img src="assets/schematic.png" alt="Schematic" width="800"/>
