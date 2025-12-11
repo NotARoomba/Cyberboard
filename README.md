@@ -56,21 +56,27 @@ Designed in KiCad with attention to RF design, power management, and sensor inte
 The 4-layer stackup (SIG/GND/PWR/SIG) provides optimal signal integrity and power distribution:
 
 **Layer 1 (Signal):**
+
 <img src="assets/layer_1.png" alt="PCB Layer 1" width="800"/>
 
 **Layer 2 (Ground):**
+
 <img src="assets/layer_2.png" alt="PCB Layer 2" width="800"/>
 
 **Layer 3 (Power):**
+
 <img src="assets/layer_3.png" alt="PCB Layer 3" width="800"/>
 
 **Layer 4 (Signal):**
+
 <img src="assets/layer_4.png" alt="PCB Layer 4" width="800"/>
 
 **Front:**
+
 <img src="assets/pcb_front.png" alt="PCB Front" width="800"/>
 
 **Back:**
+
 <img src="assets/pcb_back.png" alt="PCB Back" width="800"/>
 
 ### JLCPCB Order
