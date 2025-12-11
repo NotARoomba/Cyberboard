@@ -34,7 +34,7 @@ A Raspberry Pi Pico-sized STM32 development board with Bluetooth, battery suppor
 - **STM32WB55CG** microcontroller with Bluetooth support
 - **Raspberry Pi Pico form factor** for compatibility
 - **IMU and Barometer** - ICM-42688 (6-axis) and BMP580 pressure sensor for environmental/motion sensing
-- **Battery charging** with BQ24072RGTR IC and JST connector for 1S LiPo
+- **Battery charging** with BQ24072RGTR IC and solder pad for 1S LiPo
 - **Buck-Boost converter** (TPS631000) for efficient power management
 - **Multiple Status LEDs** for visual feedback
 - **USB-C** connectivity
