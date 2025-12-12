@@ -94,9 +94,9 @@ This project uses:
 ## You may also like...
 
 - [CyberCard](https://github.com/NotARoomba/CyberCard) – A Cyberpunk themed NFC hacker card
-- [Niveles De Niveles](https://github.com/NotARoomba/NivelesDeNiveles) – Real-time flood alert app
-- [Linea](https://github.com/NotARoomba/Linea) – An EMR tablet
-- [Tamaki](https://github.com/NotARoomba/Tamaki) – A cute HackPad
+- [Ember](https://github.com/NotARoomba/ember) – USB-C PD Powered Hotplate
+- [Trace](https://github.com/NotARoomba/trace) – An ruler for engineers
+- [Athena](https://github.com/NotARoomba/athena) – A flight controlelr with a triple MCU architecture
 
 ## License
 
