@@ -1,0 +1,277 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"system_stm32wbxx.c"
+  16              		.text
+  17              		.section	.text.SystemInit,"ax",%progbits
+  18              		.align	1
+  19              		.global	SystemInit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	SystemInit:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 164A     		ldr	r2, .L2
+  29 0002 D2F88830 		ldr	r3, [r2, #136]
+  30 0006 43F47003 		orr	r3, r3, #15728640
+  31 000a C2F88830 		str	r3, [r2, #136]
+  32 000e 4FF0B043 		mov	r3, #1476395008
+  33 0012 1A68     		ldr	r2, [r3]
+  34 0014 42F00102 		orr	r2, r2, #1
+  35 0018 1A60     		str	r2, [r3]
+  36 001a 4FF4E022 		mov	r2, #458752
+  37 001e 9A60     		str	r2, [r3, #8]
+  38 0020 1968     		ldr	r1, [r3]
+  39 0022 A2F1A262 		sub	r2, r2, #84934656
+  40 0026 A2F20512 		subw	r2, r2, #261
+  41 002a 0A40     		ands	r2, r2, r1
+  42 002c 1A60     		str	r2, [r3]
+  43 002e D3F89420 		ldr	r2, [r3, #148]
+  44 0032 22F00502 		bic	r2, r2, #5
+  45 0036 C3F89420 		str	r2, [r3, #148]
+  46 003a D3F89820 		ldr	r2, [r3, #152]
+  47 003e 22F00102 		bic	r2, r2, #1
+  48 0042 C3F89820 		str	r2, [r3, #152]
+  49 0046 064A     		ldr	r2, .L2+4
+  50 0048 DA60     		str	r2, [r3, #12]
+  51 004a 1A61     		str	r2, [r3, #16]
+  52 004c 1A68     		ldr	r2, [r3]
+  53 004e 22F48022 		bic	r2, r2, #262144
+  54 0052 1A60     		str	r2, [r3]
+  55 0054 0022     		movs	r2, #0
+  56 0056 9A61     		str	r2, [r3, #24]
+  57 0058 7047     		bx	lr
+  58              	.L3:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 2
+
+
+  59 005a 00BF     		.align	2
+  60              	.L2:
+  61 005c 00ED00E0 		.word	-536810240
+  62 0060 00100422 		.word	570691584
+  64              		.section	.text.SystemCoreClockUpdate,"ax",%progbits
+  65              		.align	1
+  66              		.global	SystemCoreClockUpdate
+  67              		.syntax unified
+  68              		.thumb
+  69              		.thumb_func
+  71              	SystemCoreClockUpdate:
+  72              		@ args = 0, pretend = 0, frame = 0
+  73              		@ frame_needed = 0, uses_anonymous_args = 0
+  74              		@ link register save eliminated.
+  75 0000 4FF0B042 		mov	r2, #1476395008
+  76 0004 1368     		ldr	r3, [r2]
+  77 0006 C3F30313 		ubfx	r3, r3, #4, #4
+  78 000a 2749     		ldr	r1, .L17
+  79 000c 51F82310 		ldr	r1, [r1, r3, lsl #2]
+  80 0010 9368     		ldr	r3, [r2, #8]
+  81 0012 03F00C03 		and	r3, r3, #12
+  82 0016 082B     		cmp	r3, #8
+  83 0018 37D0     		beq	.L5
+  84 001a 06D8     		bhi	.L6
+  85 001c 2BB3     		cbz	r3, .L7
+  86 001e 042B     		cmp	r3, #4
+  87 0020 3FD1     		bne	.L9
+  88 0022 224B     		ldr	r3, .L17+4
+  89 0024 224A     		ldr	r2, .L17+8
+  90 0026 1A60     		str	r2, [r3]
+  91 0028 21E0     		b	.L11
+  92              	.L6:
+  93 002a 0C2B     		cmp	r3, #12
+  94 002c 39D1     		bne	.L9
+  95 002e 4FF0B043 		mov	r3, #1476395008
+  96 0032 DA68     		ldr	r2, [r3, #12]
+  97 0034 02F00302 		and	r2, r2, #3
+  98 0038 DB68     		ldr	r3, [r3, #12]
+  99 003a C3F30213 		ubfx	r3, r3, #4, #3
+ 100 003e 0133     		adds	r3, r3, #1
+ 101 0040 022A     		cmp	r2, #2
+ 102 0042 26D0     		beq	.L15
+ 103 0044 032A     		cmp	r2, #3
+ 104 0046 28D0     		beq	.L16
+ 105 0048 B1FBF3F2 		udiv	r2, r1, r3
+ 106              	.L13:
+ 107 004c 4FF0B041 		mov	r1, #1476395008
+ 108 0050 CB68     		ldr	r3, [r1, #12]
+ 109 0052 C3F30623 		ubfx	r3, r3, #8, #7
+ 110 0056 02FB03F3 		mul	r3, r2, r3
+ 111 005a CA68     		ldr	r2, [r1, #12]
+ 112 005c 520F     		lsrs	r2, r2, #29
+ 113 005e 0132     		adds	r2, r2, #1
+ 114 0060 B3FBF2F3 		udiv	r3, r3, r2
+ 115 0064 114A     		ldr	r2, .L17+4
+ 116 0066 1360     		str	r3, [r2]
+ 117 0068 01E0     		b	.L11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 3
+
+
+ 118              	.L7:
+ 119 006a 104B     		ldr	r3, .L17+4
+ 120 006c 1960     		str	r1, [r3]
+ 121              	.L11:
+ 122 006e 4FF0B043 		mov	r3, #1476395008
+ 123 0072 9B68     		ldr	r3, [r3, #8]
+ 124 0074 C3F30313 		ubfx	r3, r3, #4, #4
+ 125 0078 0E4A     		ldr	r2, .L17+12
+ 126 007a 52F82310 		ldr	r1, [r2, r3, lsl #2]
+ 127 007e 0B4A     		ldr	r2, .L17+4
+ 128 0080 1368     		ldr	r3, [r2]
+ 129 0082 B3FBF1F3 		udiv	r3, r3, r1
+ 130 0086 1360     		str	r3, [r2]
+ 131 0088 7047     		bx	lr
+ 132              	.L5:
+ 133 008a 084B     		ldr	r3, .L17+4
+ 134 008c 0A4A     		ldr	r2, .L17+16
+ 135 008e 1A60     		str	r2, [r3]
+ 136 0090 EDE7     		b	.L11
+ 137              	.L15:
+ 138 0092 074A     		ldr	r2, .L17+8
+ 139 0094 B2FBF3F2 		udiv	r2, r2, r3
+ 140 0098 D8E7     		b	.L13
+ 141              	.L16:
+ 142 009a 074A     		ldr	r2, .L17+16
+ 143 009c B2FBF3F2 		udiv	r2, r2, r3
+ 144 00a0 D4E7     		b	.L13
+ 145              	.L9:
+ 146 00a2 024B     		ldr	r3, .L17+4
+ 147 00a4 1960     		str	r1, [r3]
+ 148 00a6 E2E7     		b	.L11
+ 149              	.L18:
+ 150              		.align	2
+ 151              	.L17:
+ 152 00a8 00000000 		.word	MSIRangeTable
+ 153 00ac 00000000 		.word	SystemCoreClock
+ 154 00b0 0024F400 		.word	16000000
+ 155 00b4 00000000 		.word	AHBPrescTable
+ 156 00b8 0048E801 		.word	32000000
+ 158              		.global	SmpsPrescalerTable
+ 159              		.section	.rodata.SmpsPrescalerTable,"a"
+ 160              		.align	2
+ 163              	SmpsPrescalerTable:
+ 164 0000 01000000 		.word	1
+ 165 0004 03000000 		.word	3
+ 166 0008 02000000 		.word	2
+ 167 000c 02000000 		.word	2
+ 168 0010 01000000 		.word	1
+ 169 0014 02000000 		.word	2
+ 170 0018 02000000 		.word	2
+ 171 001c 06000000 		.word	6
+ 172 0020 04000000 		.word	4
+ 173 0024 03000000 		.word	3
+ 174 0028 02000000 		.word	2
+ 175 002c 04000000 		.word	4
+ 176 0030 04000000 		.word	4
+ 177 0034 0C000000 		.word	12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 4
+
+
+ 178 0038 08000000 		.word	8
+ 179 003c 06000000 		.word	6
+ 180 0040 04000000 		.word	4
+ 181 0044 08000000 		.word	8
+ 182 0048 04000000 		.word	4
+ 183 004c 0C000000 		.word	12
+ 184 0050 08000000 		.word	8
+ 185 0054 06000000 		.word	6
+ 186 0058 04000000 		.word	4
+ 187 005c 08000000 		.word	8
+ 188              		.global	MSIRangeTable
+ 189              		.section	.rodata.MSIRangeTable,"a"
+ 190              		.align	2
+ 193              	MSIRangeTable:
+ 194 0000 A0860100 		.word	100000
+ 195 0004 400D0300 		.word	200000
+ 196 0008 801A0600 		.word	400000
+ 197 000c 00350C00 		.word	800000
+ 198 0010 40420F00 		.word	1000000
+ 199 0014 80841E00 		.word	2000000
+ 200 0018 00093D00 		.word	4000000
+ 201 001c 00127A00 		.word	8000000
+ 202 0020 0024F400 		.word	16000000
+ 203 0024 00366E01 		.word	24000000
+ 204 0028 0048E801 		.word	32000000
+ 205 002c 006CDC02 		.word	48000000
+ 206 0030 00000000 		.word	0
+ 207 0034 00000000 		.word	0
+ 208 0038 00000000 		.word	0
+ 209 003c 00000000 		.word	0
+ 210              		.global	APBPrescTable
+ 211              		.section	.rodata.APBPrescTable,"a"
+ 212              		.align	2
+ 215              	APBPrescTable:
+ 216 0000 00000000 		.word	0
+ 217 0004 00000000 		.word	0
+ 218 0008 00000000 		.word	0
+ 219 000c 00000000 		.word	0
+ 220 0010 01000000 		.word	1
+ 221 0014 02000000 		.word	2
+ 222 0018 03000000 		.word	3
+ 223 001c 04000000 		.word	4
+ 224              		.global	AHBPrescTable
+ 225              		.section	.rodata.AHBPrescTable,"a"
+ 226              		.align	2
+ 229              	AHBPrescTable:
+ 230 0000 01000000 		.word	1
+ 231 0004 03000000 		.word	3
+ 232 0008 05000000 		.word	5
+ 233 000c 01000000 		.word	1
+ 234 0010 01000000 		.word	1
+ 235 0014 06000000 		.word	6
+ 236 0018 0A000000 		.word	10
+ 237 001c 20000000 		.word	32
+ 238 0020 02000000 		.word	2
+ 239 0024 04000000 		.word	4
+ 240 0028 08000000 		.word	8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 5
+
+
+ 241 002c 10000000 		.word	16
+ 242 0030 40000000 		.word	64
+ 243 0034 80000000 		.word	128
+ 244 0038 00010000 		.word	256
+ 245 003c 00020000 		.word	512
+ 246              		.global	SystemCoreClock
+ 247              		.section	.data.SystemCoreClock,"aw"
+ 248              		.align	2
+ 251              	SystemCoreClock:
+ 252 0000 00093D00 		.word	4000000
+ 253              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 system_stm32wbxx.c
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:18     .text.SystemInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:24     .text.SystemInit:00000000 SystemInit
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:61     .text.SystemInit:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:65     .text.SystemCoreClockUpdate:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:71     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:152    .text.SystemCoreClockUpdate:000000a8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:193    .rodata.MSIRangeTable:00000000 MSIRangeTable
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:251    .data.SystemCoreClock:00000000 SystemCoreClock
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:229    .rodata.AHBPrescTable:00000000 AHBPrescTable
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:163    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:160    .rodata.SmpsPrescalerTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:190    .rodata.MSIRangeTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:215    .rodata.APBPrescTable:00000000 APBPrescTable
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:212    .rodata.APBPrescTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:226    .rodata.AHBPrescTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:248    .data.SystemCoreClock:00000000 $d
+
+NO UNDEFINED SYMBOLS

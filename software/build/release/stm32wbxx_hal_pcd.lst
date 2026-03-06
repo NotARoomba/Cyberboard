@@ -1,0 +1,2199 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_pcd.c"
+  16              		.text
+  17              		.section	.text.HAL_PCD_EP_DB_Receive,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	HAL_PCD_EP_DB_Receive:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 10B5     		push	{r4, lr}
+  27 0002 12F4804F 		tst	r2, #16384
+  28 0006 45D0     		beq	.L2
+  29 0008 0468     		ldr	r4, [r0]
+  30 000a B4F85030 		ldrh	r3, [r4, #80]
+  31 000e 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+  32 0012 4FEACC0E 		lsl	lr, ip, #3
+  33 0016 1EFA83F3 		uxtah	r3, lr, r3
+  34 001a 2344     		add	r3, r3, r4
+  35 001c B3F80244 		ldrh	r4, [r3, #1026]
+  36 0020 C4F30904 		ubfx	r4, r4, #0, #10
+  37 0024 8B69     		ldr	r3, [r1, #24]
+  38 0026 A342     		cmp	r3, r4
+  39 0028 2AD3     		bcc	.L3
+  40 002a 1B1B     		subs	r3, r3, r4
+  41 002c 8B61     		str	r3, [r1, #24]
+  42              	.L4:
+  43 002e 8B69     		ldr	r3, [r1, #24]
+  44 0030 83B9     		cbnz	r3, .L5
+  45 0032 D0F800E0 		ldr	lr, [r0]
+  46 0036 3EF82C30 		ldrh	r3, [lr, ip, lsl #2]
+  47 003a 9BB2     		uxth	r3, r3
+  48 003c 23F48043 		bic	r3, r3, #16384
+  49 0040 23F07003 		bic	r3, r3, #112
+  50 0044 83F40053 		eor	r3, r3, #8192
+  51 0048 43F40043 		orr	r3, r3, #32768
+  52 004c 43F08003 		orr	r3, r3, #128
+  53 0050 2EF82C30 		strh	r3, [lr, ip, lsl #2]	@ movhi
+  54              	.L5:
+  55 0054 12F0400F 		tst	r2, #64
+  56 0058 0FD0     		beq	.L6
+  57 005a 0268     		ldr	r2, [r0]
+  58 005c 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 2
+
+
+  59 0060 32F82C30 		ldrh	r3, [r2, ip, lsl #2]
+  60 0064 9BB2     		uxth	r3, r3
+  61 0066 23F4E043 		bic	r3, r3, #28672
+  62 006a 23F07003 		bic	r3, r3, #112
+  63 006e 43F40043 		orr	r3, r3, #32768
+  64 0072 43F0C003 		orr	r3, r3, #192
+  65 0076 22F82C30 		strh	r3, [r2, ip, lsl #2]	@ movhi
+  66              	.L6:
+  67 007a 24B9     		cbnz	r4, .L13
+  68              	.L7:
+  69 007c 2046     		mov	r0, r4
+  70 007e 10BD     		pop	{r4, pc}
+  71              	.L3:
+  72 0080 0023     		movs	r3, #0
+  73 0082 8B61     		str	r3, [r1, #24]
+  74 0084 D3E7     		b	.L4
+  75              	.L13:
+  76 0086 2346     		mov	r3, r4
+  77 0088 0A89     		ldrh	r2, [r1, #8]
+  78 008a 4969     		ldr	r1, [r1, #20]
+  79 008c 0068     		ldr	r0, [r0]
+  80 008e FFF7FEFF 		bl	USB_ReadPMA
+  81 0092 F3E7     		b	.L7
+  82              	.L2:
+  83 0094 0468     		ldr	r4, [r0]
+  84 0096 B4F85030 		ldrh	r3, [r4, #80]
+  85 009a 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+  86 009e 4FEACC0E 		lsl	lr, ip, #3
+  87 00a2 1EFA83F3 		uxtah	r3, lr, r3
+  88 00a6 2344     		add	r3, r3, r4
+  89 00a8 B3F80644 		ldrh	r4, [r3, #1030]
+  90 00ac C4F30904 		ubfx	r4, r4, #0, #10
+  91 00b0 8B69     		ldr	r3, [r1, #24]
+  92 00b2 A342     		cmp	r3, r4
+  93 00b4 30D3     		bcc	.L8
+  94 00b6 1B1B     		subs	r3, r3, r4
+  95 00b8 8B61     		str	r3, [r1, #24]
+  96              	.L9:
+  97 00ba 8B69     		ldr	r3, [r1, #24]
+  98 00bc 83B9     		cbnz	r3, .L10
+  99 00be D0F800E0 		ldr	lr, [r0]
+ 100 00c2 3EF82C30 		ldrh	r3, [lr, ip, lsl #2]
+ 101 00c6 9BB2     		uxth	r3, r3
+ 102 00c8 23F48043 		bic	r3, r3, #16384
+ 103 00cc 23F07003 		bic	r3, r3, #112
+ 104 00d0 83F40053 		eor	r3, r3, #8192
+ 105 00d4 43F40043 		orr	r3, r3, #32768
+ 106 00d8 43F08003 		orr	r3, r3, #128
+ 107 00dc 2EF82C30 		strh	r3, [lr, ip, lsl #2]	@ movhi
+ 108              	.L10:
+ 109 00e0 12F0400F 		tst	r2, #64
+ 110 00e4 0FD1     		bne	.L11
+ 111 00e6 0268     		ldr	r2, [r0]
+ 112 00e8 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 113 00ec 32F82C30 		ldrh	r3, [r2, ip, lsl #2]
+ 114 00f0 9BB2     		uxth	r3, r3
+ 115 00f2 23F4E043 		bic	r3, r3, #28672
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 3
+
+
+ 116 00f6 23F07003 		bic	r3, r3, #112
+ 117 00fa 43F40043 		orr	r3, r3, #32768
+ 118 00fe 43F0C003 		orr	r3, r3, #192
+ 119 0102 22F82C30 		strh	r3, [r2, ip, lsl #2]	@ movhi
+ 120              	.L11:
+ 121 0106 002C     		cmp	r4, #0
+ 122 0108 B8D0     		beq	.L7
+ 123 010a 2346     		mov	r3, r4
+ 124 010c 4A89     		ldrh	r2, [r1, #10]
+ 125 010e 4969     		ldr	r1, [r1, #20]
+ 126 0110 0068     		ldr	r0, [r0]
+ 127 0112 FFF7FEFF 		bl	USB_ReadPMA
+ 128 0116 B1E7     		b	.L7
+ 129              	.L8:
+ 130 0118 0023     		movs	r3, #0
+ 131 011a 8B61     		str	r3, [r1, #24]
+ 132 011c CDE7     		b	.L9
+ 134              		.section	.text.HAL_PCD_MspInit,"ax",%progbits
+ 135              		.align	1
+ 136              		.weak	HAL_PCD_MspInit
+ 137              		.syntax unified
+ 138              		.thumb
+ 139              		.thumb_func
+ 141              	HAL_PCD_MspInit:
+ 142              		@ args = 0, pretend = 0, frame = 0
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144              		@ link register save eliminated.
+ 145 0000 7047     		bx	lr
+ 147              		.section	.text.HAL_PCD_Init,"ax",%progbits
+ 148              		.align	1
+ 149              		.global	HAL_PCD_Init
+ 150              		.syntax unified
+ 151              		.thumb
+ 152              		.thumb_func
+ 154              	HAL_PCD_Init:
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157 0000 0028     		cmp	r0, #0
+ 158 0002 56D0     		beq	.L22
+ 159 0004 10B5     		push	{r4, lr}
+ 160 0006 0446     		mov	r4, r0
+ 161 0008 90F89132 		ldrb	r3, [r0, #657]	@ zero_extendqisi2
+ 162 000c 3BB1     		cbz	r3, .L28
+ 163              	.L17:
+ 164 000e 0323     		movs	r3, #3
+ 165 0010 84F89132 		strb	r3, [r4, #657]
+ 166 0014 2068     		ldr	r0, [r4]
+ 167 0016 FFF7FEFF 		bl	USB_DisableGlobalInt
+ 168 001a 0023     		movs	r3, #0
+ 169 001c 15E0     		b	.L18
+ 170              	.L28:
+ 171 001e 80F89032 		strb	r3, [r0, #656]
+ 172 0022 FFF7FEFF 		bl	HAL_PCD_MspInit
+ 173 0026 F2E7     		b	.L17
+ 174              	.L19:
+ 175 0028 03EB8302 		add	r2, r3, r3, lsl #2
+ 176 002c 04EBC202 		add	r2, r4, r2, lsl #3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 4
+
+
+ 177 0030 0121     		movs	r1, #1
+ 178 0032 5174     		strb	r1, [r2, #17]
+ 179 0034 1374     		strb	r3, [r2, #16]
+ 180 0036 0021     		movs	r1, #0
+ 181 0038 D174     		strb	r1, [r2, #19]
+ 182 003a 1162     		str	r1, [r2, #32]
+ 183 003c 5162     		str	r1, [r2, #36]
+ 184 003e 0133     		adds	r3, r3, #1
+ 185 0040 03EB8302 		add	r2, r3, r3, lsl #2
+ 186 0044 D200     		lsls	r2, r2, #3
+ 187 0046 A150     		str	r1, [r4, r2]
+ 188 0048 DBB2     		uxtb	r3, r3
+ 189              	.L18:
+ 190 004a 2079     		ldrb	r0, [r4, #4]	@ zero_extendqisi2
+ 191 004c 9842     		cmp	r0, r3
+ 192 004e EBD8     		bhi	.L19
+ 193 0050 0023     		movs	r3, #0
+ 194 0052 16E0     		b	.L20
+ 195              	.L21:
+ 196 0054 03EB8302 		add	r2, r3, r3, lsl #2
+ 197 0058 04EBC202 		add	r2, r4, r2, lsl #3
+ 198 005c 0021     		movs	r1, #0
+ 199 005e 82F85111 		strb	r1, [r2, #337]
+ 200 0062 82F85031 		strb	r3, [r2, #336]
+ 201 0066 82F85311 		strb	r1, [r2, #339]
+ 202 006a C2F86011 		str	r1, [r2, #352]
+ 203 006e C2F86411 		str	r1, [r2, #356]
+ 204 0072 03EB8302 		add	r2, r3, r3, lsl #2
+ 205 0076 04EBC202 		add	r2, r4, r2, lsl #3
+ 206 007a C2F86811 		str	r1, [r2, #360]
+ 207 007e 0133     		adds	r3, r3, #1
+ 208 0080 DBB2     		uxtb	r3, r3
+ 209              	.L20:
+ 210 0082 9842     		cmp	r0, r3
+ 211 0084 E6D8     		bhi	.L21
+ 212 0086 2346     		mov	r3, r4
+ 213 0088 53F8040B 		ldr	r0, [r3], #4
+ 214 008c 93E80600 		ldm	r3, {r1, r2}
+ 215 0090 FFF7FEFF 		bl	USB_DevInit
+ 216 0094 0023     		movs	r3, #0
+ 217 0096 2373     		strb	r3, [r4, #12]
+ 218 0098 0123     		movs	r3, #1
+ 219 009a 84F89132 		strb	r3, [r4, #657]
+ 220 009e A37A     		ldrb	r3, [r4, #10]	@ zero_extendqisi2
+ 221 00a0 012B     		cmp	r3, #1
+ 222 00a2 01D0     		beq	.L29
+ 223 00a4 0020     		movs	r0, #0
+ 224              	.L16:
+ 225 00a6 10BD     		pop	{r4, pc}
+ 226              	.L29:
+ 227 00a8 2046     		mov	r0, r4
+ 228 00aa FFF7FEFF 		bl	HAL_PCDEx_ActivateLPM
+ 229 00ae 0020     		movs	r0, #0
+ 230 00b0 F9E7     		b	.L16
+ 231              	.L22:
+ 232 00b2 0120     		movs	r0, #1
+ 233 00b4 7047     		bx	lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 5
+
+
+ 235              		.section	.text.HAL_PCD_MspDeInit,"ax",%progbits
+ 236              		.align	1
+ 237              		.weak	HAL_PCD_MspDeInit
+ 238              		.syntax unified
+ 239              		.thumb
+ 240              		.thumb_func
+ 242              	HAL_PCD_MspDeInit:
+ 243              		@ args = 0, pretend = 0, frame = 0
+ 244              		@ frame_needed = 0, uses_anonymous_args = 0
+ 245              		@ link register save eliminated.
+ 246 0000 7047     		bx	lr
+ 248              		.section	.text.HAL_PCD_DeInit,"ax",%progbits
+ 249              		.align	1
+ 250              		.global	HAL_PCD_DeInit
+ 251              		.syntax unified
+ 252              		.thumb
+ 253              		.thumb_func
+ 255              	HAL_PCD_DeInit:
+ 256              		@ args = 0, pretend = 0, frame = 0
+ 257              		@ frame_needed = 0, uses_anonymous_args = 0
+ 258 0000 38B5     		push	{r3, r4, r5, lr}
+ 259 0002 98B1     		cbz	r0, .L33
+ 260 0004 0446     		mov	r4, r0
+ 261 0006 0323     		movs	r3, #3
+ 262 0008 80F89132 		strb	r3, [r0, #657]
+ 263 000c 0068     		ldr	r0, [r0]
+ 264 000e FFF7FEFF 		bl	USB_StopDevice
+ 265 0012 0546     		mov	r5, r0
+ 266 0014 18B1     		cbz	r0, .L36
+ 267 0016 0123     		movs	r3, #1
+ 268 0018 1D46     		mov	r5, r3
+ 269              	.L32:
+ 270 001a 2846     		mov	r0, r5
+ 271 001c 38BD     		pop	{r3, r4, r5, pc}
+ 272              	.L36:
+ 273 001e 2046     		mov	r0, r4
+ 274 0020 FFF7FEFF 		bl	HAL_PCD_MspDeInit
+ 275 0024 0023     		movs	r3, #0
+ 276 0026 84F89132 		strb	r3, [r4, #657]
+ 277 002a F6E7     		b	.L32
+ 278              	.L33:
+ 279 002c 0123     		movs	r3, #1
+ 280 002e 1D46     		mov	r5, r3
+ 281 0030 F3E7     		b	.L32
+ 283              		.section	.text.HAL_PCD_Start,"ax",%progbits
+ 284              		.align	1
+ 285              		.global	HAL_PCD_Start
+ 286              		.syntax unified
+ 287              		.thumb
+ 288              		.thumb_func
+ 290              	HAL_PCD_Start:
+ 291              		@ args = 0, pretend = 0, frame = 0
+ 292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 293 0000 90F89032 		ldrb	r3, [r0, #656]	@ zero_extendqisi2
+ 294 0004 012B     		cmp	r3, #1
+ 295 0006 0ED0     		beq	.L39
+ 296 0008 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 6
+
+
+ 297 000a 0446     		mov	r4, r0
+ 298 000c 0123     		movs	r3, #1
+ 299 000e 80F89032 		strb	r3, [r0, #656]
+ 300 0012 0068     		ldr	r0, [r0]
+ 301 0014 FFF7FEFF 		bl	USB_EnableGlobalInt
+ 302 0018 2068     		ldr	r0, [r4]
+ 303 001a FFF7FEFF 		bl	USB_DevConnect
+ 304 001e 0020     		movs	r0, #0
+ 305 0020 84F89002 		strb	r0, [r4, #656]
+ 306 0024 10BD     		pop	{r4, pc}
+ 307              	.L39:
+ 308 0026 0220     		movs	r0, #2
+ 309 0028 7047     		bx	lr
+ 311              		.section	.text.HAL_PCD_Stop,"ax",%progbits
+ 312              		.align	1
+ 313              		.global	HAL_PCD_Stop
+ 314              		.syntax unified
+ 315              		.thumb
+ 316              		.thumb_func
+ 318              	HAL_PCD_Stop:
+ 319              		@ args = 0, pretend = 0, frame = 0
+ 320              		@ frame_needed = 0, uses_anonymous_args = 0
+ 321 0000 90F89032 		ldrb	r3, [r0, #656]	@ zero_extendqisi2
+ 322 0004 012B     		cmp	r3, #1
+ 323 0006 0ED0     		beq	.L46
+ 324 0008 10B5     		push	{r4, lr}
+ 325 000a 0446     		mov	r4, r0
+ 326 000c 0123     		movs	r3, #1
+ 327 000e 80F89032 		strb	r3, [r0, #656]
+ 328 0012 0068     		ldr	r0, [r0]
+ 329 0014 FFF7FEFF 		bl	USB_DisableGlobalInt
+ 330 0018 2068     		ldr	r0, [r4]
+ 331 001a FFF7FEFF 		bl	USB_DevDisconnect
+ 332 001e 0020     		movs	r0, #0
+ 333 0020 84F89002 		strb	r0, [r4, #656]
+ 334 0024 10BD     		pop	{r4, pc}
+ 335              	.L46:
+ 336 0026 0220     		movs	r0, #2
+ 337 0028 7047     		bx	lr
+ 339              		.section	.text.HAL_PCD_DataOutStageCallback,"ax",%progbits
+ 340              		.align	1
+ 341              		.weak	HAL_PCD_DataOutStageCallback
+ 342              		.syntax unified
+ 343              		.thumb
+ 344              		.thumb_func
+ 346              	HAL_PCD_DataOutStageCallback:
+ 347              		@ args = 0, pretend = 0, frame = 0
+ 348              		@ frame_needed = 0, uses_anonymous_args = 0
+ 349              		@ link register save eliminated.
+ 350 0000 7047     		bx	lr
+ 352              		.section	.text.HAL_PCD_DataInStageCallback,"ax",%progbits
+ 353              		.align	1
+ 354              		.weak	HAL_PCD_DataInStageCallback
+ 355              		.syntax unified
+ 356              		.thumb
+ 357              		.thumb_func
+ 359              	HAL_PCD_DataInStageCallback:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 7
+
+
+ 360              		@ args = 0, pretend = 0, frame = 0
+ 361              		@ frame_needed = 0, uses_anonymous_args = 0
+ 362              		@ link register save eliminated.
+ 363 0000 7047     		bx	lr
+ 365              		.section	.text.HAL_PCD_EP_DB_Transmit,"ax",%progbits
+ 366              		.align	1
+ 367              		.syntax unified
+ 368              		.thumb
+ 369              		.thumb_func
+ 371              	HAL_PCD_EP_DB_Transmit:
+ 372              		@ args = 0, pretend = 0, frame = 0
+ 373              		@ frame_needed = 0, uses_anonymous_args = 0
+ 374 0000 70B5     		push	{r4, r5, r6, lr}
+ 375 0002 0546     		mov	r5, r0
+ 376 0004 0C46     		mov	r4, r1
+ 377 0006 1646     		mov	r6, r2
+ 378 0008 12F0400F 		tst	r2, #64
+ 379 000c 00F01F81 		beq	.L54
+ 380 0010 0268     		ldr	r2, [r0]
+ 381 0012 B2F85030 		ldrh	r3, [r2, #80]
+ 382 0016 0978     		ldrb	r1, [r1]	@ zero_extendqisi2
+ 383 0018 4FEAC10C 		lsl	ip, r1, #3
+ 384 001c 1CFA83F3 		uxtah	r3, ip, r3
+ 385 0020 1344     		add	r3, r3, r2
+ 386 0022 B3F80224 		ldrh	r2, [r3, #1026]
+ 387 0026 C2F30902 		ubfx	r2, r2, #0, #10
+ 388 002a A369     		ldr	r3, [r4, #24]
+ 389 002c 9342     		cmp	r3, r2
+ 390 002e 2CD9     		bls	.L55
+ 391 0030 9B1A     		subs	r3, r3, r2
+ 392 0032 A361     		str	r3, [r4, #24]
+ 393              	.L56:
+ 394 0034 A069     		ldr	r0, [r4, #24]
+ 395 0036 58B3     		cbz	r0, .L96
+ 396 0038 16F4804F 		tst	r6, #16384
+ 397 003c 0DD0     		beq	.L65
+ 398 003e 2868     		ldr	r0, [r5]
+ 399 0040 30F82130 		ldrh	r3, [r0, r1, lsl #2]
+ 400 0044 9BB2     		uxth	r3, r3
+ 401 0046 23F4E043 		bic	r3, r3, #28672
+ 402 004a 23F07003 		bic	r3, r3, #112
+ 403 004e 43F44043 		orr	r3, r3, #49152
+ 404 0052 43F08003 		orr	r3, r3, #128
+ 405 0056 20F82130 		strh	r3, [r0, r1, lsl #2]	@ movhi
+ 406              	.L65:
+ 407 005a 94F82430 		ldrb	r3, [r4, #36]	@ zero_extendqisi2
+ 408 005e 012B     		cmp	r3, #1
+ 409 0060 00F08D80 		beq	.L97
+ 410              	.L66:
+ 411 0064 2A68     		ldr	r2, [r5]
+ 412 0066 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 413 0068 32F82130 		ldrh	r3, [r2, r1, lsl #2]
+ 414 006c 9BB2     		uxth	r3, r3
+ 415 006e 23F4E043 		bic	r3, r3, #28672
+ 416 0072 23F04003 		bic	r3, r3, #64
+ 417 0076 83F03003 		eor	r3, r3, #48
+ 418 007a 43F40043 		orr	r3, r3, #32768
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 8
+
+
+ 419 007e 43F08003 		orr	r3, r3, #128
+ 420 0082 22F82130 		strh	r3, [r2, r1, lsl #2]	@ movhi
+ 421              	.L64:
+ 422 0086 0020     		movs	r0, #0
+ 423 0088 70BD     		pop	{r4, r5, r6, pc}
+ 424              	.L55:
+ 425 008a 0023     		movs	r3, #0
+ 426 008c A361     		str	r3, [r4, #24]
+ 427 008e D1E7     		b	.L56
+ 428              	.L96:
+ 429 0090 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 430 0092 002B     		cmp	r3, #0
+ 431 0094 48D1     		bne	.L58
+ 432 0096 2A68     		ldr	r2, [r5]
+ 433 0098 B2F85030 		ldrh	r3, [r2, #80]
+ 434 009c 12FA83F3 		uxtah	r3, r2, r3
+ 435 00a0 6344     		add	r3, r3, ip
+ 436 00a2 B3F80224 		ldrh	r2, [r3, #1026]
+ 437 00a6 C2F30902 		ubfx	r2, r2, #0, #10
+ 438 00aa A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 439 00ae B3F80224 		ldrh	r2, [r3, #1026]
+ 440 00b2 6FEA4242 		mvn	r2, r2, lsl #17
+ 441 00b6 6FEA5242 		mvn	r2, r2, lsr #17
+ 442 00ba 92B2     		uxth	r2, r2
+ 443 00bc A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 444              	.L59:
+ 445 00c0 2A68     		ldr	r2, [r5]
+ 446 00c2 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 447 00c4 002B     		cmp	r3, #0
+ 448 00c6 3BD1     		bne	.L60
+ 449 00c8 B2F85030 		ldrh	r3, [r2, #80]
+ 450 00cc 12FA83F3 		uxtah	r3, r2, r3
+ 451 00d0 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 452 00d2 03EBC203 		add	r3, r3, r2, lsl #3
+ 453 00d6 B3F80624 		ldrh	r2, [r3, #1030]
+ 454 00da C2F30902 		ubfx	r2, r2, #0, #10
+ 455 00de A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 456 00e2 B3F80624 		ldrh	r2, [r3, #1030]
+ 457 00e6 6FEA4242 		mvn	r2, r2, lsl #17
+ 458 00ea 6FEA5242 		mvn	r2, r2, lsr #17
+ 459 00ee 92B2     		uxth	r2, r2
+ 460 00f0 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 461              	.L61:
+ 462 00f4 E378     		ldrb	r3, [r4, #3]	@ zero_extendqisi2
+ 463 00f6 022B     		cmp	r3, #2
+ 464 00f8 2FD0     		beq	.L98
+ 465              	.L62:
+ 466 00fa 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 467 00fc 2846     		mov	r0, r5
+ 468 00fe FFF7FEFF 		bl	HAL_PCD_DataInStageCallback
+ 469 0102 16F4804F 		tst	r6, #16384
+ 470 0106 BED0     		beq	.L64
+ 471 0108 2A68     		ldr	r2, [r5]
+ 472 010a 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 473 010c 32F82130 		ldrh	r3, [r2, r1, lsl #2]
+ 474 0110 9BB2     		uxth	r3, r3
+ 475 0112 23F4E043 		bic	r3, r3, #28672
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 9
+
+
+ 476 0116 23F07003 		bic	r3, r3, #112
+ 477 011a 43F44043 		orr	r3, r3, #49152
+ 478 011e 43F08003 		orr	r3, r3, #128
+ 479 0122 22F82130 		strh	r3, [r2, r1, lsl #2]	@ movhi
+ 480 0126 AEE7     		b	.L64
+ 481              	.L58:
+ 482 0128 012B     		cmp	r3, #1
+ 483 012a C9D1     		bne	.L59
+ 484 012c 2A68     		ldr	r2, [r5]
+ 485 012e B2F85030 		ldrh	r3, [r2, #80]
+ 486 0132 12FA83F3 		uxtah	r3, r2, r3
+ 487 0136 6344     		add	r3, r3, ip
+ 488 0138 0022     		movs	r2, #0
+ 489 013a A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 490 013e BFE7     		b	.L59
+ 491              	.L60:
+ 492 0140 012B     		cmp	r3, #1
+ 493 0142 D7D1     		bne	.L61
+ 494 0144 B2F85030 		ldrh	r3, [r2, #80]
+ 495 0148 12FA83F3 		uxtah	r3, r2, r3
+ 496 014c 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 497 014e 03EBC203 		add	r3, r3, r2, lsl #3
+ 498 0152 0022     		movs	r2, #0
+ 499 0154 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 500 0158 CCE7     		b	.L61
+ 501              	.L98:
+ 502 015a 2A68     		ldr	r2, [r5]
+ 503 015c 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 504 015e 32F82130 		ldrh	r3, [r2, r1, lsl #2]
+ 505 0162 9BB2     		uxth	r3, r3
+ 506 0164 23F4E043 		bic	r3, r3, #28672
+ 507 0168 23F04003 		bic	r3, r3, #64
+ 508 016c 83F02003 		eor	r3, r3, #32
+ 509 0170 43F40043 		orr	r3, r3, #32768
+ 510 0174 43F08003 		orr	r3, r3, #128
+ 511 0178 22F82130 		strh	r3, [r2, r1, lsl #2]	@ movhi
+ 512 017c BDE7     		b	.L62
+ 513              	.L97:
+ 514 017e 6369     		ldr	r3, [r4, #20]
+ 515 0180 1344     		add	r3, r3, r2
+ 516 0182 6361     		str	r3, [r4, #20]
+ 517 0184 E369     		ldr	r3, [r4, #28]
+ 518 0186 1344     		add	r3, r3, r2
+ 519 0188 E361     		str	r3, [r4, #28]
+ 520 018a 216A     		ldr	r1, [r4, #32]
+ 521 018c 2369     		ldr	r3, [r4, #16]
+ 522 018e 9942     		cmp	r1, r3
+ 523 0190 1DD3     		bcc	.L67
+ 524 0192 C91A     		subs	r1, r1, r3
+ 525 0194 2162     		str	r1, [r4, #32]
+ 526              	.L68:
+ 527 0196 6278     		ldrb	r2, [r4, #1]	@ zero_extendqisi2
+ 528 0198 002A     		cmp	r2, #0
+ 529 019a 43D1     		bne	.L70
+ 530 019c 2968     		ldr	r1, [r5]
+ 531 019e B1F85020 		ldrh	r2, [r1, #80]
+ 532 01a2 11FA82F2 		uxtah	r2, r1, r2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 10
+
+
+ 533 01a6 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 534 01a8 02EBC102 		add	r2, r2, r1, lsl #3
+ 535 01ac B2F80214 		ldrh	r1, [r2, #1026]
+ 536 01b0 C1F30901 		ubfx	r1, r1, #0, #10
+ 537 01b4 A2F80214 		strh	r1, [r2, #1026]	@ movhi
+ 538 01b8 A3B9     		cbnz	r3, .L71
+ 539 01ba B2F80214 		ldrh	r1, [r2, #1026]
+ 540 01be 6FEA4141 		mvn	r1, r1, lsl #17
+ 541 01c2 6FEA5141 		mvn	r1, r1, lsr #17
+ 542 01c6 89B2     		uxth	r1, r1
+ 543 01c8 A2F80214 		strh	r1, [r2, #1026]	@ movhi
+ 544 01cc 2CE0     		b	.L72
+ 545              	.L67:
+ 546 01ce 19B9     		cbnz	r1, .L69
+ 547 01d0 84F82410 		strb	r1, [r4, #36]
+ 548 01d4 1346     		mov	r3, r2
+ 549 01d6 DEE7     		b	.L68
+ 550              	.L69:
+ 551 01d8 0023     		movs	r3, #0
+ 552 01da 84F82430 		strb	r3, [r4, #36]
+ 553 01de 2362     		str	r3, [r4, #32]
+ 554 01e0 0B46     		mov	r3, r1
+ 555 01e2 D8E7     		b	.L68
+ 556              	.L71:
+ 557 01e4 3E2B     		cmp	r3, #62
+ 558 01e6 0DD8     		bhi	.L73
+ 559 01e8 5908     		lsrs	r1, r3, #1
+ 560 01ea 13F0010F 		tst	r3, #1
+ 561 01ee 00D0     		beq	.L74
+ 562 01f0 0131     		adds	r1, r1, #1
+ 563              	.L74:
+ 564 01f2 B2F80204 		ldrh	r0, [r2, #1026]
+ 565 01f6 80B2     		uxth	r0, r0
+ 566 01f8 8902     		lsls	r1, r1, #10
+ 567 01fa 89B2     		uxth	r1, r1
+ 568 01fc 0143     		orrs	r1, r1, r0
+ 569 01fe A2F80214 		strh	r1, [r2, #1026]	@ movhi
+ 570 0202 11E0     		b	.L72
+ 571              	.L73:
+ 572 0204 5809     		lsrs	r0, r3, #5
+ 573 0206 13F01F0F 		tst	r3, #31
+ 574 020a 00D1     		bne	.L75
+ 575 020c 0138     		subs	r0, r0, #1
+ 576              	.L75:
+ 577 020e B2F80214 		ldrh	r1, [r2, #1026]
+ 578 0212 89B2     		uxth	r1, r1
+ 579 0214 8002     		lsls	r0, r0, #10
+ 580 0216 80B2     		uxth	r0, r0
+ 581 0218 0143     		orrs	r1, r1, r0
+ 582 021a 41F40041 		orr	r1, r1, #32768
+ 583 021e A2F80214 		strh	r1, [r2, #1026]	@ movhi
+ 584 0222 01E0     		b	.L72
+ 585              	.L70:
+ 586 0224 012A     		cmp	r2, #1
+ 587 0226 06D0     		beq	.L99
+ 588              	.L72:
+ 589 0228 9BB2     		uxth	r3, r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 11
+
+
+ 590 022a 2289     		ldrh	r2, [r4, #8]
+ 591 022c 6169     		ldr	r1, [r4, #20]
+ 592 022e 2868     		ldr	r0, [r5]
+ 593 0230 FFF7FEFF 		bl	USB_WritePMA
+ 594 0234 16E7     		b	.L66
+ 595              	.L99:
+ 596 0236 2968     		ldr	r1, [r5]
+ 597 0238 B1F85020 		ldrh	r2, [r1, #80]
+ 598 023c 11FA82F2 		uxtah	r2, r1, r2
+ 599 0240 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 600 0242 02EBC102 		add	r2, r2, r1, lsl #3
+ 601 0246 99B2     		uxth	r1, r3
+ 602 0248 A2F80214 		strh	r1, [r2, #1026]	@ movhi
+ 603 024c ECE7     		b	.L72
+ 604              	.L54:
+ 605 024e 0268     		ldr	r2, [r0]
+ 606 0250 B2F85030 		ldrh	r3, [r2, #80]
+ 607 0254 0978     		ldrb	r1, [r1]	@ zero_extendqisi2
+ 608 0256 C800     		lsls	r0, r1, #3
+ 609 0258 10FA83F3 		uxtah	r3, r0, r3
+ 610 025c 1344     		add	r3, r3, r2
+ 611 025e B3F80624 		ldrh	r2, [r3, #1030]
+ 612 0262 C2F30902 		ubfx	r2, r2, #0, #10
+ 613 0266 A369     		ldr	r3, [r4, #24]
+ 614 0268 9342     		cmp	r3, r2
+ 615 026a 46D3     		bcc	.L76
+ 616 026c 9B1A     		subs	r3, r3, r2
+ 617 026e A361     		str	r3, [r4, #24]
+ 618              	.L77:
+ 619 0270 A369     		ldr	r3, [r4, #24]
+ 620 0272 002B     		cmp	r3, #0
+ 621 0274 44D0     		beq	.L100
+ 622 0276 16F4804F 		tst	r6, #16384
+ 623 027a 0DD1     		bne	.L85
+ 624 027c 2868     		ldr	r0, [r5]
+ 625 027e 30F82130 		ldrh	r3, [r0, r1, lsl #2]
+ 626 0282 9BB2     		uxth	r3, r3
+ 627 0284 23F4E043 		bic	r3, r3, #28672
+ 628 0288 23F07003 		bic	r3, r3, #112
+ 629 028c 43F44043 		orr	r3, r3, #49152
+ 630 0290 43F08003 		orr	r3, r3, #128
+ 631 0294 20F82130 		strh	r3, [r0, r1, lsl #2]	@ movhi
+ 632              	.L85:
+ 633 0298 94F82430 		ldrb	r3, [r4, #36]	@ zero_extendqisi2
+ 634 029c 012B     		cmp	r3, #1
+ 635 029e 7FF4E1AE 		bne	.L66
+ 636 02a2 6369     		ldr	r3, [r4, #20]
+ 637 02a4 1344     		add	r3, r3, r2
+ 638 02a6 6361     		str	r3, [r4, #20]
+ 639 02a8 E369     		ldr	r3, [r4, #28]
+ 640 02aa 1344     		add	r3, r3, r2
+ 641 02ac E361     		str	r3, [r4, #28]
+ 642 02ae 216A     		ldr	r1, [r4, #32]
+ 643 02b0 2369     		ldr	r3, [r4, #16]
+ 644 02b2 9942     		cmp	r1, r3
+ 645 02b4 C0F09C80 		bcc	.L86
+ 646 02b8 C91A     		subs	r1, r1, r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 12
+
+
+ 647 02ba 2162     		str	r1, [r4, #32]
+ 648              	.L87:
+ 649 02bc 2968     		ldr	r1, [r5]
+ 650 02be 6278     		ldrb	r2, [r4, #1]	@ zero_extendqisi2
+ 651 02c0 002A     		cmp	r2, #0
+ 652 02c2 40F0C080 		bne	.L89
+ 653 02c6 B1F85020 		ldrh	r2, [r1, #80]
+ 654 02ca 11FA82F2 		uxtah	r2, r1, r2
+ 655 02ce 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 656 02d0 02EBC102 		add	r2, r2, r1, lsl #3
+ 657 02d4 B2F80614 		ldrh	r1, [r2, #1030]
+ 658 02d8 C1F30901 		ubfx	r1, r1, #0, #10
+ 659 02dc A2F80614 		strh	r1, [r2, #1030]	@ movhi
+ 660 02e0 002B     		cmp	r3, #0
+ 661 02e2 40F09080 		bne	.L90
+ 662 02e6 B2F80614 		ldrh	r1, [r2, #1030]
+ 663 02ea 6FEA4141 		mvn	r1, r1, lsl #17
+ 664 02ee 6FEA5141 		mvn	r1, r1, lsr #17
+ 665 02f2 89B2     		uxth	r1, r1
+ 666 02f4 A2F80614 		strh	r1, [r2, #1030]	@ movhi
+ 667 02f8 A7E0     		b	.L91
+ 668              	.L76:
+ 669 02fa 0023     		movs	r3, #0
+ 670 02fc A361     		str	r3, [r4, #24]
+ 671 02fe B7E7     		b	.L77
+ 672              	.L100:
+ 673 0300 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 674 0302 002B     		cmp	r3, #0
+ 675 0304 49D1     		bne	.L79
+ 676 0306 2A68     		ldr	r2, [r5]
+ 677 0308 B2F85030 		ldrh	r3, [r2, #80]
+ 678 030c 12FA83F3 		uxtah	r3, r2, r3
+ 679 0310 0344     		add	r3, r3, r0
+ 680 0312 B3F80224 		ldrh	r2, [r3, #1026]
+ 681 0316 C2F30902 		ubfx	r2, r2, #0, #10
+ 682 031a A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 683 031e B3F80224 		ldrh	r2, [r3, #1026]
+ 684 0322 6FEA4242 		mvn	r2, r2, lsl #17
+ 685 0326 6FEA5242 		mvn	r2, r2, lsr #17
+ 686 032a 92B2     		uxth	r2, r2
+ 687 032c A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 688              	.L80:
+ 689 0330 2A68     		ldr	r2, [r5]
+ 690 0332 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 691 0334 002B     		cmp	r3, #0
+ 692 0336 3CD1     		bne	.L81
+ 693 0338 B2F85030 		ldrh	r3, [r2, #80]
+ 694 033c 12FA83F3 		uxtah	r3, r2, r3
+ 695 0340 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 696 0342 03EBC203 		add	r3, r3, r2, lsl #3
+ 697 0346 B3F80624 		ldrh	r2, [r3, #1030]
+ 698 034a C2F30902 		ubfx	r2, r2, #0, #10
+ 699 034e A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 700 0352 B3F80624 		ldrh	r2, [r3, #1030]
+ 701 0356 6FEA4242 		mvn	r2, r2, lsl #17
+ 702 035a 6FEA5242 		mvn	r2, r2, lsr #17
+ 703 035e 92B2     		uxth	r2, r2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 13
+
+
+ 704 0360 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 705              	.L82:
+ 706 0364 E378     		ldrb	r3, [r4, #3]	@ zero_extendqisi2
+ 707 0366 022B     		cmp	r3, #2
+ 708 0368 30D0     		beq	.L101
+ 709              	.L83:
+ 710 036a 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 711 036c 2846     		mov	r0, r5
+ 712 036e FFF7FEFF 		bl	HAL_PCD_DataInStageCallback
+ 713 0372 16F4804F 		tst	r6, #16384
+ 714 0376 7FF486AE 		bne	.L64
+ 715 037a 2A68     		ldr	r2, [r5]
+ 716 037c 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 717 037e 32F82130 		ldrh	r3, [r2, r1, lsl #2]
+ 718 0382 9BB2     		uxth	r3, r3
+ 719 0384 23F4E043 		bic	r3, r3, #28672
+ 720 0388 23F07003 		bic	r3, r3, #112
+ 721 038c 43F44043 		orr	r3, r3, #49152
+ 722 0390 43F08003 		orr	r3, r3, #128
+ 723 0394 22F82130 		strh	r3, [r2, r1, lsl #2]	@ movhi
+ 724 0398 75E6     		b	.L64
+ 725              	.L79:
+ 726 039a 012B     		cmp	r3, #1
+ 727 039c C8D1     		bne	.L80
+ 728 039e 2A68     		ldr	r2, [r5]
+ 729 03a0 B2F85030 		ldrh	r3, [r2, #80]
+ 730 03a4 12FA83F3 		uxtah	r3, r2, r3
+ 731 03a8 0344     		add	r3, r3, r0
+ 732 03aa 0022     		movs	r2, #0
+ 733 03ac A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 734 03b0 BEE7     		b	.L80
+ 735              	.L81:
+ 736 03b2 012B     		cmp	r3, #1
+ 737 03b4 D6D1     		bne	.L82
+ 738 03b6 B2F85030 		ldrh	r3, [r2, #80]
+ 739 03ba 12FA83F3 		uxtah	r3, r2, r3
+ 740 03be 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 741 03c0 03EBC203 		add	r3, r3, r2, lsl #3
+ 742 03c4 0022     		movs	r2, #0
+ 743 03c6 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 744 03ca CBE7     		b	.L82
+ 745              	.L101:
+ 746 03cc 2A68     		ldr	r2, [r5]
+ 747 03ce 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 748 03d0 32F82130 		ldrh	r3, [r2, r1, lsl #2]
+ 749 03d4 9BB2     		uxth	r3, r3
+ 750 03d6 23F4E043 		bic	r3, r3, #28672
+ 751 03da 23F04003 		bic	r3, r3, #64
+ 752 03de 83F02003 		eor	r3, r3, #32
+ 753 03e2 43F40043 		orr	r3, r3, #32768
+ 754 03e6 43F08003 		orr	r3, r3, #128
+ 755 03ea 22F82130 		strh	r3, [r2, r1, lsl #2]	@ movhi
+ 756 03ee BCE7     		b	.L83
+ 757              	.L86:
+ 758 03f0 19B9     		cbnz	r1, .L88
+ 759 03f2 84F82410 		strb	r1, [r4, #36]
+ 760 03f6 1346     		mov	r3, r2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 14
+
+
+ 761 03f8 60E7     		b	.L87
+ 762              	.L88:
+ 763 03fa 0023     		movs	r3, #0
+ 764 03fc 2362     		str	r3, [r4, #32]
+ 765 03fe 84F82430 		strb	r3, [r4, #36]
+ 766 0402 0B46     		mov	r3, r1
+ 767 0404 5AE7     		b	.L87
+ 768              	.L90:
+ 769 0406 3E2B     		cmp	r3, #62
+ 770 0408 0DD8     		bhi	.L92
+ 771 040a 5908     		lsrs	r1, r3, #1
+ 772 040c 13F0010F 		tst	r3, #1
+ 773 0410 00D0     		beq	.L93
+ 774 0412 0131     		adds	r1, r1, #1
+ 775              	.L93:
+ 776 0414 B2F80604 		ldrh	r0, [r2, #1030]
+ 777 0418 80B2     		uxth	r0, r0
+ 778 041a 8902     		lsls	r1, r1, #10
+ 779 041c 89B2     		uxth	r1, r1
+ 780 041e 0143     		orrs	r1, r1, r0
+ 781 0420 A2F80614 		strh	r1, [r2, #1030]	@ movhi
+ 782 0424 11E0     		b	.L91
+ 783              	.L92:
+ 784 0426 5809     		lsrs	r0, r3, #5
+ 785 0428 13F01F0F 		tst	r3, #31
+ 786 042c 00D1     		bne	.L94
+ 787 042e 0138     		subs	r0, r0, #1
+ 788              	.L94:
+ 789 0430 B2F80614 		ldrh	r1, [r2, #1030]
+ 790 0434 89B2     		uxth	r1, r1
+ 791 0436 8002     		lsls	r0, r0, #10
+ 792 0438 80B2     		uxth	r0, r0
+ 793 043a 0143     		orrs	r1, r1, r0
+ 794 043c 41F40041 		orr	r1, r1, #32768
+ 795 0440 A2F80614 		strh	r1, [r2, #1030]	@ movhi
+ 796 0444 01E0     		b	.L91
+ 797              	.L89:
+ 798 0446 012A     		cmp	r2, #1
+ 799 0448 06D0     		beq	.L102
+ 800              	.L91:
+ 801 044a 9BB2     		uxth	r3, r3
+ 802 044c 6289     		ldrh	r2, [r4, #10]
+ 803 044e 6169     		ldr	r1, [r4, #20]
+ 804 0450 2868     		ldr	r0, [r5]
+ 805 0452 FFF7FEFF 		bl	USB_WritePMA
+ 806 0456 05E6     		b	.L66
+ 807              	.L102:
+ 808 0458 B1F85020 		ldrh	r2, [r1, #80]
+ 809 045c 11FA82F2 		uxtah	r2, r1, r2
+ 810 0460 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 811 0462 02EBC102 		add	r2, r2, r1, lsl #3
+ 812 0466 99B2     		uxth	r1, r3
+ 813 0468 A2F80614 		strh	r1, [r2, #1030]	@ movhi
+ 814 046c EDE7     		b	.L91
+ 816              		.section	.text.HAL_PCD_SetupStageCallback,"ax",%progbits
+ 817              		.align	1
+ 818              		.weak	HAL_PCD_SetupStageCallback
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 15
+
+
+ 819              		.syntax unified
+ 820              		.thumb
+ 821              		.thumb_func
+ 823              	HAL_PCD_SetupStageCallback:
+ 824              		@ args = 0, pretend = 0, frame = 0
+ 825              		@ frame_needed = 0, uses_anonymous_args = 0
+ 826              		@ link register save eliminated.
+ 827 0000 7047     		bx	lr
+ 829              		.section	.text.PCD_EP_ISR_Handler,"ax",%progbits
+ 830              		.align	1
+ 831              		.syntax unified
+ 832              		.thumb
+ 833              		.thumb_func
+ 835              	PCD_EP_ISR_Handler:
+ 836              		@ args = 0, pretend = 0, frame = 0
+ 837              		@ frame_needed = 0, uses_anonymous_args = 0
+ 838 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 839 0004 0546     		mov	r5, r0
+ 840 0006 53E0     		b	.L105
+ 841              	.L132:
+ 842 0008 0388     		ldrh	r3, [r0]
+ 843 000a 9BB2     		uxth	r3, r3
+ 844 000c 23F4E143 		bic	r3, r3, #28800
+ 845 0010 23F07003 		bic	r3, r3, #112
+ 846 0014 6FEA4343 		mvn	r3, r3, lsl #17
+ 847 0018 6FEA5343 		mvn	r3, r3, lsr #17
+ 848 001c 9BB2     		uxth	r3, r3
+ 849 001e 0380     		strh	r3, [r0]	@ movhi
+ 850 0020 2968     		ldr	r1, [r5]
+ 851 0022 B1F85030 		ldrh	r3, [r1, #80]
+ 852 0026 2A7C     		ldrb	r2, [r5, #16]	@ zero_extendqisi2
+ 853 0028 D200     		lsls	r2, r2, #3
+ 854 002a 12FA83F3 		uxtah	r3, r2, r3
+ 855 002e 0B44     		add	r3, r3, r1
+ 856 0030 B3F80234 		ldrh	r3, [r3, #1026]
+ 857 0034 C3F30903 		ubfx	r3, r3, #0, #10
+ 858 0038 EB62     		str	r3, [r5, #44]
+ 859 003a 6A6A     		ldr	r2, [r5, #36]
+ 860 003c 1A44     		add	r2, r2, r3
+ 861 003e 6A62     		str	r2, [r5, #36]
+ 862 0040 0021     		movs	r1, #0
+ 863 0042 2846     		mov	r0, r5
+ 864 0044 FFF7FEFF 		bl	HAL_PCD_DataInStageCallback
+ 865 0048 2B7B     		ldrb	r3, [r5, #12]	@ zero_extendqisi2
+ 866 004a 8BB3     		cbz	r3, .L105
+ 867 004c AB6A     		ldr	r3, [r5, #40]
+ 868 004e 7BBB     		cbnz	r3, .L105
+ 869 0050 2B7B     		ldrb	r3, [r5, #12]	@ zero_extendqisi2
+ 870 0052 2A68     		ldr	r2, [r5]
+ 871 0054 43F08003 		orr	r3, r3, #128
+ 872 0058 A2F84C30 		strh	r3, [r2, #76]	@ movhi
+ 873 005c 0023     		movs	r3, #0
+ 874 005e 2B73     		strb	r3, [r5, #12]
+ 875 0060 26E0     		b	.L105
+ 876              	.L133:
+ 877 0062 0388     		ldrh	r3, [r0]
+ 878 0064 9BB2     		uxth	r3, r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 16
+
+
+ 879 0066 23F48043 		bic	r3, r3, #16384
+ 880 006a 23F07003 		bic	r3, r3, #112
+ 881 006e 83F48053 		eor	r3, r3, #4096
+ 882 0072 48F28001 		movw	r1, #32896
+ 883 0076 0B43     		orrs	r3, r3, r1
+ 884 0078 0380     		strh	r3, [r0]	@ movhi
+ 885 007a 2A68     		ldr	r2, [r5]
+ 886 007c 1388     		ldrh	r3, [r2]
+ 887 007e 9BB2     		uxth	r3, r3
+ 888 0080 23F4E043 		bic	r3, r3, #28672
+ 889 0084 23F04003 		bic	r3, r3, #64
+ 890 0088 83F01003 		eor	r3, r3, #16
+ 891 008c 0B43     		orrs	r3, r3, r1
+ 892 008e 1380     		strh	r3, [r2]	@ movhi
+ 893 0090 2A68     		ldr	r2, [r5]
+ 894 0092 1388     		ldrh	r3, [r2]
+ 895 0094 9BB2     		uxth	r3, r3
+ 896 0096 23F07003 		bic	r3, r3, #112
+ 897 009a 1B05     		lsls	r3, r3, #20
+ 898 009c 1B0D     		lsrs	r3, r3, #20
+ 899 009e 43F08003 		orr	r3, r3, #128
+ 900 00a2 1380     		strh	r3, [r2]	@ movhi
+ 901              	.L111:
+ 902 00a4 0020     		movs	r0, #0
+ 903 00a6 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 904              	.L109:
+ 905 00aa 12F4004F 		tst	r2, #32768
+ 906 00ae 37D1     		bne	.L131
+ 907              	.L105:
+ 908 00b0 2868     		ldr	r0, [r5]
+ 909 00b2 B0F84430 		ldrh	r3, [r0, #68]
+ 910 00b6 13F4004F 		tst	r3, #32768
+ 911 00ba F3D0     		beq	.L111
+ 912 00bc B0F84440 		ldrh	r4, [r0, #68]
+ 913 00c0 A3B2     		uxth	r3, r4
+ 914 00c2 14F00F04 		ands	r4, r4, #15
+ 915 00c6 66D1     		bne	.L106
+ 916 00c8 13F0100F 		tst	r3, #16
+ 917 00cc 9CD0     		beq	.L132
+ 918 00ce 0388     		ldrh	r3, [r0]
+ 919 00d0 9AB2     		uxth	r2, r3
+ 920 00d2 13F4006F 		tst	r3, #2048
+ 921 00d6 E8D0     		beq	.L109
+ 922 00d8 B0F85030 		ldrh	r3, [r0, #80]
+ 923 00dc 95F85021 		ldrb	r2, [r5, #336]	@ zero_extendqisi2
+ 924 00e0 D200     		lsls	r2, r2, #3
+ 925 00e2 12FA83F3 		uxtah	r3, r2, r3
+ 926 00e6 0344     		add	r3, r3, r0
+ 927 00e8 B3F80634 		ldrh	r3, [r3, #1030]
+ 928 00ec C3F30903 		ubfx	r3, r3, #0, #10
+ 929 00f0 C5F86C31 		str	r3, [r5, #364]
+ 930 00f4 082B     		cmp	r3, #8
+ 931 00f6 B4D1     		bne	.L133
+ 932 00f8 B5F85621 		ldrh	r2, [r5, #342]
+ 933 00fc 05F52671 		add	r1, r5, #664
+ 934 0100 FFF7FEFF 		bl	USB_ReadPMA
+ 935 0104 2A68     		ldr	r2, [r5]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 17
+
+
+ 936 0106 1388     		ldrh	r3, [r2]
+ 937 0108 9BB2     		uxth	r3, r3
+ 938 010a 23F07003 		bic	r3, r3, #112
+ 939 010e 1B05     		lsls	r3, r3, #20
+ 940 0110 1B0D     		lsrs	r3, r3, #20
+ 941 0112 43F08003 		orr	r3, r3, #128
+ 942 0116 1380     		strh	r3, [r2]	@ movhi
+ 943 0118 2846     		mov	r0, r5
+ 944 011a FFF7FEFF 		bl	HAL_PCD_SetupStageCallback
+ 945 011e C7E7     		b	.L105
+ 946              	.L131:
+ 947 0120 0388     		ldrh	r3, [r0]
+ 948 0122 9BB2     		uxth	r3, r3
+ 949 0124 23F07003 		bic	r3, r3, #112
+ 950 0128 1B05     		lsls	r3, r3, #20
+ 951 012a 1B0D     		lsrs	r3, r3, #20
+ 952 012c 43F08003 		orr	r3, r3, #128
+ 953 0130 0380     		strh	r3, [r0]	@ movhi
+ 954 0132 2868     		ldr	r0, [r5]
+ 955 0134 B0F85030 		ldrh	r3, [r0, #80]
+ 956 0138 95F85021 		ldrb	r2, [r5, #336]	@ zero_extendqisi2
+ 957 013c D200     		lsls	r2, r2, #3
+ 958 013e 12FA83F3 		uxtah	r3, r2, r3
+ 959 0142 0344     		add	r3, r3, r0
+ 960 0144 B3F80634 		ldrh	r3, [r3, #1030]
+ 961 0148 C3F30903 		ubfx	r3, r3, #0, #10
+ 962 014c C5F86C31 		str	r3, [r5, #364]
+ 963 0150 6BB9     		cbnz	r3, .L112
+ 964 0152 0388     		ldrh	r3, [r0]
+ 965 0154 9BB2     		uxth	r3, r3
+ 966 0156 23F48043 		bic	r3, r3, #16384
+ 967 015a 23F07003 		bic	r3, r3, #112
+ 968 015e 83F44053 		eor	r3, r3, #12288
+ 969 0162 43F40043 		orr	r3, r3, #32768
+ 970 0166 43F08003 		orr	r3, r3, #128
+ 971 016a 0380     		strh	r3, [r0]	@ movhi
+ 972 016c A0E7     		b	.L105
+ 973              	.L112:
+ 974 016e D5F86411 		ldr	r1, [r5, #356]
+ 975 0172 0029     		cmp	r1, #0
+ 976 0174 9CD0     		beq	.L105
+ 977 0176 B5F85621 		ldrh	r2, [r5, #342]
+ 978 017a FFF7FEFF 		bl	USB_ReadPMA
+ 979 017e D5F86431 		ldr	r3, [r5, #356]
+ 980 0182 D5F86C21 		ldr	r2, [r5, #364]
+ 981 0186 1344     		add	r3, r3, r2
+ 982 0188 C5F86431 		str	r3, [r5, #356]
+ 983 018c 0021     		movs	r1, #0
+ 984 018e 2846     		mov	r0, r5
+ 985 0190 FFF7FEFF 		bl	HAL_PCD_DataOutStageCallback
+ 986 0194 8CE7     		b	.L105
+ 987              	.L106:
+ 988 0196 30F82430 		ldrh	r3, [r0, r4, lsl #2]
+ 989 019a 9EB2     		uxth	r6, r3
+ 990 019c 13F4004F 		tst	r3, #32768
+ 991 01a0 4DD1     		bne	.L134
+ 992              	.L113:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 18
+
+
+ 993 01a2 16F0800F 		tst	r6, #128
+ 994 01a6 83D0     		beq	.L105
+ 995 01a8 04EB8401 		add	r1, r4, r4, lsl #2
+ 996 01ac C900     		lsls	r1, r1, #3
+ 997 01ae 1031     		adds	r1, r1, #16
+ 998 01b0 2944     		add	r1, r1, r5
+ 999 01b2 2A68     		ldr	r2, [r5]
+ 1000 01b4 32F82430 		ldrh	r3, [r2, r4, lsl #2]
+ 1001 01b8 9BB2     		uxth	r3, r3
+ 1002 01ba 23F4E143 		bic	r3, r3, #28800
+ 1003 01be 23F07003 		bic	r3, r3, #112
+ 1004 01c2 6FEA4343 		mvn	r3, r3, lsl #17
+ 1005 01c6 6FEA5343 		mvn	r3, r3, lsr #17
+ 1006 01ca 9BB2     		uxth	r3, r3
+ 1007 01cc 22F82430 		strh	r3, [r2, r4, lsl #2]	@ movhi
+ 1008 01d0 04EB8403 		add	r3, r4, r4, lsl #2
+ 1009 01d4 05EBC303 		add	r3, r5, r3, lsl #3
+ 1010 01d8 DB7C     		ldrb	r3, [r3, #19]	@ zero_extendqisi2
+ 1011 01da 012B     		cmp	r3, #1
+ 1012 01dc 00F0F180 		beq	.L135
+ 1013 01e0 16F4807F 		tst	r6, #256
+ 1014 01e4 40F08881 		bne	.L125
+ 1015 01e8 2868     		ldr	r0, [r5]
+ 1016 01ea B0F85030 		ldrh	r3, [r0, #80]
+ 1017 01ee 04EB8402 		add	r2, r4, r4, lsl #2
+ 1018 01f2 05EBC202 		add	r2, r5, r2, lsl #3
+ 1019 01f6 167C     		ldrb	r6, [r2, #16]	@ zero_extendqisi2
+ 1020 01f8 F200     		lsls	r2, r6, #3
+ 1021 01fa 12FA83F3 		uxtah	r3, r2, r3
+ 1022 01fe 0344     		add	r3, r3, r0
+ 1023 0200 B3F80234 		ldrh	r3, [r3, #1026]
+ 1024 0204 C3F30903 		ubfx	r3, r3, #0, #10
+ 1025 0208 621C     		adds	r2, r4, #1
+ 1026 020a 02EB8202 		add	r2, r2, r2, lsl #2
+ 1027 020e 55F83220 		ldr	r2, [r5, r2, lsl #3]
+ 1028 0212 9A42     		cmp	r2, r3
+ 1029 0214 40F25381 		bls	.L126
+ 1030 0218 671C     		adds	r7, r4, #1
+ 1031 021a 07EB8707 		add	r7, r7, r7, lsl #2
+ 1032 021e D21A     		subs	r2, r2, r3
+ 1033 0220 45F83720 		str	r2, [r5, r7, lsl #3]
+ 1034              	.L127:
+ 1035 0224 621C     		adds	r2, r4, #1
+ 1036 0226 02EB8202 		add	r2, r2, r2, lsl #2
+ 1037 022a 55F83220 		ldr	r2, [r5, r2, lsl #3]
+ 1038 022e 002A     		cmp	r2, #0
+ 1039 0230 40F04C81 		bne	.L128
+ 1040 0234 3146     		mov	r1, r6
+ 1041 0236 2846     		mov	r0, r5
+ 1042 0238 FFF7FEFF 		bl	HAL_PCD_DataInStageCallback
+ 1043 023c 38E7     		b	.L105
+ 1044              	.L134:
+ 1045 023e 30F82430 		ldrh	r3, [r0, r4, lsl #2]
+ 1046 0242 9BB2     		uxth	r3, r3
+ 1047 0244 23F07003 		bic	r3, r3, #112
+ 1048 0248 1B05     		lsls	r3, r3, #20
+ 1049 024a 1B0D     		lsrs	r3, r3, #20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 19
+
+
+ 1050 024c 43F08003 		orr	r3, r3, #128
+ 1051 0250 20F82430 		strh	r3, [r0, r4, lsl #2]	@ movhi
+ 1052 0254 04EB8401 		add	r1, r4, r4, lsl #2
+ 1053 0258 C900     		lsls	r1, r1, #3
+ 1054 025a 01F5A871 		add	r1, r1, #336
+ 1055 025e 05EB0108 		add	r8, r5, r1
+ 1056 0262 04EB8403 		add	r3, r4, r4, lsl #2
+ 1057 0266 05EBC303 		add	r3, r5, r3, lsl #3
+ 1058 026a 93F85C31 		ldrb	r3, [r3, #348]	@ zero_extendqisi2
+ 1059 026e DBBB     		cbnz	r3, .L114
+ 1060 0270 2868     		ldr	r0, [r5]
+ 1061 0272 B0F85030 		ldrh	r3, [r0, #80]
+ 1062 0276 04EB8402 		add	r2, r4, r4, lsl #2
+ 1063 027a 05EBC202 		add	r2, r5, r2, lsl #3
+ 1064 027e 92F85021 		ldrb	r2, [r2, #336]	@ zero_extendqisi2
+ 1065 0282 D200     		lsls	r2, r2, #3
+ 1066 0284 12FA83F3 		uxtah	r3, r2, r3
+ 1067 0288 0344     		add	r3, r3, r0
+ 1068 028a B3F80674 		ldrh	r7, [r3, #1030]
+ 1069 028e C7F30907 		ubfx	r7, r7, #0, #10
+ 1070 0292 EFB9     		cbnz	r7, .L136
+ 1071              	.L115:
+ 1072 0294 04EB8403 		add	r3, r4, r4, lsl #2
+ 1073 0298 05EBC303 		add	r3, r5, r3, lsl #3
+ 1074 029c D3F86C21 		ldr	r2, [r3, #364]
+ 1075 02a0 3A44     		add	r2, r2, r7
+ 1076 02a2 C3F86C21 		str	r2, [r3, #364]
+ 1077 02a6 D3F86831 		ldr	r3, [r3, #360]
+ 1078 02aa 3BB1     		cbz	r3, .L118
+ 1079 02ac 04EB8403 		add	r3, r4, r4, lsl #2
+ 1080 02b0 05EBC303 		add	r3, r5, r3, lsl #3
+ 1081 02b4 D3F86031 		ldr	r3, [r3, #352]
+ 1082 02b8 9F42     		cmp	r7, r3
+ 1083 02ba 70D2     		bcs	.L119
+ 1084              	.L118:
+ 1085 02bc 04EB8403 		add	r3, r4, r4, lsl #2
+ 1086 02c0 05EBC303 		add	r3, r5, r3, lsl #3
+ 1087 02c4 93F85011 		ldrb	r1, [r3, #336]	@ zero_extendqisi2
+ 1088 02c8 2846     		mov	r0, r5
+ 1089 02ca FFF7FEFF 		bl	HAL_PCD_DataOutStageCallback
+ 1090 02ce 68E7     		b	.L113
+ 1091              	.L136:
+ 1092 02d0 04EB8401 		add	r1, r4, r4, lsl #2
+ 1093 02d4 05EBC101 		add	r1, r5, r1, lsl #3
+ 1094 02d8 3B46     		mov	r3, r7
+ 1095 02da B1F85621 		ldrh	r2, [r1, #342]
+ 1096 02de D1F86411 		ldr	r1, [r1, #356]
+ 1097 02e2 FFF7FEFF 		bl	USB_ReadPMA
+ 1098 02e6 D5E7     		b	.L115
+ 1099              	.L114:
+ 1100 02e8 04EB8403 		add	r3, r4, r4, lsl #2
+ 1101 02ec 05EBC303 		add	r3, r5, r3, lsl #3
+ 1102 02f0 93F85331 		ldrb	r3, [r3, #339]	@ zero_extendqisi2
+ 1103 02f4 022B     		cmp	r3, #2
+ 1104 02f6 33D0     		beq	.L137
+ 1105 02f8 2968     		ldr	r1, [r5]
+ 1106 02fa 04EB8402 		add	r2, r4, r4, lsl #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 20
+
+
+ 1107 02fe 05EBC202 		add	r2, r5, r2, lsl #3
+ 1108 0302 92F85001 		ldrb	r0, [r2, #336]	@ zero_extendqisi2
+ 1109 0306 31F82030 		ldrh	r3, [r1, r0, lsl #2]
+ 1110 030a 9BB2     		uxth	r3, r3
+ 1111 030c 23F4E043 		bic	r3, r3, #28672
+ 1112 0310 23F07003 		bic	r3, r3, #112
+ 1113 0314 43F40043 		orr	r3, r3, #32768
+ 1114 0318 43F0C003 		orr	r3, r3, #192
+ 1115 031c 21F82030 		strh	r3, [r1, r0, lsl #2]	@ movhi
+ 1116 0320 2868     		ldr	r0, [r5]
+ 1117 0322 92F85031 		ldrb	r3, [r2, #336]	@ zero_extendqisi2
+ 1118 0326 30F82320 		ldrh	r2, [r0, r3, lsl #2]
+ 1119 032a 12F4804F 		tst	r2, #16384
+ 1120 032e 1ED0     		beq	.L117
+ 1121 0330 B0F85020 		ldrh	r2, [r0, #80]
+ 1122 0334 DB00     		lsls	r3, r3, #3
+ 1123 0336 13FA82F3 		uxtah	r3, r3, r2
+ 1124 033a 0344     		add	r3, r3, r0
+ 1125 033c B3F80274 		ldrh	r7, [r3, #1026]
+ 1126 0340 C7F30907 		ubfx	r7, r7, #0, #10
+ 1127 0344 002F     		cmp	r7, #0
+ 1128 0346 A5D0     		beq	.L115
+ 1129 0348 04EB8401 		add	r1, r4, r4, lsl #2
+ 1130 034c 05EBC101 		add	r1, r5, r1, lsl #3
+ 1131 0350 3B46     		mov	r3, r7
+ 1132 0352 B1F85821 		ldrh	r2, [r1, #344]
+ 1133 0356 D1F86411 		ldr	r1, [r1, #356]
+ 1134 035a FFF7FEFF 		bl	USB_ReadPMA
+ 1135 035e 99E7     		b	.L115
+ 1136              	.L137:
+ 1137 0360 3246     		mov	r2, r6
+ 1138 0362 4146     		mov	r1, r8
+ 1139 0364 2846     		mov	r0, r5
+ 1140 0366 FFF7FEFF 		bl	HAL_PCD_EP_DB_Receive
+ 1141 036a 0746     		mov	r7, r0
+ 1142 036c 92E7     		b	.L115
+ 1143              	.L117:
+ 1144 036e B0F85020 		ldrh	r2, [r0, #80]
+ 1145 0372 DB00     		lsls	r3, r3, #3
+ 1146 0374 13FA82F3 		uxtah	r3, r3, r2
+ 1147 0378 0344     		add	r3, r3, r0
+ 1148 037a B3F80674 		ldrh	r7, [r3, #1030]
+ 1149 037e C7F30907 		ubfx	r7, r7, #0, #10
+ 1150 0382 002F     		cmp	r7, #0
+ 1151 0384 86D0     		beq	.L115
+ 1152 0386 04EB8401 		add	r1, r4, r4, lsl #2
+ 1153 038a 05EBC101 		add	r1, r5, r1, lsl #3
+ 1154 038e 3B46     		mov	r3, r7
+ 1155 0390 B1F85A21 		ldrh	r2, [r1, #346]
+ 1156 0394 D1F86411 		ldr	r1, [r1, #356]
+ 1157 0398 FFF7FEFF 		bl	USB_ReadPMA
+ 1158 039c 7AE7     		b	.L115
+ 1159              	.L119:
+ 1160 039e 04EB8403 		add	r3, r4, r4, lsl #2
+ 1161 03a2 05EBC303 		add	r3, r5, r3, lsl #3
+ 1162 03a6 D3F86421 		ldr	r2, [r3, #356]
+ 1163 03aa 04EB8403 		add	r3, r4, r4, lsl #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 21
+
+
+ 1164 03ae 05EBC303 		add	r3, r5, r3, lsl #3
+ 1165 03b2 3A44     		add	r2, r2, r7
+ 1166 03b4 C3F86421 		str	r2, [r3, #356]
+ 1167 03b8 4146     		mov	r1, r8
+ 1168 03ba 2868     		ldr	r0, [r5]
+ 1169 03bc FFF7FEFF 		bl	USB_EPStartXfer
+ 1170 03c0 EFE6     		b	.L113
+ 1171              	.L135:
+ 1172 03c2 631C     		adds	r3, r4, #1
+ 1173 03c4 03EB8303 		add	r3, r3, r3, lsl #2
+ 1174 03c8 DB00     		lsls	r3, r3, #3
+ 1175 03ca 0022     		movs	r2, #0
+ 1176 03cc EA50     		str	r2, [r5, r3]
+ 1177 03ce 04EB8403 		add	r3, r4, r4, lsl #2
+ 1178 03d2 05EBC303 		add	r3, r5, r3, lsl #3
+ 1179 03d6 1B7F     		ldrb	r3, [r3, #28]	@ zero_extendqisi2
+ 1180 03d8 1BB3     		cbz	r3, .L121
+ 1181 03da 16F0400F 		tst	r6, #64
+ 1182 03de 3BD0     		beq	.L122
+ 1183 03e0 04EB8403 		add	r3, r4, r4, lsl #2
+ 1184 03e4 05EBC303 		add	r3, r5, r3, lsl #3
+ 1185 03e8 5B7C     		ldrb	r3, [r3, #17]	@ zero_extendqisi2
+ 1186 03ea 1BBB     		cbnz	r3, .L123
+ 1187 03ec 2A68     		ldr	r2, [r5]
+ 1188 03ee B2F85030 		ldrh	r3, [r2, #80]
+ 1189 03f2 12FA83F3 		uxtah	r3, r2, r3
+ 1190 03f6 04EB8402 		add	r2, r4, r4, lsl #2
+ 1191 03fa 05EBC202 		add	r2, r5, r2, lsl #3
+ 1192 03fe 127C     		ldrb	r2, [r2, #16]	@ zero_extendqisi2
+ 1193 0400 03EBC203 		add	r3, r3, r2, lsl #3
+ 1194 0404 B3F80224 		ldrh	r2, [r3, #1026]
+ 1195 0408 C2F30902 		ubfx	r2, r2, #0, #10
+ 1196 040c A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1197 0410 B3F80224 		ldrh	r2, [r3, #1026]
+ 1198 0414 6FEA4242 		mvn	r2, r2, lsl #17
+ 1199 0418 6FEA5242 		mvn	r2, r2, lsr #17
+ 1200 041c 92B2     		uxth	r2, r2
+ 1201 041e A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1202              	.L121:
+ 1203 0422 04EB8404 		add	r4, r4, r4, lsl #2
+ 1204 0426 05EBC404 		add	r4, r5, r4, lsl #3
+ 1205 042a 217C     		ldrb	r1, [r4, #16]	@ zero_extendqisi2
+ 1206 042c 2846     		mov	r0, r5
+ 1207 042e FFF7FEFF 		bl	HAL_PCD_DataInStageCallback
+ 1208 0432 3DE6     		b	.L105
+ 1209              	.L123:
+ 1210 0434 012B     		cmp	r3, #1
+ 1211 0436 F4D1     		bne	.L121
+ 1212 0438 2A68     		ldr	r2, [r5]
+ 1213 043a B2F85030 		ldrh	r3, [r2, #80]
+ 1214 043e 12FA83F3 		uxtah	r3, r2, r3
+ 1215 0442 04EB8402 		add	r2, r4, r4, lsl #2
+ 1216 0446 05EBC202 		add	r2, r5, r2, lsl #3
+ 1217 044a 127C     		ldrb	r2, [r2, #16]	@ zero_extendqisi2
+ 1218 044c 03EBC203 		add	r3, r3, r2, lsl #3
+ 1219 0450 0022     		movs	r2, #0
+ 1220 0452 A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 22
+
+
+ 1221 0456 E4E7     		b	.L121
+ 1222              	.L122:
+ 1223 0458 2A68     		ldr	r2, [r5]
+ 1224 045a 04EB8403 		add	r3, r4, r4, lsl #2
+ 1225 045e 05EBC303 		add	r3, r5, r3, lsl #3
+ 1226 0462 5B7C     		ldrb	r3, [r3, #17]	@ zero_extendqisi2
+ 1227 0464 D3B9     		cbnz	r3, .L124
+ 1228 0466 B2F85030 		ldrh	r3, [r2, #80]
+ 1229 046a 12FA83F3 		uxtah	r3, r2, r3
+ 1230 046e 04EB8402 		add	r2, r4, r4, lsl #2
+ 1231 0472 05EBC202 		add	r2, r5, r2, lsl #3
+ 1232 0476 127C     		ldrb	r2, [r2, #16]	@ zero_extendqisi2
+ 1233 0478 03EBC203 		add	r3, r3, r2, lsl #3
+ 1234 047c B3F80624 		ldrh	r2, [r3, #1030]
+ 1235 0480 C2F30902 		ubfx	r2, r2, #0, #10
+ 1236 0484 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1237 0488 B3F80624 		ldrh	r2, [r3, #1030]
+ 1238 048c 6FEA4242 		mvn	r2, r2, lsl #17
+ 1239 0490 6FEA5242 		mvn	r2, r2, lsr #17
+ 1240 0494 92B2     		uxth	r2, r2
+ 1241 0496 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1242 049a C2E7     		b	.L121
+ 1243              	.L124:
+ 1244 049c 012B     		cmp	r3, #1
+ 1245 049e C0D1     		bne	.L121
+ 1246 04a0 B2F85030 		ldrh	r3, [r2, #80]
+ 1247 04a4 12FA83F3 		uxtah	r3, r2, r3
+ 1248 04a8 04EB8402 		add	r2, r4, r4, lsl #2
+ 1249 04ac 05EBC202 		add	r2, r5, r2, lsl #3
+ 1250 04b0 127C     		ldrb	r2, [r2, #16]	@ zero_extendqisi2
+ 1251 04b2 03EBC203 		add	r3, r3, r2, lsl #3
+ 1252 04b6 0022     		movs	r2, #0
+ 1253 04b8 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1254 04bc B1E7     		b	.L121
+ 1255              	.L126:
+ 1256 04be 621C     		adds	r2, r4, #1
+ 1257 04c0 02EB8202 		add	r2, r2, r2, lsl #2
+ 1258 04c4 D200     		lsls	r2, r2, #3
+ 1259 04c6 0027     		movs	r7, #0
+ 1260 04c8 AF50     		str	r7, [r5, r2]
+ 1261 04ca ABE6     		b	.L127
+ 1262              	.L128:
+ 1263 04cc 04EB8402 		add	r2, r4, r4, lsl #2
+ 1264 04d0 05EBC202 		add	r2, r5, r2, lsl #3
+ 1265 04d4 566A     		ldr	r6, [r2, #36]
+ 1266 04d6 1E44     		add	r6, r6, r3
+ 1267 04d8 5662     		str	r6, [r2, #36]
+ 1268 04da 0134     		adds	r4, r4, #1
+ 1269 04dc 04EB8402 		add	r2, r4, r4, lsl #2
+ 1270 04e0 05EBC202 		add	r2, r5, r2, lsl #3
+ 1271 04e4 5268     		ldr	r2, [r2, #4]
+ 1272 04e6 04EB8404 		add	r4, r4, r4, lsl #2
+ 1273 04ea 05EBC404 		add	r4, r5, r4, lsl #3
+ 1274 04ee 1344     		add	r3, r3, r2
+ 1275 04f0 6360     		str	r3, [r4, #4]
+ 1276 04f2 FFF7FEFF 		bl	USB_EPStartXfer
+ 1277 04f6 DBE5     		b	.L105
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 23
+
+
+ 1278              	.L125:
+ 1279 04f8 3246     		mov	r2, r6
+ 1280 04fa 2846     		mov	r0, r5
+ 1281 04fc FFF7FEFF 		bl	HAL_PCD_EP_DB_Transmit
+ 1282 0500 D6E5     		b	.L105
+ 1284              		.section	.text.HAL_PCD_SOFCallback,"ax",%progbits
+ 1285              		.align	1
+ 1286              		.weak	HAL_PCD_SOFCallback
+ 1287              		.syntax unified
+ 1288              		.thumb
+ 1289              		.thumb_func
+ 1291              	HAL_PCD_SOFCallback:
+ 1292              		@ args = 0, pretend = 0, frame = 0
+ 1293              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1294              		@ link register save eliminated.
+ 1295 0000 7047     		bx	lr
+ 1297              		.section	.text.HAL_PCD_ResetCallback,"ax",%progbits
+ 1298              		.align	1
+ 1299              		.weak	HAL_PCD_ResetCallback
+ 1300              		.syntax unified
+ 1301              		.thumb
+ 1302              		.thumb_func
+ 1304              	HAL_PCD_ResetCallback:
+ 1305              		@ args = 0, pretend = 0, frame = 0
+ 1306              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1307              		@ link register save eliminated.
+ 1308 0000 7047     		bx	lr
+ 1310              		.section	.text.HAL_PCD_SuspendCallback,"ax",%progbits
+ 1311              		.align	1
+ 1312              		.weak	HAL_PCD_SuspendCallback
+ 1313              		.syntax unified
+ 1314              		.thumb
+ 1315              		.thumb_func
+ 1317              	HAL_PCD_SuspendCallback:
+ 1318              		@ args = 0, pretend = 0, frame = 0
+ 1319              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1320              		@ link register save eliminated.
+ 1321 0000 7047     		bx	lr
+ 1323              		.section	.text.HAL_PCD_ResumeCallback,"ax",%progbits
+ 1324              		.align	1
+ 1325              		.weak	HAL_PCD_ResumeCallback
+ 1326              		.syntax unified
+ 1327              		.thumb
+ 1328              		.thumb_func
+ 1330              	HAL_PCD_ResumeCallback:
+ 1331              		@ args = 0, pretend = 0, frame = 0
+ 1332              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1333              		@ link register save eliminated.
+ 1334 0000 7047     		bx	lr
+ 1336              		.section	.text.HAL_PCD_ISOOUTIncompleteCallback,"ax",%progbits
+ 1337              		.align	1
+ 1338              		.weak	HAL_PCD_ISOOUTIncompleteCallback
+ 1339              		.syntax unified
+ 1340              		.thumb
+ 1341              		.thumb_func
+ 1343              	HAL_PCD_ISOOUTIncompleteCallback:
+ 1344              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 24
+
+
+ 1345              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1346              		@ link register save eliminated.
+ 1347 0000 7047     		bx	lr
+ 1349              		.section	.text.HAL_PCD_ISOINIncompleteCallback,"ax",%progbits
+ 1350              		.align	1
+ 1351              		.weak	HAL_PCD_ISOINIncompleteCallback
+ 1352              		.syntax unified
+ 1353              		.thumb
+ 1354              		.thumb_func
+ 1356              	HAL_PCD_ISOINIncompleteCallback:
+ 1357              		@ args = 0, pretend = 0, frame = 0
+ 1358              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1359              		@ link register save eliminated.
+ 1360 0000 7047     		bx	lr
+ 1362              		.section	.text.HAL_PCD_ConnectCallback,"ax",%progbits
+ 1363              		.align	1
+ 1364              		.weak	HAL_PCD_ConnectCallback
+ 1365              		.syntax unified
+ 1366              		.thumb
+ 1367              		.thumb_func
+ 1369              	HAL_PCD_ConnectCallback:
+ 1370              		@ args = 0, pretend = 0, frame = 0
+ 1371              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1372              		@ link register save eliminated.
+ 1373 0000 7047     		bx	lr
+ 1375              		.section	.text.HAL_PCD_DisconnectCallback,"ax",%progbits
+ 1376              		.align	1
+ 1377              		.weak	HAL_PCD_DisconnectCallback
+ 1378              		.syntax unified
+ 1379              		.thumb
+ 1380              		.thumb_func
+ 1382              	HAL_PCD_DisconnectCallback:
+ 1383              		@ args = 0, pretend = 0, frame = 0
+ 1384              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1385              		@ link register save eliminated.
+ 1386 0000 7047     		bx	lr
+ 1388              		.section	.text.HAL_PCD_DevConnect,"ax",%progbits
+ 1389              		.align	1
+ 1390              		.global	HAL_PCD_DevConnect
+ 1391              		.syntax unified
+ 1392              		.thumb
+ 1393              		.thumb_func
+ 1395              	HAL_PCD_DevConnect:
+ 1396              		@ args = 0, pretend = 0, frame = 0
+ 1397              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1398 0000 90F89032 		ldrb	r3, [r0, #656]	@ zero_extendqisi2
+ 1399 0004 012B     		cmp	r3, #1
+ 1400 0006 0BD0     		beq	.L148
+ 1401 0008 10B5     		push	{r4, lr}
+ 1402 000a 0446     		mov	r4, r0
+ 1403 000c 0123     		movs	r3, #1
+ 1404 000e 80F89032 		strb	r3, [r0, #656]
+ 1405 0012 0068     		ldr	r0, [r0]
+ 1406 0014 FFF7FEFF 		bl	USB_DevConnect
+ 1407 0018 0020     		movs	r0, #0
+ 1408 001a 84F89002 		strb	r0, [r4, #656]
+ 1409 001e 10BD     		pop	{r4, pc}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 25
+
+
+ 1410              	.L148:
+ 1411 0020 0220     		movs	r0, #2
+ 1412 0022 7047     		bx	lr
+ 1414              		.section	.text.HAL_PCD_DevDisconnect,"ax",%progbits
+ 1415              		.align	1
+ 1416              		.global	HAL_PCD_DevDisconnect
+ 1417              		.syntax unified
+ 1418              		.thumb
+ 1419              		.thumb_func
+ 1421              	HAL_PCD_DevDisconnect:
+ 1422              		@ args = 0, pretend = 0, frame = 0
+ 1423              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1424 0000 90F89032 		ldrb	r3, [r0, #656]	@ zero_extendqisi2
+ 1425 0004 012B     		cmp	r3, #1
+ 1426 0006 0BD0     		beq	.L155
+ 1427 0008 10B5     		push	{r4, lr}
+ 1428 000a 0446     		mov	r4, r0
+ 1429 000c 0123     		movs	r3, #1
+ 1430 000e 80F89032 		strb	r3, [r0, #656]
+ 1431 0012 0068     		ldr	r0, [r0]
+ 1432 0014 FFF7FEFF 		bl	USB_DevDisconnect
+ 1433 0018 0020     		movs	r0, #0
+ 1434 001a 84F89002 		strb	r0, [r4, #656]
+ 1435 001e 10BD     		pop	{r4, pc}
+ 1436              	.L155:
+ 1437 0020 0220     		movs	r0, #2
+ 1438 0022 7047     		bx	lr
+ 1440              		.section	.text.HAL_PCD_SetAddress,"ax",%progbits
+ 1441              		.align	1
+ 1442              		.global	HAL_PCD_SetAddress
+ 1443              		.syntax unified
+ 1444              		.thumb
+ 1445              		.thumb_func
+ 1447              	HAL_PCD_SetAddress:
+ 1448              		@ args = 0, pretend = 0, frame = 0
+ 1449              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1450 0000 90F89032 		ldrb	r3, [r0, #656]	@ zero_extendqisi2
+ 1451 0004 012B     		cmp	r3, #1
+ 1452 0006 0CD0     		beq	.L162
+ 1453 0008 10B5     		push	{r4, lr}
+ 1454 000a 0446     		mov	r4, r0
+ 1455 000c 0123     		movs	r3, #1
+ 1456 000e 80F89032 		strb	r3, [r0, #656]
+ 1457 0012 0173     		strb	r1, [r0, #12]
+ 1458 0014 0068     		ldr	r0, [r0]
+ 1459 0016 FFF7FEFF 		bl	USB_SetDevAddress
+ 1460 001a 0020     		movs	r0, #0
+ 1461 001c 84F89002 		strb	r0, [r4, #656]
+ 1462 0020 10BD     		pop	{r4, pc}
+ 1463              	.L162:
+ 1464 0022 0220     		movs	r0, #2
+ 1465 0024 7047     		bx	lr
+ 1467              		.section	.text.HAL_PCD_IRQHandler,"ax",%progbits
+ 1468              		.align	1
+ 1469              		.global	HAL_PCD_IRQHandler
+ 1470              		.syntax unified
+ 1471              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 26
+
+
+ 1472              		.thumb_func
+ 1474              	HAL_PCD_IRQHandler:
+ 1475              		@ args = 0, pretend = 0, frame = 0
+ 1476              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1477 0000 10B5     		push	{r4, lr}
+ 1478 0002 0446     		mov	r4, r0
+ 1479 0004 0068     		ldr	r0, [r0]
+ 1480 0006 FFF7FEFF 		bl	USB_ReadInterrupts
+ 1481 000a 10F4004F 		tst	r0, #32768
+ 1482 000e 23D1     		bne	.L181
+ 1483 0010 10F4806F 		tst	r0, #1024
+ 1484 0014 24D1     		bne	.L182
+ 1485 0016 10F4804F 		tst	r0, #16384
+ 1486 001a 32D1     		bne	.L183
+ 1487 001c 10F4005F 		tst	r0, #8192
+ 1488 0020 39D1     		bne	.L184
+ 1489 0022 10F4805F 		tst	r0, #4096
+ 1490 0026 40D1     		bne	.L185
+ 1491 0028 10F4006F 		tst	r0, #2048
+ 1492 002c 67D1     		bne	.L186
+ 1493 002e 10F0800F 		tst	r0, #128
+ 1494 0032 40F08180 		bne	.L187
+ 1495 0036 10F4007F 		tst	r0, #512
+ 1496 003a 40F0AD80 		bne	.L188
+ 1497 003e 10F4807F 		tst	r0, #256
+ 1498 0042 27D0     		beq	.L167
+ 1499 0044 2268     		ldr	r2, [r4]
+ 1500 0046 B2F84430 		ldrh	r3, [r2, #68]
+ 1501 004a 9BB2     		uxth	r3, r3
+ 1502 004c 23F48073 		bic	r3, r3, #256
+ 1503 0050 9BB2     		uxth	r3, r3
+ 1504 0052 A2F84430 		strh	r3, [r2, #68]	@ movhi
+ 1505 0056 1DE0     		b	.L167
+ 1506              	.L181:
+ 1507 0058 2046     		mov	r0, r4
+ 1508 005a FFF7FEFF 		bl	PCD_EP_ISR_Handler
+ 1509 005e 19E0     		b	.L167
+ 1510              	.L182:
+ 1511 0060 2268     		ldr	r2, [r4]
+ 1512 0062 B2F84430 		ldrh	r3, [r2, #68]
+ 1513 0066 9BB2     		uxth	r3, r3
+ 1514 0068 23F48063 		bic	r3, r3, #1024
+ 1515 006c 9BB2     		uxth	r3, r3
+ 1516 006e A2F84430 		strh	r3, [r2, #68]	@ movhi
+ 1517 0072 2046     		mov	r0, r4
+ 1518 0074 FFF7FEFF 		bl	HAL_PCD_ResetCallback
+ 1519 0078 0021     		movs	r1, #0
+ 1520 007a 2046     		mov	r0, r4
+ 1521 007c FFF7FEFF 		bl	HAL_PCD_SetAddress
+ 1522 0080 08E0     		b	.L167
+ 1523              	.L183:
+ 1524 0082 2268     		ldr	r2, [r4]
+ 1525 0084 B2F84430 		ldrh	r3, [r2, #68]
+ 1526 0088 9BB2     		uxth	r3, r3
+ 1527 008a 23F48043 		bic	r3, r3, #16384
+ 1528 008e 9BB2     		uxth	r3, r3
+ 1529 0090 A2F84430 		strh	r3, [r2, #68]	@ movhi
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 27
+
+
+ 1530              	.L167:
+ 1531 0094 10BD     		pop	{r4, pc}
+ 1532              	.L184:
+ 1533 0096 2268     		ldr	r2, [r4]
+ 1534 0098 B2F84430 		ldrh	r3, [r2, #68]
+ 1535 009c 9BB2     		uxth	r3, r3
+ 1536 009e 23F40053 		bic	r3, r3, #8192
+ 1537 00a2 9BB2     		uxth	r3, r3
+ 1538 00a4 A2F84430 		strh	r3, [r2, #68]	@ movhi
+ 1539 00a8 F4E7     		b	.L167
+ 1540              	.L185:
+ 1541 00aa 2268     		ldr	r2, [r4]
+ 1542 00ac B2F84030 		ldrh	r3, [r2, #64]
+ 1543 00b0 9BB2     		uxth	r3, r3
+ 1544 00b2 23F00403 		bic	r3, r3, #4
+ 1545 00b6 9BB2     		uxth	r3, r3
+ 1546 00b8 A2F84030 		strh	r3, [r2, #64]	@ movhi
+ 1547 00bc 2268     		ldr	r2, [r4]
+ 1548 00be B2F84030 		ldrh	r3, [r2, #64]
+ 1549 00c2 9BB2     		uxth	r3, r3
+ 1550 00c4 23F00803 		bic	r3, r3, #8
+ 1551 00c8 9BB2     		uxth	r3, r3
+ 1552 00ca A2F84030 		strh	r3, [r2, #64]	@ movhi
+ 1553 00ce 94F8C832 		ldrb	r3, [r4, #712]	@ zero_extendqisi2
+ 1554 00d2 012B     		cmp	r3, #1
+ 1555 00d4 0CD0     		beq	.L189
+ 1556              	.L174:
+ 1557 00d6 2046     		mov	r0, r4
+ 1558 00d8 FFF7FEFF 		bl	HAL_PCD_ResumeCallback
+ 1559 00dc 2268     		ldr	r2, [r4]
+ 1560 00de B2F84430 		ldrh	r3, [r2, #68]
+ 1561 00e2 9BB2     		uxth	r3, r3
+ 1562 00e4 23F48053 		bic	r3, r3, #4096
+ 1563 00e8 9BB2     		uxth	r3, r3
+ 1564 00ea A2F84430 		strh	r3, [r2, #68]	@ movhi
+ 1565 00ee D1E7     		b	.L167
+ 1566              	.L189:
+ 1567 00f0 0021     		movs	r1, #0
+ 1568 00f2 84F8C812 		strb	r1, [r4, #712]
+ 1569 00f6 2046     		mov	r0, r4
+ 1570 00f8 FFF7FEFF 		bl	HAL_PCDEx_LPM_Callback
+ 1571 00fc EBE7     		b	.L174
+ 1572              	.L186:
+ 1573 00fe 2268     		ldr	r2, [r4]
+ 1574 0100 B2F84030 		ldrh	r3, [r2, #64]
+ 1575 0104 9BB2     		uxth	r3, r3
+ 1576 0106 43F00803 		orr	r3, r3, #8
+ 1577 010a A2F84030 		strh	r3, [r2, #64]	@ movhi
+ 1578 010e 2268     		ldr	r2, [r4]
+ 1579 0110 B2F84430 		ldrh	r3, [r2, #68]
+ 1580 0114 9BB2     		uxth	r3, r3
+ 1581 0116 23F40063 		bic	r3, r3, #2048
+ 1582 011a 9BB2     		uxth	r3, r3
+ 1583 011c A2F84430 		strh	r3, [r2, #68]	@ movhi
+ 1584 0120 2268     		ldr	r2, [r4]
+ 1585 0122 B2F84030 		ldrh	r3, [r2, #64]
+ 1586 0126 9BB2     		uxth	r3, r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 28
+
+
+ 1587 0128 43F00403 		orr	r3, r3, #4
+ 1588 012c A2F84030 		strh	r3, [r2, #64]	@ movhi
+ 1589 0130 2046     		mov	r0, r4
+ 1590 0132 FFF7FEFF 		bl	HAL_PCD_SuspendCallback
+ 1591 0136 ADE7     		b	.L167
+ 1592              	.L187:
+ 1593 0138 2268     		ldr	r2, [r4]
+ 1594 013a B2F84430 		ldrh	r3, [r2, #68]
+ 1595 013e 9BB2     		uxth	r3, r3
+ 1596 0140 23F08003 		bic	r3, r3, #128
+ 1597 0144 9BB2     		uxth	r3, r3
+ 1598 0146 A2F84430 		strh	r3, [r2, #68]	@ movhi
+ 1599 014a 94F8C832 		ldrb	r3, [r4, #712]	@ zero_extendqisi2
+ 1600 014e FBB9     		cbnz	r3, .L177
+ 1601 0150 2268     		ldr	r2, [r4]
+ 1602 0152 B2F84030 		ldrh	r3, [r2, #64]
+ 1603 0156 9BB2     		uxth	r3, r3
+ 1604 0158 43F00403 		orr	r3, r3, #4
+ 1605 015c A2F84030 		strh	r3, [r2, #64]	@ movhi
+ 1606 0160 2268     		ldr	r2, [r4]
+ 1607 0162 B2F84030 		ldrh	r3, [r2, #64]
+ 1608 0166 9BB2     		uxth	r3, r3
+ 1609 0168 43F00803 		orr	r3, r3, #8
+ 1610 016c A2F84030 		strh	r3, [r2, #64]	@ movhi
+ 1611 0170 0121     		movs	r1, #1
+ 1612 0172 84F8C812 		strb	r1, [r4, #712]
+ 1613 0176 2368     		ldr	r3, [r4]
+ 1614 0178 B3F85430 		ldrh	r3, [r3, #84]
+ 1615 017c C3F38D03 		ubfx	r3, r3, #2, #14
+ 1616 0180 03F03C03 		and	r3, r3, #60
+ 1617 0184 C4F8CC32 		str	r3, [r4, #716]
+ 1618 0188 2046     		mov	r0, r4
+ 1619 018a FFF7FEFF 		bl	HAL_PCDEx_LPM_Callback
+ 1620 018e 81E7     		b	.L167
+ 1621              	.L177:
+ 1622 0190 2046     		mov	r0, r4
+ 1623 0192 FFF7FEFF 		bl	HAL_PCD_SuspendCallback
+ 1624 0196 7DE7     		b	.L167
+ 1625              	.L188:
+ 1626 0198 2268     		ldr	r2, [r4]
+ 1627 019a B2F84430 		ldrh	r3, [r2, #68]
+ 1628 019e 9BB2     		uxth	r3, r3
+ 1629 01a0 23F40073 		bic	r3, r3, #512
+ 1630 01a4 9BB2     		uxth	r3, r3
+ 1631 01a6 A2F84430 		strh	r3, [r2, #68]	@ movhi
+ 1632 01aa 2046     		mov	r0, r4
+ 1633 01ac FFF7FEFF 		bl	HAL_PCD_SOFCallback
+ 1634 01b0 70E7     		b	.L167
+ 1636              		.section	.text.HAL_PCD_EP_Open,"ax",%progbits
+ 1637              		.align	1
+ 1638              		.global	HAL_PCD_EP_Open
+ 1639              		.syntax unified
+ 1640              		.thumb
+ 1641              		.thumb_func
+ 1643              	HAL_PCD_EP_Open:
+ 1644              		@ args = 0, pretend = 0, frame = 0
+ 1645              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 29
+
+
+ 1646 0000 10B5     		push	{r4, lr}
+ 1647 0002 0446     		mov	r4, r0
+ 1648 0004 0846     		mov	r0, r1
+ 1649 0006 11F0800F 		tst	r1, #128
+ 1650 000a 27D1     		bne	.L197
+ 1651 000c 01F0070C 		and	ip, r1, #7
+ 1652 0010 0CEB8C01 		add	r1, ip, ip, lsl #2
+ 1653 0014 C900     		lsls	r1, r1, #3
+ 1654 0016 01F5A87E 		add	lr, r1, #336
+ 1655 001a 04EB0E01 		add	r1, r4, lr
+ 1656 001e 0CEB8C0C 		add	ip, ip, ip, lsl #2
+ 1657 0022 04EBCC0C 		add	ip, r4, ip, lsl #3
+ 1658 0026 4FF0000E 		mov	lr, #0
+ 1659 002a 8CF851E1 		strb	lr, [ip, #337]
+ 1660              	.L192:
+ 1661 002e 00F00700 		and	r0, r0, #7
+ 1662 0032 0870     		strb	r0, [r1]
+ 1663 0034 C2F30A02 		ubfx	r2, r2, #0, #11
+ 1664 0038 0A61     		str	r2, [r1, #16]
+ 1665 003a CB70     		strb	r3, [r1, #3]
+ 1666 003c 022B     		cmp	r3, #2
+ 1667 003e 1DD0     		beq	.L198
+ 1668              	.L193:
+ 1669 0040 94F89032 		ldrb	r3, [r4, #656]	@ zero_extendqisi2
+ 1670 0044 012B     		cmp	r3, #1
+ 1671 0046 1CD0     		beq	.L195
+ 1672 0048 0123     		movs	r3, #1
+ 1673 004a 84F89032 		strb	r3, [r4, #656]
+ 1674 004e 2068     		ldr	r0, [r4]
+ 1675 0050 FFF7FEFF 		bl	USB_ActivateEndpoint
+ 1676 0054 0020     		movs	r0, #0
+ 1677 0056 84F89002 		strb	r0, [r4, #656]
+ 1678              	.L194:
+ 1679 005a 10BD     		pop	{r4, pc}
+ 1680              	.L197:
+ 1681 005c 01F0070C 		and	ip, r1, #7
+ 1682 0060 0CEB8C01 		add	r1, ip, ip, lsl #2
+ 1683 0064 C900     		lsls	r1, r1, #3
+ 1684 0066 1031     		adds	r1, r1, #16
+ 1685 0068 2144     		add	r1, r1, r4
+ 1686 006a 0CEB8C0C 		add	ip, ip, ip, lsl #2
+ 1687 006e 04EBCC0C 		add	ip, r4, ip, lsl #3
+ 1688 0072 4FF0010E 		mov	lr, #1
+ 1689 0076 8CF811E0 		strb	lr, [ip, #17]
+ 1690 007a D8E7     		b	.L192
+ 1691              	.L198:
+ 1692 007c 0023     		movs	r3, #0
+ 1693 007e 0B71     		strb	r3, [r1, #4]
+ 1694 0080 DEE7     		b	.L193
+ 1695              	.L195:
+ 1696 0082 0220     		movs	r0, #2
+ 1697 0084 E9E7     		b	.L194
+ 1699              		.section	.text.HAL_PCD_EP_Close,"ax",%progbits
+ 1700              		.align	1
+ 1701              		.global	HAL_PCD_EP_Close
+ 1702              		.syntax unified
+ 1703              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 30
+
+
+ 1704              		.thumb_func
+ 1706              	HAL_PCD_EP_Close:
+ 1707              		@ args = 0, pretend = 0, frame = 0
+ 1708              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1709 0000 10B5     		push	{r4, lr}
+ 1710 0002 0446     		mov	r4, r0
+ 1711 0004 0A46     		mov	r2, r1
+ 1712 0006 11F0800F 		tst	r1, #128
+ 1713 000a 1FD1     		bne	.L205
+ 1714 000c 01F00700 		and	r0, r1, #7
+ 1715 0010 00EB8003 		add	r3, r0, r0, lsl #2
+ 1716 0014 DB00     		lsls	r3, r3, #3
+ 1717 0016 03F5A873 		add	r3, r3, #336
+ 1718 001a E118     		adds	r1, r4, r3
+ 1719 001c 00EB8000 		add	r0, r0, r0, lsl #2
+ 1720 0020 04EBC000 		add	r0, r4, r0, lsl #3
+ 1721 0024 0023     		movs	r3, #0
+ 1722 0026 80F85131 		strb	r3, [r0, #337]
+ 1723              	.L201:
+ 1724 002a 02F00702 		and	r2, r2, #7
+ 1725 002e 0A70     		strb	r2, [r1]
+ 1726 0030 94F89032 		ldrb	r3, [r4, #656]	@ zero_extendqisi2
+ 1727 0034 012B     		cmp	r3, #1
+ 1728 0036 17D0     		beq	.L203
+ 1729 0038 0123     		movs	r3, #1
+ 1730 003a 84F89032 		strb	r3, [r4, #656]
+ 1731 003e 2068     		ldr	r0, [r4]
+ 1732 0040 FFF7FEFF 		bl	USB_DeactivateEndpoint
+ 1733 0044 0020     		movs	r0, #0
+ 1734 0046 84F89002 		strb	r0, [r4, #656]
+ 1735              	.L202:
+ 1736 004a 10BD     		pop	{r4, pc}
+ 1737              	.L205:
+ 1738 004c 01F00700 		and	r0, r1, #7
+ 1739 0050 00EB8003 		add	r3, r0, r0, lsl #2
+ 1740 0054 DB00     		lsls	r3, r3, #3
+ 1741 0056 1033     		adds	r3, r3, #16
+ 1742 0058 E118     		adds	r1, r4, r3
+ 1743 005a 00EB8000 		add	r0, r0, r0, lsl #2
+ 1744 005e 04EBC000 		add	r0, r4, r0, lsl #3
+ 1745 0062 0123     		movs	r3, #1
+ 1746 0064 4374     		strb	r3, [r0, #17]
+ 1747 0066 E0E7     		b	.L201
+ 1748              	.L203:
+ 1749 0068 0220     		movs	r0, #2
+ 1750 006a EEE7     		b	.L202
+ 1752              		.section	.text.HAL_PCD_EP_Receive,"ax",%progbits
+ 1753              		.align	1
+ 1754              		.global	HAL_PCD_EP_Receive
+ 1755              		.syntax unified
+ 1756              		.thumb
+ 1757              		.thumb_func
+ 1759              	HAL_PCD_EP_Receive:
+ 1760              		@ args = 0, pretend = 0, frame = 0
+ 1761              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1762 0000 10B5     		push	{r4, lr}
+ 1763 0002 01F0070C 		and	ip, r1, #7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 31
+
+
+ 1764 0006 0CEB8C01 		add	r1, ip, ip, lsl #2
+ 1765 000a C900     		lsls	r1, r1, #3
+ 1766 000c 01F5A871 		add	r1, r1, #336
+ 1767 0010 0CEB8C0E 		add	lr, ip, ip, lsl #2
+ 1768 0014 00EBCE0E 		add	lr, r0, lr, lsl #3
+ 1769 0018 CEF86421 		str	r2, [lr, #356]
+ 1770 001c CEF86831 		str	r3, [lr, #360]
+ 1771 0020 0024     		movs	r4, #0
+ 1772 0022 CEF86C41 		str	r4, [lr, #364]
+ 1773 0026 8EF85141 		strb	r4, [lr, #337]
+ 1774 002a 8EF850C1 		strb	ip, [lr, #336]
+ 1775 002e 0144     		add	r1, r1, r0
+ 1776 0030 0068     		ldr	r0, [r0]
+ 1777 0032 FFF7FEFF 		bl	USB_EPStartXfer
+ 1778 0036 2046     		mov	r0, r4
+ 1779 0038 10BD     		pop	{r4, pc}
+ 1781              		.section	.text.HAL_PCD_EP_GetRxCount,"ax",%progbits
+ 1782              		.align	1
+ 1783              		.global	HAL_PCD_EP_GetRxCount
+ 1784              		.syntax unified
+ 1785              		.thumb
+ 1786              		.thumb_func
+ 1788              	HAL_PCD_EP_GetRxCount:
+ 1789              		@ args = 0, pretend = 0, frame = 0
+ 1790              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1791              		@ link register save eliminated.
+ 1792 0000 01F00701 		and	r1, r1, #7
+ 1793 0004 01EB8101 		add	r1, r1, r1, lsl #2
+ 1794 0008 00EBC100 		add	r0, r0, r1, lsl #3
+ 1795 000c D0F86C01 		ldr	r0, [r0, #364]
+ 1796 0010 7047     		bx	lr
+ 1798              		.section	.text.HAL_PCD_EP_Transmit,"ax",%progbits
+ 1799              		.align	1
+ 1800              		.global	HAL_PCD_EP_Transmit
+ 1801              		.syntax unified
+ 1802              		.thumb
+ 1803              		.thumb_func
+ 1805              	HAL_PCD_EP_Transmit:
+ 1806              		@ args = 0, pretend = 0, frame = 0
+ 1807              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1808 0000 38B5     		push	{r3, r4, r5, lr}
+ 1809 0002 01F0070C 		and	ip, r1, #7
+ 1810 0006 0CEB8C01 		add	r1, ip, ip, lsl #2
+ 1811 000a C900     		lsls	r1, r1, #3
+ 1812 000c 1031     		adds	r1, r1, #16
+ 1813 000e 0CEB8C0E 		add	lr, ip, ip, lsl #2
+ 1814 0012 00EBCE0E 		add	lr, r0, lr, lsl #3
+ 1815 0016 CEF82420 		str	r2, [lr, #36]
+ 1816 001a 0CF10102 		add	r2, ip, #1
+ 1817 001e 02EB8204 		add	r4, r2, r2, lsl #2
+ 1818 0022 40F83430 		str	r3, [r0, r4, lsl #3]
+ 1819 0026 0125     		movs	r5, #1
+ 1820 0028 8EF83450 		strb	r5, [lr, #52]
+ 1821 002c CEF83030 		str	r3, [lr, #48]
+ 1822 0030 00EBC402 		add	r2, r0, r4, lsl #3
+ 1823 0034 0024     		movs	r4, #0
+ 1824 0036 5460     		str	r4, [r2, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 32
+
+
+ 1825 0038 8EF81150 		strb	r5, [lr, #17]
+ 1826 003c 8EF810C0 		strb	ip, [lr, #16]
+ 1827 0040 0144     		add	r1, r1, r0
+ 1828 0042 0068     		ldr	r0, [r0]
+ 1829 0044 FFF7FEFF 		bl	USB_EPStartXfer
+ 1830 0048 2046     		mov	r0, r4
+ 1831 004a 38BD     		pop	{r3, r4, r5, pc}
+ 1833              		.section	.text.HAL_PCD_EP_SetStall,"ax",%progbits
+ 1834              		.align	1
+ 1835              		.global	HAL_PCD_EP_SetStall
+ 1836              		.syntax unified
+ 1837              		.thumb
+ 1838              		.thumb_func
+ 1840              	HAL_PCD_EP_SetStall:
+ 1841              		@ args = 0, pretend = 0, frame = 0
+ 1842              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1843 0000 0B46     		mov	r3, r1
+ 1844 0002 01F00702 		and	r2, r1, #7
+ 1845 0006 0179     		ldrb	r1, [r0, #4]	@ zero_extendqisi2
+ 1846 0008 9142     		cmp	r1, r2
+ 1847 000a 2ED3     		bcc	.L215
+ 1848 000c 10B5     		push	{r4, lr}
+ 1849 000e 0446     		mov	r4, r0
+ 1850 0010 13F0800F 		tst	r3, #128
+ 1851 0014 1DD1     		bne	.L221
+ 1852 0016 03EB8301 		add	r1, r3, r3, lsl #2
+ 1853 001a C900     		lsls	r1, r1, #3
+ 1854 001c 01F5A871 		add	r1, r1, #336
+ 1855 0020 0144     		add	r1, r1, r0
+ 1856 0022 03EB8303 		add	r3, r3, r3, lsl #2
+ 1857 0026 00EBC303 		add	r3, r0, r3, lsl #3
+ 1858 002a 0020     		movs	r0, #0
+ 1859 002c 83F85101 		strb	r0, [r3, #337]
+ 1860              	.L214:
+ 1861 0030 0123     		movs	r3, #1
+ 1862 0032 8B70     		strb	r3, [r1, #2]
+ 1863 0034 0A70     		strb	r2, [r1]
+ 1864 0036 94F89032 		ldrb	r3, [r4, #656]	@ zero_extendqisi2
+ 1865 003a 012B     		cmp	r3, #1
+ 1866 003c 17D0     		beq	.L216
+ 1867 003e 0123     		movs	r3, #1
+ 1868 0040 84F89032 		strb	r3, [r4, #656]
+ 1869 0044 2068     		ldr	r0, [r4]
+ 1870 0046 FFF7FEFF 		bl	USB_EPSetStall
+ 1871 004a 0020     		movs	r0, #0
+ 1872 004c 84F89002 		strb	r0, [r4, #656]
+ 1873              	.L212:
+ 1874 0050 10BD     		pop	{r4, pc}
+ 1875              	.L221:
+ 1876 0052 02EB8201 		add	r1, r2, r2, lsl #2
+ 1877 0056 C900     		lsls	r1, r1, #3
+ 1878 0058 1031     		adds	r1, r1, #16
+ 1879 005a 0144     		add	r1, r1, r0
+ 1880 005c 02EB8203 		add	r3, r2, r2, lsl #2
+ 1881 0060 00EBC303 		add	r3, r0, r3, lsl #3
+ 1882 0064 0120     		movs	r0, #1
+ 1883 0066 5874     		strb	r0, [r3, #17]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 33
+
+
+ 1884 0068 E2E7     		b	.L214
+ 1885              	.L215:
+ 1886 006a 0120     		movs	r0, #1
+ 1887 006c 7047     		bx	lr
+ 1888              	.L216:
+ 1889 006e 0220     		movs	r0, #2
+ 1890 0070 EEE7     		b	.L212
+ 1892              		.section	.text.HAL_PCD_EP_ClrStall,"ax",%progbits
+ 1893              		.align	1
+ 1894              		.global	HAL_PCD_EP_ClrStall
+ 1895              		.syntax unified
+ 1896              		.thumb
+ 1897              		.thumb_func
+ 1899              	HAL_PCD_EP_ClrStall:
+ 1900              		@ args = 0, pretend = 0, frame = 0
+ 1901              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1902 0000 0B46     		mov	r3, r1
+ 1903 0002 0179     		ldrb	r1, [r0, #4]	@ zero_extendqisi2
+ 1904 0004 03F00F02 		and	r2, r3, #15
+ 1905 0008 9142     		cmp	r1, r2
+ 1906 000a 34D3     		bcc	.L226
+ 1907 000c 10B5     		push	{r4, lr}
+ 1908 000e 0446     		mov	r4, r0
+ 1909 0010 13F0800F 		tst	r3, #128
+ 1910 0014 21D1     		bne	.L232
+ 1911 0016 03F00702 		and	r2, r3, #7
+ 1912 001a 02EB8201 		add	r1, r2, r2, lsl #2
+ 1913 001e C900     		lsls	r1, r1, #3
+ 1914 0020 01F5A871 		add	r1, r1, #336
+ 1915 0024 0144     		add	r1, r1, r0
+ 1916 0026 02EB8202 		add	r2, r2, r2, lsl #2
+ 1917 002a 00EBC202 		add	r2, r0, r2, lsl #3
+ 1918 002e 0020     		movs	r0, #0
+ 1919 0030 82F85101 		strb	r0, [r2, #337]
+ 1920              	.L225:
+ 1921 0034 0022     		movs	r2, #0
+ 1922 0036 8A70     		strb	r2, [r1, #2]
+ 1923 0038 03F00703 		and	r3, r3, #7
+ 1924 003c 0B70     		strb	r3, [r1]
+ 1925 003e 94F89032 		ldrb	r3, [r4, #656]	@ zero_extendqisi2
+ 1926 0042 012B     		cmp	r3, #1
+ 1927 0044 19D0     		beq	.L227
+ 1928 0046 0123     		movs	r3, #1
+ 1929 0048 84F89032 		strb	r3, [r4, #656]
+ 1930 004c 2068     		ldr	r0, [r4]
+ 1931 004e FFF7FEFF 		bl	USB_EPClearStall
+ 1932 0052 0020     		movs	r0, #0
+ 1933 0054 84F89002 		strb	r0, [r4, #656]
+ 1934              	.L223:
+ 1935 0058 10BD     		pop	{r4, pc}
+ 1936              	.L232:
+ 1937 005a 03F00702 		and	r2, r3, #7
+ 1938 005e 02EB8201 		add	r1, r2, r2, lsl #2
+ 1939 0062 C900     		lsls	r1, r1, #3
+ 1940 0064 1031     		adds	r1, r1, #16
+ 1941 0066 0144     		add	r1, r1, r0
+ 1942 0068 02EB8202 		add	r2, r2, r2, lsl #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 34
+
+
+ 1943 006c 00EBC202 		add	r2, r0, r2, lsl #3
+ 1944 0070 0120     		movs	r0, #1
+ 1945 0072 5074     		strb	r0, [r2, #17]
+ 1946 0074 DEE7     		b	.L225
+ 1947              	.L226:
+ 1948 0076 0120     		movs	r0, #1
+ 1949 0078 7047     		bx	lr
+ 1950              	.L227:
+ 1951 007a 0220     		movs	r0, #2
+ 1952 007c ECE7     		b	.L223
+ 1954              		.section	.text.HAL_PCD_EP_Abort,"ax",%progbits
+ 1955              		.align	1
+ 1956              		.global	HAL_PCD_EP_Abort
+ 1957              		.syntax unified
+ 1958              		.thumb
+ 1959              		.thumb_func
+ 1961              	HAL_PCD_EP_Abort:
+ 1962              		@ args = 0, pretend = 0, frame = 0
+ 1963              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1964 0000 08B5     		push	{r3, lr}
+ 1965 0002 11F0800F 		tst	r1, #128
+ 1966 0006 0BD1     		bne	.L237
+ 1967 0008 01F00701 		and	r1, r1, #7
+ 1968 000c 01EB8101 		add	r1, r1, r1, lsl #2
+ 1969 0010 C900     		lsls	r1, r1, #3
+ 1970 0012 01F5A871 		add	r1, r1, #336
+ 1971 0016 0144     		add	r1, r1, r0
+ 1972              	.L235:
+ 1973 0018 0068     		ldr	r0, [r0]
+ 1974 001a FFF7FEFF 		bl	USB_EPStopXfer
+ 1975 001e 08BD     		pop	{r3, pc}
+ 1976              	.L237:
+ 1977 0020 01F00701 		and	r1, r1, #7
+ 1978 0024 01EB8101 		add	r1, r1, r1, lsl #2
+ 1979 0028 C900     		lsls	r1, r1, #3
+ 1980 002a 1031     		adds	r1, r1, #16
+ 1981 002c 0144     		add	r1, r1, r0
+ 1982 002e F3E7     		b	.L235
+ 1984              		.section	.text.HAL_PCD_EP_Flush,"ax",%progbits
+ 1985              		.align	1
+ 1986              		.global	HAL_PCD_EP_Flush
+ 1987              		.syntax unified
+ 1988              		.thumb
+ 1989              		.thumb_func
+ 1991              	HAL_PCD_EP_Flush:
+ 1992              		@ args = 0, pretend = 0, frame = 0
+ 1993              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1994 0000 90F89032 		ldrb	r3, [r0, #656]	@ zero_extendqisi2
+ 1995 0004 012B     		cmp	r3, #1
+ 1996 0006 14D0     		beq	.L242
+ 1997 0008 10B5     		push	{r4, lr}
+ 1998 000a 0446     		mov	r4, r0
+ 1999 000c 0123     		movs	r3, #1
+ 2000 000e 80F89032 		strb	r3, [r0, #656]
+ 2001 0012 11F0800F 		tst	r1, #128
+ 2002 0016 06D1     		bne	.L247
+ 2003 0018 0068     		ldr	r0, [r0]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 35
+
+
+ 2004 001a FFF7FEFF 		bl	USB_FlushRxFifo
+ 2005              	.L241:
+ 2006 001e 0020     		movs	r0, #0
+ 2007 0020 84F89002 		strb	r0, [r4, #656]
+ 2008 0024 10BD     		pop	{r4, pc}
+ 2009              	.L247:
+ 2010 0026 01F00701 		and	r1, r1, #7
+ 2011 002a 0068     		ldr	r0, [r0]
+ 2012 002c FFF7FEFF 		bl	USB_FlushTxFifo
+ 2013 0030 F5E7     		b	.L241
+ 2014              	.L242:
+ 2015 0032 0220     		movs	r0, #2
+ 2016 0034 7047     		bx	lr
+ 2018              		.section	.text.HAL_PCD_ActivateRemoteWakeup,"ax",%progbits
+ 2019              		.align	1
+ 2020              		.global	HAL_PCD_ActivateRemoteWakeup
+ 2021              		.syntax unified
+ 2022              		.thumb
+ 2023              		.thumb_func
+ 2025              	HAL_PCD_ActivateRemoteWakeup:
+ 2026              		@ args = 0, pretend = 0, frame = 0
+ 2027              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2028 0000 08B5     		push	{r3, lr}
+ 2029 0002 0068     		ldr	r0, [r0]
+ 2030 0004 FFF7FEFF 		bl	USB_ActivateRemoteWakeup
+ 2031 0008 08BD     		pop	{r3, pc}
+ 2033              		.section	.text.HAL_PCD_DeActivateRemoteWakeup,"ax",%progbits
+ 2034              		.align	1
+ 2035              		.global	HAL_PCD_DeActivateRemoteWakeup
+ 2036              		.syntax unified
+ 2037              		.thumb
+ 2038              		.thumb_func
+ 2040              	HAL_PCD_DeActivateRemoteWakeup:
+ 2041              		@ args = 0, pretend = 0, frame = 0
+ 2042              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2043 0000 08B5     		push	{r3, lr}
+ 2044 0002 0068     		ldr	r0, [r0]
+ 2045 0004 FFF7FEFF 		bl	USB_DeActivateRemoteWakeup
+ 2046 0008 08BD     		pop	{r3, pc}
+ 2048              		.section	.text.HAL_PCD_GetState,"ax",%progbits
+ 2049              		.align	1
+ 2050              		.global	HAL_PCD_GetState
+ 2051              		.syntax unified
+ 2052              		.thumb
+ 2053              		.thumb_func
+ 2055              	HAL_PCD_GetState:
+ 2056              		@ args = 0, pretend = 0, frame = 0
+ 2057              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2058              		@ link register save eliminated.
+ 2059 0000 90F89102 		ldrb	r0, [r0, #657]	@ zero_extendqisi2
+ 2060 0004 7047     		bx	lr
+ 2062              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 36
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_pcd.c
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:18     .text.HAL_PCD_EP_DB_Receive:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:23     .text.HAL_PCD_EP_DB_Receive:00000000 HAL_PCD_EP_DB_Receive
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:135    .text.HAL_PCD_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:141    .text.HAL_PCD_MspInit:00000000 HAL_PCD_MspInit
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:148    .text.HAL_PCD_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:154    .text.HAL_PCD_Init:00000000 HAL_PCD_Init
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:236    .text.HAL_PCD_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:242    .text.HAL_PCD_MspDeInit:00000000 HAL_PCD_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:249    .text.HAL_PCD_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:255    .text.HAL_PCD_DeInit:00000000 HAL_PCD_DeInit
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:284    .text.HAL_PCD_Start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:290    .text.HAL_PCD_Start:00000000 HAL_PCD_Start
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:312    .text.HAL_PCD_Stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:318    .text.HAL_PCD_Stop:00000000 HAL_PCD_Stop
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:340    .text.HAL_PCD_DataOutStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:346    .text.HAL_PCD_DataOutStageCallback:00000000 HAL_PCD_DataOutStageCallback
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:353    .text.HAL_PCD_DataInStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:359    .text.HAL_PCD_DataInStageCallback:00000000 HAL_PCD_DataInStageCallback
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:366    .text.HAL_PCD_EP_DB_Transmit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:371    .text.HAL_PCD_EP_DB_Transmit:00000000 HAL_PCD_EP_DB_Transmit
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:817    .text.HAL_PCD_SetupStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:823    .text.HAL_PCD_SetupStageCallback:00000000 HAL_PCD_SetupStageCallback
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:830    .text.PCD_EP_ISR_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:835    .text.PCD_EP_ISR_Handler:00000000 PCD_EP_ISR_Handler
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1285   .text.HAL_PCD_SOFCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1291   .text.HAL_PCD_SOFCallback:00000000 HAL_PCD_SOFCallback
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1298   .text.HAL_PCD_ResetCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1304   .text.HAL_PCD_ResetCallback:00000000 HAL_PCD_ResetCallback
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1311   .text.HAL_PCD_SuspendCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1317   .text.HAL_PCD_SuspendCallback:00000000 HAL_PCD_SuspendCallback
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1324   .text.HAL_PCD_ResumeCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1330   .text.HAL_PCD_ResumeCallback:00000000 HAL_PCD_ResumeCallback
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1337   .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1343   .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 HAL_PCD_ISOOUTIncompleteCallback
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1350   .text.HAL_PCD_ISOINIncompleteCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1356   .text.HAL_PCD_ISOINIncompleteCallback:00000000 HAL_PCD_ISOINIncompleteCallback
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1363   .text.HAL_PCD_ConnectCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1369   .text.HAL_PCD_ConnectCallback:00000000 HAL_PCD_ConnectCallback
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1376   .text.HAL_PCD_DisconnectCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1382   .text.HAL_PCD_DisconnectCallback:00000000 HAL_PCD_DisconnectCallback
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1389   .text.HAL_PCD_DevConnect:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1395   .text.HAL_PCD_DevConnect:00000000 HAL_PCD_DevConnect
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1415   .text.HAL_PCD_DevDisconnect:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1421   .text.HAL_PCD_DevDisconnect:00000000 HAL_PCD_DevDisconnect
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1441   .text.HAL_PCD_SetAddress:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1447   .text.HAL_PCD_SetAddress:00000000 HAL_PCD_SetAddress
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1468   .text.HAL_PCD_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1474   .text.HAL_PCD_IRQHandler:00000000 HAL_PCD_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1637   .text.HAL_PCD_EP_Open:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1643   .text.HAL_PCD_EP_Open:00000000 HAL_PCD_EP_Open
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1700   .text.HAL_PCD_EP_Close:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1706   .text.HAL_PCD_EP_Close:00000000 HAL_PCD_EP_Close
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1753   .text.HAL_PCD_EP_Receive:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1759   .text.HAL_PCD_EP_Receive:00000000 HAL_PCD_EP_Receive
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1782   .text.HAL_PCD_EP_GetRxCount:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s 			page 37
+
+
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1788   .text.HAL_PCD_EP_GetRxCount:00000000 HAL_PCD_EP_GetRxCount
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1799   .text.HAL_PCD_EP_Transmit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1805   .text.HAL_PCD_EP_Transmit:00000000 HAL_PCD_EP_Transmit
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1834   .text.HAL_PCD_EP_SetStall:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1840   .text.HAL_PCD_EP_SetStall:00000000 HAL_PCD_EP_SetStall
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1893   .text.HAL_PCD_EP_ClrStall:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1899   .text.HAL_PCD_EP_ClrStall:00000000 HAL_PCD_EP_ClrStall
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1955   .text.HAL_PCD_EP_Abort:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1961   .text.HAL_PCD_EP_Abort:00000000 HAL_PCD_EP_Abort
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1985   .text.HAL_PCD_EP_Flush:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:1991   .text.HAL_PCD_EP_Flush:00000000 HAL_PCD_EP_Flush
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:2019   .text.HAL_PCD_ActivateRemoteWakeup:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:2025   .text.HAL_PCD_ActivateRemoteWakeup:00000000 HAL_PCD_ActivateRemoteWakeup
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:2034   .text.HAL_PCD_DeActivateRemoteWakeup:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:2040   .text.HAL_PCD_DeActivateRemoteWakeup:00000000 HAL_PCD_DeActivateRemoteWakeup
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:2049   .text.HAL_PCD_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0acmAp.s:2055   .text.HAL_PCD_GetState:00000000 HAL_PCD_GetState
+
+UNDEFINED SYMBOLS
+USB_ReadPMA
+USB_DisableGlobalInt
+USB_DevInit
+HAL_PCDEx_ActivateLPM
+USB_StopDevice
+USB_EnableGlobalInt
+USB_DevConnect
+USB_DevDisconnect
+USB_WritePMA
+USB_EPStartXfer
+USB_SetDevAddress
+USB_ReadInterrupts
+HAL_PCDEx_LPM_Callback
+USB_ActivateEndpoint
+USB_DeactivateEndpoint
+USB_EPSetStall
+USB_EPClearStall
+USB_EPStopXfer
+USB_FlushRxFifo
+USB_FlushTxFifo
+USB_ActivateRemoteWakeup
+USB_DeActivateRemoteWakeup

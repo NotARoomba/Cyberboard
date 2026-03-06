@@ -1,0 +1,883 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"usbd_conf.c"
+  16              		.text
+  17              		.section	.text.USBD_Get_USB_Status,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	USBD_Get_USB_Status:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 0228     		cmp	r0, #2
+  28 0002 04D0     		beq	.L3
+  29 0004 05D8     		bhi	.L4
+  30 0006 08B1     		cbz	r0, .L6
+  31 0008 0320     		movs	r0, #3
+  32 000a 7047     		bx	lr
+  33              	.L6:
+  34 000c 7047     		bx	lr
+  35              	.L3:
+  36 000e 0120     		movs	r0, #1
+  37 0010 7047     		bx	lr
+  38              	.L4:
+  39 0012 0320     		movs	r0, #3
+  40 0014 7047     		bx	lr
+  42              		.section	.text.SystemClockConfig_Resume,"ax",%progbits
+  43              		.align	1
+  44              		.syntax unified
+  45              		.thumb
+  46              		.thumb_func
+  48              	SystemClockConfig_Resume:
+  49              		@ args = 0, pretend = 0, frame = 0
+  50              		@ frame_needed = 0, uses_anonymous_args = 0
+  51 0000 08B5     		push	{r3, lr}
+  52 0002 FFF7FEFF 		bl	SystemClock_Config
+  53 0006 08BD     		pop	{r3, pc}
+  55              		.section	.text.HAL_PCD_MspInit,"ax",%progbits
+  56              		.align	1
+  57              		.global	HAL_PCD_MspInit
+  58              		.syntax unified
+  59              		.thumb
+  60              		.thumb_func
+  62              	HAL_PCD_MspInit:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 2
+
+
+  63              		@ args = 0, pretend = 0, frame = 112
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65 0000 10B5     		push	{r4, lr}
+  66 0002 9CB0     		sub	sp, sp, #112
+  67 0004 0446     		mov	r4, r0
+  68 0006 0021     		movs	r1, #0
+  69 0008 1791     		str	r1, [sp, #92]
+  70 000a 1891     		str	r1, [sp, #96]
+  71 000c 1991     		str	r1, [sp, #100]
+  72 000e 1A91     		str	r1, [sp, #104]
+  73 0010 1B91     		str	r1, [sp, #108]
+  74 0012 5022     		movs	r2, #80
+  75 0014 03A8     		add	r0, sp, #12
+  76 0016 FFF7FEFF 		bl	memset
+  77 001a 2268     		ldr	r2, [r4]
+  78 001c 254B     		ldr	r3, .L15
+  79 001e 9A42     		cmp	r2, r3
+  80 0020 01D0     		beq	.L13
+  81              	.L9:
+  82 0022 1CB0     		add	sp, sp, #112
+  83              		@ sp needed
+  84 0024 10BD     		pop	{r4, pc}
+  85              	.L13:
+  86 0026 4FF48073 		mov	r3, #256
+  87 002a 0393     		str	r3, [sp, #12]
+  88 002c 1823     		movs	r3, #24
+  89 002e 0493     		str	r3, [sp, #16]
+  90 0030 4FF40033 		mov	r3, #131072
+  91 0034 0593     		str	r3, [sp, #20]
+  92 0036 4FF00073 		mov	r3, #33554432
+  93 003a 0693     		str	r3, [sp, #24]
+  94 003c 4FF00053 		mov	r3, #536870912
+  95 0040 0793     		str	r3, [sp, #28]
+  96 0042 4FF08073 		mov	r3, #16777216
+  97 0046 0893     		str	r3, [sp, #32]
+  98 0048 4FF08063 		mov	r3, #67108864
+  99 004c 1093     		str	r3, [sp, #64]
+ 100 004e 03A8     		add	r0, sp, #12
+ 101 0050 FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 102 0054 58BB     		cbnz	r0, .L14
+ 103              	.L11:
+ 104 0056 4FF0B044 		mov	r4, #1476395008
+ 105 005a E36C     		ldr	r3, [r4, #76]
+ 106 005c 43F00103 		orr	r3, r3, #1
+ 107 0060 E364     		str	r3, [r4, #76]
+ 108 0062 E36C     		ldr	r3, [r4, #76]
+ 109 0064 03F00103 		and	r3, r3, #1
+ 110 0068 0293     		str	r3, [sp, #8]
+ 111 006a 029B     		ldr	r3, [sp, #8]
+ 112 006c 4FF4C053 		mov	r3, #6144
+ 113 0070 1793     		str	r3, [sp, #92]
+ 114 0072 0223     		movs	r3, #2
+ 115 0074 1893     		str	r3, [sp, #96]
+ 116 0076 0023     		movs	r3, #0
+ 117 0078 1993     		str	r3, [sp, #100]
+ 118 007a 1A93     		str	r3, [sp, #104]
+ 119 007c 0A23     		movs	r3, #10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 3
+
+
+ 120 007e 1B93     		str	r3, [sp, #108]
+ 121 0080 17A9     		add	r1, sp, #92
+ 122 0082 4FF09040 		mov	r0, #1207959552
+ 123 0086 FFF7FEFF 		bl	HAL_GPIO_Init
+ 124 008a A36D     		ldr	r3, [r4, #88]
+ 125 008c 43F08063 		orr	r3, r3, #67108864
+ 126 0090 A365     		str	r3, [r4, #88]
+ 127 0092 A36D     		ldr	r3, [r4, #88]
+ 128 0094 03F08063 		and	r3, r3, #67108864
+ 129 0098 0193     		str	r3, [sp, #4]
+ 130 009a 019B     		ldr	r3, [sp, #4]
+ 131 009c 0022     		movs	r2, #0
+ 132 009e 1146     		mov	r1, r2
+ 133 00a0 1420     		movs	r0, #20
+ 134 00a2 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 135 00a6 1420     		movs	r0, #20
+ 136 00a8 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 137 00ac B9E7     		b	.L9
+ 138              	.L14:
+ 139 00ae FFF7FEFF 		bl	Error_Handler
+ 140 00b2 D0E7     		b	.L11
+ 141              	.L16:
+ 142              		.align	2
+ 143              	.L15:
+ 144 00b4 00680040 		.word	1073768448
+ 146              		.section	.text.HAL_PCD_MspDeInit,"ax",%progbits
+ 147              		.align	1
+ 148              		.global	HAL_PCD_MspDeInit
+ 149              		.syntax unified
+ 150              		.thumb
+ 151              		.thumb_func
+ 153              	HAL_PCD_MspDeInit:
+ 154              		@ args = 0, pretend = 0, frame = 0
+ 155              		@ frame_needed = 0, uses_anonymous_args = 0
+ 156 0000 08B5     		push	{r3, lr}
+ 157 0002 0268     		ldr	r2, [r0]
+ 158 0004 094B     		ldr	r3, .L21
+ 159 0006 9A42     		cmp	r2, r3
+ 160 0008 00D0     		beq	.L20
+ 161              	.L17:
+ 162 000a 08BD     		pop	{r3, pc}
+ 163              	.L20:
+ 164 000c 4FF0B042 		mov	r2, #1476395008
+ 165 0010 936D     		ldr	r3, [r2, #88]
+ 166 0012 23F08063 		bic	r3, r3, #67108864
+ 167 0016 9365     		str	r3, [r2, #88]
+ 168 0018 4FF4C051 		mov	r1, #6144
+ 169 001c 4FF09040 		mov	r0, #1207959552
+ 170 0020 FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 171 0024 1420     		movs	r0, #20
+ 172 0026 FFF7FEFF 		bl	HAL_NVIC_DisableIRQ
+ 173 002a EEE7     		b	.L17
+ 174              	.L22:
+ 175              		.align	2
+ 176              	.L21:
+ 177 002c 00680040 		.word	1073768448
+ 179              		.section	.text.HAL_PCD_SetupStageCallback,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 4
+
+
+ 180              		.align	1
+ 181              		.global	HAL_PCD_SetupStageCallback
+ 182              		.syntax unified
+ 183              		.thumb
+ 184              		.thumb_func
+ 186              	HAL_PCD_SetupStageCallback:
+ 187              		@ args = 0, pretend = 0, frame = 0
+ 188              		@ frame_needed = 0, uses_anonymous_args = 0
+ 189 0000 08B5     		push	{r3, lr}
+ 190 0002 00F52671 		add	r1, r0, #664
+ 191 0006 D0F8D802 		ldr	r0, [r0, #728]
+ 192 000a FFF7FEFF 		bl	USBD_LL_SetupStage
+ 193 000e 08BD     		pop	{r3, pc}
+ 195              		.section	.text.HAL_PCD_DataOutStageCallback,"ax",%progbits
+ 196              		.align	1
+ 197              		.global	HAL_PCD_DataOutStageCallback
+ 198              		.syntax unified
+ 199              		.thumb
+ 200              		.thumb_func
+ 202              	HAL_PCD_DataOutStageCallback:
+ 203              		@ args = 0, pretend = 0, frame = 0
+ 204              		@ frame_needed = 0, uses_anonymous_args = 0
+ 205 0000 08B5     		push	{r3, lr}
+ 206 0002 01EB8103 		add	r3, r1, r1, lsl #2
+ 207 0006 00EBC303 		add	r3, r0, r3, lsl #3
+ 208 000a D3F86421 		ldr	r2, [r3, #356]
+ 209 000e D0F8D802 		ldr	r0, [r0, #728]
+ 210 0012 FFF7FEFF 		bl	USBD_LL_DataOutStage
+ 211 0016 08BD     		pop	{r3, pc}
+ 213              		.section	.text.HAL_PCD_DataInStageCallback,"ax",%progbits
+ 214              		.align	1
+ 215              		.global	HAL_PCD_DataInStageCallback
+ 216              		.syntax unified
+ 217              		.thumb
+ 218              		.thumb_func
+ 220              	HAL_PCD_DataInStageCallback:
+ 221              		@ args = 0, pretend = 0, frame = 0
+ 222              		@ frame_needed = 0, uses_anonymous_args = 0
+ 223 0000 08B5     		push	{r3, lr}
+ 224 0002 01EB8103 		add	r3, r1, r1, lsl #2
+ 225 0006 00EBC303 		add	r3, r0, r3, lsl #3
+ 226 000a 5A6A     		ldr	r2, [r3, #36]
+ 227 000c D0F8D802 		ldr	r0, [r0, #728]
+ 228 0010 FFF7FEFF 		bl	USBD_LL_DataInStage
+ 229 0014 08BD     		pop	{r3, pc}
+ 231              		.section	.text.HAL_PCD_SOFCallback,"ax",%progbits
+ 232              		.align	1
+ 233              		.global	HAL_PCD_SOFCallback
+ 234              		.syntax unified
+ 235              		.thumb
+ 236              		.thumb_func
+ 238              	HAL_PCD_SOFCallback:
+ 239              		@ args = 0, pretend = 0, frame = 0
+ 240              		@ frame_needed = 0, uses_anonymous_args = 0
+ 241 0000 08B5     		push	{r3, lr}
+ 242 0002 D0F8D802 		ldr	r0, [r0, #728]
+ 243 0006 FFF7FEFF 		bl	USBD_LL_SOF
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 5
+
+
+ 244 000a 08BD     		pop	{r3, pc}
+ 246              		.section	.text.HAL_PCD_ResetCallback,"ax",%progbits
+ 247              		.align	1
+ 248              		.global	HAL_PCD_ResetCallback
+ 249              		.syntax unified
+ 250              		.thumb
+ 251              		.thumb_func
+ 253              	HAL_PCD_ResetCallback:
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ 256 0000 10B5     		push	{r4, lr}
+ 257 0002 0446     		mov	r4, r0
+ 258 0004 4379     		ldrb	r3, [r0, #5]	@ zero_extendqisi2
+ 259 0006 022B     		cmp	r3, #2
+ 260 0008 09D1     		bne	.L34
+ 261              	.L32:
+ 262 000a 0121     		movs	r1, #1
+ 263 000c D4F8D802 		ldr	r0, [r4, #728]
+ 264 0010 FFF7FEFF 		bl	USBD_LL_SetSpeed
+ 265 0014 D4F8D802 		ldr	r0, [r4, #728]
+ 266 0018 FFF7FEFF 		bl	USBD_LL_Reset
+ 267 001c 10BD     		pop	{r4, pc}
+ 268              	.L34:
+ 269 001e FFF7FEFF 		bl	Error_Handler
+ 270 0022 F2E7     		b	.L32
+ 272              		.section	.text.HAL_PCD_SuspendCallback,"ax",%progbits
+ 273              		.align	1
+ 274              		.global	HAL_PCD_SuspendCallback
+ 275              		.syntax unified
+ 276              		.thumb
+ 277              		.thumb_func
+ 279              	HAL_PCD_SuspendCallback:
+ 280              		@ args = 0, pretend = 0, frame = 0
+ 281              		@ frame_needed = 0, uses_anonymous_args = 0
+ 282 0000 10B5     		push	{r4, lr}
+ 283 0002 0446     		mov	r4, r0
+ 284 0004 D0F8D802 		ldr	r0, [r0, #728]
+ 285 0008 FFF7FEFF 		bl	USBD_LL_Suspend
+ 286 000c 637A     		ldrb	r3, [r4, #9]	@ zero_extendqisi2
+ 287 000e 23B1     		cbz	r3, .L35
+ 288 0010 024A     		ldr	r2, .L38
+ 289 0012 1369     		ldr	r3, [r2, #16]
+ 290 0014 43F00603 		orr	r3, r3, #6
+ 291 0018 1361     		str	r3, [r2, #16]
+ 292              	.L35:
+ 293 001a 10BD     		pop	{r4, pc}
+ 294              	.L39:
+ 295              		.align	2
+ 296              	.L38:
+ 297 001c 00ED00E0 		.word	-536810240
+ 299              		.section	.text.HAL_PCD_ResumeCallback,"ax",%progbits
+ 300              		.align	1
+ 301              		.global	HAL_PCD_ResumeCallback
+ 302              		.syntax unified
+ 303              		.thumb
+ 304              		.thumb_func
+ 306              	HAL_PCD_ResumeCallback:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 6
+
+
+ 307              		@ args = 0, pretend = 0, frame = 0
+ 308              		@ frame_needed = 0, uses_anonymous_args = 0
+ 309 0000 10B5     		push	{r4, lr}
+ 310 0002 0446     		mov	r4, r0
+ 311 0004 437A     		ldrb	r3, [r0, #9]	@ zero_extendqisi2
+ 312 0006 23B9     		cbnz	r3, .L43
+ 313              	.L41:
+ 314 0008 D4F8D802 		ldr	r0, [r4, #728]
+ 315 000c FFF7FEFF 		bl	USBD_LL_Resume
+ 316 0010 10BD     		pop	{r4, pc}
+ 317              	.L43:
+ 318 0012 044A     		ldr	r2, .L44
+ 319 0014 1369     		ldr	r3, [r2, #16]
+ 320 0016 23F00603 		bic	r3, r3, #6
+ 321 001a 1361     		str	r3, [r2, #16]
+ 322 001c FFF7FEFF 		bl	SystemClockConfig_Resume
+ 323 0020 F2E7     		b	.L41
+ 324              	.L45:
+ 325 0022 00BF     		.align	2
+ 326              	.L44:
+ 327 0024 00ED00E0 		.word	-536810240
+ 329              		.section	.text.HAL_PCD_ISOOUTIncompleteCallback,"ax",%progbits
+ 330              		.align	1
+ 331              		.global	HAL_PCD_ISOOUTIncompleteCallback
+ 332              		.syntax unified
+ 333              		.thumb
+ 334              		.thumb_func
+ 336              	HAL_PCD_ISOOUTIncompleteCallback:
+ 337              		@ args = 0, pretend = 0, frame = 0
+ 338              		@ frame_needed = 0, uses_anonymous_args = 0
+ 339 0000 08B5     		push	{r3, lr}
+ 340 0002 D0F8D802 		ldr	r0, [r0, #728]
+ 341 0006 FFF7FEFF 		bl	USBD_LL_IsoOUTIncomplete
+ 342 000a 08BD     		pop	{r3, pc}
+ 344              		.section	.text.HAL_PCD_ISOINIncompleteCallback,"ax",%progbits
+ 345              		.align	1
+ 346              		.global	HAL_PCD_ISOINIncompleteCallback
+ 347              		.syntax unified
+ 348              		.thumb
+ 349              		.thumb_func
+ 351              	HAL_PCD_ISOINIncompleteCallback:
+ 352              		@ args = 0, pretend = 0, frame = 0
+ 353              		@ frame_needed = 0, uses_anonymous_args = 0
+ 354 0000 08B5     		push	{r3, lr}
+ 355 0002 D0F8D802 		ldr	r0, [r0, #728]
+ 356 0006 FFF7FEFF 		bl	USBD_LL_IsoINIncomplete
+ 357 000a 08BD     		pop	{r3, pc}
+ 359              		.section	.text.HAL_PCD_ConnectCallback,"ax",%progbits
+ 360              		.align	1
+ 361              		.global	HAL_PCD_ConnectCallback
+ 362              		.syntax unified
+ 363              		.thumb
+ 364              		.thumb_func
+ 366              	HAL_PCD_ConnectCallback:
+ 367              		@ args = 0, pretend = 0, frame = 0
+ 368              		@ frame_needed = 0, uses_anonymous_args = 0
+ 369 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 7
+
+
+ 370 0002 D0F8D802 		ldr	r0, [r0, #728]
+ 371 0006 FFF7FEFF 		bl	USBD_LL_DevConnected
+ 372 000a 08BD     		pop	{r3, pc}
+ 374              		.section	.text.HAL_PCD_DisconnectCallback,"ax",%progbits
+ 375              		.align	1
+ 376              		.global	HAL_PCD_DisconnectCallback
+ 377              		.syntax unified
+ 378              		.thumb
+ 379              		.thumb_func
+ 381              	HAL_PCD_DisconnectCallback:
+ 382              		@ args = 0, pretend = 0, frame = 0
+ 383              		@ frame_needed = 0, uses_anonymous_args = 0
+ 384 0000 08B5     		push	{r3, lr}
+ 385 0002 D0F8D802 		ldr	r0, [r0, #728]
+ 386 0006 FFF7FEFF 		bl	USBD_LL_DevDisconnected
+ 387 000a 08BD     		pop	{r3, pc}
+ 389              		.section	.text.USBD_LL_Init,"ax",%progbits
+ 390              		.align	1
+ 391              		.global	USBD_LL_Init
+ 392              		.syntax unified
+ 393              		.thumb
+ 394              		.thumb_func
+ 396              	USBD_LL_Init:
+ 397              		@ args = 0, pretend = 0, frame = 0
+ 398              		@ frame_needed = 0, uses_anonymous_args = 0
+ 399 0000 38B5     		push	{r3, r4, r5, lr}
+ 400 0002 0546     		mov	r5, r0
+ 401 0004 204C     		ldr	r4, .L58
+ 402 0006 C4F8D802 		str	r0, [r4, #728]
+ 403 000a C0F8C842 		str	r4, [r0, #712]
+ 404 000e FFF7FEFF 		bl	HAL_PWREx_EnableVddUSB
+ 405 0012 1E4B     		ldr	r3, .L58+4
+ 406 0014 2360     		str	r3, [r4]
+ 407 0016 0823     		movs	r3, #8
+ 408 0018 2371     		strb	r3, [r4, #4]
+ 409 001a 0223     		movs	r3, #2
+ 410 001c 6371     		strb	r3, [r4, #5]
+ 411 001e E371     		strb	r3, [r4, #7]
+ 412 0020 0023     		movs	r3, #0
+ 413 0022 2372     		strb	r3, [r4, #8]
+ 414 0024 6372     		strb	r3, [r4, #9]
+ 415 0026 A372     		strb	r3, [r4, #10]
+ 416 0028 E372     		strb	r3, [r4, #11]
+ 417 002a 2046     		mov	r0, r4
+ 418 002c FFF7FEFF 		bl	HAL_PCD_Init
+ 419 0030 30BB     		cbnz	r0, .L57
+ 420              	.L55:
+ 421 0032 1823     		movs	r3, #24
+ 422 0034 0022     		movs	r2, #0
+ 423 0036 1146     		mov	r1, r2
+ 424 0038 D5F8C802 		ldr	r0, [r5, #712]
+ 425 003c FFF7FEFF 		bl	HAL_PCDEx_PMAConfig
+ 426 0040 5823     		movs	r3, #88
+ 427 0042 0022     		movs	r2, #0
+ 428 0044 8021     		movs	r1, #128
+ 429 0046 D5F8C802 		ldr	r0, [r5, #712]
+ 430 004a FFF7FEFF 		bl	HAL_PCDEx_PMAConfig
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 8
+
+
+ 431 004e C023     		movs	r3, #192
+ 432 0050 0022     		movs	r2, #0
+ 433 0052 8121     		movs	r1, #129
+ 434 0054 D5F8C802 		ldr	r0, [r5, #712]
+ 435 0058 FFF7FEFF 		bl	HAL_PCDEx_PMAConfig
+ 436 005c 4FF48873 		mov	r3, #272
+ 437 0060 0022     		movs	r2, #0
+ 438 0062 0121     		movs	r1, #1
+ 439 0064 D5F8C802 		ldr	r0, [r5, #712]
+ 440 0068 FFF7FEFF 		bl	HAL_PCDEx_PMAConfig
+ 441 006c 4FF48073 		mov	r3, #256
+ 442 0070 0022     		movs	r2, #0
+ 443 0072 8221     		movs	r1, #130
+ 444 0074 D5F8C802 		ldr	r0, [r5, #712]
+ 445 0078 FFF7FEFF 		bl	HAL_PCDEx_PMAConfig
+ 446 007c 0020     		movs	r0, #0
+ 447 007e 38BD     		pop	{r3, r4, r5, pc}
+ 448              	.L57:
+ 449 0080 FFF7FEFF 		bl	Error_Handler
+ 450 0084 D5E7     		b	.L55
+ 451              	.L59:
+ 452 0086 00BF     		.align	2
+ 453              	.L58:
+ 454 0088 00000000 		.word	hpcd_USB_FS
+ 455 008c 00680040 		.word	1073768448
+ 457              		.section	.text.USBD_LL_DeInit,"ax",%progbits
+ 458              		.align	1
+ 459              		.global	USBD_LL_DeInit
+ 460              		.syntax unified
+ 461              		.thumb
+ 462              		.thumb_func
+ 464              	USBD_LL_DeInit:
+ 465              		@ args = 0, pretend = 0, frame = 0
+ 466              		@ frame_needed = 0, uses_anonymous_args = 0
+ 467 0000 08B5     		push	{r3, lr}
+ 468 0002 D0F8C802 		ldr	r0, [r0, #712]
+ 469 0006 FFF7FEFF 		bl	HAL_PCD_DeInit
+ 470 000a FFF7FEFF 		bl	USBD_Get_USB_Status
+ 471 000e 08BD     		pop	{r3, pc}
+ 473              		.section	.text.USBD_LL_Start,"ax",%progbits
+ 474              		.align	1
+ 475              		.global	USBD_LL_Start
+ 476              		.syntax unified
+ 477              		.thumb
+ 478              		.thumb_func
+ 480              	USBD_LL_Start:
+ 481              		@ args = 0, pretend = 0, frame = 0
+ 482              		@ frame_needed = 0, uses_anonymous_args = 0
+ 483 0000 08B5     		push	{r3, lr}
+ 484 0002 D0F8C802 		ldr	r0, [r0, #712]
+ 485 0006 FFF7FEFF 		bl	HAL_PCD_Start
+ 486 000a FFF7FEFF 		bl	USBD_Get_USB_Status
+ 487 000e 08BD     		pop	{r3, pc}
+ 489              		.section	.text.USBD_LL_Stop,"ax",%progbits
+ 490              		.align	1
+ 491              		.global	USBD_LL_Stop
+ 492              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 9
+
+
+ 493              		.thumb
+ 494              		.thumb_func
+ 496              	USBD_LL_Stop:
+ 497              		@ args = 0, pretend = 0, frame = 0
+ 498              		@ frame_needed = 0, uses_anonymous_args = 0
+ 499 0000 08B5     		push	{r3, lr}
+ 500 0002 D0F8C802 		ldr	r0, [r0, #712]
+ 501 0006 FFF7FEFF 		bl	HAL_PCD_Stop
+ 502 000a FFF7FEFF 		bl	USBD_Get_USB_Status
+ 503 000e 08BD     		pop	{r3, pc}
+ 505              		.section	.text.USBD_LL_OpenEP,"ax",%progbits
+ 506              		.align	1
+ 507              		.global	USBD_LL_OpenEP
+ 508              		.syntax unified
+ 509              		.thumb
+ 510              		.thumb_func
+ 512              	USBD_LL_OpenEP:
+ 513              		@ args = 0, pretend = 0, frame = 0
+ 514              		@ frame_needed = 0, uses_anonymous_args = 0
+ 515 0000 08B5     		push	{r3, lr}
+ 516 0002 9446     		mov	ip, r2
+ 517 0004 1A46     		mov	r2, r3
+ 518 0006 6346     		mov	r3, ip
+ 519 0008 D0F8C802 		ldr	r0, [r0, #712]
+ 520 000c FFF7FEFF 		bl	HAL_PCD_EP_Open
+ 521 0010 FFF7FEFF 		bl	USBD_Get_USB_Status
+ 522 0014 08BD     		pop	{r3, pc}
+ 524              		.section	.text.USBD_LL_CloseEP,"ax",%progbits
+ 525              		.align	1
+ 526              		.global	USBD_LL_CloseEP
+ 527              		.syntax unified
+ 528              		.thumb
+ 529              		.thumb_func
+ 531              	USBD_LL_CloseEP:
+ 532              		@ args = 0, pretend = 0, frame = 0
+ 533              		@ frame_needed = 0, uses_anonymous_args = 0
+ 534 0000 08B5     		push	{r3, lr}
+ 535 0002 D0F8C802 		ldr	r0, [r0, #712]
+ 536 0006 FFF7FEFF 		bl	HAL_PCD_EP_Close
+ 537 000a FFF7FEFF 		bl	USBD_Get_USB_Status
+ 538 000e 08BD     		pop	{r3, pc}
+ 540              		.section	.text.USBD_LL_FlushEP,"ax",%progbits
+ 541              		.align	1
+ 542              		.global	USBD_LL_FlushEP
+ 543              		.syntax unified
+ 544              		.thumb
+ 545              		.thumb_func
+ 547              	USBD_LL_FlushEP:
+ 548              		@ args = 0, pretend = 0, frame = 0
+ 549              		@ frame_needed = 0, uses_anonymous_args = 0
+ 550 0000 08B5     		push	{r3, lr}
+ 551 0002 D0F8C802 		ldr	r0, [r0, #712]
+ 552 0006 FFF7FEFF 		bl	HAL_PCD_EP_Flush
+ 553 000a FFF7FEFF 		bl	USBD_Get_USB_Status
+ 554 000e 08BD     		pop	{r3, pc}
+ 556              		.section	.text.USBD_LL_StallEP,"ax",%progbits
+ 557              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 10
+
+
+ 558              		.global	USBD_LL_StallEP
+ 559              		.syntax unified
+ 560              		.thumb
+ 561              		.thumb_func
+ 563              	USBD_LL_StallEP:
+ 564              		@ args = 0, pretend = 0, frame = 0
+ 565              		@ frame_needed = 0, uses_anonymous_args = 0
+ 566 0000 08B5     		push	{r3, lr}
+ 567 0002 D0F8C802 		ldr	r0, [r0, #712]
+ 568 0006 FFF7FEFF 		bl	HAL_PCD_EP_SetStall
+ 569 000a FFF7FEFF 		bl	USBD_Get_USB_Status
+ 570 000e 08BD     		pop	{r3, pc}
+ 572              		.section	.text.USBD_LL_ClearStallEP,"ax",%progbits
+ 573              		.align	1
+ 574              		.global	USBD_LL_ClearStallEP
+ 575              		.syntax unified
+ 576              		.thumb
+ 577              		.thumb_func
+ 579              	USBD_LL_ClearStallEP:
+ 580              		@ args = 0, pretend = 0, frame = 0
+ 581              		@ frame_needed = 0, uses_anonymous_args = 0
+ 582 0000 08B5     		push	{r3, lr}
+ 583 0002 D0F8C802 		ldr	r0, [r0, #712]
+ 584 0006 FFF7FEFF 		bl	HAL_PCD_EP_ClrStall
+ 585 000a FFF7FEFF 		bl	USBD_Get_USB_Status
+ 586 000e 08BD     		pop	{r3, pc}
+ 588              		.section	.text.USBD_LL_IsStallEP,"ax",%progbits
+ 589              		.align	1
+ 590              		.global	USBD_LL_IsStallEP
+ 591              		.syntax unified
+ 592              		.thumb
+ 593              		.thumb_func
+ 595              	USBD_LL_IsStallEP:
+ 596              		@ args = 0, pretend = 0, frame = 0
+ 597              		@ frame_needed = 0, uses_anonymous_args = 0
+ 598              		@ link register save eliminated.
+ 599 0000 D0F8C832 		ldr	r3, [r0, #712]
+ 600 0004 11F0800F 		tst	r1, #128
+ 601 0008 08D1     		bne	.L79
+ 602 000a 01F07F01 		and	r1, r1, #127
+ 603 000e 01EB8101 		add	r1, r1, r1, lsl #2
+ 604 0012 03EBC103 		add	r3, r3, r1, lsl #3
+ 605 0016 93F85201 		ldrb	r0, [r3, #338]	@ zero_extendqisi2
+ 606 001a 7047     		bx	lr
+ 607              	.L79:
+ 608 001c 01F07F01 		and	r1, r1, #127
+ 609 0020 01EB8101 		add	r1, r1, r1, lsl #2
+ 610 0024 03EBC103 		add	r3, r3, r1, lsl #3
+ 611 0028 987C     		ldrb	r0, [r3, #18]	@ zero_extendqisi2
+ 612 002a 7047     		bx	lr
+ 614              		.section	.text.USBD_LL_SetUSBAddress,"ax",%progbits
+ 615              		.align	1
+ 616              		.global	USBD_LL_SetUSBAddress
+ 617              		.syntax unified
+ 618              		.thumb
+ 619              		.thumb_func
+ 621              	USBD_LL_SetUSBAddress:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 11
+
+
+ 622              		@ args = 0, pretend = 0, frame = 0
+ 623              		@ frame_needed = 0, uses_anonymous_args = 0
+ 624 0000 08B5     		push	{r3, lr}
+ 625 0002 D0F8C802 		ldr	r0, [r0, #712]
+ 626 0006 FFF7FEFF 		bl	HAL_PCD_SetAddress
+ 627 000a FFF7FEFF 		bl	USBD_Get_USB_Status
+ 628 000e 08BD     		pop	{r3, pc}
+ 630              		.section	.text.USBD_LL_Transmit,"ax",%progbits
+ 631              		.align	1
+ 632              		.global	USBD_LL_Transmit
+ 633              		.syntax unified
+ 634              		.thumb
+ 635              		.thumb_func
+ 637              	USBD_LL_Transmit:
+ 638              		@ args = 0, pretend = 0, frame = 0
+ 639              		@ frame_needed = 0, uses_anonymous_args = 0
+ 640 0000 08B5     		push	{r3, lr}
+ 641 0002 D0F8C802 		ldr	r0, [r0, #712]
+ 642 0006 FFF7FEFF 		bl	HAL_PCD_EP_Transmit
+ 643 000a FFF7FEFF 		bl	USBD_Get_USB_Status
+ 644 000e 08BD     		pop	{r3, pc}
+ 646              		.section	.text.USBD_LL_PrepareReceive,"ax",%progbits
+ 647              		.align	1
+ 648              		.global	USBD_LL_PrepareReceive
+ 649              		.syntax unified
+ 650              		.thumb
+ 651              		.thumb_func
+ 653              	USBD_LL_PrepareReceive:
+ 654              		@ args = 0, pretend = 0, frame = 0
+ 655              		@ frame_needed = 0, uses_anonymous_args = 0
+ 656 0000 08B5     		push	{r3, lr}
+ 657 0002 D0F8C802 		ldr	r0, [r0, #712]
+ 658 0006 FFF7FEFF 		bl	HAL_PCD_EP_Receive
+ 659 000a FFF7FEFF 		bl	USBD_Get_USB_Status
+ 660 000e 08BD     		pop	{r3, pc}
+ 662              		.section	.text.USBD_LL_GetRxDataSize,"ax",%progbits
+ 663              		.align	1
+ 664              		.global	USBD_LL_GetRxDataSize
+ 665              		.syntax unified
+ 666              		.thumb
+ 667              		.thumb_func
+ 669              	USBD_LL_GetRxDataSize:
+ 670              		@ args = 0, pretend = 0, frame = 0
+ 671              		@ frame_needed = 0, uses_anonymous_args = 0
+ 672 0000 08B5     		push	{r3, lr}
+ 673 0002 D0F8C802 		ldr	r0, [r0, #712]
+ 674 0006 FFF7FEFF 		bl	HAL_PCD_EP_GetRxCount
+ 675 000a 08BD     		pop	{r3, pc}
+ 677              		.section	.text.HAL_PCDEx_LPM_Callback,"ax",%progbits
+ 678              		.align	1
+ 679              		.global	HAL_PCDEx_LPM_Callback
+ 680              		.syntax unified
+ 681              		.thumb
+ 682              		.thumb_func
+ 684              	HAL_PCDEx_LPM_Callback:
+ 685              		@ args = 0, pretend = 0, frame = 0
+ 686              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 12
+
+
+ 687 0000 10B5     		push	{r4, lr}
+ 688 0002 0446     		mov	r4, r0
+ 689 0004 69B1     		cbz	r1, .L89
+ 690 0006 0129     		cmp	r1, #1
+ 691 0008 11D1     		bne	.L88
+ 692 000a D0F8D802 		ldr	r0, [r0, #728]
+ 693 000e FFF7FEFF 		bl	USBD_LL_Suspend
+ 694 0012 637A     		ldrb	r3, [r4, #9]	@ zero_extendqisi2
+ 695 0014 5BB1     		cbz	r3, .L88
+ 696 0016 0A4A     		ldr	r2, .L95
+ 697 0018 1369     		ldr	r3, [r2, #16]
+ 698 001a 43F00603 		orr	r3, r3, #6
+ 699 001e 1361     		str	r3, [r2, #16]
+ 700 0020 05E0     		b	.L88
+ 701              	.L89:
+ 702 0022 437A     		ldrb	r3, [r0, #9]	@ zero_extendqisi2
+ 703 0024 23B9     		cbnz	r3, .L94
+ 704              	.L92:
+ 705 0026 D4F8D802 		ldr	r0, [r4, #728]
+ 706 002a FFF7FEFF 		bl	USBD_LL_Resume
+ 707              	.L88:
+ 708 002e 10BD     		pop	{r4, pc}
+ 709              	.L94:
+ 710 0030 FFF7FEFF 		bl	SystemClockConfig_Resume
+ 711 0034 024A     		ldr	r2, .L95
+ 712 0036 1369     		ldr	r3, [r2, #16]
+ 713 0038 23F00603 		bic	r3, r3, #6
+ 714 003c 1361     		str	r3, [r2, #16]
+ 715 003e F2E7     		b	.L92
+ 716              	.L96:
+ 717              		.align	2
+ 718              	.L95:
+ 719 0040 00ED00E0 		.word	-536810240
+ 721              		.section	.text.USBD_LL_Delay,"ax",%progbits
+ 722              		.align	1
+ 723              		.global	USBD_LL_Delay
+ 724              		.syntax unified
+ 725              		.thumb
+ 726              		.thumb_func
+ 728              	USBD_LL_Delay:
+ 729              		@ args = 0, pretend = 0, frame = 0
+ 730              		@ frame_needed = 0, uses_anonymous_args = 0
+ 731 0000 08B5     		push	{r3, lr}
+ 732 0002 FFF7FEFF 		bl	HAL_Delay
+ 733 0006 08BD     		pop	{r3, pc}
+ 735              		.section	.text.USBD_static_malloc,"ax",%progbits
+ 736              		.align	1
+ 737              		.global	USBD_static_malloc
+ 738              		.syntax unified
+ 739              		.thumb
+ 740              		.thumb_func
+ 742              	USBD_static_malloc:
+ 743              		@ args = 0, pretend = 0, frame = 0
+ 744              		@ frame_needed = 0, uses_anonymous_args = 0
+ 745              		@ link register save eliminated.
+ 746 0000 0048     		ldr	r0, .L100
+ 747 0002 7047     		bx	lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 13
+
+
+ 748              	.L101:
+ 749              		.align	2
+ 750              	.L100:
+ 751 0004 00000000 		.word	mem.0
+ 753              		.section	.text.USBD_static_free,"ax",%progbits
+ 754              		.align	1
+ 755              		.global	USBD_static_free
+ 756              		.syntax unified
+ 757              		.thumb
+ 758              		.thumb_func
+ 760              	USBD_static_free:
+ 761              		@ args = 0, pretend = 0, frame = 0
+ 762              		@ frame_needed = 0, uses_anonymous_args = 0
+ 763              		@ link register save eliminated.
+ 764 0000 7047     		bx	lr
+ 766              		.section	.bss.mem.0,"aw",%nobits
+ 767              		.align	2
+ 770              	mem.0:
+ 771 0000 00000000 		.space	544
+ 771      00000000 
+ 771      00000000 
+ 771      00000000 
+ 771      00000000 
+ 772              		.global	hpcd_USB_FS
+ 773              		.section	.bss.hpcd_USB_FS,"aw",%nobits
+ 774              		.align	2
+ 777              	hpcd_USB_FS:
+ 778 0000 00000000 		.space	732
+ 778      00000000 
+ 778      00000000 
+ 778      00000000 
+ 778      00000000 
+ 779              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 usbd_conf.c
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:18     .text.USBD_Get_USB_Status:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:23     .text.USBD_Get_USB_Status:00000000 USBD_Get_USB_Status
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:43     .text.SystemClockConfig_Resume:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:48     .text.SystemClockConfig_Resume:00000000 SystemClockConfig_Resume
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:56     .text.HAL_PCD_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:62     .text.HAL_PCD_MspInit:00000000 HAL_PCD_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:144    .text.HAL_PCD_MspInit:000000b4 $d
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:147    .text.HAL_PCD_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:153    .text.HAL_PCD_MspDeInit:00000000 HAL_PCD_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:177    .text.HAL_PCD_MspDeInit:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:180    .text.HAL_PCD_SetupStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:186    .text.HAL_PCD_SetupStageCallback:00000000 HAL_PCD_SetupStageCallback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:196    .text.HAL_PCD_DataOutStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:202    .text.HAL_PCD_DataOutStageCallback:00000000 HAL_PCD_DataOutStageCallback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:214    .text.HAL_PCD_DataInStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:220    .text.HAL_PCD_DataInStageCallback:00000000 HAL_PCD_DataInStageCallback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:232    .text.HAL_PCD_SOFCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:238    .text.HAL_PCD_SOFCallback:00000000 HAL_PCD_SOFCallback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:247    .text.HAL_PCD_ResetCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:253    .text.HAL_PCD_ResetCallback:00000000 HAL_PCD_ResetCallback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:273    .text.HAL_PCD_SuspendCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:279    .text.HAL_PCD_SuspendCallback:00000000 HAL_PCD_SuspendCallback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:297    .text.HAL_PCD_SuspendCallback:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:300    .text.HAL_PCD_ResumeCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:306    .text.HAL_PCD_ResumeCallback:00000000 HAL_PCD_ResumeCallback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:327    .text.HAL_PCD_ResumeCallback:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:330    .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:336    .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 HAL_PCD_ISOOUTIncompleteCallback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:345    .text.HAL_PCD_ISOINIncompleteCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:351    .text.HAL_PCD_ISOINIncompleteCallback:00000000 HAL_PCD_ISOINIncompleteCallback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:360    .text.HAL_PCD_ConnectCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:366    .text.HAL_PCD_ConnectCallback:00000000 HAL_PCD_ConnectCallback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:375    .text.HAL_PCD_DisconnectCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:381    .text.HAL_PCD_DisconnectCallback:00000000 HAL_PCD_DisconnectCallback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:390    .text.USBD_LL_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:396    .text.USBD_LL_Init:00000000 USBD_LL_Init
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:454    .text.USBD_LL_Init:00000088 $d
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:777    .bss.hpcd_USB_FS:00000000 hpcd_USB_FS
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:458    .text.USBD_LL_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:464    .text.USBD_LL_DeInit:00000000 USBD_LL_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:474    .text.USBD_LL_Start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:480    .text.USBD_LL_Start:00000000 USBD_LL_Start
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:490    .text.USBD_LL_Stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:496    .text.USBD_LL_Stop:00000000 USBD_LL_Stop
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:506    .text.USBD_LL_OpenEP:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:512    .text.USBD_LL_OpenEP:00000000 USBD_LL_OpenEP
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:525    .text.USBD_LL_CloseEP:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:531    .text.USBD_LL_CloseEP:00000000 USBD_LL_CloseEP
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:541    .text.USBD_LL_FlushEP:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:547    .text.USBD_LL_FlushEP:00000000 USBD_LL_FlushEP
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:557    .text.USBD_LL_StallEP:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:563    .text.USBD_LL_StallEP:00000000 USBD_LL_StallEP
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:573    .text.USBD_LL_ClearStallEP:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:579    .text.USBD_LL_ClearStallEP:00000000 USBD_LL_ClearStallEP
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:589    .text.USBD_LL_IsStallEP:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 15
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:595    .text.USBD_LL_IsStallEP:00000000 USBD_LL_IsStallEP
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:615    .text.USBD_LL_SetUSBAddress:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:621    .text.USBD_LL_SetUSBAddress:00000000 USBD_LL_SetUSBAddress
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:631    .text.USBD_LL_Transmit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:637    .text.USBD_LL_Transmit:00000000 USBD_LL_Transmit
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:647    .text.USBD_LL_PrepareReceive:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:653    .text.USBD_LL_PrepareReceive:00000000 USBD_LL_PrepareReceive
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:663    .text.USBD_LL_GetRxDataSize:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:669    .text.USBD_LL_GetRxDataSize:00000000 USBD_LL_GetRxDataSize
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:678    .text.HAL_PCDEx_LPM_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:684    .text.HAL_PCDEx_LPM_Callback:00000000 HAL_PCDEx_LPM_Callback
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:719    .text.HAL_PCDEx_LPM_Callback:00000040 $d
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:722    .text.USBD_LL_Delay:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:728    .text.USBD_LL_Delay:00000000 USBD_LL_Delay
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:736    .text.USBD_static_malloc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:742    .text.USBD_static_malloc:00000000 USBD_static_malloc
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:751    .text.USBD_static_malloc:00000004 $d
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:770    .bss.mem.0:00000000 mem.0
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:754    .text.USBD_static_free:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:760    .text.USBD_static_free:00000000 USBD_static_free
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:767    .bss.mem.0:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s:774    .bss.hpcd_USB_FS:00000000 $d
+
+UNDEFINED SYMBOLS
+SystemClock_Config
+memset
+HAL_RCCEx_PeriphCLKConfig
+HAL_GPIO_Init
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+Error_Handler
+HAL_GPIO_DeInit
+HAL_NVIC_DisableIRQ
+USBD_LL_SetupStage
+USBD_LL_DataOutStage
+USBD_LL_DataInStage
+USBD_LL_SOF
+USBD_LL_SetSpeed
+USBD_LL_Reset
+USBD_LL_Suspend
+USBD_LL_Resume
+USBD_LL_IsoOUTIncomplete
+USBD_LL_IsoINIncomplete
+USBD_LL_DevConnected
+USBD_LL_DevDisconnected
+HAL_PWREx_EnableVddUSB
+HAL_PCD_Init
+HAL_PCDEx_PMAConfig
+HAL_PCD_DeInit
+HAL_PCD_Start
+HAL_PCD_Stop
+HAL_PCD_EP_Open
+HAL_PCD_EP_Close
+HAL_PCD_EP_Flush
+HAL_PCD_EP_SetStall
+HAL_PCD_EP_ClrStall
+HAL_PCD_SetAddress
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEw4f1.s 			page 16
+
+
+HAL_PCD_EP_Transmit
+HAL_PCD_EP_Receive
+HAL_PCD_EP_GetRxCount
+HAL_Delay

@@ -1,0 +1,73 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSuBZ1t.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_spi_ex.c"
+  16              		.text
+  17              		.section	.text.HAL_SPIEx_FlushRxFifo,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_SPIEx_FlushRxFifo
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_SPIEx_FlushRxFifo:
+  25              		@ args = 0, pretend = 0, frame = 8
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 0023     		movs	r3, #0
+  29 0002 0268     		ldr	r2, [r0]
+  30 0004 9168     		ldr	r1, [r2, #8]
+  31 0006 11F4C06F 		tst	r1, #1536
+  32 000a 12D0     		beq	.L10
+  33 000c 82B0     		sub	sp, sp, #8
+  34 000e 04E0     		b	.L4
+  35              	.L12:
+  36 0010 0268     		ldr	r2, [r0]
+  37 0012 9168     		ldr	r1, [r2, #8]
+  38 0014 11F4C06F 		tst	r1, #1536
+  39 0018 09D0     		beq	.L11
+  40              	.L4:
+  41 001a 0133     		adds	r3, r3, #1
+  42 001c DBB2     		uxtb	r3, r3
+  43 001e D268     		ldr	r2, [r2, #12]
+  44 0020 0192     		str	r2, [sp, #4]
+  45 0022 019A     		ldr	r2, [sp, #4]
+  46 0024 042B     		cmp	r3, #4
+  47 0026 F3D1     		bne	.L12
+  48 0028 0320     		movs	r0, #3
+  49              	.L3:
+  50 002a 02B0     		add	sp, sp, #8
+  51              		@ sp needed
+  52 002c 7047     		bx	lr
+  53              	.L11:
+  54 002e 0020     		movs	r0, #0
+  55 0030 FBE7     		b	.L3
+  56              	.L10:
+  57 0032 0020     		movs	r0, #0
+  58 0034 7047     		bx	lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSuBZ1t.s 			page 2
+
+
+  60              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSuBZ1t.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_spi_ex.c
+C:\Users\Nathan\AppData\Local\Temp\ccSuBZ1t.s:18     .text.HAL_SPIEx_FlushRxFifo:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSuBZ1t.s:24     .text.HAL_SPIEx_FlushRxFifo:00000000 HAL_SPIEx_FlushRxFifo
+
+NO UNDEFINED SYMBOLS

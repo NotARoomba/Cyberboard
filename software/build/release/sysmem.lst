@@ -1,0 +1,88 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"sysmem.c"
+  16              		.text
+  17              		.section	.text._sbrk,"ax",%progbits
+  18              		.align	1
+  19              		.global	_sbrk
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	_sbrk:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 08B5     		push	{r3, lr}
+  28 0002 0346     		mov	r3, r0
+  29 0004 0D4A     		ldr	r2, .L8
+  30 0006 0E49     		ldr	r1, .L8+4
+  31 0008 0E48     		ldr	r0, .L8+8
+  32 000a 0068     		ldr	r0, [r0]
+  33 000c 40B1     		cbz	r0, .L6
+  34              	.L2:
+  35 000e 0D48     		ldr	r0, .L8+8
+  36 0010 0068     		ldr	r0, [r0]
+  37 0012 0344     		add	r3, r3, r0
+  38 0014 521A     		subs	r2, r2, r1
+  39 0016 9342     		cmp	r3, r2
+  40 0018 08D8     		bhi	.L7
+  41 001a 0A4A     		ldr	r2, .L8+8
+  42 001c 1360     		str	r3, [r2]
+  43              	.L1:
+  44 001e 08BD     		pop	{r3, pc}
+  45              	.L6:
+  46 0020 0848     		ldr	r0, .L8+8
+  47 0022 DFF824C0 		ldr	ip, .L8+12
+  48 0026 C0F800C0 		str	ip, [r0]
+  49 002a F0E7     		b	.L2
+  50              	.L7:
+  51 002c FFF7FEFF 		bl	__errno
+  52 0030 0C23     		movs	r3, #12
+  53 0032 0360     		str	r3, [r0]
+  54 0034 4FF0FF30 		mov	r0, #-1
+  55 0038 F1E7     		b	.L1
+  56              	.L9:
+  57 003a 00BF     		.align	2
+  58              	.L8:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s 			page 2
+
+
+  59 003c 00000000 		.word	_estack
+  60 0040 00000000 		.word	_Min_Stack_Size
+  61 0044 00000000 		.word	__sbrk_heap_end
+  62 0048 00000000 		.word	_end
+  64              		.section	.bss.__sbrk_heap_end,"aw",%nobits
+  65              		.align	2
+  68              	__sbrk_heap_end:
+  69 0000 00000000 		.space	4
+  70              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 sysmem.c
+C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s:18     .text._sbrk:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s:24     .text._sbrk:00000000 _sbrk
+C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s:59     .text._sbrk:0000003c $d
+C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s:68     .bss.__sbrk_heap_end:00000000 __sbrk_heap_end
+C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s:65     .bss.__sbrk_heap_end:00000000 $d
+
+UNDEFINED SYMBOLS
+__errno
+_estack
+_Min_Stack_Size
+_end

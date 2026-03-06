@@ -1,0 +1,507 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_gpio.c"
+  16              		.text
+  17              		.section	.text.HAL_GPIO_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_GPIO_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_GPIO_Init:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 70B5     		push	{r4, r5, r6, lr}
+  28 0002 8646     		mov	lr, r0
+  29 0004 0023     		movs	r3, #0
+  30 0006 67E0     		b	.L2
+  31              	.L20:
+  32 0008 DEF80840 		ldr	r4, [lr, #8]
+  33 000c 5D00     		lsls	r5, r3, #1
+  34 000e 0320     		movs	r0, #3
+  35 0010 A840     		lsls	r0, r0, r5
+  36 0012 24EA0004 		bic	r4, r4, r0
+  37 0016 C868     		ldr	r0, [r1, #12]
+  38 0018 A840     		lsls	r0, r0, r5
+  39 001a 2043     		orrs	r0, r0, r4
+  40 001c CEF80800 		str	r0, [lr, #8]
+  41 0020 DEF80440 		ldr	r4, [lr, #4]
+  42 0024 24EA0C04 		bic	r4, r4, ip
+  43 0028 4868     		ldr	r0, [r1, #4]
+  44 002a C0F30010 		ubfx	r0, r0, #4, #1
+  45 002e 9840     		lsls	r0, r0, r3
+  46 0030 2043     		orrs	r0, r0, r4
+  47 0032 CEF80400 		str	r0, [lr, #4]
+  48 0036 60E0     		b	.L4
+  49              	.L21:
+  50 0038 DC08     		lsrs	r4, r3, #3
+  51 003a 0834     		adds	r4, r4, #8
+  52 003c 5EF82400 		ldr	r0, [lr, r4, lsl #2]
+  53 0040 03F00705 		and	r5, r3, #7
+  54 0044 AD00     		lsls	r5, r5, #2
+  55 0046 4FF00F0C 		mov	ip, #15
+  56 004a 0CFA05FC 		lsl	ip, ip, r5
+  57 004e 20EA0C0C 		bic	ip, r0, ip
+  58 0052 0869     		ldr	r0, [r1, #16]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s 			page 2
+
+
+  59 0054 A840     		lsls	r0, r0, r5
+  60 0056 40EA0C00 		orr	r0, r0, ip
+  61 005a 4EF82400 		str	r0, [lr, r4, lsl #2]
+  62 005e 62E0     		b	.L6
+  63              	.L22:
+  64 0060 0420     		movs	r0, #4
+  65 0062 00E0     		b	.L7
+  66              	.L13:
+  67 0064 0020     		movs	r0, #0
+  68              	.L7:
+  69 0066 00FA0CF0 		lsl	r0, r0, ip
+  70 006a 2843     		orrs	r0, r0, r5
+  71 006c 0234     		adds	r4, r4, #2
+  72 006e 4E4D     		ldr	r5, .L23
+  73 0070 45F82400 		str	r0, [r5, r4, lsl #2]
+  74 0074 4D48     		ldr	r0, .L23+4
+  75 0076 0468     		ldr	r4, [r0]
+  76 0078 D043     		mvns	r0, r2
+  77 007a 24EA0205 		bic	r5, r4, r2
+  78 007e 4E68     		ldr	r6, [r1, #4]
+  79 0080 16F4801F 		tst	r6, #1048576
+  80 0084 01D0     		beq	.L8
+  81 0086 42EA0405 		orr	r5, r2, r4
+  82              	.L8:
+  83 008a 484C     		ldr	r4, .L23+4
+  84 008c 2560     		str	r5, [r4]
+  85 008e 6468     		ldr	r4, [r4, #4]
+  86 0090 00EA0405 		and	r5, r0, r4
+  87 0094 4E68     		ldr	r6, [r1, #4]
+  88 0096 16F4001F 		tst	r6, #2097152
+  89 009a 01D0     		beq	.L9
+  90 009c 42EA0405 		orr	r5, r2, r4
+  91              	.L9:
+  92 00a0 424C     		ldr	r4, .L23+4
+  93 00a2 6560     		str	r5, [r4, #4]
+  94 00a4 D4F88040 		ldr	r4, [r4, #128]
+  95 00a8 00EA0405 		and	r5, r0, r4
+  96 00ac 4E68     		ldr	r6, [r1, #4]
+  97 00ae 16F4803F 		tst	r6, #65536
+  98 00b2 01D0     		beq	.L10
+  99 00b4 42EA0405 		orr	r5, r2, r4
+ 100              	.L10:
+ 101 00b8 3C4C     		ldr	r4, .L23+4
+ 102 00ba C4F88050 		str	r5, [r4, #128]
+ 103 00be D4F88440 		ldr	r4, [r4, #132]
+ 104 00c2 2040     		ands	r0, r0, r4
+ 105 00c4 4D68     		ldr	r5, [r1, #4]
+ 106 00c6 15F4003F 		tst	r5, #131072
+ 107 00ca 01D0     		beq	.L11
+ 108 00cc 42EA0400 		orr	r0, r2, r4
+ 109              	.L11:
+ 110 00d0 364A     		ldr	r2, .L23+4
+ 111 00d2 C2F88400 		str	r0, [r2, #132]
+ 112              	.L3:
+ 113 00d6 0133     		adds	r3, r3, #1
+ 114              	.L2:
+ 115 00d8 0A68     		ldr	r2, [r1]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s 			page 3
+
+
+ 116 00da 32FA03F0 		lsrs	r0, r2, r3
+ 117 00de 61D0     		beq	.L19
+ 118 00e0 4FF0010C 		mov	ip, #1
+ 119 00e4 0CFA03FC 		lsl	ip, ip, r3
+ 120 00e8 1CEA0202 		ands	r2, ip, r2
+ 121 00ec F3D0     		beq	.L3
+ 122 00ee 4868     		ldr	r0, [r1, #4]
+ 123 00f0 00F00300 		and	r0, r0, #3
+ 124 00f4 0138     		subs	r0, r0, #1
+ 125 00f6 0128     		cmp	r0, #1
+ 126 00f8 86D9     		bls	.L20
+ 127              	.L4:
+ 128 00fa 4868     		ldr	r0, [r1, #4]
+ 129 00fc 00F00300 		and	r0, r0, #3
+ 130 0100 0328     		cmp	r0, #3
+ 131 0102 0BD0     		beq	.L5
+ 132 0104 DEF80C40 		ldr	r4, [lr, #12]
+ 133 0108 5D00     		lsls	r5, r3, #1
+ 134 010a 0320     		movs	r0, #3
+ 135 010c A840     		lsls	r0, r0, r5
+ 136 010e 24EA0004 		bic	r4, r4, r0
+ 137 0112 8868     		ldr	r0, [r1, #8]
+ 138 0114 A840     		lsls	r0, r0, r5
+ 139 0116 2043     		orrs	r0, r0, r4
+ 140 0118 CEF80C00 		str	r0, [lr, #12]
+ 141              	.L5:
+ 142 011c 4868     		ldr	r0, [r1, #4]
+ 143 011e 00F00300 		and	r0, r0, #3
+ 144 0122 0228     		cmp	r0, #2
+ 145 0124 88D0     		beq	.L21
+ 146              	.L6:
+ 147 0126 DEF80000 		ldr	r0, [lr]
+ 148 012a 5C00     		lsls	r4, r3, #1
+ 149 012c 4FF0030C 		mov	ip, #3
+ 150 0130 0CFA04FC 		lsl	ip, ip, r4
+ 151 0134 20EA0C0C 		bic	ip, r0, ip
+ 152 0138 4868     		ldr	r0, [r1, #4]
+ 153 013a 00F00300 		and	r0, r0, #3
+ 154 013e A040     		lsls	r0, r0, r4
+ 155 0140 40EA0C00 		orr	r0, r0, ip
+ 156 0144 CEF80000 		str	r0, [lr]
+ 157 0148 4868     		ldr	r0, [r1, #4]
+ 158 014a 10F4403F 		tst	r0, #196608
+ 159 014e C2D0     		beq	.L3
+ 160 0150 9C08     		lsrs	r4, r3, #2
+ 161 0152 A51C     		adds	r5, r4, #2
+ 162 0154 1448     		ldr	r0, .L23
+ 163 0156 50F82550 		ldr	r5, [r0, r5, lsl #2]
+ 164 015a 03F0030C 		and	ip, r3, #3
+ 165 015e 4FEA8C0C 		lsl	ip, ip, #2
+ 166 0162 0F20     		movs	r0, #15
+ 167 0164 00FA0CF0 		lsl	r0, r0, ip
+ 168 0168 25EA0005 		bic	r5, r5, r0
+ 169 016c BEF1904F 		cmp	lr, #1207959552
+ 170 0170 3FF478AF 		beq	.L13
+ 171 0174 0E48     		ldr	r0, .L23+8
+ 172 0176 8645     		cmp	lr, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s 			page 4
+
+
+ 173 0178 0ED0     		beq	.L14
+ 174 017a 00F58060 		add	r0, r0, #1024
+ 175 017e 8645     		cmp	lr, r0
+ 176 0180 0CD0     		beq	.L15
+ 177 0182 00F58060 		add	r0, r0, #1024
+ 178 0186 8645     		cmp	lr, r0
+ 179 0188 0AD0     		beq	.L16
+ 180 018a 00F58060 		add	r0, r0, #1024
+ 181 018e 8645     		cmp	lr, r0
+ 182 0190 3FF466AF 		beq	.L22
+ 183 0194 0720     		movs	r0, #7
+ 184 0196 66E7     		b	.L7
+ 185              	.L14:
+ 186 0198 0120     		movs	r0, #1
+ 187 019a 64E7     		b	.L7
+ 188              	.L15:
+ 189 019c 0220     		movs	r0, #2
+ 190 019e 62E7     		b	.L7
+ 191              	.L16:
+ 192 01a0 0320     		movs	r0, #3
+ 193 01a2 60E7     		b	.L7
+ 194              	.L19:
+ 195 01a4 70BD     		pop	{r4, r5, r6, pc}
+ 196              	.L24:
+ 197 01a6 00BF     		.align	2
+ 198              	.L23:
+ 199 01a8 00000140 		.word	1073807360
+ 200 01ac 00080058 		.word	1476397056
+ 201 01b0 00040048 		.word	1207960576
+ 203              		.section	.text.HAL_GPIO_DeInit,"ax",%progbits
+ 204              		.align	1
+ 205              		.global	HAL_GPIO_DeInit
+ 206              		.syntax unified
+ 207              		.thumb
+ 208              		.thumb_func
+ 210              	HAL_GPIO_DeInit:
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213 0000 0023     		movs	r3, #0
+ 214 0002 31FA03F2 		lsrs	r2, r1, r3
+ 215 0006 7ED0     		beq	.L39
+ 216 0008 F0B5     		push	{r4, r5, r6, r7, lr}
+ 217 000a 2EE0     		b	.L30
+ 218              	.L42:
+ 219 000c 0425     		movs	r5, #4
+ 220 000e 00E0     		b	.L28
+ 221              	.L31:
+ 222 0010 0025     		movs	r5, #0
+ 223              	.L28:
+ 224 0012 05FA0CF5 		lsl	r5, r5, ip
+ 225 0016 A542     		cmp	r5, r4
+ 226 0018 55D0     		beq	.L40
+ 227              	.L29:
+ 228 001a 0468     		ldr	r4, [r0]
+ 229 001c 5D00     		lsls	r5, r3, #1
+ 230 001e 4FF0030C 		mov	ip, #3
+ 231 0022 0CFA05FC 		lsl	ip, ip, r5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s 			page 5
+
+
+ 232 0026 44EA0C04 		orr	r4, r4, ip
+ 233 002a 0460     		str	r4, [r0]
+ 234 002c 4FEAD30E 		lsr	lr, r3, #3
+ 235 0030 0EF1080E 		add	lr, lr, #8
+ 236 0034 50F82E40 		ldr	r4, [r0, lr, lsl #2]
+ 237 0038 03F00706 		and	r6, r3, #7
+ 238 003c B600     		lsls	r6, r6, #2
+ 239 003e 0F25     		movs	r5, #15
+ 240 0040 B540     		lsls	r5, r5, r6
+ 241 0042 24EA0504 		bic	r4, r4, r5
+ 242 0046 40F82E40 		str	r4, [r0, lr, lsl #2]
+ 243 004a C468     		ldr	r4, [r0, #12]
+ 244 004c 24EA0C04 		bic	r4, r4, ip
+ 245 0050 C460     		str	r4, [r0, #12]
+ 246 0052 4468     		ldr	r4, [r0, #4]
+ 247 0054 24EA0202 		bic	r2, r4, r2
+ 248 0058 4260     		str	r2, [r0, #4]
+ 249 005a 8268     		ldr	r2, [r0, #8]
+ 250 005c 22EA0C02 		bic	r2, r2, ip
+ 251 0060 8260     		str	r2, [r0, #8]
+ 252              	.L27:
+ 253 0062 0133     		adds	r3, r3, #1
+ 254 0064 31FA03F2 		lsrs	r2, r1, r3
+ 255 0068 4CD0     		beq	.L41
+ 256              	.L30:
+ 257 006a 0122     		movs	r2, #1
+ 258 006c 9A40     		lsls	r2, r2, r3
+ 259 006e 12EA0107 		ands	r7, r2, r1
+ 260 0072 F6D0     		beq	.L27
+ 261 0074 4FEA930E 		lsr	lr, r3, #2
+ 262 0078 0EF10205 		add	r5, lr, #2
+ 263 007c 224C     		ldr	r4, .L43
+ 264 007e 54F82540 		ldr	r4, [r4, r5, lsl #2]
+ 265 0082 03F0030C 		and	ip, r3, #3
+ 266 0086 4FEA8C0C 		lsl	ip, ip, #2
+ 267 008a 0F25     		movs	r5, #15
+ 268 008c 05FA0CF6 		lsl	r6, r5, ip
+ 269 0090 3440     		ands	r4, r4, r6
+ 270 0092 B0F1904F 		cmp	r0, #1207959552
+ 271 0096 BBD0     		beq	.L31
+ 272 0098 1C4D     		ldr	r5, .L43+4
+ 273 009a A842     		cmp	r0, r5
+ 274 009c 0DD0     		beq	.L32
+ 275 009e 05F58065 		add	r5, r5, #1024
+ 276 00a2 A842     		cmp	r0, r5
+ 277 00a4 0BD0     		beq	.L33
+ 278 00a6 05F58065 		add	r5, r5, #1024
+ 279 00aa A842     		cmp	r0, r5
+ 280 00ac 09D0     		beq	.L34
+ 281 00ae 05F58065 		add	r5, r5, #1024
+ 282 00b2 A842     		cmp	r0, r5
+ 283 00b4 AAD0     		beq	.L42
+ 284 00b6 0725     		movs	r5, #7
+ 285 00b8 ABE7     		b	.L28
+ 286              	.L32:
+ 287 00ba 0125     		movs	r5, #1
+ 288 00bc A9E7     		b	.L28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s 			page 6
+
+
+ 289              	.L33:
+ 290 00be 0225     		movs	r5, #2
+ 291 00c0 A7E7     		b	.L28
+ 292              	.L34:
+ 293 00c2 0325     		movs	r5, #3
+ 294 00c4 A5E7     		b	.L28
+ 295              	.L40:
+ 296 00c6 124C     		ldr	r4, .L43+8
+ 297 00c8 D4F88050 		ldr	r5, [r4, #128]
+ 298 00cc 25EA0705 		bic	r5, r5, r7
+ 299 00d0 C4F88050 		str	r5, [r4, #128]
+ 300 00d4 D4F88450 		ldr	r5, [r4, #132]
+ 301 00d8 25EA0705 		bic	r5, r5, r7
+ 302 00dc C4F88450 		str	r5, [r4, #132]
+ 303 00e0 2568     		ldr	r5, [r4]
+ 304 00e2 25EA0705 		bic	r5, r5, r7
+ 305 00e6 2560     		str	r5, [r4]
+ 306 00e8 6568     		ldr	r5, [r4, #4]
+ 307 00ea 25EA0705 		bic	r5, r5, r7
+ 308 00ee 6560     		str	r5, [r4, #4]
+ 309 00f0 054F     		ldr	r7, .L43
+ 310 00f2 0EF10204 		add	r4, lr, #2
+ 311 00f6 57F82450 		ldr	r5, [r7, r4, lsl #2]
+ 312 00fa 25EA0605 		bic	r5, r5, r6
+ 313 00fe 47F82450 		str	r5, [r7, r4, lsl #2]
+ 314 0102 8AE7     		b	.L29
+ 315              	.L41:
+ 316 0104 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 317              	.L39:
+ 318 0106 7047     		bx	lr
+ 319              	.L44:
+ 320              		.align	2
+ 321              	.L43:
+ 322 0108 00000140 		.word	1073807360
+ 323 010c 00040048 		.word	1207960576
+ 324 0110 00080058 		.word	1476397056
+ 326              		.section	.text.HAL_GPIO_ReadPin,"ax",%progbits
+ 327              		.align	1
+ 328              		.global	HAL_GPIO_ReadPin
+ 329              		.syntax unified
+ 330              		.thumb
+ 331              		.thumb_func
+ 333              	HAL_GPIO_ReadPin:
+ 334              		@ args = 0, pretend = 0, frame = 0
+ 335              		@ frame_needed = 0, uses_anonymous_args = 0
+ 336              		@ link register save eliminated.
+ 337 0000 0369     		ldr	r3, [r0, #16]
+ 338 0002 1942     		tst	r1, r3
+ 339 0004 01D0     		beq	.L47
+ 340 0006 0120     		movs	r0, #1
+ 341 0008 7047     		bx	lr
+ 342              	.L47:
+ 343 000a 0020     		movs	r0, #0
+ 344 000c 7047     		bx	lr
+ 346              		.section	.text.HAL_GPIO_WritePin,"ax",%progbits
+ 347              		.align	1
+ 348              		.global	HAL_GPIO_WritePin
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s 			page 7
+
+
+ 349              		.syntax unified
+ 350              		.thumb
+ 351              		.thumb_func
+ 353              	HAL_GPIO_WritePin:
+ 354              		@ args = 0, pretend = 0, frame = 0
+ 355              		@ frame_needed = 0, uses_anonymous_args = 0
+ 356              		@ link register save eliminated.
+ 357 0000 0AB1     		cbz	r2, .L49
+ 358 0002 8161     		str	r1, [r0, #24]
+ 359 0004 7047     		bx	lr
+ 360              	.L49:
+ 361 0006 8162     		str	r1, [r0, #40]
+ 362 0008 7047     		bx	lr
+ 364              		.section	.text.HAL_GPIO_WriteMultipleStatePin,"ax",%progbits
+ 365              		.align	1
+ 366              		.global	HAL_GPIO_WriteMultipleStatePin
+ 367              		.syntax unified
+ 368              		.thumb
+ 369              		.thumb_func
+ 371              	HAL_GPIO_WriteMultipleStatePin:
+ 372              		@ args = 0, pretend = 0, frame = 0
+ 373              		@ frame_needed = 0, uses_anonymous_args = 0
+ 374              		@ link register save eliminated.
+ 375 0000 42EA0142 		orr	r2, r2, r1, lsl #16
+ 376 0004 8261     		str	r2, [r0, #24]
+ 377 0006 7047     		bx	lr
+ 379              		.section	.text.HAL_GPIO_TogglePin,"ax",%progbits
+ 380              		.align	1
+ 381              		.global	HAL_GPIO_TogglePin
+ 382              		.syntax unified
+ 383              		.thumb
+ 384              		.thumb_func
+ 386              	HAL_GPIO_TogglePin:
+ 387              		@ args = 0, pretend = 0, frame = 0
+ 388              		@ frame_needed = 0, uses_anonymous_args = 0
+ 389              		@ link register save eliminated.
+ 390 0000 4369     		ldr	r3, [r0, #20]
+ 391 0002 01EA0302 		and	r2, r1, r3
+ 392 0006 21EA0301 		bic	r1, r1, r3
+ 393 000a 41EA0241 		orr	r1, r1, r2, lsl #16
+ 394 000e 8161     		str	r1, [r0, #24]
+ 395 0010 7047     		bx	lr
+ 397              		.section	.text.HAL_GPIO_LockPin,"ax",%progbits
+ 398              		.align	1
+ 399              		.global	HAL_GPIO_LockPin
+ 400              		.syntax unified
+ 401              		.thumb
+ 402              		.thumb_func
+ 404              	HAL_GPIO_LockPin:
+ 405              		@ args = 0, pretend = 0, frame = 8
+ 406              		@ frame_needed = 0, uses_anonymous_args = 0
+ 407              		@ link register save eliminated.
+ 408 0000 82B0     		sub	sp, sp, #8
+ 409 0002 4FF48033 		mov	r3, #65536
+ 410 0006 0193     		str	r3, [sp, #4]
+ 411 0008 019B     		ldr	r3, [sp, #4]
+ 412 000a 0B43     		orrs	r3, r3, r1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s 			page 8
+
+
+ 413 000c 0193     		str	r3, [sp, #4]
+ 414 000e 019B     		ldr	r3, [sp, #4]
+ 415 0010 C361     		str	r3, [r0, #28]
+ 416 0012 C161     		str	r1, [r0, #28]
+ 417 0014 019B     		ldr	r3, [sp, #4]
+ 418 0016 C361     		str	r3, [r0, #28]
+ 419 0018 C369     		ldr	r3, [r0, #28]
+ 420 001a 0193     		str	r3, [sp, #4]
+ 421 001c C369     		ldr	r3, [r0, #28]
+ 422 001e 13F4803F 		tst	r3, #65536
+ 423 0022 02D0     		beq	.L55
+ 424 0024 0020     		movs	r0, #0
+ 425              	.L54:
+ 426 0026 02B0     		add	sp, sp, #8
+ 427              		@ sp needed
+ 428 0028 7047     		bx	lr
+ 429              	.L55:
+ 430 002a 0120     		movs	r0, #1
+ 431 002c FBE7     		b	.L54
+ 433              		.section	.text.HAL_GPIO_EXTI_Callback,"ax",%progbits
+ 434              		.align	1
+ 435              		.weak	HAL_GPIO_EXTI_Callback
+ 436              		.syntax unified
+ 437              		.thumb
+ 438              		.thumb_func
+ 440              	HAL_GPIO_EXTI_Callback:
+ 441              		@ args = 0, pretend = 0, frame = 0
+ 442              		@ frame_needed = 0, uses_anonymous_args = 0
+ 443              		@ link register save eliminated.
+ 444 0000 7047     		bx	lr
+ 446              		.section	.text.HAL_GPIO_EXTI_IRQHandler,"ax",%progbits
+ 447              		.align	1
+ 448              		.global	HAL_GPIO_EXTI_IRQHandler
+ 449              		.syntax unified
+ 450              		.thumb
+ 451              		.thumb_func
+ 453              	HAL_GPIO_EXTI_IRQHandler:
+ 454              		@ args = 0, pretend = 0, frame = 0
+ 455              		@ frame_needed = 0, uses_anonymous_args = 0
+ 456 0000 08B5     		push	{r3, lr}
+ 457 0002 054B     		ldr	r3, .L62
+ 458 0004 DB68     		ldr	r3, [r3, #12]
+ 459 0006 0342     		tst	r3, r0
+ 460 0008 00D1     		bne	.L61
+ 461              	.L58:
+ 462 000a 08BD     		pop	{r3, pc}
+ 463              	.L61:
+ 464 000c 024B     		ldr	r3, .L62
+ 465 000e D860     		str	r0, [r3, #12]
+ 466 0010 FFF7FEFF 		bl	HAL_GPIO_EXTI_Callback
+ 467 0014 F9E7     		b	.L58
+ 468              	.L63:
+ 469 0016 00BF     		.align	2
+ 470              	.L62:
+ 471 0018 00080058 		.word	1476397056
+ 473              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_gpio.c
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:18     .text.HAL_GPIO_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:24     .text.HAL_GPIO_Init:00000000 HAL_GPIO_Init
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:199    .text.HAL_GPIO_Init:000001a8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:204    .text.HAL_GPIO_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:210    .text.HAL_GPIO_DeInit:00000000 HAL_GPIO_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:322    .text.HAL_GPIO_DeInit:00000108 $d
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:327    .text.HAL_GPIO_ReadPin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:333    .text.HAL_GPIO_ReadPin:00000000 HAL_GPIO_ReadPin
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:347    .text.HAL_GPIO_WritePin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:353    .text.HAL_GPIO_WritePin:00000000 HAL_GPIO_WritePin
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:365    .text.HAL_GPIO_WriteMultipleStatePin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:371    .text.HAL_GPIO_WriteMultipleStatePin:00000000 HAL_GPIO_WriteMultipleStatePin
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:380    .text.HAL_GPIO_TogglePin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:386    .text.HAL_GPIO_TogglePin:00000000 HAL_GPIO_TogglePin
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:398    .text.HAL_GPIO_LockPin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:404    .text.HAL_GPIO_LockPin:00000000 HAL_GPIO_LockPin
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:434    .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:440    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:447    .text.HAL_GPIO_EXTI_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:453    .text.HAL_GPIO_EXTI_IRQHandler:00000000 HAL_GPIO_EXTI_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccgRJe2d.s:471    .text.HAL_GPIO_EXTI_IRQHandler:00000018 $d
+
+NO UNDEFINED SYMBOLS

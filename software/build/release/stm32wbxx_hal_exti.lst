@@ -1,0 +1,453 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_exti.c"
+  16              		.text
+  17              		.section	.text.HAL_EXTI_SetConfigLine,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_EXTI_SetConfigLine
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_EXTI_SetConfigLine:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 0028     		cmp	r0, #0
+  28 0002 6CD0     		beq	.L12
+  29 0004 0029     		cmp	r1, #0
+  30 0006 6CD0     		beq	.L13
+  31 0008 70B5     		push	{r4, r5, r6, lr}
+  32 000a 0A68     		ldr	r2, [r1]
+  33 000c 0260     		str	r2, [r0]
+  34 000e C2F30043 		ubfx	r3, r2, #16, #1
+  35 0012 02F01F0C 		and	ip, r2, #31
+  36 0016 0120     		movs	r0, #1
+  37 0018 00FA0CF0 		lsl	r0, r0, ip
+  38 001c 12F0007F 		tst	r2, #33554432
+  39 0020 1FD0     		beq	.L3
+  40 0022 4FEA431E 		lsl	lr, r3, #5
+  41 0026 0EF1B044 		add	r4, lr, #1476395008
+  42 002a 2646     		mov	r6, r4
+  43 002c D4F80048 		ldr	r4, [r4, #2048]
+  44 0030 8D68     		ldr	r5, [r1, #8]
+  45 0032 15F0010F 		tst	r5, #1
+  46 0036 2DD0     		beq	.L4
+  47 0038 0443     		orrs	r4, r4, r0
+  48 003a 2546     		mov	r5, r4
+  49              	.L5:
+  50 003c C6F80058 		str	r5, [r6, #2048]
+  51 0040 0EF1B04E 		add	lr, lr, #1476395008
+  52 0044 DEF80448 		ldr	r4, [lr, #2052]
+  53 0048 8D68     		ldr	r5, [r1, #8]
+  54 004a 15F0020F 		tst	r5, #2
+  55 004e 25D0     		beq	.L6
+  56 0050 0443     		orrs	r4, r4, r0
+  57              	.L7:
+  58 0052 CEF80448 		str	r4, [lr, #2052]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s 			page 2
+
+
+  59 0056 0C68     		ldr	r4, [r1]
+  60 0058 04F0C06E 		and	lr, r4, #100663296
+  61 005c BEF1C06F 		cmp	lr, #100663296
+  62 0060 1FD0     		beq	.L18
+  63              	.L3:
+  64 0062 1B01     		lsls	r3, r3, #4
+  65 0064 03F1B04C 		add	ip, r3, #1476395008
+  66 0068 DCF88028 		ldr	r2, [ip, #2176]
+  67 006c 4C68     		ldr	r4, [r1, #4]
+  68 006e 14F0010F 		tst	r4, #1
+  69 0072 2ED0     		beq	.L8
+  70 0074 0243     		orrs	r2, r2, r0
+  71              	.L9:
+  72 0076 CCF88028 		str	r2, [ip, #2176]
+  73 007a 03F1B043 		add	r3, r3, #1476395008
+  74 007e D3F88428 		ldr	r2, [r3, #2180]
+  75 0082 4968     		ldr	r1, [r1, #4]
+  76 0084 11F0020F 		tst	r1, #2
+  77 0088 26D0     		beq	.L10
+  78 008a 0243     		orrs	r2, r2, r0
+  79              	.L11:
+  80 008c C3F88428 		str	r2, [r3, #2180]
+  81 0090 0020     		movs	r0, #0
+  82 0092 70BD     		pop	{r4, r5, r6, pc}
+  83              	.L4:
+  84 0094 24EA0004 		bic	r4, r4, r0
+  85 0098 2546     		mov	r5, r4
+  86 009a CFE7     		b	.L5
+  87              	.L6:
+  88 009c 24EA0004 		bic	r4, r4, r0
+  89 00a0 D7E7     		b	.L7
+  90              	.L18:
+  91 00a2 4FEA9C0C 		lsr	ip, ip, #2
+  92 00a6 0CF1020C 		add	ip, ip, #2
+  93 00aa 0F4C     		ldr	r4, .L19
+  94 00ac 54F82C50 		ldr	r5, [r4, ip, lsl #2]
+  95 00b0 02F00302 		and	r2, r2, #3
+  96 00b4 9200     		lsls	r2, r2, #2
+  97 00b6 4FF0070E 		mov	lr, #7
+  98 00ba 0EFA02FE 		lsl	lr, lr, r2
+  99 00be 25EA0E0E 		bic	lr, r5, lr
+ 100 00c2 CD68     		ldr	r5, [r1, #12]
+ 101 00c4 05FA02F2 		lsl	r2, r5, r2
+ 102 00c8 42EA0E02 		orr	r2, r2, lr
+ 103 00cc 44F82C20 		str	r2, [r4, ip, lsl #2]
+ 104 00d0 C7E7     		b	.L3
+ 105              	.L8:
+ 106 00d2 22EA0002 		bic	r2, r2, r0
+ 107 00d6 CEE7     		b	.L9
+ 108              	.L10:
+ 109 00d8 22EA0002 		bic	r2, r2, r0
+ 110 00dc D6E7     		b	.L11
+ 111              	.L12:
+ 112 00de 0120     		movs	r0, #1
+ 113 00e0 7047     		bx	lr
+ 114              	.L13:
+ 115 00e2 0120     		movs	r0, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s 			page 3
+
+
+ 116 00e4 7047     		bx	lr
+ 117              	.L20:
+ 118 00e6 00BF     		.align	2
+ 119              	.L19:
+ 120 00e8 00000140 		.word	1073807360
+ 122              		.section	.text.HAL_EXTI_GetConfigLine,"ax",%progbits
+ 123              		.align	1
+ 124              		.global	HAL_EXTI_GetConfigLine
+ 125              		.syntax unified
+ 126              		.thumb
+ 127              		.thumb_func
+ 129              	HAL_EXTI_GetConfigLine:
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 0, uses_anonymous_args = 0
+ 132 0000 0028     		cmp	r0, #0
+ 133 0002 5BD0     		beq	.L28
+ 134 0004 0029     		cmp	r1, #0
+ 135 0006 5BD0     		beq	.L29
+ 136 0008 10B5     		push	{r4, lr}
+ 137 000a 0368     		ldr	r3, [r0]
+ 138 000c 0B60     		str	r3, [r1]
+ 139 000e C3F30040 		ubfx	r0, r3, #16, #1
+ 140 0012 03F01F0E 		and	lr, r3, #31
+ 141 0016 0122     		movs	r2, #1
+ 142 0018 02FA0EF2 		lsl	r2, r2, lr
+ 143 001c 4FEA001C 		lsl	ip, r0, #4
+ 144 0020 0CF1B044 		add	r4, ip, #1476395008
+ 145 0024 D4F88048 		ldr	r4, [r4, #2176]
+ 146 0028 2242     		tst	r2, r4
+ 147 002a 33D0     		beq	.L23
+ 148 002c 0124     		movs	r4, #1
+ 149 002e 4C60     		str	r4, [r1, #4]
+ 150              	.L24:
+ 151 0030 0CF1B04C 		add	ip, ip, #1476395008
+ 152 0034 DCF884C8 		ldr	ip, [ip, #2180]
+ 153 0038 12EA0C0F 		tst	r2, ip
+ 154 003c 04D0     		beq	.L25
+ 155 003e 4C68     		ldr	r4, [r1, #4]
+ 156 0040 44F0020C 		orr	ip, r4, #2
+ 157 0044 C1F804C0 		str	ip, [r1, #4]
+ 158              	.L25:
+ 159 0048 4FF0000C 		mov	ip, #0
+ 160 004c C1F808C0 		str	ip, [r1, #8]
+ 161 0050 C1F80CC0 		str	ip, [r1, #12]
+ 162 0054 13F0007F 		tst	r3, #33554432
+ 163 0058 34D0     		beq	.L30
+ 164 005a 4001     		lsls	r0, r0, #5
+ 165 005c 00F1B04C 		add	ip, r0, #1476395008
+ 166 0060 DCF800C8 		ldr	ip, [ip, #2048]
+ 167 0064 12EA0C0F 		tst	r2, ip
+ 168 0068 03D0     		beq	.L26
+ 169 006a 4FF0010C 		mov	ip, #1
+ 170 006e C1F808C0 		str	ip, [r1, #8]
+ 171              	.L26:
+ 172 0072 00F1B040 		add	r0, r0, #1476395008
+ 173 0076 D0F80408 		ldr	r0, [r0, #2052]
+ 174 007a 0242     		tst	r2, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s 			page 4
+
+
+ 175 007c 03D0     		beq	.L27
+ 176 007e 8A68     		ldr	r2, [r1, #8]
+ 177 0080 42F00202 		orr	r2, r2, #2
+ 178 0084 8A60     		str	r2, [r1, #8]
+ 179              	.L27:
+ 180 0086 03F0C062 		and	r2, r3, #100663296
+ 181 008a B2F1C06F 		cmp	r2, #100663296
+ 182 008e 04D0     		beq	.L36
+ 183 0090 0020     		movs	r0, #0
+ 184 0092 18E0     		b	.L22
+ 185              	.L23:
+ 186 0094 0024     		movs	r4, #0
+ 187 0096 4C60     		str	r4, [r1, #4]
+ 188 0098 CAE7     		b	.L24
+ 189              	.L36:
+ 190 009a 4FEA9E0E 		lsr	lr, lr, #2
+ 191 009e 0EF1020E 		add	lr, lr, #2
+ 192 00a2 094A     		ldr	r2, .L37
+ 193 00a4 52F82E20 		ldr	r2, [r2, lr, lsl #2]
+ 194 00a8 03F00303 		and	r3, r3, #3
+ 195 00ac 9B00     		lsls	r3, r3, #2
+ 196 00ae 22FA03F3 		lsr	r3, r2, r3
+ 197 00b2 03F00703 		and	r3, r3, #7
+ 198 00b6 CB60     		str	r3, [r1, #12]
+ 199 00b8 0020     		movs	r0, #0
+ 200 00ba 04E0     		b	.L22
+ 201              	.L28:
+ 202 00bc 0120     		movs	r0, #1
+ 203 00be 7047     		bx	lr
+ 204              	.L29:
+ 205 00c0 0120     		movs	r0, #1
+ 206 00c2 7047     		bx	lr
+ 207              	.L30:
+ 208 00c4 0020     		movs	r0, #0
+ 209              	.L22:
+ 210 00c6 10BD     		pop	{r4, pc}
+ 211              	.L38:
+ 212              		.align	2
+ 213              	.L37:
+ 214 00c8 00000140 		.word	1073807360
+ 216              		.section	.text.HAL_EXTI_ClearConfigLine,"ax",%progbits
+ 217              		.align	1
+ 218              		.global	HAL_EXTI_ClearConfigLine
+ 219              		.syntax unified
+ 220              		.thumb
+ 221              		.thumb_func
+ 223              	HAL_EXTI_ClearConfigLine:
+ 224              		@ args = 0, pretend = 0, frame = 0
+ 225              		@ frame_needed = 0, uses_anonymous_args = 0
+ 226 0000 0028     		cmp	r0, #0
+ 227 0002 47D0     		beq	.L41
+ 228 0004 30B5     		push	{r4, r5, lr}
+ 229 0006 8646     		mov	lr, r0
+ 230 0008 D0F800C0 		ldr	ip, [r0]
+ 231 000c CCF30041 		ubfx	r1, ip, #16, #1
+ 232 0010 0CF01F03 		and	r3, ip, #31
+ 233 0014 1D46     		mov	r5, r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s 			page 5
+
+
+ 234 0016 0122     		movs	r2, #1
+ 235 0018 9A40     		lsls	r2, r2, r3
+ 236 001a 0B01     		lsls	r3, r1, #4
+ 237 001c 03F1B043 		add	r3, r3, #1476395008
+ 238 0020 D3F88008 		ldr	r0, [r3, #2176]
+ 239 0024 D443     		mvns	r4, r2
+ 240 0026 20EA0200 		bic	r0, r0, r2
+ 241 002a C3F88008 		str	r0, [r3, #2176]
+ 242 002e D3F88408 		ldr	r0, [r3, #2180]
+ 243 0032 20EA0202 		bic	r2, r0, r2
+ 244 0036 C3F88428 		str	r2, [r3, #2180]
+ 245 003a DEF80030 		ldr	r3, [lr]
+ 246 003e 13F0007F 		tst	r3, #33554432
+ 247 0042 29D0     		beq	.L42
+ 248 0044 4901     		lsls	r1, r1, #5
+ 249 0046 01F1B041 		add	r1, r1, #1476395008
+ 250 004a D1F80038 		ldr	r3, [r1, #2048]
+ 251 004e 2340     		ands	r3, r3, r4
+ 252 0050 C1F80038 		str	r3, [r1, #2048]
+ 253 0054 D1F80438 		ldr	r3, [r1, #2052]
+ 254 0058 2340     		ands	r3, r3, r4
+ 255 005a C1F80438 		str	r3, [r1, #2052]
+ 256 005e DEF80030 		ldr	r3, [lr]
+ 257 0062 03F0C063 		and	r3, r3, #100663296
+ 258 0066 B3F1C06F 		cmp	r3, #100663296
+ 259 006a 01D0     		beq	.L48
+ 260 006c 0020     		movs	r0, #0
+ 261 006e 14E0     		b	.L40
+ 262              	.L48:
+ 263 0070 AB08     		lsrs	r3, r5, #2
+ 264 0072 0A48     		ldr	r0, .L49
+ 265 0074 0233     		adds	r3, r3, #2
+ 266 0076 50F82320 		ldr	r2, [r0, r3, lsl #2]
+ 267 007a 0CF0030C 		and	ip, ip, #3
+ 268 007e 4FEA8C0C 		lsl	ip, ip, #2
+ 269 0082 0721     		movs	r1, #7
+ 270 0084 01FA0CF1 		lsl	r1, r1, ip
+ 271 0088 22EA0102 		bic	r2, r2, r1
+ 272 008c 40F82320 		str	r2, [r0, r3, lsl #2]
+ 273 0090 0020     		movs	r0, #0
+ 274 0092 02E0     		b	.L40
+ 275              	.L41:
+ 276 0094 0120     		movs	r0, #1
+ 277 0096 7047     		bx	lr
+ 278              	.L42:
+ 279 0098 0020     		movs	r0, #0
+ 280              	.L40:
+ 281 009a 30BD     		pop	{r4, r5, pc}
+ 282              	.L50:
+ 283              		.align	2
+ 284              	.L49:
+ 285 009c 00000140 		.word	1073807360
+ 287              		.section	.text.HAL_EXTI_RegisterCallback,"ax",%progbits
+ 288              		.align	1
+ 289              		.global	HAL_EXTI_RegisterCallback
+ 290              		.syntax unified
+ 291              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s 			page 6
+
+
+ 292              		.thumb_func
+ 294              	HAL_EXTI_RegisterCallback:
+ 295              		@ args = 0, pretend = 0, frame = 0
+ 296              		@ frame_needed = 0, uses_anonymous_args = 0
+ 297              		@ link register save eliminated.
+ 298 0000 0346     		mov	r3, r0
+ 299 0002 0846     		mov	r0, r1
+ 300 0004 09B9     		cbnz	r1, .L53
+ 301 0006 5A60     		str	r2, [r3, #4]
+ 302 0008 7047     		bx	lr
+ 303              	.L53:
+ 304 000a 0120     		movs	r0, #1
+ 305 000c 7047     		bx	lr
+ 307              		.section	.text.HAL_EXTI_GetHandle,"ax",%progbits
+ 308              		.align	1
+ 309              		.global	HAL_EXTI_GetHandle
+ 310              		.syntax unified
+ 311              		.thumb
+ 312              		.thumb_func
+ 314              	HAL_EXTI_GetHandle:
+ 315              		@ args = 0, pretend = 0, frame = 0
+ 316              		@ frame_needed = 0, uses_anonymous_args = 0
+ 317              		@ link register save eliminated.
+ 318 0000 10B1     		cbz	r0, .L56
+ 319 0002 0160     		str	r1, [r0]
+ 320 0004 0020     		movs	r0, #0
+ 321 0006 7047     		bx	lr
+ 322              	.L56:
+ 323 0008 0120     		movs	r0, #1
+ 324 000a 7047     		bx	lr
+ 326              		.section	.text.HAL_EXTI_IRQHandler,"ax",%progbits
+ 327              		.align	1
+ 328              		.global	HAL_EXTI_IRQHandler
+ 329              		.syntax unified
+ 330              		.thumb
+ 331              		.thumb_func
+ 333              	HAL_EXTI_IRQHandler:
+ 334              		@ args = 0, pretend = 0, frame = 0
+ 335              		@ frame_needed = 0, uses_anonymous_args = 0
+ 336 0000 08B5     		push	{r3, lr}
+ 337 0002 0268     		ldr	r2, [r0]
+ 338 0004 C2F30043 		ubfx	r3, r2, #16, #1
+ 339 0008 02F01F02 		and	r2, r2, #31
+ 340 000c 0121     		movs	r1, #1
+ 341 000e 01FA02F2 		lsl	r2, r1, r2
+ 342 0012 5B01     		lsls	r3, r3, #5
+ 343 0014 03F1B043 		add	r3, r3, #1476395008
+ 344 0018 D3F80C18 		ldr	r1, [r3, #2060]
+ 345 001c 1142     		tst	r1, r2
+ 346 001e 04D0     		beq	.L57
+ 347 0020 C3F80C28 		str	r2, [r3, #2060]
+ 348 0024 4368     		ldr	r3, [r0, #4]
+ 349 0026 03B1     		cbz	r3, .L57
+ 350 0028 9847     		blx	r3
+ 351              	.L57:
+ 352 002a 08BD     		pop	{r3, pc}
+ 354              		.section	.text.HAL_EXTI_GetPending,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s 			page 7
+
+
+ 355              		.align	1
+ 356              		.global	HAL_EXTI_GetPending
+ 357              		.syntax unified
+ 358              		.thumb
+ 359              		.thumb_func
+ 361              	HAL_EXTI_GetPending:
+ 362              		@ args = 0, pretend = 0, frame = 0
+ 363              		@ frame_needed = 0, uses_anonymous_args = 0
+ 364              		@ link register save eliminated.
+ 365 0000 0368     		ldr	r3, [r0]
+ 366 0002 C3F30042 		ubfx	r2, r3, #16, #1
+ 367 0006 03F01F03 		and	r3, r3, #31
+ 368 000a 0121     		movs	r1, #1
+ 369 000c 9940     		lsls	r1, r1, r3
+ 370 000e 5201     		lsls	r2, r2, #5
+ 371 0010 02F1B042 		add	r2, r2, #1476395008
+ 372 0014 D2F80C08 		ldr	r0, [r2, #2060]
+ 373 0018 0840     		ands	r0, r0, r1
+ 374 001a D840     		lsrs	r0, r0, r3
+ 375 001c 7047     		bx	lr
+ 377              		.section	.text.HAL_EXTI_ClearPending,"ax",%progbits
+ 378              		.align	1
+ 379              		.global	HAL_EXTI_ClearPending
+ 380              		.syntax unified
+ 381              		.thumb
+ 382              		.thumb_func
+ 384              	HAL_EXTI_ClearPending:
+ 385              		@ args = 0, pretend = 0, frame = 0
+ 386              		@ frame_needed = 0, uses_anonymous_args = 0
+ 387              		@ link register save eliminated.
+ 388 0000 0268     		ldr	r2, [r0]
+ 389 0002 C2F30043 		ubfx	r3, r2, #16, #1
+ 390 0006 02F01F02 		and	r2, r2, #31
+ 391 000a 0121     		movs	r1, #1
+ 392 000c 01FA02F2 		lsl	r2, r1, r2
+ 393 0010 5B01     		lsls	r3, r3, #5
+ 394 0012 03F1B043 		add	r3, r3, #1476395008
+ 395 0016 C3F80C28 		str	r2, [r3, #2060]
+ 396 001a 7047     		bx	lr
+ 398              		.section	.text.HAL_EXTI_GenerateSWI,"ax",%progbits
+ 399              		.align	1
+ 400              		.global	HAL_EXTI_GenerateSWI
+ 401              		.syntax unified
+ 402              		.thumb
+ 403              		.thumb_func
+ 405              	HAL_EXTI_GenerateSWI:
+ 406              		@ args = 0, pretend = 0, frame = 0
+ 407              		@ frame_needed = 0, uses_anonymous_args = 0
+ 408              		@ link register save eliminated.
+ 409 0000 0268     		ldr	r2, [r0]
+ 410 0002 C2F30043 		ubfx	r3, r2, #16, #1
+ 411 0006 02F01F02 		and	r2, r2, #31
+ 412 000a 0121     		movs	r1, #1
+ 413 000c 01FA02F2 		lsl	r2, r1, r2
+ 414 0010 5B01     		lsls	r3, r3, #5
+ 415 0012 03F1B043 		add	r3, r3, #1476395008
+ 416 0016 C3F80828 		str	r2, [r3, #2056]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s 			page 8
+
+
+ 417 001a 7047     		bx	lr
+ 419              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_exti.c
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:18     .text.HAL_EXTI_SetConfigLine:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:24     .text.HAL_EXTI_SetConfigLine:00000000 HAL_EXTI_SetConfigLine
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:120    .text.HAL_EXTI_SetConfigLine:000000e8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:123    .text.HAL_EXTI_GetConfigLine:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:129    .text.HAL_EXTI_GetConfigLine:00000000 HAL_EXTI_GetConfigLine
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:214    .text.HAL_EXTI_GetConfigLine:000000c8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:217    .text.HAL_EXTI_ClearConfigLine:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:223    .text.HAL_EXTI_ClearConfigLine:00000000 HAL_EXTI_ClearConfigLine
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:285    .text.HAL_EXTI_ClearConfigLine:0000009c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:288    .text.HAL_EXTI_RegisterCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:294    .text.HAL_EXTI_RegisterCallback:00000000 HAL_EXTI_RegisterCallback
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:308    .text.HAL_EXTI_GetHandle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:314    .text.HAL_EXTI_GetHandle:00000000 HAL_EXTI_GetHandle
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:327    .text.HAL_EXTI_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:333    .text.HAL_EXTI_IRQHandler:00000000 HAL_EXTI_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:355    .text.HAL_EXTI_GetPending:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:361    .text.HAL_EXTI_GetPending:00000000 HAL_EXTI_GetPending
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:378    .text.HAL_EXTI_ClearPending:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:384    .text.HAL_EXTI_ClearPending:00000000 HAL_EXTI_ClearPending
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:399    .text.HAL_EXTI_GenerateSWI:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTzPk9d.s:405    .text.HAL_EXTI_GenerateSWI:00000000 HAL_EXTI_GenerateSWI
+
+NO UNDEFINED SYMBOLS

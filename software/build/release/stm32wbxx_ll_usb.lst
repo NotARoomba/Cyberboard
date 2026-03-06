@@ -1,0 +1,1795 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_ll_usb.c"
+  16              		.text
+  17              		.section	.text.USB_CoreInit,"ax",%progbits
+  18              		.align	1
+  19              		.global	USB_CoreInit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	USB_CoreInit:
+  25              		@ args = 0, pretend = 0, frame = 8
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 82B0     		sub	sp, sp, #8
+  29 0002 02AB     		add	r3, sp, #8
+  30 0004 03E90600 		stmdb	r3, {r1, r2}
+  31 0008 0020     		movs	r0, #0
+  32 000a 02B0     		add	sp, sp, #8
+  33              		@ sp needed
+  34 000c 7047     		bx	lr
+  36              		.section	.text.USB_EnableGlobalInt,"ax",%progbits
+  37              		.align	1
+  38              		.global	USB_EnableGlobalInt
+  39              		.syntax unified
+  40              		.thumb
+  41              		.thumb_func
+  43              	USB_EnableGlobalInt:
+  44              		@ args = 0, pretend = 0, frame = 0
+  45              		@ frame_needed = 0, uses_anonymous_args = 0
+  46              		@ link register save eliminated.
+  47 0000 0346     		mov	r3, r0
+  48 0002 0020     		movs	r0, #0
+  49 0004 A3F84400 		strh	r0, [r3, #68]	@ movhi
+  50 0008 4BF68072 		movw	r2, #49024
+  51 000c A3F84020 		strh	r2, [r3, #64]	@ movhi
+  52 0010 7047     		bx	lr
+  54              		.section	.text.USB_DisableGlobalInt,"ax",%progbits
+  55              		.align	1
+  56              		.global	USB_DisableGlobalInt
+  57              		.syntax unified
+  58              		.thumb
+  59              		.thumb_func
+  61              	USB_DisableGlobalInt:
+  62              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 2
+
+
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64              		@ link register save eliminated.
+  65 0000 B0F84030 		ldrh	r3, [r0, #64]
+  66 0004 9BB2     		uxth	r3, r3
+  67 0006 23F47E53 		bic	r3, r3, #16256
+  68 000a 5B04     		lsls	r3, r3, #17
+  69 000c 5B0C     		lsrs	r3, r3, #17
+  70 000e A0F84030 		strh	r3, [r0, #64]	@ movhi
+  71 0012 0020     		movs	r0, #0
+  72 0014 7047     		bx	lr
+  74              		.section	.text.USB_SetCurrentMode,"ax",%progbits
+  75              		.align	1
+  76              		.global	USB_SetCurrentMode
+  77              		.syntax unified
+  78              		.thumb
+  79              		.thumb_func
+  81              	USB_SetCurrentMode:
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84              		@ link register save eliminated.
+  85 0000 0020     		movs	r0, #0
+  86 0002 7047     		bx	lr
+  88              		.section	.text.USB_DevInit,"ax",%progbits
+  89              		.align	1
+  90              		.global	USB_DevInit
+  91              		.syntax unified
+  92              		.thumb
+  93              		.thumb_func
+  95              	USB_DevInit:
+  96              		@ args = 0, pretend = 0, frame = 8
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              		@ link register save eliminated.
+  99 0000 82B0     		sub	sp, sp, #8
+ 100 0002 0346     		mov	r3, r0
+ 101 0004 02A8     		add	r0, sp, #8
+ 102 0006 00E90600 		stmdb	r0, {r1, r2}
+ 103 000a 0122     		movs	r2, #1
+ 104 000c A3F84020 		strh	r2, [r3, #64]	@ movhi
+ 105 0010 0020     		movs	r0, #0
+ 106 0012 A3F84000 		strh	r0, [r3, #64]	@ movhi
+ 107 0016 A3F84400 		strh	r0, [r3, #68]	@ movhi
+ 108 001a A3F85000 		strh	r0, [r3, #80]	@ movhi
+ 109 001e 02B0     		add	sp, sp, #8
+ 110              		@ sp needed
+ 111 0020 7047     		bx	lr
+ 113              		.section	.text.USB_FlushTxFifo,"ax",%progbits
+ 114              		.align	1
+ 115              		.global	USB_FlushTxFifo
+ 116              		.syntax unified
+ 117              		.thumb
+ 118              		.thumb_func
+ 120              	USB_FlushTxFifo:
+ 121              		@ args = 0, pretend = 0, frame = 0
+ 122              		@ frame_needed = 0, uses_anonymous_args = 0
+ 123              		@ link register save eliminated.
+ 124 0000 0020     		movs	r0, #0
+ 125 0002 7047     		bx	lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 3
+
+
+ 127              		.section	.text.USB_FlushRxFifo,"ax",%progbits
+ 128              		.align	1
+ 129              		.global	USB_FlushRxFifo
+ 130              		.syntax unified
+ 131              		.thumb
+ 132              		.thumb_func
+ 134              	USB_FlushRxFifo:
+ 135              		@ args = 0, pretend = 0, frame = 0
+ 136              		@ frame_needed = 0, uses_anonymous_args = 0
+ 137              		@ link register save eliminated.
+ 138 0000 0020     		movs	r0, #0
+ 139 0002 7047     		bx	lr
+ 141              		.section	.text.USB_ActivateEndpoint,"ax",%progbits
+ 142              		.align	1
+ 143              		.global	USB_ActivateEndpoint
+ 144              		.syntax unified
+ 145              		.thumb
+ 146              		.thumb_func
+ 148              	USB_ActivateEndpoint:
+ 149              		@ args = 0, pretend = 0, frame = 0
+ 150              		@ frame_needed = 0, uses_anonymous_args = 0
+ 151 0000 00B5     		push	{lr}
+ 152 0002 0346     		mov	r3, r0
+ 153 0004 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 154 0008 30F82C20 		ldrh	r2, [r0, ip, lsl #2]
+ 155 000c 92B2     		uxth	r2, r2
+ 156 000e 22F4EC42 		bic	r2, r2, #30208
+ 157 0012 22F07002 		bic	r2, r2, #112
+ 158 0016 92B2     		uxth	r2, r2
+ 159 0018 C878     		ldrb	r0, [r1, #3]	@ zero_extendqisi2
+ 160 001a 0228     		cmp	r0, #2
+ 161 001c 67D0     		beq	.L49
+ 162 001e 08D8     		bhi	.L12
+ 163 0020 78B1     		cbz	r0, .L13
+ 164 0022 0128     		cmp	r0, #1
+ 165 0024 03D1     		bne	.L51
+ 166 0026 42F48062 		orr	r2, r2, #1024
+ 167 002a 0020     		movs	r0, #0
+ 168 002c 0BE0     		b	.L11
+ 169              	.L51:
+ 170 002e 0120     		movs	r0, #1
+ 171 0030 09E0     		b	.L11
+ 172              	.L12:
+ 173 0032 0328     		cmp	r0, #3
+ 174 0034 03D1     		bne	.L52
+ 175 0036 42F4C062 		orr	r2, r2, #1536
+ 176 003a 0020     		movs	r0, #0
+ 177 003c 03E0     		b	.L11
+ 178              	.L52:
+ 179 003e 0120     		movs	r0, #1
+ 180 0040 01E0     		b	.L11
+ 181              	.L13:
+ 182 0042 42F40072 		orr	r2, r2, #512
+ 183              	.L11:
+ 184 0046 48F2800E 		movw	lr, #32896
+ 185 004a 42EA0E02 		orr	r2, r2, lr
+ 186 004e 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 4
+
+
+ 187 0052 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 188 0056 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 189 005a 92B2     		uxth	r2, r2
+ 190 005c 22F4E042 		bic	r2, r2, #28672
+ 191 0060 22F07002 		bic	r2, r2, #112
+ 192 0064 4CEA0202 		orr	r2, ip, r2
+ 193 0068 42EA0E02 		orr	r2, r2, lr
+ 194 006c 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ 195 0070 0A7B     		ldrb	r2, [r1, #12]	@ zero_extendqisi2
+ 196 0072 002A     		cmp	r2, #0
+ 197 0074 40F0DC80 		bne	.L16
+ 198 0078 4A78     		ldrb	r2, [r1, #1]	@ zero_extendqisi2
+ 199 007a 002A     		cmp	r2, #0
+ 200 007c 48D0     		beq	.L17
+ 201 007e B3F85020 		ldrh	r2, [r3, #80]
+ 202 0082 13FA82F2 		uxtah	r2, r3, r2
+ 203 0086 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 204 008a 02EBCC02 		add	r2, r2, ip, lsl #3
+ 205 008e B1F806C0 		ldrh	ip, [r1, #6]
+ 206 0092 4FEA5C0C 		lsr	ip, ip, #1
+ 207 0096 4FEA4C0C 		lsl	ip, ip, #1
+ 208 009a A2F800C4 		strh	ip, [r2, #1024]	@ movhi
+ 209 009e 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 210 00a2 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 211 00a6 12F0400F 		tst	r2, #64
+ 212 00aa 0CD0     		beq	.L18
+ 213 00ac 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 214 00b0 92B2     		uxth	r2, r2
+ 215 00b2 22F4E042 		bic	r2, r2, #28672
+ 216 00b6 22F07002 		bic	r2, r2, #112
+ 217 00ba 42F40042 		orr	r2, r2, #32768
+ 218 00be 42F0C002 		orr	r2, r2, #192
+ 219 00c2 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ 220              	.L18:
+ 221 00c6 CA78     		ldrb	r2, [r1, #3]	@ zero_extendqisi2
+ 222 00c8 012A     		cmp	r2, #1
+ 223 00ca 12D0     		beq	.L19
+ 224 00cc 0978     		ldrb	r1, [r1]	@ zero_extendqisi2
+ 225 00ce 33F82120 		ldrh	r2, [r3, r1, lsl #2]
+ 226 00d2 92B2     		uxth	r2, r2
+ 227 00d4 22F4E042 		bic	r2, r2, #28672
+ 228 00d8 22F04002 		bic	r2, r2, #64
+ 229 00dc 82F02002 		eor	r2, r2, #32
+ 230 00e0 42F40042 		orr	r2, r2, #32768
+ 231 00e4 42F08002 		orr	r2, r2, #128
+ 232 00e8 23F82120 		strh	r2, [r3, r1, lsl #2]	@ movhi
+ 233 00ec D8E1     		b	.L20
+ 234              	.L49:
+ 235 00ee 0020     		movs	r0, #0
+ 236 00f0 A9E7     		b	.L11
+ 237              	.L19:
+ 238 00f2 0978     		ldrb	r1, [r1]	@ zero_extendqisi2
+ 239 00f4 33F82120 		ldrh	r2, [r3, r1, lsl #2]
+ 240 00f8 92B2     		uxth	r2, r2
+ 241 00fa 22F4E042 		bic	r2, r2, #28672
+ 242 00fe 22F04002 		bic	r2, r2, #64
+ 243 0102 42F40042 		orr	r2, r2, #32768
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 5
+
+
+ 244 0106 42F08002 		orr	r2, r2, #128
+ 245 010a 23F82120 		strh	r2, [r3, r1, lsl #2]	@ movhi
+ 246 010e C7E1     		b	.L20
+ 247              	.L17:
+ 248 0110 B3F85020 		ldrh	r2, [r3, #80]
+ 249 0114 13FA82F2 		uxtah	r2, r3, r2
+ 250 0118 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 251 011c 02EBCC02 		add	r2, r2, ip, lsl #3
+ 252 0120 B1F806C0 		ldrh	ip, [r1, #6]
+ 253 0124 4FEA5C0C 		lsr	ip, ip, #1
+ 254 0128 4FEA4C0C 		lsl	ip, ip, #1
+ 255 012c A2F804C4 		strh	ip, [r2, #1028]	@ movhi
+ 256 0130 B3F85020 		ldrh	r2, [r3, #80]
+ 257 0134 13FA82F2 		uxtah	r2, r3, r2
+ 258 0138 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 259 013c 02EBCC02 		add	r2, r2, ip, lsl #3
+ 260 0140 B2F806C4 		ldrh	ip, [r2, #1030]
+ 261 0144 CCF3090C 		ubfx	ip, ip, #0, #10
+ 262 0148 A2F806C4 		strh	ip, [r2, #1030]	@ movhi
+ 263 014c D1F810C0 		ldr	ip, [r1, #16]
+ 264 0150 BCF1000F 		cmp	ip, #0
+ 265 0154 2FD1     		bne	.L21
+ 266 0156 B2F806C4 		ldrh	ip, [r2, #1030]
+ 267 015a 6FEA4C4C 		mvn	ip, ip, lsl #17
+ 268 015e 6FEA5C4C 		mvn	ip, ip, lsr #17
+ 269 0162 1FFA8CFC 		uxth	ip, ip
+ 270 0166 A2F806C4 		strh	ip, [r2, #1030]	@ movhi
+ 271              	.L22:
+ 272 016a 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 273 016e 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 274 0172 12F4804F 		tst	r2, #16384
+ 275 0176 0CD0     		beq	.L26
+ 276 0178 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 277 017c 92B2     		uxth	r2, r2
+ 278 017e 22F4E042 		bic	r2, r2, #28672
+ 279 0182 22F07002 		bic	r2, r2, #112
+ 280 0186 42F44042 		orr	r2, r2, #49152
+ 281 018a 42F08002 		orr	r2, r2, #128
+ 282 018e 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ 283              	.L26:
+ 284 0192 0978     		ldrb	r1, [r1]	@ zero_extendqisi2
+ 285 0194 E1BB     		cbnz	r1, .L27
+ 286 0196 33F82120 		ldrh	r2, [r3, r1, lsl #2]
+ 287 019a 92B2     		uxth	r2, r2
+ 288 019c 22F48042 		bic	r2, r2, #16384
+ 289 01a0 22F07002 		bic	r2, r2, #112
+ 290 01a4 82F44052 		eor	r2, r2, #12288
+ 291 01a8 42F40042 		orr	r2, r2, #32768
+ 292 01ac 42F08002 		orr	r2, r2, #128
+ 293 01b0 23F82120 		strh	r2, [r3, r1, lsl #2]	@ movhi
+ 294 01b4 74E1     		b	.L20
+ 295              	.L21:
+ 296 01b6 BCF13E0F 		cmp	ip, #62
+ 297 01ba 13D8     		bhi	.L23
+ 298 01bc 4FEA5C0E 		lsr	lr, ip, #1
+ 299 01c0 1CF0010F 		tst	ip, #1
+ 300 01c4 01D0     		beq	.L24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 6
+
+
+ 301 01c6 0EF1010E 		add	lr, lr, #1
+ 302              	.L24:
+ 303 01ca B2F806C4 		ldrh	ip, [r2, #1030]
+ 304 01ce 1FFA8CFC 		uxth	ip, ip
+ 305 01d2 4FEA8E2E 		lsl	lr, lr, #10
+ 306 01d6 1FFA8EFE 		uxth	lr, lr
+ 307 01da 4CEA0E0C 		orr	ip, ip, lr
+ 308 01de A2F806C4 		strh	ip, [r2, #1030]	@ movhi
+ 309 01e2 C2E7     		b	.L22
+ 310              	.L23:
+ 311 01e4 4FEA5C1E 		lsr	lr, ip, #5
+ 312 01e8 1CF01F0F 		tst	ip, #31
+ 313 01ec 01D1     		bne	.L25
+ 314 01ee 0EF1FF3E 		add	lr, lr, #-1
+ 315              	.L25:
+ 316 01f2 B2F806C4 		ldrh	ip, [r2, #1030]
+ 317 01f6 1FFA8CFC 		uxth	ip, ip
+ 318 01fa 4FEA8E2E 		lsl	lr, lr, #10
+ 319 01fe 1FFA8EFE 		uxth	lr, lr
+ 320 0202 4CEA0E0C 		orr	ip, ip, lr
+ 321 0206 4CF4004C 		orr	ip, ip, #32768
+ 322 020a A2F806C4 		strh	ip, [r2, #1030]	@ movhi
+ 323 020e ACE7     		b	.L22
+ 324              	.L27:
+ 325 0210 33F82120 		ldrh	r2, [r3, r1, lsl #2]
+ 326 0214 92B2     		uxth	r2, r2
+ 327 0216 22F48042 		bic	r2, r2, #16384
+ 328 021a 22F07002 		bic	r2, r2, #112
+ 329 021e 82F40052 		eor	r2, r2, #8192
+ 330 0222 42F40042 		orr	r2, r2, #32768
+ 331 0226 42F08002 		orr	r2, r2, #128
+ 332 022a 23F82120 		strh	r2, [r3, r1, lsl #2]	@ movhi
+ 333 022e 37E1     		b	.L20
+ 334              	.L16:
+ 335 0230 CA78     		ldrb	r2, [r1, #3]	@ zero_extendqisi2
+ 336 0232 022A     		cmp	r2, #2
+ 337 0234 7BD0     		beq	.L53
+ 338 0236 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 339 023a 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 340 023e 92B2     		uxth	r2, r2
+ 341 0240 22F4E242 		bic	r2, r2, #28928
+ 342 0244 22F07002 		bic	r2, r2, #112
+ 343 0248 42F40042 		orr	r2, r2, #32768
+ 344 024c 42F08002 		orr	r2, r2, #128
+ 345 0250 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ 346              	.L29:
+ 347 0254 B3F85020 		ldrh	r2, [r3, #80]
+ 348 0258 13FA82F2 		uxtah	r2, r3, r2
+ 349 025c 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 350 0260 02EBCC02 		add	r2, r2, ip, lsl #3
+ 351 0264 B1F808C0 		ldrh	ip, [r1, #8]
+ 352 0268 4FEA5C0C 		lsr	ip, ip, #1
+ 353 026c 4FEA4C0C 		lsl	ip, ip, #1
+ 354 0270 A2F800C4 		strh	ip, [r2, #1024]	@ movhi
+ 355 0274 B3F85020 		ldrh	r2, [r3, #80]
+ 356 0278 13FA82F2 		uxtah	r2, r3, r2
+ 357 027c 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 7
+
+
+ 358 0280 02EBCC02 		add	r2, r2, ip, lsl #3
+ 359 0284 B1F80AC0 		ldrh	ip, [r1, #10]
+ 360 0288 4FEA5C0C 		lsr	ip, ip, #1
+ 361 028c 4FEA4C0C 		lsl	ip, ip, #1
+ 362 0290 A2F804C4 		strh	ip, [r2, #1028]	@ movhi
+ 363 0294 4A78     		ldrb	r2, [r1, #1]	@ zero_extendqisi2
+ 364 0296 002A     		cmp	r2, #0
+ 365 0298 40F01081 		bne	.L30
+ 366 029c 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 367 02a0 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 368 02a4 12F4804F 		tst	r2, #16384
+ 369 02a8 0CD0     		beq	.L31
+ 370 02aa 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 371 02ae 92B2     		uxth	r2, r2
+ 372 02b0 22F4E042 		bic	r2, r2, #28672
+ 373 02b4 22F07002 		bic	r2, r2, #112
+ 374 02b8 42F44042 		orr	r2, r2, #49152
+ 375 02bc 42F08002 		orr	r2, r2, #128
+ 376 02c0 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ 377              	.L31:
+ 378 02c4 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 379 02c8 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 380 02cc 12F0400F 		tst	r2, #64
+ 381 02d0 0CD0     		beq	.L32
+ 382 02d2 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 383 02d6 92B2     		uxth	r2, r2
+ 384 02d8 22F4E042 		bic	r2, r2, #28672
+ 385 02dc 22F07002 		bic	r2, r2, #112
+ 386 02e0 42F40042 		orr	r2, r2, #32768
+ 387 02e4 42F0C002 		orr	r2, r2, #192
+ 388 02e8 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ 389              	.L32:
+ 390 02ec 4A78     		ldrb	r2, [r1, #1]	@ zero_extendqisi2
+ 391 02ee 002A     		cmp	r2, #0
+ 392 02f0 5AD1     		bne	.L33
+ 393 02f2 B3F85020 		ldrh	r2, [r3, #80]
+ 394 02f6 13FA82F2 		uxtah	r2, r3, r2
+ 395 02fa 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 396 02fe 02EBCC02 		add	r2, r2, ip, lsl #3
+ 397 0302 B2F802C4 		ldrh	ip, [r2, #1026]
+ 398 0306 CCF3090C 		ubfx	ip, ip, #0, #10
+ 399 030a A2F802C4 		strh	ip, [r2, #1026]	@ movhi
+ 400 030e D1F810C0 		ldr	ip, [r1, #16]
+ 401 0312 BCF1000F 		cmp	ip, #0
+ 402 0316 1AD1     		bne	.L34
+ 403 0318 B2F802C4 		ldrh	ip, [r2, #1026]
+ 404 031c 6FEA4C4C 		mvn	ip, ip, lsl #17
+ 405 0320 6FEA5C4C 		mvn	ip, ip, lsr #17
+ 406 0324 1FFA8CFC 		uxth	ip, ip
+ 407 0328 A2F802C4 		strh	ip, [r2, #1026]	@ movhi
+ 408 032c 3EE0     		b	.L35
+ 409              	.L53:
+ 410 032e 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 411 0332 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 412 0336 92B2     		uxth	r2, r2
+ 413 0338 22F4E042 		bic	r2, r2, #28672
+ 414 033c 22F07002 		bic	r2, r2, #112
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 8
+
+
+ 415 0340 42F40142 		orr	r2, r2, #33024
+ 416 0344 42F08002 		orr	r2, r2, #128
+ 417 0348 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ 418 034c 82E7     		b	.L29
+ 419              	.L34:
+ 420 034e BCF13E0F 		cmp	ip, #62
+ 421 0352 13D8     		bhi	.L36
+ 422 0354 4FEA5C0E 		lsr	lr, ip, #1
+ 423 0358 1CF0010F 		tst	ip, #1
+ 424 035c 01D0     		beq	.L37
+ 425 035e 0EF1010E 		add	lr, lr, #1
+ 426              	.L37:
+ 427 0362 B2F802C4 		ldrh	ip, [r2, #1026]
+ 428 0366 1FFA8CFC 		uxth	ip, ip
+ 429 036a 4FEA8E2E 		lsl	lr, lr, #10
+ 430 036e 1FFA8EFE 		uxth	lr, lr
+ 431 0372 4CEA0E0C 		orr	ip, ip, lr
+ 432 0376 A2F802C4 		strh	ip, [r2, #1026]	@ movhi
+ 433 037a 17E0     		b	.L35
+ 434              	.L36:
+ 435 037c 4FEA5C1E 		lsr	lr, ip, #5
+ 436 0380 1CF01F0F 		tst	ip, #31
+ 437 0384 01D1     		bne	.L38
+ 438 0386 0EF1FF3E 		add	lr, lr, #-1
+ 439              	.L38:
+ 440 038a B2F802C4 		ldrh	ip, [r2, #1026]
+ 441 038e 1FFA8CFC 		uxth	ip, ip
+ 442 0392 4FEA8E2E 		lsl	lr, lr, #10
+ 443 0396 1FFA8EFE 		uxth	lr, lr
+ 444 039a 4CEA0E0C 		orr	ip, ip, lr
+ 445 039e 4CF4004C 		orr	ip, ip, #32768
+ 446 03a2 A2F802C4 		strh	ip, [r2, #1026]	@ movhi
+ 447 03a6 01E0     		b	.L35
+ 448              	.L33:
+ 449 03a8 012A     		cmp	r2, #1
+ 450 03aa 20D0     		beq	.L54
+ 451              	.L35:
+ 452 03ac 4A78     		ldrb	r2, [r1, #1]	@ zero_extendqisi2
+ 453 03ae 002A     		cmp	r2, #0
+ 454 03b0 57D1     		bne	.L39
+ 455 03b2 B3F85020 		ldrh	r2, [r3, #80]
+ 456 03b6 13FA82F2 		uxtah	r2, r3, r2
+ 457 03ba 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 458 03be 02EBCC02 		add	r2, r2, ip, lsl #3
+ 459 03c2 B2F806C4 		ldrh	ip, [r2, #1030]
+ 460 03c6 CCF3090C 		ubfx	ip, ip, #0, #10
+ 461 03ca A2F806C4 		strh	ip, [r2, #1030]	@ movhi
+ 462 03ce D1F810C0 		ldr	ip, [r1, #16]
+ 463 03d2 BCF1000F 		cmp	ip, #0
+ 464 03d6 17D1     		bne	.L40
+ 465 03d8 B2F806C4 		ldrh	ip, [r2, #1030]
+ 466 03dc 6FEA4C4C 		mvn	ip, ip, lsl #17
+ 467 03e0 6FEA5C4C 		mvn	ip, ip, lsr #17
+ 468 03e4 1FFA8CFC 		uxth	ip, ip
+ 469 03e8 A2F806C4 		strh	ip, [r2, #1030]	@ movhi
+ 470 03ec 3BE0     		b	.L41
+ 471              	.L54:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 9
+
+
+ 472 03ee B3F85020 		ldrh	r2, [r3, #80]
+ 473 03f2 13FA82F2 		uxtah	r2, r3, r2
+ 474 03f6 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 475 03fa 02EBCC02 		add	r2, r2, ip, lsl #3
+ 476 03fe B1F810C0 		ldrh	ip, [r1, #16]
+ 477 0402 A2F802C4 		strh	ip, [r2, #1026]	@ movhi
+ 478 0406 D1E7     		b	.L35
+ 479              	.L40:
+ 480 0408 BCF13E0F 		cmp	ip, #62
+ 481 040c 13D8     		bhi	.L42
+ 482 040e 4FEA5C0E 		lsr	lr, ip, #1
+ 483 0412 1CF0010F 		tst	ip, #1
+ 484 0416 01D0     		beq	.L43
+ 485 0418 0EF1010E 		add	lr, lr, #1
+ 486              	.L43:
+ 487 041c B2F806C4 		ldrh	ip, [r2, #1030]
+ 488 0420 1FFA8CFC 		uxth	ip, ip
+ 489 0424 4FEA8E2E 		lsl	lr, lr, #10
+ 490 0428 1FFA8EFE 		uxth	lr, lr
+ 491 042c 4CEA0E0C 		orr	ip, ip, lr
+ 492 0430 A2F806C4 		strh	ip, [r2, #1030]	@ movhi
+ 493 0434 17E0     		b	.L41
+ 494              	.L42:
+ 495 0436 4FEA5C1E 		lsr	lr, ip, #5
+ 496 043a 1CF01F0F 		tst	ip, #31
+ 497 043e 01D1     		bne	.L44
+ 498 0440 0EF1FF3E 		add	lr, lr, #-1
+ 499              	.L44:
+ 500 0444 B2F806C4 		ldrh	ip, [r2, #1030]
+ 501 0448 1FFA8CFC 		uxth	ip, ip
+ 502 044c 4FEA8E2E 		lsl	lr, lr, #10
+ 503 0450 1FFA8EFE 		uxth	lr, lr
+ 504 0454 4CEA0E0C 		orr	ip, ip, lr
+ 505 0458 4CF4004C 		orr	ip, ip, #32768
+ 506 045c A2F806C4 		strh	ip, [r2, #1030]	@ movhi
+ 507 0460 01E0     		b	.L41
+ 508              	.L39:
+ 509 0462 012A     		cmp	r2, #1
+ 510 0464 1DD0     		beq	.L55
+ 511              	.L41:
+ 512 0466 91F800E0 		ldrb	lr, [r1]	@ zero_extendqisi2
+ 513 046a 33F82E20 		ldrh	r2, [r3, lr, lsl #2]
+ 514 046e 92B2     		uxth	r2, r2
+ 515 0470 22F48042 		bic	r2, r2, #16384
+ 516 0474 22F07002 		bic	r2, r2, #112
+ 517 0478 82F44052 		eor	r2, r2, #12288
+ 518 047c 48F2800C 		movw	ip, #32896
+ 519 0480 42EA0C02 		orr	r2, r2, ip
+ 520 0484 23F82E20 		strh	r2, [r3, lr, lsl #2]	@ movhi
+ 521 0488 0978     		ldrb	r1, [r1]	@ zero_extendqisi2
+ 522 048a 33F82120 		ldrh	r2, [r3, r1, lsl #2]
+ 523 048e 92B2     		uxth	r2, r2
+ 524 0490 22F4E042 		bic	r2, r2, #28672
+ 525 0494 22F04002 		bic	r2, r2, #64
+ 526 0498 42EA0C02 		orr	r2, r2, ip
+ 527 049c 23F82120 		strh	r2, [r3, r1, lsl #2]	@ movhi
+ 528              	.L20:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 10
+
+
+ 529 04a0 00BD     		pop	{pc}
+ 530              	.L55:
+ 531 04a2 B3F85020 		ldrh	r2, [r3, #80]
+ 532 04a6 13FA82F2 		uxtah	r2, r3, r2
+ 533 04aa 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 534 04ae 02EBCC02 		add	r2, r2, ip, lsl #3
+ 535 04b2 B1F810C0 		ldrh	ip, [r1, #16]
+ 536 04b6 A2F806C4 		strh	ip, [r2, #1030]	@ movhi
+ 537 04ba D4E7     		b	.L41
+ 538              	.L30:
+ 539 04bc 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 540 04c0 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 541 04c4 12F4804F 		tst	r2, #16384
+ 542 04c8 0CD0     		beq	.L45
+ 543 04ca 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 544 04ce 92B2     		uxth	r2, r2
+ 545 04d0 22F4E042 		bic	r2, r2, #28672
+ 546 04d4 22F07002 		bic	r2, r2, #112
+ 547 04d8 42F44042 		orr	r2, r2, #49152
+ 548 04dc 42F08002 		orr	r2, r2, #128
+ 549 04e0 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ 550              	.L45:
+ 551 04e4 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 552 04e8 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 553 04ec 12F0400F 		tst	r2, #64
+ 554 04f0 0CD0     		beq	.L46
+ 555 04f2 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 556 04f6 92B2     		uxth	r2, r2
+ 557 04f8 22F4E042 		bic	r2, r2, #28672
+ 558 04fc 22F07002 		bic	r2, r2, #112
+ 559 0500 42F40042 		orr	r2, r2, #32768
+ 560 0504 42F0C002 		orr	r2, r2, #192
+ 561 0508 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ 562              	.L46:
+ 563 050c CA78     		ldrb	r2, [r1, #3]	@ zero_extendqisi2
+ 564 050e 012A     		cmp	r2, #1
+ 565 0510 1FD0     		beq	.L47
+ 566 0512 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 567 0516 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 568 051a 92B2     		uxth	r2, r2
+ 569 051c 22F4E042 		bic	r2, r2, #28672
+ 570 0520 22F04002 		bic	r2, r2, #64
+ 571 0524 82F02002 		eor	r2, r2, #32
+ 572 0528 42F40042 		orr	r2, r2, #32768
+ 573 052c 42F08002 		orr	r2, r2, #128
+ 574 0530 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ 575              	.L48:
+ 576 0534 0978     		ldrb	r1, [r1]	@ zero_extendqisi2
+ 577 0536 33F82120 		ldrh	r2, [r3, r1, lsl #2]
+ 578 053a 92B2     		uxth	r2, r2
+ 579 053c 22F48042 		bic	r2, r2, #16384
+ 580 0540 22F07002 		bic	r2, r2, #112
+ 581 0544 42F40042 		orr	r2, r2, #32768
+ 582 0548 42F08002 		orr	r2, r2, #128
+ 583 054c 23F82120 		strh	r2, [r3, r1, lsl #2]	@ movhi
+ 584 0550 A6E7     		b	.L20
+ 585              	.L47:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 11
+
+
+ 586 0552 91F800C0 		ldrb	ip, [r1]	@ zero_extendqisi2
+ 587 0556 33F82C20 		ldrh	r2, [r3, ip, lsl #2]
+ 588 055a 92B2     		uxth	r2, r2
+ 589 055c 22F4E042 		bic	r2, r2, #28672
+ 590 0560 22F04002 		bic	r2, r2, #64
+ 591 0564 42F40042 		orr	r2, r2, #32768
+ 592 0568 42F08002 		orr	r2, r2, #128
+ 593 056c 23F82C20 		strh	r2, [r3, ip, lsl #2]	@ movhi
+ 594 0570 E0E7     		b	.L48
+ 596              		.section	.text.USB_DeactivateEndpoint,"ax",%progbits
+ 597              		.align	1
+ 598              		.global	USB_DeactivateEndpoint
+ 599              		.syntax unified
+ 600              		.thumb
+ 601              		.thumb_func
+ 603              	USB_DeactivateEndpoint:
+ 604              		@ args = 0, pretend = 0, frame = 0
+ 605              		@ frame_needed = 0, uses_anonymous_args = 0
+ 606              		@ link register save eliminated.
+ 607 0000 0B7B     		ldrb	r3, [r1, #12]	@ zero_extendqisi2
+ 608 0002 002B     		cmp	r3, #0
+ 609 0004 46D1     		bne	.L57
+ 610 0006 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
+ 611 0008 13B3     		cbz	r3, .L58
+ 612 000a 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 613 000c 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 614 0010 13F0400F 		tst	r3, #64
+ 615 0014 0CD0     		beq	.L59
+ 616 0016 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 617 001a 9BB2     		uxth	r3, r3
+ 618 001c 23F4E043 		bic	r3, r3, #28672
+ 619 0020 23F07003 		bic	r3, r3, #112
+ 620 0024 43F40043 		orr	r3, r3, #32768
+ 621 0028 43F0C003 		orr	r3, r3, #192
+ 622 002c 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 623              	.L59:
+ 624 0030 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 625 0032 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 626 0036 9BB2     		uxth	r3, r3
+ 627 0038 23F4E043 		bic	r3, r3, #28672
+ 628 003c 23F04003 		bic	r3, r3, #64
+ 629 0040 43F40043 		orr	r3, r3, #32768
+ 630 0044 43F08003 		orr	r3, r3, #128
+ 631 0048 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 632              	.L60:
+ 633 004c 0020     		movs	r0, #0
+ 634 004e 7047     		bx	lr
+ 635              	.L58:
+ 636 0050 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 637 0052 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 638 0056 13F4804F 		tst	r3, #16384
+ 639 005a 0CD0     		beq	.L61
+ 640 005c 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 641 0060 9BB2     		uxth	r3, r3
+ 642 0062 23F4E043 		bic	r3, r3, #28672
+ 643 0066 23F07003 		bic	r3, r3, #112
+ 644 006a 43F44043 		orr	r3, r3, #49152
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 12
+
+
+ 645 006e 43F08003 		orr	r3, r3, #128
+ 646 0072 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 647              	.L61:
+ 648 0076 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 649 0078 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 650 007c 9BB2     		uxth	r3, r3
+ 651 007e 23F48043 		bic	r3, r3, #16384
+ 652 0082 23F07003 		bic	r3, r3, #112
+ 653 0086 43F40043 		orr	r3, r3, #32768
+ 654 008a 43F08003 		orr	r3, r3, #128
+ 655 008e 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 656 0092 DBE7     		b	.L60
+ 657              	.L57:
+ 658 0094 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
+ 659 0096 002B     		cmp	r3, #0
+ 660 0098 4ED1     		bne	.L62
+ 661 009a 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 662 009c 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 663 00a0 13F4804F 		tst	r3, #16384
+ 664 00a4 0CD0     		beq	.L63
+ 665 00a6 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 666 00aa 9BB2     		uxth	r3, r3
+ 667 00ac 23F4E043 		bic	r3, r3, #28672
+ 668 00b0 23F07003 		bic	r3, r3, #112
+ 669 00b4 43F44043 		orr	r3, r3, #49152
+ 670 00b8 43F08003 		orr	r3, r3, #128
+ 671 00bc 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 672              	.L63:
+ 673 00c0 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 674 00c2 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 675 00c6 13F0400F 		tst	r3, #64
+ 676 00ca 0CD0     		beq	.L64
+ 677 00cc 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 678 00d0 9BB2     		uxth	r3, r3
+ 679 00d2 23F4E043 		bic	r3, r3, #28672
+ 680 00d6 23F07003 		bic	r3, r3, #112
+ 681 00da 43F40043 		orr	r3, r3, #32768
+ 682 00de 43F0C003 		orr	r3, r3, #192
+ 683 00e2 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 684              	.L64:
+ 685 00e6 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 686 00e8 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 687 00ec 9BB2     		uxth	r3, r3
+ 688 00ee 23F4E043 		bic	r3, r3, #28672
+ 689 00f2 23F07003 		bic	r3, r3, #112
+ 690 00f6 43F40043 		orr	r3, r3, #32768
+ 691 00fa 43F0C003 		orr	r3, r3, #192
+ 692 00fe 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 693 0102 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 694 0104 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 695 0108 9BB2     		uxth	r3, r3
+ 696 010a 23F48043 		bic	r3, r3, #16384
+ 697 010e 23F07003 		bic	r3, r3, #112
+ 698 0112 48F2800C 		movw	ip, #32896
+ 699 0116 43EA0C03 		orr	r3, r3, ip
+ 700 011a 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 701 011e 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 13
+
+
+ 702 0120 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 703 0124 9BB2     		uxth	r3, r3
+ 704 0126 23F4E043 		bic	r3, r3, #28672
+ 705 012a 23F04003 		bic	r3, r3, #64
+ 706 012e 43EA0C03 		orr	r3, r3, ip
+ 707 0132 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 708 0136 89E7     		b	.L60
+ 709              	.L62:
+ 710 0138 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 711 013a 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 712 013e 13F4804F 		tst	r3, #16384
+ 713 0142 0CD0     		beq	.L65
+ 714 0144 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 715 0148 9BB2     		uxth	r3, r3
+ 716 014a 23F4E043 		bic	r3, r3, #28672
+ 717 014e 23F07003 		bic	r3, r3, #112
+ 718 0152 43F44043 		orr	r3, r3, #49152
+ 719 0156 43F08003 		orr	r3, r3, #128
+ 720 015a 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 721              	.L65:
+ 722 015e 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 723 0160 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 724 0164 13F0400F 		tst	r3, #64
+ 725 0168 0CD0     		beq	.L66
+ 726 016a 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 727 016e 9BB2     		uxth	r3, r3
+ 728 0170 23F4E043 		bic	r3, r3, #28672
+ 729 0174 23F07003 		bic	r3, r3, #112
+ 730 0178 43F40043 		orr	r3, r3, #32768
+ 731 017c 43F0C003 		orr	r3, r3, #192
+ 732 0180 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 733              	.L66:
+ 734 0184 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 735 0186 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 736 018a 9BB2     		uxth	r3, r3
+ 737 018c 23F4E043 		bic	r3, r3, #28672
+ 738 0190 23F07003 		bic	r3, r3, #112
+ 739 0194 43F44043 		orr	r3, r3, #49152
+ 740 0198 43F08003 		orr	r3, r3, #128
+ 741 019c 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 742 01a0 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 743 01a2 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 744 01a6 9BB2     		uxth	r3, r3
+ 745 01a8 23F4E043 		bic	r3, r3, #28672
+ 746 01ac 23F04003 		bic	r3, r3, #64
+ 747 01b0 48F2800C 		movw	ip, #32896
+ 748 01b4 43EA0C03 		orr	r3, r3, ip
+ 749 01b8 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 750 01bc 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 751 01be 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 752 01c2 9BB2     		uxth	r3, r3
+ 753 01c4 23F48043 		bic	r3, r3, #16384
+ 754 01c8 23F07003 		bic	r3, r3, #112
+ 755 01cc 43EA0C03 		orr	r3, r3, ip
+ 756 01d0 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 757 01d4 3AE7     		b	.L60
+ 759              		.section	.text.USB_EPSetStall,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 14
+
+
+ 760              		.align	1
+ 761              		.global	USB_EPSetStall
+ 762              		.syntax unified
+ 763              		.thumb
+ 764              		.thumb_func
+ 766              	USB_EPSetStall:
+ 767              		@ args = 0, pretend = 0, frame = 0
+ 768              		@ frame_needed = 0, uses_anonymous_args = 0
+ 769              		@ link register save eliminated.
+ 770 0000 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
+ 771 0002 8BB1     		cbz	r3, .L68
+ 772 0004 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 773 0006 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 774 000a 9BB2     		uxth	r3, r3
+ 775 000c 23F4E043 		bic	r3, r3, #28672
+ 776 0010 23F04003 		bic	r3, r3, #64
+ 777 0014 83F01003 		eor	r3, r3, #16
+ 778 0018 43F40043 		orr	r3, r3, #32768
+ 779 001c 43F08003 		orr	r3, r3, #128
+ 780 0020 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 781              	.L69:
+ 782 0024 0020     		movs	r0, #0
+ 783 0026 7047     		bx	lr
+ 784              	.L68:
+ 785 0028 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 786 002a 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 787 002e 9BB2     		uxth	r3, r3
+ 788 0030 23F48043 		bic	r3, r3, #16384
+ 789 0034 23F07003 		bic	r3, r3, #112
+ 790 0038 83F48053 		eor	r3, r3, #4096
+ 791 003c 43F40043 		orr	r3, r3, #32768
+ 792 0040 43F08003 		orr	r3, r3, #128
+ 793 0044 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 794 0048 ECE7     		b	.L69
+ 796              		.section	.text.USB_EPClearStall,"ax",%progbits
+ 797              		.align	1
+ 798              		.global	USB_EPClearStall
+ 799              		.syntax unified
+ 800              		.thumb
+ 801              		.thumb_func
+ 803              	USB_EPClearStall:
+ 804              		@ args = 0, pretend = 0, frame = 0
+ 805              		@ frame_needed = 0, uses_anonymous_args = 0
+ 806              		@ link register save eliminated.
+ 807 0000 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
+ 808 0002 33B3     		cbz	r3, .L71
+ 809 0004 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 810 0006 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 811 000a 13F0400F 		tst	r3, #64
+ 812 000e 0CD0     		beq	.L72
+ 813 0010 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 814 0014 9BB2     		uxth	r3, r3
+ 815 0016 23F4E043 		bic	r3, r3, #28672
+ 816 001a 23F07003 		bic	r3, r3, #112
+ 817 001e 43F40043 		orr	r3, r3, #32768
+ 818 0022 43F0C003 		orr	r3, r3, #192
+ 819 0026 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 15
+
+
+ 820              	.L72:
+ 821 002a CB78     		ldrb	r3, [r1, #3]	@ zero_extendqisi2
+ 822 002c 012B     		cmp	r3, #1
+ 823 002e 33D0     		beq	.L73
+ 824 0030 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 825 0032 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 826 0036 9BB2     		uxth	r3, r3
+ 827 0038 23F4E043 		bic	r3, r3, #28672
+ 828 003c 23F04003 		bic	r3, r3, #64
+ 829 0040 83F02003 		eor	r3, r3, #32
+ 830 0044 43F40043 		orr	r3, r3, #32768
+ 831 0048 43F08003 		orr	r3, r3, #128
+ 832 004c 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 833 0050 22E0     		b	.L73
+ 834              	.L71:
+ 835 0052 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 836 0054 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 837 0058 13F4804F 		tst	r3, #16384
+ 838 005c 0CD0     		beq	.L74
+ 839 005e 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 840 0062 9BB2     		uxth	r3, r3
+ 841 0064 23F4E043 		bic	r3, r3, #28672
+ 842 0068 23F07003 		bic	r3, r3, #112
+ 843 006c 43F44043 		orr	r3, r3, #49152
+ 844 0070 43F08003 		orr	r3, r3, #128
+ 845 0074 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 846              	.L74:
+ 847 0078 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 848 007a 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 849 007e 9BB2     		uxth	r3, r3
+ 850 0080 23F48043 		bic	r3, r3, #16384
+ 851 0084 23F07003 		bic	r3, r3, #112
+ 852 0088 83F44053 		eor	r3, r3, #12288
+ 853 008c 43F40043 		orr	r3, r3, #32768
+ 854 0090 43F08003 		orr	r3, r3, #128
+ 855 0094 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 856              	.L73:
+ 857 0098 0020     		movs	r0, #0
+ 858 009a 7047     		bx	lr
+ 860              		.section	.text.USB_EPStopXfer,"ax",%progbits
+ 861              		.align	1
+ 862              		.global	USB_EPStopXfer
+ 863              		.syntax unified
+ 864              		.thumb
+ 865              		.thumb_func
+ 867              	USB_EPStopXfer:
+ 868              		@ args = 0, pretend = 0, frame = 0
+ 869              		@ frame_needed = 0, uses_anonymous_args = 0
+ 870              		@ link register save eliminated.
+ 871 0000 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
+ 872 0002 012B     		cmp	r3, #1
+ 873 0004 16D0     		beq	.L80
+ 874 0006 0B7B     		ldrb	r3, [r1, #12]	@ zero_extendqisi2
+ 875 0008 93B9     		cbnz	r3, .L77
+ 876 000a CB78     		ldrb	r3, [r1, #3]	@ zero_extendqisi2
+ 877 000c 012B     		cmp	r3, #1
+ 878 000e 37D0     		beq	.L79
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 16
+
+
+ 879 0010 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 880 0012 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 881 0016 9BB2     		uxth	r3, r3
+ 882 0018 23F48043 		bic	r3, r3, #16384
+ 883 001c 23F07003 		bic	r3, r3, #112
+ 884 0020 83F40053 		eor	r3, r3, #8192
+ 885 0024 43F40043 		orr	r3, r3, #32768
+ 886 0028 43F08003 		orr	r3, r3, #128
+ 887 002c 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 888              	.L77:
+ 889 0030 0020     		movs	r0, #0
+ 890 0032 7047     		bx	lr
+ 891              	.L80:
+ 892 0034 0B7B     		ldrb	r3, [r1, #12]	@ zero_extendqisi2
+ 893 0036 002B     		cmp	r3, #0
+ 894 0038 FAD1     		bne	.L77
+ 895 003a CB78     		ldrb	r3, [r1, #3]	@ zero_extendqisi2
+ 896 003c 012B     		cmp	r3, #1
+ 897 003e 10D0     		beq	.L78
+ 898 0040 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 899 0042 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 900 0046 9BB2     		uxth	r3, r3
+ 901 0048 23F4E043 		bic	r3, r3, #28672
+ 902 004c 23F04003 		bic	r3, r3, #64
+ 903 0050 83F02003 		eor	r3, r3, #32
+ 904 0054 43F40043 		orr	r3, r3, #32768
+ 905 0058 43F08003 		orr	r3, r3, #128
+ 906 005c 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 907 0060 E6E7     		b	.L77
+ 908              	.L78:
+ 909 0062 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 910 0064 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 911 0068 9BB2     		uxth	r3, r3
+ 912 006a 23F4E043 		bic	r3, r3, #28672
+ 913 006e 23F04003 		bic	r3, r3, #64
+ 914 0072 43F40043 		orr	r3, r3, #32768
+ 915 0076 43F08003 		orr	r3, r3, #128
+ 916 007a 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 917 007e D7E7     		b	.L77
+ 918              	.L79:
+ 919 0080 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 920 0082 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 921 0086 9BB2     		uxth	r3, r3
+ 922 0088 23F48043 		bic	r3, r3, #16384
+ 923 008c 23F07003 		bic	r3, r3, #112
+ 924 0090 43F40043 		orr	r3, r3, #32768
+ 925 0094 43F08003 		orr	r3, r3, #128
+ 926 0098 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 927 009c C8E7     		b	.L77
+ 929              		.section	.text.USB_StopDevice,"ax",%progbits
+ 930              		.align	1
+ 931              		.global	USB_StopDevice
+ 932              		.syntax unified
+ 933              		.thumb
+ 934              		.thumb_func
+ 936              	USB_StopDevice:
+ 937              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 17
+
+
+ 938              		@ frame_needed = 0, uses_anonymous_args = 0
+ 939              		@ link register save eliminated.
+ 940 0000 0346     		mov	r3, r0
+ 941 0002 0122     		movs	r2, #1
+ 942 0004 A0F84020 		strh	r2, [r0, #64]	@ movhi
+ 943 0008 0020     		movs	r0, #0
+ 944 000a A3F84400 		strh	r0, [r3, #68]	@ movhi
+ 945 000e 0322     		movs	r2, #3
+ 946 0010 A3F84020 		strh	r2, [r3, #64]	@ movhi
+ 947 0014 7047     		bx	lr
+ 949              		.section	.text.USB_SetDevAddress,"ax",%progbits
+ 950              		.align	1
+ 951              		.global	USB_SetDevAddress
+ 952              		.syntax unified
+ 953              		.thumb
+ 954              		.thumb_func
+ 956              	USB_SetDevAddress:
+ 957              		@ args = 0, pretend = 0, frame = 0
+ 958              		@ frame_needed = 0, uses_anonymous_args = 0
+ 959              		@ link register save eliminated.
+ 960 0000 11B9     		cbnz	r1, .L83
+ 961 0002 8023     		movs	r3, #128
+ 962 0004 A0F84C30 		strh	r3, [r0, #76]	@ movhi
+ 963              	.L83:
+ 964 0008 0020     		movs	r0, #0
+ 965 000a 7047     		bx	lr
+ 967              		.section	.text.USB_DevConnect,"ax",%progbits
+ 968              		.align	1
+ 969              		.global	USB_DevConnect
+ 970              		.syntax unified
+ 971              		.thumb
+ 972              		.thumb_func
+ 974              	USB_DevConnect:
+ 975              		@ args = 0, pretend = 0, frame = 0
+ 976              		@ frame_needed = 0, uses_anonymous_args = 0
+ 977              		@ link register save eliminated.
+ 978 0000 B0F85830 		ldrh	r3, [r0, #88]
+ 979 0004 6FEA4343 		mvn	r3, r3, lsl #17
+ 980 0008 6FEA5343 		mvn	r3, r3, lsr #17
+ 981 000c 9BB2     		uxth	r3, r3
+ 982 000e A0F85830 		strh	r3, [r0, #88]	@ movhi
+ 983 0012 0020     		movs	r0, #0
+ 984 0014 7047     		bx	lr
+ 986              		.section	.text.USB_DevDisconnect,"ax",%progbits
+ 987              		.align	1
+ 988              		.global	USB_DevDisconnect
+ 989              		.syntax unified
+ 990              		.thumb
+ 991              		.thumb_func
+ 993              	USB_DevDisconnect:
+ 994              		@ args = 0, pretend = 0, frame = 0
+ 995              		@ frame_needed = 0, uses_anonymous_args = 0
+ 996              		@ link register save eliminated.
+ 997 0000 B0F85830 		ldrh	r3, [r0, #88]
+ 998 0004 C3F30E03 		ubfx	r3, r3, #0, #15
+ 999 0008 A0F85830 		strh	r3, [r0, #88]	@ movhi
+ 1000 000c 0020     		movs	r0, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 18
+
+
+ 1001 000e 7047     		bx	lr
+ 1003              		.section	.text.USB_ReadInterrupts,"ax",%progbits
+ 1004              		.align	1
+ 1005              		.global	USB_ReadInterrupts
+ 1006              		.syntax unified
+ 1007              		.thumb
+ 1008              		.thumb_func
+ 1010              	USB_ReadInterrupts:
+ 1011              		@ args = 0, pretend = 0, frame = 0
+ 1012              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1013              		@ link register save eliminated.
+ 1014 0000 B0F84400 		ldrh	r0, [r0, #68]
+ 1015 0004 80B2     		uxth	r0, r0
+ 1016 0006 7047     		bx	lr
+ 1018              		.section	.text.USB_ActivateRemoteWakeup,"ax",%progbits
+ 1019              		.align	1
+ 1020              		.global	USB_ActivateRemoteWakeup
+ 1021              		.syntax unified
+ 1022              		.thumb
+ 1023              		.thumb_func
+ 1025              	USB_ActivateRemoteWakeup:
+ 1026              		@ args = 0, pretend = 0, frame = 0
+ 1027              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1028              		@ link register save eliminated.
+ 1029 0000 B0F84030 		ldrh	r3, [r0, #64]
+ 1030 0004 9BB2     		uxth	r3, r3
+ 1031 0006 43F01003 		orr	r3, r3, #16
+ 1032 000a A0F84030 		strh	r3, [r0, #64]	@ movhi
+ 1033 000e 0020     		movs	r0, #0
+ 1034 0010 7047     		bx	lr
+ 1036              		.section	.text.USB_DeActivateRemoteWakeup,"ax",%progbits
+ 1037              		.align	1
+ 1038              		.global	USB_DeActivateRemoteWakeup
+ 1039              		.syntax unified
+ 1040              		.thumb
+ 1041              		.thumb_func
+ 1043              	USB_DeActivateRemoteWakeup:
+ 1044              		@ args = 0, pretend = 0, frame = 0
+ 1045              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1046              		@ link register save eliminated.
+ 1047 0000 B0F84030 		ldrh	r3, [r0, #64]
+ 1048 0004 9BB2     		uxth	r3, r3
+ 1049 0006 23F01003 		bic	r3, r3, #16
+ 1050 000a 9BB2     		uxth	r3, r3
+ 1051 000c A0F84030 		strh	r3, [r0, #64]	@ movhi
+ 1052 0010 0020     		movs	r0, #0
+ 1053 0012 7047     		bx	lr
+ 1055              		.section	.text.USB_WritePMA,"ax",%progbits
+ 1056              		.align	1
+ 1057              		.global	USB_WritePMA
+ 1058              		.syntax unified
+ 1059              		.thumb
+ 1060              		.thumb_func
+ 1062              	USB_WritePMA:
+ 1063              		@ args = 0, pretend = 0, frame = 0
+ 1064              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1065              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 19
+
+
+ 1066 0000 0133     		adds	r3, r3, #1
+ 1067 0002 5B08     		lsrs	r3, r3, #1
+ 1068 0004 1044     		add	r0, r0, r2
+ 1069 0006 00F58060 		add	r0, r0, #1024
+ 1070 000a 08E0     		b	.L90
+ 1071              	.L91:
+ 1072 000c 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 1073 000e 91F801C0 		ldrb	ip, [r1, #1]	@ zero_extendqisi2
+ 1074 0012 42EA0C22 		orr	r2, r2, ip, lsl #8
+ 1075 0016 20F8022B 		strh	r2, [r0], #2	@ movhi
+ 1076 001a 0231     		adds	r1, r1, #2
+ 1077 001c 013B     		subs	r3, r3, #1
+ 1078              	.L90:
+ 1079 001e 002B     		cmp	r3, #0
+ 1080 0020 F4D1     		bne	.L91
+ 1081 0022 7047     		bx	lr
+ 1083              		.section	.text.USB_EPStartXfer,"ax",%progbits
+ 1084              		.align	1
+ 1085              		.global	USB_EPStartXfer
+ 1086              		.syntax unified
+ 1087              		.thumb
+ 1088              		.thumb_func
+ 1090              	USB_EPStartXfer:
+ 1091              		@ args = 0, pretend = 0, frame = 0
+ 1092              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1093 0000 70B5     		push	{r4, r5, r6, lr}
+ 1094 0002 0546     		mov	r5, r0
+ 1095 0004 0C46     		mov	r4, r1
+ 1096 0006 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
+ 1097 0008 012B     		cmp	r3, #1
+ 1098 000a 1AD0     		beq	.L152
+ 1099 000c 0B7B     		ldrb	r3, [r1, #12]	@ zero_extendqisi2
+ 1100 000e 002B     		cmp	r3, #0
+ 1101 0010 40F09482 		bne	.L142
+ 1102 0014 8B69     		ldr	r3, [r1, #24]
+ 1103 0016 002B     		cmp	r3, #0
+ 1104 0018 40F06782 		bne	.L143
+ 1105 001c CB78     		ldrb	r3, [r1, #3]	@ zero_extendqisi2
+ 1106 001e 002B     		cmp	r3, #0
+ 1107 0020 40F06382 		bne	.L143
+ 1108 0024 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 1109 0026 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 1110 002a 9BB2     		uxth	r3, r3
+ 1111 002c 23F4E043 		bic	r3, r3, #28672
+ 1112 0030 23F07003 		bic	r3, r3, #112
+ 1113 0034 43F40143 		orr	r3, r3, #33024
+ 1114 0038 43F08003 		orr	r3, r3, #128
+ 1115 003c 20F82230 		strh	r3, [r0, r2, lsl #2]	@ movhi
+ 1116 0040 61E2     		b	.L144
+ 1117              	.L152:
+ 1118 0042 8A69     		ldr	r2, [r1, #24]
+ 1119 0044 1146     		mov	r1, r2
+ 1120 0046 1646     		mov	r6, r2
+ 1121 0048 2269     		ldr	r2, [r4, #16]
+ 1122 004a 9142     		cmp	r1, r2
+ 1123 004c 00D9     		bls	.L94
+ 1124 004e 1646     		mov	r6, r2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 20
+
+
+ 1125              	.L94:
+ 1126 0050 217B     		ldrb	r1, [r4, #12]	@ zero_extendqisi2
+ 1127 0052 41B3     		cbz	r1, .L153
+ 1128 0054 E178     		ldrb	r1, [r4, #3]	@ zero_extendqisi2
+ 1129 0056 0229     		cmp	r1, #2
+ 1130 0058 47D0     		beq	.L154
+ 1131 005a 226A     		ldr	r2, [r4, #32]
+ 1132 005c 921B     		subs	r2, r2, r6
+ 1133 005e 2262     		str	r2, [r4, #32]
+ 1134 0060 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 1135 0062 35F82210 		ldrh	r1, [r5, r2, lsl #2]
+ 1136 0066 11F0400F 		tst	r1, #64
+ 1137 006a 00F0F681 		beq	.L128
+ 1138 006e 002B     		cmp	r3, #0
+ 1139 0070 40F0E381 		bne	.L129
+ 1140 0074 B5F85030 		ldrh	r3, [r5, #80]
+ 1141 0078 15FA83F3 		uxtah	r3, r5, r3
+ 1142 007c 03EBC202 		add	r2, r3, r2, lsl #3
+ 1143 0080 B2F80634 		ldrh	r3, [r2, #1030]
+ 1144 0084 C3F30903 		ubfx	r3, r3, #0, #10
+ 1145 0088 A2F80634 		strh	r3, [r2, #1030]	@ movhi
+ 1146 008c 002E     		cmp	r6, #0
+ 1147 008e 40F0B481 		bne	.L130
+ 1148 0092 B2F80634 		ldrh	r3, [r2, #1030]
+ 1149 0096 6FEA4343 		mvn	r3, r3, lsl #17
+ 1150 009a 6FEA5343 		mvn	r3, r3, lsr #17
+ 1151 009e 9BB2     		uxth	r3, r3
+ 1152 00a0 A2F80634 		strh	r3, [r2, #1030]	@ movhi
+ 1153 00a4 D2E1     		b	.L131
+ 1154              	.L153:
+ 1155 00a6 B3B2     		uxth	r3, r6
+ 1156 00a8 1E46     		mov	r6, r3
+ 1157 00aa E288     		ldrh	r2, [r4, #6]
+ 1158 00ac 6169     		ldr	r1, [r4, #20]
+ 1159 00ae 2846     		mov	r0, r5
+ 1160 00b0 FFF7FEFF 		bl	USB_WritePMA
+ 1161 00b4 B5F85030 		ldrh	r3, [r5, #80]
+ 1162 00b8 15FA83F3 		uxtah	r3, r5, r3
+ 1163 00bc 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 1164 00be 03EBC203 		add	r3, r3, r2, lsl #3
+ 1165 00c2 A3F80264 		strh	r6, [r3, #1026]	@ movhi
+ 1166              	.L96:
+ 1167 00c6 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 1168 00c8 35F82230 		ldrh	r3, [r5, r2, lsl #2]
+ 1169 00cc 9BB2     		uxth	r3, r3
+ 1170 00ce 23F4E043 		bic	r3, r3, #28672
+ 1171 00d2 23F04003 		bic	r3, r3, #64
+ 1172 00d6 83F03003 		eor	r3, r3, #48
+ 1173 00da 43F40043 		orr	r3, r3, #32768
+ 1174 00de 43F08003 		orr	r3, r3, #128
+ 1175 00e2 25F82230 		strh	r3, [r5, r2, lsl #2]	@ movhi
+ 1176 00e6 0020     		movs	r0, #0
+ 1177 00e8 24E2     		b	.L141
+ 1178              	.L154:
+ 1179 00ea 236A     		ldr	r3, [r4, #32]
+ 1180 00ec 9A42     		cmp	r2, r3
+ 1181 00ee 80F06681 		bcs	.L98
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 21
+
+
+ 1182 00f2 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 1183 00f4 35F82230 		ldrh	r3, [r5, r2, lsl #2]
+ 1184 00f8 9BB2     		uxth	r3, r3
+ 1185 00fa 23F4E043 		bic	r3, r3, #28672
+ 1186 00fe 23F07003 		bic	r3, r3, #112
+ 1187 0102 43F40143 		orr	r3, r3, #33024
+ 1188 0106 43F08003 		orr	r3, r3, #128
+ 1189 010a 25F82230 		strh	r3, [r5, r2, lsl #2]	@ movhi
+ 1190 010e 236A     		ldr	r3, [r4, #32]
+ 1191 0110 9B1B     		subs	r3, r3, r6
+ 1192 0112 2362     		str	r3, [r4, #32]
+ 1193 0114 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 1194 0116 35F82320 		ldrh	r2, [r5, r3, lsl #2]
+ 1195 011a 12F0400F 		tst	r2, #64
+ 1196 011e 00F0A780 		beq	.L99
+ 1197 0122 6278     		ldrb	r2, [r4, #1]	@ zero_extendqisi2
+ 1198 0124 B2BB     		cbnz	r2, .L100
+ 1199 0126 B5F85020 		ldrh	r2, [r5, #80]
+ 1200 012a 15FA82F2 		uxtah	r2, r5, r2
+ 1201 012e 02EBC303 		add	r3, r2, r3, lsl #3
+ 1202 0132 B3F80624 		ldrh	r2, [r3, #1030]
+ 1203 0136 C2F30902 		ubfx	r2, r2, #0, #10
+ 1204 013a A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1205 013e 4EB9     		cbnz	r6, .L101
+ 1206 0140 B3F80624 		ldrh	r2, [r3, #1030]
+ 1207 0144 6FEA4242 		mvn	r2, r2, lsl #17
+ 1208 0148 6FEA5242 		mvn	r2, r2, lsr #17
+ 1209 014c 92B2     		uxth	r2, r2
+ 1210 014e A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1211 0152 21E0     		b	.L102
+ 1212              	.L101:
+ 1213 0154 3E2E     		cmp	r6, #62
+ 1214 0156 0DD8     		bhi	.L103
+ 1215 0158 7208     		lsrs	r2, r6, #1
+ 1216 015a 16F0010F 		tst	r6, #1
+ 1217 015e 00D0     		beq	.L104
+ 1218 0160 0132     		adds	r2, r2, #1
+ 1219              	.L104:
+ 1220 0162 B3F80614 		ldrh	r1, [r3, #1030]
+ 1221 0166 89B2     		uxth	r1, r1
+ 1222 0168 9202     		lsls	r2, r2, #10
+ 1223 016a 92B2     		uxth	r2, r2
+ 1224 016c 0A43     		orrs	r2, r2, r1
+ 1225 016e A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1226 0172 11E0     		b	.L102
+ 1227              	.L103:
+ 1228 0174 7109     		lsrs	r1, r6, #5
+ 1229 0176 16F01F0F 		tst	r6, #31
+ 1230 017a 00D1     		bne	.L105
+ 1231 017c 0139     		subs	r1, r1, #1
+ 1232              	.L105:
+ 1233 017e B3F80624 		ldrh	r2, [r3, #1030]
+ 1234 0182 92B2     		uxth	r2, r2
+ 1235 0184 8902     		lsls	r1, r1, #10
+ 1236 0186 89B2     		uxth	r1, r1
+ 1237 0188 0A43     		orrs	r2, r2, r1
+ 1238 018a 42F40042 		orr	r2, r2, #32768
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 22
+
+
+ 1239 018e A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1240 0192 01E0     		b	.L102
+ 1241              	.L100:
+ 1242 0194 012A     		cmp	r2, #1
+ 1243 0196 29D0     		beq	.L155
+ 1244              	.L102:
+ 1245 0198 B3B2     		uxth	r3, r6
+ 1246 019a 6289     		ldrh	r2, [r4, #10]
+ 1247 019c 6169     		ldr	r1, [r4, #20]
+ 1248 019e 2846     		mov	r0, r5
+ 1249 01a0 FFF7FEFF 		bl	USB_WritePMA
+ 1250 01a4 6369     		ldr	r3, [r4, #20]
+ 1251 01a6 3344     		add	r3, r3, r6
+ 1252 01a8 6361     		str	r3, [r4, #20]
+ 1253 01aa 236A     		ldr	r3, [r4, #32]
+ 1254 01ac 2269     		ldr	r2, [r4, #16]
+ 1255 01ae 9342     		cmp	r3, r2
+ 1256 01b0 26D9     		bls	.L106
+ 1257 01b2 9B1B     		subs	r3, r3, r6
+ 1258 01b4 2362     		str	r3, [r4, #32]
+ 1259              	.L107:
+ 1260 01b6 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 1261 01b8 002B     		cmp	r3, #0
+ 1262 01ba 45D1     		bne	.L108
+ 1263 01bc B5F85030 		ldrh	r3, [r5, #80]
+ 1264 01c0 15FA83F3 		uxtah	r3, r5, r3
+ 1265 01c4 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 1266 01c6 03EBC203 		add	r3, r3, r2, lsl #3
+ 1267 01ca B3F80224 		ldrh	r2, [r3, #1026]
+ 1268 01ce C2F30902 		ubfx	r2, r2, #0, #10
+ 1269 01d2 A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1270 01d6 BEB9     		cbnz	r6, .L109
+ 1271 01d8 B3F80224 		ldrh	r2, [r3, #1026]
+ 1272 01dc 6FEA4242 		mvn	r2, r2, lsl #17
+ 1273 01e0 6FEA5242 		mvn	r2, r2, lsr #17
+ 1274 01e4 92B2     		uxth	r2, r2
+ 1275 01e6 A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1276 01ea 2FE0     		b	.L110
+ 1277              	.L155:
+ 1278 01ec B5F85020 		ldrh	r2, [r5, #80]
+ 1279 01f0 15FA82F2 		uxtah	r2, r5, r2
+ 1280 01f4 02EBC303 		add	r3, r2, r3, lsl #3
+ 1281 01f8 B2B2     		uxth	r2, r6
+ 1282 01fa A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1283 01fe CBE7     		b	.L102
+ 1284              	.L106:
+ 1285 0200 0022     		movs	r2, #0
+ 1286 0202 2262     		str	r2, [r4, #32]
+ 1287 0204 1E46     		mov	r6, r3
+ 1288 0206 D6E7     		b	.L107
+ 1289              	.L109:
+ 1290 0208 3E2E     		cmp	r6, #62
+ 1291 020a 0DD8     		bhi	.L111
+ 1292 020c 7208     		lsrs	r2, r6, #1
+ 1293 020e 16F0010F 		tst	r6, #1
+ 1294 0212 00D0     		beq	.L112
+ 1295 0214 0132     		adds	r2, r2, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 23
+
+
+ 1296              	.L112:
+ 1297 0216 B3F80214 		ldrh	r1, [r3, #1026]
+ 1298 021a 89B2     		uxth	r1, r1
+ 1299 021c 9202     		lsls	r2, r2, #10
+ 1300 021e 92B2     		uxth	r2, r2
+ 1301 0220 0A43     		orrs	r2, r2, r1
+ 1302 0222 A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1303 0226 11E0     		b	.L110
+ 1304              	.L111:
+ 1305 0228 7109     		lsrs	r1, r6, #5
+ 1306 022a 16F01F0F 		tst	r6, #31
+ 1307 022e 00D1     		bne	.L113
+ 1308 0230 0139     		subs	r1, r1, #1
+ 1309              	.L113:
+ 1310 0232 B3F80224 		ldrh	r2, [r3, #1026]
+ 1311 0236 92B2     		uxth	r2, r2
+ 1312 0238 8902     		lsls	r1, r1, #10
+ 1313 023a 89B2     		uxth	r1, r1
+ 1314 023c 0A43     		orrs	r2, r2, r1
+ 1315 023e 42F40042 		orr	r2, r2, #32768
+ 1316 0242 A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1317 0246 01E0     		b	.L110
+ 1318              	.L108:
+ 1319 0248 012B     		cmp	r3, #1
+ 1320 024a 06D0     		beq	.L156
+ 1321              	.L110:
+ 1322 024c B3B2     		uxth	r3, r6
+ 1323 024e 2289     		ldrh	r2, [r4, #8]
+ 1324 0250 6169     		ldr	r1, [r4, #20]
+ 1325 0252 2846     		mov	r0, r5
+ 1326 0254 FFF7FEFF 		bl	USB_WritePMA
+ 1327 0258 35E7     		b	.L96
+ 1328              	.L156:
+ 1329 025a B5F85030 		ldrh	r3, [r5, #80]
+ 1330 025e 15FA83F3 		uxtah	r3, r5, r3
+ 1331 0262 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 1332 0264 03EBC203 		add	r3, r3, r2, lsl #3
+ 1333 0268 B2B2     		uxth	r2, r6
+ 1334 026a A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1335 026e EDE7     		b	.L110
+ 1336              	.L99:
+ 1337 0270 6278     		ldrb	r2, [r4, #1]	@ zero_extendqisi2
+ 1338 0272 B2BB     		cbnz	r2, .L114
+ 1339 0274 B5F85020 		ldrh	r2, [r5, #80]
+ 1340 0278 15FA82F2 		uxtah	r2, r5, r2
+ 1341 027c 02EBC303 		add	r3, r2, r3, lsl #3
+ 1342 0280 B3F80224 		ldrh	r2, [r3, #1026]
+ 1343 0284 C2F30902 		ubfx	r2, r2, #0, #10
+ 1344 0288 A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1345 028c 4EB9     		cbnz	r6, .L115
+ 1346 028e B3F80224 		ldrh	r2, [r3, #1026]
+ 1347 0292 6FEA4242 		mvn	r2, r2, lsl #17
+ 1348 0296 6FEA5242 		mvn	r2, r2, lsr #17
+ 1349 029a 92B2     		uxth	r2, r2
+ 1350 029c A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1351 02a0 21E0     		b	.L116
+ 1352              	.L115:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 24
+
+
+ 1353 02a2 3E2E     		cmp	r6, #62
+ 1354 02a4 0DD8     		bhi	.L117
+ 1355 02a6 7208     		lsrs	r2, r6, #1
+ 1356 02a8 16F0010F 		tst	r6, #1
+ 1357 02ac 00D0     		beq	.L118
+ 1358 02ae 0132     		adds	r2, r2, #1
+ 1359              	.L118:
+ 1360 02b0 B3F80214 		ldrh	r1, [r3, #1026]
+ 1361 02b4 89B2     		uxth	r1, r1
+ 1362 02b6 9202     		lsls	r2, r2, #10
+ 1363 02b8 92B2     		uxth	r2, r2
+ 1364 02ba 0A43     		orrs	r2, r2, r1
+ 1365 02bc A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1366 02c0 11E0     		b	.L116
+ 1367              	.L117:
+ 1368 02c2 7109     		lsrs	r1, r6, #5
+ 1369 02c4 16F01F0F 		tst	r6, #31
+ 1370 02c8 00D1     		bne	.L119
+ 1371 02ca 0139     		subs	r1, r1, #1
+ 1372              	.L119:
+ 1373 02cc B3F80224 		ldrh	r2, [r3, #1026]
+ 1374 02d0 92B2     		uxth	r2, r2
+ 1375 02d2 8902     		lsls	r1, r1, #10
+ 1376 02d4 89B2     		uxth	r1, r1
+ 1377 02d6 0A43     		orrs	r2, r2, r1
+ 1378 02d8 42F40042 		orr	r2, r2, #32768
+ 1379 02dc A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1380 02e0 01E0     		b	.L116
+ 1381              	.L114:
+ 1382 02e2 012A     		cmp	r2, #1
+ 1383 02e4 29D0     		beq	.L157
+ 1384              	.L116:
+ 1385 02e6 B3B2     		uxth	r3, r6
+ 1386 02e8 2289     		ldrh	r2, [r4, #8]
+ 1387 02ea 6169     		ldr	r1, [r4, #20]
+ 1388 02ec 2846     		mov	r0, r5
+ 1389 02ee FFF7FEFF 		bl	USB_WritePMA
+ 1390 02f2 6369     		ldr	r3, [r4, #20]
+ 1391 02f4 3344     		add	r3, r3, r6
+ 1392 02f6 6361     		str	r3, [r4, #20]
+ 1393 02f8 236A     		ldr	r3, [r4, #32]
+ 1394 02fa 2269     		ldr	r2, [r4, #16]
+ 1395 02fc 9342     		cmp	r3, r2
+ 1396 02fe 26D9     		bls	.L120
+ 1397 0300 9B1B     		subs	r3, r3, r6
+ 1398 0302 2362     		str	r3, [r4, #32]
+ 1399              	.L121:
+ 1400 0304 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 1401 0306 002B     		cmp	r3, #0
+ 1402 0308 45D1     		bne	.L122
+ 1403 030a B5F85030 		ldrh	r3, [r5, #80]
+ 1404 030e 15FA83F3 		uxtah	r3, r5, r3
+ 1405 0312 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 1406 0314 03EBC203 		add	r3, r3, r2, lsl #3
+ 1407 0318 B3F80624 		ldrh	r2, [r3, #1030]
+ 1408 031c C2F30902 		ubfx	r2, r2, #0, #10
+ 1409 0320 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 25
+
+
+ 1410 0324 BEB9     		cbnz	r6, .L123
+ 1411 0326 B3F80624 		ldrh	r2, [r3, #1030]
+ 1412 032a 6FEA4242 		mvn	r2, r2, lsl #17
+ 1413 032e 6FEA5242 		mvn	r2, r2, lsr #17
+ 1414 0332 92B2     		uxth	r2, r2
+ 1415 0334 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1416 0338 2FE0     		b	.L124
+ 1417              	.L157:
+ 1418 033a B5F85020 		ldrh	r2, [r5, #80]
+ 1419 033e 15FA82F2 		uxtah	r2, r5, r2
+ 1420 0342 02EBC303 		add	r3, r2, r3, lsl #3
+ 1421 0346 B2B2     		uxth	r2, r6
+ 1422 0348 A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1423 034c CBE7     		b	.L116
+ 1424              	.L120:
+ 1425 034e 0022     		movs	r2, #0
+ 1426 0350 2262     		str	r2, [r4, #32]
+ 1427 0352 1E46     		mov	r6, r3
+ 1428 0354 D6E7     		b	.L121
+ 1429              	.L123:
+ 1430 0356 3E2E     		cmp	r6, #62
+ 1431 0358 0DD8     		bhi	.L125
+ 1432 035a 7208     		lsrs	r2, r6, #1
+ 1433 035c 16F0010F 		tst	r6, #1
+ 1434 0360 00D0     		beq	.L126
+ 1435 0362 0132     		adds	r2, r2, #1
+ 1436              	.L126:
+ 1437 0364 B3F80614 		ldrh	r1, [r3, #1030]
+ 1438 0368 89B2     		uxth	r1, r1
+ 1439 036a 9202     		lsls	r2, r2, #10
+ 1440 036c 92B2     		uxth	r2, r2
+ 1441 036e 0A43     		orrs	r2, r2, r1
+ 1442 0370 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1443 0374 11E0     		b	.L124
+ 1444              	.L125:
+ 1445 0376 7109     		lsrs	r1, r6, #5
+ 1446 0378 16F01F0F 		tst	r6, #31
+ 1447 037c 00D1     		bne	.L127
+ 1448 037e 0139     		subs	r1, r1, #1
+ 1449              	.L127:
+ 1450 0380 B3F80624 		ldrh	r2, [r3, #1030]
+ 1451 0384 92B2     		uxth	r2, r2
+ 1452 0386 8902     		lsls	r1, r1, #10
+ 1453 0388 89B2     		uxth	r1, r1
+ 1454 038a 0A43     		orrs	r2, r2, r1
+ 1455 038c 42F40042 		orr	r2, r2, #32768
+ 1456 0390 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1457 0394 01E0     		b	.L124
+ 1458              	.L122:
+ 1459 0396 012B     		cmp	r3, #1
+ 1460 0398 06D0     		beq	.L158
+ 1461              	.L124:
+ 1462 039a B3B2     		uxth	r3, r6
+ 1463 039c 6289     		ldrh	r2, [r4, #10]
+ 1464 039e 6169     		ldr	r1, [r4, #20]
+ 1465 03a0 2846     		mov	r0, r5
+ 1466 03a2 FFF7FEFF 		bl	USB_WritePMA
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 26
+
+
+ 1467 03a6 8EE6     		b	.L96
+ 1468              	.L158:
+ 1469 03a8 B5F85030 		ldrh	r3, [r5, #80]
+ 1470 03ac 15FA83F3 		uxtah	r3, r5, r3
+ 1471 03b0 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 1472 03b2 03EBC203 		add	r3, r3, r2, lsl #3
+ 1473 03b6 B2B2     		uxth	r2, r6
+ 1474 03b8 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1475 03bc EDE7     		b	.L124
+ 1476              	.L98:
+ 1477 03be 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 1478 03c0 35F82120 		ldrh	r2, [r5, r1, lsl #2]
+ 1479 03c4 92B2     		uxth	r2, r2
+ 1480 03c6 22F4E242 		bic	r2, r2, #28928
+ 1481 03ca 22F07002 		bic	r2, r2, #112
+ 1482 03ce 42F40042 		orr	r2, r2, #32768
+ 1483 03d2 42F08002 		orr	r2, r2, #128
+ 1484 03d6 25F82120 		strh	r2, [r5, r1, lsl #2]	@ movhi
+ 1485 03da B5F85020 		ldrh	r2, [r5, #80]
+ 1486 03de 15FA82F2 		uxtah	r2, r5, r2
+ 1487 03e2 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
+ 1488 03e4 02EBC102 		add	r2, r2, r1, lsl #3
+ 1489 03e8 9BB2     		uxth	r3, r3
+ 1490 03ea A2F80234 		strh	r3, [r2, #1026]	@ movhi
+ 1491 03ee 2289     		ldrh	r2, [r4, #8]
+ 1492 03f0 6169     		ldr	r1, [r4, #20]
+ 1493 03f2 2846     		mov	r0, r5
+ 1494 03f4 FFF7FEFF 		bl	USB_WritePMA
+ 1495 03f8 65E6     		b	.L96
+ 1496              	.L130:
+ 1497 03fa 3E2E     		cmp	r6, #62
+ 1498 03fc 0DD8     		bhi	.L132
+ 1499 03fe 7308     		lsrs	r3, r6, #1
+ 1500 0400 16F0010F 		tst	r6, #1
+ 1501 0404 00D0     		beq	.L133
+ 1502 0406 0133     		adds	r3, r3, #1
+ 1503              	.L133:
+ 1504 0408 B2F80614 		ldrh	r1, [r2, #1030]
+ 1505 040c 89B2     		uxth	r1, r1
+ 1506 040e 9B02     		lsls	r3, r3, #10
+ 1507 0410 9BB2     		uxth	r3, r3
+ 1508 0412 0B43     		orrs	r3, r3, r1
+ 1509 0414 A2F80634 		strh	r3, [r2, #1030]	@ movhi
+ 1510 0418 18E0     		b	.L131
+ 1511              	.L132:
+ 1512 041a 7109     		lsrs	r1, r6, #5
+ 1513 041c 16F01F0F 		tst	r6, #31
+ 1514 0420 00D1     		bne	.L134
+ 1515 0422 0139     		subs	r1, r1, #1
+ 1516              	.L134:
+ 1517 0424 B2F80634 		ldrh	r3, [r2, #1030]
+ 1518 0428 9BB2     		uxth	r3, r3
+ 1519 042a 8902     		lsls	r1, r1, #10
+ 1520 042c 89B2     		uxth	r1, r1
+ 1521 042e 0B43     		orrs	r3, r3, r1
+ 1522 0430 43F40043 		orr	r3, r3, #32768
+ 1523 0434 A2F80634 		strh	r3, [r2, #1030]	@ movhi
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 27
+
+
+ 1524 0438 08E0     		b	.L131
+ 1525              	.L129:
+ 1526 043a B5F85030 		ldrh	r3, [r5, #80]
+ 1527 043e 15FA83F3 		uxtah	r3, r5, r3
+ 1528 0442 03EBC203 		add	r3, r3, r2, lsl #3
+ 1529 0446 B2B2     		uxth	r2, r6
+ 1530 0448 A3F80624 		strh	r2, [r3, #1030]	@ movhi
+ 1531              	.L131:
+ 1532 044c B3B2     		uxth	r3, r6
+ 1533 044e 6289     		ldrh	r2, [r4, #10]
+ 1534 0450 6169     		ldr	r1, [r4, #20]
+ 1535 0452 2846     		mov	r0, r5
+ 1536 0454 FFF7FEFF 		bl	USB_WritePMA
+ 1537 0458 35E6     		b	.L96
+ 1538              	.L128:
+ 1539 045a B3BB     		cbnz	r3, .L135
+ 1540 045c B5F85030 		ldrh	r3, [r5, #80]
+ 1541 0460 15FA83F3 		uxtah	r3, r5, r3
+ 1542 0464 03EBC202 		add	r2, r3, r2, lsl #3
+ 1543 0468 B2F80234 		ldrh	r3, [r2, #1026]
+ 1544 046c C3F30903 		ubfx	r3, r3, #0, #10
+ 1545 0470 A2F80234 		strh	r3, [r2, #1026]	@ movhi
+ 1546 0474 4EB9     		cbnz	r6, .L136
+ 1547 0476 B2F80234 		ldrh	r3, [r2, #1026]
+ 1548 047a 6FEA4343 		mvn	r3, r3, lsl #17
+ 1549 047e 6FEA5343 		mvn	r3, r3, lsr #17
+ 1550 0482 9BB2     		uxth	r3, r3
+ 1551 0484 A2F80234 		strh	r3, [r2, #1026]	@ movhi
+ 1552 0488 28E0     		b	.L137
+ 1553              	.L136:
+ 1554 048a 3E2E     		cmp	r6, #62
+ 1555 048c 0DD8     		bhi	.L138
+ 1556 048e 7308     		lsrs	r3, r6, #1
+ 1557 0490 16F0010F 		tst	r6, #1
+ 1558 0494 00D0     		beq	.L139
+ 1559 0496 0133     		adds	r3, r3, #1
+ 1560              	.L139:
+ 1561 0498 B2F80214 		ldrh	r1, [r2, #1026]
+ 1562 049c 89B2     		uxth	r1, r1
+ 1563 049e 9B02     		lsls	r3, r3, #10
+ 1564 04a0 9BB2     		uxth	r3, r3
+ 1565 04a2 0B43     		orrs	r3, r3, r1
+ 1566 04a4 A2F80234 		strh	r3, [r2, #1026]	@ movhi
+ 1567 04a8 18E0     		b	.L137
+ 1568              	.L138:
+ 1569 04aa 7109     		lsrs	r1, r6, #5
+ 1570 04ac 16F01F0F 		tst	r6, #31
+ 1571 04b0 00D1     		bne	.L140
+ 1572 04b2 0139     		subs	r1, r1, #1
+ 1573              	.L140:
+ 1574 04b4 B2F80234 		ldrh	r3, [r2, #1026]
+ 1575 04b8 9BB2     		uxth	r3, r3
+ 1576 04ba 8902     		lsls	r1, r1, #10
+ 1577 04bc 89B2     		uxth	r1, r1
+ 1578 04be 0B43     		orrs	r3, r3, r1
+ 1579 04c0 43F40043 		orr	r3, r3, #32768
+ 1580 04c4 A2F80234 		strh	r3, [r2, #1026]	@ movhi
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 28
+
+
+ 1581 04c8 08E0     		b	.L137
+ 1582              	.L135:
+ 1583 04ca B5F85030 		ldrh	r3, [r5, #80]
+ 1584 04ce 15FA83F3 		uxtah	r3, r5, r3
+ 1585 04d2 03EBC203 		add	r3, r3, r2, lsl #3
+ 1586 04d6 B2B2     		uxth	r2, r6
+ 1587 04d8 A3F80224 		strh	r2, [r3, #1026]	@ movhi
+ 1588              	.L137:
+ 1589 04dc B3B2     		uxth	r3, r6
+ 1590 04de 2289     		ldrh	r2, [r4, #8]
+ 1591 04e0 6169     		ldr	r1, [r4, #20]
+ 1592 04e2 2846     		mov	r0, r5
+ 1593 04e4 FFF7FEFF 		bl	USB_WritePMA
+ 1594 04e8 EDE5     		b	.L96
+ 1595              	.L143:
+ 1596 04ea 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 1597 04ec 35F82230 		ldrh	r3, [r5, r2, lsl #2]
+ 1598 04f0 9BB2     		uxth	r3, r3
+ 1599 04f2 23F4E243 		bic	r3, r3, #28928
+ 1600 04f6 23F07003 		bic	r3, r3, #112
+ 1601 04fa 43F40043 		orr	r3, r3, #32768
+ 1602 04fe 43F08003 		orr	r3, r3, #128
+ 1603 0502 25F82230 		strh	r3, [r5, r2, lsl #2]	@ movhi
+ 1604              	.L144:
+ 1605 0506 A369     		ldr	r3, [r4, #24]
+ 1606 0508 2269     		ldr	r2, [r4, #16]
+ 1607 050a 9342     		cmp	r3, r2
+ 1608 050c 13D9     		bls	.L145
+ 1609 050e 9B1A     		subs	r3, r3, r2
+ 1610 0510 A361     		str	r3, [r4, #24]
+ 1611              	.L146:
+ 1612 0512 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 1613 0514 35F82230 		ldrh	r3, [r5, r2, lsl #2]
+ 1614 0518 9BB2     		uxth	r3, r3
+ 1615 051a 23F48043 		bic	r3, r3, #16384
+ 1616 051e 23F07003 		bic	r3, r3, #112
+ 1617 0522 83F44053 		eor	r3, r3, #12288
+ 1618 0526 43F40043 		orr	r3, r3, #32768
+ 1619 052a 43F08003 		orr	r3, r3, #128
+ 1620 052e 25F82230 		strh	r3, [r5, r2, lsl #2]	@ movhi
+ 1621 0532 0020     		movs	r0, #0
+ 1622              	.L141:
+ 1623 0534 70BD     		pop	{r4, r5, r6, pc}
+ 1624              	.L145:
+ 1625 0536 0023     		movs	r3, #0
+ 1626 0538 A361     		str	r3, [r4, #24]
+ 1627 053a EAE7     		b	.L146
+ 1628              	.L142:
+ 1629 053c CB78     		ldrb	r3, [r1, #3]	@ zero_extendqisi2
+ 1630 053e 022B     		cmp	r3, #2
+ 1631 0540 04D0     		beq	.L159
+ 1632 0542 012B     		cmp	r3, #1
+ 1633 0544 21D1     		bne	.L150
+ 1634 0546 0023     		movs	r3, #0
+ 1635 0548 8B61     		str	r3, [r1, #24]
+ 1636 054a E2E7     		b	.L146
+ 1637              	.L159:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 29
+
+
+ 1638 054c CB69     		ldr	r3, [r1, #28]
+ 1639 054e 002B     		cmp	r3, #0
+ 1640 0550 DFD0     		beq	.L146
+ 1641 0552 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 1642 0554 30F82230 		ldrh	r3, [r0, r2, lsl #2]
+ 1643 0558 99B2     		uxth	r1, r3
+ 1644 055a 13F4804F 		tst	r3, #16384
+ 1645 055e 10D0     		beq	.L148
+ 1646 0560 11F0400F 		tst	r1, #64
+ 1647 0564 D5D0     		beq	.L146
+ 1648              	.L149:
+ 1649 0566 35F82230 		ldrh	r3, [r5, r2, lsl #2]
+ 1650 056a 9BB2     		uxth	r3, r3
+ 1651 056c 23F4E043 		bic	r3, r3, #28672
+ 1652 0570 23F07003 		bic	r3, r3, #112
+ 1653 0574 43F40043 		orr	r3, r3, #32768
+ 1654 0578 43F0C003 		orr	r3, r3, #192
+ 1655 057c 25F82230 		strh	r3, [r5, r2, lsl #2]	@ movhi
+ 1656 0580 C7E7     		b	.L146
+ 1657              	.L148:
+ 1658 0582 11F0400F 		tst	r1, #64
+ 1659 0586 C4D1     		bne	.L146
+ 1660 0588 EDE7     		b	.L149
+ 1661              	.L150:
+ 1662 058a 0120     		movs	r0, #1
+ 1663 058c D2E7     		b	.L141
+ 1665              		.section	.text.USB_ReadPMA,"ax",%progbits
+ 1666              		.align	1
+ 1667              		.global	USB_ReadPMA
+ 1668              		.syntax unified
+ 1669              		.thumb
+ 1670              		.thumb_func
+ 1672              	USB_ReadPMA:
+ 1673              		@ args = 0, pretend = 0, frame = 0
+ 1674              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1675              		@ link register save eliminated.
+ 1676 0000 9C46     		mov	ip, r3
+ 1677 0002 5B08     		lsrs	r3, r3, #1
+ 1678 0004 1044     		add	r0, r0, r2
+ 1679 0006 00F58060 		add	r0, r0, #1024
+ 1680 000a 07E0     		b	.L161
+ 1681              	.L162:
+ 1682 000c 30F8022B 		ldrh	r2, [r0], #2
+ 1683 0010 0A70     		strb	r2, [r1]
+ 1684 0012 C2F30722 		ubfx	r2, r2, #8, #8
+ 1685 0016 4A70     		strb	r2, [r1, #1]
+ 1686 0018 0231     		adds	r1, r1, #2
+ 1687 001a 013B     		subs	r3, r3, #1
+ 1688              	.L161:
+ 1689 001c 002B     		cmp	r3, #0
+ 1690 001e F5D1     		bne	.L162
+ 1691 0020 1CF0010F 		tst	ip, #1
+ 1692 0024 01D0     		beq	.L160
+ 1693 0026 0388     		ldrh	r3, [r0]
+ 1694 0028 0B70     		strb	r3, [r1]
+ 1695              	.L160:
+ 1696 002a 7047     		bx	lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 30
+
+
+ 1698              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s 			page 31
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_ll_usb.c
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:18     .text.USB_CoreInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:24     .text.USB_CoreInit:00000000 USB_CoreInit
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:37     .text.USB_EnableGlobalInt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:43     .text.USB_EnableGlobalInt:00000000 USB_EnableGlobalInt
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:55     .text.USB_DisableGlobalInt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:61     .text.USB_DisableGlobalInt:00000000 USB_DisableGlobalInt
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:75     .text.USB_SetCurrentMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:81     .text.USB_SetCurrentMode:00000000 USB_SetCurrentMode
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:89     .text.USB_DevInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:95     .text.USB_DevInit:00000000 USB_DevInit
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:114    .text.USB_FlushTxFifo:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:120    .text.USB_FlushTxFifo:00000000 USB_FlushTxFifo
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:128    .text.USB_FlushRxFifo:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:134    .text.USB_FlushRxFifo:00000000 USB_FlushRxFifo
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:142    .text.USB_ActivateEndpoint:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:148    .text.USB_ActivateEndpoint:00000000 USB_ActivateEndpoint
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:597    .text.USB_DeactivateEndpoint:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:603    .text.USB_DeactivateEndpoint:00000000 USB_DeactivateEndpoint
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:760    .text.USB_EPSetStall:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:766    .text.USB_EPSetStall:00000000 USB_EPSetStall
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:797    .text.USB_EPClearStall:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:803    .text.USB_EPClearStall:00000000 USB_EPClearStall
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:861    .text.USB_EPStopXfer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:867    .text.USB_EPStopXfer:00000000 USB_EPStopXfer
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:930    .text.USB_StopDevice:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:936    .text.USB_StopDevice:00000000 USB_StopDevice
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:950    .text.USB_SetDevAddress:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:956    .text.USB_SetDevAddress:00000000 USB_SetDevAddress
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:968    .text.USB_DevConnect:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:974    .text.USB_DevConnect:00000000 USB_DevConnect
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:987    .text.USB_DevDisconnect:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:993    .text.USB_DevDisconnect:00000000 USB_DevDisconnect
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1004   .text.USB_ReadInterrupts:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1010   .text.USB_ReadInterrupts:00000000 USB_ReadInterrupts
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1019   .text.USB_ActivateRemoteWakeup:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1025   .text.USB_ActivateRemoteWakeup:00000000 USB_ActivateRemoteWakeup
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1037   .text.USB_DeActivateRemoteWakeup:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1043   .text.USB_DeActivateRemoteWakeup:00000000 USB_DeActivateRemoteWakeup
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1056   .text.USB_WritePMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1062   .text.USB_WritePMA:00000000 USB_WritePMA
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1084   .text.USB_EPStartXfer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1090   .text.USB_EPStartXfer:00000000 USB_EPStartXfer
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1666   .text.USB_ReadPMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccyEOyKL.s:1672   .text.USB_ReadPMA:00000000 USB_ReadPMA
+
+NO UNDEFINED SYMBOLS

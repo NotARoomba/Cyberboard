@@ -1,0 +1,245 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpAbrhD.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"usb_device.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "USB_Device/App/usb_device.c"
+  20              		.section	.text.MX_USB_Device_Init,"ax",%progbits
+  21              		.align	1
+  22              		.global	MX_USB_Device_Init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	MX_USB_Device_Init:
+  28              	.LFB954:
+   1:USB_Device/App/usb_device.c **** /* USER CODE BEGIN Header */
+   2:USB_Device/App/usb_device.c **** /**
+   3:USB_Device/App/usb_device.c ****   ******************************************************************************
+   4:USB_Device/App/usb_device.c ****   * @file           : usb_device.c
+   5:USB_Device/App/usb_device.c ****   * @version        : v3.0_Cube
+   6:USB_Device/App/usb_device.c ****   * @brief          : This file implements the USB Device
+   7:USB_Device/App/usb_device.c ****   ******************************************************************************
+   8:USB_Device/App/usb_device.c ****   * @attention
+   9:USB_Device/App/usb_device.c ****   *
+  10:USB_Device/App/usb_device.c ****   * Copyright (c) 2026 STMicroelectronics.
+  11:USB_Device/App/usb_device.c ****   * All rights reserved.
+  12:USB_Device/App/usb_device.c ****   *
+  13:USB_Device/App/usb_device.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:USB_Device/App/usb_device.c ****   * in the root directory of this software component.
+  15:USB_Device/App/usb_device.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  16:USB_Device/App/usb_device.c ****   *
+  17:USB_Device/App/usb_device.c ****   ******************************************************************************
+  18:USB_Device/App/usb_device.c ****   */
+  19:USB_Device/App/usb_device.c **** /* USER CODE END Header */
+  20:USB_Device/App/usb_device.c **** 
+  21:USB_Device/App/usb_device.c **** /* Includes ------------------------------------------------------------------*/
+  22:USB_Device/App/usb_device.c **** 
+  23:USB_Device/App/usb_device.c **** #include "usb_device.h"
+  24:USB_Device/App/usb_device.c **** #include "usbd_core.h"
+  25:USB_Device/App/usb_device.c **** #include "usbd_desc.h"
+  26:USB_Device/App/usb_device.c **** #include "usbd_cdc.h"
+  27:USB_Device/App/usb_device.c **** #include "usbd_cdc_if.h"
+  28:USB_Device/App/usb_device.c **** 
+  29:USB_Device/App/usb_device.c **** /* USER CODE BEGIN Includes */
+  30:USB_Device/App/usb_device.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpAbrhD.s 			page 2
+
+
+  31:USB_Device/App/usb_device.c **** /* USER CODE END Includes */
+  32:USB_Device/App/usb_device.c **** 
+  33:USB_Device/App/usb_device.c **** /* USER CODE BEGIN PV */
+  34:USB_Device/App/usb_device.c **** /* Private variables ---------------------------------------------------------*/
+  35:USB_Device/App/usb_device.c **** 
+  36:USB_Device/App/usb_device.c **** /* USER CODE END PV */
+  37:USB_Device/App/usb_device.c **** 
+  38:USB_Device/App/usb_device.c **** /* USER CODE BEGIN PFP */
+  39:USB_Device/App/usb_device.c **** /* Private function prototypes -----------------------------------------------*/
+  40:USB_Device/App/usb_device.c **** 
+  41:USB_Device/App/usb_device.c **** /* USER CODE END PFP */
+  42:USB_Device/App/usb_device.c **** 
+  43:USB_Device/App/usb_device.c **** extern void Error_Handler(void);
+  44:USB_Device/App/usb_device.c **** /* USB Device Core handle declaration. */
+  45:USB_Device/App/usb_device.c **** USBD_HandleTypeDef hUsbDeviceFS;
+  46:USB_Device/App/usb_device.c **** extern USBD_DescriptorsTypeDef CDC_Desc;
+  47:USB_Device/App/usb_device.c **** 
+  48:USB_Device/App/usb_device.c **** /*
+  49:USB_Device/App/usb_device.c ****  * -- Insert your variables declaration here --
+  50:USB_Device/App/usb_device.c ****  */
+  51:USB_Device/App/usb_device.c **** /* USER CODE BEGIN 0 */
+  52:USB_Device/App/usb_device.c **** 
+  53:USB_Device/App/usb_device.c **** /* USER CODE END 0 */
+  54:USB_Device/App/usb_device.c **** 
+  55:USB_Device/App/usb_device.c **** /*
+  56:USB_Device/App/usb_device.c ****  * -- Insert your external function declaration here --
+  57:USB_Device/App/usb_device.c ****  */
+  58:USB_Device/App/usb_device.c **** /* USER CODE BEGIN 1 */
+  59:USB_Device/App/usb_device.c **** 
+  60:USB_Device/App/usb_device.c **** /* USER CODE END 1 */
+  61:USB_Device/App/usb_device.c **** 
+  62:USB_Device/App/usb_device.c **** /**
+  63:USB_Device/App/usb_device.c ****   * Init USB device Library, add supported class and start the library
+  64:USB_Device/App/usb_device.c ****   * @retval None
+  65:USB_Device/App/usb_device.c ****   */
+  66:USB_Device/App/usb_device.c **** void MX_USB_Device_Init(void)
+  67:USB_Device/App/usb_device.c **** {
+  29              		.loc 1 67 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 08B5     		push	{r3, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  68:USB_Device/App/usb_device.c ****   /* USER CODE BEGIN USB_Device_Init_PreTreatment */
+  69:USB_Device/App/usb_device.c **** 
+  70:USB_Device/App/usb_device.c ****   /* USER CODE END USB_Device_Init_PreTreatment */
+  71:USB_Device/App/usb_device.c **** 
+  72:USB_Device/App/usb_device.c ****   /* Init Device Library, add supported class and start the library. */
+  73:USB_Device/App/usb_device.c ****   if (USBD_Init(&hUsbDeviceFS, &CDC_Desc, DEVICE_FS) != USBD_OK) {
+  37              		.loc 1 73 3 view .LVU1
+  38              		.loc 1 73 7 is_stmt 0 view .LVU2
+  39 0002 0022     		movs	r2, #0
+  40 0004 0F49     		ldr	r1, .L11
+  41 0006 1048     		ldr	r0, .L11+4
+  42 0008 FFF7FEFF 		bl	USBD_Init
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpAbrhD.s 			page 3
+
+
+  43              	.LVL0:
+  44              		.loc 1 73 6 discriminator 1 view .LVU3
+  45 000c 70B9     		cbnz	r0, .L7
+  46              	.L2:
+  74:USB_Device/App/usb_device.c ****     Error_Handler();
+  75:USB_Device/App/usb_device.c ****   }
+  76:USB_Device/App/usb_device.c ****   if (USBD_RegisterClass(&hUsbDeviceFS, &USBD_CDC) != USBD_OK) {
+  47              		.loc 1 76 3 is_stmt 1 view .LVU4
+  48              		.loc 1 76 7 is_stmt 0 view .LVU5
+  49 000e 0F49     		ldr	r1, .L11+8
+  50 0010 0D48     		ldr	r0, .L11+4
+  51 0012 FFF7FEFF 		bl	USBD_RegisterClass
+  52              	.LVL1:
+  53              		.loc 1 76 6 discriminator 1 view .LVU6
+  54 0016 60B9     		cbnz	r0, .L8
+  55              	.L3:
+  77:USB_Device/App/usb_device.c ****     Error_Handler();
+  78:USB_Device/App/usb_device.c ****   }
+  79:USB_Device/App/usb_device.c ****   if (USBD_CDC_RegisterInterface(&hUsbDeviceFS, &USBD_Interface_fops_FS) != USBD_OK) {
+  56              		.loc 1 79 3 is_stmt 1 view .LVU7
+  57              		.loc 1 79 7 is_stmt 0 view .LVU8
+  58 0018 0D49     		ldr	r1, .L11+12
+  59 001a 0B48     		ldr	r0, .L11+4
+  60 001c FFF7FEFF 		bl	USBD_CDC_RegisterInterface
+  61              	.LVL2:
+  62              		.loc 1 79 6 discriminator 1 view .LVU9
+  63 0020 50B9     		cbnz	r0, .L9
+  64              	.L4:
+  80:USB_Device/App/usb_device.c ****     Error_Handler();
+  81:USB_Device/App/usb_device.c ****   }
+  82:USB_Device/App/usb_device.c ****   if (USBD_Start(&hUsbDeviceFS) != USBD_OK) {
+  65              		.loc 1 82 3 is_stmt 1 view .LVU10
+  66              		.loc 1 82 7 is_stmt 0 view .LVU11
+  67 0022 0948     		ldr	r0, .L11+4
+  68 0024 FFF7FEFF 		bl	USBD_Start
+  69              	.LVL3:
+  70              		.loc 1 82 6 discriminator 1 view .LVU12
+  71 0028 48B9     		cbnz	r0, .L10
+  72              	.L1:
+  83:USB_Device/App/usb_device.c ****     Error_Handler();
+  84:USB_Device/App/usb_device.c ****   }
+  85:USB_Device/App/usb_device.c ****   /* USER CODE BEGIN USB_Device_Init_PostTreatment */
+  86:USB_Device/App/usb_device.c **** 
+  87:USB_Device/App/usb_device.c ****   /* USER CODE END USB_Device_Init_PostTreatment */
+  88:USB_Device/App/usb_device.c **** }
+  73              		.loc 1 88 1 view .LVU13
+  74 002a 08BD     		pop	{r3, pc}
+  75              	.L7:
+  74:USB_Device/App/usb_device.c ****   }
+  76              		.loc 1 74 5 is_stmt 1 view .LVU14
+  77 002c FFF7FEFF 		bl	Error_Handler
+  78              	.LVL4:
+  79 0030 EDE7     		b	.L2
+  80              	.L8:
+  77:USB_Device/App/usb_device.c ****   }
+  81              		.loc 1 77 5 view .LVU15
+  82 0032 FFF7FEFF 		bl	Error_Handler
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpAbrhD.s 			page 4
+
+
+  83              	.LVL5:
+  84 0036 EFE7     		b	.L3
+  85              	.L9:
+  80:USB_Device/App/usb_device.c ****   }
+  86              		.loc 1 80 5 view .LVU16
+  87 0038 FFF7FEFF 		bl	Error_Handler
+  88              	.LVL6:
+  89 003c F1E7     		b	.L4
+  90              	.L10:
+  83:USB_Device/App/usb_device.c ****   }
+  91              		.loc 1 83 5 view .LVU17
+  92 003e FFF7FEFF 		bl	Error_Handler
+  93              	.LVL7:
+  94              		.loc 1 88 1 is_stmt 0 view .LVU18
+  95 0042 F2E7     		b	.L1
+  96              	.L12:
+  97              		.align	2
+  98              	.L11:
+  99 0044 00000000 		.word	CDC_Desc
+ 100 0048 00000000 		.word	hUsbDeviceFS
+ 101 004c 00000000 		.word	USBD_CDC
+ 102 0050 00000000 		.word	USBD_Interface_fops_FS
+ 103              		.cfi_endproc
+ 104              	.LFE954:
+ 106              		.global	hUsbDeviceFS
+ 107              		.section	.bss.hUsbDeviceFS,"aw",%nobits
+ 108              		.align	2
+ 111              	hUsbDeviceFS:
+ 112 0000 00000000 		.space	732
+ 112      00000000 
+ 112      00000000 
+ 112      00000000 
+ 112      00000000 
+ 113              		.text
+ 114              	.Letext0:
+ 115              		.file 2 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 116              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 117              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 118              		.file 5 "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h"
+ 119              		.file 6 "USB_Device/App/usbd_desc.h"
+ 120              		.file 7 "USB_Device/App/usbd_cdc_if.h"
+ 121              		.file 8 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpAbrhD.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 usb_device.c
+C:\Users\Nathan\AppData\Local\Temp\ccpAbrhD.s:21     .text.MX_USB_Device_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccpAbrhD.s:27     .text.MX_USB_Device_Init:00000000 MX_USB_Device_Init
+C:\Users\Nathan\AppData\Local\Temp\ccpAbrhD.s:99     .text.MX_USB_Device_Init:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccpAbrhD.s:111    .bss.hUsbDeviceFS:00000000 hUsbDeviceFS
+C:\Users\Nathan\AppData\Local\Temp\ccpAbrhD.s:108    .bss.hUsbDeviceFS:00000000 $d
+
+UNDEFINED SYMBOLS
+USBD_Init
+USBD_RegisterClass
+USBD_CDC_RegisterInterface
+USBD_Start
+Error_Handler
+CDC_Desc
+USBD_CDC
+USBD_Interface_fops_FS

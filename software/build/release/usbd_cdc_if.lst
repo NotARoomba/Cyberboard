@@ -1,0 +1,194 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"usbd_cdc_if.c"
+  16              		.text
+  17              		.section	.text.CDC_DeInit_FS,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	CDC_DeInit_FS:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 0020     		movs	r0, #0
+  28 0002 7047     		bx	lr
+  30              		.section	.text.CDC_Control_FS,"ax",%progbits
+  31              		.align	1
+  32              		.syntax unified
+  33              		.thumb
+  34              		.thumb_func
+  36              	CDC_Control_FS:
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  39              		@ link register save eliminated.
+  40 0000 0020     		movs	r0, #0
+  41 0002 7047     		bx	lr
+  43              		.section	.text.CDC_TransmitCplt_FS,"ax",%progbits
+  44              		.align	1
+  45              		.syntax unified
+  46              		.thumb
+  47              		.thumb_func
+  49              	CDC_TransmitCplt_FS:
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52              		@ link register save eliminated.
+  53 0000 0020     		movs	r0, #0
+  54 0002 7047     		bx	lr
+  56              		.section	.text.CDC_Receive_FS,"ax",%progbits
+  57              		.align	1
+  58              		.syntax unified
+  59              		.thumb
+  60              		.thumb_func
+  62              	CDC_Receive_FS:
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s 			page 2
+
+
+  65 0000 10B5     		push	{r4, lr}
+  66 0002 0146     		mov	r1, r0
+  67 0004 044C     		ldr	r4, .L6
+  68 0006 2046     		mov	r0, r4
+  69 0008 FFF7FEFF 		bl	USBD_CDC_SetRxBuffer
+  70 000c 2046     		mov	r0, r4
+  71 000e FFF7FEFF 		bl	USBD_CDC_ReceivePacket
+  72 0012 0020     		movs	r0, #0
+  73 0014 10BD     		pop	{r4, pc}
+  74              	.L7:
+  75 0016 00BF     		.align	2
+  76              	.L6:
+  77 0018 00000000 		.word	hUsbDeviceFS
+  79              		.section	.text.CDC_Init_FS,"ax",%progbits
+  80              		.align	1
+  81              		.syntax unified
+  82              		.thumb
+  83              		.thumb_func
+  85              	CDC_Init_FS:
+  86              		@ args = 0, pretend = 0, frame = 0
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88 0000 10B5     		push	{r4, lr}
+  89 0002 064C     		ldr	r4, .L10
+  90 0004 0022     		movs	r2, #0
+  91 0006 0649     		ldr	r1, .L10+4
+  92 0008 2046     		mov	r0, r4
+  93 000a FFF7FEFF 		bl	USBD_CDC_SetTxBuffer
+  94 000e 0549     		ldr	r1, .L10+8
+  95 0010 2046     		mov	r0, r4
+  96 0012 FFF7FEFF 		bl	USBD_CDC_SetRxBuffer
+  97 0016 0020     		movs	r0, #0
+  98 0018 10BD     		pop	{r4, pc}
+  99              	.L11:
+ 100 001a 00BF     		.align	2
+ 101              	.L10:
+ 102 001c 00000000 		.word	hUsbDeviceFS
+ 103 0020 00000000 		.word	UserTxBufferFS
+ 104 0024 00000000 		.word	UserRxBufferFS
+ 106              		.section	.text.CDC_Transmit_FS,"ax",%progbits
+ 107              		.align	1
+ 108              		.global	CDC_Transmit_FS
+ 109              		.syntax unified
+ 110              		.thumb
+ 111              		.thumb_func
+ 113              	CDC_Transmit_FS:
+ 114              		@ args = 0, pretend = 0, frame = 0
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116 0000 08B5     		push	{r3, lr}
+ 117 0002 084B     		ldr	r3, .L17
+ 118 0004 D3F8BC32 		ldr	r3, [r3, #700]
+ 119 0008 D3F81432 		ldr	r3, [r3, #532]
+ 120 000c 0BB1     		cbz	r3, .L16
+ 121 000e 0120     		movs	r0, #1
+ 122              	.L13:
+ 123 0010 08BD     		pop	{r3, pc}
+ 124              	.L16:
+ 125 0012 0A46     		mov	r2, r1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s 			page 3
+
+
+ 126 0014 0146     		mov	r1, r0
+ 127 0016 0348     		ldr	r0, .L17
+ 128 0018 FFF7FEFF 		bl	USBD_CDC_SetTxBuffer
+ 129 001c 0148     		ldr	r0, .L17
+ 130 001e FFF7FEFF 		bl	USBD_CDC_TransmitPacket
+ 131 0022 F5E7     		b	.L13
+ 132              	.L18:
+ 133              		.align	2
+ 134              	.L17:
+ 135 0024 00000000 		.word	hUsbDeviceFS
+ 137              		.global	USBD_Interface_fops_FS
+ 138              		.section	.data.USBD_Interface_fops_FS,"aw"
+ 139              		.align	2
+ 142              	USBD_Interface_fops_FS:
+ 143 0000 00000000 		.word	CDC_Init_FS
+ 144 0004 00000000 		.word	CDC_DeInit_FS
+ 145 0008 00000000 		.word	CDC_Control_FS
+ 146 000c 00000000 		.word	CDC_Receive_FS
+ 147 0010 00000000 		.word	CDC_TransmitCplt_FS
+ 148              		.global	UserTxBufferFS
+ 149              		.section	.bss.UserTxBufferFS,"aw",%nobits
+ 150              		.align	2
+ 153              	UserTxBufferFS:
+ 154 0000 00000000 		.space	2048
+ 154      00000000 
+ 154      00000000 
+ 154      00000000 
+ 154      00000000 
+ 155              		.global	UserRxBufferFS
+ 156              		.section	.bss.UserRxBufferFS,"aw",%nobits
+ 157              		.align	2
+ 160              	UserRxBufferFS:
+ 161 0000 00000000 		.space	2048
+ 161      00000000 
+ 161      00000000 
+ 161      00000000 
+ 161      00000000 
+ 162              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 usbd_cdc_if.c
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:18     .text.CDC_DeInit_FS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:23     .text.CDC_DeInit_FS:00000000 CDC_DeInit_FS
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:31     .text.CDC_Control_FS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:36     .text.CDC_Control_FS:00000000 CDC_Control_FS
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:44     .text.CDC_TransmitCplt_FS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:49     .text.CDC_TransmitCplt_FS:00000000 CDC_TransmitCplt_FS
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:57     .text.CDC_Receive_FS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:62     .text.CDC_Receive_FS:00000000 CDC_Receive_FS
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:77     .text.CDC_Receive_FS:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:80     .text.CDC_Init_FS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:85     .text.CDC_Init_FS:00000000 CDC_Init_FS
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:102    .text.CDC_Init_FS:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:153    .bss.UserTxBufferFS:00000000 UserTxBufferFS
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:160    .bss.UserRxBufferFS:00000000 UserRxBufferFS
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:107    .text.CDC_Transmit_FS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:113    .text.CDC_Transmit_FS:00000000 CDC_Transmit_FS
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:135    .text.CDC_Transmit_FS:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:142    .data.USBD_Interface_fops_FS:00000000 USBD_Interface_fops_FS
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:139    .data.USBD_Interface_fops_FS:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:150    .bss.UserTxBufferFS:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccaQSXxX.s:157    .bss.UserRxBufferFS:00000000 $d
+
+UNDEFINED SYMBOLS
+USBD_CDC_SetRxBuffer
+USBD_CDC_ReceivePacket
+hUsbDeviceFS
+USBD_CDC_SetTxBuffer
+USBD_CDC_TransmitPacket

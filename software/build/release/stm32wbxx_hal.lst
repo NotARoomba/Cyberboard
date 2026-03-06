@@ -1,0 +1,1066 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal.c"
+  16              		.text
+  17              		.section	.text.HAL_MspInit,"ax",%progbits
+  18              		.align	1
+  19              		.weak	HAL_MspInit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_MspInit:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 7047     		bx	lr
+  30              		.section	.text.HAL_MspDeInit,"ax",%progbits
+  31              		.align	1
+  32              		.weak	HAL_MspDeInit
+  33              		.syntax unified
+  34              		.thumb
+  35              		.thumb_func
+  37              	HAL_MspDeInit:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40              		@ link register save eliminated.
+  41 0000 7047     		bx	lr
+  43              		.section	.text.HAL_DeInit,"ax",%progbits
+  44              		.align	1
+  45              		.global	HAL_DeInit
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  50              	HAL_DeInit:
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53 0000 10B5     		push	{r4, lr}
+  54 0002 4FF0B043 		mov	r3, #1476395008
+  55 0006 9A6B     		ldr	r2, [r3, #56]
+  56 0008 4FF0FF32 		mov	r2, #-1
+  57 000c 9A63     		str	r2, [r3, #56]
+  58 000e D96B     		ldr	r1, [r3, #60]
+  59 0010 DA63     		str	r2, [r3, #60]
+  60 0012 996B     		ldr	r1, [r3, #56]
+  61 0014 0024     		movs	r4, #0
+  62 0016 9C63     		str	r4, [r3, #56]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 2
+
+
+  63 0018 D96B     		ldr	r1, [r3, #60]
+  64 001a DC63     		str	r4, [r3, #60]
+  65 001c 196C     		ldr	r1, [r3, #64]
+  66 001e 1A64     		str	r2, [r3, #64]
+  67 0020 196C     		ldr	r1, [r3, #64]
+  68 0022 1C64     		str	r4, [r3, #64]
+  69 0024 596C     		ldr	r1, [r3, #68]
+  70 0026 5A64     		str	r2, [r3, #68]
+  71 0028 596C     		ldr	r1, [r3, #68]
+  72 002a 5C64     		str	r4, [r3, #68]
+  73 002c 996A     		ldr	r1, [r3, #40]
+  74 002e 9A62     		str	r2, [r3, #40]
+  75 0030 996A     		ldr	r1, [r3, #40]
+  76 0032 9C62     		str	r4, [r3, #40]
+  77 0034 D96A     		ldr	r1, [r3, #44]
+  78 0036 DA62     		str	r2, [r3, #44]
+  79 0038 D96A     		ldr	r1, [r3, #44]
+  80 003a DC62     		str	r4, [r3, #44]
+  81 003c 196B     		ldr	r1, [r3, #48]
+  82 003e 1A63     		str	r2, [r3, #48]
+  83 0040 1A6B     		ldr	r2, [r3, #48]
+  84 0042 1C63     		str	r4, [r3, #48]
+  85 0044 FFF7FEFF 		bl	HAL_MspDeInit
+  86 0048 2046     		mov	r0, r4
+  87 004a 10BD     		pop	{r4, pc}
+  89              		.section	.text.HAL_InitTick,"ax",%progbits
+  90              		.align	1
+  91              		.weak	HAL_InitTick
+  92              		.syntax unified
+  93              		.thumb
+  94              		.thumb_func
+  96              	HAL_InitTick:
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99 0000 114B     		ldr	r3, .L16
+ 100 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 101 0004 0BB9     		cbnz	r3, .L14
+ 102 0006 0120     		movs	r0, #1
+ 103 0008 7047     		bx	lr
+ 104              	.L14:
+ 105 000a 10B5     		push	{r4, lr}
+ 106 000c 0446     		mov	r4, r0
+ 107 000e FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
+ 108 0012 0D4B     		ldr	r3, .L16
+ 109 0014 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 110 0016 4FF47A73 		mov	r3, #1000
+ 111 001a B3FBF2F3 		udiv	r3, r3, r2
+ 112 001e B0FBF3F0 		udiv	r0, r0, r3
+ 113 0022 FFF7FEFF 		bl	HAL_SYSTICK_Config
+ 114 0026 68B9     		cbnz	r0, .L8
+ 115 0028 0F2C     		cmp	r4, #15
+ 116 002a 01D9     		bls	.L15
+ 117 002c 0120     		movs	r0, #1
+ 118 002e 0AE0     		b	.L6
+ 119              	.L15:
+ 120 0030 0246     		mov	r2, r0
+ 121 0032 2146     		mov	r1, r4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 3
+
+
+ 122 0034 4FF0FF30 		mov	r0, #-1
+ 123 0038 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 124 003c 034B     		ldr	r3, .L16+4
+ 125 003e 1C60     		str	r4, [r3]
+ 126 0040 0020     		movs	r0, #0
+ 127 0042 00E0     		b	.L6
+ 128              	.L8:
+ 129 0044 0120     		movs	r0, #1
+ 130              	.L6:
+ 131 0046 10BD     		pop	{r4, pc}
+ 132              	.L17:
+ 133              		.align	2
+ 134              	.L16:
+ 135 0048 00000000 		.word	uwTickFreq
+ 136 004c 00000000 		.word	uwTickPrio
+ 138              		.section	.text.HAL_Init,"ax",%progbits
+ 139              		.align	1
+ 140              		.global	HAL_Init
+ 141              		.syntax unified
+ 142              		.thumb
+ 143              		.thumb_func
+ 145              	HAL_Init:
+ 146              		@ args = 0, pretend = 0, frame = 0
+ 147              		@ frame_needed = 0, uses_anonymous_args = 0
+ 148 0000 10B5     		push	{r4, lr}
+ 149 0002 0A4A     		ldr	r2, .L23
+ 150 0004 1368     		ldr	r3, [r2]
+ 151 0006 43F48073 		orr	r3, r3, #256
+ 152 000a 1360     		str	r3, [r2]
+ 153 000c 0320     		movs	r0, #3
+ 154 000e FFF7FEFF 		bl	HAL_NVIC_SetPriorityGrouping
+ 155 0012 0F20     		movs	r0, #15
+ 156 0014 FFF7FEFF 		bl	HAL_InitTick
+ 157 0018 18B1     		cbz	r0, .L22
+ 158 001a 0123     		movs	r3, #1
+ 159 001c 1C46     		mov	r4, r3
+ 160              	.L19:
+ 161 001e 2046     		mov	r0, r4
+ 162 0020 10BD     		pop	{r4, pc}
+ 163              	.L22:
+ 164 0022 0446     		mov	r4, r0
+ 165 0024 FFF7FEFF 		bl	HAL_MspInit
+ 166 0028 F9E7     		b	.L19
+ 167              	.L24:
+ 168 002a 00BF     		.align	2
+ 169              	.L23:
+ 170 002c 00400058 		.word	1476411392
+ 172              		.section	.text.HAL_IncTick,"ax",%progbits
+ 173              		.align	1
+ 174              		.weak	HAL_IncTick
+ 175              		.syntax unified
+ 176              		.thumb
+ 177              		.thumb_func
+ 179              	HAL_IncTick:
+ 180              		@ args = 0, pretend = 0, frame = 0
+ 181              		@ frame_needed = 0, uses_anonymous_args = 0
+ 182              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 4
+
+
+ 183 0000 034B     		ldr	r3, .L26
+ 184 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 185 0004 034A     		ldr	r2, .L26+4
+ 186 0006 1168     		ldr	r1, [r2]
+ 187 0008 0B44     		add	r3, r3, r1
+ 188 000a 1360     		str	r3, [r2]
+ 189 000c 7047     		bx	lr
+ 190              	.L27:
+ 191 000e 00BF     		.align	2
+ 192              	.L26:
+ 193 0010 00000000 		.word	uwTickFreq
+ 194 0014 00000000 		.word	uwTick
+ 196              		.section	.text.HAL_GetTick,"ax",%progbits
+ 197              		.align	1
+ 198              		.weak	HAL_GetTick
+ 199              		.syntax unified
+ 200              		.thumb
+ 201              		.thumb_func
+ 203              	HAL_GetTick:
+ 204              		@ args = 0, pretend = 0, frame = 0
+ 205              		@ frame_needed = 0, uses_anonymous_args = 0
+ 206              		@ link register save eliminated.
+ 207 0000 014B     		ldr	r3, .L29
+ 208 0002 1868     		ldr	r0, [r3]
+ 209 0004 7047     		bx	lr
+ 210              	.L30:
+ 211 0006 00BF     		.align	2
+ 212              	.L29:
+ 213 0008 00000000 		.word	uwTick
+ 215              		.section	.text.HAL_GetTickPrio,"ax",%progbits
+ 216              		.align	1
+ 217              		.global	HAL_GetTickPrio
+ 218              		.syntax unified
+ 219              		.thumb
+ 220              		.thumb_func
+ 222              	HAL_GetTickPrio:
+ 223              		@ args = 0, pretend = 0, frame = 0
+ 224              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225              		@ link register save eliminated.
+ 226 0000 014B     		ldr	r3, .L32
+ 227 0002 1868     		ldr	r0, [r3]
+ 228 0004 7047     		bx	lr
+ 229              	.L33:
+ 230 0006 00BF     		.align	2
+ 231              	.L32:
+ 232 0008 00000000 		.word	uwTickPrio
+ 234              		.section	.text.HAL_SetTickFreq,"ax",%progbits
+ 235              		.align	1
+ 236              		.global	HAL_SetTickFreq
+ 237              		.syntax unified
+ 238              		.thumb
+ 239              		.thumb_func
+ 241              	HAL_SetTickFreq:
+ 242              		@ args = 0, pretend = 0, frame = 0
+ 243              		@ frame_needed = 0, uses_anonymous_args = 0
+ 244 0000 10B5     		push	{r4, lr}
+ 245 0002 084B     		ldr	r3, .L39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 5
+
+
+ 246 0004 1C78     		ldrb	r4, [r3]	@ zero_extendqisi2
+ 247 0006 8442     		cmp	r4, r0
+ 248 0008 01D1     		bne	.L38
+ 249 000a 0020     		movs	r0, #0
+ 250              	.L35:
+ 251 000c 10BD     		pop	{r4, pc}
+ 252              	.L38:
+ 253 000e 1870     		strb	r0, [r3]
+ 254 0010 054B     		ldr	r3, .L39+4
+ 255 0012 1868     		ldr	r0, [r3]
+ 256 0014 FFF7FEFF 		bl	HAL_InitTick
+ 257 0018 0028     		cmp	r0, #0
+ 258 001a F7D0     		beq	.L35
+ 259 001c 014B     		ldr	r3, .L39
+ 260 001e 1C70     		strb	r4, [r3]
+ 261 0020 F4E7     		b	.L35
+ 262              	.L40:
+ 263 0022 00BF     		.align	2
+ 264              	.L39:
+ 265 0024 00000000 		.word	uwTickFreq
+ 266 0028 00000000 		.word	uwTickPrio
+ 268              		.section	.text.HAL_GetTickFreq,"ax",%progbits
+ 269              		.align	1
+ 270              		.global	HAL_GetTickFreq
+ 271              		.syntax unified
+ 272              		.thumb
+ 273              		.thumb_func
+ 275              	HAL_GetTickFreq:
+ 276              		@ args = 0, pretend = 0, frame = 0
+ 277              		@ frame_needed = 0, uses_anonymous_args = 0
+ 278              		@ link register save eliminated.
+ 279 0000 014B     		ldr	r3, .L42
+ 280 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 281 0004 7047     		bx	lr
+ 282              	.L43:
+ 283 0006 00BF     		.align	2
+ 284              	.L42:
+ 285 0008 00000000 		.word	uwTickFreq
+ 287              		.section	.text.HAL_Delay,"ax",%progbits
+ 288              		.align	1
+ 289              		.weak	HAL_Delay
+ 290              		.syntax unified
+ 291              		.thumb
+ 292              		.thumb_func
+ 294              	HAL_Delay:
+ 295              		@ args = 0, pretend = 0, frame = 0
+ 296              		@ frame_needed = 0, uses_anonymous_args = 0
+ 297 0000 38B5     		push	{r3, r4, r5, lr}
+ 298 0002 0446     		mov	r4, r0
+ 299 0004 FFF7FEFF 		bl	HAL_GetTick
+ 300 0008 0546     		mov	r5, r0
+ 301 000a B4F1FF3F 		cmp	r4, #-1
+ 302 000e 02D0     		beq	.L46
+ 303 0010 044B     		ldr	r3, .L48
+ 304 0012 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 305 0014 1C44     		add	r4, r4, r3
+ 306              	.L46:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 6
+
+
+ 307 0016 FFF7FEFF 		bl	HAL_GetTick
+ 308 001a 401B     		subs	r0, r0, r5
+ 309 001c A042     		cmp	r0, r4
+ 310 001e FAD3     		bcc	.L46
+ 311 0020 38BD     		pop	{r3, r4, r5, pc}
+ 312              	.L49:
+ 313 0022 00BF     		.align	2
+ 314              	.L48:
+ 315 0024 00000000 		.word	uwTickFreq
+ 317              		.section	.text.HAL_SuspendTick,"ax",%progbits
+ 318              		.align	1
+ 319              		.weak	HAL_SuspendTick
+ 320              		.syntax unified
+ 321              		.thumb
+ 322              		.thumb_func
+ 324              	HAL_SuspendTick:
+ 325              		@ args = 0, pretend = 0, frame = 0
+ 326              		@ frame_needed = 0, uses_anonymous_args = 0
+ 327              		@ link register save eliminated.
+ 328 0000 4FF0E022 		mov	r2, #-536813568
+ 329 0004 1369     		ldr	r3, [r2, #16]
+ 330 0006 23F00203 		bic	r3, r3, #2
+ 331 000a 1361     		str	r3, [r2, #16]
+ 332 000c 7047     		bx	lr
+ 334              		.section	.text.HAL_ResumeTick,"ax",%progbits
+ 335              		.align	1
+ 336              		.weak	HAL_ResumeTick
+ 337              		.syntax unified
+ 338              		.thumb
+ 339              		.thumb_func
+ 341              	HAL_ResumeTick:
+ 342              		@ args = 0, pretend = 0, frame = 0
+ 343              		@ frame_needed = 0, uses_anonymous_args = 0
+ 344              		@ link register save eliminated.
+ 345 0000 4FF0E022 		mov	r2, #-536813568
+ 346 0004 1369     		ldr	r3, [r2, #16]
+ 347 0006 43F00203 		orr	r3, r3, #2
+ 348 000a 1361     		str	r3, [r2, #16]
+ 349 000c 7047     		bx	lr
+ 351              		.section	.text.HAL_GetHalVersion,"ax",%progbits
+ 352              		.align	1
+ 353              		.global	HAL_GetHalVersion
+ 354              		.syntax unified
+ 355              		.thumb
+ 356              		.thumb_func
+ 358              	HAL_GetHalVersion:
+ 359              		@ args = 0, pretend = 0, frame = 0
+ 360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 361              		@ link register save eliminated.
+ 362 0000 0048     		ldr	r0, .L53
+ 363 0002 7047     		bx	lr
+ 364              	.L54:
+ 365              		.align	2
+ 366              	.L53:
+ 367 0004 00070E01 		.word	17696512
+ 369              		.section	.text.HAL_GetREVID,"ax",%progbits
+ 370              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 7
+
+
+ 371              		.global	HAL_GetREVID
+ 372              		.syntax unified
+ 373              		.thumb
+ 374              		.thumb_func
+ 376              	HAL_GetREVID:
+ 377              		@ args = 0, pretend = 0, frame = 0
+ 378              		@ frame_needed = 0, uses_anonymous_args = 0
+ 379              		@ link register save eliminated.
+ 380 0000 014B     		ldr	r3, .L56
+ 381 0002 1868     		ldr	r0, [r3]
+ 382 0004 000C     		lsrs	r0, r0, #16
+ 383 0006 7047     		bx	lr
+ 384              	.L57:
+ 385              		.align	2
+ 386              	.L56:
+ 387 0008 002004E0 		.word	-536600576
+ 389              		.section	.text.HAL_GetDEVID,"ax",%progbits
+ 390              		.align	1
+ 391              		.global	HAL_GetDEVID
+ 392              		.syntax unified
+ 393              		.thumb
+ 394              		.thumb_func
+ 396              	HAL_GetDEVID:
+ 397              		@ args = 0, pretend = 0, frame = 0
+ 398              		@ frame_needed = 0, uses_anonymous_args = 0
+ 399              		@ link register save eliminated.
+ 400 0000 024B     		ldr	r3, .L59
+ 401 0002 1868     		ldr	r0, [r3]
+ 402 0004 C0F30B00 		ubfx	r0, r0, #0, #12
+ 403 0008 7047     		bx	lr
+ 404              	.L60:
+ 405 000a 00BF     		.align	2
+ 406              	.L59:
+ 407 000c 002004E0 		.word	-536600576
+ 409              		.section	.text.HAL_GetUIDw0,"ax",%progbits
+ 410              		.align	1
+ 411              		.global	HAL_GetUIDw0
+ 412              		.syntax unified
+ 413              		.thumb
+ 414              		.thumb_func
+ 416              	HAL_GetUIDw0:
+ 417              		@ args = 0, pretend = 0, frame = 0
+ 418              		@ frame_needed = 0, uses_anonymous_args = 0
+ 419              		@ link register save eliminated.
+ 420 0000 014B     		ldr	r3, .L62
+ 421 0002 D3F89005 		ldr	r0, [r3, #1424]
+ 422 0006 7047     		bx	lr
+ 423              	.L63:
+ 424              		.align	2
+ 425              	.L62:
+ 426 0008 0070FF1F 		.word	536834048
+ 428              		.section	.text.HAL_GetUIDw1,"ax",%progbits
+ 429              		.align	1
+ 430              		.global	HAL_GetUIDw1
+ 431              		.syntax unified
+ 432              		.thumb
+ 433              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 8
+
+
+ 435              	HAL_GetUIDw1:
+ 436              		@ args = 0, pretend = 0, frame = 0
+ 437              		@ frame_needed = 0, uses_anonymous_args = 0
+ 438              		@ link register save eliminated.
+ 439 0000 014B     		ldr	r3, .L65
+ 440 0002 D3F89405 		ldr	r0, [r3, #1428]
+ 441 0006 7047     		bx	lr
+ 442              	.L66:
+ 443              		.align	2
+ 444              	.L65:
+ 445 0008 0070FF1F 		.word	536834048
+ 447              		.section	.text.HAL_GetUIDw2,"ax",%progbits
+ 448              		.align	1
+ 449              		.global	HAL_GetUIDw2
+ 450              		.syntax unified
+ 451              		.thumb
+ 452              		.thumb_func
+ 454              	HAL_GetUIDw2:
+ 455              		@ args = 0, pretend = 0, frame = 0
+ 456              		@ frame_needed = 0, uses_anonymous_args = 0
+ 457              		@ link register save eliminated.
+ 458 0000 014B     		ldr	r3, .L68
+ 459 0002 D3F89805 		ldr	r0, [r3, #1432]
+ 460 0006 7047     		bx	lr
+ 461              	.L69:
+ 462              		.align	2
+ 463              	.L68:
+ 464 0008 0070FF1F 		.word	536834048
+ 466              		.section	.text.HAL_DBGMCU_EnableDBGSleepMode,"ax",%progbits
+ 467              		.align	1
+ 468              		.global	HAL_DBGMCU_EnableDBGSleepMode
+ 469              		.syntax unified
+ 470              		.thumb
+ 471              		.thumb_func
+ 473              	HAL_DBGMCU_EnableDBGSleepMode:
+ 474              		@ args = 0, pretend = 0, frame = 0
+ 475              		@ frame_needed = 0, uses_anonymous_args = 0
+ 476              		@ link register save eliminated.
+ 477 0000 024A     		ldr	r2, .L71
+ 478 0002 5368     		ldr	r3, [r2, #4]
+ 479 0004 43F00103 		orr	r3, r3, #1
+ 480 0008 5360     		str	r3, [r2, #4]
+ 481 000a 7047     		bx	lr
+ 482              	.L72:
+ 483              		.align	2
+ 484              	.L71:
+ 485 000c 002004E0 		.word	-536600576
+ 487              		.section	.text.HAL_DBGMCU_DisableDBGSleepMode,"ax",%progbits
+ 488              		.align	1
+ 489              		.global	HAL_DBGMCU_DisableDBGSleepMode
+ 490              		.syntax unified
+ 491              		.thumb
+ 492              		.thumb_func
+ 494              	HAL_DBGMCU_DisableDBGSleepMode:
+ 495              		@ args = 0, pretend = 0, frame = 0
+ 496              		@ frame_needed = 0, uses_anonymous_args = 0
+ 497              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 9
+
+
+ 498 0000 024A     		ldr	r2, .L74
+ 499 0002 5368     		ldr	r3, [r2, #4]
+ 500 0004 23F00103 		bic	r3, r3, #1
+ 501 0008 5360     		str	r3, [r2, #4]
+ 502 000a 7047     		bx	lr
+ 503              	.L75:
+ 504              		.align	2
+ 505              	.L74:
+ 506 000c 002004E0 		.word	-536600576
+ 508              		.section	.text.HAL_DBGMCU_EnableDBGStopMode,"ax",%progbits
+ 509              		.align	1
+ 510              		.global	HAL_DBGMCU_EnableDBGStopMode
+ 511              		.syntax unified
+ 512              		.thumb
+ 513              		.thumb_func
+ 515              	HAL_DBGMCU_EnableDBGStopMode:
+ 516              		@ args = 0, pretend = 0, frame = 0
+ 517              		@ frame_needed = 0, uses_anonymous_args = 0
+ 518              		@ link register save eliminated.
+ 519 0000 024A     		ldr	r2, .L77
+ 520 0002 5368     		ldr	r3, [r2, #4]
+ 521 0004 43F00203 		orr	r3, r3, #2
+ 522 0008 5360     		str	r3, [r2, #4]
+ 523 000a 7047     		bx	lr
+ 524              	.L78:
+ 525              		.align	2
+ 526              	.L77:
+ 527 000c 002004E0 		.word	-536600576
+ 529              		.section	.text.HAL_DBGMCU_DisableDBGStopMode,"ax",%progbits
+ 530              		.align	1
+ 531              		.global	HAL_DBGMCU_DisableDBGStopMode
+ 532              		.syntax unified
+ 533              		.thumb
+ 534              		.thumb_func
+ 536              	HAL_DBGMCU_DisableDBGStopMode:
+ 537              		@ args = 0, pretend = 0, frame = 0
+ 538              		@ frame_needed = 0, uses_anonymous_args = 0
+ 539              		@ link register save eliminated.
+ 540 0000 024A     		ldr	r2, .L80
+ 541 0002 5368     		ldr	r3, [r2, #4]
+ 542 0004 23F00203 		bic	r3, r3, #2
+ 543 0008 5360     		str	r3, [r2, #4]
+ 544 000a 7047     		bx	lr
+ 545              	.L81:
+ 546              		.align	2
+ 547              	.L80:
+ 548 000c 002004E0 		.word	-536600576
+ 550              		.section	.text.HAL_DBGMCU_EnableDBGStandbyMode,"ax",%progbits
+ 551              		.align	1
+ 552              		.global	HAL_DBGMCU_EnableDBGStandbyMode
+ 553              		.syntax unified
+ 554              		.thumb
+ 555              		.thumb_func
+ 557              	HAL_DBGMCU_EnableDBGStandbyMode:
+ 558              		@ args = 0, pretend = 0, frame = 0
+ 559              		@ frame_needed = 0, uses_anonymous_args = 0
+ 560              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 10
+
+
+ 561 0000 024A     		ldr	r2, .L83
+ 562 0002 5368     		ldr	r3, [r2, #4]
+ 563 0004 43F00403 		orr	r3, r3, #4
+ 564 0008 5360     		str	r3, [r2, #4]
+ 565 000a 7047     		bx	lr
+ 566              	.L84:
+ 567              		.align	2
+ 568              	.L83:
+ 569 000c 002004E0 		.word	-536600576
+ 571              		.section	.text.HAL_DBGMCU_DisableDBGStandbyMode,"ax",%progbits
+ 572              		.align	1
+ 573              		.global	HAL_DBGMCU_DisableDBGStandbyMode
+ 574              		.syntax unified
+ 575              		.thumb
+ 576              		.thumb_func
+ 578              	HAL_DBGMCU_DisableDBGStandbyMode:
+ 579              		@ args = 0, pretend = 0, frame = 0
+ 580              		@ frame_needed = 0, uses_anonymous_args = 0
+ 581              		@ link register save eliminated.
+ 582 0000 024A     		ldr	r2, .L86
+ 583 0002 5368     		ldr	r3, [r2, #4]
+ 584 0004 23F00403 		bic	r3, r3, #4
+ 585 0008 5360     		str	r3, [r2, #4]
+ 586 000a 7047     		bx	lr
+ 587              	.L87:
+ 588              		.align	2
+ 589              	.L86:
+ 590 000c 002004E0 		.word	-536600576
+ 592              		.section	.text.HAL_SYSCFG_SRAM2Erase,"ax",%progbits
+ 593              		.align	1
+ 594              		.global	HAL_SYSCFG_SRAM2Erase
+ 595              		.syntax unified
+ 596              		.thumb
+ 597              		.thumb_func
+ 599              	HAL_SYSCFG_SRAM2Erase:
+ 600              		@ args = 0, pretend = 0, frame = 0
+ 601              		@ frame_needed = 0, uses_anonymous_args = 0
+ 602              		@ link register save eliminated.
+ 603 0000 044B     		ldr	r3, .L89
+ 604 0002 CA22     		movs	r2, #202
+ 605 0004 5A62     		str	r2, [r3, #36]
+ 606 0006 5322     		movs	r2, #83
+ 607 0008 5A62     		str	r2, [r3, #36]
+ 608 000a 9A69     		ldr	r2, [r3, #24]
+ 609 000c 42F00102 		orr	r2, r2, #1
+ 610 0010 9A61     		str	r2, [r3, #24]
+ 611 0012 7047     		bx	lr
+ 612              	.L90:
+ 613              		.align	2
+ 614              	.L89:
+ 615 0014 00000140 		.word	1073807360
+ 617              		.section	.text.HAL_SYSCFG_DisableSRAMFetch,"ax",%progbits
+ 618              		.align	1
+ 619              		.global	HAL_SYSCFG_DisableSRAMFetch
+ 620              		.syntax unified
+ 621              		.thumb
+ 622              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 11
+
+
+ 624              	HAL_SYSCFG_DisableSRAMFetch:
+ 625              		@ args = 0, pretend = 0, frame = 0
+ 626              		@ frame_needed = 0, uses_anonymous_args = 0
+ 627              		@ link register save eliminated.
+ 628 0000 024A     		ldr	r2, .L92
+ 629 0002 9369     		ldr	r3, [r2, #24]
+ 630 0004 43F00043 		orr	r3, r3, #-2147483648
+ 631 0008 9361     		str	r3, [r2, #24]
+ 632 000a 7047     		bx	lr
+ 633              	.L93:
+ 634              		.align	2
+ 635              	.L92:
+ 636 000c 00000140 		.word	1073807360
+ 638              		.section	.text.HAL_SYSCFG_IsEnabledSRAMFetch,"ax",%progbits
+ 639              		.align	1
+ 640              		.global	HAL_SYSCFG_IsEnabledSRAMFetch
+ 641              		.syntax unified
+ 642              		.thumb
+ 643              		.thumb_func
+ 645              	HAL_SYSCFG_IsEnabledSRAMFetch:
+ 646              		@ args = 0, pretend = 0, frame = 0
+ 647              		@ frame_needed = 0, uses_anonymous_args = 0
+ 648              		@ link register save eliminated.
+ 649 0000 034B     		ldr	r3, .L97
+ 650 0002 9B69     		ldr	r3, [r3, #24]
+ 651 0004 002B     		cmp	r3, #0
+ 652 0006 01DB     		blt	.L96
+ 653 0008 0120     		movs	r0, #1
+ 654 000a 7047     		bx	lr
+ 655              	.L96:
+ 656 000c 0020     		movs	r0, #0
+ 657 000e 7047     		bx	lr
+ 658              	.L98:
+ 659              		.align	2
+ 660              	.L97:
+ 661 0010 00000140 		.word	1073807360
+ 663              		.section	.text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig,"ax",%progbits
+ 664              		.align	1
+ 665              		.global	HAL_SYSCFG_VREFBUF_HighImpedanceConfig
+ 666              		.syntax unified
+ 667              		.thumb
+ 668              		.thumb_func
+ 670              	HAL_SYSCFG_VREFBUF_HighImpedanceConfig:
+ 671              		@ args = 0, pretend = 0, frame = 0
+ 672              		@ frame_needed = 0, uses_anonymous_args = 0
+ 673              		@ link register save eliminated.
+ 674 0000 034A     		ldr	r2, .L100
+ 675 0002 136B     		ldr	r3, [r2, #48]
+ 676 0004 23F00203 		bic	r3, r3, #2
+ 677 0008 0343     		orrs	r3, r3, r0
+ 678 000a 1363     		str	r3, [r2, #48]
+ 679 000c 7047     		bx	lr
+ 680              	.L101:
+ 681 000e 00BF     		.align	2
+ 682              	.L100:
+ 683 0010 00000140 		.word	1073807360
+ 685              		.section	.text.HAL_SYSCFG_VREFBUF_TrimmingConfig,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 12
+
+
+ 686              		.align	1
+ 687              		.global	HAL_SYSCFG_VREFBUF_TrimmingConfig
+ 688              		.syntax unified
+ 689              		.thumb
+ 690              		.thumb_func
+ 692              	HAL_SYSCFG_VREFBUF_TrimmingConfig:
+ 693              		@ args = 0, pretend = 0, frame = 0
+ 694              		@ frame_needed = 0, uses_anonymous_args = 0
+ 695              		@ link register save eliminated.
+ 696 0000 014B     		ldr	r3, .L103
+ 697 0002 5863     		str	r0, [r3, #52]
+ 698 0004 7047     		bx	lr
+ 699              	.L104:
+ 700 0006 00BF     		.align	2
+ 701              	.L103:
+ 702 0008 00000140 		.word	1073807360
+ 704              		.section	.text.HAL_SYSCFG_VREFBUF_VoltageScalingConfig,"ax",%progbits
+ 705              		.align	1
+ 706              		.global	HAL_SYSCFG_VREFBUF_VoltageScalingConfig
+ 707              		.syntax unified
+ 708              		.thumb
+ 709              		.thumb_func
+ 711              	HAL_SYSCFG_VREFBUF_VoltageScalingConfig:
+ 712              		@ args = 0, pretend = 0, frame = 0
+ 713              		@ frame_needed = 0, uses_anonymous_args = 0
+ 714 0000 08B5     		push	{r3, lr}
+ 715 0002 0A4A     		ldr	r2, .L109
+ 716 0004 136B     		ldr	r3, [r2, #48]
+ 717 0006 23F00403 		bic	r3, r3, #4
+ 718 000a 0343     		orrs	r3, r3, r0
+ 719 000c 1363     		str	r3, [r2, #48]
+ 720 000e 38B9     		cbnz	r0, .L106
+ 721 0010 074B     		ldr	r3, .L109+4
+ 722 0012 93F8F000 		ldrb	r0, [r3, #240]	@ zero_extendqisi2
+ 723 0016 00F03F00 		and	r0, r0, #63
+ 724              	.L107:
+ 725 001a FFF7FEFF 		bl	HAL_SYSCFG_VREFBUF_TrimmingConfig
+ 726 001e 08BD     		pop	{r3, pc}
+ 727              	.L106:
+ 728 0020 034B     		ldr	r3, .L109+4
+ 729 0022 93F83000 		ldrb	r0, [r3, #48]	@ zero_extendqisi2
+ 730 0026 00F03F00 		and	r0, r0, #63
+ 731 002a F6E7     		b	.L107
+ 732              	.L110:
+ 733              		.align	2
+ 734              	.L109:
+ 735 002c 00000140 		.word	1073807360
+ 736 0030 0075FF1F 		.word	536835328
+ 738              		.section	.text.HAL_SYSCFG_EnableVREFBUF,"ax",%progbits
+ 739              		.align	1
+ 740              		.global	HAL_SYSCFG_EnableVREFBUF
+ 741              		.syntax unified
+ 742              		.thumb
+ 743              		.thumb_func
+ 745              	HAL_SYSCFG_EnableVREFBUF:
+ 746              		@ args = 0, pretend = 0, frame = 0
+ 747              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 13
+
+
+ 748 0000 10B5     		push	{r4, lr}
+ 749 0002 0B4A     		ldr	r2, .L118
+ 750 0004 136B     		ldr	r3, [r2, #48]
+ 751 0006 43F00103 		orr	r3, r3, #1
+ 752 000a 1363     		str	r3, [r2, #48]
+ 753 000c FFF7FEFF 		bl	HAL_GetTick
+ 754 0010 0446     		mov	r4, r0
+ 755              	.L112:
+ 756 0012 074B     		ldr	r3, .L118
+ 757 0014 1B6B     		ldr	r3, [r3, #48]
+ 758 0016 13F0080F 		tst	r3, #8
+ 759 001a 06D1     		bne	.L117
+ 760 001c FFF7FEFF 		bl	HAL_GetTick
+ 761 0020 001B     		subs	r0, r0, r4
+ 762 0022 0A28     		cmp	r0, #10
+ 763 0024 F5D9     		bls	.L112
+ 764 0026 0320     		movs	r0, #3
+ 765 0028 00E0     		b	.L113
+ 766              	.L117:
+ 767 002a 0020     		movs	r0, #0
+ 768              	.L113:
+ 769 002c 10BD     		pop	{r4, pc}
+ 770              	.L119:
+ 771 002e 00BF     		.align	2
+ 772              	.L118:
+ 773 0030 00000140 		.word	1073807360
+ 775              		.section	.text.HAL_SYSCFG_DisableVREFBUF,"ax",%progbits
+ 776              		.align	1
+ 777              		.global	HAL_SYSCFG_DisableVREFBUF
+ 778              		.syntax unified
+ 779              		.thumb
+ 780              		.thumb_func
+ 782              	HAL_SYSCFG_DisableVREFBUF:
+ 783              		@ args = 0, pretend = 0, frame = 0
+ 784              		@ frame_needed = 0, uses_anonymous_args = 0
+ 785              		@ link register save eliminated.
+ 786 0000 024A     		ldr	r2, .L121
+ 787 0002 136B     		ldr	r3, [r2, #48]
+ 788 0004 23F00103 		bic	r3, r3, #1
+ 789 0008 1363     		str	r3, [r2, #48]
+ 790 000a 7047     		bx	lr
+ 791              	.L122:
+ 792              		.align	2
+ 793              	.L121:
+ 794 000c 00000140 		.word	1073807360
+ 796              		.section	.text.HAL_SYSCFG_EnableIOBooster,"ax",%progbits
+ 797              		.align	1
+ 798              		.global	HAL_SYSCFG_EnableIOBooster
+ 799              		.syntax unified
+ 800              		.thumb
+ 801              		.thumb_func
+ 803              	HAL_SYSCFG_EnableIOBooster:
+ 804              		@ args = 0, pretend = 0, frame = 0
+ 805              		@ frame_needed = 0, uses_anonymous_args = 0
+ 806              		@ link register save eliminated.
+ 807 0000 024A     		ldr	r2, .L124
+ 808 0002 5368     		ldr	r3, [r2, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 14
+
+
+ 809 0004 43F48073 		orr	r3, r3, #256
+ 810 0008 5360     		str	r3, [r2, #4]
+ 811 000a 7047     		bx	lr
+ 812              	.L125:
+ 813              		.align	2
+ 814              	.L124:
+ 815 000c 00000140 		.word	1073807360
+ 817              		.section	.text.HAL_SYSCFG_DisableIOBooster,"ax",%progbits
+ 818              		.align	1
+ 819              		.global	HAL_SYSCFG_DisableIOBooster
+ 820              		.syntax unified
+ 821              		.thumb
+ 822              		.thumb_func
+ 824              	HAL_SYSCFG_DisableIOBooster:
+ 825              		@ args = 0, pretend = 0, frame = 0
+ 826              		@ frame_needed = 0, uses_anonymous_args = 0
+ 827              		@ link register save eliminated.
+ 828 0000 024A     		ldr	r2, .L127
+ 829 0002 5368     		ldr	r3, [r2, #4]
+ 830 0004 23F48073 		bic	r3, r3, #256
+ 831 0008 5360     		str	r3, [r2, #4]
+ 832 000a 7047     		bx	lr
+ 833              	.L128:
+ 834              		.align	2
+ 835              	.L127:
+ 836 000c 00000140 		.word	1073807360
+ 838              		.section	.text.HAL_SYSCFG_EnableIOVdd,"ax",%progbits
+ 839              		.align	1
+ 840              		.global	HAL_SYSCFG_EnableIOVdd
+ 841              		.syntax unified
+ 842              		.thumb
+ 843              		.thumb_func
+ 845              	HAL_SYSCFG_EnableIOVdd:
+ 846              		@ args = 0, pretend = 0, frame = 0
+ 847              		@ frame_needed = 0, uses_anonymous_args = 0
+ 848              		@ link register save eliminated.
+ 849 0000 024A     		ldr	r2, .L130
+ 850 0002 5368     		ldr	r3, [r2, #4]
+ 851 0004 43F40073 		orr	r3, r3, #512
+ 852 0008 5360     		str	r3, [r2, #4]
+ 853 000a 7047     		bx	lr
+ 854              	.L131:
+ 855              		.align	2
+ 856              	.L130:
+ 857 000c 00000140 		.word	1073807360
+ 859              		.section	.text.HAL_SYSCFG_DisableIOVdd,"ax",%progbits
+ 860              		.align	1
+ 861              		.global	HAL_SYSCFG_DisableIOVdd
+ 862              		.syntax unified
+ 863              		.thumb
+ 864              		.thumb_func
+ 866              	HAL_SYSCFG_DisableIOVdd:
+ 867              		@ args = 0, pretend = 0, frame = 0
+ 868              		@ frame_needed = 0, uses_anonymous_args = 0
+ 869              		@ link register save eliminated.
+ 870 0000 024A     		ldr	r2, .L133
+ 871 0002 5368     		ldr	r3, [r2, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 15
+
+
+ 872 0004 23F40073 		bic	r3, r3, #512
+ 873 0008 5360     		str	r3, [r2, #4]
+ 874 000a 7047     		bx	lr
+ 875              	.L134:
+ 876              		.align	2
+ 877              	.L133:
+ 878 000c 00000140 		.word	1073807360
+ 880              		.section	.text.HAL_SYSCFG_EnableSecurityAccess,"ax",%progbits
+ 881              		.align	1
+ 882              		.global	HAL_SYSCFG_EnableSecurityAccess
+ 883              		.syntax unified
+ 884              		.thumb
+ 885              		.thumb_func
+ 887              	HAL_SYSCFG_EnableSecurityAccess:
+ 888              		@ args = 0, pretend = 0, frame = 0
+ 889              		@ frame_needed = 0, uses_anonymous_args = 0
+ 890              		@ link register save eliminated.
+ 891 0000 034B     		ldr	r3, .L136
+ 892 0002 D3F81021 		ldr	r2, [r3, #272]
+ 893 0006 1043     		orrs	r0, r0, r2
+ 894 0008 C3F81001 		str	r0, [r3, #272]
+ 895 000c 7047     		bx	lr
+ 896              	.L137:
+ 897 000e 00BF     		.align	2
+ 898              	.L136:
+ 899 0010 00000140 		.word	1073807360
+ 901              		.section	.text.HAL_SYSCFG_DisableSecurityAccess,"ax",%progbits
+ 902              		.align	1
+ 903              		.global	HAL_SYSCFG_DisableSecurityAccess
+ 904              		.syntax unified
+ 905              		.thumb
+ 906              		.thumb_func
+ 908              	HAL_SYSCFG_DisableSecurityAccess:
+ 909              		@ args = 0, pretend = 0, frame = 0
+ 910              		@ frame_needed = 0, uses_anonymous_args = 0
+ 911              		@ link register save eliminated.
+ 912 0000 034A     		ldr	r2, .L139
+ 913 0002 D2F81031 		ldr	r3, [r2, #272]
+ 914 0006 23EA0003 		bic	r3, r3, r0
+ 915 000a C2F81031 		str	r3, [r2, #272]
+ 916 000e 7047     		bx	lr
+ 917              	.L140:
+ 918              		.align	2
+ 919              	.L139:
+ 920 0010 00000140 		.word	1073807360
+ 922              		.section	.text.HAL_SYSCFG_IsEnabledSecurityAccess,"ax",%progbits
+ 923              		.align	1
+ 924              		.global	HAL_SYSCFG_IsEnabledSecurityAccess
+ 925              		.syntax unified
+ 926              		.thumb
+ 927              		.thumb_func
+ 929              	HAL_SYSCFG_IsEnabledSecurityAccess:
+ 930              		@ args = 0, pretend = 0, frame = 0
+ 931              		@ frame_needed = 0, uses_anonymous_args = 0
+ 932              		@ link register save eliminated.
+ 933 0000 044B     		ldr	r3, .L145
+ 934 0002 D3F81031 		ldr	r3, [r3, #272]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 16
+
+
+ 935 0006 9843     		bics	r0, r0, r3
+ 936 0008 01D0     		beq	.L144
+ 937 000a 0020     		movs	r0, #0
+ 938 000c 7047     		bx	lr
+ 939              	.L144:
+ 940 000e 0120     		movs	r0, #1
+ 941 0010 7047     		bx	lr
+ 942              	.L146:
+ 943 0012 00BF     		.align	2
+ 944              	.L145:
+ 945 0014 00000140 		.word	1073807360
+ 947              		.global	uwTickFreq
+ 948              		.section	.data.uwTickFreq,"aw"
+ 951              	uwTickFreq:
+ 952 0000 01       		.byte	1
+ 953              		.global	uwTickPrio
+ 954              		.section	.data.uwTickPrio,"aw"
+ 955              		.align	2
+ 958              	uwTickPrio:
+ 959 0000 10000000 		.word	16
+ 960              		.global	uwTick
+ 961              		.section	.bss.uwTick,"aw",%nobits
+ 962              		.align	2
+ 965              	uwTick:
+ 966 0000 00000000 		.space	4
+ 967              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal.c
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:18     .text.HAL_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:24     .text.HAL_MspInit:00000000 HAL_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:31     .text.HAL_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:37     .text.HAL_MspDeInit:00000000 HAL_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:44     .text.HAL_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:50     .text.HAL_DeInit:00000000 HAL_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:90     .text.HAL_InitTick:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:96     .text.HAL_InitTick:00000000 HAL_InitTick
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:135    .text.HAL_InitTick:00000048 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:951    .data.uwTickFreq:00000000 uwTickFreq
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:958    .data.uwTickPrio:00000000 uwTickPrio
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:139    .text.HAL_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:145    .text.HAL_Init:00000000 HAL_Init
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:170    .text.HAL_Init:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:173    .text.HAL_IncTick:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:179    .text.HAL_IncTick:00000000 HAL_IncTick
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:193    .text.HAL_IncTick:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:965    .bss.uwTick:00000000 uwTick
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:197    .text.HAL_GetTick:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:203    .text.HAL_GetTick:00000000 HAL_GetTick
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:213    .text.HAL_GetTick:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:216    .text.HAL_GetTickPrio:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:222    .text.HAL_GetTickPrio:00000000 HAL_GetTickPrio
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:232    .text.HAL_GetTickPrio:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:235    .text.HAL_SetTickFreq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:241    .text.HAL_SetTickFreq:00000000 HAL_SetTickFreq
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:265    .text.HAL_SetTickFreq:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:269    .text.HAL_GetTickFreq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:275    .text.HAL_GetTickFreq:00000000 HAL_GetTickFreq
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:285    .text.HAL_GetTickFreq:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:288    .text.HAL_Delay:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:294    .text.HAL_Delay:00000000 HAL_Delay
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:315    .text.HAL_Delay:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:318    .text.HAL_SuspendTick:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:324    .text.HAL_SuspendTick:00000000 HAL_SuspendTick
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:335    .text.HAL_ResumeTick:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:341    .text.HAL_ResumeTick:00000000 HAL_ResumeTick
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:352    .text.HAL_GetHalVersion:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:358    .text.HAL_GetHalVersion:00000000 HAL_GetHalVersion
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:367    .text.HAL_GetHalVersion:00000004 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:370    .text.HAL_GetREVID:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:376    .text.HAL_GetREVID:00000000 HAL_GetREVID
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:387    .text.HAL_GetREVID:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:390    .text.HAL_GetDEVID:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:396    .text.HAL_GetDEVID:00000000 HAL_GetDEVID
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:407    .text.HAL_GetDEVID:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:410    .text.HAL_GetUIDw0:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:416    .text.HAL_GetUIDw0:00000000 HAL_GetUIDw0
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:426    .text.HAL_GetUIDw0:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:429    .text.HAL_GetUIDw1:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:435    .text.HAL_GetUIDw1:00000000 HAL_GetUIDw1
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:445    .text.HAL_GetUIDw1:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:448    .text.HAL_GetUIDw2:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:454    .text.HAL_GetUIDw2:00000000 HAL_GetUIDw2
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:464    .text.HAL_GetUIDw2:00000008 $d
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 18
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:467    .text.HAL_DBGMCU_EnableDBGSleepMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:473    .text.HAL_DBGMCU_EnableDBGSleepMode:00000000 HAL_DBGMCU_EnableDBGSleepMode
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:485    .text.HAL_DBGMCU_EnableDBGSleepMode:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:488    .text.HAL_DBGMCU_DisableDBGSleepMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:494    .text.HAL_DBGMCU_DisableDBGSleepMode:00000000 HAL_DBGMCU_DisableDBGSleepMode
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:506    .text.HAL_DBGMCU_DisableDBGSleepMode:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:509    .text.HAL_DBGMCU_EnableDBGStopMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:515    .text.HAL_DBGMCU_EnableDBGStopMode:00000000 HAL_DBGMCU_EnableDBGStopMode
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:527    .text.HAL_DBGMCU_EnableDBGStopMode:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:530    .text.HAL_DBGMCU_DisableDBGStopMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:536    .text.HAL_DBGMCU_DisableDBGStopMode:00000000 HAL_DBGMCU_DisableDBGStopMode
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:548    .text.HAL_DBGMCU_DisableDBGStopMode:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:551    .text.HAL_DBGMCU_EnableDBGStandbyMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:557    .text.HAL_DBGMCU_EnableDBGStandbyMode:00000000 HAL_DBGMCU_EnableDBGStandbyMode
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:569    .text.HAL_DBGMCU_EnableDBGStandbyMode:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:572    .text.HAL_DBGMCU_DisableDBGStandbyMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:578    .text.HAL_DBGMCU_DisableDBGStandbyMode:00000000 HAL_DBGMCU_DisableDBGStandbyMode
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:590    .text.HAL_DBGMCU_DisableDBGStandbyMode:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:593    .text.HAL_SYSCFG_SRAM2Erase:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:599    .text.HAL_SYSCFG_SRAM2Erase:00000000 HAL_SYSCFG_SRAM2Erase
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:615    .text.HAL_SYSCFG_SRAM2Erase:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:618    .text.HAL_SYSCFG_DisableSRAMFetch:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:624    .text.HAL_SYSCFG_DisableSRAMFetch:00000000 HAL_SYSCFG_DisableSRAMFetch
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:636    .text.HAL_SYSCFG_DisableSRAMFetch:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:639    .text.HAL_SYSCFG_IsEnabledSRAMFetch:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:645    .text.HAL_SYSCFG_IsEnabledSRAMFetch:00000000 HAL_SYSCFG_IsEnabledSRAMFetch
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:661    .text.HAL_SYSCFG_IsEnabledSRAMFetch:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:664    .text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:670    .text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig:00000000 HAL_SYSCFG_VREFBUF_HighImpedanceConfig
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:683    .text.HAL_SYSCFG_VREFBUF_HighImpedanceConfig:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:686    .text.HAL_SYSCFG_VREFBUF_TrimmingConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:692    .text.HAL_SYSCFG_VREFBUF_TrimmingConfig:00000000 HAL_SYSCFG_VREFBUF_TrimmingConfig
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:702    .text.HAL_SYSCFG_VREFBUF_TrimmingConfig:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:705    .text.HAL_SYSCFG_VREFBUF_VoltageScalingConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:711    .text.HAL_SYSCFG_VREFBUF_VoltageScalingConfig:00000000 HAL_SYSCFG_VREFBUF_VoltageScalingConfig
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:735    .text.HAL_SYSCFG_VREFBUF_VoltageScalingConfig:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:739    .text.HAL_SYSCFG_EnableVREFBUF:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:745    .text.HAL_SYSCFG_EnableVREFBUF:00000000 HAL_SYSCFG_EnableVREFBUF
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:773    .text.HAL_SYSCFG_EnableVREFBUF:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:776    .text.HAL_SYSCFG_DisableVREFBUF:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:782    .text.HAL_SYSCFG_DisableVREFBUF:00000000 HAL_SYSCFG_DisableVREFBUF
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:794    .text.HAL_SYSCFG_DisableVREFBUF:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:797    .text.HAL_SYSCFG_EnableIOBooster:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:803    .text.HAL_SYSCFG_EnableIOBooster:00000000 HAL_SYSCFG_EnableIOBooster
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:815    .text.HAL_SYSCFG_EnableIOBooster:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:818    .text.HAL_SYSCFG_DisableIOBooster:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:824    .text.HAL_SYSCFG_DisableIOBooster:00000000 HAL_SYSCFG_DisableIOBooster
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:836    .text.HAL_SYSCFG_DisableIOBooster:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:839    .text.HAL_SYSCFG_EnableIOVdd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:845    .text.HAL_SYSCFG_EnableIOVdd:00000000 HAL_SYSCFG_EnableIOVdd
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:857    .text.HAL_SYSCFG_EnableIOVdd:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:860    .text.HAL_SYSCFG_DisableIOVdd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:866    .text.HAL_SYSCFG_DisableIOVdd:00000000 HAL_SYSCFG_DisableIOVdd
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:878    .text.HAL_SYSCFG_DisableIOVdd:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:881    .text.HAL_SYSCFG_EnableSecurityAccess:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:887    .text.HAL_SYSCFG_EnableSecurityAccess:00000000 HAL_SYSCFG_EnableSecurityAccess
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:899    .text.HAL_SYSCFG_EnableSecurityAccess:00000010 $d
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s 			page 19
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:902    .text.HAL_SYSCFG_DisableSecurityAccess:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:908    .text.HAL_SYSCFG_DisableSecurityAccess:00000000 HAL_SYSCFG_DisableSecurityAccess
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:920    .text.HAL_SYSCFG_DisableSecurityAccess:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:923    .text.HAL_SYSCFG_IsEnabledSecurityAccess:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:929    .text.HAL_SYSCFG_IsEnabledSecurityAccess:00000000 HAL_SYSCFG_IsEnabledSecurityAccess
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:945    .text.HAL_SYSCFG_IsEnabledSecurityAccess:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:955    .data.uwTickPrio:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdGhoQ4.s:962    .bss.uwTick:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_RCC_GetHCLKFreq
+HAL_SYSTICK_Config
+HAL_NVIC_SetPriority
+HAL_NVIC_SetPriorityGrouping

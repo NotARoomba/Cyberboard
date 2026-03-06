@@ -1,0 +1,237 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_dma_ex.c"
+  16              		.text
+  17              		.section	.text.HAL_DMAEx_ConfigMuxSync,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_DMAEx_ConfigMuxSync
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_DMAEx_ConfigMuxSync:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 90F82530 		ldrb	r3, [r0, #37]	@ zero_extendqisi2
+  28 0004 012B     		cmp	r3, #1
+  29 0006 24D1     		bne	.L3
+  30 0008 90F82430 		ldrb	r3, [r0, #36]	@ zero_extendqisi2
+  31 000c 012B     		cmp	r3, #1
+  32 000e 22D0     		beq	.L4
+  33 0010 10B5     		push	{r4, lr}
+  34 0012 0123     		movs	r3, #1
+  35 0014 80F82430 		strb	r3, [r0, #36]
+  36 0018 D0F848E0 		ldr	lr, [r0, #72]
+  37 001c DEF80030 		ldr	r3, [lr]
+  38 0020 0E4A     		ldr	r2, .L9
+  39 0022 1A40     		ands	r2, r2, r3
+  40 0024 0B68     		ldr	r3, [r1]
+  41 0026 CC68     		ldr	r4, [r1, #12]
+  42 0028 04F1FF3C 		add	ip, r4, #-1
+  43 002c 43EACC43 		orr	r3, r3, ip, lsl #19
+  44 0030 4C68     		ldr	r4, [r1, #4]
+  45 0032 2343     		orrs	r3, r3, r4
+  46 0034 91F808C0 		ldrb	ip, [r1, #8]	@ zero_extendqisi2
+  47 0038 43EA0C43 		orr	r3, r3, ip, lsl #16
+  48 003c 497A     		ldrb	r1, [r1, #9]	@ zero_extendqisi2
+  49 003e 43EA4123 		orr	r3, r3, r1, lsl #9
+  50 0042 1A43     		orrs	r2, r2, r3
+  51 0044 CEF80020 		str	r2, [lr]
+  52 0048 0023     		movs	r3, #0
+  53 004a 80F82430 		strb	r3, [r0, #36]
+  54 004e 1846     		mov	r0, r3
+  55 0050 10BD     		pop	{r4, pc}
+  56              	.L3:
+  57 0052 0120     		movs	r0, #1
+  58 0054 7047     		bx	lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s 			page 2
+
+
+  59              	.L4:
+  60 0056 0220     		movs	r0, #2
+  61 0058 7047     		bx	lr
+  62              	.L10:
+  63 005a 00BF     		.align	2
+  64              	.L9:
+  65 005c FFFD00E0 		.word	-536805889
+  67              		.section	.text.HAL_DMAEx_ConfigMuxRequestGenerator,"ax",%progbits
+  68              		.align	1
+  69              		.global	HAL_DMAEx_ConfigMuxRequestGenerator
+  70              		.syntax unified
+  71              		.thumb
+  72              		.thumb_func
+  74              	HAL_DMAEx_ConfigMuxRequestGenerator:
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77              		@ link register save eliminated.
+  78 0000 0346     		mov	r3, r0
+  79 0002 90F82520 		ldrb	r2, [r0, #37]	@ zero_extendqisi2
+  80 0006 D0B2     		uxtb	r0, r2
+  81 0008 012A     		cmp	r2, #1
+  82 000a 18D1     		bne	.L13
+  83 000c D3F854C0 		ldr	ip, [r3, #84]
+  84 0010 BCF1000F 		cmp	ip, #0
+  85 0014 16D0     		beq	.L12
+  86 0016 93F82420 		ldrb	r2, [r3, #36]	@ zero_extendqisi2
+  87 001a 012A     		cmp	r2, #1
+  88 001c 11D0     		beq	.L14
+  89 001e 0122     		movs	r2, #1
+  90 0020 83F82420 		strb	r2, [r3, #36]
+  91 0024 0A68     		ldr	r2, [r1]
+  92 0026 4868     		ldr	r0, [r1, #4]
+  93 0028 0243     		orrs	r2, r2, r0
+  94 002a 8968     		ldr	r1, [r1, #8]
+  95 002c 0139     		subs	r1, r1, #1
+  96 002e 42EAC142 		orr	r2, r2, r1, lsl #19
+  97 0032 CCF80020 		str	r2, [ip]
+  98 0036 0020     		movs	r0, #0
+  99 0038 83F82400 		strb	r0, [r3, #36]
+ 100 003c 7047     		bx	lr
+ 101              	.L13:
+ 102 003e 0120     		movs	r0, #1
+ 103 0040 7047     		bx	lr
+ 104              	.L14:
+ 105 0042 0220     		movs	r0, #2
+ 106              	.L12:
+ 107 0044 7047     		bx	lr
+ 109              		.section	.text.HAL_DMAEx_EnableMuxRequestGenerator,"ax",%progbits
+ 110              		.align	1
+ 111              		.global	HAL_DMAEx_EnableMuxRequestGenerator
+ 112              		.syntax unified
+ 113              		.thumb
+ 114              		.thumb_func
+ 116              	HAL_DMAEx_EnableMuxRequestGenerator:
+ 117              		@ args = 0, pretend = 0, frame = 0
+ 118              		@ frame_needed = 0, uses_anonymous_args = 0
+ 119              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s 			page 3
+
+
+ 120 0000 90F82530 		ldrb	r3, [r0, #37]	@ zero_extendqisi2
+ 121 0004 3BB1     		cbz	r3, .L17
+ 122 0006 436D     		ldr	r3, [r0, #84]
+ 123 0008 3BB1     		cbz	r3, .L18
+ 124 000a 1A68     		ldr	r2, [r3]
+ 125 000c 42F48032 		orr	r2, r2, #65536
+ 126 0010 1A60     		str	r2, [r3]
+ 127 0012 0020     		movs	r0, #0
+ 128 0014 7047     		bx	lr
+ 129              	.L17:
+ 130 0016 0120     		movs	r0, #1
+ 131 0018 7047     		bx	lr
+ 132              	.L18:
+ 133 001a 0120     		movs	r0, #1
+ 134 001c 7047     		bx	lr
+ 136              		.section	.text.HAL_DMAEx_DisableMuxRequestGenerator,"ax",%progbits
+ 137              		.align	1
+ 138              		.global	HAL_DMAEx_DisableMuxRequestGenerator
+ 139              		.syntax unified
+ 140              		.thumb
+ 141              		.thumb_func
+ 143              	HAL_DMAEx_DisableMuxRequestGenerator:
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146              		@ link register save eliminated.
+ 147 0000 90F82530 		ldrb	r3, [r0, #37]	@ zero_extendqisi2
+ 148 0004 3BB1     		cbz	r3, .L21
+ 149 0006 436D     		ldr	r3, [r0, #84]
+ 150 0008 3BB1     		cbz	r3, .L22
+ 151 000a 1A68     		ldr	r2, [r3]
+ 152 000c 22F48032 		bic	r2, r2, #65536
+ 153 0010 1A60     		str	r2, [r3]
+ 154 0012 0020     		movs	r0, #0
+ 155 0014 7047     		bx	lr
+ 156              	.L21:
+ 157 0016 0120     		movs	r0, #1
+ 158 0018 7047     		bx	lr
+ 159              	.L22:
+ 160 001a 0120     		movs	r0, #1
+ 161 001c 7047     		bx	lr
+ 163              		.section	.text.HAL_DMAEx_MUX_IRQHandler,"ax",%progbits
+ 164              		.align	1
+ 165              		.global	HAL_DMAEx_MUX_IRQHandler
+ 166              		.syntax unified
+ 167              		.thumb
+ 168              		.thumb_func
+ 170              	HAL_DMAEx_MUX_IRQHandler:
+ 171              		@ args = 0, pretend = 0, frame = 0
+ 172              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173 0000 10B5     		push	{r4, lr}
+ 174 0002 0446     		mov	r4, r0
+ 175 0004 C36C     		ldr	r3, [r0, #76]
+ 176 0006 1A68     		ldr	r2, [r3]
+ 177 0008 036D     		ldr	r3, [r0, #80]
+ 178 000a 1A42     		tst	r2, r3
+ 179 000c 0ED0     		beq	.L24
+ 180 000e 826C     		ldr	r2, [r0, #72]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s 			page 4
+
+
+ 181 0010 1368     		ldr	r3, [r2]
+ 182 0012 23F48073 		bic	r3, r3, #256
+ 183 0016 1360     		str	r3, [r2]
+ 184 0018 C36C     		ldr	r3, [r0, #76]
+ 185 001a 026D     		ldr	r2, [r0, #80]
+ 186 001c 5A60     		str	r2, [r3, #4]
+ 187 001e C36B     		ldr	r3, [r0, #60]
+ 188 0020 43F40073 		orr	r3, r3, #512
+ 189 0024 C363     		str	r3, [r0, #60]
+ 190 0026 436B     		ldr	r3, [r0, #52]
+ 191 0028 03B1     		cbz	r3, .L24
+ 192 002a 9847     		blx	r3
+ 193              	.L24:
+ 194 002c 636D     		ldr	r3, [r4, #84]
+ 195 002e 9BB1     		cbz	r3, .L23
+ 196 0030 A26D     		ldr	r2, [r4, #88]
+ 197 0032 1168     		ldr	r1, [r2]
+ 198 0034 E26D     		ldr	r2, [r4, #92]
+ 199 0036 1142     		tst	r1, r2
+ 200 0038 0ED0     		beq	.L23
+ 201 003a 1A68     		ldr	r2, [r3]
+ 202 003c 22F48072 		bic	r2, r2, #256
+ 203 0040 1A60     		str	r2, [r3]
+ 204 0042 A36D     		ldr	r3, [r4, #88]
+ 205 0044 E26D     		ldr	r2, [r4, #92]
+ 206 0046 5A60     		str	r2, [r3, #4]
+ 207 0048 E36B     		ldr	r3, [r4, #60]
+ 208 004a 43F48063 		orr	r3, r3, #1024
+ 209 004e E363     		str	r3, [r4, #60]
+ 210 0050 636B     		ldr	r3, [r4, #52]
+ 211 0052 0BB1     		cbz	r3, .L23
+ 212 0054 2046     		mov	r0, r4
+ 213 0056 9847     		blx	r3
+ 214              	.L23:
+ 215 0058 10BD     		pop	{r4, pc}
+ 217              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_dma_ex.c
+C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s:18     .text.HAL_DMAEx_ConfigMuxSync:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s:24     .text.HAL_DMAEx_ConfigMuxSync:00000000 HAL_DMAEx_ConfigMuxSync
+C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s:65     .text.HAL_DMAEx_ConfigMuxSync:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s:68     .text.HAL_DMAEx_ConfigMuxRequestGenerator:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s:74     .text.HAL_DMAEx_ConfigMuxRequestGenerator:00000000 HAL_DMAEx_ConfigMuxRequestGenerator
+C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s:110    .text.HAL_DMAEx_EnableMuxRequestGenerator:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s:116    .text.HAL_DMAEx_EnableMuxRequestGenerator:00000000 HAL_DMAEx_EnableMuxRequestGenerator
+C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s:137    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s:143    .text.HAL_DMAEx_DisableMuxRequestGenerator:00000000 HAL_DMAEx_DisableMuxRequestGenerator
+C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s:164    .text.HAL_DMAEx_MUX_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccZwshxe.s:170    .text.HAL_DMAEx_MUX_IRQHandler:00000000 HAL_DMAEx_MUX_IRQHandler
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,872 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"usbd_core.c"
+  16              		.text
+  17              		.section	.text.USBD_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	USBD_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	USBD_Init:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 98B1     		cbz	r0, .L4
+  28 0002 08B5     		push	{r3, lr}
+  29 0004 0346     		mov	r3, r0
+  30 0006 0020     		movs	r0, #0
+  31 0008 C3F8B802 		str	r0, [r3, #696]
+  32 000c C3F8C402 		str	r0, [r3, #708]
+  33 0010 C3F8D002 		str	r0, [r3, #720]
+  34 0014 09B1     		cbz	r1, .L3
+  35 0016 C3F8B412 		str	r1, [r3, #692]
+  36              	.L3:
+  37 001a 0121     		movs	r1, #1
+  38 001c 83F89C12 		strb	r1, [r3, #668]
+  39 0020 1A70     		strb	r2, [r3]
+  40 0022 1846     		mov	r0, r3
+  41 0024 FFF7FEFF 		bl	USBD_LL_Init
+  42 0028 08BD     		pop	{r3, pc}
+  43              	.L4:
+  44 002a 0320     		movs	r0, #3
+  45 002c 7047     		bx	lr
+  47              		.section	.text.USBD_DeInit,"ax",%progbits
+  48              		.align	1
+  49              		.global	USBD_DeInit
+  50              		.syntax unified
+  51              		.thumb
+  52              		.thumb_func
+  54              	USBD_DeInit:
+  55              		@ args = 0, pretend = 0, frame = 0
+  56              		@ frame_needed = 0, uses_anonymous_args = 0
+  57 0000 10B5     		push	{r4, lr}
+  58 0002 0446     		mov	r4, r0
+  59 0004 FFF7FEFF 		bl	USBD_LL_Stop
+  60 0008 0123     		movs	r3, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 2
+
+
+  61 000a 84F89C32 		strb	r3, [r4, #668]
+  62 000e D4F8B832 		ldr	r3, [r4, #696]
+  63 0012 1BB1     		cbz	r3, .L10
+  64 0014 5B68     		ldr	r3, [r3, #4]
+  65 0016 2179     		ldrb	r1, [r4, #4]	@ zero_extendqisi2
+  66 0018 2046     		mov	r0, r4
+  67 001a 9847     		blx	r3
+  68              	.L10:
+  69 001c 0023     		movs	r3, #0
+  70 001e C4F8C432 		str	r3, [r4, #708]
+  71 0022 C4F8B432 		str	r3, [r4, #692]
+  72 0026 C4F8D032 		str	r3, [r4, #720]
+  73 002a 2046     		mov	r0, r4
+  74 002c FFF7FEFF 		bl	USBD_LL_DeInit
+  75 0030 10BD     		pop	{r4, pc}
+  77              		.section	.text.USBD_RegisterClass,"ax",%progbits
+  78              		.align	1
+  79              		.global	USBD_RegisterClass
+  80              		.syntax unified
+  81              		.thumb
+  82              		.thumb_func
+  84              	USBD_RegisterClass:
+  85              		@ args = 0, pretend = 0, frame = 8
+  86              		@ frame_needed = 0, uses_anonymous_args = 0
+  87 0000 10B5     		push	{r4, lr}
+  88 0002 82B0     		sub	sp, sp, #8
+  89 0004 0023     		movs	r3, #0
+  90 0006 ADF80630 		strh	r3, [sp, #6]	@ movhi
+  91 000a B9B1     		cbz	r1, .L15
+  92 000c 0446     		mov	r4, r0
+  93 000e C0F8B812 		str	r1, [r0, #696]
+  94 0012 D0F8D422 		ldr	r2, [r0, #724]
+  95 0016 CB6A     		ldr	r3, [r1, #44]
+  96 0018 43B1     		cbz	r3, .L14
+  97 001a AE32     		adds	r2, r2, #174
+  98 001c 50F82230 		ldr	r3, [r0, r2, lsl #2]
+  99 0020 DB6A     		ldr	r3, [r3, #44]
+ 100 0022 0DF10600 		add	r0, sp, #6
+ 101 0026 9847     		blx	r3
+ 102 0028 C4F8D002 		str	r0, [r4, #720]
+ 103              	.L14:
+ 104 002c D4F8D832 		ldr	r3, [r4, #728]
+ 105 0030 0133     		adds	r3, r3, #1
+ 106 0032 C4F8D832 		str	r3, [r4, #728]
+ 107 0036 0020     		movs	r0, #0
+ 108              	.L13:
+ 109 0038 02B0     		add	sp, sp, #8
+ 110              		@ sp needed
+ 111 003a 10BD     		pop	{r4, pc}
+ 112              	.L15:
+ 113 003c 0320     		movs	r0, #3
+ 114 003e FBE7     		b	.L13
+ 116              		.section	.text.USBD_Start,"ax",%progbits
+ 117              		.align	1
+ 118              		.global	USBD_Start
+ 119              		.syntax unified
+ 120              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 3
+
+
+ 121              		.thumb_func
+ 123              	USBD_Start:
+ 124              		@ args = 0, pretend = 0, frame = 0
+ 125              		@ frame_needed = 0, uses_anonymous_args = 0
+ 126 0000 08B5     		push	{r3, lr}
+ 127 0002 FFF7FEFF 		bl	USBD_LL_Start
+ 128 0006 08BD     		pop	{r3, pc}
+ 130              		.section	.text.USBD_Stop,"ax",%progbits
+ 131              		.align	1
+ 132              		.global	USBD_Stop
+ 133              		.syntax unified
+ 134              		.thumb
+ 135              		.thumb_func
+ 137              	USBD_Stop:
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140 0000 10B5     		push	{r4, lr}
+ 141 0002 0446     		mov	r4, r0
+ 142 0004 FFF7FEFF 		bl	USBD_LL_Stop
+ 143 0008 D4F8B832 		ldr	r3, [r4, #696]
+ 144 000c 1BB1     		cbz	r3, .L20
+ 145 000e 5B68     		ldr	r3, [r3, #4]
+ 146 0010 2179     		ldrb	r1, [r4, #4]	@ zero_extendqisi2
+ 147 0012 2046     		mov	r0, r4
+ 148 0014 9847     		blx	r3
+ 149              	.L20:
+ 150 0016 0020     		movs	r0, #0
+ 151 0018 10BD     		pop	{r4, pc}
+ 153              		.section	.text.USBD_RunTestMode,"ax",%progbits
+ 154              		.align	1
+ 155              		.global	USBD_RunTestMode
+ 156              		.syntax unified
+ 157              		.thumb
+ 158              		.thumb_func
+ 160              	USBD_RunTestMode:
+ 161              		@ args = 0, pretend = 0, frame = 0
+ 162              		@ frame_needed = 0, uses_anonymous_args = 0
+ 163              		@ link register save eliminated.
+ 164 0000 0020     		movs	r0, #0
+ 165 0002 7047     		bx	lr
+ 167              		.section	.text.USBD_SetClassConfig,"ax",%progbits
+ 168              		.align	1
+ 169              		.global	USBD_SetClassConfig
+ 170              		.syntax unified
+ 171              		.thumb
+ 172              		.thumb_func
+ 174              	USBD_SetClassConfig:
+ 175              		@ args = 0, pretend = 0, frame = 0
+ 176              		@ frame_needed = 0, uses_anonymous_args = 0
+ 177 0000 08B5     		push	{r3, lr}
+ 178 0002 D0F8B832 		ldr	r3, [r0, #696]
+ 179 0006 13B1     		cbz	r3, .L25
+ 180 0008 1B68     		ldr	r3, [r3]
+ 181 000a 9847     		blx	r3
+ 182              	.L24:
+ 183 000c 08BD     		pop	{r3, pc}
+ 184              	.L25:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 4
+
+
+ 185 000e 1846     		mov	r0, r3
+ 186 0010 FCE7     		b	.L24
+ 188              		.section	.text.USBD_ClrClassConfig,"ax",%progbits
+ 189              		.align	1
+ 190              		.global	USBD_ClrClassConfig
+ 191              		.syntax unified
+ 192              		.thumb
+ 193              		.thumb_func
+ 195              	USBD_ClrClassConfig:
+ 196              		@ args = 0, pretend = 0, frame = 0
+ 197              		@ frame_needed = 0, uses_anonymous_args = 0
+ 198 0000 08B5     		push	{r3, lr}
+ 199 0002 D0F8B832 		ldr	r3, [r0, #696]
+ 200 0006 5B68     		ldr	r3, [r3, #4]
+ 201 0008 9847     		blx	r3
+ 202 000a 00B9     		cbnz	r0, .L31
+ 203              	.L28:
+ 204 000c 08BD     		pop	{r3, pc}
+ 205              	.L31:
+ 206 000e 0320     		movs	r0, #3
+ 207 0010 FCE7     		b	.L28
+ 209              		.section	.text.USBD_LL_SetupStage,"ax",%progbits
+ 210              		.align	1
+ 211              		.global	USBD_LL_SetupStage
+ 212              		.syntax unified
+ 213              		.thumb
+ 214              		.thumb_func
+ 216              	USBD_LL_SetupStage:
+ 217              		@ args = 0, pretend = 0, frame = 0
+ 218              		@ frame_needed = 0, uses_anonymous_args = 0
+ 219 0000 38B5     		push	{r3, r4, r5, lr}
+ 220 0002 0446     		mov	r4, r0
+ 221 0004 00F2AA25 		addw	r5, r0, #682
+ 222 0008 2846     		mov	r0, r5
+ 223 000a FFF7FEFF 		bl	USBD_ParseSetupRequest
+ 224 000e 0123     		movs	r3, #1
+ 225 0010 C4F89432 		str	r3, [r4, #660]
+ 226 0014 B4F8B032 		ldrh	r3, [r4, #688]
+ 227 0018 C4F89832 		str	r3, [r4, #664]
+ 228 001c 94F8AA12 		ldrb	r1, [r4, #682]	@ zero_extendqisi2
+ 229 0020 01F01F03 		and	r3, r1, #31
+ 230 0024 012B     		cmp	r3, #1
+ 231 0026 07D0     		beq	.L33
+ 232 0028 022B     		cmp	r3, #2
+ 233 002a 0AD0     		beq	.L34
+ 234 002c 73B9     		cbnz	r3, .L35
+ 235 002e 2946     		mov	r1, r5
+ 236 0030 2046     		mov	r0, r4
+ 237 0032 FFF7FEFF 		bl	USBD_StdDevReq
+ 238              	.L36:
+ 239 0036 38BD     		pop	{r3, r4, r5, pc}
+ 240              	.L33:
+ 241 0038 2946     		mov	r1, r5
+ 242 003a 2046     		mov	r0, r4
+ 243 003c FFF7FEFF 		bl	USBD_StdItfReq
+ 244 0040 F9E7     		b	.L36
+ 245              	.L34:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 5
+
+
+ 246 0042 2946     		mov	r1, r5
+ 247 0044 2046     		mov	r0, r4
+ 248 0046 FFF7FEFF 		bl	USBD_StdEPReq
+ 249 004a F4E7     		b	.L36
+ 250              	.L35:
+ 251 004c 01F08001 		and	r1, r1, #128
+ 252 0050 2046     		mov	r0, r4
+ 253 0052 FFF7FEFF 		bl	USBD_LL_StallEP
+ 254 0056 EEE7     		b	.L36
+ 256              		.section	.text.USBD_LL_Reset,"ax",%progbits
+ 257              		.align	1
+ 258              		.global	USBD_LL_Reset
+ 259              		.syntax unified
+ 260              		.thumb
+ 261              		.thumb_func
+ 263              	USBD_LL_Reset:
+ 264              		@ args = 0, pretend = 0, frame = 0
+ 265              		@ frame_needed = 0, uses_anonymous_args = 0
+ 266 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 267 0002 0446     		mov	r4, r0
+ 268 0004 0123     		movs	r3, #1
+ 269 0006 80F89C32 		strb	r3, [r0, #668]
+ 270 000a 0023     		movs	r3, #0
+ 271 000c C0F89432 		str	r3, [r0, #660]
+ 272 0010 4360     		str	r3, [r0, #4]
+ 273 0012 C0F8A432 		str	r3, [r0, #676]
+ 274 0016 80F8A032 		strb	r3, [r0, #672]
+ 275 001a D0F8B832 		ldr	r3, [r0, #696]
+ 276 001e E3B1     		cbz	r3, .L40
+ 277 0020 5B68     		ldr	r3, [r3, #4]
+ 278 0022 E3B1     		cbz	r3, .L41
+ 279 0024 0021     		movs	r1, #0
+ 280 0026 9847     		blx	r3
+ 281 0028 0746     		mov	r7, r0
+ 282 002a D0B9     		cbnz	r0, .L44
+ 283              	.L39:
+ 284 002c 4023     		movs	r3, #64
+ 285 002e 0022     		movs	r2, #0
+ 286 0030 1146     		mov	r1, r2
+ 287 0032 2046     		mov	r0, r4
+ 288 0034 FFF7FEFF 		bl	USBD_LL_OpenEP
+ 289 0038 0126     		movs	r6, #1
+ 290 003a 84F86361 		strb	r6, [r4, #355]
+ 291 003e 4025     		movs	r5, #64
+ 292 0040 A4F86051 		strh	r5, [r4, #352]	@ movhi
+ 293 0044 2B46     		mov	r3, r5
+ 294 0046 0022     		movs	r2, #0
+ 295 0048 8021     		movs	r1, #128
+ 296 004a 2046     		mov	r0, r4
+ 297 004c FFF7FEFF 		bl	USBD_LL_OpenEP
+ 298 0050 84F82360 		strb	r6, [r4, #35]
+ 299 0054 2584     		strh	r5, [r4, #32]	@ movhi
+ 300 0056 3846     		mov	r0, r7
+ 301 0058 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 302              	.L40:
+ 303 005a 1F46     		mov	r7, r3
+ 304 005c E6E7     		b	.L39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 6
+
+
+ 305              	.L41:
+ 306 005e 1F46     		mov	r7, r3
+ 307 0060 E4E7     		b	.L39
+ 308              	.L44:
+ 309 0062 0323     		movs	r3, #3
+ 310 0064 1F46     		mov	r7, r3
+ 311 0066 E1E7     		b	.L39
+ 313              		.section	.text.USBD_LL_SetSpeed,"ax",%progbits
+ 314              		.align	1
+ 315              		.global	USBD_LL_SetSpeed
+ 316              		.syntax unified
+ 317              		.thumb
+ 318              		.thumb_func
+ 320              	USBD_LL_SetSpeed:
+ 321              		@ args = 0, pretend = 0, frame = 0
+ 322              		@ frame_needed = 0, uses_anonymous_args = 0
+ 323              		@ link register save eliminated.
+ 324 0000 0174     		strb	r1, [r0, #16]
+ 325 0002 0020     		movs	r0, #0
+ 326 0004 7047     		bx	lr
+ 328              		.section	.text.USBD_LL_Suspend,"ax",%progbits
+ 329              		.align	1
+ 330              		.global	USBD_LL_Suspend
+ 331              		.syntax unified
+ 332              		.thumb
+ 333              		.thumb_func
+ 335              	USBD_LL_Suspend:
+ 336              		@ args = 0, pretend = 0, frame = 0
+ 337              		@ frame_needed = 0, uses_anonymous_args = 0
+ 338              		@ link register save eliminated.
+ 339 0000 90F89C32 		ldrb	r3, [r0, #668]	@ zero_extendqisi2
+ 340 0004 042B     		cmp	r3, #4
+ 341 0006 04D0     		beq	.L47
+ 342 0008 90F89C32 		ldrb	r3, [r0, #668]	@ zero_extendqisi2
+ 343 000c DBB2     		uxtb	r3, r3
+ 344 000e 80F89D32 		strb	r3, [r0, #669]
+ 345              	.L47:
+ 346 0012 0423     		movs	r3, #4
+ 347 0014 80F89C32 		strb	r3, [r0, #668]
+ 348 0018 0020     		movs	r0, #0
+ 349 001a 7047     		bx	lr
+ 351              		.section	.text.USBD_LL_Resume,"ax",%progbits
+ 352              		.align	1
+ 353              		.global	USBD_LL_Resume
+ 354              		.syntax unified
+ 355              		.thumb
+ 356              		.thumb_func
+ 358              	USBD_LL_Resume:
+ 359              		@ args = 0, pretend = 0, frame = 0
+ 360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 361              		@ link register save eliminated.
+ 362 0000 90F89C32 		ldrb	r3, [r0, #668]	@ zero_extendqisi2
+ 363 0004 042B     		cmp	r3, #4
+ 364 0006 01D0     		beq	.L50
+ 365              	.L49:
+ 366 0008 0020     		movs	r0, #0
+ 367 000a 7047     		bx	lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 7
+
+
+ 368              	.L50:
+ 369 000c 90F89D32 		ldrb	r3, [r0, #669]	@ zero_extendqisi2
+ 370 0010 DBB2     		uxtb	r3, r3
+ 371 0012 80F89C32 		strb	r3, [r0, #668]
+ 372 0016 F7E7     		b	.L49
+ 374              		.section	.text.USBD_LL_SOF,"ax",%progbits
+ 375              		.align	1
+ 376              		.global	USBD_LL_SOF
+ 377              		.syntax unified
+ 378              		.thumb
+ 379              		.thumb_func
+ 381              	USBD_LL_SOF:
+ 382              		@ args = 0, pretend = 0, frame = 0
+ 383              		@ frame_needed = 0, uses_anonymous_args = 0
+ 384 0000 08B5     		push	{r3, lr}
+ 385 0002 90F89C32 		ldrb	r3, [r0, #668]	@ zero_extendqisi2
+ 386 0006 032B     		cmp	r3, #3
+ 387 0008 01D0     		beq	.L54
+ 388              	.L52:
+ 389 000a 0020     		movs	r0, #0
+ 390 000c 08BD     		pop	{r3, pc}
+ 391              	.L54:
+ 392 000e D0F8B832 		ldr	r3, [r0, #696]
+ 393 0012 002B     		cmp	r3, #0
+ 394 0014 F9D0     		beq	.L52
+ 395 0016 DB69     		ldr	r3, [r3, #28]
+ 396 0018 002B     		cmp	r3, #0
+ 397 001a F6D0     		beq	.L52
+ 398 001c 9847     		blx	r3
+ 399 001e F4E7     		b	.L52
+ 401              		.section	.text.USBD_LL_IsoINIncomplete,"ax",%progbits
+ 402              		.align	1
+ 403              		.global	USBD_LL_IsoINIncomplete
+ 404              		.syntax unified
+ 405              		.thumb
+ 406              		.thumb_func
+ 408              	USBD_LL_IsoINIncomplete:
+ 409              		@ args = 0, pretend = 0, frame = 0
+ 410              		@ frame_needed = 0, uses_anonymous_args = 0
+ 411 0000 08B5     		push	{r3, lr}
+ 412 0002 D0F8D432 		ldr	r3, [r0, #724]
+ 413 0006 AE33     		adds	r3, r3, #174
+ 414 0008 50F82330 		ldr	r3, [r0, r3, lsl #2]
+ 415 000c 53B1     		cbz	r3, .L57
+ 416 000e 90F89C22 		ldrb	r2, [r0, #668]	@ zero_extendqisi2
+ 417 0012 032A     		cmp	r2, #3
+ 418 0014 01D0     		beq	.L61
+ 419 0016 0020     		movs	r0, #0
+ 420              	.L56:
+ 421 0018 08BD     		pop	{r3, pc}
+ 422              	.L61:
+ 423 001a 1B6A     		ldr	r3, [r3, #32]
+ 424 001c 23B1     		cbz	r3, .L59
+ 425 001e 9847     		blx	r3
+ 426 0020 0020     		movs	r0, #0
+ 427 0022 F9E7     		b	.L56
+ 428              	.L57:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 8
+
+
+ 429 0024 0320     		movs	r0, #3
+ 430 0026 F7E7     		b	.L56
+ 431              	.L59:
+ 432 0028 1846     		mov	r0, r3
+ 433 002a F5E7     		b	.L56
+ 435              		.section	.text.USBD_LL_IsoOUTIncomplete,"ax",%progbits
+ 436              		.align	1
+ 437              		.global	USBD_LL_IsoOUTIncomplete
+ 438              		.syntax unified
+ 439              		.thumb
+ 440              		.thumb_func
+ 442              	USBD_LL_IsoOUTIncomplete:
+ 443              		@ args = 0, pretend = 0, frame = 0
+ 444              		@ frame_needed = 0, uses_anonymous_args = 0
+ 445 0000 08B5     		push	{r3, lr}
+ 446 0002 D0F8D432 		ldr	r3, [r0, #724]
+ 447 0006 AE33     		adds	r3, r3, #174
+ 448 0008 50F82330 		ldr	r3, [r0, r3, lsl #2]
+ 449 000c 53B1     		cbz	r3, .L64
+ 450 000e 90F89C22 		ldrb	r2, [r0, #668]	@ zero_extendqisi2
+ 451 0012 032A     		cmp	r2, #3
+ 452 0014 01D0     		beq	.L68
+ 453 0016 0020     		movs	r0, #0
+ 454              	.L63:
+ 455 0018 08BD     		pop	{r3, pc}
+ 456              	.L68:
+ 457 001a 5B6A     		ldr	r3, [r3, #36]
+ 458 001c 23B1     		cbz	r3, .L66
+ 459 001e 9847     		blx	r3
+ 460 0020 0020     		movs	r0, #0
+ 461 0022 F9E7     		b	.L63
+ 462              	.L64:
+ 463 0024 0320     		movs	r0, #3
+ 464 0026 F7E7     		b	.L63
+ 465              	.L66:
+ 466 0028 1846     		mov	r0, r3
+ 467 002a F5E7     		b	.L63
+ 469              		.section	.text.USBD_LL_DevConnected,"ax",%progbits
+ 470              		.align	1
+ 471              		.global	USBD_LL_DevConnected
+ 472              		.syntax unified
+ 473              		.thumb
+ 474              		.thumb_func
+ 476              	USBD_LL_DevConnected:
+ 477              		@ args = 0, pretend = 0, frame = 0
+ 478              		@ frame_needed = 0, uses_anonymous_args = 0
+ 479              		@ link register save eliminated.
+ 480 0000 0020     		movs	r0, #0
+ 481 0002 7047     		bx	lr
+ 483              		.section	.text.USBD_LL_DevDisconnected,"ax",%progbits
+ 484              		.align	1
+ 485              		.global	USBD_LL_DevDisconnected
+ 486              		.syntax unified
+ 487              		.thumb
+ 488              		.thumb_func
+ 490              	USBD_LL_DevDisconnected:
+ 491              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 9
+
+
+ 492              		@ frame_needed = 0, uses_anonymous_args = 0
+ 493 0000 08B5     		push	{r3, lr}
+ 494 0002 0123     		movs	r3, #1
+ 495 0004 80F89C32 		strb	r3, [r0, #668]
+ 496 0008 D0F8B832 		ldr	r3, [r0, #696]
+ 497 000c 23B1     		cbz	r3, .L72
+ 498 000e 5B68     		ldr	r3, [r3, #4]
+ 499 0010 0179     		ldrb	r1, [r0, #4]	@ zero_extendqisi2
+ 500 0012 9847     		blx	r3
+ 501 0014 10B9     		cbnz	r0, .L75
+ 502              	.L71:
+ 503 0016 08BD     		pop	{r3, pc}
+ 504              	.L72:
+ 505 0018 1846     		mov	r0, r3
+ 506 001a FCE7     		b	.L71
+ 507              	.L75:
+ 508 001c 0320     		movs	r0, #3
+ 509 001e FAE7     		b	.L71
+ 511              		.section	.text.USBD_CoreFindIF,"ax",%progbits
+ 512              		.align	1
+ 513              		.global	USBD_CoreFindIF
+ 514              		.syntax unified
+ 515              		.thumb
+ 516              		.thumb_func
+ 518              	USBD_CoreFindIF:
+ 519              		@ args = 0, pretend = 0, frame = 0
+ 520              		@ frame_needed = 0, uses_anonymous_args = 0
+ 521              		@ link register save eliminated.
+ 522 0000 0020     		movs	r0, #0
+ 523 0002 7047     		bx	lr
+ 525              		.section	.text.USBD_CoreFindEP,"ax",%progbits
+ 526              		.align	1
+ 527              		.global	USBD_CoreFindEP
+ 528              		.syntax unified
+ 529              		.thumb
+ 530              		.thumb_func
+ 532              	USBD_CoreFindEP:
+ 533              		@ args = 0, pretend = 0, frame = 0
+ 534              		@ frame_needed = 0, uses_anonymous_args = 0
+ 535              		@ link register save eliminated.
+ 536 0000 0020     		movs	r0, #0
+ 537 0002 7047     		bx	lr
+ 539              		.section	.text.USBD_LL_DataOutStage,"ax",%progbits
+ 540              		.align	1
+ 541              		.global	USBD_LL_DataOutStage
+ 542              		.syntax unified
+ 543              		.thumb
+ 544              		.thumb_func
+ 546              	USBD_LL_DataOutStage:
+ 547              		@ args = 0, pretend = 0, frame = 0
+ 548              		@ frame_needed = 0, uses_anonymous_args = 0
+ 549 0000 38B5     		push	{r3, r4, r5, lr}
+ 550 0002 0446     		mov	r4, r0
+ 551 0004 0D46     		mov	r5, r1
+ 552 0006 0029     		cmp	r1, #0
+ 553 0008 44D1     		bne	.L79
+ 554 000a D0F89432 		ldr	r3, [r0, #660]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 10
+
+
+ 555 000e 032B     		cmp	r3, #3
+ 556 0010 01D0     		beq	.L90
+ 557 0012 0846     		mov	r0, r1
+ 558              	.L80:
+ 559 0014 38BD     		pop	{r3, r4, r5, pc}
+ 560              	.L90:
+ 561 0016 D0F85831 		ldr	r3, [r0, #344]
+ 562 001a B0F86021 		ldrh	r2, [r0, #352]
+ 563 001e 9342     		cmp	r3, r2
+ 564 0020 09D8     		bhi	.L91
+ 565 0022 90F8AA32 		ldrb	r3, [r0, #682]	@ zero_extendqisi2
+ 566 0026 03F01F03 		and	r3, r3, #31
+ 567 002a 012B     		cmp	r3, #1
+ 568 002c 12D0     		beq	.L82
+ 569 002e 022B     		cmp	r3, #2
+ 570 0030 1ED0     		beq	.L83
+ 571 0032 0846     		mov	r0, r1
+ 572 0034 13E0     		b	.L84
+ 573              	.L91:
+ 574 0036 9B1A     		subs	r3, r3, r2
+ 575 0038 C0F85831 		str	r3, [r0, #344]
+ 576 003c D0F86411 		ldr	r1, [r0, #356]
+ 577 0040 1144     		add	r1, r1, r2
+ 578 0042 C0F86411 		str	r1, [r0, #356]
+ 579 0046 9A42     		cmp	r2, r3
+ 580 0048 38BF     		it	cc
+ 581 004a 1A46     		movcc	r2, r3
+ 582 004c FFF7FEFF 		bl	USBD_CtlContinueRx
+ 583 0050 2846     		mov	r0, r5
+ 584 0052 DFE7     		b	.L80
+ 585              	.L82:
+ 586 0054 90F8AE12 		ldrb	r1, [r0, #686]	@ zero_extendqisi2
+ 587 0058 FFF7FEFF 		bl	USBD_CoreFindIF
+ 588              	.L85:
+ 589 005c 18B9     		cbnz	r0, .L86
+ 590              	.L84:
+ 591 005e 94F89C32 		ldrb	r3, [r4, #668]	@ zero_extendqisi2
+ 592 0062 032B     		cmp	r3, #3
+ 593 0064 09D0     		beq	.L92
+ 594              	.L86:
+ 595 0066 2046     		mov	r0, r4
+ 596 0068 FFF7FEFF 		bl	USBD_CtlSendStatus
+ 597 006c 2846     		mov	r0, r5
+ 598 006e D1E7     		b	.L80
+ 599              	.L83:
+ 600 0070 90F8AE12 		ldrb	r1, [r0, #686]	@ zero_extendqisi2
+ 601 0074 FFF7FEFF 		bl	USBD_CoreFindEP
+ 602 0078 F0E7     		b	.L85
+ 603              	.L92:
+ 604 007a 00F1AE03 		add	r3, r0, #174
+ 605 007e 54F82330 		ldr	r3, [r4, r3, lsl #2]
+ 606 0082 1A69     		ldr	r2, [r3, #16]
+ 607 0084 002A     		cmp	r2, #0
+ 608 0086 EED0     		beq	.L86
+ 609 0088 C4F8D402 		str	r0, [r4, #724]
+ 610 008c 1B69     		ldr	r3, [r3, #16]
+ 611 008e 2046     		mov	r0, r4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 11
+
+
+ 612 0090 9847     		blx	r3
+ 613 0092 E8E7     		b	.L86
+ 614              	.L79:
+ 615 0094 01F07F01 		and	r1, r1, #127
+ 616 0098 FFF7FEFF 		bl	USBD_CoreFindEP
+ 617 009c 88B9     		cbnz	r0, .L88
+ 618 009e 94F89C32 		ldrb	r3, [r4, #668]	@ zero_extendqisi2
+ 619 00a2 032B     		cmp	r3, #3
+ 620 00a4 B6D1     		bne	.L80
+ 621 00a6 00F1AE03 		add	r3, r0, #174
+ 622 00aa 54F82330 		ldr	r3, [r4, r3, lsl #2]
+ 623 00ae 9A69     		ldr	r2, [r3, #24]
+ 624 00b0 002A     		cmp	r2, #0
+ 625 00b2 AFD0     		beq	.L80
+ 626 00b4 C4F8D402 		str	r0, [r4, #724]
+ 627 00b8 9B69     		ldr	r3, [r3, #24]
+ 628 00ba 2946     		mov	r1, r5
+ 629 00bc 2046     		mov	r0, r4
+ 630 00be 9847     		blx	r3
+ 631 00c0 A8E7     		b	.L80
+ 632              	.L88:
+ 633 00c2 0020     		movs	r0, #0
+ 634 00c4 A6E7     		b	.L80
+ 636              		.section	.text.USBD_LL_DataInStage,"ax",%progbits
+ 637              		.align	1
+ 638              		.global	USBD_LL_DataInStage
+ 639              		.syntax unified
+ 640              		.thumb
+ 641              		.thumb_func
+ 643              	USBD_LL_DataInStage:
+ 644              		@ args = 0, pretend = 0, frame = 0
+ 645              		@ frame_needed = 0, uses_anonymous_args = 0
+ 646 0000 38B5     		push	{r3, r4, r5, lr}
+ 647 0002 0446     		mov	r4, r0
+ 648 0004 0D46     		mov	r5, r1
+ 649 0006 0029     		cmp	r1, #0
+ 650 0008 4BD1     		bne	.L94
+ 651 000a D0F89432 		ldr	r3, [r0, #660]
+ 652 000e 022B     		cmp	r3, #2
+ 653 0010 07D0     		beq	.L102
+ 654              	.L95:
+ 655 0012 94F8A002 		ldrb	r0, [r4, #672]	@ zero_extendqisi2
+ 656 0016 18B1     		cbz	r0, .L99
+ 657 0018 0023     		movs	r3, #0
+ 658 001a 84F8A032 		strb	r3, [r4, #672]
+ 659 001e 2846     		mov	r0, r5
+ 660              	.L99:
+ 661 0020 38BD     		pop	{r3, r4, r5, pc}
+ 662              	.L102:
+ 663 0022 8269     		ldr	r2, [r0, #24]
+ 664 0024 038C     		ldrh	r3, [r0, #32]
+ 665 0026 9A42     		cmp	r2, r3
+ 666 0028 0DD8     		bhi	.L103
+ 667 002a 9A42     		cmp	r2, r3
+ 668 002c 19D0     		beq	.L104
+ 669              	.L97:
+ 670 002e 94F89C32 		ldrb	r3, [r4, #668]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 12
+
+
+ 671 0032 032B     		cmp	r3, #3
+ 672 0034 29D0     		beq	.L105
+ 673              	.L98:
+ 674 0036 8021     		movs	r1, #128
+ 675 0038 2046     		mov	r0, r4
+ 676 003a FFF7FEFF 		bl	USBD_LL_StallEP
+ 677 003e 2046     		mov	r0, r4
+ 678 0040 FFF7FEFF 		bl	USBD_CtlReceiveStatus
+ 679 0044 E5E7     		b	.L95
+ 680              	.L103:
+ 681 0046 D21A     		subs	r2, r2, r3
+ 682 0048 8261     		str	r2, [r0, #24]
+ 683 004a 416A     		ldr	r1, [r0, #36]
+ 684 004c 1944     		add	r1, r1, r3
+ 685 004e 4162     		str	r1, [r0, #36]
+ 686 0050 FFF7FEFF 		bl	USBD_CtlContinueSendData
+ 687 0054 0023     		movs	r3, #0
+ 688 0056 1A46     		mov	r2, r3
+ 689 0058 1946     		mov	r1, r3
+ 690 005a 2046     		mov	r0, r4
+ 691 005c FFF7FEFF 		bl	USBD_LL_PrepareReceive
+ 692 0060 D7E7     		b	.L95
+ 693              	.L104:
+ 694 0062 4269     		ldr	r2, [r0, #20]
+ 695 0064 9342     		cmp	r3, r2
+ 696 0066 E2D8     		bhi	.L97
+ 697 0068 D0F89832 		ldr	r3, [r0, #664]
+ 698 006c 9A42     		cmp	r2, r3
+ 699 006e DED2     		bcs	.L97
+ 700 0070 0022     		movs	r2, #0
+ 701 0072 1146     		mov	r1, r2
+ 702 0074 FFF7FEFF 		bl	USBD_CtlContinueSendData
+ 703 0078 0021     		movs	r1, #0
+ 704 007a C4F89812 		str	r1, [r4, #664]
+ 705 007e 0B46     		mov	r3, r1
+ 706 0080 0A46     		mov	r2, r1
+ 707 0082 2046     		mov	r0, r4
+ 708 0084 FFF7FEFF 		bl	USBD_LL_PrepareReceive
+ 709 0088 C3E7     		b	.L95
+ 710              	.L105:
+ 711 008a D4F8B832 		ldr	r3, [r4, #696]
+ 712 008e DA68     		ldr	r2, [r3, #12]
+ 713 0090 002A     		cmp	r2, #0
+ 714 0092 D0D0     		beq	.L98
+ 715 0094 0022     		movs	r2, #0
+ 716 0096 C4F8D422 		str	r2, [r4, #724]
+ 717 009a DB68     		ldr	r3, [r3, #12]
+ 718 009c 2046     		mov	r0, r4
+ 719 009e 9847     		blx	r3
+ 720 00a0 C9E7     		b	.L98
+ 721              	.L94:
+ 722 00a2 41F08001 		orr	r1, r1, #128
+ 723 00a6 FFF7FEFF 		bl	USBD_CoreFindEP
+ 724 00aa 88B9     		cbnz	r0, .L100
+ 725 00ac 94F89C32 		ldrb	r3, [r4, #668]	@ zero_extendqisi2
+ 726 00b0 032B     		cmp	r3, #3
+ 727 00b2 B5D1     		bne	.L99
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 13
+
+
+ 728 00b4 00F1AE03 		add	r3, r0, #174
+ 729 00b8 54F82330 		ldr	r3, [r4, r3, lsl #2]
+ 730 00bc 5A69     		ldr	r2, [r3, #20]
+ 731 00be 002A     		cmp	r2, #0
+ 732 00c0 AED0     		beq	.L99
+ 733 00c2 C4F8D402 		str	r0, [r4, #724]
+ 734 00c6 5B69     		ldr	r3, [r3, #20]
+ 735 00c8 2946     		mov	r1, r5
+ 736 00ca 2046     		mov	r0, r4
+ 737 00cc 9847     		blx	r3
+ 738 00ce A7E7     		b	.L99
+ 739              	.L100:
+ 740 00d0 0020     		movs	r0, #0
+ 741 00d2 A5E7     		b	.L99
+ 743              		.section	.text.USBD_GetNextDesc,"ax",%progbits
+ 744              		.align	1
+ 745              		.global	USBD_GetNextDesc
+ 746              		.syntax unified
+ 747              		.thumb
+ 748              		.thumb_func
+ 750              	USBD_GetNextDesc:
+ 751              		@ args = 0, pretend = 0, frame = 0
+ 752              		@ frame_needed = 0, uses_anonymous_args = 0
+ 753              		@ link register save eliminated.
+ 754 0000 0B88     		ldrh	r3, [r1]
+ 755 0002 0278     		ldrb	r2, [r0]	@ zero_extendqisi2
+ 756 0004 1344     		add	r3, r3, r2
+ 757 0006 0B80     		strh	r3, [r1]	@ movhi
+ 758 0008 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 759 000a 1844     		add	r0, r0, r3
+ 760 000c 7047     		bx	lr
+ 762              		.section	.text.USBD_GetEpDesc,"ax",%progbits
+ 763              		.align	1
+ 764              		.global	USBD_GetEpDesc
+ 765              		.syntax unified
+ 766              		.thumb
+ 767              		.thumb_func
+ 769              	USBD_GetEpDesc:
+ 770              		@ args = 0, pretend = 0, frame = 8
+ 771              		@ frame_needed = 0, uses_anonymous_args = 0
+ 772 0000 4288     		ldrh	r2, [r0, #2]	@ unaligned
+ 773 0002 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 774 0004 9A42     		cmp	r2, r3
+ 775 0006 18D9     		bls	.L111
+ 776 0008 30B5     		push	{r4, r5, lr}
+ 777 000a 83B0     		sub	sp, sp, #12
+ 778 000c 0446     		mov	r4, r0
+ 779 000e 0D46     		mov	r5, r1
+ 780 0010 ADF80630 		strh	r3, [sp, #6]	@ movhi
+ 781              	.L109:
+ 782 0014 6388     		ldrh	r3, [r4, #2]	@ unaligned
+ 783 0016 BDF80620 		ldrh	r2, [sp, #6]
+ 784 001a 9A42     		cmp	r2, r3
+ 785 001c 0AD2     		bcs	.L116
+ 786 001e 0DF10601 		add	r1, sp, #6
+ 787 0022 FFF7FEFF 		bl	USBD_GetNextDesc
+ 788 0026 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 14
+
+
+ 789 0028 052B     		cmp	r3, #5
+ 790 002a F3D1     		bne	.L109
+ 791 002c 8378     		ldrb	r3, [r0, #2]	@ zero_extendqisi2
+ 792 002e AB42     		cmp	r3, r5
+ 793 0030 F0D1     		bne	.L109
+ 794 0032 00E0     		b	.L107
+ 795              	.L116:
+ 796 0034 0020     		movs	r0, #0
+ 797              	.L107:
+ 798 0036 03B0     		add	sp, sp, #12
+ 799              		@ sp needed
+ 800 0038 30BD     		pop	{r4, r5, pc}
+ 801              	.L111:
+ 802 003a 0020     		movs	r0, #0
+ 803 003c 7047     		bx	lr
+ 805              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 usbd_core.c
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:18     .text.USBD_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:24     .text.USBD_Init:00000000 USBD_Init
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:48     .text.USBD_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:54     .text.USBD_DeInit:00000000 USBD_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:78     .text.USBD_RegisterClass:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:84     .text.USBD_RegisterClass:00000000 USBD_RegisterClass
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:117    .text.USBD_Start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:123    .text.USBD_Start:00000000 USBD_Start
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:131    .text.USBD_Stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:137    .text.USBD_Stop:00000000 USBD_Stop
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:154    .text.USBD_RunTestMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:160    .text.USBD_RunTestMode:00000000 USBD_RunTestMode
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:168    .text.USBD_SetClassConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:174    .text.USBD_SetClassConfig:00000000 USBD_SetClassConfig
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:189    .text.USBD_ClrClassConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:195    .text.USBD_ClrClassConfig:00000000 USBD_ClrClassConfig
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:210    .text.USBD_LL_SetupStage:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:216    .text.USBD_LL_SetupStage:00000000 USBD_LL_SetupStage
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:257    .text.USBD_LL_Reset:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:263    .text.USBD_LL_Reset:00000000 USBD_LL_Reset
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:314    .text.USBD_LL_SetSpeed:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:320    .text.USBD_LL_SetSpeed:00000000 USBD_LL_SetSpeed
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:329    .text.USBD_LL_Suspend:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:335    .text.USBD_LL_Suspend:00000000 USBD_LL_Suspend
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:352    .text.USBD_LL_Resume:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:358    .text.USBD_LL_Resume:00000000 USBD_LL_Resume
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:375    .text.USBD_LL_SOF:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:381    .text.USBD_LL_SOF:00000000 USBD_LL_SOF
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:402    .text.USBD_LL_IsoINIncomplete:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:408    .text.USBD_LL_IsoINIncomplete:00000000 USBD_LL_IsoINIncomplete
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:436    .text.USBD_LL_IsoOUTIncomplete:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:442    .text.USBD_LL_IsoOUTIncomplete:00000000 USBD_LL_IsoOUTIncomplete
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:470    .text.USBD_LL_DevConnected:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:476    .text.USBD_LL_DevConnected:00000000 USBD_LL_DevConnected
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:484    .text.USBD_LL_DevDisconnected:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:490    .text.USBD_LL_DevDisconnected:00000000 USBD_LL_DevDisconnected
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:512    .text.USBD_CoreFindIF:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:518    .text.USBD_CoreFindIF:00000000 USBD_CoreFindIF
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:526    .text.USBD_CoreFindEP:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:532    .text.USBD_CoreFindEP:00000000 USBD_CoreFindEP
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:540    .text.USBD_LL_DataOutStage:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:546    .text.USBD_LL_DataOutStage:00000000 USBD_LL_DataOutStage
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:637    .text.USBD_LL_DataInStage:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:643    .text.USBD_LL_DataInStage:00000000 USBD_LL_DataInStage
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:744    .text.USBD_GetNextDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:750    .text.USBD_GetNextDesc:00000000 USBD_GetNextDesc
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:763    .text.USBD_GetEpDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s:769    .text.USBD_GetEpDesc:00000000 USBD_GetEpDesc
+
+UNDEFINED SYMBOLS
+USBD_LL_Init
+USBD_LL_Stop
+USBD_LL_DeInit
+USBD_LL_Start
+USBD_ParseSetupRequest
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccErbb5Z.s 			page 16
+
+
+USBD_StdDevReq
+USBD_StdItfReq
+USBD_StdEPReq
+USBD_LL_StallEP
+USBD_LL_OpenEP
+USBD_CtlContinueRx
+USBD_CtlSendStatus
+USBD_CtlReceiveStatus
+USBD_CtlContinueSendData
+USBD_LL_PrepareReceive

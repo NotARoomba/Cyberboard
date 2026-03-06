@@ -1,0 +1,286 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_pcd_ex.c"
+  16              		.text
+  17              		.section	.text.HAL_PCDEx_PMAConfig,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_PCDEx_PMAConfig
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_PCDEx_PMAConfig:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 11F0800F 		tst	r1, #128
+  29 0004 0BD0     		beq	.L2
+  30 0006 01F00701 		and	r1, r1, #7
+  31 000a 01EB8101 		add	r1, r1, r1, lsl #2
+  32 000e C900     		lsls	r1, r1, #3
+  33 0010 1031     		adds	r1, r1, #16
+  34 0012 0844     		add	r0, r0, r1
+  35              	.L3:
+  36 0014 52B9     		cbnz	r2, .L4
+  37 0016 0273     		strb	r2, [r0, #12]
+  38 0018 C380     		strh	r3, [r0, #6]	@ movhi
+  39              	.L5:
+  40 001a 0020     		movs	r0, #0
+  41 001c 7047     		bx	lr
+  42              	.L2:
+  43 001e 01EB8101 		add	r1, r1, r1, lsl #2
+  44 0022 C900     		lsls	r1, r1, #3
+  45 0024 01F5A871 		add	r1, r1, #336
+  46 0028 0844     		add	r0, r0, r1
+  47 002a F3E7     		b	.L3
+  48              	.L4:
+  49 002c 0122     		movs	r2, #1
+  50 002e 0273     		strb	r2, [r0, #12]
+  51 0030 0381     		strh	r3, [r0, #8]	@ movhi
+  52 0032 1B0C     		lsrs	r3, r3, #16
+  53 0034 4381     		strh	r3, [r0, #10]	@ movhi
+  54 0036 F0E7     		b	.L5
+  56              		.section	.text.HAL_PCDEx_ActivateBCD,"ax",%progbits
+  57              		.align	1
+  58              		.global	HAL_PCDEx_ActivateBCD
+  59              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s 			page 2
+
+
+  60              		.thumb
+  61              		.thumb_func
+  63              	HAL_PCDEx_ActivateBCD:
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67 0000 0268     		ldr	r2, [r0]
+  68 0002 0123     		movs	r3, #1
+  69 0004 C0F8D432 		str	r3, [r0, #724]
+  70 0008 B2F85830 		ldrh	r3, [r2, #88]
+  71 000c 9BB2     		uxth	r3, r3
+  72 000e 23F00403 		bic	r3, r3, #4
+  73 0012 9BB2     		uxth	r3, r3
+  74 0014 A2F85830 		strh	r3, [r2, #88]	@ movhi
+  75 0018 B2F85830 		ldrh	r3, [r2, #88]
+  76 001c 9BB2     		uxth	r3, r3
+  77 001e 23F00803 		bic	r3, r3, #8
+  78 0022 9BB2     		uxth	r3, r3
+  79 0024 A2F85830 		strh	r3, [r2, #88]	@ movhi
+  80 0028 B2F85830 		ldrh	r3, [r2, #88]
+  81 002c 9BB2     		uxth	r3, r3
+  82 002e 43F00103 		orr	r3, r3, #1
+  83 0032 A2F85830 		strh	r3, [r2, #88]	@ movhi
+  84 0036 0020     		movs	r0, #0
+  85 0038 7047     		bx	lr
+  87              		.section	.text.HAL_PCDEx_DeActivateBCD,"ax",%progbits
+  88              		.align	1
+  89              		.global	HAL_PCDEx_DeActivateBCD
+  90              		.syntax unified
+  91              		.thumb
+  92              		.thumb_func
+  94              	HAL_PCDEx_DeActivateBCD:
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+  98 0000 0346     		mov	r3, r0
+  99 0002 0268     		ldr	r2, [r0]
+ 100 0004 0020     		movs	r0, #0
+ 101 0006 C3F8D402 		str	r0, [r3, #724]
+ 102 000a B2F85830 		ldrh	r3, [r2, #88]
+ 103 000e 9BB2     		uxth	r3, r3
+ 104 0010 23F00103 		bic	r3, r3, #1
+ 105 0014 9BB2     		uxth	r3, r3
+ 106 0016 A2F85830 		strh	r3, [r2, #88]	@ movhi
+ 107 001a 7047     		bx	lr
+ 109              		.section	.text.HAL_PCDEx_ActivateLPM,"ax",%progbits
+ 110              		.align	1
+ 111              		.global	HAL_PCDEx_ActivateLPM
+ 112              		.syntax unified
+ 113              		.thumb
+ 114              		.thumb_func
+ 116              	HAL_PCDEx_ActivateLPM:
+ 117              		@ args = 0, pretend = 0, frame = 0
+ 118              		@ frame_needed = 0, uses_anonymous_args = 0
+ 119              		@ link register save eliminated.
+ 120 0000 0346     		mov	r3, r0
+ 121 0002 0268     		ldr	r2, [r0]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s 			page 3
+
+
+ 122 0004 0121     		movs	r1, #1
+ 123 0006 C0F8D012 		str	r1, [r0, #720]
+ 124 000a 0020     		movs	r0, #0
+ 125 000c 83F8C802 		strb	r0, [r3, #712]
+ 126 0010 B2F85430 		ldrh	r3, [r2, #84]
+ 127 0014 9BB2     		uxth	r3, r3
+ 128 0016 0B43     		orrs	r3, r3, r1
+ 129 0018 A2F85430 		strh	r3, [r2, #84]	@ movhi
+ 130 001c B2F85430 		ldrh	r3, [r2, #84]
+ 131 0020 9BB2     		uxth	r3, r3
+ 132 0022 43F00203 		orr	r3, r3, #2
+ 133 0026 A2F85430 		strh	r3, [r2, #84]	@ movhi
+ 134 002a 7047     		bx	lr
+ 136              		.section	.text.HAL_PCDEx_DeActivateLPM,"ax",%progbits
+ 137              		.align	1
+ 138              		.global	HAL_PCDEx_DeActivateLPM
+ 139              		.syntax unified
+ 140              		.thumb
+ 141              		.thumb_func
+ 143              	HAL_PCDEx_DeActivateLPM:
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146              		@ link register save eliminated.
+ 147 0000 0346     		mov	r3, r0
+ 148 0002 0268     		ldr	r2, [r0]
+ 149 0004 0020     		movs	r0, #0
+ 150 0006 C3F8D002 		str	r0, [r3, #720]
+ 151 000a B2F85430 		ldrh	r3, [r2, #84]
+ 152 000e 9BB2     		uxth	r3, r3
+ 153 0010 23F00103 		bic	r3, r3, #1
+ 154 0014 9BB2     		uxth	r3, r3
+ 155 0016 A2F85430 		strh	r3, [r2, #84]	@ movhi
+ 156 001a B2F85430 		ldrh	r3, [r2, #84]
+ 157 001e 9BB2     		uxth	r3, r3
+ 158 0020 23F00203 		bic	r3, r3, #2
+ 159 0024 9BB2     		uxth	r3, r3
+ 160 0026 A2F85430 		strh	r3, [r2, #84]	@ movhi
+ 161 002a 7047     		bx	lr
+ 163              		.section	.text.HAL_PCDEx_LPM_Callback,"ax",%progbits
+ 164              		.align	1
+ 165              		.weak	HAL_PCDEx_LPM_Callback
+ 166              		.syntax unified
+ 167              		.thumb
+ 168              		.thumb_func
+ 170              	HAL_PCDEx_LPM_Callback:
+ 171              		@ args = 0, pretend = 0, frame = 0
+ 172              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173              		@ link register save eliminated.
+ 174 0000 7047     		bx	lr
+ 176              		.section	.text.HAL_PCDEx_BCD_Callback,"ax",%progbits
+ 177              		.align	1
+ 178              		.weak	HAL_PCDEx_BCD_Callback
+ 179              		.syntax unified
+ 180              		.thumb
+ 181              		.thumb_func
+ 183              	HAL_PCDEx_BCD_Callback:
+ 184              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s 			page 4
+
+
+ 185              		@ frame_needed = 0, uses_anonymous_args = 0
+ 186              		@ link register save eliminated.
+ 187 0000 7047     		bx	lr
+ 189              		.section	.text.HAL_PCDEx_BCD_VBUSDetect,"ax",%progbits
+ 190              		.align	1
+ 191              		.global	HAL_PCDEx_BCD_VBUSDetect
+ 192              		.syntax unified
+ 193              		.thumb
+ 194              		.thumb_func
+ 196              	HAL_PCDEx_BCD_VBUSDetect:
+ 197              		@ args = 0, pretend = 0, frame = 0
+ 198              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199 0000 70B5     		push	{r4, r5, r6, lr}
+ 200 0002 0446     		mov	r4, r0
+ 201 0004 0568     		ldr	r5, [r0]
+ 202 0006 FFF7FEFF 		bl	HAL_GetTick
+ 203 000a 0646     		mov	r6, r0
+ 204 000c 4FF4AF70 		mov	r0, #350
+ 205 0010 FFF7FEFF 		bl	HAL_Delay
+ 206 0014 B5F85830 		ldrh	r3, [r5, #88]
+ 207 0018 9BB2     		uxth	r3, r3
+ 208 001a 43F00403 		orr	r3, r3, #4
+ 209 001e A5F85830 		strh	r3, [r5, #88]	@ movhi
+ 210 0022 3220     		movs	r0, #50
+ 211 0024 FFF7FEFF 		bl	HAL_Delay
+ 212 0028 B5F85830 		ldrh	r3, [r5, #88]
+ 213 002c 13F0200F 		tst	r3, #32
+ 214 0030 23D0     		beq	.L13
+ 215 0032 B5F85830 		ldrh	r3, [r5, #88]
+ 216 0036 9BB2     		uxth	r3, r3
+ 217 0038 23F00403 		bic	r3, r3, #4
+ 218 003c 9BB2     		uxth	r3, r3
+ 219 003e A5F85830 		strh	r3, [r5, #88]	@ movhi
+ 220 0042 3220     		movs	r0, #50
+ 221 0044 FFF7FEFF 		bl	HAL_Delay
+ 222 0048 B5F85830 		ldrh	r3, [r5, #88]
+ 223 004c 9BB2     		uxth	r3, r3
+ 224 004e 43F00803 		orr	r3, r3, #8
+ 225 0052 A5F85830 		strh	r3, [r5, #88]	@ movhi
+ 226 0056 3220     		movs	r0, #50
+ 227 0058 FFF7FEFF 		bl	HAL_Delay
+ 228 005c B5F85830 		ldrh	r3, [r5, #88]
+ 229 0060 13F0400F 		tst	r3, #64
+ 230 0064 04D0     		beq	.L14
+ 231 0066 FB21     		movs	r1, #251
+ 232 0068 2046     		mov	r0, r4
+ 233 006a FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
+ 234 006e 08E0     		b	.L15
+ 235              	.L14:
+ 236 0070 FC21     		movs	r1, #252
+ 237 0072 2046     		mov	r0, r4
+ 238 0074 FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
+ 239 0078 03E0     		b	.L15
+ 240              	.L13:
+ 241 007a FD21     		movs	r1, #253
+ 242 007c 2046     		mov	r0, r4
+ 243 007e FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s 			page 5
+
+
+ 244              	.L15:
+ 245 0082 2046     		mov	r0, r4
+ 246 0084 FFF7FEFF 		bl	HAL_PCDEx_DeActivateBCD
+ 247 0088 FFF7FEFF 		bl	HAL_GetTick
+ 248 008c 801B     		subs	r0, r0, r6
+ 249 008e B0F57A7F 		cmp	r0, #1000
+ 250 0092 04D9     		bls	.L16
+ 251 0094 FF21     		movs	r1, #255
+ 252 0096 2046     		mov	r0, r4
+ 253 0098 FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
+ 254              	.L12:
+ 255 009c 70BD     		pop	{r4, r5, r6, pc}
+ 256              	.L16:
+ 257 009e 0021     		movs	r1, #0
+ 258 00a0 2046     		mov	r0, r4
+ 259 00a2 FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
+ 260 00a6 F9E7     		b	.L12
+ 262              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_pcd_ex.c
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:18     .text.HAL_PCDEx_PMAConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:24     .text.HAL_PCDEx_PMAConfig:00000000 HAL_PCDEx_PMAConfig
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:57     .text.HAL_PCDEx_ActivateBCD:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:63     .text.HAL_PCDEx_ActivateBCD:00000000 HAL_PCDEx_ActivateBCD
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:88     .text.HAL_PCDEx_DeActivateBCD:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:94     .text.HAL_PCDEx_DeActivateBCD:00000000 HAL_PCDEx_DeActivateBCD
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:110    .text.HAL_PCDEx_ActivateLPM:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:116    .text.HAL_PCDEx_ActivateLPM:00000000 HAL_PCDEx_ActivateLPM
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:137    .text.HAL_PCDEx_DeActivateLPM:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:143    .text.HAL_PCDEx_DeActivateLPM:00000000 HAL_PCDEx_DeActivateLPM
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:164    .text.HAL_PCDEx_LPM_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:170    .text.HAL_PCDEx_LPM_Callback:00000000 HAL_PCDEx_LPM_Callback
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:177    .text.HAL_PCDEx_BCD_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:183    .text.HAL_PCDEx_BCD_Callback:00000000 HAL_PCDEx_BCD_Callback
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:190    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMx20ap.s:196    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 HAL_PCDEx_BCD_VBUSDetect
+
+UNDEFINED SYMBOLS
+HAL_GetTick
+HAL_Delay

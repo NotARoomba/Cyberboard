@@ -1,0 +1,387 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"usbd_desc.c"
+  16              		.text
+  17              		.section	.text.USBD_CDC_DeviceDescriptor,"ax",%progbits
+  18              		.align	1
+  19              		.global	USBD_CDC_DeviceDescriptor
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	USBD_CDC_DeviceDescriptor:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 1223     		movs	r3, #18
+  29 0002 0B80     		strh	r3, [r1]	@ movhi
+  30 0004 0048     		ldr	r0, .L2
+  31 0006 7047     		bx	lr
+  32              	.L3:
+  33              		.align	2
+  34              	.L2:
+  35 0008 00000000 		.word	USBD_CDC_DeviceDesc
+  37              		.section	.text.USBD_CDC_LangIDStrDescriptor,"ax",%progbits
+  38              		.align	1
+  39              		.global	USBD_CDC_LangIDStrDescriptor
+  40              		.syntax unified
+  41              		.thumb
+  42              		.thumb_func
+  44              	USBD_CDC_LangIDStrDescriptor:
+  45              		@ args = 0, pretend = 0, frame = 0
+  46              		@ frame_needed = 0, uses_anonymous_args = 0
+  47              		@ link register save eliminated.
+  48 0000 0423     		movs	r3, #4
+  49 0002 0B80     		strh	r3, [r1]	@ movhi
+  50 0004 0048     		ldr	r0, .L5
+  51 0006 7047     		bx	lr
+  52              	.L6:
+  53              		.align	2
+  54              	.L5:
+  55 0008 00000000 		.word	USBD_LangIDDesc
+  57              		.section	.text.IntToUnicode,"ax",%progbits
+  58              		.align	1
+  59              		.syntax unified
+  60              		.thumb
+  61              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s 			page 2
+
+
+  63              	IntToUnicode:
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66 0000 0023     		movs	r3, #0
+  67 0002 9342     		cmp	r3, r2
+  68 0004 1DD2     		bcs	.L15
+  69 0006 00B5     		push	{lr}
+  70 0008 10E0     		b	.L11
+  71              	.L9:
+  72 000a 0CF1370C 		add	ip, ip, #55
+  73 000e 01F813C0 		strb	ip, [r1, r3, lsl #1]
+  74              	.L10:
+  75 0012 0001     		lsls	r0, r0, #4
+  76 0014 4FEA430C 		lsl	ip, r3, #1
+  77 0018 0CF1010C 		add	ip, ip, #1
+  78 001c 4FF0000E 		mov	lr, #0
+  79 0020 01F80CE0 		strb	lr, [r1, ip]
+  80 0024 0133     		adds	r3, r3, #1
+  81 0026 DBB2     		uxtb	r3, r3
+  82 0028 9342     		cmp	r3, r2
+  83 002a 09D2     		bcs	.L16
+  84              	.L11:
+  85 002c 4FEA107C 		lsr	ip, r0, #28
+  86 0030 B0F1204F 		cmp	r0, #-1610612736
+  87 0034 E9D2     		bcs	.L9
+  88 0036 0CF1300C 		add	ip, ip, #48
+  89 003a 01F813C0 		strb	ip, [r1, r3, lsl #1]
+  90 003e E8E7     		b	.L10
+  91              	.L16:
+  92 0040 00BD     		pop	{pc}
+  93              	.L15:
+  94 0042 7047     		bx	lr
+  96              		.section	.text.Get_SerialNum,"ax",%progbits
+  97              		.align	1
+  98              		.syntax unified
+  99              		.thumb
+ 100              		.thumb_func
+ 102              	Get_SerialNum:
+ 103              		@ args = 0, pretend = 0, frame = 0
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105 0000 0B4B     		ldr	r3, .L24
+ 106 0002 D3F89005 		ldr	r0, [r3, #1424]
+ 107 0006 D3F89425 		ldr	r2, [r3, #1428]
+ 108 000a D3F89835 		ldr	r3, [r3, #1432]
+ 109 000e C018     		adds	r0, r0, r3
+ 110 0010 00D1     		bne	.L23
+ 111 0012 7047     		bx	lr
+ 112              	.L23:
+ 113 0014 10B5     		push	{r4, lr}
+ 114 0016 1446     		mov	r4, r2
+ 115 0018 0822     		movs	r2, #8
+ 116 001a 0649     		ldr	r1, .L24+4
+ 117 001c FFF7FEFF 		bl	IntToUnicode
+ 118 0020 0422     		movs	r2, #4
+ 119 0022 044B     		ldr	r3, .L24+4
+ 120 0024 03F11001 		add	r1, r3, #16
+ 121 0028 2046     		mov	r0, r4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s 			page 3
+
+
+ 122 002a FFF7FEFF 		bl	IntToUnicode
+ 123 002e 10BD     		pop	{r4, pc}
+ 124              	.L25:
+ 125              		.align	2
+ 126              	.L24:
+ 127 0030 0070FF1F 		.word	536834048
+ 128 0034 02000000 		.word	USBD_StringSerial+2
+ 130              		.section	.text.USBD_CDC_SerialStrDescriptor,"ax",%progbits
+ 131              		.align	1
+ 132              		.global	USBD_CDC_SerialStrDescriptor
+ 133              		.syntax unified
+ 134              		.thumb
+ 135              		.thumb_func
+ 137              	USBD_CDC_SerialStrDescriptor:
+ 138              		@ args = 0, pretend = 0, frame = 0
+ 139              		@ frame_needed = 0, uses_anonymous_args = 0
+ 140 0000 08B5     		push	{r3, lr}
+ 141 0002 1A23     		movs	r3, #26
+ 142 0004 0B80     		strh	r3, [r1]	@ movhi
+ 143 0006 FFF7FEFF 		bl	Get_SerialNum
+ 144 000a 0148     		ldr	r0, .L28
+ 145 000c 08BD     		pop	{r3, pc}
+ 146              	.L29:
+ 147 000e 00BF     		.align	2
+ 148              	.L28:
+ 149 0010 00000000 		.word	USBD_StringSerial
+ 151              		.section	.rodata.USBD_CDC_ProductStrDescriptor.str1.4,"aMS",%progbits,1
+ 152              		.align	2
+ 153              	.LC0:
+ 154 0000 53544D33 		.ascii	"STM32 Virtual ComPort\000"
+ 154      32205669 
+ 154      72747561 
+ 154      6C20436F 
+ 154      6D506F72 
+ 155              		.section	.text.USBD_CDC_ProductStrDescriptor,"ax",%progbits
+ 156              		.align	1
+ 157              		.global	USBD_CDC_ProductStrDescriptor
+ 158              		.syntax unified
+ 159              		.thumb
+ 160              		.thumb_func
+ 162              	USBD_CDC_ProductStrDescriptor:
+ 163              		@ args = 0, pretend = 0, frame = 0
+ 164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165 0000 08B5     		push	{r3, lr}
+ 166 0002 0A46     		mov	r2, r1
+ 167 0004 28B9     		cbnz	r0, .L31
+ 168 0006 0549     		ldr	r1, .L34
+ 169 0008 0548     		ldr	r0, .L34+4
+ 170 000a FFF7FEFF 		bl	USBD_GetString
+ 171              	.L32:
+ 172 000e 0348     		ldr	r0, .L34
+ 173 0010 08BD     		pop	{r3, pc}
+ 174              	.L31:
+ 175 0012 0249     		ldr	r1, .L34
+ 176 0014 0248     		ldr	r0, .L34+4
+ 177 0016 FFF7FEFF 		bl	USBD_GetString
+ 178 001a F8E7     		b	.L32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s 			page 4
+
+
+ 179              	.L35:
+ 180              		.align	2
+ 181              	.L34:
+ 182 001c 00000000 		.word	USBD_StrDesc
+ 183 0020 00000000 		.word	.LC0
+ 185              		.section	.rodata.USBD_CDC_ManufacturerStrDescriptor.str1.4,"aMS",%progbits,1
+ 186              		.align	2
+ 187              	.LC1:
+ 188 0000 53544D69 		.ascii	"STMicroelectronics\000"
+ 188      63726F65 
+ 188      6C656374 
+ 188      726F6E69 
+ 188      637300
+ 189              		.section	.text.USBD_CDC_ManufacturerStrDescriptor,"ax",%progbits
+ 190              		.align	1
+ 191              		.global	USBD_CDC_ManufacturerStrDescriptor
+ 192              		.syntax unified
+ 193              		.thumb
+ 194              		.thumb_func
+ 196              	USBD_CDC_ManufacturerStrDescriptor:
+ 197              		@ args = 0, pretend = 0, frame = 0
+ 198              		@ frame_needed = 0, uses_anonymous_args = 0
+ 199 0000 10B5     		push	{r4, lr}
+ 200 0002 0A46     		mov	r2, r1
+ 201 0004 034C     		ldr	r4, .L38
+ 202 0006 2146     		mov	r1, r4
+ 203 0008 0348     		ldr	r0, .L38+4
+ 204 000a FFF7FEFF 		bl	USBD_GetString
+ 205 000e 2046     		mov	r0, r4
+ 206 0010 10BD     		pop	{r4, pc}
+ 207              	.L39:
+ 208 0012 00BF     		.align	2
+ 209              	.L38:
+ 210 0014 00000000 		.word	USBD_StrDesc
+ 211 0018 00000000 		.word	.LC1
+ 213              		.section	.rodata.USBD_CDC_ConfigStrDescriptor.str1.4,"aMS",%progbits,1
+ 214              		.align	2
+ 215              	.LC2:
+ 216 0000 43444320 		.ascii	"CDC Config\000"
+ 216      436F6E66 
+ 216      696700
+ 217              		.section	.text.USBD_CDC_ConfigStrDescriptor,"ax",%progbits
+ 218              		.align	1
+ 219              		.global	USBD_CDC_ConfigStrDescriptor
+ 220              		.syntax unified
+ 221              		.thumb
+ 222              		.thumb_func
+ 224              	USBD_CDC_ConfigStrDescriptor:
+ 225              		@ args = 0, pretend = 0, frame = 0
+ 226              		@ frame_needed = 0, uses_anonymous_args = 0
+ 227 0000 08B5     		push	{r3, lr}
+ 228 0002 0A46     		mov	r2, r1
+ 229 0004 28B9     		cbnz	r0, .L41
+ 230 0006 0549     		ldr	r1, .L44
+ 231 0008 0548     		ldr	r0, .L44+4
+ 232 000a FFF7FEFF 		bl	USBD_GetString
+ 233              	.L42:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s 			page 5
+
+
+ 234 000e 0348     		ldr	r0, .L44
+ 235 0010 08BD     		pop	{r3, pc}
+ 236              	.L41:
+ 237 0012 0249     		ldr	r1, .L44
+ 238 0014 0248     		ldr	r0, .L44+4
+ 239 0016 FFF7FEFF 		bl	USBD_GetString
+ 240 001a F8E7     		b	.L42
+ 241              	.L45:
+ 242              		.align	2
+ 243              	.L44:
+ 244 001c 00000000 		.word	USBD_StrDesc
+ 245 0020 00000000 		.word	.LC2
+ 247              		.section	.rodata.USBD_CDC_InterfaceStrDescriptor.str1.4,"aMS",%progbits,1
+ 248              		.align	2
+ 249              	.LC3:
+ 250 0000 43444320 		.ascii	"CDC Interface\000"
+ 250      496E7465 
+ 250      72666163 
+ 250      6500
+ 251              		.section	.text.USBD_CDC_InterfaceStrDescriptor,"ax",%progbits
+ 252              		.align	1
+ 253              		.global	USBD_CDC_InterfaceStrDescriptor
+ 254              		.syntax unified
+ 255              		.thumb
+ 256              		.thumb_func
+ 258              	USBD_CDC_InterfaceStrDescriptor:
+ 259              		@ args = 0, pretend = 0, frame = 0
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261 0000 08B5     		push	{r3, lr}
+ 262 0002 0A46     		mov	r2, r1
+ 263 0004 28B9     		cbnz	r0, .L47
+ 264 0006 0549     		ldr	r1, .L50
+ 265 0008 0548     		ldr	r0, .L50+4
+ 266 000a FFF7FEFF 		bl	USBD_GetString
+ 267              	.L48:
+ 268 000e 0348     		ldr	r0, .L50
+ 269 0010 08BD     		pop	{r3, pc}
+ 270              	.L47:
+ 271 0012 0249     		ldr	r1, .L50
+ 272 0014 0248     		ldr	r0, .L50+4
+ 273 0016 FFF7FEFF 		bl	USBD_GetString
+ 274 001a F8E7     		b	.L48
+ 275              	.L51:
+ 276              		.align	2
+ 277              	.L50:
+ 278 001c 00000000 		.word	USBD_StrDesc
+ 279 0020 00000000 		.word	.LC3
+ 281              		.global	USBD_StringSerial
+ 282              		.section	.data.USBD_StringSerial,"aw"
+ 283              		.align	2
+ 286              	USBD_StringSerial:
+ 287 0000 1A0300   		.ascii	"\032\003\000"
+ 288 0003 00000000 		.space	23
+ 288      00000000 
+ 288      00000000 
+ 288      00000000 
+ 288      00000000 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s 			page 6
+
+
+ 289              		.global	USBD_StrDesc
+ 290              		.section	.bss.USBD_StrDesc,"aw",%nobits
+ 291              		.align	2
+ 294              	USBD_StrDesc:
+ 295 0000 00000000 		.space	512
+ 295      00000000 
+ 295      00000000 
+ 295      00000000 
+ 295      00000000 
+ 296              		.global	USBD_LangIDDesc
+ 297              		.section	.data.USBD_LangIDDesc,"aw"
+ 298              		.align	2
+ 301              	USBD_LangIDDesc:
+ 302 0000 04030904 		.ascii	"\004\003\011\004"
+ 303              		.global	USBD_CDC_DeviceDesc
+ 304              		.section	.data.USBD_CDC_DeviceDesc,"aw"
+ 305              		.align	2
+ 308              	USBD_CDC_DeviceDesc:
+ 309 0000 12010002 		.ascii	"\022\001\000\002\002\002\000@\203\004@W\000\002\001"
+ 309      02020040 
+ 309      83044057 
+ 309      000201
+ 310 000f 020301   		.ascii	"\002\003\001"
+ 311              		.global	CDC_Desc
+ 312              		.section	.data.CDC_Desc,"aw"
+ 313              		.align	2
+ 316              	CDC_Desc:
+ 317 0000 00000000 		.word	USBD_CDC_DeviceDescriptor
+ 318 0004 00000000 		.word	USBD_CDC_LangIDStrDescriptor
+ 319 0008 00000000 		.word	USBD_CDC_ManufacturerStrDescriptor
+ 320 000c 00000000 		.word	USBD_CDC_ProductStrDescriptor
+ 321 0010 00000000 		.word	USBD_CDC_SerialStrDescriptor
+ 322 0014 00000000 		.word	USBD_CDC_ConfigStrDescriptor
+ 323 0018 00000000 		.word	USBD_CDC_InterfaceStrDescriptor
+ 324 001c 00000000 		.space	4
+ 325              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 usbd_desc.c
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:18     .text.USBD_CDC_DeviceDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:24     .text.USBD_CDC_DeviceDescriptor:00000000 USBD_CDC_DeviceDescriptor
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:35     .text.USBD_CDC_DeviceDescriptor:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:308    .data.USBD_CDC_DeviceDesc:00000000 USBD_CDC_DeviceDesc
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:38     .text.USBD_CDC_LangIDStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:44     .text.USBD_CDC_LangIDStrDescriptor:00000000 USBD_CDC_LangIDStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:55     .text.USBD_CDC_LangIDStrDescriptor:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:301    .data.USBD_LangIDDesc:00000000 USBD_LangIDDesc
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:58     .text.IntToUnicode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:63     .text.IntToUnicode:00000000 IntToUnicode
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:97     .text.Get_SerialNum:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:102    .text.Get_SerialNum:00000000 Get_SerialNum
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:127    .text.Get_SerialNum:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:286    .data.USBD_StringSerial:00000000 USBD_StringSerial
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:131    .text.USBD_CDC_SerialStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:137    .text.USBD_CDC_SerialStrDescriptor:00000000 USBD_CDC_SerialStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:149    .text.USBD_CDC_SerialStrDescriptor:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:152    .rodata.USBD_CDC_ProductStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:156    .text.USBD_CDC_ProductStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:162    .text.USBD_CDC_ProductStrDescriptor:00000000 USBD_CDC_ProductStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:182    .text.USBD_CDC_ProductStrDescriptor:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:294    .bss.USBD_StrDesc:00000000 USBD_StrDesc
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:186    .rodata.USBD_CDC_ManufacturerStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:190    .text.USBD_CDC_ManufacturerStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:196    .text.USBD_CDC_ManufacturerStrDescriptor:00000000 USBD_CDC_ManufacturerStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:210    .text.USBD_CDC_ManufacturerStrDescriptor:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:214    .rodata.USBD_CDC_ConfigStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:218    .text.USBD_CDC_ConfigStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:224    .text.USBD_CDC_ConfigStrDescriptor:00000000 USBD_CDC_ConfigStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:244    .text.USBD_CDC_ConfigStrDescriptor:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:248    .rodata.USBD_CDC_InterfaceStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:252    .text.USBD_CDC_InterfaceStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:258    .text.USBD_CDC_InterfaceStrDescriptor:00000000 USBD_CDC_InterfaceStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:278    .text.USBD_CDC_InterfaceStrDescriptor:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:283    .data.USBD_StringSerial:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:291    .bss.USBD_StrDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:298    .data.USBD_LangIDDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:305    .data.USBD_CDC_DeviceDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:316    .data.CDC_Desc:00000000 CDC_Desc
+C:\Users\Nathan\AppData\Local\Temp\cceOiwE6.s:313    .data.CDC_Desc:00000000 $d
+
+UNDEFINED SYMBOLS
+USBD_GetString

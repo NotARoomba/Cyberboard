@@ -1,0 +1,102 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2TQ6aV.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"usb_device.c"
+  16              		.text
+  17              		.section	.text.MX_USB_Device_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	MX_USB_Device_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	MX_USB_Device_Init:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 08B5     		push	{r3, lr}
+  28 0002 0022     		movs	r2, #0
+  29 0004 0F49     		ldr	r1, .L11
+  30 0006 1048     		ldr	r0, .L11+4
+  31 0008 FFF7FEFF 		bl	USBD_Init
+  32 000c 70B9     		cbnz	r0, .L7
+  33              	.L2:
+  34 000e 0F49     		ldr	r1, .L11+8
+  35 0010 0D48     		ldr	r0, .L11+4
+  36 0012 FFF7FEFF 		bl	USBD_RegisterClass
+  37 0016 60B9     		cbnz	r0, .L8
+  38              	.L3:
+  39 0018 0D49     		ldr	r1, .L11+12
+  40 001a 0B48     		ldr	r0, .L11+4
+  41 001c FFF7FEFF 		bl	USBD_CDC_RegisterInterface
+  42 0020 50B9     		cbnz	r0, .L9
+  43              	.L4:
+  44 0022 0948     		ldr	r0, .L11+4
+  45 0024 FFF7FEFF 		bl	USBD_Start
+  46 0028 48B9     		cbnz	r0, .L10
+  47              	.L1:
+  48 002a 08BD     		pop	{r3, pc}
+  49              	.L7:
+  50 002c FFF7FEFF 		bl	Error_Handler
+  51 0030 EDE7     		b	.L2
+  52              	.L8:
+  53 0032 FFF7FEFF 		bl	Error_Handler
+  54 0036 EFE7     		b	.L3
+  55              	.L9:
+  56 0038 FFF7FEFF 		bl	Error_Handler
+  57 003c F1E7     		b	.L4
+  58              	.L10:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2TQ6aV.s 			page 2
+
+
+  59 003e FFF7FEFF 		bl	Error_Handler
+  60 0042 F2E7     		b	.L1
+  61              	.L12:
+  62              		.align	2
+  63              	.L11:
+  64 0044 00000000 		.word	CDC_Desc
+  65 0048 00000000 		.word	hUsbDeviceFS
+  66 004c 00000000 		.word	USBD_CDC
+  67 0050 00000000 		.word	USBD_Interface_fops_FS
+  69              		.global	hUsbDeviceFS
+  70              		.section	.bss.hUsbDeviceFS,"aw",%nobits
+  71              		.align	2
+  74              	hUsbDeviceFS:
+  75 0000 00000000 		.space	732
+  75      00000000 
+  75      00000000 
+  75      00000000 
+  75      00000000 
+  76              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2TQ6aV.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 usb_device.c
+C:\Users\Nathan\AppData\Local\Temp\cc2TQ6aV.s:18     .text.MX_USB_Device_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc2TQ6aV.s:24     .text.MX_USB_Device_Init:00000000 MX_USB_Device_Init
+C:\Users\Nathan\AppData\Local\Temp\cc2TQ6aV.s:64     .text.MX_USB_Device_Init:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\cc2TQ6aV.s:74     .bss.hUsbDeviceFS:00000000 hUsbDeviceFS
+C:\Users\Nathan\AppData\Local\Temp\cc2TQ6aV.s:71     .bss.hUsbDeviceFS:00000000 $d
+
+UNDEFINED SYMBOLS
+USBD_Init
+USBD_RegisterClass
+USBD_CDC_RegisterInterface
+USBD_Start
+Error_Handler
+CDC_Desc
+USBD_CDC
+USBD_Interface_fops_FS

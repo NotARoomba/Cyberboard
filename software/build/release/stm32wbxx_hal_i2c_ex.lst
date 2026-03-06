@@ -1,0 +1,272 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_i2c_ex.c"
+  16              		.text
+  17              		.section	.text.HAL_I2CEx_ConfigAnalogFilter,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_I2CEx_ConfigAnalogFilter
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_I2CEx_ConfigAnalogFilter:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 0346     		mov	r3, r0
+  29 0002 90F84120 		ldrb	r2, [r0, #65]	@ zero_extendqisi2
+  30 0006 202A     		cmp	r2, #32
+  31 0008 23D1     		bne	.L3
+  32 000a 90F84020 		ldrb	r2, [r0, #64]	@ zero_extendqisi2
+  33 000e 012A     		cmp	r2, #1
+  34 0010 21D0     		beq	.L4
+  35 0012 0122     		movs	r2, #1
+  36 0014 80F84020 		strb	r2, [r0, #64]
+  37 0018 2422     		movs	r2, #36
+  38 001a 80F84120 		strb	r2, [r0, #65]
+  39 001e 0068     		ldr	r0, [r0]
+  40 0020 0268     		ldr	r2, [r0]
+  41 0022 22F00102 		bic	r2, r2, #1
+  42 0026 0260     		str	r2, [r0]
+  43 0028 1868     		ldr	r0, [r3]
+  44 002a 0268     		ldr	r2, [r0]
+  45 002c 22F48052 		bic	r2, r2, #4096
+  46 0030 0260     		str	r2, [r0]
+  47 0032 1868     		ldr	r0, [r3]
+  48 0034 0268     		ldr	r2, [r0]
+  49 0036 0A43     		orrs	r2, r2, r1
+  50 0038 0260     		str	r2, [r0]
+  51 003a 1968     		ldr	r1, [r3]
+  52 003c 0A68     		ldr	r2, [r1]
+  53 003e 42F00102 		orr	r2, r2, #1
+  54 0042 0A60     		str	r2, [r1]
+  55 0044 2022     		movs	r2, #32
+  56 0046 83F84120 		strb	r2, [r3, #65]
+  57 004a 0020     		movs	r0, #0
+  58 004c 83F84000 		strb	r0, [r3, #64]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s 			page 2
+
+
+  59 0050 7047     		bx	lr
+  60              	.L3:
+  61 0052 0220     		movs	r0, #2
+  62 0054 7047     		bx	lr
+  63              	.L4:
+  64 0056 0220     		movs	r0, #2
+  65 0058 7047     		bx	lr
+  67              		.section	.text.HAL_I2CEx_ConfigDigitalFilter,"ax",%progbits
+  68              		.align	1
+  69              		.global	HAL_I2CEx_ConfigDigitalFilter
+  70              		.syntax unified
+  71              		.thumb
+  72              		.thumb_func
+  74              	HAL_I2CEx_ConfigDigitalFilter:
+  75              		@ args = 0, pretend = 0, frame = 0
+  76              		@ frame_needed = 0, uses_anonymous_args = 0
+  77              		@ link register save eliminated.
+  78 0000 0346     		mov	r3, r0
+  79 0002 90F84120 		ldrb	r2, [r0, #65]	@ zero_extendqisi2
+  80 0006 202A     		cmp	r2, #32
+  81 0008 21D1     		bne	.L7
+  82 000a 90F84020 		ldrb	r2, [r0, #64]	@ zero_extendqisi2
+  83 000e 012A     		cmp	r2, #1
+  84 0010 1FD0     		beq	.L8
+  85 0012 0122     		movs	r2, #1
+  86 0014 80F84020 		strb	r2, [r0, #64]
+  87 0018 2422     		movs	r2, #36
+  88 001a 80F84120 		strb	r2, [r0, #65]
+  89 001e 0068     		ldr	r0, [r0]
+  90 0020 0268     		ldr	r2, [r0]
+  91 0022 22F00102 		bic	r2, r2, #1
+  92 0026 0260     		str	r2, [r0]
+  93 0028 1868     		ldr	r0, [r3]
+  94 002a 0268     		ldr	r2, [r0]
+  95 002c 22F47062 		bic	r2, r2, #3840
+  96 0030 42EA0122 		orr	r2, r2, r1, lsl #8
+  97 0034 0260     		str	r2, [r0]
+  98 0036 1968     		ldr	r1, [r3]
+  99 0038 0A68     		ldr	r2, [r1]
+ 100 003a 42F00102 		orr	r2, r2, #1
+ 101 003e 0A60     		str	r2, [r1]
+ 102 0040 2022     		movs	r2, #32
+ 103 0042 83F84120 		strb	r2, [r3, #65]
+ 104 0046 0020     		movs	r0, #0
+ 105 0048 83F84000 		strb	r0, [r3, #64]
+ 106 004c 7047     		bx	lr
+ 107              	.L7:
+ 108 004e 0220     		movs	r0, #2
+ 109 0050 7047     		bx	lr
+ 110              	.L8:
+ 111 0052 0220     		movs	r0, #2
+ 112 0054 7047     		bx	lr
+ 114              		.section	.text.HAL_I2CEx_EnableWakeUp,"ax",%progbits
+ 115              		.align	1
+ 116              		.global	HAL_I2CEx_EnableWakeUp
+ 117              		.syntax unified
+ 118              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s 			page 3
+
+
+ 119              		.thumb_func
+ 121              	HAL_I2CEx_EnableWakeUp:
+ 122              		@ args = 0, pretend = 0, frame = 0
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124              		@ link register save eliminated.
+ 125 0000 0346     		mov	r3, r0
+ 126 0002 90F84120 		ldrb	r2, [r0, #65]	@ zero_extendqisi2
+ 127 0006 202A     		cmp	r2, #32
+ 128 0008 1FD1     		bne	.L11
+ 129 000a 90F84020 		ldrb	r2, [r0, #64]	@ zero_extendqisi2
+ 130 000e 012A     		cmp	r2, #1
+ 131 0010 1DD0     		beq	.L12
+ 132 0012 0122     		movs	r2, #1
+ 133 0014 80F84020 		strb	r2, [r0, #64]
+ 134 0018 2422     		movs	r2, #36
+ 135 001a 80F84120 		strb	r2, [r0, #65]
+ 136 001e 0168     		ldr	r1, [r0]
+ 137 0020 0A68     		ldr	r2, [r1]
+ 138 0022 22F00102 		bic	r2, r2, #1
+ 139 0026 0A60     		str	r2, [r1]
+ 140 0028 0168     		ldr	r1, [r0]
+ 141 002a 0A68     		ldr	r2, [r1]
+ 142 002c 42F48022 		orr	r2, r2, #262144
+ 143 0030 0A60     		str	r2, [r1]
+ 144 0032 0168     		ldr	r1, [r0]
+ 145 0034 0A68     		ldr	r2, [r1]
+ 146 0036 42F00102 		orr	r2, r2, #1
+ 147 003a 0A60     		str	r2, [r1]
+ 148 003c 2022     		movs	r2, #32
+ 149 003e 80F84120 		strb	r2, [r0, #65]
+ 150 0042 0020     		movs	r0, #0
+ 151 0044 83F84000 		strb	r0, [r3, #64]
+ 152 0048 7047     		bx	lr
+ 153              	.L11:
+ 154 004a 0220     		movs	r0, #2
+ 155 004c 7047     		bx	lr
+ 156              	.L12:
+ 157 004e 0220     		movs	r0, #2
+ 158 0050 7047     		bx	lr
+ 160              		.section	.text.HAL_I2CEx_DisableWakeUp,"ax",%progbits
+ 161              		.align	1
+ 162              		.global	HAL_I2CEx_DisableWakeUp
+ 163              		.syntax unified
+ 164              		.thumb
+ 165              		.thumb_func
+ 167              	HAL_I2CEx_DisableWakeUp:
+ 168              		@ args = 0, pretend = 0, frame = 0
+ 169              		@ frame_needed = 0, uses_anonymous_args = 0
+ 170              		@ link register save eliminated.
+ 171 0000 0346     		mov	r3, r0
+ 172 0002 90F84120 		ldrb	r2, [r0, #65]	@ zero_extendqisi2
+ 173 0006 202A     		cmp	r2, #32
+ 174 0008 1FD1     		bne	.L15
+ 175 000a 90F84020 		ldrb	r2, [r0, #64]	@ zero_extendqisi2
+ 176 000e 012A     		cmp	r2, #1
+ 177 0010 1DD0     		beq	.L16
+ 178 0012 0122     		movs	r2, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s 			page 4
+
+
+ 179 0014 80F84020 		strb	r2, [r0, #64]
+ 180 0018 2422     		movs	r2, #36
+ 181 001a 80F84120 		strb	r2, [r0, #65]
+ 182 001e 0168     		ldr	r1, [r0]
+ 183 0020 0A68     		ldr	r2, [r1]
+ 184 0022 22F00102 		bic	r2, r2, #1
+ 185 0026 0A60     		str	r2, [r1]
+ 186 0028 0168     		ldr	r1, [r0]
+ 187 002a 0A68     		ldr	r2, [r1]
+ 188 002c 22F48022 		bic	r2, r2, #262144
+ 189 0030 0A60     		str	r2, [r1]
+ 190 0032 0168     		ldr	r1, [r0]
+ 191 0034 0A68     		ldr	r2, [r1]
+ 192 0036 42F00102 		orr	r2, r2, #1
+ 193 003a 0A60     		str	r2, [r1]
+ 194 003c 2022     		movs	r2, #32
+ 195 003e 80F84120 		strb	r2, [r0, #65]
+ 196 0042 0020     		movs	r0, #0
+ 197 0044 83F84000 		strb	r0, [r3, #64]
+ 198 0048 7047     		bx	lr
+ 199              	.L15:
+ 200 004a 0220     		movs	r0, #2
+ 201 004c 7047     		bx	lr
+ 202              	.L16:
+ 203 004e 0220     		movs	r0, #2
+ 204 0050 7047     		bx	lr
+ 206              		.section	.text.HAL_I2CEx_EnableFastModePlus,"ax",%progbits
+ 207              		.align	1
+ 208              		.global	HAL_I2CEx_EnableFastModePlus
+ 209              		.syntax unified
+ 210              		.thumb
+ 211              		.thumb_func
+ 213              	HAL_I2CEx_EnableFastModePlus:
+ 214              		@ args = 0, pretend = 0, frame = 0
+ 215              		@ frame_needed = 0, uses_anonymous_args = 0
+ 216              		@ link register save eliminated.
+ 217 0000 024A     		ldr	r2, .L18
+ 218 0002 5368     		ldr	r3, [r2, #4]
+ 219 0004 0343     		orrs	r3, r3, r0
+ 220 0006 5360     		str	r3, [r2, #4]
+ 221 0008 7047     		bx	lr
+ 222              	.L19:
+ 223 000a 00BF     		.align	2
+ 224              	.L18:
+ 225 000c 00000140 		.word	1073807360
+ 227              		.section	.text.HAL_I2CEx_DisableFastModePlus,"ax",%progbits
+ 228              		.align	1
+ 229              		.global	HAL_I2CEx_DisableFastModePlus
+ 230              		.syntax unified
+ 231              		.thumb
+ 232              		.thumb_func
+ 234              	HAL_I2CEx_DisableFastModePlus:
+ 235              		@ args = 0, pretend = 0, frame = 0
+ 236              		@ frame_needed = 0, uses_anonymous_args = 0
+ 237              		@ link register save eliminated.
+ 238 0000 024A     		ldr	r2, .L21
+ 239 0002 5368     		ldr	r3, [r2, #4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s 			page 5
+
+
+ 240 0004 23EA0003 		bic	r3, r3, r0
+ 241 0008 5360     		str	r3, [r2, #4]
+ 242 000a 7047     		bx	lr
+ 243              	.L22:
+ 244              		.align	2
+ 245              	.L21:
+ 246 000c 00000140 		.word	1073807360
+ 248              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_i2c_ex.c
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:18     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:24     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 HAL_I2CEx_ConfigAnalogFilter
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:68     .text.HAL_I2CEx_ConfigDigitalFilter:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:74     .text.HAL_I2CEx_ConfigDigitalFilter:00000000 HAL_I2CEx_ConfigDigitalFilter
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:115    .text.HAL_I2CEx_EnableWakeUp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:121    .text.HAL_I2CEx_EnableWakeUp:00000000 HAL_I2CEx_EnableWakeUp
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:161    .text.HAL_I2CEx_DisableWakeUp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:167    .text.HAL_I2CEx_DisableWakeUp:00000000 HAL_I2CEx_DisableWakeUp
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:207    .text.HAL_I2CEx_EnableFastModePlus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:213    .text.HAL_I2CEx_EnableFastModePlus:00000000 HAL_I2CEx_EnableFastModePlus
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:225    .text.HAL_I2CEx_EnableFastModePlus:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:228    .text.HAL_I2CEx_DisableFastModePlus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:234    .text.HAL_I2CEx_DisableFastModePlus:00000000 HAL_I2CEx_DisableFastModePlus
+C:\Users\Nathan\AppData\Local\Temp\ccETo7hj.s:246    .text.HAL_I2CEx_DisableFastModePlus:0000000c $d
+
+NO UNDEFINED SYMBOLS
