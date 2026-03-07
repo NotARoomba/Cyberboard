@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s 			page 1
+ARM GAS  /tmp/ccaYeAcu.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -23,399 +23,528 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s 			page 1
   20              		.thumb
   21              		.thumb_func
   23              	MX_GPIO_Init:
-  24              		@ args = 0, pretend = 0, frame = 32
+  24              		@ args = 0, pretend = 0, frame = 40
   25              		@ frame_needed = 0, uses_anonymous_args = 0
-  26 0000 F0B5     		push	{r4, r5, r6, r7, lr}
-  27 0002 89B0     		sub	sp, sp, #36
-  28 0004 03AD     		add	r5, sp, #12
-  29 0006 0024     		movs	r4, #0
-  30 0008 0394     		str	r4, [sp, #12]
-  31 000a 0494     		str	r4, [sp, #16]
-  32 000c 0594     		str	r4, [sp, #20]
-  33 000e 0694     		str	r4, [sp, #24]
-  34 0010 0794     		str	r4, [sp, #28]
-  35 0012 4FF0B043 		mov	r3, #1476395008
-  36 0016 DA6C     		ldr	r2, [r3, #76]
-  37 0018 42F00402 		orr	r2, r2, #4
-  38 001c DA64     		str	r2, [r3, #76]
-  39 001e DA6C     		ldr	r2, [r3, #76]
-  40 0020 02F00402 		and	r2, r2, #4
-  41 0024 0292     		str	r2, [sp, #8]
-  42 0026 029A     		ldr	r2, [sp, #8]
-  43 0028 DA6C     		ldr	r2, [r3, #76]
-  44 002a 42F00202 		orr	r2, r2, #2
-  45 002e DA64     		str	r2, [r3, #76]
-  46 0030 DA6C     		ldr	r2, [r3, #76]
-  47 0032 02F00202 		and	r2, r2, #2
-  48 0036 0192     		str	r2, [sp, #4]
-  49 0038 019A     		ldr	r2, [sp, #4]
-  50 003a DA6C     		ldr	r2, [r3, #76]
-  51 003c 42F00102 		orr	r2, r2, #1
-  52 0040 DA64     		str	r2, [r3, #76]
-  53 0042 DB6C     		ldr	r3, [r3, #76]
-  54 0044 03F00103 		and	r3, r3, #1
-  55 0048 0093     		str	r3, [sp]
-  56 004a 009B     		ldr	r3, [sp]
-  57 004c 124E     		ldr	r6, .L3
-  58 004e 0122     		movs	r2, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s 			page 2
+  26 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+  27 0004 8BB0     		sub	sp, sp, #44
+  28 0006 05AD     		add	r5, sp, #20
+  29 0008 0024     		movs	r4, #0
+  30 000a 0594     		str	r4, [sp, #20]
+  31 000c 0694     		str	r4, [sp, #24]
+  32 000e 0794     		str	r4, [sp, #28]
+  33 0010 0894     		str	r4, [sp, #32]
+  34 0012 0994     		str	r4, [sp, #36]
+  35 0014 4FF0B043 		mov	r3, #1476395008
+  36 0018 DA6C     		ldr	r2, [r3, #76]
+  37 001a 42F00402 		orr	r2, r2, #4
+  38 001e DA64     		str	r2, [r3, #76]
+  39 0020 DA6C     		ldr	r2, [r3, #76]
+  40 0022 02F00402 		and	r2, r2, #4
+  41 0026 0492     		str	r2, [sp, #16]
+  42 0028 049A     		ldr	r2, [sp, #16]
+  43 002a DA6C     		ldr	r2, [r3, #76]
+  44 002c 42F00202 		orr	r2, r2, #2
+  45 0030 DA64     		str	r2, [r3, #76]
+  46 0032 DA6C     		ldr	r2, [r3, #76]
+  47 0034 02F00202 		and	r2, r2, #2
+  48 0038 0392     		str	r2, [sp, #12]
+  49 003a 039A     		ldr	r2, [sp, #12]
+  50 003c DA6C     		ldr	r2, [r3, #76]
+  51 003e 42F00102 		orr	r2, r2, #1
+  52 0042 DA64     		str	r2, [r3, #76]
+  53 0044 DA6C     		ldr	r2, [r3, #76]
+  54 0046 02F00102 		and	r2, r2, #1
+  55 004a 0292     		str	r2, [sp, #8]
+  56 004c 029A     		ldr	r2, [sp, #8]
+  57 004e DA6C     		ldr	r2, [r3, #76]
+  58 0050 42F00802 		orr	r2, r2, #8
+ARM GAS  /tmp/ccaYeAcu.s 			page 2
 
 
-  59 0050 4FF40051 		mov	r1, #8192
-  60 0054 3046     		mov	r0, r6
-  61 0056 FFF7FEFF 		bl	HAL_GPIO_WritePin
-  62 005a 4FF40053 		mov	r3, #8192
-  63 005e 0393     		str	r3, [sp, #12]
-  64 0060 0127     		movs	r7, #1
-  65 0062 0497     		str	r7, [sp, #16]
-  66 0064 0597     		str	r7, [sp, #20]
-  67 0066 0694     		str	r4, [sp, #24]
-  68 0068 2946     		mov	r1, r5
-  69 006a 3046     		mov	r0, r6
-  70 006c FFF7FEFF 		bl	HAL_GPIO_Init
-  71 0070 0397     		str	r7, [sp, #12]
-  72 0072 4FF48817 		mov	r7, #1114112
-  73 0076 0497     		str	r7, [sp, #16]
-  74 0078 0594     		str	r4, [sp, #20]
-  75 007a 2946     		mov	r1, r5
-  76 007c 3046     		mov	r0, r6
-  77 007e FFF7FEFF 		bl	HAL_GPIO_Init
-  78 0082 C023     		movs	r3, #192
-  79 0084 0393     		str	r3, [sp, #12]
-  80 0086 0497     		str	r7, [sp, #16]
-  81 0088 0594     		str	r4, [sp, #20]
-  82 008a 2946     		mov	r1, r5
-  83 008c 0348     		ldr	r0, .L3+4
-  84 008e FFF7FEFF 		bl	HAL_GPIO_Init
-  85 0092 09B0     		add	sp, sp, #36
-  86              		@ sp needed
-  87 0094 F0BD     		pop	{r4, r5, r6, r7, pc}
-  88              	.L4:
-  89 0096 00BF     		.align	2
-  90              	.L3:
-  91 0098 00080048 		.word	1207961600
-  92 009c 00040048 		.word	1207960576
-  94              		.section	.text.Error_Handler,"ax",%progbits
-  95              		.align	1
-  96              		.global	Error_Handler
-  97              		.syntax unified
-  98              		.thumb
-  99              		.thumb_func
- 101              	Error_Handler:
- 102              		@ Volatile: function does not return.
- 103              		@ args = 0, pretend = 0, frame = 0
- 104              		@ frame_needed = 0, uses_anonymous_args = 0
- 105              		@ link register save eliminated.
- 106              		.syntax unified
- 107              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
- 108 0000 72B6     		cpsid i
- 109              	@ 0 "" 2
- 110              		.thumb
- 111              		.syntax unified
- 112              	.L6:
- 113 0002 FEE7     		b	.L6
- 115              		.section	.text.MX_I2C1_Init,"ax",%progbits
+  59 0054 DA64     		str	r2, [r3, #76]
+  60 0056 DB6C     		ldr	r3, [r3, #76]
+  61 0058 03F00803 		and	r3, r3, #8
+  62 005c 0193     		str	r3, [sp, #4]
+  63 005e 019B     		ldr	r3, [sp, #4]
+  64 0060 1B4F     		ldr	r7, .L3
+  65 0062 0122     		movs	r2, #1
+  66 0064 4FF40051 		mov	r1, #8192
+  67 0068 3846     		mov	r0, r7
+  68 006a FFF7FEFF 		bl	HAL_GPIO_WritePin
+  69 006e DFF86890 		ldr	r9, .L3+8
+  70 0072 0122     		movs	r2, #1
+  71 0074 0221     		movs	r1, #2
+  72 0076 4846     		mov	r0, r9
+  73 0078 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  74 007c 4FF40053 		mov	r3, #8192
+  75 0080 0593     		str	r3, [sp, #20]
+  76 0082 0126     		movs	r6, #1
+  77 0084 0696     		str	r6, [sp, #24]
+  78 0086 0796     		str	r6, [sp, #28]
+  79 0088 0894     		str	r4, [sp, #32]
+  80 008a 2946     		mov	r1, r5
+  81 008c 3846     		mov	r0, r7
+  82 008e FFF7FEFF 		bl	HAL_GPIO_Init
+  83 0092 0596     		str	r6, [sp, #20]
+  84 0094 4FF48818 		mov	r8, #1114112
+  85 0098 CDF81880 		str	r8, [sp, #24]
+  86 009c 0794     		str	r4, [sp, #28]
+  87 009e 2946     		mov	r1, r5
+  88 00a0 3846     		mov	r0, r7
+  89 00a2 FFF7FEFF 		bl	HAL_GPIO_Init
+  90 00a6 0223     		movs	r3, #2
+  91 00a8 0593     		str	r3, [sp, #20]
+  92 00aa 0696     		str	r6, [sp, #24]
+  93 00ac 0794     		str	r4, [sp, #28]
+  94 00ae 0894     		str	r4, [sp, #32]
+  95 00b0 2946     		mov	r1, r5
+  96 00b2 4846     		mov	r0, r9
+  97 00b4 FFF7FEFF 		bl	HAL_GPIO_Init
+  98 00b8 C023     		movs	r3, #192
+  99 00ba 0593     		str	r3, [sp, #20]
+ 100 00bc CDF81880 		str	r8, [sp, #24]
+ 101 00c0 0794     		str	r4, [sp, #28]
+ 102 00c2 2946     		mov	r1, r5
+ 103 00c4 0348     		ldr	r0, .L3+4
+ 104 00c6 FFF7FEFF 		bl	HAL_GPIO_Init
+ 105 00ca 0BB0     		add	sp, sp, #44
+ 106              		@ sp needed
+ 107 00cc BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 108              	.L4:
+ 109              		.align	2
+ 110              	.L3:
+ 111 00d0 00080048 		.word	1207961600
+ 112 00d4 00040048 		.word	1207960576
+ 113 00d8 000C0048 		.word	1207962624
+ 115              		.section	.text.Error_Handler,"ax",%progbits
  116              		.align	1
- 117              		.syntax unified
- 118              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s 			page 3
+ARM GAS  /tmp/ccaYeAcu.s 			page 3
 
 
- 119              		.thumb_func
- 121              	MX_I2C1_Init:
- 122              		@ args = 0, pretend = 0, frame = 0
- 123              		@ frame_needed = 0, uses_anonymous_args = 0
- 124 0000 08B5     		push	{r3, lr}
- 125 0002 1148     		ldr	r0, .L15
- 126 0004 114B     		ldr	r3, .L15+4
- 127 0006 0360     		str	r3, [r0]
- 128 0008 114B     		ldr	r3, .L15+8
- 129 000a 4360     		str	r3, [r0, #4]
- 130 000c 0023     		movs	r3, #0
- 131 000e 8360     		str	r3, [r0, #8]
- 132 0010 0122     		movs	r2, #1
- 133 0012 C260     		str	r2, [r0, #12]
- 134 0014 0361     		str	r3, [r0, #16]
- 135 0016 4361     		str	r3, [r0, #20]
- 136 0018 8361     		str	r3, [r0, #24]
- 137 001a C361     		str	r3, [r0, #28]
- 138 001c 0362     		str	r3, [r0, #32]
- 139 001e FFF7FEFF 		bl	HAL_I2C_Init
- 140 0022 50B9     		cbnz	r0, .L12
- 141 0024 0146     		mov	r1, r0
- 142 0026 0848     		ldr	r0, .L15
- 143 0028 FFF7FEFF 		bl	HAL_I2CEx_ConfigAnalogFilter
- 144 002c 38B9     		cbnz	r0, .L13
- 145 002e 0146     		mov	r1, r0
- 146 0030 0548     		ldr	r0, .L15
- 147 0032 FFF7FEFF 		bl	HAL_I2CEx_ConfigDigitalFilter
- 148 0036 20B9     		cbnz	r0, .L14
- 149 0038 08BD     		pop	{r3, pc}
- 150              	.L12:
- 151 003a FFF7FEFF 		bl	Error_Handler
- 152              	.L13:
- 153 003e FFF7FEFF 		bl	Error_Handler
- 154              	.L14:
- 155 0042 FFF7FEFF 		bl	Error_Handler
- 156              	.L16:
- 157 0046 00BF     		.align	2
- 158              	.L15:
- 159 0048 00000000 		.word	hi2c1
- 160 004c 00540040 		.word	1073763328
- 161 0050 B57DB110 		.word	280067509
- 163              		.section	.text.MX_SPI1_Init,"ax",%progbits
- 164              		.align	1
- 165              		.syntax unified
- 166              		.thumb
- 167              		.thumb_func
- 169              	MX_SPI1_Init:
- 170              		@ args = 0, pretend = 0, frame = 0
- 171              		@ frame_needed = 0, uses_anonymous_args = 0
- 172 0000 08B5     		push	{r3, lr}
- 173 0002 0F48     		ldr	r0, .L21
- 174 0004 0F4B     		ldr	r3, .L21+4
- 175 0006 0360     		str	r3, [r0]
- 176 0008 4FF48273 		mov	r3, #260
- 177 000c 4360     		str	r3, [r0, #4]
- 178 000e 0023     		movs	r3, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s 			page 4
+ 117              		.global	Error_Handler
+ 118              		.syntax unified
+ 119              		.thumb
+ 120              		.thumb_func
+ 122              	Error_Handler:
+ 123              		@ Volatile: function does not return.
+ 124              		@ args = 0, pretend = 0, frame = 0
+ 125              		@ frame_needed = 0, uses_anonymous_args = 0
+ 126              		@ link register save eliminated.
+ 127              		.syntax unified
+ 128              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 129 0000 72B6     		cpsid i
+ 130              	@ 0 "" 2
+ 131              		.thumb
+ 132              		.syntax unified
+ 133              	.L6:
+ 134 0002 FEE7     		b	.L6
+ 136              		.section	.text.MX_I2C1_Init,"ax",%progbits
+ 137              		.align	1
+ 138              		.syntax unified
+ 139              		.thumb
+ 140              		.thumb_func
+ 142              	MX_I2C1_Init:
+ 143              		@ args = 0, pretend = 0, frame = 0
+ 144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 145 0000 08B5     		push	{r3, lr}
+ 146 0002 1148     		ldr	r0, .L15
+ 147 0004 114B     		ldr	r3, .L15+4
+ 148 0006 0360     		str	r3, [r0]
+ 149 0008 114B     		ldr	r3, .L15+8
+ 150 000a 4360     		str	r3, [r0, #4]
+ 151 000c 0023     		movs	r3, #0
+ 152 000e 8360     		str	r3, [r0, #8]
+ 153 0010 0122     		movs	r2, #1
+ 154 0012 C260     		str	r2, [r0, #12]
+ 155 0014 0361     		str	r3, [r0, #16]
+ 156 0016 4361     		str	r3, [r0, #20]
+ 157 0018 8361     		str	r3, [r0, #24]
+ 158 001a C361     		str	r3, [r0, #28]
+ 159 001c 0362     		str	r3, [r0, #32]
+ 160 001e FFF7FEFF 		bl	HAL_I2C_Init
+ 161 0022 50B9     		cbnz	r0, .L12
+ 162 0024 0146     		mov	r1, r0
+ 163 0026 0848     		ldr	r0, .L15
+ 164 0028 FFF7FEFF 		bl	HAL_I2CEx_ConfigAnalogFilter
+ 165 002c 38B9     		cbnz	r0, .L13
+ 166 002e 0146     		mov	r1, r0
+ 167 0030 0548     		ldr	r0, .L15
+ 168 0032 FFF7FEFF 		bl	HAL_I2CEx_ConfigDigitalFilter
+ 169 0036 20B9     		cbnz	r0, .L14
+ 170 0038 08BD     		pop	{r3, pc}
+ 171              	.L12:
+ 172 003a FFF7FEFF 		bl	Error_Handler
+ 173              	.L13:
+ 174 003e FFF7FEFF 		bl	Error_Handler
+ 175              	.L14:
+ 176 0042 FFF7FEFF 		bl	Error_Handler
+ARM GAS  /tmp/ccaYeAcu.s 			page 4
 
 
- 179 0010 8360     		str	r3, [r0, #8]
- 180 0012 4FF44072 		mov	r2, #768
- 181 0016 C260     		str	r2, [r0, #12]
- 182 0018 0361     		str	r3, [r0, #16]
- 183 001a 4361     		str	r3, [r0, #20]
- 184 001c 4FF40072 		mov	r2, #512
- 185 0020 8261     		str	r2, [r0, #24]
- 186 0022 C361     		str	r3, [r0, #28]
- 187 0024 0362     		str	r3, [r0, #32]
- 188 0026 4362     		str	r3, [r0, #36]
- 189 0028 8362     		str	r3, [r0, #40]
- 190 002a 0722     		movs	r2, #7
- 191 002c C262     		str	r2, [r0, #44]
- 192 002e 0363     		str	r3, [r0, #48]
- 193 0030 0823     		movs	r3, #8
- 194 0032 4363     		str	r3, [r0, #52]
- 195 0034 FFF7FEFF 		bl	HAL_SPI_Init
- 196 0038 00B9     		cbnz	r0, .L20
- 197 003a 08BD     		pop	{r3, pc}
- 198              	.L20:
- 199 003c FFF7FEFF 		bl	Error_Handler
- 200              	.L22:
- 201              		.align	2
- 202              	.L21:
- 203 0040 00000000 		.word	hspi1
- 204 0044 00300140 		.word	1073819648
- 206              		.section	.text.SystemClock_Config,"ax",%progbits
- 207              		.align	1
- 208              		.global	SystemClock_Config
- 209              		.syntax unified
- 210              		.thumb
- 211              		.thumb_func
- 213              	SystemClock_Config:
- 214              		@ args = 0, pretend = 0, frame = 104
- 215              		@ frame_needed = 0, uses_anonymous_args = 0
- 216 0000 30B5     		push	{r4, r5, lr}
- 217 0002 9BB0     		sub	sp, sp, #108
- 218 0004 08AD     		add	r5, sp, #32
- 219 0006 4822     		movs	r2, #72
- 220 0008 0021     		movs	r1, #0
- 221 000a 2846     		mov	r0, r5
- 222 000c FFF7FEFF 		bl	memset
- 223 0010 0024     		movs	r4, #0
- 224 0012 0194     		str	r4, [sp, #4]
- 225 0014 0294     		str	r4, [sp, #8]
- 226 0016 0394     		str	r4, [sp, #12]
- 227 0018 0494     		str	r4, [sp, #16]
- 228 001a 0594     		str	r4, [sp, #20]
- 229 001c 0694     		str	r4, [sp, #24]
- 230 001e 0794     		str	r4, [sp, #28]
- 231 0020 FFF7FEFF 		bl	HAL_PWR_EnableBkUpAccess
- 232 0024 4FF0B042 		mov	r2, #1476395008
- 233 0028 D2F89030 		ldr	r3, [r2, #144]
- 234 002c 23F01803 		bic	r3, r3, #24
- 235 0030 43F01003 		orr	r3, r3, #16
- 236 0034 C2F89030 		str	r3, [r2, #144]
- 237 0038 02F58062 		add	r2, r2, #1024
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s 			page 5
+ 177              	.L16:
+ 178 0046 00BF     		.align	2
+ 179              	.L15:
+ 180 0048 00000000 		.word	hi2c1
+ 181 004c 00540040 		.word	1073763328
+ 182 0050 B57DB110 		.word	280067509
+ 184              		.section	.text.MX_SPI1_Init,"ax",%progbits
+ 185              		.align	1
+ 186              		.syntax unified
+ 187              		.thumb
+ 188              		.thumb_func
+ 190              	MX_SPI1_Init:
+ 191              		@ args = 0, pretend = 0, frame = 0
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 193 0000 08B5     		push	{r3, lr}
+ 194 0002 1048     		ldr	r0, .L21
+ 195 0004 104B     		ldr	r3, .L21+4
+ 196 0006 0360     		str	r3, [r0]
+ 197 0008 4FF48273 		mov	r3, #260
+ 198 000c 4360     		str	r3, [r0, #4]
+ 199 000e 0023     		movs	r3, #0
+ 200 0010 8360     		str	r3, [r0, #8]
+ 201 0012 4FF4E062 		mov	r2, #1792
+ 202 0016 C260     		str	r2, [r0, #12]
+ 203 0018 0222     		movs	r2, #2
+ 204 001a 0261     		str	r2, [r0, #16]
+ 205 001c 0122     		movs	r2, #1
+ 206 001e 4261     		str	r2, [r0, #20]
+ 207 0020 4FF40072 		mov	r2, #512
+ 208 0024 8261     		str	r2, [r0, #24]
+ 209 0026 0822     		movs	r2, #8
+ 210 0028 C261     		str	r2, [r0, #28]
+ 211 002a 0362     		str	r3, [r0, #32]
+ 212 002c 4362     		str	r3, [r0, #36]
+ 213 002e 8362     		str	r3, [r0, #40]
+ 214 0030 0722     		movs	r2, #7
+ 215 0032 C262     		str	r2, [r0, #44]
+ 216 0034 0363     		str	r3, [r0, #48]
+ 217 0036 4363     		str	r3, [r0, #52]
+ 218 0038 FFF7FEFF 		bl	HAL_SPI_Init
+ 219 003c 00B9     		cbnz	r0, .L20
+ 220 003e 08BD     		pop	{r3, pc}
+ 221              	.L20:
+ 222 0040 FFF7FEFF 		bl	Error_Handler
+ 223              	.L22:
+ 224              		.align	2
+ 225              	.L21:
+ 226 0044 00000000 		.word	hspi1
+ 227 0048 00300140 		.word	1073819648
+ 229              		.section	.text.SystemClock_Config,"ax",%progbits
+ 230              		.align	1
+ 231              		.global	SystemClock_Config
+ 232              		.syntax unified
+ 233              		.thumb
+ 234              		.thumb_func
+ 236              	SystemClock_Config:
+ 237              		@ args = 0, pretend = 0, frame = 104
+ARM GAS  /tmp/ccaYeAcu.s 			page 5
 
 
- 238 003c 1368     		ldr	r3, [r2]
- 239 003e 23F4C063 		bic	r3, r3, #1536
- 240 0042 43F40073 		orr	r3, r3, #512
- 241 0046 1360     		str	r3, [r2]
- 242 0048 1368     		ldr	r3, [r2]
- 243 004a 03F4C063 		and	r3, r3, #1536
- 244 004e 0093     		str	r3, [sp]
- 245 0050 009B     		ldr	r3, [sp]
- 246 0052 2723     		movs	r3, #39
- 247 0054 0893     		str	r3, [sp, #32]
- 248 0056 4FF48033 		mov	r3, #65536
- 249 005a 0993     		str	r3, [sp, #36]
- 250 005c 0123     		movs	r3, #1
- 251 005e 0A93     		str	r3, [sp, #40]
- 252 0060 4FF48072 		mov	r2, #256
- 253 0064 0B92     		str	r2, [sp, #44]
- 254 0066 0F93     		str	r3, [sp, #60]
- 255 0068 4022     		movs	r2, #64
- 256 006a 0C92     		str	r2, [sp, #48]
- 257 006c 1094     		str	r4, [sp, #64]
- 258 006e 6022     		movs	r2, #96
- 259 0070 1192     		str	r2, [sp, #68]
- 260 0072 0222     		movs	r2, #2
- 261 0074 1392     		str	r2, [sp, #76]
- 262 0076 1493     		str	r3, [sp, #80]
- 263 0078 1594     		str	r4, [sp, #84]
- 264 007a 2023     		movs	r3, #32
- 265 007c 1693     		str	r3, [sp, #88]
- 266 007e 4FF40033 		mov	r3, #131072
- 267 0082 1793     		str	r3, [sp, #92]
- 268 0084 4FF00053 		mov	r3, #536870912
- 269 0088 1993     		str	r3, [sp, #100]
- 270 008a 4FF00073 		mov	r3, #33554432
- 271 008e 1893     		str	r3, [sp, #96]
- 272 0090 2846     		mov	r0, r5
- 273 0092 FFF7FEFF 		bl	HAL_RCC_OscConfig
- 274 0096 88B9     		cbnz	r0, .L27
- 275 0098 6F23     		movs	r3, #111
- 276 009a 0193     		str	r3, [sp, #4]
- 277 009c 0321     		movs	r1, #3
- 278 009e 0291     		str	r1, [sp, #8]
- 279 00a0 0390     		str	r0, [sp, #12]
- 280 00a2 0490     		str	r0, [sp, #16]
- 281 00a4 0590     		str	r0, [sp, #20]
- 282 00a6 8022     		movs	r2, #128
- 283 00a8 0692     		str	r2, [sp, #24]
- 284 00aa 0790     		str	r0, [sp, #28]
- 285 00ac 01A8     		add	r0, sp, #4
- 286 00ae FFF7FEFF 		bl	HAL_RCC_ClockConfig
- 287 00b2 28B9     		cbnz	r0, .L28
- 288 00b4 FFF7FEFF 		bl	HAL_RCCEx_EnableMSIPLLMode
- 289 00b8 1BB0     		add	sp, sp, #108
- 290              		@ sp needed
- 291 00ba 30BD     		pop	{r4, r5, pc}
- 292              	.L27:
- 293 00bc FFF7FEFF 		bl	Error_Handler
- 294              	.L28:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s 			page 6
+ 238              		@ frame_needed = 0, uses_anonymous_args = 0
+ 239 0000 30B5     		push	{r4, r5, lr}
+ 240 0002 9BB0     		sub	sp, sp, #108
+ 241 0004 08AD     		add	r5, sp, #32
+ 242 0006 4822     		movs	r2, #72
+ 243 0008 0021     		movs	r1, #0
+ 244 000a 2846     		mov	r0, r5
+ 245 000c FFF7FEFF 		bl	memset
+ 246 0010 0024     		movs	r4, #0
+ 247 0012 0194     		str	r4, [sp, #4]
+ 248 0014 0294     		str	r4, [sp, #8]
+ 249 0016 0394     		str	r4, [sp, #12]
+ 250 0018 0494     		str	r4, [sp, #16]
+ 251 001a 0594     		str	r4, [sp, #20]
+ 252 001c 0694     		str	r4, [sp, #24]
+ 253 001e 0794     		str	r4, [sp, #28]
+ 254 0020 FFF7FEFF 		bl	HAL_PWR_EnableBkUpAccess
+ 255 0024 4FF0B042 		mov	r2, #1476395008
+ 256 0028 D2F89030 		ldr	r3, [r2, #144]
+ 257 002c 23F01803 		bic	r3, r3, #24
+ 258 0030 43F01003 		orr	r3, r3, #16
+ 259 0034 C2F89030 		str	r3, [r2, #144]
+ 260 0038 02F58062 		add	r2, r2, #1024
+ 261 003c 1368     		ldr	r3, [r2]
+ 262 003e 23F4C063 		bic	r3, r3, #1536
+ 263 0042 43F40073 		orr	r3, r3, #512
+ 264 0046 1360     		str	r3, [r2]
+ 265 0048 1368     		ldr	r3, [r2]
+ 266 004a 03F4C063 		and	r3, r3, #1536
+ 267 004e 0093     		str	r3, [sp]
+ 268 0050 009B     		ldr	r3, [sp]
+ 269 0052 2723     		movs	r3, #39
+ 270 0054 0893     		str	r3, [sp, #32]
+ 271 0056 4FF48033 		mov	r3, #65536
+ 272 005a 0993     		str	r3, [sp, #36]
+ 273 005c 0123     		movs	r3, #1
+ 274 005e 0A93     		str	r3, [sp, #40]
+ 275 0060 4FF48072 		mov	r2, #256
+ 276 0064 0B92     		str	r2, [sp, #44]
+ 277 0066 0F93     		str	r3, [sp, #60]
+ 278 0068 4022     		movs	r2, #64
+ 279 006a 0C92     		str	r2, [sp, #48]
+ 280 006c 1094     		str	r4, [sp, #64]
+ 281 006e 6022     		movs	r2, #96
+ 282 0070 1192     		str	r2, [sp, #68]
+ 283 0072 0222     		movs	r2, #2
+ 284 0074 1392     		str	r2, [sp, #76]
+ 285 0076 1493     		str	r3, [sp, #80]
+ 286 0078 1594     		str	r4, [sp, #84]
+ 287 007a 2023     		movs	r3, #32
+ 288 007c 1693     		str	r3, [sp, #88]
+ 289 007e 4FF40033 		mov	r3, #131072
+ 290 0082 1793     		str	r3, [sp, #92]
+ 291 0084 4FF00053 		mov	r3, #536870912
+ 292 0088 1993     		str	r3, [sp, #100]
+ 293 008a 4FF00073 		mov	r3, #33554432
+ 294 008e 1893     		str	r3, [sp, #96]
+ARM GAS  /tmp/ccaYeAcu.s 			page 6
 
 
- 295 00c0 FFF7FEFF 		bl	Error_Handler
- 297              		.section	.text.PeriphCommonClock_Config,"ax",%progbits
- 298              		.align	1
- 299              		.global	PeriphCommonClock_Config
- 300              		.syntax unified
- 301              		.thumb
- 302              		.thumb_func
- 304              	PeriphCommonClock_Config:
- 305              		@ args = 0, pretend = 0, frame = 80
- 306              		@ frame_needed = 0, uses_anonymous_args = 0
- 307 0000 10B5     		push	{r4, lr}
- 308 0002 94B0     		sub	sp, sp, #80
- 309 0004 5022     		movs	r2, #80
- 310 0006 0021     		movs	r1, #0
- 311 0008 6846     		mov	r0, sp
- 312 000a FFF7FEFF 		bl	memset
- 313 000e 4FF40053 		mov	r3, #8192
- 314 0012 0093     		str	r3, [sp]
- 315 0014 1023     		movs	r3, #16
- 316 0016 1393     		str	r3, [sp, #76]
- 317 0018 6846     		mov	r0, sp
- 318 001a FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
- 319 001e 08B9     		cbnz	r0, .L32
- 320 0020 14B0     		add	sp, sp, #80
- 321              		@ sp needed
- 322 0022 10BD     		pop	{r4, pc}
- 323              	.L32:
- 324 0024 FFF7FEFF 		bl	Error_Handler
- 326              		.section	.text.main,"ax",%progbits
- 327              		.align	1
- 328              		.global	main
- 329              		.syntax unified
- 330              		.thumb
- 331              		.thumb_func
- 333              	main:
- 334              		@ Volatile: function does not return.
- 335              		@ args = 0, pretend = 0, frame = 0
- 336              		@ frame_needed = 0, uses_anonymous_args = 0
- 337 0000 08B5     		push	{r3, lr}
- 338 0002 FFF7FEFF 		bl	HAL_Init
- 339 0006 FFF7FEFF 		bl	SystemClock_Config
- 340 000a FFF7FEFF 		bl	PeriphCommonClock_Config
- 341 000e FFF7FEFF 		bl	MX_GPIO_Init
- 342 0012 FFF7FEFF 		bl	MX_I2C1_Init
- 343 0016 FFF7FEFF 		bl	MX_SPI1_Init
- 344 001a FFF7FEFF 		bl	MX_USB_Device_Init
- 345 001e FFF7FEFF 		bl	MX_USB_Device_Init
- 346              	.L34:
- 347 0022 0B4C     		ldr	r4, .L36
- 348 0024 0122     		movs	r2, #1
- 349 0026 4FF40051 		mov	r1, #8192
- 350 002a 2046     		mov	r0, r4
- 351 002c FFF7FEFF 		bl	HAL_GPIO_WritePin
- 352 0030 4FF4FA70 		mov	r0, #500
- 353 0034 FFF7FEFF 		bl	HAL_Delay
- 354 0038 0022     		movs	r2, #0
- 355 003a 4FF40051 		mov	r1, #8192
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s 			page 7
+ 295 0090 2846     		mov	r0, r5
+ 296 0092 FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 297 0096 88B9     		cbnz	r0, .L27
+ 298 0098 6F23     		movs	r3, #111
+ 299 009a 0193     		str	r3, [sp, #4]
+ 300 009c 0321     		movs	r1, #3
+ 301 009e 0291     		str	r1, [sp, #8]
+ 302 00a0 0390     		str	r0, [sp, #12]
+ 303 00a2 0490     		str	r0, [sp, #16]
+ 304 00a4 0590     		str	r0, [sp, #20]
+ 305 00a6 8022     		movs	r2, #128
+ 306 00a8 0692     		str	r2, [sp, #24]
+ 307 00aa 0790     		str	r0, [sp, #28]
+ 308 00ac 01A8     		add	r0, sp, #4
+ 309 00ae FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 310 00b2 28B9     		cbnz	r0, .L28
+ 311 00b4 FFF7FEFF 		bl	HAL_RCCEx_EnableMSIPLLMode
+ 312 00b8 1BB0     		add	sp, sp, #108
+ 313              		@ sp needed
+ 314 00ba 30BD     		pop	{r4, r5, pc}
+ 315              	.L27:
+ 316 00bc FFF7FEFF 		bl	Error_Handler
+ 317              	.L28:
+ 318 00c0 FFF7FEFF 		bl	Error_Handler
+ 320              		.section	.text.PeriphCommonClock_Config,"ax",%progbits
+ 321              		.align	1
+ 322              		.global	PeriphCommonClock_Config
+ 323              		.syntax unified
+ 324              		.thumb
+ 325              		.thumb_func
+ 327              	PeriphCommonClock_Config:
+ 328              		@ args = 0, pretend = 0, frame = 80
+ 329              		@ frame_needed = 0, uses_anonymous_args = 0
+ 330 0000 10B5     		push	{r4, lr}
+ 331 0002 94B0     		sub	sp, sp, #80
+ 332 0004 5022     		movs	r2, #80
+ 333 0006 0021     		movs	r1, #0
+ 334 0008 6846     		mov	r0, sp
+ 335 000a FFF7FEFF 		bl	memset
+ 336 000e 4FF40053 		mov	r3, #8192
+ 337 0012 0093     		str	r3, [sp]
+ 338 0014 1023     		movs	r3, #16
+ 339 0016 1393     		str	r3, [sp, #76]
+ 340 0018 6846     		mov	r0, sp
+ 341 001a FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 342 001e 08B9     		cbnz	r0, .L32
+ 343 0020 14B0     		add	sp, sp, #80
+ 344              		@ sp needed
+ 345 0022 10BD     		pop	{r4, pc}
+ 346              	.L32:
+ 347 0024 FFF7FEFF 		bl	Error_Handler
+ 349              		.section	.rodata.main.str1.4,"aMS",%progbits,1
+ 350              		.align	2
+ 351              	.LC0:
+ 352 0000 49434D20 		.ascii	"ICM init error\015\012\000"
+ 352      696E6974 
+ 352      20657272 
+ARM GAS  /tmp/ccaYeAcu.s 			page 7
 
 
- 356 003e 2046     		mov	r0, r4
- 357 0040 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 358 0044 4FF4FA70 		mov	r0, #500
- 359 0048 FFF7FEFF 		bl	HAL_Delay
- 360 004c E9E7     		b	.L34
- 361              	.L37:
- 362 004e 00BF     		.align	2
- 363              	.L36:
- 364 0050 00080048 		.word	1207961600
- 366              		.global	hspi1
- 367              		.section	.bss.hspi1,"aw",%nobits
- 368              		.align	2
- 371              	hspi1:
- 372 0000 00000000 		.space	100
- 372      00000000 
- 372      00000000 
- 372      00000000 
- 372      00000000 
- 373              		.global	hi2c1
- 374              		.section	.bss.hi2c1,"aw",%nobits
- 375              		.align	2
- 378              	hi2c1:
- 379 0000 00000000 		.space	84
- 379      00000000 
- 379      00000000 
- 379      00000000 
- 379      00000000 
- 380              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s 			page 8
+ 352      6F720D0A 
+ 352      00
+ 353 0011 000000   		.align	2
+ 354              	.LC1:
+ 355 0014 49434D34 		.ascii	"ICM42688 data ready\015\012\000"
+ 355      32363838 
+ 355      20646174 
+ 355      61207265 
+ 355      6164790D 
+ 356              		.section	.text.main,"ax",%progbits
+ 357              		.align	1
+ 358              		.global	main
+ 359              		.syntax unified
+ 360              		.thumb
+ 361              		.thumb_func
+ 363              	main:
+ 364              		@ args = 0, pretend = 0, frame = 0
+ 365              		@ frame_needed = 0, uses_anonymous_args = 0
+ 366 0000 70B5     		push	{r4, r5, r6, lr}
+ 367 0002 FFF7FEFF 		bl	HAL_Init
+ 368 0006 FFF7FEFF 		bl	SystemClock_Config
+ 369 000a FFF7FEFF 		bl	PeriphCommonClock_Config
+ 370 000e FFF7FEFF 		bl	MX_GPIO_Init
+ 371 0012 FFF7FEFF 		bl	MX_I2C1_Init
+ 372 0016 FFF7FEFF 		bl	MX_SPI1_Init
+ 373 001a FFF7FEFF 		bl	MX_USB_Device_Init
+ 374 001e 4FF47A70 		mov	r0, #1000
+ 375 0022 FFF7FEFF 		bl	HAL_Delay
+ 376 0026 2348     		ldr	r0, .L41
+ 377 0028 234B     		ldr	r3, .L41+4
+ 378 002a 0360     		str	r3, [r0]
+ 379 002c 234B     		ldr	r3, .L41+8
+ 380 002e 4360     		str	r3, [r0, #4]
+ 381 0030 0223     		movs	r3, #2
+ 382 0032 0381     		strh	r3, [r0, #8]	@ movhi
+ 383 0034 FFF7FEFF 		bl	ICM42688_Init
+ 384 0038 20B3     		cbz	r0, .L34
+ 385 003a 0646     		mov	r6, r0
+ 386 003c 0028     		cmp	r0, #0
+ 387 003e B8BF     		it	lt
+ 388 0040 4642     		rsblt	r6, r0, #0
+ 389              	.L37:
+ 390 0042 1021     		movs	r1, #16
+ 391 0044 1E48     		ldr	r0, .L41+12
+ 392 0046 FFF7FEFF 		bl	CDC_Transmit_FS
+ 393 004a 0024     		movs	r4, #0
+ 394              	.L35:
+ 395 004c B442     		cmp	r4, r6
+ 396 004e 04DB     		blt	.L36
+ 397 0050 40F2DC50 		movw	r0, #1500
+ 398 0054 FFF7FEFF 		bl	HAL_Delay
+ 399 0058 F3E7     		b	.L37
+ 400              	.L36:
+ 401 005a 1A4D     		ldr	r5, .L41+16
+ 402 005c 0022     		movs	r2, #0
+ 403 005e 4FF40051 		mov	r1, #8192
+ 404 0062 2846     		mov	r0, r5
+ARM GAS  /tmp/ccaYeAcu.s 			page 8
+
+
+ 405 0064 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 406 0068 9620     		movs	r0, #150
+ 407 006a FFF7FEFF 		bl	HAL_Delay
+ 408 006e 0122     		movs	r2, #1
+ 409 0070 4FF40051 		mov	r1, #8192
+ 410 0074 2846     		mov	r0, r5
+ 411 0076 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 412 007a 9620     		movs	r0, #150
+ 413 007c FFF7FEFF 		bl	HAL_Delay
+ 414 0080 0134     		adds	r4, r4, #1
+ 415 0082 E3E7     		b	.L35
+ 416              	.L34:
+ 417 0084 4FF47A70 		mov	r0, #1000
+ 418 0088 FFF7FEFF 		bl	HAL_Delay
+ 419 008c 07E0     		b	.L39
+ 420              	.L38:
+ 421 008e 4FF40051 		mov	r1, #8192
+ 422 0092 0C48     		ldr	r0, .L41+16
+ 423 0094 FFF7FEFF 		bl	HAL_GPIO_TogglePin
+ 424 0098 6420     		movs	r0, #100
+ 425 009a FFF7FEFF 		bl	HAL_Delay
+ 426              	.L39:
+ 427 009e 0A49     		ldr	r1, .L41+20
+ 428 00a0 0448     		ldr	r0, .L41
+ 429 00a2 FFF7FEFF 		bl	ICM42688_ReadOnce
+ 430 00a6 0028     		cmp	r0, #0
+ 431 00a8 F1D1     		bne	.L38
+ 432 00aa 1621     		movs	r1, #22
+ 433 00ac 0748     		ldr	r0, .L41+24
+ 434 00ae FFF7FEFF 		bl	CDC_Transmit_FS
+ 435 00b2 ECE7     		b	.L38
+ 436              	.L42:
+ 437              		.align	2
+ 438              	.L41:
+ 439 00b4 00000000 		.word	icm
+ 440 00b8 00000000 		.word	hspi1
+ 441 00bc 000C0048 		.word	1207962624
+ 442 00c0 00000000 		.word	.LC0
+ 443 00c4 00080048 		.word	1207961600
+ 444 00c8 00000000 		.word	imu_data
+ 445 00cc 14000000 		.word	.LC1
+ 447              		.global	serial_buf
+ 448              		.section	.bss.serial_buf,"aw",%nobits
+ 449              		.align	2
+ 452              	serial_buf:
+ 453 0000 00000000 		.space	256
+ 453      00000000 
+ 453      00000000 
+ 453      00000000 
+ 453      00000000 
+ 454              		.global	imu_data
+ 455              		.section	.bss.imu_data,"aw",%nobits
+ 456              		.align	2
+ 459              	imu_data:
+ 460 0000 00000000 		.space	28
+ 460      00000000 
+ 460      00000000 
+ARM GAS  /tmp/ccaYeAcu.s 			page 9
+
+
+ 460      00000000 
+ 460      00000000 
+ 461              		.global	icm
+ 462              		.section	.bss.icm,"aw",%nobits
+ 463              		.align	2
+ 466              	icm:
+ 467 0000 00000000 		.space	24
+ 467      00000000 
+ 467      00000000 
+ 467      00000000 
+ 467      00000000 
+ 468              		.global	hspi1
+ 469              		.section	.bss.hspi1,"aw",%nobits
+ 470              		.align	2
+ 473              	hspi1:
+ 474 0000 00000000 		.space	100
+ 474      00000000 
+ 474      00000000 
+ 474      00000000 
+ 474      00000000 
+ 475              		.global	hi2c1
+ 476              		.section	.bss.hi2c1,"aw",%nobits
+ 477              		.align	2
+ 480              	hi2c1:
+ 481 0000 00000000 		.space	84
+ 481      00000000 
+ 481      00000000 
+ 481      00000000 
+ 481      00000000 
+ 482              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  /tmp/ccaYeAcu.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:18     .text.MX_GPIO_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:23     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:91     .text.MX_GPIO_Init:00000098 $d
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:95     .text.Error_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:101    .text.Error_Handler:00000000 Error_Handler
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:116    .text.MX_I2C1_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:121    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:159    .text.MX_I2C1_Init:00000048 $d
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:378    .bss.hi2c1:00000000 hi2c1
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:164    .text.MX_SPI1_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:169    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:203    .text.MX_SPI1_Init:00000040 $d
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:371    .bss.hspi1:00000000 hspi1
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:207    .text.SystemClock_Config:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:213    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:298    .text.PeriphCommonClock_Config:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:304    .text.PeriphCommonClock_Config:00000000 PeriphCommonClock_Config
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:327    .text.main:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:333    .text.main:00000000 main
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:364    .text.main:00000050 $d
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:368    .bss.hspi1:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc4pA5yE.s:375    .bss.hi2c1:00000000 $d
+     /tmp/ccaYeAcu.s:18     .text.MX_GPIO_Init:00000000 $t
+     /tmp/ccaYeAcu.s:23     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+     /tmp/ccaYeAcu.s:111    .text.MX_GPIO_Init:000000d0 $d
+     /tmp/ccaYeAcu.s:116    .text.Error_Handler:00000000 $t
+     /tmp/ccaYeAcu.s:122    .text.Error_Handler:00000000 Error_Handler
+     /tmp/ccaYeAcu.s:137    .text.MX_I2C1_Init:00000000 $t
+     /tmp/ccaYeAcu.s:142    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
+     /tmp/ccaYeAcu.s:180    .text.MX_I2C1_Init:00000048 $d
+     /tmp/ccaYeAcu.s:480    .bss.hi2c1:00000000 hi2c1
+     /tmp/ccaYeAcu.s:185    .text.MX_SPI1_Init:00000000 $t
+     /tmp/ccaYeAcu.s:190    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
+     /tmp/ccaYeAcu.s:226    .text.MX_SPI1_Init:00000044 $d
+     /tmp/ccaYeAcu.s:473    .bss.hspi1:00000000 hspi1
+     /tmp/ccaYeAcu.s:230    .text.SystemClock_Config:00000000 $t
+     /tmp/ccaYeAcu.s:236    .text.SystemClock_Config:00000000 SystemClock_Config
+     /tmp/ccaYeAcu.s:321    .text.PeriphCommonClock_Config:00000000 $t
+     /tmp/ccaYeAcu.s:327    .text.PeriphCommonClock_Config:00000000 PeriphCommonClock_Config
+     /tmp/ccaYeAcu.s:350    .rodata.main.str1.4:00000000 $d
+     /tmp/ccaYeAcu.s:357    .text.main:00000000 $t
+     /tmp/ccaYeAcu.s:363    .text.main:00000000 main
+     /tmp/ccaYeAcu.s:439    .text.main:000000b4 $d
+     /tmp/ccaYeAcu.s:466    .bss.icm:00000000 icm
+     /tmp/ccaYeAcu.s:459    .bss.imu_data:00000000 imu_data
+     /tmp/ccaYeAcu.s:452    .bss.serial_buf:00000000 serial_buf
+     /tmp/ccaYeAcu.s:449    .bss.serial_buf:00000000 $d
+     /tmp/ccaYeAcu.s:456    .bss.imu_data:00000000 $d
+     /tmp/ccaYeAcu.s:463    .bss.icm:00000000 $d
+     /tmp/ccaYeAcu.s:470    .bss.hspi1:00000000 $d
+     /tmp/ccaYeAcu.s:477    .bss.hi2c1:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
@@ -433,3 +562,7 @@ HAL_RCCEx_PeriphCLKConfig
 HAL_Init
 MX_USB_Device_Init
 HAL_Delay
+ICM42688_Init
+CDC_Transmit_FS
+HAL_GPIO_TogglePin
+ICM42688_ReadOnce

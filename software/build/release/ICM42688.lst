@@ -1,0 +1,780 @@
+ARM GAS  /tmp/cctkd8x0.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"ICM42688.c"
+  16              		.text
+  17              		.section	.text.write_reg,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	write_reg:
+  24              		@ args = 0, pretend = 0, frame = 16
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  27 0002 87B0     		sub	sp, sp, #28
+  28 0004 0446     		mov	r4, r0
+  29 0006 0D46     		mov	r5, r1
+  30 0008 1646     		mov	r6, r2
+  31 000a 01F07F03 		and	r3, r1, #127
+  32 000e 8DF81430 		strb	r3, [sp, #20]
+  33 0012 8DF81520 		strb	r2, [sp, #21]
+  34 0016 0022     		movs	r2, #0
+  35 0018 0189     		ldrh	r1, [r0, #8]
+  36 001a 4068     		ldr	r0, [r0, #4]
+  37 001c FFF7FEFF 		bl	HAL_GPIO_WritePin
+  38 0020 6423     		movs	r3, #100
+  39 0022 0222     		movs	r2, #2
+  40 0024 05A9     		add	r1, sp, #20
+  41 0026 2068     		ldr	r0, [r4]
+  42 0028 FFF7FEFF 		bl	HAL_SPI_Transmit
+  43 002c 0746     		mov	r7, r0
+  44 002e 0122     		movs	r2, #1
+  45 0030 2189     		ldrh	r1, [r4, #8]
+  46 0032 6068     		ldr	r0, [r4, #4]
+  47 0034 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  48 0038 2FBB     		cbnz	r7, .L3
+  49 003a 0A20     		movs	r0, #10
+  50 003c FFF7FEFF 		bl	HAL_Delay
+  51 0040 65F07F05 		orn	r5, r5, #127
+  52 0044 8DF81050 		strb	r5, [sp, #16]
+  53 0048 0022     		movs	r2, #0
+  54 004a 8DF81120 		strb	r2, [sp, #17]
+  55 004e ADF80C20 		strh	r2, [sp, #12]	@ movhi
+  56 0052 2189     		ldrh	r1, [r4, #8]
+  57 0054 6068     		ldr	r0, [r4, #4]
+  58 0056 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ARM GAS  /tmp/cctkd8x0.s 			page 2
+
+
+  59 005a 6423     		movs	r3, #100
+  60 005c 0093     		str	r3, [sp]
+  61 005e 0223     		movs	r3, #2
+  62 0060 03AA     		add	r2, sp, #12
+  63 0062 04A9     		add	r1, sp, #16
+  64 0064 2068     		ldr	r0, [r4]
+  65 0066 FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+  66 006a 0546     		mov	r5, r0
+  67 006c 0122     		movs	r2, #1
+  68 006e 2189     		ldrh	r1, [r4, #8]
+  69 0070 6068     		ldr	r0, [r4, #4]
+  70 0072 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  71 0076 4DB9     		cbnz	r5, .L4
+  72 0078 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
+  73 007c 9E42     		cmp	r6, r3
+  74 007e 08D1     		bne	.L5
+  75 0080 2846     		mov	r0, r5
+  76              	.L1:
+  77 0082 07B0     		add	sp, sp, #28
+  78              		@ sp needed
+  79 0084 F0BD     		pop	{r4, r5, r6, r7, pc}
+  80              	.L3:
+  81 0086 4FF0FF30 		mov	r0, #-1
+  82 008a FAE7     		b	.L1
+  83              	.L4:
+  84 008c 6FF00100 		mvn	r0, #1
+  85 0090 F7E7     		b	.L1
+  86              	.L5:
+  87 0092 6FF00200 		mvn	r0, #2
+  88 0096 F4E7     		b	.L1
+  90              		.section	.text.set_bank,"ax",%progbits
+  91              		.align	1
+  92              		.syntax unified
+  93              		.thumb
+  94              		.thumb_func
+  96              	set_bank:
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99 0000 08B5     		push	{r3, lr}
+ 100 0002 837A     		ldrb	r3, [r0, #10]	@ zero_extendqisi2
+ 101 0004 8B42     		cmp	r3, r1
+ 102 0006 05D0     		beq	.L9
+ 103 0008 0A46     		mov	r2, r1
+ 104 000a 8172     		strb	r1, [r0, #10]
+ 105 000c 7621     		movs	r1, #118
+ 106 000e FFF7FEFF 		bl	write_reg
+ 107              	.L7:
+ 108 0012 08BD     		pop	{r3, pc}
+ 109              	.L9:
+ 110 0014 0020     		movs	r0, #0
+ 111 0016 FCE7     		b	.L7
+ 113              		.section	.text.read_regs,"ax",%progbits
+ 114              		.align	1
+ 115              		.syntax unified
+ 116              		.thumb
+ 117              		.thumb_func
+ 119              	read_regs:
+ARM GAS  /tmp/cctkd8x0.s 			page 3
+
+
+ 120              		@ args = 0, pretend = 0, frame = 32
+ 121              		@ frame_needed = 0, uses_anonymous_args = 0
+ 122 0000 0F2A     		cmp	r2, #15
+ 123 0002 2FD8     		bhi	.L13
+ 124 0004 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 125 0008 8BB0     		sub	sp, sp, #44
+ 126 000a 0446     		mov	r4, r0
+ 127 000c 8846     		mov	r8, r1
+ 128 000e 1546     		mov	r5, r2
+ 129 0010 9946     		mov	r9, r3
+ 130 0012 0132     		adds	r2, r2, #1
+ 131 0014 06AE     		add	r6, sp, #24
+ 132 0016 1746     		mov	r7, r2
+ 133 0018 0021     		movs	r1, #0
+ 134 001a 3046     		mov	r0, r6
+ 135 001c FFF7FEFF 		bl	memset
+ 136 0020 68F07F02 		orn	r2, r8, #127
+ 137 0024 8DF81820 		strb	r2, [sp, #24]
+ 138 0028 0022     		movs	r2, #0
+ 139 002a 2189     		ldrh	r1, [r4, #8]
+ 140 002c 6068     		ldr	r0, [r4, #4]
+ 141 002e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 142 0032 6423     		movs	r3, #100
+ 143 0034 0093     		str	r3, [sp]
+ 144 0036 3B46     		mov	r3, r7
+ 145 0038 02AA     		add	r2, sp, #8
+ 146 003a 3146     		mov	r1, r6
+ 147 003c 2068     		ldr	r0, [r4]
+ 148 003e FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+ 149 0042 0646     		mov	r6, r0
+ 150 0044 0122     		movs	r2, #1
+ 151 0046 2189     		ldrh	r1, [r4, #8]
+ 152 0048 6068     		ldr	r0, [r4, #4]
+ 153 004a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 154 004e 66B9     		cbnz	r6, .L14
+ 155 0050 2A46     		mov	r2, r5
+ 156 0052 0DF10901 		add	r1, sp, #9
+ 157 0056 4846     		mov	r0, r9
+ 158 0058 FFF7FEFF 		bl	memcpy
+ 159 005c 3046     		mov	r0, r6
+ 160              	.L11:
+ 161 005e 0BB0     		add	sp, sp, #44
+ 162              		@ sp needed
+ 163 0060 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 164              	.L13:
+ 165 0064 4FF0FF30 		mov	r0, #-1
+ 166 0068 7047     		bx	lr
+ 167              	.L14:
+ 168 006a 6FF00100 		mvn	r0, #1
+ 169 006e F6E7     		b	.L11
+ 171              		.section	.text.ICM42688_WhoAmI,"ax",%progbits
+ 172              		.align	1
+ 173              		.global	ICM42688_WhoAmI
+ 174              		.syntax unified
+ 175              		.thumb
+ 176              		.thumb_func
+ 178              	ICM42688_WhoAmI:
+ARM GAS  /tmp/cctkd8x0.s 			page 4
+
+
+ 179              		@ args = 0, pretend = 0, frame = 8
+ 180              		@ frame_needed = 0, uses_anonymous_args = 0
+ 181 0000 10B5     		push	{r4, lr}
+ 182 0002 82B0     		sub	sp, sp, #8
+ 183 0004 0446     		mov	r4, r0
+ 184 0006 0021     		movs	r1, #0
+ 185 0008 FFF7FEFF 		bl	set_bank
+ 186 000c 0023     		movs	r3, #0
+ 187 000e 8DF80730 		strb	r3, [sp, #7]
+ 188 0012 0DF10703 		add	r3, sp, #7
+ 189 0016 0122     		movs	r2, #1
+ 190 0018 7521     		movs	r1, #117
+ 191 001a 2046     		mov	r0, r4
+ 192 001c FFF7FEFF 		bl	read_regs
+ 193 0020 0028     		cmp	r0, #0
+ 194 0022 03DB     		blt	.L21
+ 195 0024 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 196              	.L20:
+ 197 0028 02B0     		add	sp, sp, #8
+ 198              		@ sp needed
+ 199 002a 10BD     		pop	{r4, pc}
+ 200              	.L21:
+ 201 002c 0020     		movs	r0, #0
+ 202 002e FBE7     		b	.L20
+ 204              		.section	.text.ICM42688_SetAccelFS,"ax",%progbits
+ 205              		.align	1
+ 206              		.global	ICM42688_SetAccelFS
+ 207              		.syntax unified
+ 208              		.thumb
+ 209              		.thumb_func
+ 211              	ICM42688_SetAccelFS:
+ 212              		@ args = 0, pretend = 0, frame = 8
+ 213              		@ frame_needed = 0, uses_anonymous_args = 0
+ 214 0000 30B5     		push	{r4, r5, lr}
+ 215 0002 83B0     		sub	sp, sp, #12
+ 216 0004 0446     		mov	r4, r0
+ 217 0006 0D46     		mov	r5, r1
+ 218 0008 0021     		movs	r1, #0
+ 219 000a FFF7FEFF 		bl	set_bank
+ 220 000e 0DF10703 		add	r3, sp, #7
+ 221 0012 0122     		movs	r2, #1
+ 222 0014 5021     		movs	r1, #80
+ 223 0016 2046     		mov	r0, r4
+ 224 0018 FFF7FEFF 		bl	read_regs
+ 225 001c 0028     		cmp	r0, #0
+ 226 001e 20DB     		blt	.L25
+ 227 0020 9DF80720 		ldrb	r2, [sp, #7]	@ zero_extendqisi2
+ 228 0024 02F01F02 		and	r2, r2, #31
+ 229 0028 42EA4512 		orr	r2, r2, r5, lsl #5
+ 230 002c D2B2     		uxtb	r2, r2
+ 231 002e 8DF80720 		strb	r2, [sp, #7]
+ 232 0032 5021     		movs	r1, #80
+ 233 0034 2046     		mov	r0, r4
+ 234 0036 FFF7FEFF 		bl	write_reg
+ 235 003a 0028     		cmp	r0, #0
+ 236 003c 14DB     		blt	.L26
+ 237 003e C5F10402 		rsb	r2, r5, #4
+ARM GAS  /tmp/cctkd8x0.s 			page 5
+
+
+ 238 0042 0123     		movs	r3, #1
+ 239 0044 9340     		lsls	r3, r3, r2
+ 240 0046 07EE903A 		vmov	s15, r3	@ int
+ 241 004a F8EEE77A 		vcvt.f32.s32	s15, s15
+ 242 004e 9FED087A 		vldr.32	s14, .L28
+ 243 0052 67EE877A 		vmul.f32	s15, s15, s14
+ 244 0056 C4ED037A 		vstr.32	s15, [r4, #12]
+ 245 005a 2575     		strb	r5, [r4, #20]
+ 246 005c 0020     		movs	r0, #0
+ 247              	.L23:
+ 248 005e 03B0     		add	sp, sp, #12
+ 249              		@ sp needed
+ 250 0060 30BD     		pop	{r4, r5, pc}
+ 251              	.L25:
+ 252 0062 4FF0FF30 		mov	r0, #-1
+ 253 0066 FAE7     		b	.L23
+ 254              	.L26:
+ 255 0068 6FF00100 		mvn	r0, #1
+ 256 006c F7E7     		b	.L23
+ 257              	.L29:
+ 258 006e 00BF     		.align	2
+ 259              	.L28:
+ 260 0070 00000038 		.word	939524096
+ 262              		.section	.text.ICM42688_SetGyroFS,"ax",%progbits
+ 263              		.align	1
+ 264              		.global	ICM42688_SetGyroFS
+ 265              		.syntax unified
+ 266              		.thumb
+ 267              		.thumb_func
+ 269              	ICM42688_SetGyroFS:
+ 270              		@ args = 0, pretend = 0, frame = 8
+ 271              		@ frame_needed = 0, uses_anonymous_args = 0
+ 272 0000 30B5     		push	{r4, r5, lr}
+ 273 0002 83B0     		sub	sp, sp, #12
+ 274 0004 0446     		mov	r4, r0
+ 275 0006 0D46     		mov	r5, r1
+ 276 0008 0021     		movs	r1, #0
+ 277 000a FFF7FEFF 		bl	set_bank
+ 278 000e 0DF10703 		add	r3, sp, #7
+ 279 0012 0122     		movs	r2, #1
+ 280 0014 4F21     		movs	r1, #79
+ 281 0016 2046     		mov	r0, r4
+ 282 0018 FFF7FEFF 		bl	read_regs
+ 283 001c 0028     		cmp	r0, #0
+ 284 001e 22DB     		blt	.L32
+ 285 0020 9DF80720 		ldrb	r2, [sp, #7]	@ zero_extendqisi2
+ 286 0024 02F01F02 		and	r2, r2, #31
+ 287 0028 42EA4512 		orr	r2, r2, r5, lsl #5
+ 288 002c D2B2     		uxtb	r2, r2
+ 289 002e 8DF80720 		strb	r2, [sp, #7]
+ 290 0032 4F21     		movs	r1, #79
+ 291 0034 2046     		mov	r0, r4
+ 292 0036 FFF7FEFF 		bl	write_reg
+ 293 003a 0028     		cmp	r0, #0
+ 294 003c 16DB     		blt	.L33
+ 295 003e 0123     		movs	r3, #1
+ 296 0040 AB40     		lsls	r3, r3, r5
+ARM GAS  /tmp/cctkd8x0.s 			page 6
+
+
+ 297 0042 07EE903A 		vmov	s15, r3	@ int
+ 298 0046 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 299 004a DFED0A6A 		vldr.32	s13, .L35
+ 300 004e 86EEA77A 		vdiv.f32	s14, s13, s15
+ 301 0052 DFED097A 		vldr.32	s15, .L35+4
+ 302 0056 67EE277A 		vmul.f32	s15, s14, s15
+ 303 005a C4ED047A 		vstr.32	s15, [r4, #16]
+ 304 005e 6575     		strb	r5, [r4, #21]
+ 305 0060 0020     		movs	r0, #0
+ 306              	.L30:
+ 307 0062 03B0     		add	sp, sp, #12
+ 308              		@ sp needed
+ 309 0064 30BD     		pop	{r4, r5, pc}
+ 310              	.L32:
+ 311 0066 4FF0FF30 		mov	r0, #-1
+ 312 006a FAE7     		b	.L30
+ 313              	.L33:
+ 314 006c 6FF00100 		mvn	r0, #1
+ 315 0070 F7E7     		b	.L30
+ 316              	.L36:
+ 317 0072 00BF     		.align	2
+ 318              	.L35:
+ 319 0074 0000FA44 		.word	1157234688
+ 320 0078 00000038 		.word	939524096
+ 322              		.section	.text.ICM42688_SetAccelODR,"ax",%progbits
+ 323              		.align	1
+ 324              		.global	ICM42688_SetAccelODR
+ 325              		.syntax unified
+ 326              		.thumb
+ 327              		.thumb_func
+ 329              	ICM42688_SetAccelODR:
+ 330              		@ args = 0, pretend = 0, frame = 8
+ 331              		@ frame_needed = 0, uses_anonymous_args = 0
+ 332 0000 30B5     		push	{r4, r5, lr}
+ 333 0002 83B0     		sub	sp, sp, #12
+ 334 0004 0446     		mov	r4, r0
+ 335 0006 0D46     		mov	r5, r1
+ 336 0008 0021     		movs	r1, #0
+ 337 000a FFF7FEFF 		bl	set_bank
+ 338 000e 0DF10703 		add	r3, sp, #7
+ 339 0012 0122     		movs	r2, #1
+ 340 0014 5021     		movs	r1, #80
+ 341 0016 2046     		mov	r0, r4
+ 342 0018 FFF7FEFF 		bl	read_regs
+ 343 001c 0028     		cmp	r0, #0
+ 344 001e 10DB     		blt	.L39
+ 345 0020 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+ 346 0024 23F00F03 		bic	r3, r3, #15
+ 347 0028 2A46     		mov	r2, r5
+ 348 002a 1A43     		orrs	r2, r2, r3
+ 349 002c 8DF80720 		strb	r2, [sp, #7]
+ 350 0030 5021     		movs	r1, #80
+ 351 0032 2046     		mov	r0, r4
+ 352 0034 FFF7FEFF 		bl	write_reg
+ 353 0038 0028     		cmp	r0, #0
+ 354 003a 05DB     		blt	.L40
+ 355 003c 0020     		movs	r0, #0
+ARM GAS  /tmp/cctkd8x0.s 			page 7
+
+
+ 356              	.L37:
+ 357 003e 03B0     		add	sp, sp, #12
+ 358              		@ sp needed
+ 359 0040 30BD     		pop	{r4, r5, pc}
+ 360              	.L39:
+ 361 0042 4FF0FF30 		mov	r0, #-1
+ 362 0046 FAE7     		b	.L37
+ 363              	.L40:
+ 364 0048 6FF00100 		mvn	r0, #1
+ 365 004c F7E7     		b	.L37
+ 367              		.section	.text.ICM42688_SetGyroODR,"ax",%progbits
+ 368              		.align	1
+ 369              		.global	ICM42688_SetGyroODR
+ 370              		.syntax unified
+ 371              		.thumb
+ 372              		.thumb_func
+ 374              	ICM42688_SetGyroODR:
+ 375              		@ args = 0, pretend = 0, frame = 8
+ 376              		@ frame_needed = 0, uses_anonymous_args = 0
+ 377 0000 30B5     		push	{r4, r5, lr}
+ 378 0002 83B0     		sub	sp, sp, #12
+ 379 0004 0446     		mov	r4, r0
+ 380 0006 0D46     		mov	r5, r1
+ 381 0008 0021     		movs	r1, #0
+ 382 000a FFF7FEFF 		bl	set_bank
+ 383 000e 0DF10703 		add	r3, sp, #7
+ 384 0012 0122     		movs	r2, #1
+ 385 0014 4F21     		movs	r1, #79
+ 386 0016 2046     		mov	r0, r4
+ 387 0018 FFF7FEFF 		bl	read_regs
+ 388 001c 0028     		cmp	r0, #0
+ 389 001e 10DB     		blt	.L44
+ 390 0020 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+ 391 0024 23F00F03 		bic	r3, r3, #15
+ 392 0028 2A46     		mov	r2, r5
+ 393 002a 1A43     		orrs	r2, r2, r3
+ 394 002c 8DF80720 		strb	r2, [sp, #7]
+ 395 0030 4F21     		movs	r1, #79
+ 396 0032 2046     		mov	r0, r4
+ 397 0034 FFF7FEFF 		bl	write_reg
+ 398 0038 0028     		cmp	r0, #0
+ 399 003a 05DB     		blt	.L45
+ 400 003c 0020     		movs	r0, #0
+ 401              	.L42:
+ 402 003e 03B0     		add	sp, sp, #12
+ 403              		@ sp needed
+ 404 0040 30BD     		pop	{r4, r5, pc}
+ 405              	.L44:
+ 406 0042 4FF0FF30 		mov	r0, #-1
+ 407 0046 FAE7     		b	.L42
+ 408              	.L45:
+ 409 0048 6FF00100 		mvn	r0, #1
+ 410 004c F7E7     		b	.L42
+ 412              		.section	.text.ICM42688_Init,"ax",%progbits
+ 413              		.align	1
+ 414              		.global	ICM42688_Init
+ 415              		.syntax unified
+ARM GAS  /tmp/cctkd8x0.s 			page 8
+
+
+ 416              		.thumb
+ 417              		.thumb_func
+ 419              	ICM42688_Init:
+ 420              		@ args = 0, pretend = 0, frame = 8
+ 421              		@ frame_needed = 0, uses_anonymous_args = 0
+ 422 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 423 0004 84B0     		sub	sp, sp, #16
+ 424 0006 0446     		mov	r4, r0
+ 425 0008 0122     		movs	r2, #1
+ 426 000a 0189     		ldrh	r1, [r0, #8]
+ 427 000c 4068     		ldr	r0, [r0, #4]
+ 428 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 429 0012 0025     		movs	r5, #0
+ 430 0014 A572     		strb	r5, [r4, #10]
+ 431 0016 2368     		ldr	r3, [r4]
+ 432 0018 DA69     		ldr	r2, [r3, #28]
+ 433 001a 9046     		mov	r8, r2
+ 434 001c 3022     		movs	r2, #48
+ 435 001e DA61     		str	r2, [r3, #28]
+ 436 0020 2068     		ldr	r0, [r4]
+ 437 0022 FFF7FEFF 		bl	HAL_SPI_Init
+ 438 0026 2A46     		mov	r2, r5
+ 439 0028 2189     		ldrh	r1, [r4, #8]
+ 440 002a 6068     		ldr	r0, [r4, #4]
+ 441 002c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 442 0030 0120     		movs	r0, #1
+ 443 0032 FFF7FEFF 		bl	HAL_Delay
+ 444 0036 0122     		movs	r2, #1
+ 445 0038 2189     		ldrh	r1, [r4, #8]
+ 446 003a 6068     		ldr	r0, [r4, #4]
+ 447 003c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 448 0040 0120     		movs	r0, #1
+ 449 0042 FFF7FEFF 		bl	HAL_Delay
+ 450 0046 F523     		movs	r3, #245
+ 451 0048 ADF80830 		strh	r3, [sp, #8]	@ movhi
+ 452 004c ADF80C50 		strh	r5, [sp, #12]	@ movhi
+ 453 0050 2A46     		mov	r2, r5
+ 454 0052 2189     		ldrh	r1, [r4, #8]
+ 455 0054 6068     		ldr	r0, [r4, #4]
+ 456 0056 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 457 005a 03AE     		add	r6, sp, #12
+ 458 005c 6427     		movs	r7, #100
+ 459 005e 0097     		str	r7, [sp]
+ 460 0060 0223     		movs	r3, #2
+ 461 0062 3246     		mov	r2, r6
+ 462 0064 02A9     		add	r1, sp, #8
+ 463 0066 2068     		ldr	r0, [r4]
+ 464 0068 FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+ 465 006c 0122     		movs	r2, #1
+ 466 006e 2189     		ldrh	r1, [r4, #8]
+ 467 0070 6068     		ldr	r0, [r4, #4]
+ 468 0072 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 469 0076 0120     		movs	r0, #1
+ 470 0078 FFF7FEFF 		bl	HAL_Delay
+ 471 007c 40F21113 		movw	r3, #273
+ 472 0080 ADF80C30 		strh	r3, [sp, #12]	@ movhi
+ 473 0084 2A46     		mov	r2, r5
+ARM GAS  /tmp/cctkd8x0.s 			page 9
+
+
+ 474 0086 2189     		ldrh	r1, [r4, #8]
+ 475 0088 6068     		ldr	r0, [r4, #4]
+ 476 008a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 477 008e 3B46     		mov	r3, r7
+ 478 0090 0222     		movs	r2, #2
+ 479 0092 3146     		mov	r1, r6
+ 480 0094 2068     		ldr	r0, [r4]
+ 481 0096 FFF7FEFF 		bl	HAL_SPI_Transmit
+ 482 009a 0122     		movs	r2, #1
+ 483 009c 2189     		ldrh	r1, [r4, #8]
+ 484 009e 6068     		ldr	r0, [r4, #4]
+ 485 00a0 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 486 00a4 3220     		movs	r0, #50
+ 487 00a6 FFF7FEFF 		bl	HAL_Delay
+ 488 00aa 2A46     		mov	r2, r5
+ 489 00ac 2189     		ldrh	r1, [r4, #8]
+ 490 00ae 6068     		ldr	r0, [r4, #4]
+ 491 00b0 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 492 00b4 0120     		movs	r0, #1
+ 493 00b6 FFF7FEFF 		bl	HAL_Delay
+ 494 00ba 0122     		movs	r2, #1
+ 495 00bc 2189     		ldrh	r1, [r4, #8]
+ 496 00be 6068     		ldr	r0, [r4, #4]
+ 497 00c0 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 498 00c4 0120     		movs	r0, #1
+ 499 00c6 FFF7FEFF 		bl	HAL_Delay
+ 500 00ca A572     		strb	r5, [r4, #10]
+ 501 00cc 2E46     		mov	r6, r5
+ 502              	.L48:
+ 503 00ce 042E     		cmp	r6, #4
+ 504 00d0 0ADC     		bgt	.L49
+ 505 00d2 2046     		mov	r0, r4
+ 506 00d4 FFF7FEFF 		bl	ICM42688_WhoAmI
+ 507 00d8 0546     		mov	r5, r0
+ 508 00da 4728     		cmp	r0, #71
+ 509 00dc 04D0     		beq	.L49
+ 510 00de 0A20     		movs	r0, #10
+ 511 00e0 FFF7FEFF 		bl	HAL_Delay
+ 512 00e4 0136     		adds	r6, r6, #1
+ 513 00e6 F2E7     		b	.L48
+ 514              	.L49:
+ 515 00e8 472D     		cmp	r5, #71
+ 516 00ea 41D1     		bne	.L52
+ 517 00ec 0F22     		movs	r2, #15
+ 518 00ee 4E21     		movs	r1, #78
+ 519 00f0 2046     		mov	r0, r4
+ 520 00f2 FFF7FEFF 		bl	write_reg
+ 521 00f6 0028     		cmp	r0, #0
+ 522 00f8 3DDB     		blt	.L53
+ 523 00fa 0120     		movs	r0, #1
+ 524 00fc FFF7FEFF 		bl	HAL_Delay
+ 525 0100 0021     		movs	r1, #0
+ 526 0102 2046     		mov	r0, r4
+ 527 0104 FFF7FEFF 		bl	ICM42688_SetAccelFS
+ 528 0108 0028     		cmp	r0, #0
+ 529 010a 37DB     		blt	.L54
+ 530 010c 0021     		movs	r1, #0
+ARM GAS  /tmp/cctkd8x0.s 			page 10
+
+
+ 531 010e 2046     		mov	r0, r4
+ 532 0110 FFF7FEFF 		bl	ICM42688_SetGyroFS
+ 533 0114 0028     		cmp	r0, #0
+ 534 0116 34DB     		blt	.L55
+ 535 0118 0621     		movs	r1, #6
+ 536 011a 2046     		mov	r0, r4
+ 537 011c FFF7FEFF 		bl	ICM42688_SetAccelODR
+ 538 0120 0028     		cmp	r0, #0
+ 539 0122 31DB     		blt	.L56
+ 540 0124 0621     		movs	r1, #6
+ 541 0126 2046     		mov	r0, r4
+ 542 0128 FFF7FEFF 		bl	ICM42688_SetGyroODR
+ 543 012c 0028     		cmp	r0, #0
+ 544 012e 2EDB     		blt	.L57
+ 545 0130 0121     		movs	r1, #1
+ 546 0132 2046     		mov	r0, r4
+ 547 0134 FFF7FEFF 		bl	set_bank
+ 548 0138 0322     		movs	r2, #3
+ 549 013a 0B21     		movs	r1, #11
+ 550 013c 2046     		mov	r0, r4
+ 551 013e FFF7FEFF 		bl	write_reg
+ 552 0142 0221     		movs	r1, #2
+ 553 0144 2046     		mov	r0, r4
+ 554 0146 FFF7FEFF 		bl	set_bank
+ 555 014a 0122     		movs	r2, #1
+ 556 014c 0321     		movs	r1, #3
+ 557 014e 2046     		mov	r0, r4
+ 558 0150 FFF7FEFF 		bl	write_reg
+ 559 0154 0021     		movs	r1, #0
+ 560 0156 2046     		mov	r0, r4
+ 561 0158 FFF7FEFF 		bl	set_bank
+ 562 015c 2368     		ldr	r3, [r4]
+ 563 015e C3F81C80 		str	r8, [r3, #28]
+ 564 0162 2068     		ldr	r0, [r4]
+ 565 0164 FFF7FEFF 		bl	HAL_SPI_Init
+ 566 0168 0020     		movs	r0, #0
+ 567              	.L47:
+ 568 016a 04B0     		add	sp, sp, #16
+ 569              		@ sp needed
+ 570 016c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 571              	.L52:
+ 572 0170 4FF0FF30 		mov	r0, #-1
+ 573 0174 F9E7     		b	.L47
+ 574              	.L53:
+ 575 0176 6FF00100 		mvn	r0, #1
+ 576 017a F6E7     		b	.L47
+ 577              	.L54:
+ 578 017c 6FF00200 		mvn	r0, #2
+ 579 0180 F3E7     		b	.L47
+ 580              	.L55:
+ 581 0182 6FF00300 		mvn	r0, #3
+ 582 0186 F0E7     		b	.L47
+ 583              	.L56:
+ 584 0188 6FF00400 		mvn	r0, #4
+ 585 018c EDE7     		b	.L47
+ 586              	.L57:
+ 587 018e 6FF00500 		mvn	r0, #5
+ARM GAS  /tmp/cctkd8x0.s 			page 11
+
+
+ 588 0192 EAE7     		b	.L47
+ 590              		.section	.text.ICM42688_ReadOnce,"ax",%progbits
+ 591              		.align	1
+ 592              		.global	ICM42688_ReadOnce
+ 593              		.syntax unified
+ 594              		.thumb
+ 595              		.thumb_func
+ 597              	ICM42688_ReadOnce:
+ 598              		@ args = 0, pretend = 0, frame = 16
+ 599              		@ frame_needed = 0, uses_anonymous_args = 0
+ 600 0000 70B5     		push	{r4, r5, r6, lr}
+ 601 0002 84B0     		sub	sp, sp, #16
+ 602 0004 0446     		mov	r4, r0
+ 603 0006 0E46     		mov	r6, r1
+ 604 0008 0021     		movs	r1, #0
+ 605 000a FFF7FEFF 		bl	set_bank
+ 606 000e 0023     		movs	r3, #0
+ 607 0010 8DF80F30 		strb	r3, [sp, #15]
+ 608 0014 FFF7FEFF 		bl	HAL_GetTick
+ 609 0018 0546     		mov	r5, r0
+ 610              	.L60:
+ 611 001a 9DF80F30 		ldrb	r3, [sp, #15]	@ zero_extendqisi2
+ 612 001e 13F0080F 		tst	r3, #8
+ 613 0022 11D1     		bne	.L67
+ 614 0024 0DF10F03 		add	r3, sp, #15
+ 615 0028 0122     		movs	r2, #1
+ 616 002a 2D21     		movs	r1, #45
+ 617 002c 2046     		mov	r0, r4
+ 618 002e FFF7FEFF 		bl	read_regs
+ 619 0032 0028     		cmp	r0, #0
+ 620 0034 C0F28F80 		blt	.L63
+ 621 0038 FFF7FEFF 		bl	HAL_GetTick
+ 622 003c 401B     		subs	r0, r0, r5
+ 623 003e 0A28     		cmp	r0, #10
+ 624 0040 EBD9     		bls	.L60
+ 625 0042 6FF00100 		mvn	r0, #1
+ 626 0046 84E0     		b	.L59
+ 627              	.L67:
+ 628 0048 6B46     		mov	r3, sp
+ 629 004a 0E22     		movs	r2, #14
+ 630 004c 1D21     		movs	r1, #29
+ 631 004e 2046     		mov	r0, r4
+ 632 0050 FFF7FEFF 		bl	read_regs
+ 633 0054 0028     		cmp	r0, #0
+ 634 0056 C0F28180 		blt	.L65
+ 635 005a 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+ 636 005e 1B02     		lsls	r3, r3, #8
+ 637 0060 1BB2     		sxth	r3, r3
+ 638 0062 9DF80120 		ldrb	r2, [sp, #1]	@ zero_extendqisi2
+ 639 0066 1A43     		orrs	r2, r2, r3
+ 640 0068 9DF80230 		ldrb	r3, [sp, #2]	@ zero_extendqisi2
+ 641 006c 1B02     		lsls	r3, r3, #8
+ 642 006e 1BB2     		sxth	r3, r3
+ 643 0070 9DF80310 		ldrb	r1, [sp, #3]	@ zero_extendqisi2
+ 644 0074 0B43     		orrs	r3, r3, r1
+ 645 0076 05EE103A 		vmov	s10, r3	@ int
+ 646 007a 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+ARM GAS  /tmp/cctkd8x0.s 			page 12
+
+
+ 647 007e 1B02     		lsls	r3, r3, #8
+ 648 0080 1BB2     		sxth	r3, r3
+ 649 0082 9DF80510 		ldrb	r1, [sp, #5]	@ zero_extendqisi2
+ 650 0086 0B43     		orrs	r3, r3, r1
+ 651 0088 05EE903A 		vmov	s11, r3	@ int
+ 652 008c 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
+ 653 0090 1B02     		lsls	r3, r3, #8
+ 654 0092 1BB2     		sxth	r3, r3
+ 655 0094 9DF80710 		ldrb	r1, [sp, #7]	@ zero_extendqisi2
+ 656 0098 0B43     		orrs	r3, r3, r1
+ 657 009a 06EE103A 		vmov	s12, r3	@ int
+ 658 009e 9DF80830 		ldrb	r3, [sp, #8]	@ zero_extendqisi2
+ 659 00a2 1B02     		lsls	r3, r3, #8
+ 660 00a4 1BB2     		sxth	r3, r3
+ 661 00a6 9DF80910 		ldrb	r1, [sp, #9]	@ zero_extendqisi2
+ 662 00aa 0B43     		orrs	r3, r3, r1
+ 663 00ac 06EE903A 		vmov	s13, r3	@ int
+ 664 00b0 9DF80A30 		ldrb	r3, [sp, #10]	@ zero_extendqisi2
+ 665 00b4 1B02     		lsls	r3, r3, #8
+ 666 00b6 1BB2     		sxth	r3, r3
+ 667 00b8 9DF80B10 		ldrb	r1, [sp, #11]	@ zero_extendqisi2
+ 668 00bc 0B43     		orrs	r3, r3, r1
+ 669 00be 07EE103A 		vmov	s14, r3	@ int
+ 670 00c2 9DF80C30 		ldrb	r3, [sp, #12]	@ zero_extendqisi2
+ 671 00c6 1B02     		lsls	r3, r3, #8
+ 672 00c8 1BB2     		sxth	r3, r3
+ 673 00ca 9DF80D10 		ldrb	r1, [sp, #13]	@ zero_extendqisi2
+ 674 00ce 0B43     		orrs	r3, r3, r1
+ 675 00d0 07EE903A 		vmov	s15, r3	@ int
+ 676 00d4 D4ED034A 		vldr.32	s9, [r4, #12]
+ 677 00d8 B8EEC55A 		vcvt.f32.s32	s10, s10
+ 678 00dc 25EE245A 		vmul.f32	s10, s10, s9
+ 679 00e0 86ED005A 		vstr.32	s10, [r6]
+ 680 00e4 94ED035A 		vldr.32	s10, [r4, #12]
+ 681 00e8 F8EEE55A 		vcvt.f32.s32	s11, s11
+ 682 00ec 65EE855A 		vmul.f32	s11, s11, s10
+ 683 00f0 C6ED015A 		vstr.32	s11, [r6, #4]
+ 684 00f4 D4ED035A 		vldr.32	s11, [r4, #12]
+ 685 00f8 B8EEC66A 		vcvt.f32.s32	s12, s12
+ 686 00fc 26EE256A 		vmul.f32	s12, s12, s11
+ 687 0100 86ED026A 		vstr.32	s12, [r6, #8]
+ 688 0104 94ED046A 		vldr.32	s12, [r4, #16]
+ 689 0108 F8EEE66A 		vcvt.f32.s32	s13, s13
+ 690 010c 66EE866A 		vmul.f32	s13, s13, s12
+ 691 0110 C6ED036A 		vstr.32	s13, [r6, #12]
+ 692 0114 D4ED046A 		vldr.32	s13, [r4, #16]
+ 693 0118 B8EEC77A 		vcvt.f32.s32	s14, s14
+ 694 011c 27EE267A 		vmul.f32	s14, s14, s13
+ 695 0120 86ED047A 		vstr.32	s14, [r6, #16]
+ 696 0124 94ED047A 		vldr.32	s14, [r4, #16]
+ 697 0128 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 698 012c 67EE877A 		vmul.f32	s15, s15, s14
+ 699 0130 C6ED057A 		vstr.32	s15, [r6, #20]
+ 700 0134 07EE902A 		vmov	s15, r2	@ int
+ 701 0138 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 702 013c DFED096A 		vldr.32	s13, .L68
+ 703 0140 87EEA67A 		vdiv.f32	s14, s15, s13
+ARM GAS  /tmp/cctkd8x0.s 			page 13
+
+
+ 704 0144 F3EE097A 		vmov.f32	s15, #2.5e+1
+ 705 0148 77EE277A 		vadd.f32	s15, s14, s15
+ 706 014c C6ED067A 		vstr.32	s15, [r6, #24]
+ 707 0150 0020     		movs	r0, #0
+ 708              	.L59:
+ 709 0152 04B0     		add	sp, sp, #16
+ 710              		@ sp needed
+ 711 0154 70BD     		pop	{r4, r5, r6, pc}
+ 712              	.L63:
+ 713 0156 4FF0FF30 		mov	r0, #-1
+ 714 015a FAE7     		b	.L59
+ 715              	.L65:
+ 716 015c 6FF00200 		mvn	r0, #2
+ 717 0160 F7E7     		b	.L59
+ 718              	.L69:
+ 719 0162 00BF     		.align	2
+ 720              	.L68:
+ 721 0164 E17A0443 		.word	1124367073
+ 723              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  /tmp/cctkd8x0.s 			page 14
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ICM42688.c
+     /tmp/cctkd8x0.s:18     .text.write_reg:00000000 $t
+     /tmp/cctkd8x0.s:23     .text.write_reg:00000000 write_reg
+     /tmp/cctkd8x0.s:91     .text.set_bank:00000000 $t
+     /tmp/cctkd8x0.s:96     .text.set_bank:00000000 set_bank
+     /tmp/cctkd8x0.s:114    .text.read_regs:00000000 $t
+     /tmp/cctkd8x0.s:119    .text.read_regs:00000000 read_regs
+     /tmp/cctkd8x0.s:172    .text.ICM42688_WhoAmI:00000000 $t
+     /tmp/cctkd8x0.s:178    .text.ICM42688_WhoAmI:00000000 ICM42688_WhoAmI
+     /tmp/cctkd8x0.s:205    .text.ICM42688_SetAccelFS:00000000 $t
+     /tmp/cctkd8x0.s:211    .text.ICM42688_SetAccelFS:00000000 ICM42688_SetAccelFS
+     /tmp/cctkd8x0.s:260    .text.ICM42688_SetAccelFS:00000070 $d
+     /tmp/cctkd8x0.s:263    .text.ICM42688_SetGyroFS:00000000 $t
+     /tmp/cctkd8x0.s:269    .text.ICM42688_SetGyroFS:00000000 ICM42688_SetGyroFS
+     /tmp/cctkd8x0.s:319    .text.ICM42688_SetGyroFS:00000074 $d
+     /tmp/cctkd8x0.s:323    .text.ICM42688_SetAccelODR:00000000 $t
+     /tmp/cctkd8x0.s:329    .text.ICM42688_SetAccelODR:00000000 ICM42688_SetAccelODR
+     /tmp/cctkd8x0.s:368    .text.ICM42688_SetGyroODR:00000000 $t
+     /tmp/cctkd8x0.s:374    .text.ICM42688_SetGyroODR:00000000 ICM42688_SetGyroODR
+     /tmp/cctkd8x0.s:413    .text.ICM42688_Init:00000000 $t
+     /tmp/cctkd8x0.s:419    .text.ICM42688_Init:00000000 ICM42688_Init
+     /tmp/cctkd8x0.s:591    .text.ICM42688_ReadOnce:00000000 $t
+     /tmp/cctkd8x0.s:597    .text.ICM42688_ReadOnce:00000000 ICM42688_ReadOnce
+     /tmp/cctkd8x0.s:721    .text.ICM42688_ReadOnce:00000164 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_SPI_Transmit
+HAL_Delay
+HAL_SPI_TransmitReceive
+memset
+memcpy
+HAL_SPI_Init
+HAL_GetTick

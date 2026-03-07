@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s 			page 1
+ARM GAS  /tmp/ccA3BXRU.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s 			page 1
   60 0000 FEE7     		b	.L6
   62              		.section	.text.BusFault_Handler,"ax",%progbits
   63              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s 			page 2
+ARM GAS  /tmp/ccA3BXRU.s 			page 2
 
 
   64              		.global	BusFault_Handler
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s 			page 1
  127              		@ frame_needed = 0, uses_anonymous_args = 0
  128              		@ link register save eliminated.
  129 0000 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s 			page 3
+ARM GAS  /tmp/ccA3BXRU.s 			page 3
 
 
  131              		.section	.text.SysTick_Handler,"ax",%progbits
@@ -151,32 +151,32 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s 			page 1
  161              	.L18:
  162 000c 00000000 		.word	hpcd_USB_FS
  164              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s 			page 4
+ARM GAS  /tmp/ccA3BXRU.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_it.c
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:18     .text.NMI_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:24     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:33     .text.HardFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:39     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:48     .text.MemManage_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:54     .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:63     .text.BusFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:69     .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:78     .text.UsageFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:84     .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:93     .text.SVC_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:99     .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:106    .text.DebugMon_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:112    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:119    .text.PendSV_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:125    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:132    .text.SysTick_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:138    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:146    .text.USB_LP_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:152    .text.USB_LP_IRQHandler:00000000 USB_LP_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccUFEYCw.s:162    .text.USB_LP_IRQHandler:0000000c $d
+     /tmp/ccA3BXRU.s:18     .text.NMI_Handler:00000000 $t
+     /tmp/ccA3BXRU.s:24     .text.NMI_Handler:00000000 NMI_Handler
+     /tmp/ccA3BXRU.s:33     .text.HardFault_Handler:00000000 $t
+     /tmp/ccA3BXRU.s:39     .text.HardFault_Handler:00000000 HardFault_Handler
+     /tmp/ccA3BXRU.s:48     .text.MemManage_Handler:00000000 $t
+     /tmp/ccA3BXRU.s:54     .text.MemManage_Handler:00000000 MemManage_Handler
+     /tmp/ccA3BXRU.s:63     .text.BusFault_Handler:00000000 $t
+     /tmp/ccA3BXRU.s:69     .text.BusFault_Handler:00000000 BusFault_Handler
+     /tmp/ccA3BXRU.s:78     .text.UsageFault_Handler:00000000 $t
+     /tmp/ccA3BXRU.s:84     .text.UsageFault_Handler:00000000 UsageFault_Handler
+     /tmp/ccA3BXRU.s:93     .text.SVC_Handler:00000000 $t
+     /tmp/ccA3BXRU.s:99     .text.SVC_Handler:00000000 SVC_Handler
+     /tmp/ccA3BXRU.s:106    .text.DebugMon_Handler:00000000 $t
+     /tmp/ccA3BXRU.s:112    .text.DebugMon_Handler:00000000 DebugMon_Handler
+     /tmp/ccA3BXRU.s:119    .text.PendSV_Handler:00000000 $t
+     /tmp/ccA3BXRU.s:125    .text.PendSV_Handler:00000000 PendSV_Handler
+     /tmp/ccA3BXRU.s:132    .text.SysTick_Handler:00000000 $t
+     /tmp/ccA3BXRU.s:138    .text.SysTick_Handler:00000000 SysTick_Handler
+     /tmp/ccA3BXRU.s:146    .text.USB_LP_IRQHandler:00000000 $t
+     /tmp/ccA3BXRU.s:152    .text.USB_LP_IRQHandler:00000000 USB_LP_IRQHandler
+     /tmp/ccA3BXRU.s:162    .text.USB_LP_IRQHandler:0000000c $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick

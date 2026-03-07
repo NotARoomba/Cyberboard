@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
+ARM GAS  /tmp/cc2rQHb2.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
   58 001c 43F48063 		orr	r3, r3, #1024
   59 0020 1360     		str	r3, [r2]
   60 0022 0020     		movs	r0, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 2
+ARM GAS  /tmp/cc2rQHb2.s 			page 2
 
 
   61 0024 7047     		bx	lr
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  116              		.global	HAL_PWREx_EnableBatteryCharging
  117              		.syntax unified
  118              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 3
+ARM GAS  /tmp/cc2rQHb2.s 			page 3
 
 
  119              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  178              	.L23:
  179 000c 00040058 		.word	1476396032
  181              		.section	.text.HAL_PWREx_DisableVddUSB,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 4
+ARM GAS  /tmp/cc2rQHb2.s 			page 4
 
 
  182              		.align	1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  241              	.L32:
  242 000c 00040058 		.word	1476396032
  244              		.section	.text.HAL_PWREx_EnableBORH_SMPSBypassIT,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 5
+ARM GAS  /tmp/cc2rQHb2.s 			page 5
 
 
  245              		.align	1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  304              	.L41:
  305 000c 00040058 		.word	1476396032
  307              		.section	.text.HAL_PWREx_DisableRFPhaseIT,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 6
+ARM GAS  /tmp/cc2rQHb2.s 			page 6
 
 
  308              		.align	1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  367              	.L50:
  368 000c 00040058 		.word	1476396032
  370              		.section	.text.HAL_PWREx_Enable802ActivityIT,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 7
+ARM GAS  /tmp/cc2rQHb2.s 			page 7
 
 
  371              		.align	1
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  430              	.L59:
  431 000c 00040058 		.word	1476396032
  433              		.section	.text.HAL_PWREx_DisableHOLDC2IT,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 8
+ARM GAS  /tmp/cc2rQHb2.s 			page 8
 
 
  434              		.align	1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  491 0032 01F00B01 		and	r1, r1, #11
  492 0036 0A43     		orrs	r2, r2, r1
  493 0038 9A65     		str	r2, [r3, #88]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 9
+ARM GAS  /tmp/cc2rQHb2.s 			page 9
 
 
  494 003a DA6D     		ldr	r2, [r3, #92]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  549              		.align	1
  550              		.global	HAL_PWREx_DisableGPIOPullUp
  551              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 10
+ARM GAS  /tmp/cc2rQHb2.s 			page 10
 
 
  552              		.thumb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  607 005e 23EA0103 		bic	r3, r3, r1
  608 0062 9363     		str	r3, [r2, #56]
  609 0064 0020     		movs	r0, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 11
+ARM GAS  /tmp/cc2rQHb2.s 			page 11
 
 
  610 0066 7047     		bx	lr
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  666 0040 9A65     		str	r2, [r3, #88]
  667 0042 0020     		movs	r0, #0
  668 0044 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 12
+ARM GAS  /tmp/cc2rQHb2.s 			page 12
 
 
  669              	.L100:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  725              	HAL_PWREx_DisableGPIOPullDown:
  726              		@ args = 0, pretend = 0, frame = 0
  727              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 13
+ARM GAS  /tmp/cc2rQHb2.s 			page 13
 
 
  728              		@ link register save eliminated.
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  782 0068 044A     		ldr	r2, .L114
  783 006a 536C     		ldr	r3, [r2, #68]
  784 006c 01F01F01 		and	r1, r1, #31
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 14
+ARM GAS  /tmp/cc2rQHb2.s 			page 14
 
 
  785 0070 23EA0103 		bic	r3, r3, r1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  845              		@ frame_needed = 0, uses_anonymous_args = 0
  846              		@ link register save eliminated.
  847 0000 034A     		ldr	r2, .L123
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 15
+ARM GAS  /tmp/cc2rQHb2.s 			page 15
 
 
  848 0002 D369     		ldr	r3, [r2, #28]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  908              		@ frame_needed = 0, uses_anonymous_args = 0
  909              		@ link register save eliminated.
  910 0000 024A     		ldr	r2, .L132
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 16
+ARM GAS  /tmp/cc2rQHb2.s 			page 16
 
 
  911 0002 D368     		ldr	r3, [r2, #12]
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  971              		@ frame_needed = 0, uses_anonymous_args = 0
  972              		@ link register save eliminated.
  973 0000 10F0100F 		tst	r0, #16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 17
+ARM GAS  /tmp/cc2rQHb2.s 			page 17
 
 
  974 0004 03D0     		beq	.L141
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1033              		.global	HAL_PWREx_DisablePVM1
  1034              		.syntax unified
  1035              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 18
+ARM GAS  /tmp/cc2rQHb2.s 			page 18
 
 
  1036              		.thumb_func
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1096              		.global	HAL_PWREx_ConfigPVM
  1097              		.syntax unified
  1098              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 19
+ARM GAS  /tmp/cc2rQHb2.s 			page 19
 
 
  1099              		.thumb_func
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1154 0080 5368     		ldr	r3, [r2, #4]
  1155 0082 43F00043 		orr	r3, r3, #-2147483648
  1156 0086 5360     		str	r3, [r2, #4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 20
+ARM GAS  /tmp/cc2rQHb2.s 			page 20
 
 
  1157 0088 0020     		movs	r0, #0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1211 0110 7047     		bx	lr
  1212              	.L172:
  1213 0112 00BF     		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 21
+ARM GAS  /tmp/cc2rQHb2.s 			page 21
 
 
  1214              	.L171:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1270 0058 E6E7     		b	.L175
  1271              	.L178:
  1272 005a 0F22     		movs	r2, #15
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 22
+ARM GAS  /tmp/cc2rQHb2.s 			page 22
 
 
  1273 005c 0120     		movs	r0, #1
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1333              		@ args = 0, pretend = 0, frame = 0
  1334              		@ frame_needed = 0, uses_anonymous_args = 0
  1335              		@ link register save eliminated.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 23
+ARM GAS  /tmp/cc2rQHb2.s 			page 23
 
 
  1336 0000 DFF830C0 		ldr	ip, .L192
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1394 0004 0123     		movs	r3, #1
  1395 0006 8340     		lsls	r3, r3, r0
  1396 0008 054A     		ldr	r2, .L200
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 24
+ARM GAS  /tmp/cc2rQHb2.s 			page 24
 
 
  1397 000a 9361     		str	r3, [r2, #24]
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1455 0020 3222     		movs	r2, #50
  1456 0022 02FB03F3 		mul	r3, r2, r3
  1457 0026 00E0     		b	.L206
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 25
+ARM GAS  /tmp/cc2rQHb2.s 			page 25
 
 
  1458              	.L208:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1514              		.thumb
  1515              		.syntax unified
  1516              	.L215:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 26
+ARM GAS  /tmp/cc2rQHb2.s 			page 26
 
 
  1517 001e 054A     		ldr	r2, .L217+4
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1573 0026 23F00403 		bic	r3, r3, #4
  1574 002a 1361     		str	r3, [r2, #16]
  1575 002c 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 27
+ARM GAS  /tmp/cc2rQHb2.s 			page 27
 
 
  1576              	.L222:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1632              	@ 1238 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr_ex.c" 1
  1633 002e 30BF     		wfi
  1634              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 28
+ARM GAS  /tmp/cc2rQHb2.s 			page 28
 
 
  1635              		.thumb
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1694              		.align	1
  1695              		.weak	HAL_PWREx_PVM3Callback
  1696              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 29
+ARM GAS  /tmp/cc2rQHb2.s 			page 29
 
 
  1697              		.thumb
@@ -1737,171 +1737,171 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 1
  1753              	.L244:
  1754 0048 00080058 		.word	1476397056
  1756              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 30
+ARM GAS  /tmp/cc2rQHb2.s 			page 30
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_pwr_ex.c
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:18     .text.HAL_PWREx_GetVoltageRange:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:24     .text.HAL_PWREx_GetVoltageRange:00000000 HAL_PWREx_GetVoltageRange
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:35     .text.HAL_PWREx_GetVoltageRange:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:38     .text.HAL_PWREx_ControlVoltageScaling:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:44     .text.HAL_PWREx_ControlVoltageScaling:00000000 HAL_PWREx_ControlVoltageScaling
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:111    .text.HAL_PWREx_ControlVoltageScaling:0000008c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:115    .text.HAL_PWREx_EnableBatteryCharging:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:121    .text.HAL_PWREx_EnableBatteryCharging:00000000 HAL_PWREx_EnableBatteryCharging
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:137    .text.HAL_PWREx_EnableBatteryCharging:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:140    .text.HAL_PWREx_DisableBatteryCharging:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:146    .text.HAL_PWREx_DisableBatteryCharging:00000000 HAL_PWREx_DisableBatteryCharging
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:158    .text.HAL_PWREx_DisableBatteryCharging:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:161    .text.HAL_PWREx_EnableVddUSB:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:167    .text.HAL_PWREx_EnableVddUSB:00000000 HAL_PWREx_EnableVddUSB
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:179    .text.HAL_PWREx_EnableVddUSB:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:182    .text.HAL_PWREx_DisableVddUSB:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:188    .text.HAL_PWREx_DisableVddUSB:00000000 HAL_PWREx_DisableVddUSB
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:200    .text.HAL_PWREx_DisableVddUSB:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:203    .text.HAL_PWREx_EnableInternalWakeUpLine:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:209    .text.HAL_PWREx_EnableInternalWakeUpLine:00000000 HAL_PWREx_EnableInternalWakeUpLine
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:221    .text.HAL_PWREx_EnableInternalWakeUpLine:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:224    .text.HAL_PWREx_DisableInternalWakeUpLine:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:230    .text.HAL_PWREx_DisableInternalWakeUpLine:00000000 HAL_PWREx_DisableInternalWakeUpLine
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:242    .text.HAL_PWREx_DisableInternalWakeUpLine:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:245    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:251    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:00000000 HAL_PWREx_EnableBORH_SMPSBypassIT
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:263    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:266    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:272    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:00000000 HAL_PWREx_DisableBORH_SMPSBypassIT
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:284    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:287    .text.HAL_PWREx_EnableRFPhaseIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:293    .text.HAL_PWREx_EnableRFPhaseIT:00000000 HAL_PWREx_EnableRFPhaseIT
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:305    .text.HAL_PWREx_EnableRFPhaseIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:308    .text.HAL_PWREx_DisableRFPhaseIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:314    .text.HAL_PWREx_DisableRFPhaseIT:00000000 HAL_PWREx_DisableRFPhaseIT
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:326    .text.HAL_PWREx_DisableRFPhaseIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:329    .text.HAL_PWREx_EnableBLEActivityIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:335    .text.HAL_PWREx_EnableBLEActivityIT:00000000 HAL_PWREx_EnableBLEActivityIT
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:347    .text.HAL_PWREx_EnableBLEActivityIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:350    .text.HAL_PWREx_DisableBLEActivityIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:356    .text.HAL_PWREx_DisableBLEActivityIT:00000000 HAL_PWREx_DisableBLEActivityIT
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:368    .text.HAL_PWREx_DisableBLEActivityIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:371    .text.HAL_PWREx_Enable802ActivityIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:377    .text.HAL_PWREx_Enable802ActivityIT:00000000 HAL_PWREx_Enable802ActivityIT
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:389    .text.HAL_PWREx_Enable802ActivityIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:392    .text.HAL_PWREx_Disable802ActivityIT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:398    .text.HAL_PWREx_Disable802ActivityIT:00000000 HAL_PWREx_Disable802ActivityIT
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:410    .text.HAL_PWREx_Disable802ActivityIT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:413    .text.HAL_PWREx_EnableHOLDC2IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:419    .text.HAL_PWREx_EnableHOLDC2IT:00000000 HAL_PWREx_EnableHOLDC2IT
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:431    .text.HAL_PWREx_EnableHOLDC2IT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:434    .text.HAL_PWREx_DisableHOLDC2IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:440    .text.HAL_PWREx_DisableHOLDC2IT:00000000 HAL_PWREx_DisableHOLDC2IT
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:452    .text.HAL_PWREx_DisableHOLDC2IT:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:455    .text.HAL_PWREx_EnableGPIOPullUp:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 31
+     /tmp/cc2rQHb2.s:18     .text.HAL_PWREx_GetVoltageRange:00000000 $t
+     /tmp/cc2rQHb2.s:24     .text.HAL_PWREx_GetVoltageRange:00000000 HAL_PWREx_GetVoltageRange
+     /tmp/cc2rQHb2.s:35     .text.HAL_PWREx_GetVoltageRange:0000000c $d
+     /tmp/cc2rQHb2.s:38     .text.HAL_PWREx_ControlVoltageScaling:00000000 $t
+     /tmp/cc2rQHb2.s:44     .text.HAL_PWREx_ControlVoltageScaling:00000000 HAL_PWREx_ControlVoltageScaling
+     /tmp/cc2rQHb2.s:111    .text.HAL_PWREx_ControlVoltageScaling:0000008c $d
+     /tmp/cc2rQHb2.s:115    .text.HAL_PWREx_EnableBatteryCharging:00000000 $t
+     /tmp/cc2rQHb2.s:121    .text.HAL_PWREx_EnableBatteryCharging:00000000 HAL_PWREx_EnableBatteryCharging
+     /tmp/cc2rQHb2.s:137    .text.HAL_PWREx_EnableBatteryCharging:00000018 $d
+     /tmp/cc2rQHb2.s:140    .text.HAL_PWREx_DisableBatteryCharging:00000000 $t
+     /tmp/cc2rQHb2.s:146    .text.HAL_PWREx_DisableBatteryCharging:00000000 HAL_PWREx_DisableBatteryCharging
+     /tmp/cc2rQHb2.s:158    .text.HAL_PWREx_DisableBatteryCharging:0000000c $d
+     /tmp/cc2rQHb2.s:161    .text.HAL_PWREx_EnableVddUSB:00000000 $t
+     /tmp/cc2rQHb2.s:167    .text.HAL_PWREx_EnableVddUSB:00000000 HAL_PWREx_EnableVddUSB
+     /tmp/cc2rQHb2.s:179    .text.HAL_PWREx_EnableVddUSB:0000000c $d
+     /tmp/cc2rQHb2.s:182    .text.HAL_PWREx_DisableVddUSB:00000000 $t
+     /tmp/cc2rQHb2.s:188    .text.HAL_PWREx_DisableVddUSB:00000000 HAL_PWREx_DisableVddUSB
+     /tmp/cc2rQHb2.s:200    .text.HAL_PWREx_DisableVddUSB:0000000c $d
+     /tmp/cc2rQHb2.s:203    .text.HAL_PWREx_EnableInternalWakeUpLine:00000000 $t
+     /tmp/cc2rQHb2.s:209    .text.HAL_PWREx_EnableInternalWakeUpLine:00000000 HAL_PWREx_EnableInternalWakeUpLine
+     /tmp/cc2rQHb2.s:221    .text.HAL_PWREx_EnableInternalWakeUpLine:0000000c $d
+     /tmp/cc2rQHb2.s:224    .text.HAL_PWREx_DisableInternalWakeUpLine:00000000 $t
+     /tmp/cc2rQHb2.s:230    .text.HAL_PWREx_DisableInternalWakeUpLine:00000000 HAL_PWREx_DisableInternalWakeUpLine
+     /tmp/cc2rQHb2.s:242    .text.HAL_PWREx_DisableInternalWakeUpLine:0000000c $d
+     /tmp/cc2rQHb2.s:245    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:00000000 $t
+     /tmp/cc2rQHb2.s:251    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:00000000 HAL_PWREx_EnableBORH_SMPSBypassIT
+     /tmp/cc2rQHb2.s:263    .text.HAL_PWREx_EnableBORH_SMPSBypassIT:0000000c $d
+     /tmp/cc2rQHb2.s:266    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:00000000 $t
+     /tmp/cc2rQHb2.s:272    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:00000000 HAL_PWREx_DisableBORH_SMPSBypassIT
+     /tmp/cc2rQHb2.s:284    .text.HAL_PWREx_DisableBORH_SMPSBypassIT:0000000c $d
+     /tmp/cc2rQHb2.s:287    .text.HAL_PWREx_EnableRFPhaseIT:00000000 $t
+     /tmp/cc2rQHb2.s:293    .text.HAL_PWREx_EnableRFPhaseIT:00000000 HAL_PWREx_EnableRFPhaseIT
+     /tmp/cc2rQHb2.s:305    .text.HAL_PWREx_EnableRFPhaseIT:0000000c $d
+     /tmp/cc2rQHb2.s:308    .text.HAL_PWREx_DisableRFPhaseIT:00000000 $t
+     /tmp/cc2rQHb2.s:314    .text.HAL_PWREx_DisableRFPhaseIT:00000000 HAL_PWREx_DisableRFPhaseIT
+     /tmp/cc2rQHb2.s:326    .text.HAL_PWREx_DisableRFPhaseIT:0000000c $d
+     /tmp/cc2rQHb2.s:329    .text.HAL_PWREx_EnableBLEActivityIT:00000000 $t
+     /tmp/cc2rQHb2.s:335    .text.HAL_PWREx_EnableBLEActivityIT:00000000 HAL_PWREx_EnableBLEActivityIT
+     /tmp/cc2rQHb2.s:347    .text.HAL_PWREx_EnableBLEActivityIT:0000000c $d
+     /tmp/cc2rQHb2.s:350    .text.HAL_PWREx_DisableBLEActivityIT:00000000 $t
+     /tmp/cc2rQHb2.s:356    .text.HAL_PWREx_DisableBLEActivityIT:00000000 HAL_PWREx_DisableBLEActivityIT
+     /tmp/cc2rQHb2.s:368    .text.HAL_PWREx_DisableBLEActivityIT:0000000c $d
+     /tmp/cc2rQHb2.s:371    .text.HAL_PWREx_Enable802ActivityIT:00000000 $t
+     /tmp/cc2rQHb2.s:377    .text.HAL_PWREx_Enable802ActivityIT:00000000 HAL_PWREx_Enable802ActivityIT
+     /tmp/cc2rQHb2.s:389    .text.HAL_PWREx_Enable802ActivityIT:0000000c $d
+     /tmp/cc2rQHb2.s:392    .text.HAL_PWREx_Disable802ActivityIT:00000000 $t
+     /tmp/cc2rQHb2.s:398    .text.HAL_PWREx_Disable802ActivityIT:00000000 HAL_PWREx_Disable802ActivityIT
+     /tmp/cc2rQHb2.s:410    .text.HAL_PWREx_Disable802ActivityIT:0000000c $d
+     /tmp/cc2rQHb2.s:413    .text.HAL_PWREx_EnableHOLDC2IT:00000000 $t
+     /tmp/cc2rQHb2.s:419    .text.HAL_PWREx_EnableHOLDC2IT:00000000 HAL_PWREx_EnableHOLDC2IT
+     /tmp/cc2rQHb2.s:431    .text.HAL_PWREx_EnableHOLDC2IT:0000000c $d
+     /tmp/cc2rQHb2.s:434    .text.HAL_PWREx_DisableHOLDC2IT:00000000 $t
+     /tmp/cc2rQHb2.s:440    .text.HAL_PWREx_DisableHOLDC2IT:00000000 HAL_PWREx_DisableHOLDC2IT
+     /tmp/cc2rQHb2.s:452    .text.HAL_PWREx_DisableHOLDC2IT:0000000c $d
+     /tmp/cc2rQHb2.s:455    .text.HAL_PWREx_EnableGPIOPullUp:00000000 $t
+ARM GAS  /tmp/cc2rQHb2.s 			page 31
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:461    .text.HAL_PWREx_EnableGPIOPullUp:00000000 HAL_PWREx_EnableGPIOPullUp
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:546    .text.HAL_PWREx_EnableGPIOPullUp:000000a0 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:549    .text.HAL_PWREx_DisableGPIOPullUp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:555    .text.HAL_PWREx_DisableGPIOPullUp:00000000 HAL_PWREx_DisableGPIOPullUp
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:622    .text.HAL_PWREx_DisableGPIOPullUp:0000007c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:625    .text.HAL_PWREx_EnableGPIOPullDown:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:631    .text.HAL_PWREx_EnableGPIOPullDown:00000000 HAL_PWREx_EnableGPIOPullDown
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:716    .text.HAL_PWREx_EnableGPIOPullDown:000000a0 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:719    .text.HAL_PWREx_DisableGPIOPullDown:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:725    .text.HAL_PWREx_DisableGPIOPullDown:00000000 HAL_PWREx_DisableGPIOPullDown
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:792    .text.HAL_PWREx_DisableGPIOPullDown:0000007c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:795    .text.HAL_PWREx_EnablePullUpPullDownConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:801    .text.HAL_PWREx_EnablePullUpPullDownConfig:00000000 HAL_PWREx_EnablePullUpPullDownConfig
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:813    .text.HAL_PWREx_EnablePullUpPullDownConfig:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:816    .text.HAL_PWREx_DisablePullUpPullDownConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:822    .text.HAL_PWREx_DisablePullUpPullDownConfig:00000000 HAL_PWREx_DisablePullUpPullDownConfig
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:834    .text.HAL_PWREx_DisablePullUpPullDownConfig:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:837    .text.HAL_PWREx_SetBORConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:843    .text.HAL_PWREx_SetBORConfig:00000000 HAL_PWREx_SetBORConfig
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:856    .text.HAL_PWREx_SetBORConfig:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:859    .text.HAL_PWREx_GetBORConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:865    .text.HAL_PWREx_GetBORConfig:00000000 HAL_PWREx_GetBORConfig
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:876    .text.HAL_PWREx_GetBORConfig:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:879    .text.HAL_PWREx_HoldCore:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:885    .text.HAL_PWREx_HoldCore:00000000 HAL_PWREx_HoldCore
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:897    .text.HAL_PWREx_HoldCore:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:900    .text.HAL_PWREx_ReleaseCore:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:906    .text.HAL_PWREx_ReleaseCore:00000000 HAL_PWREx_ReleaseCore
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:918    .text.HAL_PWREx_ReleaseCore:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:921    .text.HAL_PWREx_EnableSRAMRetention:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:927    .text.HAL_PWREx_EnableSRAMRetention:00000000 HAL_PWREx_EnableSRAMRetention
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:939    .text.HAL_PWREx_EnableSRAMRetention:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:942    .text.HAL_PWREx_DisableSRAMRetention:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:948    .text.HAL_PWREx_DisableSRAMRetention:00000000 HAL_PWREx_DisableSRAMRetention
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:960    .text.HAL_PWREx_DisableSRAMRetention:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:963    .text.HAL_PWREx_EnableFlashPowerDown:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:969    .text.HAL_PWREx_EnableFlashPowerDown:00000000 HAL_PWREx_EnableFlashPowerDown
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:987    .text.HAL_PWREx_EnableFlashPowerDown:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:990    .text.HAL_PWREx_DisableFlashPowerDown:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:996    .text.HAL_PWREx_DisableFlashPowerDown:00000000 HAL_PWREx_DisableFlashPowerDown
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1008   .text.HAL_PWREx_DisableFlashPowerDown:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1011   .text.HAL_PWREx_EnablePVM1:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1017   .text.HAL_PWREx_EnablePVM1:00000000 HAL_PWREx_EnablePVM1
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1029   .text.HAL_PWREx_EnablePVM1:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1032   .text.HAL_PWREx_DisablePVM1:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1038   .text.HAL_PWREx_DisablePVM1:00000000 HAL_PWREx_DisablePVM1
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1050   .text.HAL_PWREx_DisablePVM1:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1053   .text.HAL_PWREx_EnablePVM3:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1059   .text.HAL_PWREx_EnablePVM3:00000000 HAL_PWREx_EnablePVM3
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1071   .text.HAL_PWREx_EnablePVM3:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1074   .text.HAL_PWREx_DisablePVM3:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1080   .text.HAL_PWREx_DisablePVM3:00000000 HAL_PWREx_DisablePVM3
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1092   .text.HAL_PWREx_DisablePVM3:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1095   .text.HAL_PWREx_ConfigPVM:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1101   .text.HAL_PWREx_ConfigPVM:00000000 HAL_PWREx_ConfigPVM
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1215   .text.HAL_PWREx_ConfigPVM:00000114 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1218   .text.HAL_PWREx_ConfigSMPS:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s 			page 32
+     /tmp/cc2rQHb2.s:461    .text.HAL_PWREx_EnableGPIOPullUp:00000000 HAL_PWREx_EnableGPIOPullUp
+     /tmp/cc2rQHb2.s:546    .text.HAL_PWREx_EnableGPIOPullUp:000000a0 $d
+     /tmp/cc2rQHb2.s:549    .text.HAL_PWREx_DisableGPIOPullUp:00000000 $t
+     /tmp/cc2rQHb2.s:555    .text.HAL_PWREx_DisableGPIOPullUp:00000000 HAL_PWREx_DisableGPIOPullUp
+     /tmp/cc2rQHb2.s:622    .text.HAL_PWREx_DisableGPIOPullUp:0000007c $d
+     /tmp/cc2rQHb2.s:625    .text.HAL_PWREx_EnableGPIOPullDown:00000000 $t
+     /tmp/cc2rQHb2.s:631    .text.HAL_PWREx_EnableGPIOPullDown:00000000 HAL_PWREx_EnableGPIOPullDown
+     /tmp/cc2rQHb2.s:716    .text.HAL_PWREx_EnableGPIOPullDown:000000a0 $d
+     /tmp/cc2rQHb2.s:719    .text.HAL_PWREx_DisableGPIOPullDown:00000000 $t
+     /tmp/cc2rQHb2.s:725    .text.HAL_PWREx_DisableGPIOPullDown:00000000 HAL_PWREx_DisableGPIOPullDown
+     /tmp/cc2rQHb2.s:792    .text.HAL_PWREx_DisableGPIOPullDown:0000007c $d
+     /tmp/cc2rQHb2.s:795    .text.HAL_PWREx_EnablePullUpPullDownConfig:00000000 $t
+     /tmp/cc2rQHb2.s:801    .text.HAL_PWREx_EnablePullUpPullDownConfig:00000000 HAL_PWREx_EnablePullUpPullDownConfig
+     /tmp/cc2rQHb2.s:813    .text.HAL_PWREx_EnablePullUpPullDownConfig:0000000c $d
+     /tmp/cc2rQHb2.s:816    .text.HAL_PWREx_DisablePullUpPullDownConfig:00000000 $t
+     /tmp/cc2rQHb2.s:822    .text.HAL_PWREx_DisablePullUpPullDownConfig:00000000 HAL_PWREx_DisablePullUpPullDownConfig
+     /tmp/cc2rQHb2.s:834    .text.HAL_PWREx_DisablePullUpPullDownConfig:0000000c $d
+     /tmp/cc2rQHb2.s:837    .text.HAL_PWREx_SetBORConfig:00000000 $t
+     /tmp/cc2rQHb2.s:843    .text.HAL_PWREx_SetBORConfig:00000000 HAL_PWREx_SetBORConfig
+     /tmp/cc2rQHb2.s:856    .text.HAL_PWREx_SetBORConfig:00000010 $d
+     /tmp/cc2rQHb2.s:859    .text.HAL_PWREx_GetBORConfig:00000000 $t
+     /tmp/cc2rQHb2.s:865    .text.HAL_PWREx_GetBORConfig:00000000 HAL_PWREx_GetBORConfig
+     /tmp/cc2rQHb2.s:876    .text.HAL_PWREx_GetBORConfig:0000000c $d
+     /tmp/cc2rQHb2.s:879    .text.HAL_PWREx_HoldCore:00000000 $t
+     /tmp/cc2rQHb2.s:885    .text.HAL_PWREx_HoldCore:00000000 HAL_PWREx_HoldCore
+     /tmp/cc2rQHb2.s:897    .text.HAL_PWREx_HoldCore:0000000c $d
+     /tmp/cc2rQHb2.s:900    .text.HAL_PWREx_ReleaseCore:00000000 $t
+     /tmp/cc2rQHb2.s:906    .text.HAL_PWREx_ReleaseCore:00000000 HAL_PWREx_ReleaseCore
+     /tmp/cc2rQHb2.s:918    .text.HAL_PWREx_ReleaseCore:0000000c $d
+     /tmp/cc2rQHb2.s:921    .text.HAL_PWREx_EnableSRAMRetention:00000000 $t
+     /tmp/cc2rQHb2.s:927    .text.HAL_PWREx_EnableSRAMRetention:00000000 HAL_PWREx_EnableSRAMRetention
+     /tmp/cc2rQHb2.s:939    .text.HAL_PWREx_EnableSRAMRetention:0000000c $d
+     /tmp/cc2rQHb2.s:942    .text.HAL_PWREx_DisableSRAMRetention:00000000 $t
+     /tmp/cc2rQHb2.s:948    .text.HAL_PWREx_DisableSRAMRetention:00000000 HAL_PWREx_DisableSRAMRetention
+     /tmp/cc2rQHb2.s:960    .text.HAL_PWREx_DisableSRAMRetention:0000000c $d
+     /tmp/cc2rQHb2.s:963    .text.HAL_PWREx_EnableFlashPowerDown:00000000 $t
+     /tmp/cc2rQHb2.s:969    .text.HAL_PWREx_EnableFlashPowerDown:00000000 HAL_PWREx_EnableFlashPowerDown
+     /tmp/cc2rQHb2.s:987    .text.HAL_PWREx_EnableFlashPowerDown:00000018 $d
+     /tmp/cc2rQHb2.s:990    .text.HAL_PWREx_DisableFlashPowerDown:00000000 $t
+     /tmp/cc2rQHb2.s:996    .text.HAL_PWREx_DisableFlashPowerDown:00000000 HAL_PWREx_DisableFlashPowerDown
+     /tmp/cc2rQHb2.s:1008   .text.HAL_PWREx_DisableFlashPowerDown:0000000c $d
+     /tmp/cc2rQHb2.s:1011   .text.HAL_PWREx_EnablePVM1:00000000 $t
+     /tmp/cc2rQHb2.s:1017   .text.HAL_PWREx_EnablePVM1:00000000 HAL_PWREx_EnablePVM1
+     /tmp/cc2rQHb2.s:1029   .text.HAL_PWREx_EnablePVM1:0000000c $d
+     /tmp/cc2rQHb2.s:1032   .text.HAL_PWREx_DisablePVM1:00000000 $t
+     /tmp/cc2rQHb2.s:1038   .text.HAL_PWREx_DisablePVM1:00000000 HAL_PWREx_DisablePVM1
+     /tmp/cc2rQHb2.s:1050   .text.HAL_PWREx_DisablePVM1:0000000c $d
+     /tmp/cc2rQHb2.s:1053   .text.HAL_PWREx_EnablePVM3:00000000 $t
+     /tmp/cc2rQHb2.s:1059   .text.HAL_PWREx_EnablePVM3:00000000 HAL_PWREx_EnablePVM3
+     /tmp/cc2rQHb2.s:1071   .text.HAL_PWREx_EnablePVM3:0000000c $d
+     /tmp/cc2rQHb2.s:1074   .text.HAL_PWREx_DisablePVM3:00000000 $t
+     /tmp/cc2rQHb2.s:1080   .text.HAL_PWREx_DisablePVM3:00000000 HAL_PWREx_DisablePVM3
+     /tmp/cc2rQHb2.s:1092   .text.HAL_PWREx_DisablePVM3:0000000c $d
+     /tmp/cc2rQHb2.s:1095   .text.HAL_PWREx_ConfigPVM:00000000 $t
+     /tmp/cc2rQHb2.s:1101   .text.HAL_PWREx_ConfigPVM:00000000 HAL_PWREx_ConfigPVM
+     /tmp/cc2rQHb2.s:1215   .text.HAL_PWREx_ConfigPVM:00000114 $d
+     /tmp/cc2rQHb2.s:1218   .text.HAL_PWREx_ConfigSMPS:00000000 $t
+ARM GAS  /tmp/cc2rQHb2.s 			page 32
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1224   .text.HAL_PWREx_ConfigSMPS:00000000 HAL_PWREx_ConfigSMPS
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1278   .text.HAL_PWREx_ConfigSMPS:00000060 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1282   .text.HAL_PWREx_SMPS_SetMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1288   .text.HAL_PWREx_SMPS_SetMode:00000000 HAL_PWREx_SMPS_SetMode
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1303   .text.HAL_PWREx_SMPS_SetMode:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1306   .text.HAL_PWREx_SMPS_GetEffectiveMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1312   .text.HAL_PWREx_SMPS_GetEffectiveMode:00000000 HAL_PWREx_SMPS_GetEffectiveMode
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1323   .text.HAL_PWREx_SMPS_GetEffectiveMode:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1326   .text.HAL_PWREx_EnableWakeUpPin:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1332   .text.HAL_PWREx_EnableWakeUpPin:00000000 HAL_PWREx_EnableWakeUpPin
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1357   .text.HAL_PWREx_EnableWakeUpPin:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1360   .text.HAL_PWREx_GetWakeupFlag:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1366   .text.HAL_PWREx_GetWakeupFlag:00000000 HAL_PWREx_GetWakeupFlag
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1380   .text.HAL_PWREx_GetWakeupFlag:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1383   .text.HAL_PWREx_ClearWakeupFlag:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1389   .text.HAL_PWREx_ClearWakeupFlag:00000000 HAL_PWREx_ClearWakeupFlag
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1410   .text.HAL_PWREx_ClearWakeupFlag:00000020 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1413   .text.HAL_PWREx_EnableLowPowerRunMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1419   .text.HAL_PWREx_EnableLowPowerRunMode:00000000 HAL_PWREx_EnableLowPowerRunMode
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1431   .text.HAL_PWREx_EnableLowPowerRunMode:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1434   .text.HAL_PWREx_DisableLowPowerRunMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1440   .text.HAL_PWREx_DisableLowPowerRunMode:00000000 HAL_PWREx_DisableLowPowerRunMode
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1480   .text.HAL_PWREx_DisableLowPowerRunMode:0000004c $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1484   .text.HAL_PWREx_EnterSTOP0Mode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1490   .text.HAL_PWREx_EnterSTOP0Mode:00000000 HAL_PWREx_EnterSTOP0Mode
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1533   .text.HAL_PWREx_EnterSTOP0Mode:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1537   .text.HAL_PWREx_EnterSTOP1Mode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1543   .text.HAL_PWREx_EnterSTOP1Mode:00000000 HAL_PWREx_EnterSTOP1Mode
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1587   .text.HAL_PWREx_EnterSTOP1Mode:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1591   .text.HAL_PWREx_EnterSTOP2Mode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1597   .text.HAL_PWREx_EnterSTOP2Mode:00000000 HAL_PWREx_EnterSTOP2Mode
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1641   .text.HAL_PWREx_EnterSTOP2Mode:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1645   .text.HAL_PWREx_EnterSHUTDOWNMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1651   .text.HAL_PWREx_EnterSHUTDOWNMode:00000000 HAL_PWREx_EnterSHUTDOWNMode
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1677   .text.HAL_PWREx_EnterSHUTDOWNMode:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1681   .text.HAL_PWREx_PVM1Callback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1687   .text.HAL_PWREx_PVM1Callback:00000000 HAL_PWREx_PVM1Callback
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1694   .text.HAL_PWREx_PVM3Callback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1700   .text.HAL_PWREx_PVM3Callback:00000000 HAL_PWREx_PVM3Callback
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1707   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1713   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 HAL_PWREx_PVD_PVM_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccqSIjuo.s:1754   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000048 $d
+     /tmp/cc2rQHb2.s:1224   .text.HAL_PWREx_ConfigSMPS:00000000 HAL_PWREx_ConfigSMPS
+     /tmp/cc2rQHb2.s:1278   .text.HAL_PWREx_ConfigSMPS:00000060 $d
+     /tmp/cc2rQHb2.s:1282   .text.HAL_PWREx_SMPS_SetMode:00000000 $t
+     /tmp/cc2rQHb2.s:1288   .text.HAL_PWREx_SMPS_SetMode:00000000 HAL_PWREx_SMPS_SetMode
+     /tmp/cc2rQHb2.s:1303   .text.HAL_PWREx_SMPS_SetMode:00000014 $d
+     /tmp/cc2rQHb2.s:1306   .text.HAL_PWREx_SMPS_GetEffectiveMode:00000000 $t
+     /tmp/cc2rQHb2.s:1312   .text.HAL_PWREx_SMPS_GetEffectiveMode:00000000 HAL_PWREx_SMPS_GetEffectiveMode
+     /tmp/cc2rQHb2.s:1323   .text.HAL_PWREx_SMPS_GetEffectiveMode:0000000c $d
+     /tmp/cc2rQHb2.s:1326   .text.HAL_PWREx_EnableWakeUpPin:00000000 $t
+     /tmp/cc2rQHb2.s:1332   .text.HAL_PWREx_EnableWakeUpPin:00000000 HAL_PWREx_EnableWakeUpPin
+     /tmp/cc2rQHb2.s:1357   .text.HAL_PWREx_EnableWakeUpPin:00000034 $d
+     /tmp/cc2rQHb2.s:1360   .text.HAL_PWREx_GetWakeupFlag:00000000 $t
+     /tmp/cc2rQHb2.s:1366   .text.HAL_PWREx_GetWakeupFlag:00000000 HAL_PWREx_GetWakeupFlag
+     /tmp/cc2rQHb2.s:1380   .text.HAL_PWREx_GetWakeupFlag:00000014 $d
+     /tmp/cc2rQHb2.s:1383   .text.HAL_PWREx_ClearWakeupFlag:00000000 $t
+     /tmp/cc2rQHb2.s:1389   .text.HAL_PWREx_ClearWakeupFlag:00000000 HAL_PWREx_ClearWakeupFlag
+     /tmp/cc2rQHb2.s:1410   .text.HAL_PWREx_ClearWakeupFlag:00000020 $d
+     /tmp/cc2rQHb2.s:1413   .text.HAL_PWREx_EnableLowPowerRunMode:00000000 $t
+     /tmp/cc2rQHb2.s:1419   .text.HAL_PWREx_EnableLowPowerRunMode:00000000 HAL_PWREx_EnableLowPowerRunMode
+     /tmp/cc2rQHb2.s:1431   .text.HAL_PWREx_EnableLowPowerRunMode:0000000c $d
+     /tmp/cc2rQHb2.s:1434   .text.HAL_PWREx_DisableLowPowerRunMode:00000000 $t
+     /tmp/cc2rQHb2.s:1440   .text.HAL_PWREx_DisableLowPowerRunMode:00000000 HAL_PWREx_DisableLowPowerRunMode
+     /tmp/cc2rQHb2.s:1480   .text.HAL_PWREx_DisableLowPowerRunMode:0000004c $d
+     /tmp/cc2rQHb2.s:1484   .text.HAL_PWREx_EnterSTOP0Mode:00000000 $t
+     /tmp/cc2rQHb2.s:1490   .text.HAL_PWREx_EnterSTOP0Mode:00000000 HAL_PWREx_EnterSTOP0Mode
+     /tmp/cc2rQHb2.s:1533   .text.HAL_PWREx_EnterSTOP0Mode:00000030 $d
+     /tmp/cc2rQHb2.s:1537   .text.HAL_PWREx_EnterSTOP1Mode:00000000 $t
+     /tmp/cc2rQHb2.s:1543   .text.HAL_PWREx_EnterSTOP1Mode:00000000 HAL_PWREx_EnterSTOP1Mode
+     /tmp/cc2rQHb2.s:1587   .text.HAL_PWREx_EnterSTOP1Mode:00000034 $d
+     /tmp/cc2rQHb2.s:1591   .text.HAL_PWREx_EnterSTOP2Mode:00000000 $t
+     /tmp/cc2rQHb2.s:1597   .text.HAL_PWREx_EnterSTOP2Mode:00000000 HAL_PWREx_EnterSTOP2Mode
+     /tmp/cc2rQHb2.s:1641   .text.HAL_PWREx_EnterSTOP2Mode:00000034 $d
+     /tmp/cc2rQHb2.s:1645   .text.HAL_PWREx_EnterSHUTDOWNMode:00000000 $t
+     /tmp/cc2rQHb2.s:1651   .text.HAL_PWREx_EnterSHUTDOWNMode:00000000 HAL_PWREx_EnterSHUTDOWNMode
+     /tmp/cc2rQHb2.s:1677   .text.HAL_PWREx_EnterSHUTDOWNMode:00000024 $d
+     /tmp/cc2rQHb2.s:1681   .text.HAL_PWREx_PVM1Callback:00000000 $t
+     /tmp/cc2rQHb2.s:1687   .text.HAL_PWREx_PVM1Callback:00000000 HAL_PWREx_PVM1Callback
+     /tmp/cc2rQHb2.s:1694   .text.HAL_PWREx_PVM3Callback:00000000 $t
+     /tmp/cc2rQHb2.s:1700   .text.HAL_PWREx_PVM3Callback:00000000 HAL_PWREx_PVM3Callback
+     /tmp/cc2rQHb2.s:1707   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 $t
+     /tmp/cc2rQHb2.s:1713   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000000 HAL_PWREx_PVD_PVM_IRQHandler
+     /tmp/cc2rQHb2.s:1754   .text.HAL_PWREx_PVD_PVM_IRQHandler:00000048 $d
 
 UNDEFINED SYMBOLS
 SystemCoreClock

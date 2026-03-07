@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
+ARM GAS  /tmp/ccKjqhcK.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
   27:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****   * @{
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****   */
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 2
+ARM GAS  /tmp/ccKjqhcK.s 			page 2
 
 
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** /** @defgroup PCDEx PCDEx
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 3
+ARM GAS  /tmp/ccKjqhcK.s 			page 3
 
 
   34              		@ link register save eliminated.
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  109:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** 
  110:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****     /* Configure the PMA */
  111:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****     ep->pmaaddr0 = (uint16_t)(pmaadress & 0xFFFFU);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 4
+ARM GAS  /tmp/ccKjqhcK.s 			page 4
 
 
  112:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****     ep->pmaaddr1 = (uint16_t)((pmaadress & 0xFFFF0000U) >> 16);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
   98 0036 F0E7     		b	.L5
   99              		.cfi_endproc
  100              	.LFE950:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 5
+ARM GAS  /tmp/ccKjqhcK.s 			page 5
 
 
  102              		.section	.text.HAL_PCDEx_ActivateBCD,"ax",%progbits
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  141              		.loc 1 133 3 is_stmt 1 view .LVU39
  142              		.loc 1 133 7 is_stmt 0 view .LVU40
  143 0028 B2F85830 		ldrh	r3, [r2, #88]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 6
+ARM GAS  /tmp/ccKjqhcK.s 			page 6
 
 
  144 002c 9BB2     		uxth	r3, r3
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  184              		.loc 1 149 3 is_stmt 1 view .LVU52
  185              		.loc 1 149 7 is_stmt 0 view .LVU53
  186 000a B2F85830 		ldrh	r3, [r2, #88]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 7
+ARM GAS  /tmp/ccKjqhcK.s 			page 7
 
 
  187              	.LVL17:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  183:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****     if ((USBx->BCDR & USB_BCDR_SDET) == USB_BCDR_SDET)
  184:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****     {
  185:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****       /* Dedicated Downstream Port DCP */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 8
+ARM GAS  /tmp/ccKjqhcK.s 			page 8
 
 
  186:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** #if (USE_HAL_PCD_REGISTER_CALLBACKS == 1U)
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  240:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** {
  210              		.loc 1 240 1 is_stmt 1 view -0
  211              		.cfi_startproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 9
+ARM GAS  /tmp/ccKjqhcK.s 			page 9
 
 
  212              		@ args = 0, pretend = 0, frame = 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  257              		.thumb
  258              		.thumb_func
  260              	HAL_PCDEx_DeActivateLPM:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 10
+ARM GAS  /tmp/ccKjqhcK.s 			page 10
 
 
  261              	.LVL22:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  267:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** }
  299              		.loc 1 267 1 is_stmt 0 view .LVU91
  300 002a 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 11
+ARM GAS  /tmp/ccKjqhcK.s 			page 11
 
 
  301              		.cfi_endproc
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  291:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****   * @retval HAL status
  292:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****   */
  293:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** __weak void HAL_PCDEx_BCD_Callback(PCD_HandleTypeDef *hpcd, PCD_BCD_MsgTypeDef msg)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 12
+ARM GAS  /tmp/ccKjqhcK.s 			page 12
 
 
  294:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** {
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  377              	.LVL30:
  162:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c **** 
  378              		.loc 1 162 24 view .LVU106
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 13
+ARM GAS  /tmp/ccKjqhcK.s 			page 13
 
 
  379 000a 0646     		mov	r6, r0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  418 0048 B5F85830 		ldrh	r3, [r5, #88]
  419 004c 9BB2     		uxth	r3, r3
  179:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****     HAL_Delay(50U);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 14
+ARM GAS  /tmp/ccKjqhcK.s 			page 14
 
 
  420              		.loc 1 179 16 view .LVU122
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  462              		.loc 1 216 22 discriminator 1 view .LVU134
  463 008c 801B     		subs	r0, r0, r6
  216:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pcd_ex.c ****   {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 15
+ARM GAS  /tmp/ccKjqhcK.s 			page 15
 
 
  464              		.loc 1 216 6 discriminator 1 view .LVU135
@@ -869,34 +869,34 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 1
  485              	.LFE953:
  487              		.text
  488              	.Letext0:
- 489              		.file 2 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
- 490              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 489              		.file 2 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ 490              		.file 3 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
  491              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
  492              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
  493              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_usb.h"
  494              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pcd.h"
  495              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s 			page 16
+ARM GAS  /tmp/ccKjqhcK.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_pcd_ex.c
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:21     .text.HAL_PCDEx_PMAConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:27     .text.HAL_PCDEx_PMAConfig:00000000 HAL_PCDEx_PMAConfig
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:103    .text.HAL_PCDEx_ActivateBCD:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:109    .text.HAL_PCDEx_ActivateBCD:00000000 HAL_PCDEx_ActivateBCD
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:158    .text.HAL_PCDEx_DeActivateBCD:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:164    .text.HAL_PCDEx_DeActivateBCD:00000000 HAL_PCDEx_DeActivateBCD
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:201    .text.HAL_PCDEx_ActivateLPM:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:207    .text.HAL_PCDEx_ActivateLPM:00000000 HAL_PCDEx_ActivateLPM
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:254    .text.HAL_PCDEx_DeActivateLPM:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:260    .text.HAL_PCDEx_DeActivateLPM:00000000 HAL_PCDEx_DeActivateLPM
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:305    .text.HAL_PCDEx_LPM_Callback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:311    .text.HAL_PCDEx_LPM_Callback:00000000 HAL_PCDEx_LPM_Callback
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:327    .text.HAL_PCDEx_BCD_Callback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:333    .text.HAL_PCDEx_BCD_Callback:00000000 HAL_PCDEx_BCD_Callback
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:349    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cccSwBSQ.s:355    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 HAL_PCDEx_BCD_VBUSDetect
+     /tmp/ccKjqhcK.s:21     .text.HAL_PCDEx_PMAConfig:00000000 $t
+     /tmp/ccKjqhcK.s:27     .text.HAL_PCDEx_PMAConfig:00000000 HAL_PCDEx_PMAConfig
+     /tmp/ccKjqhcK.s:103    .text.HAL_PCDEx_ActivateBCD:00000000 $t
+     /tmp/ccKjqhcK.s:109    .text.HAL_PCDEx_ActivateBCD:00000000 HAL_PCDEx_ActivateBCD
+     /tmp/ccKjqhcK.s:158    .text.HAL_PCDEx_DeActivateBCD:00000000 $t
+     /tmp/ccKjqhcK.s:164    .text.HAL_PCDEx_DeActivateBCD:00000000 HAL_PCDEx_DeActivateBCD
+     /tmp/ccKjqhcK.s:201    .text.HAL_PCDEx_ActivateLPM:00000000 $t
+     /tmp/ccKjqhcK.s:207    .text.HAL_PCDEx_ActivateLPM:00000000 HAL_PCDEx_ActivateLPM
+     /tmp/ccKjqhcK.s:254    .text.HAL_PCDEx_DeActivateLPM:00000000 $t
+     /tmp/ccKjqhcK.s:260    .text.HAL_PCDEx_DeActivateLPM:00000000 HAL_PCDEx_DeActivateLPM
+     /tmp/ccKjqhcK.s:305    .text.HAL_PCDEx_LPM_Callback:00000000 $t
+     /tmp/ccKjqhcK.s:311    .text.HAL_PCDEx_LPM_Callback:00000000 HAL_PCDEx_LPM_Callback
+     /tmp/ccKjqhcK.s:327    .text.HAL_PCDEx_BCD_Callback:00000000 $t
+     /tmp/ccKjqhcK.s:333    .text.HAL_PCDEx_BCD_Callback:00000000 HAL_PCDEx_BCD_Callback
+     /tmp/ccKjqhcK.s:349    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 $t
+     /tmp/ccKjqhcK.s:355    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 HAL_PCDEx_BCD_VBUSDetect
 
 UNDEFINED SYMBOLS
 HAL_GetTick

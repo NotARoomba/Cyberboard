@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 1
+ARM GAS  /tmp/ccRSaUYI.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 1
   56 0046 7047     		bx	lr
   57              	.L3:
   58              		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 2
+ARM GAS  /tmp/ccRSaUYI.s 			page 2
 
 
   59              	.L2:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 1
  119 000a 0B43     		orrs	r3, r3, r1
  120 000c 5360     		str	r3, [r2, #4]
  121 000e 1B4B     		ldr	r3, .L14+4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 3
+ARM GAS  /tmp/ccRSaUYI.s 			page 3
 
 
  122 0010 D3F88020 		ldr	r2, [r3, #128]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 1
  178 0002 5368     		ldr	r3, [r2, #4]
  179 0004 43F00103 		orr	r3, r3, #1
  180 0008 5360     		str	r3, [r2, #4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 4
+ARM GAS  /tmp/ccRSaUYI.s 			page 4
 
 
  181 000a 7047     		bx	lr
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 1
  241              	HAL_PWR_DisableWakeUpPin:
  242              		@ args = 0, pretend = 0, frame = 0
  243              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 5
+ARM GAS  /tmp/ccRSaUYI.s 			page 5
 
 
  244              		@ link register save eliminated.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 1
  300 0030 044B     		ldr	r3, .L36
  301 0032 5B69     		ldr	r3, [r3, #20]
  302 0034 13F4007F 		tst	r3, #512
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 6
+ARM GAS  /tmp/ccRSaUYI.s 			page 6
 
 
  303 0038 EAD1     		bne	.L30
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 1
  361 0016 1A61     		str	r2, [r3, #16]
  362              		.syntax unified
  363              	@ 652 "Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 7
+ARM GAS  /tmp/ccRSaUYI.s 			page 7
 
 
  364 0018 30BF     		wfi
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 1
  423              		.syntax unified
  424              		.thumb
  425              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 8
+ARM GAS  /tmp/ccRSaUYI.s 			page 8
 
 
  427              	HAL_PWR_EnableSEVOnPend:
@@ -465,57 +465,57 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 1
  472              		@ link register save eliminated.
  473 0000 7047     		bx	lr
  475              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s 			page 9
+ARM GAS  /tmp/ccRSaUYI.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_pwr.c
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:18     .text.HAL_PWR_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:24     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:60     .text.HAL_PWR_DeInit:00000048 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:63     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:69     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:81     .text.HAL_PWR_EnableBkUpAccess:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:84     .text.HAL_PWR_DisableBkUpAccess:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:90     .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:102    .text.HAL_PWR_DisableBkUpAccess:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:105    .text.HAL_PWR_ConfigPVD:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:111    .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:163    .text.HAL_PWR_ConfigPVD:00000078 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:167    .text.HAL_PWR_EnablePVD:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:173    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:185    .text.HAL_PWR_EnablePVD:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:188    .text.HAL_PWR_DisablePVD:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:194    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:206    .text.HAL_PWR_DisablePVD:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:209    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:215    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:232    .text.HAL_PWR_EnableWakeUpPin:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:235    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:241    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:254    .text.HAL_PWR_DisableWakeUpPin:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:257    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:263    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:317    .text.HAL_PWR_EnterSLEEPMode:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:321    .text.HAL_PWR_EnterSTOPMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:327    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:343    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:349    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:375    .text.HAL_PWR_EnterSTANDBYMode:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:379    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:385    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:397    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:400    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:406    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:418    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:421    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:427    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:439    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:442    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:448    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:460    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:463    .text.HAL_PWR_PVDCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOkkfUo.s:469    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
+     /tmp/ccRSaUYI.s:18     .text.HAL_PWR_DeInit:00000000 $t
+     /tmp/ccRSaUYI.s:24     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
+     /tmp/ccRSaUYI.s:60     .text.HAL_PWR_DeInit:00000048 $d
+     /tmp/ccRSaUYI.s:63     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
+     /tmp/ccRSaUYI.s:69     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
+     /tmp/ccRSaUYI.s:81     .text.HAL_PWR_EnableBkUpAccess:0000000c $d
+     /tmp/ccRSaUYI.s:84     .text.HAL_PWR_DisableBkUpAccess:00000000 $t
+     /tmp/ccRSaUYI.s:90     .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
+     /tmp/ccRSaUYI.s:102    .text.HAL_PWR_DisableBkUpAccess:0000000c $d
+     /tmp/ccRSaUYI.s:105    .text.HAL_PWR_ConfigPVD:00000000 $t
+     /tmp/ccRSaUYI.s:111    .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
+     /tmp/ccRSaUYI.s:163    .text.HAL_PWR_ConfigPVD:00000078 $d
+     /tmp/ccRSaUYI.s:167    .text.HAL_PWR_EnablePVD:00000000 $t
+     /tmp/ccRSaUYI.s:173    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
+     /tmp/ccRSaUYI.s:185    .text.HAL_PWR_EnablePVD:0000000c $d
+     /tmp/ccRSaUYI.s:188    .text.HAL_PWR_DisablePVD:00000000 $t
+     /tmp/ccRSaUYI.s:194    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
+     /tmp/ccRSaUYI.s:206    .text.HAL_PWR_DisablePVD:0000000c $d
+     /tmp/ccRSaUYI.s:209    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
+     /tmp/ccRSaUYI.s:215    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
+     /tmp/ccRSaUYI.s:232    .text.HAL_PWR_EnableWakeUpPin:0000001c $d
+     /tmp/ccRSaUYI.s:235    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
+     /tmp/ccRSaUYI.s:241    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
+     /tmp/ccRSaUYI.s:254    .text.HAL_PWR_DisableWakeUpPin:00000010 $d
+     /tmp/ccRSaUYI.s:257    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
+     /tmp/ccRSaUYI.s:263    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
+     /tmp/ccRSaUYI.s:317    .text.HAL_PWR_EnterSLEEPMode:00000044 $d
+     /tmp/ccRSaUYI.s:321    .text.HAL_PWR_EnterSTOPMode:00000000 $t
+     /tmp/ccRSaUYI.s:327    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
+     /tmp/ccRSaUYI.s:343    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
+     /tmp/ccRSaUYI.s:349    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
+     /tmp/ccRSaUYI.s:375    .text.HAL_PWR_EnterSTANDBYMode:00000024 $d
+     /tmp/ccRSaUYI.s:379    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
+     /tmp/ccRSaUYI.s:385    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
+     /tmp/ccRSaUYI.s:397    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
+     /tmp/ccRSaUYI.s:400    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
+     /tmp/ccRSaUYI.s:406    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
+     /tmp/ccRSaUYI.s:418    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
+     /tmp/ccRSaUYI.s:421    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
+     /tmp/ccRSaUYI.s:427    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
+     /tmp/ccRSaUYI.s:439    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
+     /tmp/ccRSaUYI.s:442    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
+     /tmp/ccRSaUYI.s:448    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
+     /tmp/ccRSaUYI.s:460    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
+     /tmp/ccRSaUYI.s:463    .text.HAL_PWR_PVDCallback:00000000 $t
+     /tmp/ccRSaUYI.s:469    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
 
 UNDEFINED SYMBOLS
 HAL_PWREx_DisableLowPowerRunMode

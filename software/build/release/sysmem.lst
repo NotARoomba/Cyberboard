@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s 			page 1
+ARM GAS  /tmp/cchkHbZN.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s 			page 1
   56              	.L9:
   57 003a 00BF     		.align	2
   58              	.L8:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s 			page 2
+ARM GAS  /tmp/cchkHbZN.s 			page 2
 
 
   59 003c 00000000 		.word	_estack
@@ -70,16 +70,16 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s 			page 1
   68              	__sbrk_heap_end:
   69 0000 00000000 		.space	4
   70              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s 			page 3
+ARM GAS  /tmp/cchkHbZN.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 sysmem.c
-C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s:18     .text._sbrk:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s:24     .text._sbrk:00000000 _sbrk
-C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s:59     .text._sbrk:0000003c $d
-C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s:68     .bss.__sbrk_heap_end:00000000 __sbrk_heap_end
-C:\Users\Nathan\AppData\Local\Temp\ccGuyXHO.s:65     .bss.__sbrk_heap_end:00000000 $d
+     /tmp/cchkHbZN.s:18     .text._sbrk:00000000 $t
+     /tmp/cchkHbZN.s:24     .text._sbrk:00000000 _sbrk
+     /tmp/cchkHbZN.s:59     .text._sbrk:0000003c $d
+     /tmp/cchkHbZN.s:68     .bss.__sbrk_heap_end:00000000 __sbrk_heap_end
+     /tmp/cchkHbZN.s:65     .bss.__sbrk_heap_end:00000000 $d
 
 UNDEFINED SYMBOLS
 __errno

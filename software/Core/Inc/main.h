@@ -65,16 +65,18 @@ void Error_Handler(void);
 #define BMP_SDA_GPIO_Port GPIOB
 #define BMP_INT_Pin GPIO_PIN_0
 #define BMP_INT_GPIO_Port GPIOC
+#define ICM_CS_Pin GPIO_PIN_1
+#define ICM_CS_GPIO_Port GPIOD
 #define ICM_SCK_Pin GPIO_PIN_3
 #define ICM_SCK_GPIO_Port GPIOB
 #define ICM_MISO_Pin GPIO_PIN_4
 #define ICM_MISO_GPIO_Port GPIOB
 #define ICM_MOSI_Pin GPIO_PIN_5
 #define ICM_MOSI_GPIO_Port GPIOB
-#define ICM_INT2_Pin GPIO_PIN_6
-#define ICM_INT2_GPIO_Port GPIOB
-#define ICM_INT1_Pin GPIO_PIN_7
+#define ICM_INT1_Pin GPIO_PIN_6
 #define ICM_INT1_GPIO_Port GPIOB
+#define ICM_INT2_Pin GPIO_PIN_7
+#define ICM_INT2_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

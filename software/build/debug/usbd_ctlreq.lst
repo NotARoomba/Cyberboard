@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
+ARM GAS  /tmp/ccOK3JIe.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
   28:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   * @{
   29:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   */
   30:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 2
+ARM GAS  /tmp/ccOK3JIe.s 			page 2
 
 
   31:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
   85:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** static uint8_t USBD_GetLen(uint8_t *buf);
   86:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
   87:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** /**
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 3
+ARM GAS  /tmp/ccOK3JIe.s 			page 3
 
 
   88:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   * @}
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  142:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         case USB_REQ_CLEAR_FEATURE:
  143:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****           USBD_ClrFeature(pdev, req);
  144:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****           break;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 4
+ARM GAS  /tmp/ccOK3JIe.s 			page 4
 
 
  145:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  199:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****               }
  200:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****             }
  201:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****             else
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 5
+ARM GAS  /tmp/ccOK3JIe.s 			page 5
 
 
  202:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****             {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  256:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         pdev->classId = idx;
  257:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         /* Call the class data out function to manage the request */
  258:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         if (pdev->pClass[idx]->Setup != NULL)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 6
+ARM GAS  /tmp/ccOK3JIe.s 			page 6
 
 
  259:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         {
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  313:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****                 USBD_CtlError(pdev, req);
  314:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****               }
  315:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****               break;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 7
+ARM GAS  /tmp/ccOK3JIe.s 			page 7
 
 
  316:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  370:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****                 }
  371:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****               }
  372:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****               else
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 8
+ARM GAS  /tmp/ccOK3JIe.s 			page 8
 
 
  373:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****               {
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  427:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   */
  428:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** static void USBD_GetDescriptor(USBD_HandleTypeDef *pdev, USBD_SetupReqTypedef *req)
  429:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 9
+ARM GAS  /tmp/ccOK3JIe.s 			page 9
 
 
  430:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   uint16_t len = 0U;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  484:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****     case USB_DESC_TYPE_STRING:
  485:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       switch ((uint8_t)(req->wValue))
  486:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 10
+ARM GAS  /tmp/ccOK3JIe.s 			page 10
 
 
  487:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         case USBD_IDX_LANGID_STR:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  541:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****           {
  542:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****             USBD_CtlError(pdev, req);
  543:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****             err++;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 11
+ARM GAS  /tmp/ccOK3JIe.s 			page 11
 
 
  544:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****           }
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  598:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****           break;
  599:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       }
  600:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       break;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 12
+ARM GAS  /tmp/ccOK3JIe.s 			page 12
 
 
  601:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  655:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
  656:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   if (req->wLength != 0U)
  657:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 13
+ARM GAS  /tmp/ccOK3JIe.s 			page 13
 
 
  658:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****     if (len != 0U)
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  712:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****     USBD_CtlError(pdev, req);
  713:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   }
  714:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 14
+ARM GAS  /tmp/ccOK3JIe.s 			page 14
 
 
  715:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  769:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****     case USBD_STATE_CONFIGURED:
  770:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       if (cfgidx == 0U)
  771:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 15
+ARM GAS  /tmp/ccOK3JIe.s 			page 15
 
 
  772:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         pdev->dev_state = USBD_STATE_ADDRESSED;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  826:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   }
  827:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   else
  828:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 16
+ARM GAS  /tmp/ccOK3JIe.s 			page 16
 
 
  829:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****     switch (pdev->dev_state)
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  883:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       USBD_CtlError(pdev, req);
  884:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       break;
  885:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 17
+ARM GAS  /tmp/ccOK3JIe.s 			page 17
 
 
  886:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** }
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  940:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** }
  941:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
  942:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 18
+ARM GAS  /tmp/ccOK3JIe.s 			page 18
 
 
  943:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** /**
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  997:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** {
  998:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   uint8_t idx = 0U;
  999:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   uint8_t *pdesc;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 19
+ARM GAS  /tmp/ccOK3JIe.s 			page 19
 
 
 1000:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
   44 0004 02E0     		b	.L2
   45              	.LVL3:
   46              	.L3:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 20
+ARM GAS  /tmp/ccOK3JIe.s 			page 20
 
 
 1038:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   {
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
   89 0000 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  954:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
   90              		.loc 1 954 18 view .LVU21
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 21
+ARM GAS  /tmp/ccOK3JIe.s 			page 21
 
 
   91 0002 0370     		strb	r3, [r0]
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
   35:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   * @brief general defines for the usb device library file
   36:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   * @{
   37:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 22
+ARM GAS  /tmp/ccOK3JIe.s 			page 22
 
 
   38:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
   92:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** 
   93:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** #define  USB_LEN_DEV_QUALIFIER_DESC                     0x0AU
   94:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** #define  USB_LEN_DEV_DESC                               0x12U
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 23
+ARM GAS  /tmp/ccOK3JIe.s 			page 23
 
 
   95:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** #define  USB_LEN_CFG_DESC                               0x09U
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  149:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** 
  150:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** #define USB_CONF_DESC_SIZE                              0x09U
  151:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** #define USB_IF_DESC_SIZE                                0x09U
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 24
+ARM GAS  /tmp/ccOK3JIe.s 			page 24
 
 
  152:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** #define USB_EP_DESC_SIZE                                0x07U
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  206:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** typedef struct
  207:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** {
  208:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   uint8_t   bLength;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 25
+ARM GAS  /tmp/ccOK3JIe.s 			page 25
 
 
  209:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   uint8_t   bDescriptorType;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  263:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   uint8_t  *(*GetDeviceQualifierDescriptor)(uint16_t *length);
  264:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** #if (USBD_SUPPORT_USER_STRING_DESC == 1U)
  265:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   uint8_t  *(*GetUsrStrDescriptor)(struct _USBD_HandleTypeDef *pdev, uint8_t index,  uint16_t *leng
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 26
+ARM GAS  /tmp/ccOK3JIe.s 			page 26
 
 
  266:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** #endif /* USBD_SUPPORT_USER_STRING_DESC  */
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  320:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   CLASS_TYPE_NONE    = 0,
  321:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   CLASS_TYPE_HID     = 1,
  322:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   CLASS_TYPE_CDC     = 2,
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 27
+ARM GAS  /tmp/ccOK3JIe.s 			page 27
 
 
  323:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   CLASS_TYPE_MSC     = 3,
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  377:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   uint32_t                dev_remote_wakeup;
  378:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   uint8_t                 ConfIdx;
  379:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 28
+ARM GAS  /tmp/ccOK3JIe.s 			page 28
 
 
  380:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   USBD_SetupReqTypedef    request;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  109              		.loc 2 429 3 view .LVU31
  430:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   uint8_t *_pbuff = addr;
  110              		.loc 2 430 3 view .LVU32
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 29
+ARM GAS  /tmp/ccOK3JIe.s 			page 29
 
 
  431:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** 
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  433:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h ****   _Byte2 = *(uint8_t *)_pbuff;
  146              		.loc 2 433 3 is_stmt 1 view .LVU53
  434:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 30
+ARM GAS  /tmp/ccOK3JIe.s 			page 30
 
 
  147              		.loc 2 434 3 view .LVU54
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  436:Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h **** 
  183              		.loc 2 436 12 is_stmt 0 view .LVU75
  184 0020 43EA0223 		orr	r3, r3, r2, lsl #8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 31
+ARM GAS  /tmp/ccOK3JIe.s 			page 31
 
 
  185              		.loc 2 438 3 is_stmt 1 view .LVU76
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  231              	.LVL25:
  985:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
  232              		.loc 1 985 1 view .LVU88
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 32
+ARM GAS  /tmp/ccOK3JIe.s 			page 32
 
 
  233 0012 10BD     		pop	{r4, pc}
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  278 001c 31D0     		beq	.L10
  279 001e 032B     		cmp	r3, #3
  280 0020 43D0     		beq	.L11
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 33
+ARM GAS  /tmp/ccOK3JIe.s 			page 33
 
 
  281 0022 012B     		cmp	r3, #1
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  318 004e ADF80620 		strh	r2, [sp, #6]	@ movhi
  661:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****     }
  319              		.loc 1 661 7 is_stmt 1 view .LVU117
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 34
+ARM GAS  /tmp/ccOK3JIe.s 			page 34
 
 
  661:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****     }
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  361              	.LVL37:
  362              	.L15:
  444:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         err++;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 35
+ARM GAS  /tmp/ccOK3JIe.s 			page 35
 
 
  363              		.loc 1 444 9 view .LVU131
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  400              		.loc 1 478 18 view .LVU148
  401 009e 0DF10600 		add	r0, sp, #6
  402              	.LVL43:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 36
+ARM GAS  /tmp/ccOK3JIe.s 			page 36
 
 
  478:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         }
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  443 00ce B2E7     		b	.L16
  444              	.LVL49:
  445              	.L20:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 37
+ARM GAS  /tmp/ccOK3JIe.s 			page 37
 
 
  485:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       {
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  484              		.loc 1 500 26 view .LVU178
  485 00f6 9B68     		ldr	r3, [r3, #8]
  500:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****           {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 38
+ARM GAS  /tmp/ccOK3JIe.s 			page 38
 
 
  486              		.loc 1 500 14 view .LVU179
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  524              		.loc 1 514 20 view .LVU195
  525 0118 9847     		blx	r3
  526              	.LVL64:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 39
+ARM GAS  /tmp/ccOK3JIe.s 			page 39
 
 
  651:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   {
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  565 0138 8FE7     		b	.L7
  566              	.LVL73:
  567              	.L25:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 40
+ARM GAS  /tmp/ccOK3JIe.s 			page 40
 
 
  536:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****           {
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  606 0158 2946     		mov	r1, r5
  607              	.LVL82:
  595:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****           err++;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 41
+ARM GAS  /tmp/ccOK3JIe.s 			page 41
 
 
  608              		.loc 1 595 11 is_stmt 0 view .LVU228
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  646              	.LVL90:
  647              	.L14:
  624:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 42
+ARM GAS  /tmp/ccOK3JIe.s 			page 42
 
 
  648              		.loc 1 624 7 view .LVU245
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  686              		.loc 1 646 7 view .LVU261
  687 019a FFF7FEFF 		bl	USBD_CtlError
  688              	.LVL98:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 43
+ARM GAS  /tmp/ccOK3JIe.s 			page 43
 
 
  647:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       break;
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  734              		.cfi_offset 4, -12
  735              		.cfi_offset 5, -8
  736              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 44
+ARM GAS  /tmp/ccOK3JIe.s 			page 44
 
 
  737 0002 0446     		mov	r4, r0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  773 0028 FFF7FEFF 		bl	USBD_LL_SetUSBAddress
  774              	.LVL108:
  698:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 45
+ARM GAS  /tmp/ccOK3JIe.s 			page 45
 
 
  775              		.loc 1 698 7 is_stmt 1 view .LVU291
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  817              		.section	.text.USBD_SetConfig,"ax",%progbits
  818              		.align	1
  819              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 46
+ARM GAS  /tmp/ccOK3JIe.s 			page 46
 
 
  820              		.thumb
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  862 001c 0329     		cmp	r1, #3
  863 001e 28D0     		beq	.L51
  805:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       (void)USBD_ClrClassConfig(pdev, cfgidx);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 47
+ARM GAS  /tmp/ccOK3JIe.s 			page 47
 
 
  864              		.loc 1 805 7 is_stmt 1 view .LVU318
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  903              		.loc 1 743 15 is_stmt 0 view .LVU333
  904 0044 2946     		mov	r1, r5
  905 0046 FFF7FEFF 		bl	USBD_SetClassConfig
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 48
+ARM GAS  /tmp/ccOK3JIe.s 			page 48
 
 
  906              	.LVL125:
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  946              	.L51:
  770:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       {
  947              		.loc 1 770 7 is_stmt 1 view .LVU348
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 49
+ARM GAS  /tmp/ccOK3JIe.s 			page 49
 
 
  770:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       {
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  985              		.loc 1 790 17 is_stmt 0 view .LVU365
  986 009a 2179     		ldrb	r1, [r4, #4]	@ zero_extendqisi2
  987 009c 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 50
+ARM GAS  /tmp/ccOK3JIe.s 			page 50
 
 
  988 009e FFF7FEFF 		bl	USBD_ClrClassConfig
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1028              		.loc 1 800 9 is_stmt 1 view .LVU379
  800:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       }
  1029              		.loc 1 800 15 is_stmt 0 view .LVU380
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 51
+ARM GAS  /tmp/ccOK3JIe.s 			page 51
 
 
  1030 00ca FFF7FEFF 		bl	USBD_CtlSendStatus
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  838:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         break;
  1076              		.loc 1 838 15 is_stmt 0 view .LVU391
  1077 0016 0122     		movs	r2, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 52
+ARM GAS  /tmp/ccOK3JIe.s 			page 52
 
 
  1078 0018 011D     		adds	r1, r0, #4
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1118              		.loc 1 846 1 is_stmt 0 view .LVU405
  1119 003e F1E7     		b	.L64
  1120              		.cfi_endproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 53
+ARM GAS  /tmp/ccOK3JIe.s 			page 53
 
 
  1121              	.LFE960:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1163              		.loc 1 876 9 is_stmt 1 view .LVU419
  876:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       }
  1164              		.loc 1 876 33 is_stmt 0 view .LVU420
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 54
+ARM GAS  /tmp/ccOK3JIe.s 			page 54
 
 
  1165 001c 0323     		movs	r3, #3
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1210              		@ frame_needed = 0, uses_anonymous_args = 0
  897:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   if (req->wValue == USB_FEATURE_REMOTE_WAKEUP)
  1211              		.loc 1 897 1 is_stmt 0 view .LVU432
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 55
+ARM GAS  /tmp/ccOK3JIe.s 			page 55
 
 
  1212 0000 08B5     		push	{r3, lr}
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1250              		.loc 1 905 25 view .LVU448
  1251 0020 80F8A032 		strb	r3, [r0, #672]
  906:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 56
+ARM GAS  /tmp/ccOK3JIe.s 			page 56
 
 
  1252              		.loc 1 906 5 is_stmt 1 view .LVU449
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1297              	.L92:
  931:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         (void)USBD_CtlSendStatus(pdev);
  1298              		.loc 1 931 9 is_stmt 1 view .LVU461
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 57
+ARM GAS  /tmp/ccOK3JIe.s 			page 57
 
 
  931:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****         (void)USBD_CtlSendStatus(pdev);
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1343              		.loc 1 108 14 is_stmt 0 view .LVU473
  1344 0002 0C78     		ldrb	r4, [r1]	@ zero_extendqisi2
  1345 0004 04F06004 		and	r4, r4, #96
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 58
+ARM GAS  /tmp/ccOK3JIe.s 			page 58
 
 
  108:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   {
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  116:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       {
  1385              		.loc 1 116 18 is_stmt 0 view .LVU489
  1386 002e 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 59
+ARM GAS  /tmp/ccOK3JIe.s 			page 59
 
 
  1387 0030 1D46     		mov	r5, r3
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1429              		.loc 1 127 17 is_stmt 0 view .LVU501
  1430 0062 FFF7FEFF 		bl	USBD_SetConfig
  1431              	.LVL189:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 60
+ARM GAS  /tmp/ccOK3JIe.s 			page 60
 
 
  127:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****           break;
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  168:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****   USBD_StatusTypeDef ret = USBD_OK;
  1478              		.loc 1 168 1 view -0
  1479              		.cfi_startproc
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 61
+ARM GAS  /tmp/ccOK3JIe.s 			page 61
 
 
  1480              		@ args = 0, pretend = 0, frame = 0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1521 0022 95F89C32 		ldrb	r3, [r5, #668]	@ zero_extendqisi2
  177:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       {
  1522              		.loc 1 177 7 view .LVU526
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 62
+ARM GAS  /tmp/ccOK3JIe.s 			page 62
 
 
  1523 0026 013B     		subs	r3, r3, #1
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1563 0050 55F82220 		ldr	r2, [r5, r2, lsl #2]
  190:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****               {
  1564              		.loc 1 190 36 view .LVU541
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 63
+ARM GAS  /tmp/ccOK3JIe.s 			page 63
 
 
  1565 0054 9168     		ldr	r1, [r2, #8]
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1604 0076 FFF7FEFF 		bl	USBD_CtlSendStatus
  1605              	.LVL217:
  1606 007a D0E7     		b	.L114
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 64
+ARM GAS  /tmp/ccOK3JIe.s 			page 64
 
 
  1607              	.LVL218:
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1653              		.cfi_offset 5, -20
  1654              		.cfi_offset 6, -16
  1655              		.cfi_offset 7, -12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 65
+ARM GAS  /tmp/ccOK3JIe.s 			page 65
 
 
  1656              		.cfi_offset 8, -8
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1695              	.L120:
  253:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       if (((uint8_t)idx != 0xFFU) && (idx < USBD_MAX_SUPPORTED_CLASS))
  1696              		.loc 1 253 7 is_stmt 1 view .LVU582
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 66
+ARM GAS  /tmp/ccOK3JIe.s 			page 66
 
 
  253:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****       if (((uint8_t)idx != 0xFFU) && (idx < USBD_MAX_SUPPORTED_CLASS))
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1735              		.loc 1 260 37 view .LVU598
  1736 0054 E6E7     		b	.L123
  1737              	.LVL237:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 67
+ARM GAS  /tmp/ccOK3JIe.s 			page 67
 
 
  1738              	.L121:
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  272:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****               {
  1779              		.loc 1 272 38 discriminator 1 view .LVU612
  1780 0084 802F     		cmp	r7, #128
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 68
+ARM GAS  /tmp/ccOK3JIe.s 			page 68
 
 
  1781 0086 04D1     		bne	.L160
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1820              		.loc 1 286 62 discriminator 2 view .LVU627
  1821 00ac 1BB1     		cbz	r3, .L161
  1822              	.LVL249:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 69
+ARM GAS  /tmp/ccOK3JIe.s 			page 69
 
 
  1823              	.L132:
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1863              		.loc 1 306 18 is_stmt 0 view .LVU641
  1864 00d4 3946     		mov	r1, r7
  1865 00d6 0FB1     		cbz	r7, .L136
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 70
+ARM GAS  /tmp/ccOK3JIe.s 			page 70
 
 
  306:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****               {
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1906              		.loc 1 324 17 is_stmt 1 view .LVU655
  324:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
  1907              		.loc 1 324 23 is_stmt 0 view .LVU656
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 71
+ARM GAS  /tmp/ccOK3JIe.s 			page 71
 
 
  1908 0100 3046     		mov	r0, r6
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1947 0130 78E7     		b	.L123
  1948              	.LVL271:
  1949              	.L163:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 72
+ARM GAS  /tmp/ccOK3JIe.s 			page 72
 
 
  322:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****                 }
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  1989 0158 13F0800F 		tst	r3, #128
  1990 015c 16D1     		bne	.L165
  356:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 73
+ARM GAS  /tmp/ccOK3JIe.s 			page 73
 
 
  1991              		.loc 1 356 43 view .LVU687
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  355:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****                     &pdev->ep_out[ep_addr & 0x7FU];
  2032              		.loc 1 355 73 discriminator 1 view .LVU701
  2033 018c 03F07F03 		and	r3, r3, #127
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 74
+ARM GAS  /tmp/ccOK3JIe.s 			page 74
 
 
  355:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****                     &pdev->ep_out[ep_addr & 0x7FU];
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  384:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****               {
  2075              		.loc 1 384 15 is_stmt 1 view .LVU715
  384:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****               {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 75
+ARM GAS  /tmp/ccOK3JIe.s 			page 75
 
 
  2076              		.loc 1 384 18 is_stmt 0 view .LVU716
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  369:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c ****                 }
  2117              		.loc 1 369 19 view .LVU730
  2118 0200 10E7     		b	.L123
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 76
+ARM GAS  /tmp/ccOK3JIe.s 			page 76
 
 
  2119              	.LVL292:
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  2160 022e D2E7     		b	.L150
  2161              	.LVL298:
  2162              	.L152:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 77
+ARM GAS  /tmp/ccOK3JIe.s 			page 77
 
 
  244:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  2208              	.LVL302:
 1007:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
  2209              		.loc 1 1007 10 discriminator 1 view .LVU755
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 78
+ARM GAS  /tmp/ccOK3JIe.s 			page 78
 
 
  2210 000e 0130     		adds	r0, r0, #1
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  2247              		.loc 1 1017 10 is_stmt 0 view .LVU772
  2248 002e 0134     		adds	r4, r4, #1
  2249              	.LVL307:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 79
+ARM GAS  /tmp/ccOK3JIe.s 			page 79
 
 
 1018:Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c **** 
@@ -4731,46 +4731,46 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 1
  2289 0000 00       		.space	1
  2290              		.text
  2291              	.Letext0:
- 2292              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
- 2293              		.file 4 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 2292              		.file 3 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ 2293              		.file 4 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
  2294              		.file 5 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h"
  2295              		.file 6 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s 			page 80
+ARM GAS  /tmp/ccOK3JIe.s 			page 80
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_ctlreq.c
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:21     .text.USBD_GetLen:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:26     .text.USBD_GetLen:00000000 USBD_GetLen
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:72     .text.USBD_ParseSetupRequest:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:78     .text.USBD_ParseSetupRequest:00000000 USBD_ParseSetupRequest
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:199    .text.USBD_CtlError:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:205    .text.USBD_CtlError:00000000 USBD_CtlError
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:239    .text.USBD_GetDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:244    .text.USBD_GetDescriptor:00000000 USBD_GetDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:718    .text.USBD_SetAddress:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:723    .text.USBD_SetAddress:00000000 USBD_SetAddress
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:818    .text.USBD_SetConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:823    .text.USBD_SetConfig:00000000 USBD_SetConfig
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1038   .text.USBD_SetConfig:000000d4 $d
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:2288   .bss.cfgidx.0:00000000 cfgidx.0
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1043   .text.USBD_GetConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1048   .text.USBD_GetConfig:00000000 USBD_GetConfig
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1124   .text.USBD_GetStatus:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1129   .text.USBD_GetStatus:00000000 USBD_GetStatus
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1199   .text.USBD_SetFeature:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1204   .text.USBD_SetFeature:00000000 USBD_SetFeature
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1262   .text.USBD_ClrFeature:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1267   .text.USBD_ClrFeature:00000000 USBD_ClrFeature
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1320   .text.USBD_StdDevReq:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1326   .text.USBD_StdDevReq:00000000 USBD_StdDevReq
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1469   .text.USBD_StdItfReq:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1475   .text.USBD_StdItfReq:00000000 USBD_StdItfReq
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1636   .text.USBD_StdEPReq:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:1642   .text.USBD_StdEPReq:00000000 USBD_StdEPReq
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:2175   .text.USBD_GetString:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:2181   .text.USBD_GetString:00000000 USBD_GetString
-C:\Users\Nathan\AppData\Local\Temp\ccVw9ECP.s:2289   .bss.cfgidx.0:00000000 $d
+     /tmp/ccOK3JIe.s:21     .text.USBD_GetLen:00000000 $t
+     /tmp/ccOK3JIe.s:26     .text.USBD_GetLen:00000000 USBD_GetLen
+     /tmp/ccOK3JIe.s:72     .text.USBD_ParseSetupRequest:00000000 $t
+     /tmp/ccOK3JIe.s:78     .text.USBD_ParseSetupRequest:00000000 USBD_ParseSetupRequest
+     /tmp/ccOK3JIe.s:199    .text.USBD_CtlError:00000000 $t
+     /tmp/ccOK3JIe.s:205    .text.USBD_CtlError:00000000 USBD_CtlError
+     /tmp/ccOK3JIe.s:239    .text.USBD_GetDescriptor:00000000 $t
+     /tmp/ccOK3JIe.s:244    .text.USBD_GetDescriptor:00000000 USBD_GetDescriptor
+     /tmp/ccOK3JIe.s:718    .text.USBD_SetAddress:00000000 $t
+     /tmp/ccOK3JIe.s:723    .text.USBD_SetAddress:00000000 USBD_SetAddress
+     /tmp/ccOK3JIe.s:818    .text.USBD_SetConfig:00000000 $t
+     /tmp/ccOK3JIe.s:823    .text.USBD_SetConfig:00000000 USBD_SetConfig
+     /tmp/ccOK3JIe.s:1038   .text.USBD_SetConfig:000000d4 $d
+     /tmp/ccOK3JIe.s:2288   .bss.cfgidx.0:00000000 cfgidx.0
+     /tmp/ccOK3JIe.s:1043   .text.USBD_GetConfig:00000000 $t
+     /tmp/ccOK3JIe.s:1048   .text.USBD_GetConfig:00000000 USBD_GetConfig
+     /tmp/ccOK3JIe.s:1124   .text.USBD_GetStatus:00000000 $t
+     /tmp/ccOK3JIe.s:1129   .text.USBD_GetStatus:00000000 USBD_GetStatus
+     /tmp/ccOK3JIe.s:1199   .text.USBD_SetFeature:00000000 $t
+     /tmp/ccOK3JIe.s:1204   .text.USBD_SetFeature:00000000 USBD_SetFeature
+     /tmp/ccOK3JIe.s:1262   .text.USBD_ClrFeature:00000000 $t
+     /tmp/ccOK3JIe.s:1267   .text.USBD_ClrFeature:00000000 USBD_ClrFeature
+     /tmp/ccOK3JIe.s:1320   .text.USBD_StdDevReq:00000000 $t
+     /tmp/ccOK3JIe.s:1326   .text.USBD_StdDevReq:00000000 USBD_StdDevReq
+     /tmp/ccOK3JIe.s:1469   .text.USBD_StdItfReq:00000000 $t
+     /tmp/ccOK3JIe.s:1475   .text.USBD_StdItfReq:00000000 USBD_StdItfReq
+     /tmp/ccOK3JIe.s:1636   .text.USBD_StdEPReq:00000000 $t
+     /tmp/ccOK3JIe.s:1642   .text.USBD_StdEPReq:00000000 USBD_StdEPReq
+     /tmp/ccOK3JIe.s:2175   .text.USBD_GetString:00000000 $t
+     /tmp/ccOK3JIe.s:2181   .text.USBD_GetString:00000000 USBD_GetString
+     /tmp/ccOK3JIe.s:2289   .bss.cfgidx.0:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_LL_StallEP

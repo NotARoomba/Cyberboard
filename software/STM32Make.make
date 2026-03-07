@@ -81,6 +81,7 @@ Core/Src/stm32wbxx_it.c \
 Core/Src/syscalls.c \
 Core/Src/sysmem.c \
 Core/Src/system_stm32wbxx.c \
+Drivers/ICM42688/ICM42688.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_cortex.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma.c \
@@ -100,6 +101,10 @@ Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc_ex.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_spi.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_spi_ex.c \
+Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim.c \
+Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c \
+Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart.c \
+Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart_ex.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_ll_rcc.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_ll_usb.c \
 Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c \
@@ -205,6 +210,7 @@ C_INCLUDES =  \
 -ICore/Inc \
 -IDrivers/CMSIS/Device/ST/STM32WBxx/Include \
 -IDrivers/CMSIS/Include \
+-IDrivers/ICM42688 \
 -IDrivers/STM32WBxx_HAL_Driver/Inc \
 -IDrivers/STM32WBxx_HAL_Driver/Inc/Legacy \
 -IMiddlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc \
@@ -248,7 +254,7 @@ LIBDIR = \
 
 
 # Additional LD Flags from config file
-ADDITIONALLDFLAGS = -Wl,--print-memory-usage -specs=nano.specs 
+ADDITIONALLDFLAGS = -Wl,--print-memory-usage -specs=nano.specs -u _printf_float 
 
 LDFLAGS = $(MCU) $(ADDITIONALLDFLAGS) -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIRECTORY)/$(TARGET).map,--cref -Wl,--gc-sections
 

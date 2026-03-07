@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
+ARM GAS  /tmp/cc6m6KYg.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
   27:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c **** 
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****   [..] Comparing to other previous devices, the I2C interface for STM32WBxx
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****        devices contains the following additional features
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 2
+ARM GAS  /tmp/cc6m6KYg.s 			page 2
 
 
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
   84:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c **** 
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c **** @endverbatim
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****   * @{
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 3
+ARM GAS  /tmp/cc6m6KYg.s 			page 3
 
 
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
   60              	.LVL1:
   61              		.loc 1 110 5 is_stmt 0 view .LVU14
   62 0020 0268     		ldr	r2, [r0]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 4
+ARM GAS  /tmp/cc6m6KYg.s 			page 4
 
 
   63 0022 22F00102 		bic	r2, r2, #1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
  126:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****   }
  127:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****   else
  128:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****   {
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 5
+ARM GAS  /tmp/cc6m6KYg.s 			page 5
 
 
  129:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****     return HAL_BUSY;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
  137              		.loc 1 148 3 view .LVU41
  138              		.loc 1 148 11 is_stmt 0 view .LVU42
  139 0002 90F84120 		ldrb	r2, [r0, #65]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 6
+ARM GAS  /tmp/cc6m6KYg.s 			page 6
 
 
  140              		.loc 1 148 6 view .LVU43
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
  166:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c **** 
  167:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****     /* Store the new register value */
  168:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****     hi2c->Instance->CR1 = tmpreg;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 7
+ARM GAS  /tmp/cc6m6KYg.s 			page 7
 
 
  177              		.loc 1 168 5 is_stmt 1 view .LVU59
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
  215 0054 7047     		bx	lr
  216              		.cfi_endproc
  217              	.LFE951:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 8
+ARM GAS  /tmp/cc6m6KYg.s 			page 8
 
 
  219              		.section	.text.HAL_I2CEx_EnableWakeUp,"ax",%progbits
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
  215:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****     /* Process Locked */
  216:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****     __HAL_LOCK(hi2c);
  243              		.loc 1 216 5 is_stmt 1 view .LVU81
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 9
+ARM GAS  /tmp/cc6m6KYg.s 			page 9
 
 
  244              		.loc 1 216 5 view .LVU82
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
  283 0044 83F84000 		strb	r0, [r3, #64]
  284              		.loc 1 231 5 is_stmt 1 view .LVU98
  232:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 10
+ARM GAS  /tmp/cc6m6KYg.s 			page 10
 
 
  233:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****     return HAL_OK;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
  322              		.loc 1 250 3 is_stmt 1 view .LVU107
  251:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c **** 
  252:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****   if (hi2c->State == HAL_I2C_STATE_READY)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 11
+ARM GAS  /tmp/cc6m6KYg.s 			page 11
 
 
  323              		.loc 1 252 3 view .LVU108
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
  362 003c 2022     		movs	r2, #32
  363 003e 80F84120 		strb	r2, [r0, #65]
  268:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 12
+ARM GAS  /tmp/cc6m6KYg.s 			page 12
 
 
  269:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****     /* Process Unlocked */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
  287:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****  ===============================================================================
  288:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****                       ##### Fast Mode Plus Functions #####
  289:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****  ===============================================================================
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 13
+ARM GAS  /tmp/cc6m6KYg.s 			page 13
 
 
  290:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c ****     [..] This section provides functions allowing to:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
  429              	.LVL32:
  430              	.LFB955:
  318:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 14
+ARM GAS  /tmp/cc6m6KYg.s 			page 14
 
 
  319:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_i2c_ex.c **** /**
@@ -823,30 +823,30 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 1
  449              	.LFE955:
  451              		.text
  452              	.Letext0:
- 453              		.file 2 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
- 454              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 453              		.file 2 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ 454              		.file 3 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
  455              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
  456              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
  457              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
  458              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s 			page 15
+ARM GAS  /tmp/cc6m6KYg.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_i2c_ex.c
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:21     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:27     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 HAL_I2CEx_ConfigAnalogFilter
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:118    .text.HAL_I2CEx_ConfigDigitalFilter:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:124    .text.HAL_I2CEx_ConfigDigitalFilter:00000000 HAL_I2CEx_ConfigDigitalFilter
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:220    .text.HAL_I2CEx_EnableWakeUp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:226    .text.HAL_I2CEx_EnableWakeUp:00000000 HAL_I2CEx_EnableWakeUp
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:306    .text.HAL_I2CEx_DisableWakeUp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:312    .text.HAL_I2CEx_DisableWakeUp:00000000 HAL_I2CEx_DisableWakeUp
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:392    .text.HAL_I2CEx_EnableFastModePlus:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:398    .text.HAL_I2CEx_EnableFastModePlus:00000000 HAL_I2CEx_EnableFastModePlus
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:417    .text.HAL_I2CEx_EnableFastModePlus:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:422    .text.HAL_I2CEx_DisableFastModePlus:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:428    .text.HAL_I2CEx_DisableFastModePlus:00000000 HAL_I2CEx_DisableFastModePlus
-C:\Users\Nathan\AppData\Local\Temp\ccEU5cdO.s:447    .text.HAL_I2CEx_DisableFastModePlus:0000000c $d
+     /tmp/cc6m6KYg.s:21     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 $t
+     /tmp/cc6m6KYg.s:27     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 HAL_I2CEx_ConfigAnalogFilter
+     /tmp/cc6m6KYg.s:118    .text.HAL_I2CEx_ConfigDigitalFilter:00000000 $t
+     /tmp/cc6m6KYg.s:124    .text.HAL_I2CEx_ConfigDigitalFilter:00000000 HAL_I2CEx_ConfigDigitalFilter
+     /tmp/cc6m6KYg.s:220    .text.HAL_I2CEx_EnableWakeUp:00000000 $t
+     /tmp/cc6m6KYg.s:226    .text.HAL_I2CEx_EnableWakeUp:00000000 HAL_I2CEx_EnableWakeUp
+     /tmp/cc6m6KYg.s:306    .text.HAL_I2CEx_DisableWakeUp:00000000 $t
+     /tmp/cc6m6KYg.s:312    .text.HAL_I2CEx_DisableWakeUp:00000000 HAL_I2CEx_DisableWakeUp
+     /tmp/cc6m6KYg.s:392    .text.HAL_I2CEx_EnableFastModePlus:00000000 $t
+     /tmp/cc6m6KYg.s:398    .text.HAL_I2CEx_EnableFastModePlus:00000000 HAL_I2CEx_EnableFastModePlus
+     /tmp/cc6m6KYg.s:417    .text.HAL_I2CEx_EnableFastModePlus:0000000c $d
+     /tmp/cc6m6KYg.s:422    .text.HAL_I2CEx_DisableFastModePlus:00000000 $t
+     /tmp/cc6m6KYg.s:428    .text.HAL_I2CEx_DisableFastModePlus:00000000 HAL_I2CEx_DisableFastModePlus
+     /tmp/cc6m6KYg.s:447    .text.HAL_I2CEx_DisableFastModePlus:0000000c $d
 
 NO UNDEFINED SYMBOLS

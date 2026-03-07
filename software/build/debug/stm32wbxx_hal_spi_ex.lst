@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpUvdog.s 			page 1
+ARM GAS  /tmp/ccPRBv0D.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpUvdog.s 			page 1
   27:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_spi_ex.c ****   * @{
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_spi_ex.c ****   */
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_spi_ex.c **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpUvdog.s 			page 2
+ARM GAS  /tmp/ccPRBv0D.s 			page 2
 
 
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_spi_ex.c **** /** @defgroup SPIEx SPIEx
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpUvdog.s 			page 1
   33              		@ frame_needed = 0, uses_anonymous_args = 0
   34              		@ link register save eliminated.
   81:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_spi_ex.c ****   __IO uint32_t tmpreg;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpUvdog.s 			page 3
+ARM GAS  /tmp/ccPRBv0D.s 			page 3
 
 
   35              		.loc 1 81 3 view .LVU1
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpUvdog.s 			page 1
   80 0026 F3D1     		bne	.L12
   89:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_spi_ex.c ****     {
   90:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_spi_ex.c ****       return HAL_TIMEOUT;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpUvdog.s 			page 4
+ARM GAS  /tmp/ccPRBv0D.s 			page 4
 
 
   81              		.loc 1 90 14 view .LVU23
@@ -218,18 +218,18 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpUvdog.s 			page 1
  108              	.LFE950:
  110              		.text
  111              	.Letext0:
- 112              		.file 2 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
- 113              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 112              		.file 2 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ 113              		.file 3 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
  114              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
  115              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
  116              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
  117              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_spi.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccpUvdog.s 			page 5
+ARM GAS  /tmp/ccPRBv0D.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_spi_ex.c
-C:\Users\Nathan\AppData\Local\Temp\ccpUvdog.s:21     .text.HAL_SPIEx_FlushRxFifo:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccpUvdog.s:27     .text.HAL_SPIEx_FlushRxFifo:00000000 HAL_SPIEx_FlushRxFifo
+     /tmp/ccPRBv0D.s:21     .text.HAL_SPIEx_FlushRxFifo:00000000 $t
+     /tmp/ccPRBv0D.s:27     .text.HAL_SPIEx_FlushRxFifo:00000000 HAL_SPIEx_FlushRxFifo
 
 NO UNDEFINED SYMBOLS

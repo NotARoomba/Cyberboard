@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 1
+ARM GAS  /tmp/cctpgvzD.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 1
   56 0056 9A61     		str	r2, [r3, #24]
   57 0058 7047     		bx	lr
   58              	.L3:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 2
+ARM GAS  /tmp/cctpgvzD.s 			page 2
 
 
   59 005a 00BF     		.align	2
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 1
  115 0064 114A     		ldr	r2, .L17+4
  116 0066 1360     		str	r3, [r2]
  117 0068 01E0     		b	.L11
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 3
+ARM GAS  /tmp/cctpgvzD.s 			page 3
 
 
  118              	.L7:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 1
  175 002c 04000000 		.word	4
  176 0030 04000000 		.word	4
  177 0034 0C000000 		.word	12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 4
+ARM GAS  /tmp/cctpgvzD.s 			page 4
 
 
  178 0038 08000000 		.word	8
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 1
  238 0020 02000000 		.word	2
  239 0024 04000000 		.word	4
  240 0028 08000000 		.word	8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 5
+ARM GAS  /tmp/cctpgvzD.s 			page 5
 
 
  241 002c 10000000 		.word	16
@@ -252,26 +252,26 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 1
  251              	SystemCoreClock:
  252 0000 00093D00 		.word	4000000
  253              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s 			page 6
+ARM GAS  /tmp/cctpgvzD.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_stm32wbxx.c
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:18     .text.SystemInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:24     .text.SystemInit:00000000 SystemInit
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:61     .text.SystemInit:0000005c $d
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:65     .text.SystemCoreClockUpdate:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:71     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:152    .text.SystemCoreClockUpdate:000000a8 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:193    .rodata.MSIRangeTable:00000000 MSIRangeTable
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:251    .data.SystemCoreClock:00000000 SystemCoreClock
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:229    .rodata.AHBPrescTable:00000000 AHBPrescTable
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:163    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:160    .rodata.SmpsPrescalerTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:190    .rodata.MSIRangeTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:215    .rodata.APBPrescTable:00000000 APBPrescTable
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:212    .rodata.APBPrescTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:226    .rodata.AHBPrescTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUNsoaS.s:248    .data.SystemCoreClock:00000000 $d
+     /tmp/cctpgvzD.s:18     .text.SystemInit:00000000 $t
+     /tmp/cctpgvzD.s:24     .text.SystemInit:00000000 SystemInit
+     /tmp/cctpgvzD.s:61     .text.SystemInit:0000005c $d
+     /tmp/cctpgvzD.s:65     .text.SystemCoreClockUpdate:00000000 $t
+     /tmp/cctpgvzD.s:71     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+     /tmp/cctpgvzD.s:152    .text.SystemCoreClockUpdate:000000a8 $d
+     /tmp/cctpgvzD.s:193    .rodata.MSIRangeTable:00000000 MSIRangeTable
+     /tmp/cctpgvzD.s:251    .data.SystemCoreClock:00000000 SystemCoreClock
+     /tmp/cctpgvzD.s:229    .rodata.AHBPrescTable:00000000 AHBPrescTable
+     /tmp/cctpgvzD.s:163    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
+     /tmp/cctpgvzD.s:160    .rodata.SmpsPrescalerTable:00000000 $d
+     /tmp/cctpgvzD.s:190    .rodata.MSIRangeTable:00000000 $d
+     /tmp/cctpgvzD.s:215    .rodata.APBPrescTable:00000000 APBPrescTable
+     /tmp/cctpgvzD.s:212    .rodata.APBPrescTable:00000000 $d
+     /tmp/cctpgvzD.s:226    .rodata.AHBPrescTable:00000000 $d
+     /tmp/cctpgvzD.s:248    .data.SystemCoreClock:00000000 $d
 
 NO UNDEFINED SYMBOLS

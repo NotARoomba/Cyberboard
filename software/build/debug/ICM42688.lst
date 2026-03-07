@@ -1,0 +1,2000 @@
+ARM GAS  /tmp/cchAWY9c.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"ICM42688.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Drivers/ICM42688/ICM42688.c"
+  20              		.section	.text.write_reg,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	write_reg:
+  27              	.LVL0:
+  28              	.LFB952:
+   1:Drivers/ICM42688/ICM42688.c **** /**
+   2:Drivers/ICM42688/ICM42688.c ****  * @file ICM42688.c
+   3:Drivers/ICM42688/ICM42688.c ****  * @brief ICM-42688-P IMU driver – pure C, STM32 HAL SPI, one-shot reads
+   4:Drivers/ICM42688/ICM42688.c ****  */
+   5:Drivers/ICM42688/ICM42688.c **** 
+   6:Drivers/ICM42688/ICM42688.c **** #include "ICM42688.h"
+   7:Drivers/ICM42688/ICM42688.c **** #include <string.h>
+   8:Drivers/ICM42688/ICM42688.c **** 
+   9:Drivers/ICM42688/ICM42688.c **** /* ───────────────────── Private helpers ─────�
+  10:Drivers/ICM42688/ICM42688.c **** 
+  11:Drivers/ICM42688/ICM42688.c **** /** CS low (select) */
+  12:Drivers/ICM42688/ICM42688.c **** static inline void cs_low(ICM42688_Handle *h) {
+  13:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_RESET);
+  14:Drivers/ICM42688/ICM42688.c **** }
+  15:Drivers/ICM42688/ICM42688.c **** 
+  16:Drivers/ICM42688/ICM42688.c **** /** CS high (deselect) */
+  17:Drivers/ICM42688/ICM42688.c **** static inline void cs_high(ICM42688_Handle *h) {
+  18:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_SET);
+  19:Drivers/ICM42688/ICM42688.c **** }
+  20:Drivers/ICM42688/ICM42688.c **** 
+  21:Drivers/ICM42688/ICM42688.c **** /**
+  22:Drivers/ICM42688/ICM42688.c ****  * @brief Write a single register
+  23:Drivers/ICM42688/ICM42688.c ****  * @retval 0 on success, <0 on error
+  24:Drivers/ICM42688/ICM42688.c ****  */
+  25:Drivers/ICM42688/ICM42688.c **** static int write_reg(ICM42688_Handle *h, uint8_t reg, uint8_t val) {
+  29              		.loc 1 25 68 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 16
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 25 68 is_stmt 0 view .LVU1
+ARM GAS  /tmp/cchAWY9c.s 			page 2
+
+
+  34 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  35              		.cfi_def_cfa_offset 20
+  36              		.cfi_offset 4, -20
+  37              		.cfi_offset 5, -16
+  38              		.cfi_offset 6, -12
+  39              		.cfi_offset 7, -8
+  40              		.cfi_offset 14, -4
+  41 0002 87B0     		sub	sp, sp, #28
+  42              		.cfi_def_cfa_offset 48
+  43 0004 0446     		mov	r4, r0
+  44 0006 0D46     		mov	r5, r1
+  45 0008 1646     		mov	r6, r2
+  26:Drivers/ICM42688/ICM42688.c ****   uint8_t tx[2] = {reg & 0x7F, val}; /* bit 7 = 0 → write */
+  46              		.loc 1 26 3 is_stmt 1 view .LVU2
+  47              		.loc 1 26 24 is_stmt 0 view .LVU3
+  48 000a 01F07F03 		and	r3, r1, #127
+  49              		.loc 1 26 11 view .LVU4
+  50 000e 8DF81430 		strb	r3, [sp, #20]
+  51 0012 8DF81520 		strb	r2, [sp, #21]
+  27:Drivers/ICM42688/ICM42688.c **** 
+  28:Drivers/ICM42688/ICM42688.c ****   cs_low(h);
+  52              		.loc 1 28 3 is_stmt 1 view .LVU5
+  53              	.LVL1:
+  54              	.LBB35:
+  55              	.LBI35:
+  12:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_RESET);
+  56              		.loc 1 12 20 view .LVU6
+  57              	.LBB36:
+  13:Drivers/ICM42688/ICM42688.c **** }
+  58              		.loc 1 13 3 view .LVU7
+  59 0016 0022     		movs	r2, #0
+  60              	.LVL2:
+  13:Drivers/ICM42688/ICM42688.c **** }
+  61              		.loc 1 13 3 is_stmt 0 view .LVU8
+  62 0018 0189     		ldrh	r1, [r0, #8]
+  63              	.LVL3:
+  13:Drivers/ICM42688/ICM42688.c **** }
+  64              		.loc 1 13 3 view .LVU9
+  65 001a 4068     		ldr	r0, [r0, #4]
+  66              	.LVL4:
+  13:Drivers/ICM42688/ICM42688.c **** }
+  67              		.loc 1 13 3 view .LVU10
+  68 001c FFF7FEFF 		bl	HAL_GPIO_WritePin
+  69              	.LVL5:
+  13:Drivers/ICM42688/ICM42688.c **** }
+  70              		.loc 1 13 3 view .LVU11
+  71              	.LBE36:
+  72              	.LBE35:
+  29:Drivers/ICM42688/ICM42688.c ****   HAL_StatusTypeDef st = HAL_SPI_Transmit(h->hspi, tx, 2, 100);
+  73              		.loc 1 29 3 is_stmt 1 view .LVU12
+  74              		.loc 1 29 26 is_stmt 0 view .LVU13
+  75 0020 6423     		movs	r3, #100
+  76 0022 0222     		movs	r2, #2
+  77 0024 05A9     		add	r1, sp, #20
+  78 0026 2068     		ldr	r0, [r4]
+  79 0028 FFF7FEFF 		bl	HAL_SPI_Transmit
+  80              	.LVL6:
+ARM GAS  /tmp/cchAWY9c.s 			page 3
+
+
+  81 002c 0746     		mov	r7, r0
+  82              	.LVL7:
+  30:Drivers/ICM42688/ICM42688.c ****   cs_high(h);
+  83              		.loc 1 30 3 is_stmt 1 view .LVU14
+  84              	.LBB37:
+  85              	.LBI37:
+  17:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_SET);
+  86              		.loc 1 17 20 view .LVU15
+  87              	.LBB38:
+  18:Drivers/ICM42688/ICM42688.c **** }
+  88              		.loc 1 18 3 view .LVU16
+  89 002e 0122     		movs	r2, #1
+  90 0030 2189     		ldrh	r1, [r4, #8]
+  91 0032 6068     		ldr	r0, [r4, #4]
+  92 0034 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  93              	.LVL8:
+  18:Drivers/ICM42688/ICM42688.c **** }
+  94              		.loc 1 18 3 is_stmt 0 view .LVU17
+  95              	.LBE38:
+  96              	.LBE37:
+  31:Drivers/ICM42688/ICM42688.c **** 
+  32:Drivers/ICM42688/ICM42688.c ****   if (st != HAL_OK)
+  97              		.loc 1 32 3 is_stmt 1 view .LVU18
+  98              		.loc 1 32 6 is_stmt 0 view .LVU19
+  99 0038 2FBB     		cbnz	r7, .L3
+  33:Drivers/ICM42688/ICM42688.c ****     return -1;
+  34:Drivers/ICM42688/ICM42688.c **** 
+  35:Drivers/ICM42688/ICM42688.c ****   /* read-back verify */
+  36:Drivers/ICM42688/ICM42688.c ****   HAL_Delay(10);
+ 100              		.loc 1 36 3 is_stmt 1 view .LVU20
+ 101 003a 0A20     		movs	r0, #10
+ 102 003c FFF7FEFF 		bl	HAL_Delay
+ 103              	.LVL9:
+  37:Drivers/ICM42688/ICM42688.c ****   uint8_t rd = 0;
+ 104              		.loc 1 37 3 view .LVU21
+  38:Drivers/ICM42688/ICM42688.c ****   uint8_t tx_rd[2] = {reg | 0x80, 0x00};
+ 105              		.loc 1 38 3 view .LVU22
+ 106              		.loc 1 38 11 is_stmt 0 view .LVU23
+ 107 0040 65F07F05 		orn	r5, r5, #127
+ 108              	.LVL10:
+ 109              		.loc 1 38 11 view .LVU24
+ 110 0044 8DF81050 		strb	r5, [sp, #16]
+ 111 0048 0022     		movs	r2, #0
+ 112 004a 8DF81120 		strb	r2, [sp, #17]
+  39:Drivers/ICM42688/ICM42688.c ****   uint8_t rx_rd[2] = {0};
+ 113              		.loc 1 39 3 is_stmt 1 view .LVU25
+ 114              		.loc 1 39 11 is_stmt 0 view .LVU26
+ 115 004e ADF80C20 		strh	r2, [sp, #12]	@ movhi
+  40:Drivers/ICM42688/ICM42688.c **** 
+  41:Drivers/ICM42688/ICM42688.c ****   cs_low(h);
+ 116              		.loc 1 41 3 is_stmt 1 view .LVU27
+ 117              	.LVL11:
+ 118              	.LBB39:
+ 119              	.LBI39:
+  12:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_RESET);
+ 120              		.loc 1 12 20 view .LVU28
+ 121              	.LBB40:
+ARM GAS  /tmp/cchAWY9c.s 			page 4
+
+
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 122              		.loc 1 13 3 view .LVU29
+ 123 0052 2189     		ldrh	r1, [r4, #8]
+ 124 0054 6068     		ldr	r0, [r4, #4]
+ 125 0056 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 126              	.LVL12:
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 127              		.loc 1 13 3 is_stmt 0 view .LVU30
+ 128              	.LBE40:
+ 129              	.LBE39:
+  42:Drivers/ICM42688/ICM42688.c ****   st = HAL_SPI_TransmitReceive(h->hspi, tx_rd, rx_rd, 2, 100);
+ 130              		.loc 1 42 3 is_stmt 1 view .LVU31
+ 131              		.loc 1 42 8 is_stmt 0 view .LVU32
+ 132 005a 6423     		movs	r3, #100
+ 133 005c 0093     		str	r3, [sp]
+ 134 005e 0223     		movs	r3, #2
+ 135 0060 03AA     		add	r2, sp, #12
+ 136 0062 04A9     		add	r1, sp, #16
+ 137 0064 2068     		ldr	r0, [r4]
+ 138 0066 FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+ 139              	.LVL13:
+ 140 006a 0546     		mov	r5, r0
+ 141              	.LVL14:
+  43:Drivers/ICM42688/ICM42688.c ****   cs_high(h);
+ 142              		.loc 1 43 3 is_stmt 1 view .LVU33
+ 143              	.LBB41:
+ 144              	.LBI41:
+  17:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_SET);
+ 145              		.loc 1 17 20 view .LVU34
+ 146              	.LBB42:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 147              		.loc 1 18 3 view .LVU35
+ 148 006c 0122     		movs	r2, #1
+ 149 006e 2189     		ldrh	r1, [r4, #8]
+ 150 0070 6068     		ldr	r0, [r4, #4]
+ 151 0072 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 152              	.LVL15:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 153              		.loc 1 18 3 is_stmt 0 view .LVU36
+ 154              	.LBE42:
+ 155              	.LBE41:
+  44:Drivers/ICM42688/ICM42688.c **** 
+  45:Drivers/ICM42688/ICM42688.c ****   if (st != HAL_OK)
+ 156              		.loc 1 45 3 is_stmt 1 view .LVU37
+ 157              		.loc 1 45 6 is_stmt 0 view .LVU38
+ 158 0076 4DB9     		cbnz	r5, .L4
+  46:Drivers/ICM42688/ICM42688.c ****     return -2;
+  47:Drivers/ICM42688/ICM42688.c ****   rd = rx_rd[1];
+ 159              		.loc 1 47 3 is_stmt 1 view .LVU39
+ 160              		.loc 1 47 6 is_stmt 0 view .LVU40
+ 161 0078 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
+ 162              	.LVL16:
+  48:Drivers/ICM42688/ICM42688.c **** 
+  49:Drivers/ICM42688/ICM42688.c ****   return (rd == val) ? 0 : -3;
+ 163              		.loc 1 49 3 is_stmt 1 view .LVU41
+ 164              		.loc 1 49 26 is_stmt 0 view .LVU42
+ 165 007c 9E42     		cmp	r6, r3
+ARM GAS  /tmp/cchAWY9c.s 			page 5
+
+
+ 166 007e 08D1     		bne	.L5
+ 167              		.loc 1 49 26 discriminator 1 view .LVU43
+ 168 0080 2846     		mov	r0, r5
+ 169              	.LVL17:
+ 170              	.L1:
+  50:Drivers/ICM42688/ICM42688.c **** }
+ 171              		.loc 1 50 1 view .LVU44
+ 172 0082 07B0     		add	sp, sp, #28
+ 173              		.cfi_remember_state
+ 174              		.cfi_def_cfa_offset 20
+ 175              		@ sp needed
+ 176 0084 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 177              	.LVL18:
+ 178              	.L3:
+ 179              		.cfi_restore_state
+  33:Drivers/ICM42688/ICM42688.c **** 
+ 180              		.loc 1 33 12 view .LVU45
+ 181 0086 4FF0FF30 		mov	r0, #-1
+ 182 008a FAE7     		b	.L1
+ 183              	.LVL19:
+ 184              	.L4:
+  46:Drivers/ICM42688/ICM42688.c ****   rd = rx_rd[1];
+ 185              		.loc 1 46 12 view .LVU46
+ 186 008c 6FF00100 		mvn	r0, #1
+ 187 0090 F7E7     		b	.L1
+ 188              	.LVL20:
+ 189              	.L5:
+  49:Drivers/ICM42688/ICM42688.c **** }
+ 190              		.loc 1 49 26 discriminator 2 view .LVU47
+ 191 0092 6FF00200 		mvn	r0, #2
+ 192 0096 F4E7     		b	.L1
+ 193              		.cfi_endproc
+ 194              	.LFE952:
+ 196              		.section	.text.set_bank,"ax",%progbits
+ 197              		.align	1
+ 198              		.syntax unified
+ 199              		.thumb
+ 200              		.thumb_func
+ 202              	set_bank:
+ 203              	.LVL21:
+ 204              	.LFB954:
+  51:Drivers/ICM42688/ICM42688.c **** 
+  52:Drivers/ICM42688/ICM42688.c **** /**
+  53:Drivers/ICM42688/ICM42688.c ****  * @brief Read one or more registers into dest[]
+  54:Drivers/ICM42688/ICM42688.c ****  * @retval 0 on success, <0 on error
+  55:Drivers/ICM42688/ICM42688.c ****  */
+  56:Drivers/ICM42688/ICM42688.c **** static int read_regs(ICM42688_Handle *h, uint8_t reg, uint8_t count,
+  57:Drivers/ICM42688/ICM42688.c ****                      uint8_t *dest) {
+  58:Drivers/ICM42688/ICM42688.c ****   uint8_t tx_buf[15 + 1]; /* max burst we ever need */
+  59:Drivers/ICM42688/ICM42688.c ****   uint8_t rx_buf[15 + 1];
+  60:Drivers/ICM42688/ICM42688.c **** 
+  61:Drivers/ICM42688/ICM42688.c ****   if (count > 15)
+  62:Drivers/ICM42688/ICM42688.c ****     return -1;
+  63:Drivers/ICM42688/ICM42688.c **** 
+  64:Drivers/ICM42688/ICM42688.c ****   memset(tx_buf, 0, count + 1);
+  65:Drivers/ICM42688/ICM42688.c ****   tx_buf[0] = reg | 0x80; /* bit 7 = 1 → read */
+  66:Drivers/ICM42688/ICM42688.c **** 
+ARM GAS  /tmp/cchAWY9c.s 			page 6
+
+
+  67:Drivers/ICM42688/ICM42688.c ****   cs_low(h);
+  68:Drivers/ICM42688/ICM42688.c ****   HAL_StatusTypeDef st =
+  69:Drivers/ICM42688/ICM42688.c ****       HAL_SPI_TransmitReceive(h->hspi, tx_buf, rx_buf, count + 1, 100);
+  70:Drivers/ICM42688/ICM42688.c ****   cs_high(h);
+  71:Drivers/ICM42688/ICM42688.c **** 
+  72:Drivers/ICM42688/ICM42688.c ****   if (st != HAL_OK)
+  73:Drivers/ICM42688/ICM42688.c ****     return -2;
+  74:Drivers/ICM42688/ICM42688.c **** 
+  75:Drivers/ICM42688/ICM42688.c ****   memcpy(dest, &rx_buf[1], count);
+  76:Drivers/ICM42688/ICM42688.c ****   return 0;
+  77:Drivers/ICM42688/ICM42688.c **** }
+  78:Drivers/ICM42688/ICM42688.c **** 
+  79:Drivers/ICM42688/ICM42688.c **** /**
+  80:Drivers/ICM42688/ICM42688.c ****  * @brief Switch register bank (0-4).  Skips write if already selected.
+  81:Drivers/ICM42688/ICM42688.c ****  */
+  82:Drivers/ICM42688/ICM42688.c **** static int set_bank(ICM42688_Handle *h, uint8_t bank) {
+ 205              		.loc 1 82 55 is_stmt 1 view -0
+ 206              		.cfi_startproc
+ 207              		@ args = 0, pretend = 0, frame = 0
+ 208              		@ frame_needed = 0, uses_anonymous_args = 0
+ 209              		.loc 1 82 55 is_stmt 0 view .LVU49
+ 210 0000 08B5     		push	{r3, lr}
+ 211              		.cfi_def_cfa_offset 8
+ 212              		.cfi_offset 3, -8
+ 213              		.cfi_offset 14, -4
+  83:Drivers/ICM42688/ICM42688.c ****   if (h->current_bank == bank)
+ 214              		.loc 1 83 3 is_stmt 1 view .LVU50
+ 215              		.loc 1 83 8 is_stmt 0 view .LVU51
+ 216 0002 837A     		ldrb	r3, [r0, #10]	@ zero_extendqisi2
+ 217              		.loc 1 83 6 view .LVU52
+ 218 0004 8B42     		cmp	r3, r1
+ 219 0006 05D0     		beq	.L9
+ 220 0008 0A46     		mov	r2, r1
+  84:Drivers/ICM42688/ICM42688.c ****     return 0;
+  85:Drivers/ICM42688/ICM42688.c ****   h->current_bank = bank;
+ 221              		.loc 1 85 3 is_stmt 1 view .LVU53
+ 222              		.loc 1 85 19 is_stmt 0 view .LVU54
+ 223 000a 8172     		strb	r1, [r0, #10]
+  86:Drivers/ICM42688/ICM42688.c ****   return write_reg(h, ICM42688_REG_BANK_SEL, bank);
+ 224              		.loc 1 86 3 is_stmt 1 view .LVU55
+ 225              		.loc 1 86 10 is_stmt 0 view .LVU56
+ 226 000c 7621     		movs	r1, #118
+ 227              	.LVL22:
+ 228              		.loc 1 86 10 view .LVU57
+ 229 000e FFF7FEFF 		bl	write_reg
+ 230              	.LVL23:
+ 231              	.L7:
+  87:Drivers/ICM42688/ICM42688.c **** }
+ 232              		.loc 1 87 1 view .LVU58
+ 233 0012 08BD     		pop	{r3, pc}
+ 234              	.LVL24:
+ 235              	.L9:
+  84:Drivers/ICM42688/ICM42688.c ****     return 0;
+ 236              		.loc 1 84 12 view .LVU59
+ 237 0014 0020     		movs	r0, #0
+ 238              	.LVL25:
+  84:Drivers/ICM42688/ICM42688.c ****     return 0;
+ARM GAS  /tmp/cchAWY9c.s 			page 7
+
+
+ 239              		.loc 1 84 12 view .LVU60
+ 240 0016 FCE7     		b	.L7
+ 241              		.cfi_endproc
+ 242              	.LFE954:
+ 244              		.section	.text.read_regs,"ax",%progbits
+ 245              		.align	1
+ 246              		.syntax unified
+ 247              		.thumb
+ 248              		.thumb_func
+ 250              	read_regs:
+ 251              	.LVL26:
+ 252              	.LFB953:
+  57:Drivers/ICM42688/ICM42688.c ****   uint8_t tx_buf[15 + 1]; /* max burst we ever need */
+ 253              		.loc 1 57 37 is_stmt 1 view -0
+ 254              		.cfi_startproc
+ 255              		@ args = 0, pretend = 0, frame = 32
+ 256              		@ frame_needed = 0, uses_anonymous_args = 0
+  58:Drivers/ICM42688/ICM42688.c ****   uint8_t rx_buf[15 + 1];
+ 257              		.loc 1 58 3 view .LVU62
+  59:Drivers/ICM42688/ICM42688.c **** 
+ 258              		.loc 1 59 3 view .LVU63
+  61:Drivers/ICM42688/ICM42688.c ****     return -1;
+ 259              		.loc 1 61 3 view .LVU64
+  61:Drivers/ICM42688/ICM42688.c ****     return -1;
+ 260              		.loc 1 61 6 is_stmt 0 view .LVU65
+ 261 0000 0F2A     		cmp	r2, #15
+ 262 0002 2FD8     		bhi	.L13
+  57:Drivers/ICM42688/ICM42688.c ****   uint8_t tx_buf[15 + 1]; /* max burst we ever need */
+ 263              		.loc 1 57 37 view .LVU66
+ 264 0004 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 265              		.cfi_def_cfa_offset 28
+ 266              		.cfi_offset 4, -28
+ 267              		.cfi_offset 5, -24
+ 268              		.cfi_offset 6, -20
+ 269              		.cfi_offset 7, -16
+ 270              		.cfi_offset 8, -12
+ 271              		.cfi_offset 9, -8
+ 272              		.cfi_offset 14, -4
+ 273 0008 8BB0     		sub	sp, sp, #44
+ 274              		.cfi_def_cfa_offset 72
+ 275 000a 0446     		mov	r4, r0
+ 276 000c 8846     		mov	r8, r1
+ 277 000e 1546     		mov	r5, r2
+ 278 0010 9946     		mov	r9, r3
+  64:Drivers/ICM42688/ICM42688.c ****   tx_buf[0] = reg | 0x80; /* bit 7 = 1 → read */
+ 279              		.loc 1 64 3 is_stmt 1 view .LVU67
+  64:Drivers/ICM42688/ICM42688.c ****   tx_buf[0] = reg | 0x80; /* bit 7 = 1 → read */
+ 280              		.loc 1 64 27 is_stmt 0 view .LVU68
+ 281 0012 0132     		adds	r2, r2, #1
+ 282              	.LVL27:
+  64:Drivers/ICM42688/ICM42688.c ****   tx_buf[0] = reg | 0x80; /* bit 7 = 1 → read */
+ 283              		.loc 1 64 3 view .LVU69
+ 284 0014 06AE     		add	r6, sp, #24
+ 285 0016 1746     		mov	r7, r2
+ 286 0018 0021     		movs	r1, #0
+ 287              	.LVL28:
+  64:Drivers/ICM42688/ICM42688.c ****   tx_buf[0] = reg | 0x80; /* bit 7 = 1 → read */
+ARM GAS  /tmp/cchAWY9c.s 			page 8
+
+
+ 288              		.loc 1 64 3 view .LVU70
+ 289 001a 3046     		mov	r0, r6
+ 290              	.LVL29:
+  64:Drivers/ICM42688/ICM42688.c ****   tx_buf[0] = reg | 0x80; /* bit 7 = 1 → read */
+ 291              		.loc 1 64 3 view .LVU71
+ 292 001c FFF7FEFF 		bl	memset
+ 293              	.LVL30:
+  65:Drivers/ICM42688/ICM42688.c **** 
+ 294              		.loc 1 65 3 is_stmt 1 view .LVU72
+  65:Drivers/ICM42688/ICM42688.c **** 
+ 295              		.loc 1 65 13 is_stmt 0 view .LVU73
+ 296 0020 68F07F02 		orn	r2, r8, #127
+ 297 0024 8DF81820 		strb	r2, [sp, #24]
+  67:Drivers/ICM42688/ICM42688.c ****   HAL_StatusTypeDef st =
+ 298              		.loc 1 67 3 is_stmt 1 view .LVU74
+ 299              	.LVL31:
+ 300              	.LBB43:
+ 301              	.LBI43:
+  12:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_RESET);
+ 302              		.loc 1 12 20 view .LVU75
+ 303              	.LBB44:
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 304              		.loc 1 13 3 view .LVU76
+ 305 0028 0022     		movs	r2, #0
+ 306 002a 2189     		ldrh	r1, [r4, #8]
+ 307 002c 6068     		ldr	r0, [r4, #4]
+ 308 002e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 309              	.LVL32:
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 310              		.loc 1 13 3 is_stmt 0 view .LVU77
+ 311              	.LBE44:
+ 312              	.LBE43:
+  68:Drivers/ICM42688/ICM42688.c ****       HAL_SPI_TransmitReceive(h->hspi, tx_buf, rx_buf, count + 1, 100);
+ 313              		.loc 1 68 3 is_stmt 1 view .LVU78
+  69:Drivers/ICM42688/ICM42688.c ****   cs_high(h);
+ 314              		.loc 1 69 7 is_stmt 0 view .LVU79
+ 315 0032 6423     		movs	r3, #100
+ 316 0034 0093     		str	r3, [sp]
+ 317 0036 3B46     		mov	r3, r7
+ 318 0038 02AA     		add	r2, sp, #8
+ 319 003a 3146     		mov	r1, r6
+ 320 003c 2068     		ldr	r0, [r4]
+ 321 003e FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+ 322              	.LVL33:
+ 323 0042 0646     		mov	r6, r0
+ 324              	.LVL34:
+  70:Drivers/ICM42688/ICM42688.c **** 
+ 325              		.loc 1 70 3 is_stmt 1 view .LVU80
+ 326              	.LBB45:
+ 327              	.LBI45:
+  17:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_SET);
+ 328              		.loc 1 17 20 view .LVU81
+ 329              	.LBB46:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 330              		.loc 1 18 3 view .LVU82
+ 331 0044 0122     		movs	r2, #1
+ 332 0046 2189     		ldrh	r1, [r4, #8]
+ARM GAS  /tmp/cchAWY9c.s 			page 9
+
+
+ 333 0048 6068     		ldr	r0, [r4, #4]
+ 334 004a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 335              	.LVL35:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 336              		.loc 1 18 3 is_stmt 0 view .LVU83
+ 337              	.LBE46:
+ 338              	.LBE45:
+  72:Drivers/ICM42688/ICM42688.c ****     return -2;
+ 339              		.loc 1 72 3 is_stmt 1 view .LVU84
+  72:Drivers/ICM42688/ICM42688.c ****     return -2;
+ 340              		.loc 1 72 6 is_stmt 0 view .LVU85
+ 341 004e 66B9     		cbnz	r6, .L14
+  75:Drivers/ICM42688/ICM42688.c ****   return 0;
+ 342              		.loc 1 75 3 is_stmt 1 view .LVU86
+ 343 0050 2A46     		mov	r2, r5
+ 344 0052 0DF10901 		add	r1, sp, #9
+ 345 0056 4846     		mov	r0, r9
+ 346 0058 FFF7FEFF 		bl	memcpy
+ 347              	.LVL36:
+  76:Drivers/ICM42688/ICM42688.c **** }
+ 348              		.loc 1 76 3 view .LVU87
+  76:Drivers/ICM42688/ICM42688.c **** }
+ 349              		.loc 1 76 10 is_stmt 0 view .LVU88
+ 350 005c 3046     		mov	r0, r6
+ 351              	.L11:
+  77:Drivers/ICM42688/ICM42688.c **** 
+ 352              		.loc 1 77 1 view .LVU89
+ 353 005e 0BB0     		add	sp, sp, #44
+ 354              		.cfi_def_cfa_offset 28
+ 355              		@ sp needed
+ 356 0060 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 357              	.LVL37:
+ 358              	.L13:
+ 359              		.cfi_def_cfa_offset 0
+ 360              		.cfi_restore 4
+ 361              		.cfi_restore 5
+ 362              		.cfi_restore 6
+ 363              		.cfi_restore 7
+ 364              		.cfi_restore 8
+ 365              		.cfi_restore 9
+ 366              		.cfi_restore 14
+  62:Drivers/ICM42688/ICM42688.c **** 
+ 367              		.loc 1 62 12 view .LVU90
+ 368 0064 4FF0FF30 		mov	r0, #-1
+ 369              	.LVL38:
+  77:Drivers/ICM42688/ICM42688.c **** 
+ 370              		.loc 1 77 1 view .LVU91
+ 371 0068 7047     		bx	lr
+ 372              	.LVL39:
+ 373              	.L14:
+ 374              		.cfi_def_cfa_offset 72
+ 375              		.cfi_offset 4, -28
+ 376              		.cfi_offset 5, -24
+ 377              		.cfi_offset 6, -20
+ 378              		.cfi_offset 7, -16
+ 379              		.cfi_offset 8, -12
+ 380              		.cfi_offset 9, -8
+ARM GAS  /tmp/cchAWY9c.s 			page 10
+
+
+ 381              		.cfi_offset 14, -4
+  73:Drivers/ICM42688/ICM42688.c **** 
+ 382              		.loc 1 73 12 view .LVU92
+ 383 006a 6FF00100 		mvn	r0, #1
+ 384 006e F6E7     		b	.L11
+ 385              		.cfi_endproc
+ 386              	.LFE953:
+ 388              		.section	.text.ICM42688_WhoAmI,"ax",%progbits
+ 389              		.align	1
+ 390              		.global	ICM42688_WhoAmI
+ 391              		.syntax unified
+ 392              		.thumb
+ 393              		.thumb_func
+ 395              	ICM42688_WhoAmI:
+ 396              	.LVL40:
+ 397              	.LFB955:
+  88:Drivers/ICM42688/ICM42688.c **** 
+  89:Drivers/ICM42688/ICM42688.c **** /* ───────────────────── Public API ───────
+  90:Drivers/ICM42688/ICM42688.c **** 
+  91:Drivers/ICM42688/ICM42688.c **** uint8_t ICM42688_WhoAmI(ICM42688_Handle *h) {
+ 398              		.loc 1 91 45 is_stmt 1 view -0
+ 399              		.cfi_startproc
+ 400              		@ args = 0, pretend = 0, frame = 8
+ 401              		@ frame_needed = 0, uses_anonymous_args = 0
+ 402              		.loc 1 91 45 is_stmt 0 view .LVU94
+ 403 0000 10B5     		push	{r4, lr}
+ 404              		.cfi_def_cfa_offset 8
+ 405              		.cfi_offset 4, -8
+ 406              		.cfi_offset 14, -4
+ 407 0002 82B0     		sub	sp, sp, #8
+ 408              		.cfi_def_cfa_offset 16
+ 409 0004 0446     		mov	r4, r0
+  92:Drivers/ICM42688/ICM42688.c ****   set_bank(h, 0);
+ 410              		.loc 1 92 3 is_stmt 1 view .LVU95
+ 411 0006 0021     		movs	r1, #0
+ 412 0008 FFF7FEFF 		bl	set_bank
+ 413              	.LVL41:
+  93:Drivers/ICM42688/ICM42688.c ****   uint8_t val = 0;
+ 414              		.loc 1 93 3 view .LVU96
+ 415              		.loc 1 93 11 is_stmt 0 view .LVU97
+ 416 000c 0023     		movs	r3, #0
+ 417 000e 8DF80730 		strb	r3, [sp, #7]
+  94:Drivers/ICM42688/ICM42688.c ****   if (read_regs(h, ICM42688_UB0_WHO_AM_I, 1, &val) < 0)
+ 418              		.loc 1 94 3 is_stmt 1 view .LVU98
+ 419              		.loc 1 94 7 is_stmt 0 view .LVU99
+ 420 0012 0DF10703 		add	r3, sp, #7
+ 421 0016 0122     		movs	r2, #1
+ 422 0018 7521     		movs	r1, #117
+ 423 001a 2046     		mov	r0, r4
+ 424 001c FFF7FEFF 		bl	read_regs
+ 425              	.LVL42:
+ 426              		.loc 1 94 6 discriminator 1 view .LVU100
+ 427 0020 0028     		cmp	r0, #0
+ 428 0022 03DB     		blt	.L21
+  95:Drivers/ICM42688/ICM42688.c ****     return 0;
+  96:Drivers/ICM42688/ICM42688.c ****   return val;
+ 429              		.loc 1 96 3 is_stmt 1 view .LVU101
+ARM GAS  /tmp/cchAWY9c.s 			page 11
+
+
+ 430              		.loc 1 96 10 is_stmt 0 view .LVU102
+ 431 0024 9DF80700 		ldrb	r0, [sp, #7]	@ zero_extendqisi2
+ 432              	.L20:
+  97:Drivers/ICM42688/ICM42688.c **** }
+ 433              		.loc 1 97 1 view .LVU103
+ 434 0028 02B0     		add	sp, sp, #8
+ 435              		.cfi_remember_state
+ 436              		.cfi_def_cfa_offset 8
+ 437              		@ sp needed
+ 438 002a 10BD     		pop	{r4, pc}
+ 439              	.LVL43:
+ 440              	.L21:
+ 441              		.cfi_restore_state
+  95:Drivers/ICM42688/ICM42688.c ****     return 0;
+ 442              		.loc 1 95 12 view .LVU104
+ 443 002c 0020     		movs	r0, #0
+ 444 002e FBE7     		b	.L20
+ 445              		.cfi_endproc
+ 446              	.LFE955:
+ 448              		.section	.text.ICM42688_SetAccelFS,"ax",%progbits
+ 449              		.align	1
+ 450              		.global	ICM42688_SetAccelFS
+ 451              		.syntax unified
+ 452              		.thumb
+ 453              		.thumb_func
+ 455              	ICM42688_SetAccelFS:
+ 456              	.LVL44:
+ 457              	.LFB956:
+  98:Drivers/ICM42688/ICM42688.c **** 
+  99:Drivers/ICM42688/ICM42688.c **** int ICM42688_SetAccelFS(ICM42688_Handle *h, ICM42688_AccelFS fs) {
+ 458              		.loc 1 99 66 is_stmt 1 view -0
+ 459              		.cfi_startproc
+ 460              		@ args = 0, pretend = 0, frame = 8
+ 461              		@ frame_needed = 0, uses_anonymous_args = 0
+ 462              		.loc 1 99 66 is_stmt 0 view .LVU106
+ 463 0000 30B5     		push	{r4, r5, lr}
+ 464              		.cfi_def_cfa_offset 12
+ 465              		.cfi_offset 4, -12
+ 466              		.cfi_offset 5, -8
+ 467              		.cfi_offset 14, -4
+ 468 0002 83B0     		sub	sp, sp, #12
+ 469              		.cfi_def_cfa_offset 24
+ 470 0004 0446     		mov	r4, r0
+ 471 0006 0D46     		mov	r5, r1
+ 100:Drivers/ICM42688/ICM42688.c ****   set_bank(h, 0);
+ 472              		.loc 1 100 3 is_stmt 1 view .LVU107
+ 473 0008 0021     		movs	r1, #0
+ 474              	.LVL45:
+ 475              		.loc 1 100 3 is_stmt 0 view .LVU108
+ 476 000a FFF7FEFF 		bl	set_bank
+ 477              	.LVL46:
+ 101:Drivers/ICM42688/ICM42688.c ****   uint8_t reg;
+ 478              		.loc 1 101 3 is_stmt 1 view .LVU109
+ 102:Drivers/ICM42688/ICM42688.c ****   if (read_regs(h, ICM42688_UB0_ACCEL_CONFIG0, 1, &reg) < 0)
+ 479              		.loc 1 102 3 view .LVU110
+ 480              		.loc 1 102 7 is_stmt 0 view .LVU111
+ 481 000e 0DF10703 		add	r3, sp, #7
+ARM GAS  /tmp/cchAWY9c.s 			page 12
+
+
+ 482 0012 0122     		movs	r2, #1
+ 483 0014 5021     		movs	r1, #80
+ 484 0016 2046     		mov	r0, r4
+ 485 0018 FFF7FEFF 		bl	read_regs
+ 486              	.LVL47:
+ 487              		.loc 1 102 6 discriminator 1 view .LVU112
+ 488 001c 0028     		cmp	r0, #0
+ 489 001e 20DB     		blt	.L25
+ 103:Drivers/ICM42688/ICM42688.c ****     return -1;
+ 104:Drivers/ICM42688/ICM42688.c ****   reg = ((uint8_t)fs << 5) | (reg & 0x1F);
+ 490              		.loc 1 104 3 is_stmt 1 view .LVU113
+ 491              		.loc 1 104 35 is_stmt 0 view .LVU114
+ 492 0020 9DF80720 		ldrb	r2, [sp, #7]	@ zero_extendqisi2
+ 493              		.loc 1 104 28 view .LVU115
+ 494 0024 02F01F02 		and	r2, r2, #31
+ 495 0028 42EA4512 		orr	r2, r2, r5, lsl #5
+ 496 002c D2B2     		uxtb	r2, r2
+ 497              		.loc 1 104 7 view .LVU116
+ 498 002e 8DF80720 		strb	r2, [sp, #7]
+ 105:Drivers/ICM42688/ICM42688.c ****   if (write_reg(h, ICM42688_UB0_ACCEL_CONFIG0, reg) < 0)
+ 499              		.loc 1 105 3 is_stmt 1 view .LVU117
+ 500              		.loc 1 105 7 is_stmt 0 view .LVU118
+ 501 0032 5021     		movs	r1, #80
+ 502 0034 2046     		mov	r0, r4
+ 503 0036 FFF7FEFF 		bl	write_reg
+ 504              	.LVL48:
+ 505              		.loc 1 105 6 discriminator 1 view .LVU119
+ 506 003a 0028     		cmp	r0, #0
+ 507 003c 14DB     		blt	.L26
+ 106:Drivers/ICM42688/ICM42688.c ****     return -2;
+ 107:Drivers/ICM42688/ICM42688.c **** 
+ 108:Drivers/ICM42688/ICM42688.c ****   /* pre-compute scale: full-scale / 32768 */
+ 109:Drivers/ICM42688/ICM42688.c ****   h->accel_scale = (float)(1 << (4 - (uint8_t)fs)) / 32768.0f;
+ 508              		.loc 1 109 3 is_stmt 1 view .LVU120
+ 509              		.loc 1 109 36 is_stmt 0 view .LVU121
+ 510 003e C5F10402 		rsb	r2, r5, #4
+ 511              		.loc 1 109 30 view .LVU122
+ 512 0042 0123     		movs	r3, #1
+ 513 0044 9340     		lsls	r3, r3, r2
+ 514 0046 07EE903A 		vmov	s15, r3	@ int
+ 515              		.loc 1 109 20 view .LVU123
+ 516 004a F8EEE77A 		vcvt.f32.s32	s15, s15
+ 517              		.loc 1 109 52 view .LVU124
+ 518 004e 9FED087A 		vldr.32	s14, .L28
+ 519 0052 67EE877A 		vmul.f32	s15, s15, s14
+ 520              		.loc 1 109 18 view .LVU125
+ 521 0056 C4ED037A 		vstr.32	s15, [r4, #12]
+ 110:Drivers/ICM42688/ICM42688.c ****   h->accel_fs = fs;
+ 522              		.loc 1 110 3 is_stmt 1 view .LVU126
+ 523              		.loc 1 110 15 is_stmt 0 view .LVU127
+ 524 005a 2575     		strb	r5, [r4, #20]
+ 111:Drivers/ICM42688/ICM42688.c ****   return 0;
+ 525              		.loc 1 111 3 is_stmt 1 view .LVU128
+ 526              		.loc 1 111 10 is_stmt 0 view .LVU129
+ 527 005c 0020     		movs	r0, #0
+ 528              	.L23:
+ 112:Drivers/ICM42688/ICM42688.c **** }
+ARM GAS  /tmp/cchAWY9c.s 			page 13
+
+
+ 529              		.loc 1 112 1 view .LVU130
+ 530 005e 03B0     		add	sp, sp, #12
+ 531              		.cfi_remember_state
+ 532              		.cfi_def_cfa_offset 12
+ 533              		@ sp needed
+ 534 0060 30BD     		pop	{r4, r5, pc}
+ 535              	.LVL49:
+ 536              	.L25:
+ 537              		.cfi_restore_state
+ 103:Drivers/ICM42688/ICM42688.c ****   reg = ((uint8_t)fs << 5) | (reg & 0x1F);
+ 538              		.loc 1 103 12 view .LVU131
+ 539 0062 4FF0FF30 		mov	r0, #-1
+ 540 0066 FAE7     		b	.L23
+ 541              	.L26:
+ 106:Drivers/ICM42688/ICM42688.c **** 
+ 542              		.loc 1 106 12 view .LVU132
+ 543 0068 6FF00100 		mvn	r0, #1
+ 544 006c F7E7     		b	.L23
+ 545              	.L29:
+ 546 006e 00BF     		.align	2
+ 547              	.L28:
+ 548 0070 00000038 		.word	939524096
+ 549              		.cfi_endproc
+ 550              	.LFE956:
+ 552              		.section	.text.ICM42688_SetGyroFS,"ax",%progbits
+ 553              		.align	1
+ 554              		.global	ICM42688_SetGyroFS
+ 555              		.syntax unified
+ 556              		.thumb
+ 557              		.thumb_func
+ 559              	ICM42688_SetGyroFS:
+ 560              	.LVL50:
+ 561              	.LFB957:
+ 113:Drivers/ICM42688/ICM42688.c **** 
+ 114:Drivers/ICM42688/ICM42688.c **** int ICM42688_SetGyroFS(ICM42688_Handle *h, ICM42688_GyroFS fs) {
+ 562              		.loc 1 114 64 is_stmt 1 view -0
+ 563              		.cfi_startproc
+ 564              		@ args = 0, pretend = 0, frame = 8
+ 565              		@ frame_needed = 0, uses_anonymous_args = 0
+ 566              		.loc 1 114 64 is_stmt 0 view .LVU134
+ 567 0000 30B5     		push	{r4, r5, lr}
+ 568              		.cfi_def_cfa_offset 12
+ 569              		.cfi_offset 4, -12
+ 570              		.cfi_offset 5, -8
+ 571              		.cfi_offset 14, -4
+ 572 0002 83B0     		sub	sp, sp, #12
+ 573              		.cfi_def_cfa_offset 24
+ 574 0004 0446     		mov	r4, r0
+ 575 0006 0D46     		mov	r5, r1
+ 115:Drivers/ICM42688/ICM42688.c ****   set_bank(h, 0);
+ 576              		.loc 1 115 3 is_stmt 1 view .LVU135
+ 577 0008 0021     		movs	r1, #0
+ 578              	.LVL51:
+ 579              		.loc 1 115 3 is_stmt 0 view .LVU136
+ 580 000a FFF7FEFF 		bl	set_bank
+ 581              	.LVL52:
+ 116:Drivers/ICM42688/ICM42688.c ****   uint8_t reg;
+ARM GAS  /tmp/cchAWY9c.s 			page 14
+
+
+ 582              		.loc 1 116 3 is_stmt 1 view .LVU137
+ 117:Drivers/ICM42688/ICM42688.c ****   if (read_regs(h, ICM42688_UB0_GYRO_CONFIG0, 1, &reg) < 0)
+ 583              		.loc 1 117 3 view .LVU138
+ 584              		.loc 1 117 7 is_stmt 0 view .LVU139
+ 585 000e 0DF10703 		add	r3, sp, #7
+ 586 0012 0122     		movs	r2, #1
+ 587 0014 4F21     		movs	r1, #79
+ 588 0016 2046     		mov	r0, r4
+ 589 0018 FFF7FEFF 		bl	read_regs
+ 590              	.LVL53:
+ 591              		.loc 1 117 6 discriminator 1 view .LVU140
+ 592 001c 0028     		cmp	r0, #0
+ 593 001e 22DB     		blt	.L32
+ 118:Drivers/ICM42688/ICM42688.c ****     return -1;
+ 119:Drivers/ICM42688/ICM42688.c ****   reg = ((uint8_t)fs << 5) | (reg & 0x1F);
+ 594              		.loc 1 119 3 is_stmt 1 view .LVU141
+ 595              		.loc 1 119 35 is_stmt 0 view .LVU142
+ 596 0020 9DF80720 		ldrb	r2, [sp, #7]	@ zero_extendqisi2
+ 597              		.loc 1 119 28 view .LVU143
+ 598 0024 02F01F02 		and	r2, r2, #31
+ 599 0028 42EA4512 		orr	r2, r2, r5, lsl #5
+ 600 002c D2B2     		uxtb	r2, r2
+ 601              		.loc 1 119 7 view .LVU144
+ 602 002e 8DF80720 		strb	r2, [sp, #7]
+ 120:Drivers/ICM42688/ICM42688.c ****   if (write_reg(h, ICM42688_UB0_GYRO_CONFIG0, reg) < 0)
+ 603              		.loc 1 120 3 is_stmt 1 view .LVU145
+ 604              		.loc 1 120 7 is_stmt 0 view .LVU146
+ 605 0032 4F21     		movs	r1, #79
+ 606 0034 2046     		mov	r0, r4
+ 607 0036 FFF7FEFF 		bl	write_reg
+ 608              	.LVL54:
+ 609              		.loc 1 120 6 discriminator 1 view .LVU147
+ 610 003a 0028     		cmp	r0, #0
+ 611 003c 16DB     		blt	.L33
+ 121:Drivers/ICM42688/ICM42688.c ****     return -2;
+ 122:Drivers/ICM42688/ICM42688.c **** 
+ 123:Drivers/ICM42688/ICM42688.c ****   h->gyro_scale = (2000.0f / (float)(1 << (uint8_t)fs)) / 32768.0f;
+ 612              		.loc 1 123 3 is_stmt 1 view .LVU148
+ 613              		.loc 1 123 40 is_stmt 0 view .LVU149
+ 614 003e 0123     		movs	r3, #1
+ 615 0040 AB40     		lsls	r3, r3, r5
+ 616              		.loc 1 123 30 view .LVU150
+ 617 0042 07EE903A 		vmov	s15, r3	@ int
+ 618 0046 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 619              		.loc 1 123 28 view .LVU151
+ 620 004a DFED0A6A 		vldr.32	s13, .L35
+ 621 004e 86EEA77A 		vdiv.f32	s14, s13, s15
+ 622              		.loc 1 123 57 view .LVU152
+ 623 0052 DFED097A 		vldr.32	s15, .L35+4
+ 624 0056 67EE277A 		vmul.f32	s15, s14, s15
+ 625              		.loc 1 123 17 view .LVU153
+ 626 005a C4ED047A 		vstr.32	s15, [r4, #16]
+ 124:Drivers/ICM42688/ICM42688.c ****   h->gyro_fs = fs;
+ 627              		.loc 1 124 3 is_stmt 1 view .LVU154
+ 628              		.loc 1 124 14 is_stmt 0 view .LVU155
+ 629 005e 6575     		strb	r5, [r4, #21]
+ 125:Drivers/ICM42688/ICM42688.c ****   return 0;
+ARM GAS  /tmp/cchAWY9c.s 			page 15
+
+
+ 630              		.loc 1 125 3 is_stmt 1 view .LVU156
+ 631              		.loc 1 125 10 is_stmt 0 view .LVU157
+ 632 0060 0020     		movs	r0, #0
+ 633              	.L30:
+ 126:Drivers/ICM42688/ICM42688.c **** }
+ 634              		.loc 1 126 1 view .LVU158
+ 635 0062 03B0     		add	sp, sp, #12
+ 636              		.cfi_remember_state
+ 637              		.cfi_def_cfa_offset 12
+ 638              		@ sp needed
+ 639 0064 30BD     		pop	{r4, r5, pc}
+ 640              	.LVL55:
+ 641              	.L32:
+ 642              		.cfi_restore_state
+ 118:Drivers/ICM42688/ICM42688.c ****   reg = ((uint8_t)fs << 5) | (reg & 0x1F);
+ 643              		.loc 1 118 12 view .LVU159
+ 644 0066 4FF0FF30 		mov	r0, #-1
+ 645 006a FAE7     		b	.L30
+ 646              	.L33:
+ 121:Drivers/ICM42688/ICM42688.c **** 
+ 647              		.loc 1 121 12 view .LVU160
+ 648 006c 6FF00100 		mvn	r0, #1
+ 649 0070 F7E7     		b	.L30
+ 650              	.L36:
+ 651 0072 00BF     		.align	2
+ 652              	.L35:
+ 653 0074 0000FA44 		.word	1157234688
+ 654 0078 00000038 		.word	939524096
+ 655              		.cfi_endproc
+ 656              	.LFE957:
+ 658              		.section	.text.ICM42688_SetAccelODR,"ax",%progbits
+ 659              		.align	1
+ 660              		.global	ICM42688_SetAccelODR
+ 661              		.syntax unified
+ 662              		.thumb
+ 663              		.thumb_func
+ 665              	ICM42688_SetAccelODR:
+ 666              	.LVL56:
+ 667              	.LFB958:
+ 127:Drivers/ICM42688/ICM42688.c **** 
+ 128:Drivers/ICM42688/ICM42688.c **** int ICM42688_SetAccelODR(ICM42688_Handle *h, ICM42688_ODR odr) {
+ 668              		.loc 1 128 64 is_stmt 1 view -0
+ 669              		.cfi_startproc
+ 670              		@ args = 0, pretend = 0, frame = 8
+ 671              		@ frame_needed = 0, uses_anonymous_args = 0
+ 672              		.loc 1 128 64 is_stmt 0 view .LVU162
+ 673 0000 30B5     		push	{r4, r5, lr}
+ 674              		.cfi_def_cfa_offset 12
+ 675              		.cfi_offset 4, -12
+ 676              		.cfi_offset 5, -8
+ 677              		.cfi_offset 14, -4
+ 678 0002 83B0     		sub	sp, sp, #12
+ 679              		.cfi_def_cfa_offset 24
+ 680 0004 0446     		mov	r4, r0
+ 681 0006 0D46     		mov	r5, r1
+ 129:Drivers/ICM42688/ICM42688.c ****   set_bank(h, 0);
+ 682              		.loc 1 129 3 is_stmt 1 view .LVU163
+ARM GAS  /tmp/cchAWY9c.s 			page 16
+
+
+ 683 0008 0021     		movs	r1, #0
+ 684              	.LVL57:
+ 685              		.loc 1 129 3 is_stmt 0 view .LVU164
+ 686 000a FFF7FEFF 		bl	set_bank
+ 687              	.LVL58:
+ 130:Drivers/ICM42688/ICM42688.c ****   uint8_t reg;
+ 688              		.loc 1 130 3 is_stmt 1 view .LVU165
+ 131:Drivers/ICM42688/ICM42688.c ****   if (read_regs(h, ICM42688_UB0_ACCEL_CONFIG0, 1, &reg) < 0)
+ 689              		.loc 1 131 3 view .LVU166
+ 690              		.loc 1 131 7 is_stmt 0 view .LVU167
+ 691 000e 0DF10703 		add	r3, sp, #7
+ 692 0012 0122     		movs	r2, #1
+ 693 0014 5021     		movs	r1, #80
+ 694 0016 2046     		mov	r0, r4
+ 695 0018 FFF7FEFF 		bl	read_regs
+ 696              	.LVL59:
+ 697              		.loc 1 131 6 discriminator 1 view .LVU168
+ 698 001c 0028     		cmp	r0, #0
+ 699 001e 10DB     		blt	.L39
+ 132:Drivers/ICM42688/ICM42688.c ****     return -1;
+ 133:Drivers/ICM42688/ICM42688.c ****   reg = (uint8_t)odr | (reg & 0xF0);
+ 700              		.loc 1 133 3 is_stmt 1 view .LVU169
+ 701              		.loc 1 133 29 is_stmt 0 view .LVU170
+ 702 0020 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+ 703 0024 23F00F03 		bic	r3, r3, #15
+ 704 0028 2A46     		mov	r2, r5
+ 705 002a 1A43     		orrs	r2, r2, r3
+ 706              		.loc 1 133 7 view .LVU171
+ 707 002c 8DF80720 		strb	r2, [sp, #7]
+ 134:Drivers/ICM42688/ICM42688.c ****   if (write_reg(h, ICM42688_UB0_ACCEL_CONFIG0, reg) < 0)
+ 708              		.loc 1 134 3 is_stmt 1 view .LVU172
+ 709              		.loc 1 134 7 is_stmt 0 view .LVU173
+ 710 0030 5021     		movs	r1, #80
+ 711 0032 2046     		mov	r0, r4
+ 712 0034 FFF7FEFF 		bl	write_reg
+ 713              	.LVL60:
+ 714              		.loc 1 134 6 discriminator 1 view .LVU174
+ 715 0038 0028     		cmp	r0, #0
+ 716 003a 05DB     		blt	.L40
+ 135:Drivers/ICM42688/ICM42688.c ****     return -2;
+ 136:Drivers/ICM42688/ICM42688.c ****   return 0;
+ 717              		.loc 1 136 10 view .LVU175
+ 718 003c 0020     		movs	r0, #0
+ 719              	.L37:
+ 137:Drivers/ICM42688/ICM42688.c **** }
+ 720              		.loc 1 137 1 view .LVU176
+ 721 003e 03B0     		add	sp, sp, #12
+ 722              		.cfi_remember_state
+ 723              		.cfi_def_cfa_offset 12
+ 724              		@ sp needed
+ 725 0040 30BD     		pop	{r4, r5, pc}
+ 726              	.LVL61:
+ 727              	.L39:
+ 728              		.cfi_restore_state
+ 132:Drivers/ICM42688/ICM42688.c ****   reg = (uint8_t)odr | (reg & 0xF0);
+ 729              		.loc 1 132 12 view .LVU177
+ 730 0042 4FF0FF30 		mov	r0, #-1
+ARM GAS  /tmp/cchAWY9c.s 			page 17
+
+
+ 731 0046 FAE7     		b	.L37
+ 732              	.L40:
+ 135:Drivers/ICM42688/ICM42688.c ****     return -2;
+ 733              		.loc 1 135 12 view .LVU178
+ 734 0048 6FF00100 		mvn	r0, #1
+ 735 004c F7E7     		b	.L37
+ 736              		.cfi_endproc
+ 737              	.LFE958:
+ 739              		.section	.text.ICM42688_SetGyroODR,"ax",%progbits
+ 740              		.align	1
+ 741              		.global	ICM42688_SetGyroODR
+ 742              		.syntax unified
+ 743              		.thumb
+ 744              		.thumb_func
+ 746              	ICM42688_SetGyroODR:
+ 747              	.LVL62:
+ 748              	.LFB959:
+ 138:Drivers/ICM42688/ICM42688.c **** 
+ 139:Drivers/ICM42688/ICM42688.c **** int ICM42688_SetGyroODR(ICM42688_Handle *h, ICM42688_ODR odr) {
+ 749              		.loc 1 139 63 is_stmt 1 view -0
+ 750              		.cfi_startproc
+ 751              		@ args = 0, pretend = 0, frame = 8
+ 752              		@ frame_needed = 0, uses_anonymous_args = 0
+ 753              		.loc 1 139 63 is_stmt 0 view .LVU180
+ 754 0000 30B5     		push	{r4, r5, lr}
+ 755              		.cfi_def_cfa_offset 12
+ 756              		.cfi_offset 4, -12
+ 757              		.cfi_offset 5, -8
+ 758              		.cfi_offset 14, -4
+ 759 0002 83B0     		sub	sp, sp, #12
+ 760              		.cfi_def_cfa_offset 24
+ 761 0004 0446     		mov	r4, r0
+ 762 0006 0D46     		mov	r5, r1
+ 140:Drivers/ICM42688/ICM42688.c ****   set_bank(h, 0);
+ 763              		.loc 1 140 3 is_stmt 1 view .LVU181
+ 764 0008 0021     		movs	r1, #0
+ 765              	.LVL63:
+ 766              		.loc 1 140 3 is_stmt 0 view .LVU182
+ 767 000a FFF7FEFF 		bl	set_bank
+ 768              	.LVL64:
+ 141:Drivers/ICM42688/ICM42688.c ****   uint8_t reg;
+ 769              		.loc 1 141 3 is_stmt 1 view .LVU183
+ 142:Drivers/ICM42688/ICM42688.c ****   if (read_regs(h, ICM42688_UB0_GYRO_CONFIG0, 1, &reg) < 0)
+ 770              		.loc 1 142 3 view .LVU184
+ 771              		.loc 1 142 7 is_stmt 0 view .LVU185
+ 772 000e 0DF10703 		add	r3, sp, #7
+ 773 0012 0122     		movs	r2, #1
+ 774 0014 4F21     		movs	r1, #79
+ 775 0016 2046     		mov	r0, r4
+ 776 0018 FFF7FEFF 		bl	read_regs
+ 777              	.LVL65:
+ 778              		.loc 1 142 6 discriminator 1 view .LVU186
+ 779 001c 0028     		cmp	r0, #0
+ 780 001e 10DB     		blt	.L44
+ 143:Drivers/ICM42688/ICM42688.c ****     return -1;
+ 144:Drivers/ICM42688/ICM42688.c ****   reg = (uint8_t)odr | (reg & 0xF0);
+ 781              		.loc 1 144 3 is_stmt 1 view .LVU187
+ARM GAS  /tmp/cchAWY9c.s 			page 18
+
+
+ 782              		.loc 1 144 29 is_stmt 0 view .LVU188
+ 783 0020 9DF80730 		ldrb	r3, [sp, #7]	@ zero_extendqisi2
+ 784 0024 23F00F03 		bic	r3, r3, #15
+ 785 0028 2A46     		mov	r2, r5
+ 786 002a 1A43     		orrs	r2, r2, r3
+ 787              		.loc 1 144 7 view .LVU189
+ 788 002c 8DF80720 		strb	r2, [sp, #7]
+ 145:Drivers/ICM42688/ICM42688.c ****   if (write_reg(h, ICM42688_UB0_GYRO_CONFIG0, reg) < 0)
+ 789              		.loc 1 145 3 is_stmt 1 view .LVU190
+ 790              		.loc 1 145 7 is_stmt 0 view .LVU191
+ 791 0030 4F21     		movs	r1, #79
+ 792 0032 2046     		mov	r0, r4
+ 793 0034 FFF7FEFF 		bl	write_reg
+ 794              	.LVL66:
+ 795              		.loc 1 145 6 discriminator 1 view .LVU192
+ 796 0038 0028     		cmp	r0, #0
+ 797 003a 05DB     		blt	.L45
+ 146:Drivers/ICM42688/ICM42688.c ****     return -2;
+ 147:Drivers/ICM42688/ICM42688.c ****   return 0;
+ 798              		.loc 1 147 10 view .LVU193
+ 799 003c 0020     		movs	r0, #0
+ 800              	.L42:
+ 148:Drivers/ICM42688/ICM42688.c **** }
+ 801              		.loc 1 148 1 view .LVU194
+ 802 003e 03B0     		add	sp, sp, #12
+ 803              		.cfi_remember_state
+ 804              		.cfi_def_cfa_offset 12
+ 805              		@ sp needed
+ 806 0040 30BD     		pop	{r4, r5, pc}
+ 807              	.LVL67:
+ 808              	.L44:
+ 809              		.cfi_restore_state
+ 143:Drivers/ICM42688/ICM42688.c ****   reg = (uint8_t)odr | (reg & 0xF0);
+ 810              		.loc 1 143 12 view .LVU195
+ 811 0042 4FF0FF30 		mov	r0, #-1
+ 812 0046 FAE7     		b	.L42
+ 813              	.L45:
+ 146:Drivers/ICM42688/ICM42688.c ****     return -2;
+ 814              		.loc 1 146 12 view .LVU196
+ 815 0048 6FF00100 		mvn	r0, #1
+ 816 004c F7E7     		b	.L42
+ 817              		.cfi_endproc
+ 818              	.LFE959:
+ 820              		.section	.text.ICM42688_Init,"ax",%progbits
+ 821              		.align	1
+ 822              		.global	ICM42688_Init
+ 823              		.syntax unified
+ 824              		.thumb
+ 825              		.thumb_func
+ 827              	ICM42688_Init:
+ 828              	.LVL68:
+ 829              	.LFB960:
+ 149:Drivers/ICM42688/ICM42688.c **** 
+ 150:Drivers/ICM42688/ICM42688.c **** int ICM42688_Init(ICM42688_Handle *h) {
+ 830              		.loc 1 150 39 is_stmt 1 view -0
+ 831              		.cfi_startproc
+ 832              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  /tmp/cchAWY9c.s 			page 19
+
+
+ 833              		@ frame_needed = 0, uses_anonymous_args = 0
+ 834              		.loc 1 150 39 is_stmt 0 view .LVU198
+ 835 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 836              		.cfi_def_cfa_offset 24
+ 837              		.cfi_offset 4, -24
+ 838              		.cfi_offset 5, -20
+ 839              		.cfi_offset 6, -16
+ 840              		.cfi_offset 7, -12
+ 841              		.cfi_offset 8, -8
+ 842              		.cfi_offset 14, -4
+ 843 0004 84B0     		sub	sp, sp, #16
+ 844              		.cfi_def_cfa_offset 40
+ 845 0006 0446     		mov	r4, r0
+ 151:Drivers/ICM42688/ICM42688.c ****   /* make sure CS starts de-asserted */
+ 152:Drivers/ICM42688/ICM42688.c ****   cs_high(h);
+ 846              		.loc 1 152 3 is_stmt 1 view .LVU199
+ 847              	.LVL69:
+ 848              	.LBB47:
+ 849              	.LBI47:
+  17:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_SET);
+ 850              		.loc 1 17 20 view .LVU200
+ 851              	.LBB48:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 852              		.loc 1 18 3 view .LVU201
+ 853 0008 0122     		movs	r2, #1
+ 854 000a 0189     		ldrh	r1, [r0, #8]
+ 855 000c 4068     		ldr	r0, [r0, #4]
+ 856              	.LVL70:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 857              		.loc 1 18 3 is_stmt 0 view .LVU202
+ 858 000e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 859              	.LVL71:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 860              		.loc 1 18 3 view .LVU203
+ 861              	.LBE48:
+ 862              	.LBE47:
+ 153:Drivers/ICM42688/ICM42688.c ****   h->current_bank = 0;
+ 863              		.loc 1 153 3 is_stmt 1 view .LVU204
+ 864              		.loc 1 153 19 is_stmt 0 view .LVU205
+ 865 0012 0025     		movs	r5, #0
+ 866 0014 A572     		strb	r5, [r4, #10]
+ 154:Drivers/ICM42688/ICM42688.c **** 
+ 155:Drivers/ICM42688/ICM42688.c ****   /* ── Slow SPI to ≤1 MHz for register configuration ── */
+ 156:Drivers/ICM42688/ICM42688.c ****   uint32_t saved_prescaler = h->hspi->Init.BaudRatePrescaler;
+ 867              		.loc 1 156 3 is_stmt 1 view .LVU206
+ 868              		.loc 1 156 31 is_stmt 0 view .LVU207
+ 869 0016 2368     		ldr	r3, [r4]
+ 870              		.loc 1 156 12 view .LVU208
+ 871 0018 DA69     		ldr	r2, [r3, #28]
+ 872 001a 9046     		mov	r8, r2
+ 873              	.LVL72:
+ 157:Drivers/ICM42688/ICM42688.c ****   h->hspi->Init.BaudRatePrescaler =
+ 874              		.loc 1 157 3 is_stmt 1 view .LVU209
+ 875              		.loc 1 157 35 is_stmt 0 view .LVU210
+ 876 001c 3022     		movs	r2, #48
+ 877              	.LVL73:
+ 878              		.loc 1 157 35 view .LVU211
+ARM GAS  /tmp/cchAWY9c.s 			page 20
+
+
+ 879 001e DA61     		str	r2, [r3, #28]
+ 158:Drivers/ICM42688/ICM42688.c ****       SPI_BAUDRATEPRESCALER_128; /* 64MHz/128 = 500kHz */
+ 159:Drivers/ICM42688/ICM42688.c ****   HAL_SPI_Init(h->hspi);
+ 880              		.loc 1 159 3 is_stmt 1 view .LVU212
+ 881 0020 2068     		ldr	r0, [r4]
+ 882 0022 FFF7FEFF 		bl	HAL_SPI_Init
+ 883              	.LVL74:
+ 160:Drivers/ICM42688/ICM42688.c **** 
+ 161:Drivers/ICM42688/ICM42688.c ****   /* ── Toggle CS to latch SPI mode (chip defaults to I2C if CS is high) ── */
+ 162:Drivers/ICM42688/ICM42688.c ****   cs_low(h);
+ 884              		.loc 1 162 3 view .LVU213
+ 885              	.LBB49:
+ 886              	.LBI49:
+  12:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_RESET);
+ 887              		.loc 1 12 20 view .LVU214
+ 888              	.LBB50:
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 889              		.loc 1 13 3 view .LVU215
+ 890 0026 2A46     		mov	r2, r5
+ 891 0028 2189     		ldrh	r1, [r4, #8]
+ 892 002a 6068     		ldr	r0, [r4, #4]
+ 893 002c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 894              	.LVL75:
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 895              		.loc 1 13 3 is_stmt 0 view .LVU216
+ 896              	.LBE50:
+ 897              	.LBE49:
+ 163:Drivers/ICM42688/ICM42688.c ****   HAL_Delay(1);
+ 898              		.loc 1 163 3 is_stmt 1 view .LVU217
+ 899 0030 0120     		movs	r0, #1
+ 900 0032 FFF7FEFF 		bl	HAL_Delay
+ 901              	.LVL76:
+ 164:Drivers/ICM42688/ICM42688.c ****   cs_high(h);
+ 902              		.loc 1 164 3 view .LVU218
+ 903              	.LBB51:
+ 904              	.LBI51:
+  17:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_SET);
+ 905              		.loc 1 17 20 view .LVU219
+ 906              	.LBB52:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 907              		.loc 1 18 3 view .LVU220
+ 908 0036 0122     		movs	r2, #1
+ 909 0038 2189     		ldrh	r1, [r4, #8]
+ 910 003a 6068     		ldr	r0, [r4, #4]
+ 911 003c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 912              	.LVL77:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 913              		.loc 1 18 3 is_stmt 0 view .LVU221
+ 914              	.LBE52:
+ 915              	.LBE51:
+ 165:Drivers/ICM42688/ICM42688.c ****   HAL_Delay(1);
+ 916              		.loc 1 165 3 is_stmt 1 view .LVU222
+ 917 0040 0120     		movs	r0, #1
+ 918 0042 FFF7FEFF 		bl	HAL_Delay
+ 919              	.LVL78:
+ 920              	.LBB53:
+ 166:Drivers/ICM42688/ICM42688.c **** 
+ARM GAS  /tmp/cchAWY9c.s 			page 21
+
+
+ 167:Drivers/ICM42688/ICM42688.c ****   /* ── Dummy read to fully activate SPI interface ── */
+ 168:Drivers/ICM42688/ICM42688.c ****   {
+ 169:Drivers/ICM42688/ICM42688.c ****     uint8_t tx[2] = {0x75 | 0x80, 0x00}; /* read WHO_AM_I register */
+ 921              		.loc 1 169 5 view .LVU223
+ 922              		.loc 1 169 13 is_stmt 0 view .LVU224
+ 923 0046 F523     		movs	r3, #245
+ 924 0048 ADF80830 		strh	r3, [sp, #8]	@ movhi
+ 170:Drivers/ICM42688/ICM42688.c ****     uint8_t rx[2] = {0};
+ 925              		.loc 1 170 5 is_stmt 1 view .LVU225
+ 926              		.loc 1 170 13 is_stmt 0 view .LVU226
+ 927 004c ADF80C50 		strh	r5, [sp, #12]	@ movhi
+ 171:Drivers/ICM42688/ICM42688.c ****     cs_low(h);
+ 928              		.loc 1 171 5 is_stmt 1 view .LVU227
+ 929              	.LVL79:
+ 930              	.LBB54:
+ 931              	.LBI54:
+  12:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_RESET);
+ 932              		.loc 1 12 20 view .LVU228
+ 933              	.LBB55:
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 934              		.loc 1 13 3 view .LVU229
+ 935 0050 2A46     		mov	r2, r5
+ 936 0052 2189     		ldrh	r1, [r4, #8]
+ 937 0054 6068     		ldr	r0, [r4, #4]
+ 938 0056 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 939              	.LVL80:
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 940              		.loc 1 13 3 is_stmt 0 view .LVU230
+ 941              	.LBE55:
+ 942              	.LBE54:
+ 172:Drivers/ICM42688/ICM42688.c ****     HAL_SPI_TransmitReceive(h->hspi, tx, rx, 2, 100);
+ 943              		.loc 1 172 5 is_stmt 1 view .LVU231
+ 944 005a 03AE     		add	r6, sp, #12
+ 945 005c 6427     		movs	r7, #100
+ 946 005e 0097     		str	r7, [sp]
+ 947 0060 0223     		movs	r3, #2
+ 948 0062 3246     		mov	r2, r6
+ 949 0064 02A9     		add	r1, sp, #8
+ 950 0066 2068     		ldr	r0, [r4]
+ 951 0068 FFF7FEFF 		bl	HAL_SPI_TransmitReceive
+ 952              	.LVL81:
+ 173:Drivers/ICM42688/ICM42688.c ****     cs_high(h);
+ 953              		.loc 1 173 5 view .LVU232
+ 954              	.LBB56:
+ 955              	.LBI56:
+  17:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_SET);
+ 956              		.loc 1 17 20 view .LVU233
+ 957              	.LBB57:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 958              		.loc 1 18 3 view .LVU234
+ 959 006c 0122     		movs	r2, #1
+ 960 006e 2189     		ldrh	r1, [r4, #8]
+ 961 0070 6068     		ldr	r0, [r4, #4]
+ 962 0072 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 963              	.LVL82:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 964              		.loc 1 18 3 is_stmt 0 view .LVU235
+ARM GAS  /tmp/cchAWY9c.s 			page 22
+
+
+ 965              	.LBE57:
+ 966              	.LBE56:
+ 174:Drivers/ICM42688/ICM42688.c ****     HAL_Delay(1);
+ 967              		.loc 1 174 5 is_stmt 1 view .LVU236
+ 968 0076 0120     		movs	r0, #1
+ 969 0078 FFF7FEFF 		bl	HAL_Delay
+ 970              	.LVL83:
+ 971              	.LBE53:
+ 972              	.LBB58:
+ 175:Drivers/ICM42688/ICM42688.c ****   }
+ 176:Drivers/ICM42688/ICM42688.c **** 
+ 177:Drivers/ICM42688/ICM42688.c ****   /* software reset */
+ 178:Drivers/ICM42688/ICM42688.c ****   /* Don't verify reset write — the bit self-clears */
+ 179:Drivers/ICM42688/ICM42688.c ****   {
+ 180:Drivers/ICM42688/ICM42688.c ****     uint8_t tx[2] = {ICM42688_UB0_DEVICE_CONFIG & 0x7F, 0x01};
+ 973              		.loc 1 180 5 view .LVU237
+ 974              		.loc 1 180 13 is_stmt 0 view .LVU238
+ 975 007c 40F21113 		movw	r3, #273
+ 976 0080 ADF80C30 		strh	r3, [sp, #12]	@ movhi
+ 181:Drivers/ICM42688/ICM42688.c ****     cs_low(h);
+ 977              		.loc 1 181 5 is_stmt 1 view .LVU239
+ 978              	.LVL84:
+ 979              	.LBB59:
+ 980              	.LBI59:
+  12:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_RESET);
+ 981              		.loc 1 12 20 view .LVU240
+ 982              	.LBB60:
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 983              		.loc 1 13 3 view .LVU241
+ 984 0084 2A46     		mov	r2, r5
+ 985 0086 2189     		ldrh	r1, [r4, #8]
+ 986 0088 6068     		ldr	r0, [r4, #4]
+ 987 008a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 988              	.LVL85:
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 989              		.loc 1 13 3 is_stmt 0 view .LVU242
+ 990              	.LBE60:
+ 991              	.LBE59:
+ 182:Drivers/ICM42688/ICM42688.c ****     HAL_SPI_Transmit(h->hspi, tx, 2, 100);
+ 992              		.loc 1 182 5 is_stmt 1 view .LVU243
+ 993 008e 3B46     		mov	r3, r7
+ 994 0090 0222     		movs	r2, #2
+ 995 0092 3146     		mov	r1, r6
+ 996 0094 2068     		ldr	r0, [r4]
+ 997 0096 FFF7FEFF 		bl	HAL_SPI_Transmit
+ 998              	.LVL86:
+ 183:Drivers/ICM42688/ICM42688.c ****     cs_high(h);
+ 999              		.loc 1 183 5 view .LVU244
+ 1000              	.LBB61:
+ 1001              	.LBI61:
+  17:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_SET);
+ 1002              		.loc 1 17 20 view .LVU245
+ 1003              	.LBB62:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 1004              		.loc 1 18 3 view .LVU246
+ 1005 009a 0122     		movs	r2, #1
+ 1006 009c 2189     		ldrh	r1, [r4, #8]
+ARM GAS  /tmp/cchAWY9c.s 			page 23
+
+
+ 1007 009e 6068     		ldr	r0, [r4, #4]
+ 1008 00a0 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1009              	.LVL87:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 1010              		.loc 1 18 3 is_stmt 0 view .LVU247
+ 1011              	.LBE62:
+ 1012              	.LBE61:
+ 1013              	.LBE58:
+ 184:Drivers/ICM42688/ICM42688.c ****   }
+ 185:Drivers/ICM42688/ICM42688.c ****   HAL_Delay(50); /* wait for reset to complete */
+ 1014              		.loc 1 185 3 is_stmt 1 view .LVU248
+ 1015 00a4 3220     		movs	r0, #50
+ 1016 00a6 FFF7FEFF 		bl	HAL_Delay
+ 1017              	.LVL88:
+ 186:Drivers/ICM42688/ICM42688.c **** 
+ 187:Drivers/ICM42688/ICM42688.c ****   /* After reset, re-latch SPI mode */
+ 188:Drivers/ICM42688/ICM42688.c ****   cs_low(h);
+ 1018              		.loc 1 188 3 view .LVU249
+ 1019              	.LBB63:
+ 1020              	.LBI63:
+  12:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_RESET);
+ 1021              		.loc 1 12 20 view .LVU250
+ 1022              	.LBB64:
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 1023              		.loc 1 13 3 view .LVU251
+ 1024 00aa 2A46     		mov	r2, r5
+ 1025 00ac 2189     		ldrh	r1, [r4, #8]
+ 1026 00ae 6068     		ldr	r0, [r4, #4]
+ 1027 00b0 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1028              	.LVL89:
+  13:Drivers/ICM42688/ICM42688.c **** }
+ 1029              		.loc 1 13 3 is_stmt 0 view .LVU252
+ 1030              	.LBE64:
+ 1031              	.LBE63:
+ 189:Drivers/ICM42688/ICM42688.c ****   HAL_Delay(1);
+ 1032              		.loc 1 189 3 is_stmt 1 view .LVU253
+ 1033 00b4 0120     		movs	r0, #1
+ 1034 00b6 FFF7FEFF 		bl	HAL_Delay
+ 1035              	.LVL90:
+ 190:Drivers/ICM42688/ICM42688.c ****   cs_high(h);
+ 1036              		.loc 1 190 3 view .LVU254
+ 1037              	.LBB65:
+ 1038              	.LBI65:
+  17:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_SET);
+ 1039              		.loc 1 17 20 view .LVU255
+ 1040              	.LBB66:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 1041              		.loc 1 18 3 view .LVU256
+ 1042 00ba 0122     		movs	r2, #1
+ 1043 00bc 2189     		ldrh	r1, [r4, #8]
+ 1044 00be 6068     		ldr	r0, [r4, #4]
+ 1045 00c0 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1046              	.LVL91:
+  18:Drivers/ICM42688/ICM42688.c **** }
+ 1047              		.loc 1 18 3 is_stmt 0 view .LVU257
+ 1048              	.LBE66:
+ 1049              	.LBE65:
+ARM GAS  /tmp/cchAWY9c.s 			page 24
+
+
+ 191:Drivers/ICM42688/ICM42688.c ****   HAL_Delay(1);
+ 1050              		.loc 1 191 3 is_stmt 1 view .LVU258
+ 1051 00c4 0120     		movs	r0, #1
+ 1052 00c6 FFF7FEFF 		bl	HAL_Delay
+ 1053              	.LVL92:
+ 192:Drivers/ICM42688/ICM42688.c **** 
+ 193:Drivers/ICM42688/ICM42688.c ****   /* After reset, bank is 0 */
+ 194:Drivers/ICM42688/ICM42688.c ****   h->current_bank = 0;
+ 1054              		.loc 1 194 3 view .LVU259
+ 1055              		.loc 1 194 19 is_stmt 0 view .LVU260
+ 1056 00ca A572     		strb	r5, [r4, #10]
+ 195:Drivers/ICM42688/ICM42688.c **** 
+ 196:Drivers/ICM42688/ICM42688.c ****   /* verify WHO_AM_I (retry a few times) */
+ 197:Drivers/ICM42688/ICM42688.c ****   uint8_t wai = 0;
+ 1057              		.loc 1 197 3 is_stmt 1 view .LVU261
+ 1058              	.LVL93:
+ 198:Drivers/ICM42688/ICM42688.c ****   for (int i = 0; i < 5; i++) {
+ 1059              		.loc 1 198 3 view .LVU262
+ 1060              	.LBB67:
+ 1061              		.loc 1 198 8 view .LVU263
+ 1062              		.loc 1 198 12 is_stmt 0 view .LVU264
+ 1063 00cc 2E46     		mov	r6, r5
+ 1064              	.LVL94:
+ 1065              	.L48:
+ 1066              		.loc 1 198 21 is_stmt 1 discriminator 1 view .LVU265
+ 1067 00ce 042E     		cmp	r6, #4
+ 1068 00d0 0ADC     		bgt	.L49
+ 199:Drivers/ICM42688/ICM42688.c ****     wai = ICM42688_WhoAmI(h);
+ 1069              		.loc 1 199 5 view .LVU266
+ 1070              		.loc 1 199 11 is_stmt 0 view .LVU267
+ 1071 00d2 2046     		mov	r0, r4
+ 1072 00d4 FFF7FEFF 		bl	ICM42688_WhoAmI
+ 1073              	.LVL95:
+ 1074 00d8 0546     		mov	r5, r0
+ 1075              	.LVL96:
+ 200:Drivers/ICM42688/ICM42688.c ****     if (wai == ICM42688_WHO_AM_I_VAL)
+ 1076              		.loc 1 200 5 is_stmt 1 view .LVU268
+ 1077              		.loc 1 200 8 is_stmt 0 view .LVU269
+ 1078 00da 4728     		cmp	r0, #71
+ 1079 00dc 04D0     		beq	.L49
+ 201:Drivers/ICM42688/ICM42688.c ****       break;
+ 202:Drivers/ICM42688/ICM42688.c ****     HAL_Delay(10);
+ 1080              		.loc 1 202 5 is_stmt 1 view .LVU270
+ 1081 00de 0A20     		movs	r0, #10
+ 1082              	.LVL97:
+ 1083              		.loc 1 202 5 is_stmt 0 view .LVU271
+ 1084 00e0 FFF7FEFF 		bl	HAL_Delay
+ 1085              	.LVL98:
+ 198:Drivers/ICM42688/ICM42688.c ****     wai = ICM42688_WhoAmI(h);
+ 1086              		.loc 1 198 27 is_stmt 1 discriminator 2 view .LVU272
+ 1087 00e4 0136     		adds	r6, r6, #1
+ 1088              	.LVL99:
+ 198:Drivers/ICM42688/ICM42688.c ****     wai = ICM42688_WhoAmI(h);
+ 1089              		.loc 1 198 27 is_stmt 0 discriminator 2 view .LVU273
+ 1090 00e6 F2E7     		b	.L48
+ 1091              	.LVL100:
+ 1092              	.L49:
+ARM GAS  /tmp/cchAWY9c.s 			page 25
+
+
+ 198:Drivers/ICM42688/ICM42688.c ****     wai = ICM42688_WhoAmI(h);
+ 1093              		.loc 1 198 27 discriminator 2 view .LVU274
+ 1094              	.LBE67:
+ 203:Drivers/ICM42688/ICM42688.c ****   }
+ 204:Drivers/ICM42688/ICM42688.c ****   if (wai != ICM42688_WHO_AM_I_VAL) {
+ 1095              		.loc 1 204 3 is_stmt 1 view .LVU275
+ 1096              		.loc 1 204 6 is_stmt 0 view .LVU276
+ 1097 00e8 472D     		cmp	r5, #71
+ 1098 00ea 41D1     		bne	.L52
+ 205:Drivers/ICM42688/ICM42688.c ****     return -1;
+ 206:Drivers/ICM42688/ICM42688.c ****   }
+ 207:Drivers/ICM42688/ICM42688.c **** 
+ 208:Drivers/ICM42688/ICM42688.c ****   /* turn on accel + gyro in Low Noise mode */
+ 209:Drivers/ICM42688/ICM42688.c ****   if (write_reg(h, ICM42688_UB0_PWR_MGMT0, 0x0F) < 0) {
+ 1099              		.loc 1 209 3 is_stmt 1 view .LVU277
+ 1100              		.loc 1 209 7 is_stmt 0 view .LVU278
+ 1101 00ec 0F22     		movs	r2, #15
+ 1102 00ee 4E21     		movs	r1, #78
+ 1103 00f0 2046     		mov	r0, r4
+ 1104 00f2 FFF7FEFF 		bl	write_reg
+ 1105              	.LVL101:
+ 1106              		.loc 1 209 6 discriminator 1 view .LVU279
+ 1107 00f6 0028     		cmp	r0, #0
+ 1108 00f8 3DDB     		blt	.L53
+ 210:Drivers/ICM42688/ICM42688.c ****     return -2;
+ 211:Drivers/ICM42688/ICM42688.c ****   }
+ 212:Drivers/ICM42688/ICM42688.c ****   HAL_Delay(1); /* wait for sensors to stabilise */
+ 1109              		.loc 1 212 3 is_stmt 1 view .LVU280
+ 1110 00fa 0120     		movs	r0, #1
+ 1111 00fc FFF7FEFF 		bl	HAL_Delay
+ 1112              	.LVL102:
+ 213:Drivers/ICM42688/ICM42688.c **** 
+ 214:Drivers/ICM42688/ICM42688.c ****   /* default full-scale: ±16 g, 2000 dps */
+ 215:Drivers/ICM42688/ICM42688.c ****   if (ICM42688_SetAccelFS(h, ICM42688_ACCEL_FS_16G) < 0)
+ 1113              		.loc 1 215 3 view .LVU281
+ 1114              		.loc 1 215 7 is_stmt 0 view .LVU282
+ 1115 0100 0021     		movs	r1, #0
+ 1116 0102 2046     		mov	r0, r4
+ 1117 0104 FFF7FEFF 		bl	ICM42688_SetAccelFS
+ 1118              	.LVL103:
+ 1119              		.loc 1 215 6 discriminator 1 view .LVU283
+ 1120 0108 0028     		cmp	r0, #0
+ 1121 010a 37DB     		blt	.L54
+ 216:Drivers/ICM42688/ICM42688.c ****     return -3;
+ 217:Drivers/ICM42688/ICM42688.c ****   if (ICM42688_SetGyroFS(h, ICM42688_GYRO_FS_2000DPS) < 0)
+ 1122              		.loc 1 217 3 is_stmt 1 view .LVU284
+ 1123              		.loc 1 217 7 is_stmt 0 view .LVU285
+ 1124 010c 0021     		movs	r1, #0
+ 1125 010e 2046     		mov	r0, r4
+ 1126 0110 FFF7FEFF 		bl	ICM42688_SetGyroFS
+ 1127              	.LVL104:
+ 1128              		.loc 1 217 6 discriminator 1 view .LVU286
+ 1129 0114 0028     		cmp	r0, #0
+ 1130 0116 34DB     		blt	.L55
+ 218:Drivers/ICM42688/ICM42688.c ****     return -4;
+ 219:Drivers/ICM42688/ICM42688.c **** 
+ 220:Drivers/ICM42688/ICM42688.c ****   /* default ODR: 1 kHz */
+ARM GAS  /tmp/cchAWY9c.s 			page 26
+
+
+ 221:Drivers/ICM42688/ICM42688.c ****   if (ICM42688_SetAccelODR(h, ICM42688_ODR_1K) < 0)
+ 1131              		.loc 1 221 3 is_stmt 1 view .LVU287
+ 1132              		.loc 1 221 7 is_stmt 0 view .LVU288
+ 1133 0118 0621     		movs	r1, #6
+ 1134 011a 2046     		mov	r0, r4
+ 1135 011c FFF7FEFF 		bl	ICM42688_SetAccelODR
+ 1136              	.LVL105:
+ 1137              		.loc 1 221 6 discriminator 1 view .LVU289
+ 1138 0120 0028     		cmp	r0, #0
+ 1139 0122 31DB     		blt	.L56
+ 222:Drivers/ICM42688/ICM42688.c ****     return -5;
+ 223:Drivers/ICM42688/ICM42688.c ****   if (ICM42688_SetGyroODR(h, ICM42688_ODR_1K) < 0)
+ 1140              		.loc 1 223 3 is_stmt 1 view .LVU290
+ 1141              		.loc 1 223 7 is_stmt 0 view .LVU291
+ 1142 0124 0621     		movs	r1, #6
+ 1143 0126 2046     		mov	r0, r4
+ 1144 0128 FFF7FEFF 		bl	ICM42688_SetGyroODR
+ 1145              	.LVL106:
+ 1146              		.loc 1 223 6 discriminator 1 view .LVU292
+ 1147 012c 0028     		cmp	r0, #0
+ 1148 012e 2EDB     		blt	.L57
+ 224:Drivers/ICM42688/ICM42688.c ****     return -6;
+ 225:Drivers/ICM42688/ICM42688.c **** 
+ 226:Drivers/ICM42688/ICM42688.c ****   /* disable inner filters (AAF + Notch) for lowest latency */
+ 227:Drivers/ICM42688/ICM42688.c ****   set_bank(h, 1);
+ 1149              		.loc 1 227 3 is_stmt 1 view .LVU293
+ 1150 0130 0121     		movs	r1, #1
+ 1151 0132 2046     		mov	r0, r4
+ 1152 0134 FFF7FEFF 		bl	set_bank
+ 1153              	.LVL107:
+ 228:Drivers/ICM42688/ICM42688.c ****   write_reg(h, ICM42688_UB1_GYRO_CONFIG_STATIC2,
+ 1154              		.loc 1 228 3 view .LVU294
+ 1155 0138 0322     		movs	r2, #3
+ 1156 013a 0B21     		movs	r1, #11
+ 1157 013c 2046     		mov	r0, r4
+ 1158 013e FFF7FEFF 		bl	write_reg
+ 1159              	.LVL108:
+ 229:Drivers/ICM42688/ICM42688.c ****             0x03); /* NF disable | AAF disable */
+ 230:Drivers/ICM42688/ICM42688.c ****   set_bank(h, 2);
+ 1160              		.loc 1 230 3 view .LVU295
+ 1161 0142 0221     		movs	r1, #2
+ 1162 0144 2046     		mov	r0, r4
+ 1163 0146 FFF7FEFF 		bl	set_bank
+ 1164              	.LVL109:
+ 231:Drivers/ICM42688/ICM42688.c ****   write_reg(h, ICM42688_UB2_ACCEL_CONFIG_STATIC2, 0x01); /* AAF disable */
+ 1165              		.loc 1 231 3 view .LVU296
+ 1166 014a 0122     		movs	r2, #1
+ 1167 014c 0321     		movs	r1, #3
+ 1168 014e 2046     		mov	r0, r4
+ 1169 0150 FFF7FEFF 		bl	write_reg
+ 1170              	.LVL110:
+ 232:Drivers/ICM42688/ICM42688.c ****   set_bank(h, 0);
+ 1171              		.loc 1 232 3 view .LVU297
+ 1172 0154 0021     		movs	r1, #0
+ 1173 0156 2046     		mov	r0, r4
+ 1174 0158 FFF7FEFF 		bl	set_bank
+ 1175              	.LVL111:
+ARM GAS  /tmp/cchAWY9c.s 			page 27
+
+
+ 233:Drivers/ICM42688/ICM42688.c **** 
+ 234:Drivers/ICM42688/ICM42688.c ****   /* ── Restore fast SPI for data reads ── */
+ 235:Drivers/ICM42688/ICM42688.c ****   h->hspi->Init.BaudRatePrescaler = saved_prescaler;
+ 1176              		.loc 1 235 3 view .LVU298
+ 1177              		.loc 1 235 4 is_stmt 0 view .LVU299
+ 1178 015c 2368     		ldr	r3, [r4]
+ 1179              		.loc 1 235 35 view .LVU300
+ 1180 015e C3F81C80 		str	r8, [r3, #28]
+ 236:Drivers/ICM42688/ICM42688.c ****   HAL_SPI_Init(h->hspi);
+ 1181              		.loc 1 236 3 is_stmt 1 view .LVU301
+ 1182 0162 2068     		ldr	r0, [r4]
+ 1183 0164 FFF7FEFF 		bl	HAL_SPI_Init
+ 1184              	.LVL112:
+ 237:Drivers/ICM42688/ICM42688.c **** 
+ 238:Drivers/ICM42688/ICM42688.c ****   return 0;
+ 1185              		.loc 1 238 3 view .LVU302
+ 1186              		.loc 1 238 10 is_stmt 0 view .LVU303
+ 1187 0168 0020     		movs	r0, #0
+ 1188              	.L47:
+ 239:Drivers/ICM42688/ICM42688.c **** }
+ 1189              		.loc 1 239 1 view .LVU304
+ 1190 016a 04B0     		add	sp, sp, #16
+ 1191              		.cfi_remember_state
+ 1192              		.cfi_def_cfa_offset 24
+ 1193              		@ sp needed
+ 1194 016c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 1195              	.LVL113:
+ 1196              	.L52:
+ 1197              		.cfi_restore_state
+ 205:Drivers/ICM42688/ICM42688.c ****   }
+ 1198              		.loc 1 205 12 view .LVU305
+ 1199 0170 4FF0FF30 		mov	r0, #-1
+ 1200 0174 F9E7     		b	.L47
+ 1201              	.L53:
+ 210:Drivers/ICM42688/ICM42688.c ****   }
+ 1202              		.loc 1 210 12 view .LVU306
+ 1203 0176 6FF00100 		mvn	r0, #1
+ 1204 017a F6E7     		b	.L47
+ 1205              	.L54:
+ 216:Drivers/ICM42688/ICM42688.c ****   if (ICM42688_SetGyroFS(h, ICM42688_GYRO_FS_2000DPS) < 0)
+ 1206              		.loc 1 216 12 view .LVU307
+ 1207 017c 6FF00200 		mvn	r0, #2
+ 1208 0180 F3E7     		b	.L47
+ 1209              	.L55:
+ 218:Drivers/ICM42688/ICM42688.c **** 
+ 1210              		.loc 1 218 12 view .LVU308
+ 1211 0182 6FF00300 		mvn	r0, #3
+ 1212 0186 F0E7     		b	.L47
+ 1213              	.L56:
+ 222:Drivers/ICM42688/ICM42688.c ****   if (ICM42688_SetGyroODR(h, ICM42688_ODR_1K) < 0)
+ 1214              		.loc 1 222 12 view .LVU309
+ 1215 0188 6FF00400 		mvn	r0, #4
+ 1216 018c EDE7     		b	.L47
+ 1217              	.L57:
+ 224:Drivers/ICM42688/ICM42688.c **** 
+ 1218              		.loc 1 224 12 view .LVU310
+ 1219 018e 6FF00500 		mvn	r0, #5
+ARM GAS  /tmp/cchAWY9c.s 			page 28
+
+
+ 1220 0192 EAE7     		b	.L47
+ 1221              		.cfi_endproc
+ 1222              	.LFE960:
+ 1224              		.section	.text.ICM42688_ReadOnce,"ax",%progbits
+ 1225              		.align	1
+ 1226              		.global	ICM42688_ReadOnce
+ 1227              		.syntax unified
+ 1228              		.thumb
+ 1229              		.thumb_func
+ 1231              	ICM42688_ReadOnce:
+ 1232              	.LVL114:
+ 1233              	.LFB961:
+ 240:Drivers/ICM42688/ICM42688.c **** 
+ 241:Drivers/ICM42688/ICM42688.c **** int ICM42688_ReadOnce(ICM42688_Handle *h, ICM42688_Data *data) {
+ 1234              		.loc 1 241 64 is_stmt 1 view -0
+ 1235              		.cfi_startproc
+ 1236              		@ args = 0, pretend = 0, frame = 16
+ 1237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1238              		.loc 1 241 64 is_stmt 0 view .LVU312
+ 1239 0000 70B5     		push	{r4, r5, r6, lr}
+ 1240              		.cfi_def_cfa_offset 16
+ 1241              		.cfi_offset 4, -16
+ 1242              		.cfi_offset 5, -12
+ 1243              		.cfi_offset 6, -8
+ 1244              		.cfi_offset 14, -4
+ 1245 0002 84B0     		sub	sp, sp, #16
+ 1246              		.cfi_def_cfa_offset 32
+ 1247 0004 0446     		mov	r4, r0
+ 1248 0006 0E46     		mov	r6, r1
+ 242:Drivers/ICM42688/ICM42688.c ****   set_bank(h, 0);
+ 1249              		.loc 1 242 3 is_stmt 1 view .LVU313
+ 1250 0008 0021     		movs	r1, #0
+ 1251              	.LVL115:
+ 1252              		.loc 1 242 3 is_stmt 0 view .LVU314
+ 1253 000a FFF7FEFF 		bl	set_bank
+ 1254              	.LVL116:
+ 243:Drivers/ICM42688/ICM42688.c **** 
+ 244:Drivers/ICM42688/ICM42688.c ****   /* ── Wait for data-ready (INT_STATUS bit 3) ── */
+ 245:Drivers/ICM42688/ICM42688.c ****   uint8_t status = 0;
+ 1255              		.loc 1 245 3 is_stmt 1 view .LVU315
+ 1256              		.loc 1 245 11 is_stmt 0 view .LVU316
+ 1257 000e 0023     		movs	r3, #0
+ 1258 0010 8DF80F30 		strb	r3, [sp, #15]
+ 246:Drivers/ICM42688/ICM42688.c ****   uint32_t start = HAL_GetTick();
+ 1259              		.loc 1 246 3 is_stmt 1 view .LVU317
+ 1260              		.loc 1 246 20 is_stmt 0 view .LVU318
+ 1261 0014 FFF7FEFF 		bl	HAL_GetTick
+ 1262              	.LVL117:
+ 1263 0018 0546     		mov	r5, r0
+ 1264              	.LVL118:
+ 247:Drivers/ICM42688/ICM42688.c ****   while (!(status & ICM42688_INT_STATUS_DATA_RDY)) {
+ 1265              		.loc 1 247 3 is_stmt 1 view .LVU319
+ 1266              	.L60:
+ 1267              		.loc 1 247 10 view .LVU320
+ 1268              		.loc 1 247 19 is_stmt 0 view .LVU321
+ 1269 001a 9DF80F30 		ldrb	r3, [sp, #15]	@ zero_extendqisi2
+ 1270              		.loc 1 247 10 view .LVU322
+ARM GAS  /tmp/cchAWY9c.s 			page 29
+
+
+ 1271 001e 13F0080F 		tst	r3, #8
+ 1272 0022 11D1     		bne	.L67
+ 248:Drivers/ICM42688/ICM42688.c ****     if (read_regs(h, ICM42688_UB0_INT_STATUS, 1, &status) < 0)
+ 1273              		.loc 1 248 5 is_stmt 1 view .LVU323
+ 1274              		.loc 1 248 9 is_stmt 0 view .LVU324
+ 1275 0024 0DF10F03 		add	r3, sp, #15
+ 1276 0028 0122     		movs	r2, #1
+ 1277 002a 2D21     		movs	r1, #45
+ 1278 002c 2046     		mov	r0, r4
+ 1279 002e FFF7FEFF 		bl	read_regs
+ 1280              	.LVL119:
+ 1281              		.loc 1 248 8 discriminator 1 view .LVU325
+ 1282 0032 0028     		cmp	r0, #0
+ 1283 0034 C0F28F80 		blt	.L63
+ 249:Drivers/ICM42688/ICM42688.c ****       return -1;
+ 250:Drivers/ICM42688/ICM42688.c ****     if ((HAL_GetTick() - start) > 10)
+ 1284              		.loc 1 250 5 is_stmt 1 view .LVU326
+ 1285              		.loc 1 250 10 is_stmt 0 view .LVU327
+ 1286 0038 FFF7FEFF 		bl	HAL_GetTick
+ 1287              	.LVL120:
+ 1288              		.loc 1 250 24 discriminator 1 view .LVU328
+ 1289 003c 401B     		subs	r0, r0, r5
+ 1290              		.loc 1 250 8 discriminator 1 view .LVU329
+ 1291 003e 0A28     		cmp	r0, #10
+ 1292 0040 EBD9     		bls	.L60
+ 251:Drivers/ICM42688/ICM42688.c ****       return -2; /* 10 ms timeout */
+ 1293              		.loc 1 251 14 view .LVU330
+ 1294 0042 6FF00100 		mvn	r0, #1
+ 1295 0046 84E0     		b	.L59
+ 1296              	.L67:
+ 252:Drivers/ICM42688/ICM42688.c ****   }
+ 253:Drivers/ICM42688/ICM42688.c **** 
+ 254:Drivers/ICM42688/ICM42688.c ****   /* ── Burst-read 14 bytes: temp(2) + accel(6) + gyro(6) ── */
+ 255:Drivers/ICM42688/ICM42688.c ****   uint8_t buf[14];
+ 1297              		.loc 1 255 3 is_stmt 1 view .LVU331
+ 256:Drivers/ICM42688/ICM42688.c ****   if (read_regs(h, ICM42688_UB0_TEMP_DATA1, 14, buf) < 0)
+ 1298              		.loc 1 256 3 view .LVU332
+ 1299              		.loc 1 256 7 is_stmt 0 view .LVU333
+ 1300 0048 6B46     		mov	r3, sp
+ 1301 004a 0E22     		movs	r2, #14
+ 1302 004c 1D21     		movs	r1, #29
+ 1303 004e 2046     		mov	r0, r4
+ 1304 0050 FFF7FEFF 		bl	read_regs
+ 1305              	.LVL121:
+ 1306              		.loc 1 256 6 discriminator 1 view .LVU334
+ 1307 0054 0028     		cmp	r0, #0
+ 1308 0056 C0F28180 		blt	.L65
+ 257:Drivers/ICM42688/ICM42688.c ****     return -3;
+ 258:Drivers/ICM42688/ICM42688.c **** 
+ 259:Drivers/ICM42688/ICM42688.c ****   /* combine bytes → signed 16-bit (big-endian on wire) */
+ 260:Drivers/ICM42688/ICM42688.c ****   int16_t raw_t = (int16_t)((uint16_t)buf[0] << 8 | buf[1]);
+ 1309              		.loc 1 260 3 is_stmt 1 view .LVU335
+ 1310              		.loc 1 260 42 is_stmt 0 view .LVU336
+ 1311 005a 9DF80030 		ldrb	r3, [sp]	@ zero_extendqisi2
+ 1312              		.loc 1 260 19 view .LVU337
+ 1313 005e 1B02     		lsls	r3, r3, #8
+ 1314 0060 1BB2     		sxth	r3, r3
+ARM GAS  /tmp/cchAWY9c.s 			page 30
+
+
+ 1315              		.loc 1 260 56 view .LVU338
+ 1316 0062 9DF80120 		ldrb	r2, [sp, #1]	@ zero_extendqisi2
+ 1317              		.loc 1 260 11 view .LVU339
+ 1318 0066 1A43     		orrs	r2, r2, r3
+ 1319              	.LVL122:
+ 261:Drivers/ICM42688/ICM42688.c ****   int16_t raw_ax = (int16_t)((uint16_t)buf[2] << 8 | buf[3]);
+ 1320              		.loc 1 261 3 is_stmt 1 view .LVU340
+ 1321              		.loc 1 261 43 is_stmt 0 view .LVU341
+ 1322 0068 9DF80230 		ldrb	r3, [sp, #2]	@ zero_extendqisi2
+ 1323              		.loc 1 261 20 view .LVU342
+ 1324 006c 1B02     		lsls	r3, r3, #8
+ 1325 006e 1BB2     		sxth	r3, r3
+ 1326              		.loc 1 261 57 view .LVU343
+ 1327 0070 9DF80310 		ldrb	r1, [sp, #3]	@ zero_extendqisi2
+ 1328              		.loc 1 261 11 view .LVU344
+ 1329 0074 0B43     		orrs	r3, r3, r1
+ 1330 0076 05EE103A 		vmov	s10, r3	@ int
+ 1331              	.LVL123:
+ 262:Drivers/ICM42688/ICM42688.c ****   int16_t raw_ay = (int16_t)((uint16_t)buf[4] << 8 | buf[5]);
+ 1332              		.loc 1 262 3 is_stmt 1 view .LVU345
+ 1333              		.loc 1 262 43 is_stmt 0 view .LVU346
+ 1334 007a 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
+ 1335              		.loc 1 262 20 view .LVU347
+ 1336 007e 1B02     		lsls	r3, r3, #8
+ 1337 0080 1BB2     		sxth	r3, r3
+ 1338              		.loc 1 262 57 view .LVU348
+ 1339 0082 9DF80510 		ldrb	r1, [sp, #5]	@ zero_extendqisi2
+ 1340              		.loc 1 262 11 view .LVU349
+ 1341 0086 0B43     		orrs	r3, r3, r1
+ 1342 0088 05EE903A 		vmov	s11, r3	@ int
+ 1343              	.LVL124:
+ 263:Drivers/ICM42688/ICM42688.c ****   int16_t raw_az = (int16_t)((uint16_t)buf[6] << 8 | buf[7]);
+ 1344              		.loc 1 263 3 is_stmt 1 view .LVU350
+ 1345              		.loc 1 263 43 is_stmt 0 view .LVU351
+ 1346 008c 9DF80630 		ldrb	r3, [sp, #6]	@ zero_extendqisi2
+ 1347              		.loc 1 263 20 view .LVU352
+ 1348 0090 1B02     		lsls	r3, r3, #8
+ 1349 0092 1BB2     		sxth	r3, r3
+ 1350              		.loc 1 263 57 view .LVU353
+ 1351 0094 9DF80710 		ldrb	r1, [sp, #7]	@ zero_extendqisi2
+ 1352              		.loc 1 263 11 view .LVU354
+ 1353 0098 0B43     		orrs	r3, r3, r1
+ 1354 009a 06EE103A 		vmov	s12, r3	@ int
+ 1355              	.LVL125:
+ 264:Drivers/ICM42688/ICM42688.c ****   int16_t raw_gx = (int16_t)((uint16_t)buf[8] << 8 | buf[9]);
+ 1356              		.loc 1 264 3 is_stmt 1 view .LVU355
+ 1357              		.loc 1 264 43 is_stmt 0 view .LVU356
+ 1358 009e 9DF80830 		ldrb	r3, [sp, #8]	@ zero_extendqisi2
+ 1359              		.loc 1 264 20 view .LVU357
+ 1360 00a2 1B02     		lsls	r3, r3, #8
+ 1361 00a4 1BB2     		sxth	r3, r3
+ 1362              		.loc 1 264 57 view .LVU358
+ 1363 00a6 9DF80910 		ldrb	r1, [sp, #9]	@ zero_extendqisi2
+ 1364              		.loc 1 264 11 view .LVU359
+ 1365 00aa 0B43     		orrs	r3, r3, r1
+ 1366 00ac 06EE903A 		vmov	s13, r3	@ int
+ 1367              	.LVL126:
+ARM GAS  /tmp/cchAWY9c.s 			page 31
+
+
+ 265:Drivers/ICM42688/ICM42688.c ****   int16_t raw_gy = (int16_t)((uint16_t)buf[10] << 8 | buf[11]);
+ 1368              		.loc 1 265 3 is_stmt 1 view .LVU360
+ 1369              		.loc 1 265 43 is_stmt 0 view .LVU361
+ 1370 00b0 9DF80A30 		ldrb	r3, [sp, #10]	@ zero_extendqisi2
+ 1371              		.loc 1 265 20 view .LVU362
+ 1372 00b4 1B02     		lsls	r3, r3, #8
+ 1373 00b6 1BB2     		sxth	r3, r3
+ 1374              		.loc 1 265 58 view .LVU363
+ 1375 00b8 9DF80B10 		ldrb	r1, [sp, #11]	@ zero_extendqisi2
+ 1376              		.loc 1 265 11 view .LVU364
+ 1377 00bc 0B43     		orrs	r3, r3, r1
+ 1378 00be 07EE103A 		vmov	s14, r3	@ int
+ 1379              	.LVL127:
+ 266:Drivers/ICM42688/ICM42688.c ****   int16_t raw_gz = (int16_t)((uint16_t)buf[12] << 8 | buf[13]);
+ 1380              		.loc 1 266 3 is_stmt 1 view .LVU365
+ 1381              		.loc 1 266 43 is_stmt 0 view .LVU366
+ 1382 00c2 9DF80C30 		ldrb	r3, [sp, #12]	@ zero_extendqisi2
+ 1383              		.loc 1 266 20 view .LVU367
+ 1384 00c6 1B02     		lsls	r3, r3, #8
+ 1385 00c8 1BB2     		sxth	r3, r3
+ 1386              		.loc 1 266 58 view .LVU368
+ 1387 00ca 9DF80D10 		ldrb	r1, [sp, #13]	@ zero_extendqisi2
+ 1388              		.loc 1 266 11 view .LVU369
+ 1389 00ce 0B43     		orrs	r3, r3, r1
+ 1390 00d0 07EE903A 		vmov	s15, r3	@ int
+ 1391              	.LVL128:
+ 267:Drivers/ICM42688/ICM42688.c **** 
+ 268:Drivers/ICM42688/ICM42688.c ****   /* scale to engineering units */
+ 269:Drivers/ICM42688/ICM42688.c ****   data->acc_x = raw_ax * h->accel_scale;
+ 1392              		.loc 1 269 3 is_stmt 1 view .LVU370
+ 1393              		.loc 1 269 27 is_stmt 0 view .LVU371
+ 1394 00d4 D4ED034A 		vldr.32	s9, [r4, #12]
+ 1395              		.loc 1 269 24 view .LVU372
+ 1396 00d8 B8EEC55A 		vcvt.f32.s32	s10, s10
+ 1397              	.LVL129:
+ 1398              		.loc 1 269 24 view .LVU373
+ 1399 00dc 25EE245A 		vmul.f32	s10, s10, s9
+ 1400              		.loc 1 269 15 view .LVU374
+ 1401 00e0 86ED005A 		vstr.32	s10, [r6]
+ 1402              	.LVL130:
+ 270:Drivers/ICM42688/ICM42688.c ****   data->acc_y = raw_ay * h->accel_scale;
+ 1403              		.loc 1 270 3 is_stmt 1 view .LVU375
+ 1404              		.loc 1 270 27 is_stmt 0 view .LVU376
+ 1405 00e4 94ED035A 		vldr.32	s10, [r4, #12]
+ 1406              		.loc 1 270 24 view .LVU377
+ 1407 00e8 F8EEE55A 		vcvt.f32.s32	s11, s11
+ 1408              	.LVL131:
+ 1409              		.loc 1 270 24 view .LVU378
+ 1410 00ec 65EE855A 		vmul.f32	s11, s11, s10
+ 1411              		.loc 1 270 15 view .LVU379
+ 1412 00f0 C6ED015A 		vstr.32	s11, [r6, #4]
+ 271:Drivers/ICM42688/ICM42688.c ****   data->acc_z = raw_az * h->accel_scale;
+ 1413              		.loc 1 271 3 is_stmt 1 view .LVU380
+ 1414              		.loc 1 271 27 is_stmt 0 view .LVU381
+ 1415 00f4 D4ED035A 		vldr.32	s11, [r4, #12]
+ 1416              		.loc 1 271 24 view .LVU382
+ 1417 00f8 B8EEC66A 		vcvt.f32.s32	s12, s12
+ARM GAS  /tmp/cchAWY9c.s 			page 32
+
+
+ 1418              	.LVL132:
+ 1419              		.loc 1 271 24 view .LVU383
+ 1420 00fc 26EE256A 		vmul.f32	s12, s12, s11
+ 1421              		.loc 1 271 15 view .LVU384
+ 1422 0100 86ED026A 		vstr.32	s12, [r6, #8]
+ 272:Drivers/ICM42688/ICM42688.c ****   data->gyr_x = raw_gx * h->gyro_scale;
+ 1423              		.loc 1 272 3 is_stmt 1 view .LVU385
+ 1424              		.loc 1 272 27 is_stmt 0 view .LVU386
+ 1425 0104 94ED046A 		vldr.32	s12, [r4, #16]
+ 1426              		.loc 1 272 24 view .LVU387
+ 1427 0108 F8EEE66A 		vcvt.f32.s32	s13, s13
+ 1428              	.LVL133:
+ 1429              		.loc 1 272 24 view .LVU388
+ 1430 010c 66EE866A 		vmul.f32	s13, s13, s12
+ 1431              		.loc 1 272 15 view .LVU389
+ 1432 0110 C6ED036A 		vstr.32	s13, [r6, #12]
+ 273:Drivers/ICM42688/ICM42688.c ****   data->gyr_y = raw_gy * h->gyro_scale;
+ 1433              		.loc 1 273 3 is_stmt 1 view .LVU390
+ 1434              		.loc 1 273 27 is_stmt 0 view .LVU391
+ 1435 0114 D4ED046A 		vldr.32	s13, [r4, #16]
+ 1436              		.loc 1 273 24 view .LVU392
+ 1437 0118 B8EEC77A 		vcvt.f32.s32	s14, s14
+ 1438              	.LVL134:
+ 1439              		.loc 1 273 24 view .LVU393
+ 1440 011c 27EE267A 		vmul.f32	s14, s14, s13
+ 1441              		.loc 1 273 15 view .LVU394
+ 1442 0120 86ED047A 		vstr.32	s14, [r6, #16]
+ 274:Drivers/ICM42688/ICM42688.c ****   data->gyr_z = raw_gz * h->gyro_scale;
+ 1443              		.loc 1 274 3 is_stmt 1 view .LVU395
+ 1444              		.loc 1 274 27 is_stmt 0 view .LVU396
+ 1445 0124 94ED047A 		vldr.32	s14, [r4, #16]
+ 1446              		.loc 1 274 24 view .LVU397
+ 1447 0128 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1448              	.LVL135:
+ 1449              		.loc 1 274 24 view .LVU398
+ 1450 012c 67EE877A 		vmul.f32	s15, s15, s14
+ 1451              		.loc 1 274 15 view .LVU399
+ 1452 0130 C6ED057A 		vstr.32	s15, [r6, #20]
+ 275:Drivers/ICM42688/ICM42688.c ****   data->temp_c = (float)raw_t / 132.48f + 25.0f;
+ 1453              		.loc 1 275 3 is_stmt 1 view .LVU400
+ 1454              		.loc 1 275 18 is_stmt 0 view .LVU401
+ 1455 0134 07EE902A 		vmov	s15, r2	@ int
+ 1456 0138 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 1457              		.loc 1 275 31 view .LVU402
+ 1458 013c DFED096A 		vldr.32	s13, .L68
+ 1459 0140 87EEA67A 		vdiv.f32	s14, s15, s13
+ 1460              		.loc 1 275 41 view .LVU403
+ 1461 0144 F3EE097A 		vmov.f32	s15, #2.5e+1
+ 1462 0148 77EE277A 		vadd.f32	s15, s14, s15
+ 1463              		.loc 1 275 16 view .LVU404
+ 1464 014c C6ED067A 		vstr.32	s15, [r6, #24]
+ 276:Drivers/ICM42688/ICM42688.c **** 
+ 277:Drivers/ICM42688/ICM42688.c ****   return 0;
+ 1465              		.loc 1 277 3 is_stmt 1 view .LVU405
+ 1466              		.loc 1 277 10 is_stmt 0 view .LVU406
+ 1467 0150 0020     		movs	r0, #0
+ 1468              	.LVL136:
+ARM GAS  /tmp/cchAWY9c.s 			page 33
+
+
+ 1469              	.L59:
+ 278:Drivers/ICM42688/ICM42688.c **** }
+ 1470              		.loc 1 278 1 view .LVU407
+ 1471 0152 04B0     		add	sp, sp, #16
+ 1472              		.cfi_remember_state
+ 1473              		.cfi_def_cfa_offset 16
+ 1474              		@ sp needed
+ 1475 0154 70BD     		pop	{r4, r5, r6, pc}
+ 1476              	.LVL137:
+ 1477              	.L63:
+ 1478              		.cfi_restore_state
+ 249:Drivers/ICM42688/ICM42688.c ****     if ((HAL_GetTick() - start) > 10)
+ 1479              		.loc 1 249 14 view .LVU408
+ 1480 0156 4FF0FF30 		mov	r0, #-1
+ 1481 015a FAE7     		b	.L59
+ 1482              	.L65:
+ 257:Drivers/ICM42688/ICM42688.c **** 
+ 1483              		.loc 1 257 12 view .LVU409
+ 1484 015c 6FF00200 		mvn	r0, #2
+ 1485 0160 F7E7     		b	.L59
+ 1486              	.L69:
+ 1487 0162 00BF     		.align	2
+ 1488              	.L68:
+ 1489 0164 E17A0443 		.word	1124367073
+ 1490              		.cfi_endproc
+ 1491              	.LFE961:
+ 1493              		.text
+ 1494              	.Letext0:
+ 1495              		.file 2 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ 1496              		.file 3 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ 1497              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 1498              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 1499              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+ 1500              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
+ 1501              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_spi.h"
+ 1502              		.file 9 "Drivers/ICM42688/ICM42688.h"
+ 1503              		.file 10 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-n
+ 1504              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
+ 1505              		.file 12 "<built-in>"
+ARM GAS  /tmp/cchAWY9c.s 			page 34
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ICM42688.c
+     /tmp/cchAWY9c.s:21     .text.write_reg:00000000 $t
+     /tmp/cchAWY9c.s:26     .text.write_reg:00000000 write_reg
+     /tmp/cchAWY9c.s:197    .text.set_bank:00000000 $t
+     /tmp/cchAWY9c.s:202    .text.set_bank:00000000 set_bank
+     /tmp/cchAWY9c.s:245    .text.read_regs:00000000 $t
+     /tmp/cchAWY9c.s:250    .text.read_regs:00000000 read_regs
+     /tmp/cchAWY9c.s:389    .text.ICM42688_WhoAmI:00000000 $t
+     /tmp/cchAWY9c.s:395    .text.ICM42688_WhoAmI:00000000 ICM42688_WhoAmI
+     /tmp/cchAWY9c.s:449    .text.ICM42688_SetAccelFS:00000000 $t
+     /tmp/cchAWY9c.s:455    .text.ICM42688_SetAccelFS:00000000 ICM42688_SetAccelFS
+     /tmp/cchAWY9c.s:548    .text.ICM42688_SetAccelFS:00000070 $d
+     /tmp/cchAWY9c.s:553    .text.ICM42688_SetGyroFS:00000000 $t
+     /tmp/cchAWY9c.s:559    .text.ICM42688_SetGyroFS:00000000 ICM42688_SetGyroFS
+     /tmp/cchAWY9c.s:653    .text.ICM42688_SetGyroFS:00000074 $d
+     /tmp/cchAWY9c.s:659    .text.ICM42688_SetAccelODR:00000000 $t
+     /tmp/cchAWY9c.s:665    .text.ICM42688_SetAccelODR:00000000 ICM42688_SetAccelODR
+     /tmp/cchAWY9c.s:740    .text.ICM42688_SetGyroODR:00000000 $t
+     /tmp/cchAWY9c.s:746    .text.ICM42688_SetGyroODR:00000000 ICM42688_SetGyroODR
+     /tmp/cchAWY9c.s:821    .text.ICM42688_Init:00000000 $t
+     /tmp/cchAWY9c.s:827    .text.ICM42688_Init:00000000 ICM42688_Init
+     /tmp/cchAWY9c.s:1225   .text.ICM42688_ReadOnce:00000000 $t
+     /tmp/cchAWY9c.s:1231   .text.ICM42688_ReadOnce:00000000 ICM42688_ReadOnce
+     /tmp/cchAWY9c.s:1489   .text.ICM42688_ReadOnce:00000164 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_SPI_Transmit
+HAL_Delay
+HAL_SPI_TransmitReceive
+memset
+memcpy
+HAL_SPI_Init
+HAL_GetTick

@@ -6,6 +6,7 @@
         "Core/Inc",
         "Drivers/CMSIS/Device/ST/STM32WBxx/Include",
         "Drivers/CMSIS/Include",
+        "Drivers/ICM42688",
         "Drivers/STM32WBxx_HAL_Driver/Inc",
         "Drivers/STM32WBxx_HAL_Driver/Inc/Legacy",
         "Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc",
@@ -17,7 +18,7 @@
         "STM32WB55xx",
         "USE_HAL_DRIVER"
       ],
-      "compilerPath": "c:\\Users\\Nathan\\AppData\\Roaming\\Code\\User\\globalStorage\\bmd.stm32-for-vscode\\@xpack-dev-tools\\arm-none-eabi-gcc\\15.2.1-1.1.1\\.content\\bin\\arm-none-eabi-gcc.EXE"
+      "compilerPath": "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/arm-none-eabi-gcc"
     }
   ],
   "version": 4
