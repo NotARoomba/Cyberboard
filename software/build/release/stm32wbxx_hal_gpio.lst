@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccJWaWGE.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccJWaWGE.s 			page 1
   56 004a 0CFA05FC 		lsl	ip, ip, r5
   57 004e 20EA0C0C 		bic	ip, r0, ip
   58 0052 0869     		ldr	r0, [r1, #16]
-ARM GAS  /tmp/ccJWaWGE.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s 			page 2
 
 
   59 0054 A840     		lsls	r0, r0, r5
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccJWaWGE.s 			page 1
  113 00d6 0133     		adds	r3, r3, #1
  114              	.L2:
  115 00d8 0A68     		ldr	r2, [r1]
-ARM GAS  /tmp/ccJWaWGE.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s 			page 3
 
 
  116 00da 32FA03F0 		lsrs	r0, r2, r3
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccJWaWGE.s 			page 1
  170 0170 3FF478AF 		beq	.L13
  171 0174 0E48     		ldr	r0, .L23+8
  172 0176 8645     		cmp	lr, r0
-ARM GAS  /tmp/ccJWaWGE.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s 			page 4
 
 
  173 0178 0ED0     		beq	.L14
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccJWaWGE.s 			page 1
  229 001c 5D00     		lsls	r5, r3, #1
  230 001e 4FF0030C 		mov	ip, #3
  231 0022 0CFA05FC 		lsl	ip, ip, r5
-ARM GAS  /tmp/ccJWaWGE.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s 			page 5
 
 
  232 0026 44EA0C04 		orr	r4, r4, ip
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccJWaWGE.s 			page 1
  286              	.L32:
  287 00ba 0125     		movs	r5, #1
  288 00bc A9E7     		b	.L28
-ARM GAS  /tmp/ccJWaWGE.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s 			page 6
 
 
  289              	.L33:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccJWaWGE.s 			page 1
  346              		.section	.text.HAL_GPIO_WritePin,"ax",%progbits
  347              		.align	1
  348              		.global	HAL_GPIO_WritePin
-ARM GAS  /tmp/ccJWaWGE.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s 			page 7
 
 
  349              		.syntax unified
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccJWaWGE.s 			page 1
  410 0006 0193     		str	r3, [sp, #4]
  411 0008 019B     		ldr	r3, [sp, #4]
  412 000a 0B43     		orrs	r3, r3, r1
-ARM GAS  /tmp/ccJWaWGE.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s 			page 8
 
 
  413 000c 0193     		str	r3, [sp, #4]
@@ -477,31 +477,31 @@ ARM GAS  /tmp/ccJWaWGE.s 			page 1
  470              	.L62:
  471 0018 00080058 		.word	1476397056
  473              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  /tmp/ccJWaWGE.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_gpio.c
-     /tmp/ccJWaWGE.s:18     .text.HAL_GPIO_Init:00000000 $t
-     /tmp/ccJWaWGE.s:24     .text.HAL_GPIO_Init:00000000 HAL_GPIO_Init
-     /tmp/ccJWaWGE.s:199    .text.HAL_GPIO_Init:000001a8 $d
-     /tmp/ccJWaWGE.s:204    .text.HAL_GPIO_DeInit:00000000 $t
-     /tmp/ccJWaWGE.s:210    .text.HAL_GPIO_DeInit:00000000 HAL_GPIO_DeInit
-     /tmp/ccJWaWGE.s:322    .text.HAL_GPIO_DeInit:00000108 $d
-     /tmp/ccJWaWGE.s:327    .text.HAL_GPIO_ReadPin:00000000 $t
-     /tmp/ccJWaWGE.s:333    .text.HAL_GPIO_ReadPin:00000000 HAL_GPIO_ReadPin
-     /tmp/ccJWaWGE.s:347    .text.HAL_GPIO_WritePin:00000000 $t
-     /tmp/ccJWaWGE.s:353    .text.HAL_GPIO_WritePin:00000000 HAL_GPIO_WritePin
-     /tmp/ccJWaWGE.s:365    .text.HAL_GPIO_WriteMultipleStatePin:00000000 $t
-     /tmp/ccJWaWGE.s:371    .text.HAL_GPIO_WriteMultipleStatePin:00000000 HAL_GPIO_WriteMultipleStatePin
-     /tmp/ccJWaWGE.s:380    .text.HAL_GPIO_TogglePin:00000000 $t
-     /tmp/ccJWaWGE.s:386    .text.HAL_GPIO_TogglePin:00000000 HAL_GPIO_TogglePin
-     /tmp/ccJWaWGE.s:398    .text.HAL_GPIO_LockPin:00000000 $t
-     /tmp/ccJWaWGE.s:404    .text.HAL_GPIO_LockPin:00000000 HAL_GPIO_LockPin
-     /tmp/ccJWaWGE.s:434    .text.HAL_GPIO_EXTI_Callback:00000000 $t
-     /tmp/ccJWaWGE.s:440    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
-     /tmp/ccJWaWGE.s:447    .text.HAL_GPIO_EXTI_IRQHandler:00000000 $t
-     /tmp/ccJWaWGE.s:453    .text.HAL_GPIO_EXTI_IRQHandler:00000000 HAL_GPIO_EXTI_IRQHandler
-     /tmp/ccJWaWGE.s:471    .text.HAL_GPIO_EXTI_IRQHandler:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:18     .text.HAL_GPIO_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:24     .text.HAL_GPIO_Init:00000000 HAL_GPIO_Init
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:199    .text.HAL_GPIO_Init:000001a8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:204    .text.HAL_GPIO_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:210    .text.HAL_GPIO_DeInit:00000000 HAL_GPIO_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:322    .text.HAL_GPIO_DeInit:00000108 $d
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:327    .text.HAL_GPIO_ReadPin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:333    .text.HAL_GPIO_ReadPin:00000000 HAL_GPIO_ReadPin
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:347    .text.HAL_GPIO_WritePin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:353    .text.HAL_GPIO_WritePin:00000000 HAL_GPIO_WritePin
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:365    .text.HAL_GPIO_WriteMultipleStatePin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:371    .text.HAL_GPIO_WriteMultipleStatePin:00000000 HAL_GPIO_WriteMultipleStatePin
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:380    .text.HAL_GPIO_TogglePin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:386    .text.HAL_GPIO_TogglePin:00000000 HAL_GPIO_TogglePin
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:398    .text.HAL_GPIO_LockPin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:404    .text.HAL_GPIO_LockPin:00000000 HAL_GPIO_LockPin
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:434    .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:440    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:447    .text.HAL_GPIO_EXTI_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:453    .text.HAL_GPIO_EXTI_IRQHandler:00000000 HAL_GPIO_EXTI_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccMwQu7f.s:471    .text.HAL_GPIO_EXTI_IRQHandler:00000018 $d
 
 NO UNDEFINED SYMBOLS

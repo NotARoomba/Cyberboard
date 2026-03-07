@@ -1,0 +1,355 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"common.c"
+  16              		.text
+  17              		.section	.text.bmp5_delay_us,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	bmp5_delay_us:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 08B5     		push	{r3, lr}
+  27 0002 00F2E733 		addw	r3, r0, #999
+  28 0006 0548     		ldr	r0, .L5
+  29 0008 A0FB0320 		umull	r2, r0, r0, r3
+  30 000c 8009     		lsrs	r0, r0, #6
+  31 000e B3F57A7F 		cmp	r3, #1000
+  32 0012 00D2     		bcs	.L2
+  33 0014 0120     		movs	r0, #1
+  34              	.L2:
+  35 0016 FFF7FEFF 		bl	HAL_Delay
+  36 001a 08BD     		pop	{r3, pc}
+  37              	.L6:
+  38              		.align	2
+  39              	.L5:
+  40 001c D34D6210 		.word	274877907
+  42              		.section	.text.bmp5_i2c_write,"ax",%progbits
+  43              		.align	1
+  44              		.syntax unified
+  45              		.thumb
+  46              		.thumb_func
+  48              	bmp5_i2c_write:
+  49              		@ args = 0, pretend = 0, frame = 0
+  50              		@ frame_needed = 0, uses_anonymous_args = 0
+  51 0000 00B5     		push	{lr}
+  52 0002 85B0     		sub	sp, sp, #20
+  53 0004 0B4B     		ldr	r3, .L12
+  54 0006 93F800C0 		ldrb	ip, [r3]	@ zero_extendqisi2
+  55 000a 4FF0FF33 		mov	r3, #-1
+  56 000e 0293     		str	r3, [sp, #8]
+  57 0010 92B2     		uxth	r2, r2
+  58 0012 0192     		str	r2, [sp, #4]
+  59 0014 0091     		str	r1, [sp]
+  60 0016 0123     		movs	r3, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s 			page 2
+
+
+  61 0018 0246     		mov	r2, r0
+  62 001a 0CFA03F1 		lsl	r1, ip, r3
+  63 001e 0648     		ldr	r0, .L12+4
+  64 0020 0068     		ldr	r0, [r0]
+  65 0022 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+  66 0026 08B9     		cbnz	r0, .L11
+  67              	.L8:
+  68 0028 05B0     		add	sp, sp, #20
+  69              		@ sp needed
+  70 002a 00BD     		pop	{pc}
+  71              	.L11:
+  72 002c 6FF00100 		mvn	r0, #1
+  73 0030 FAE7     		b	.L8
+  74              	.L13:
+  75 0032 00BF     		.align	2
+  76              	.L12:
+  77 0034 00000000 		.word	bmp5_i2c_addr
+  78 0038 00000000 		.word	bmp5_hi2c
+  80              		.section	.text.bmp5_i2c_read,"ax",%progbits
+  81              		.align	1
+  82              		.syntax unified
+  83              		.thumb
+  84              		.thumb_func
+  86              	bmp5_i2c_read:
+  87              		@ args = 0, pretend = 0, frame = 0
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89 0000 00B5     		push	{lr}
+  90 0002 85B0     		sub	sp, sp, #20
+  91 0004 0B4B     		ldr	r3, .L19
+  92 0006 93F800C0 		ldrb	ip, [r3]	@ zero_extendqisi2
+  93 000a 4FF0FF33 		mov	r3, #-1
+  94 000e 0293     		str	r3, [sp, #8]
+  95 0010 92B2     		uxth	r2, r2
+  96 0012 0192     		str	r2, [sp, #4]
+  97 0014 0091     		str	r1, [sp]
+  98 0016 0123     		movs	r3, #1
+  99 0018 0246     		mov	r2, r0
+ 100 001a 0CFA03F1 		lsl	r1, ip, r3
+ 101 001e 0648     		ldr	r0, .L19+4
+ 102 0020 0068     		ldr	r0, [r0]
+ 103 0022 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 104 0026 08B9     		cbnz	r0, .L18
+ 105              	.L15:
+ 106 0028 05B0     		add	sp, sp, #20
+ 107              		@ sp needed
+ 108 002a 00BD     		pop	{pc}
+ 109              	.L18:
+ 110 002c 6FF00100 		mvn	r0, #1
+ 111 0030 FAE7     		b	.L15
+ 112              	.L20:
+ 113 0032 00BF     		.align	2
+ 114              	.L19:
+ 115 0034 00000000 		.word	bmp5_i2c_addr
+ 116 0038 00000000 		.word	bmp5_hi2c
+ 118              		.section	.text.bmp5_interface_init,"ax",%progbits
+ 119              		.align	1
+ 120              		.global	bmp5_interface_init
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s 			page 3
+
+
+ 121              		.syntax unified
+ 122              		.thumb
+ 123              		.thumb_func
+ 125              	bmp5_interface_init:
+ 126              		@ args = 0, pretend = 0, frame = 0
+ 127              		@ frame_needed = 0, uses_anonymous_args = 0
+ 128              		@ link register save eliminated.
+ 129 0000 80B1     		cbz	r0, .L23
+ 130 0002 91B1     		cbz	r1, .L24
+ 131 0004 0A4A     		ldr	r2, .L25
+ 132 0006 1160     		str	r1, [r2]
+ 133 0008 0A4A     		ldr	r2, .L25+4
+ 134 000a 4621     		movs	r1, #70
+ 135 000c 1170     		strb	r1, [r2]
+ 136 000e 0A49     		ldr	r1, .L25+8
+ 137 0010 8160     		str	r1, [r0, #8]
+ 138 0012 0A49     		ldr	r1, .L25+12
+ 139 0014 C160     		str	r1, [r0, #12]
+ 140 0016 0A49     		ldr	r1, .L25+16
+ 141 0018 0161     		str	r1, [r0, #16]
+ 142 001a 0121     		movs	r1, #1
+ 143 001c 4175     		strb	r1, [r0, #21]
+ 144 001e 4260     		str	r2, [r0, #4]
+ 145 0020 0020     		movs	r0, #0
+ 146 0022 7047     		bx	lr
+ 147              	.L23:
+ 148 0024 4FF0FF30 		mov	r0, #-1
+ 149 0028 7047     		bx	lr
+ 150              	.L24:
+ 151 002a 4FF0FF30 		mov	r0, #-1
+ 152 002e 7047     		bx	lr
+ 153              	.L26:
+ 154              		.align	2
+ 155              	.L25:
+ 156 0030 00000000 		.word	bmp5_hi2c
+ 157 0034 00000000 		.word	bmp5_i2c_addr
+ 158 0038 00000000 		.word	bmp5_i2c_read
+ 159 003c 00000000 		.word	bmp5_i2c_write
+ 160 0040 00000000 		.word	bmp5_delay_us
+ 162              		.section	.rodata.bmp5_error_codes_print_result.str1.4,"aMS",%progbits,1
+ 163              		.align	2
+ 164              	.LC0:
+ 165 0000 25730900 		.ascii	"%s\011\000"
+ 166              		.align	2
+ 167              	.LC1:
+ 168 0004 4572726F 		.ascii	"Error [%d] : Null pointer\015\012\000"
+ 168      72205B25 
+ 168      645D203A 
+ 168      204E756C 
+ 168      6C20706F 
+ 169              		.align	2
+ 170              	.LC2:
+ 171 0020 4572726F 		.ascii	"Error [%d] : Communication failure\015\012\000"
+ 171      72205B25 
+ 171      645D203A 
+ 171      20436F6D 
+ 171      6D756E69 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s 			page 4
+
+
+ 172 0045 000000   		.align	2
+ 173              	.LC3:
+ 174 0048 4572726F 		.ascii	"Error [%d] : Device not found\015\012\000"
+ 174      72205B25 
+ 174      645D203A 
+ 174      20446576 
+ 174      69636520 
+ 175              		.align	2
+ 176              	.LC4:
+ 177 0068 4572726F 		.ascii	"Error [%d] : Invalid chip id\015\012\000"
+ 177      72205B25 
+ 177      645D203A 
+ 177      20496E76 
+ 177      616C6964 
+ 178 0087 00       		.align	2
+ 179              	.LC5:
+ 180 0088 4572726F 		.ascii	"Error [%d] : Power up error\015\012\000"
+ 180      72205B25 
+ 180      645D203A 
+ 180      20506F77 
+ 180      65722075 
+ 181 00a6 0000     		.align	2
+ 182              	.LC6:
+ 183 00a8 4572726F 		.ascii	"Error [%d] : Power-on reset/softreset failure\015\012"
+ 183      72205B25 
+ 183      645D203A 
+ 183      20506F77 
+ 183      65722D6F 
+ 184 00d7 00       		.ascii	"\000"
+ 185              		.align	2
+ 186              	.LC7:
+ 187 00d8 4572726F 		.ascii	"Error [%d] : Invalid powermode\015\012\000"
+ 187      72205B25 
+ 187      645D203A 
+ 187      20496E76 
+ 187      616C6964 
+ 188 00f9 000000   		.align	2
+ 189              	.LC8:
+ 190 00fc 4572726F 		.ascii	"Error [%d] : Unknown error code\015\012\000"
+ 190      72205B25 
+ 190      645D203A 
+ 190      20556E6B 
+ 190      6E6F776E 
+ 191              		.section	.text.bmp5_error_codes_print_result,"ax",%progbits
+ 192              		.align	1
+ 193              		.global	bmp5_error_codes_print_result
+ 194              		.syntax unified
+ 195              		.thumb
+ 196              		.thumb_func
+ 198              	bmp5_error_codes_print_result:
+ 199              		@ args = 0, pretend = 0, frame = 0
+ 200              		@ frame_needed = 0, uses_anonymous_args = 0
+ 201 0000 01B9     		cbnz	r1, .L42
+ 202 0002 7047     		bx	lr
+ 203              	.L42:
+ 204 0004 10B5     		push	{r4, lr}
+ 205 0006 0C46     		mov	r4, r1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s 			page 5
+
+
+ 206 0008 0146     		mov	r1, r0
+ 207 000a 2048     		ldr	r0, .L43
+ 208 000c FFF7FEFF 		bl	printf
+ 209 0010 14F1040F 		cmn	r4, #4
+ 210 0014 26D0     		beq	.L29
+ 211 0016 0DDC     		bgt	.L30
+ 212 0018 14F1060F 		cmn	r4, #6
+ 213 001c 2CD0     		beq	.L31
+ 214 001e 14F1050F 		cmn	r4, #5
+ 215 0022 24D0     		beq	.L32
+ 216 0024 14F1070F 		cmn	r4, #7
+ 217 0028 2BD1     		bne	.L34
+ 218 002a 2146     		mov	r1, r4
+ 219 002c 1848     		ldr	r0, .L43+4
+ 220 002e FFF7FEFF 		bl	printf
+ 221 0032 11E0     		b	.L27
+ 222              	.L30:
+ 223 0034 14F1020F 		cmn	r4, #2
+ 224 0038 0FD0     		beq	.L35
+ 225 003a B4F1FF3F 		cmp	r4, #-1
+ 226 003e 07D0     		beq	.L36
+ 227 0040 14F1030F 		cmn	r4, #3
+ 228 0044 1DD1     		bne	.L34
+ 229 0046 2146     		mov	r1, r4
+ 230 0048 1248     		ldr	r0, .L43+8
+ 231 004a FFF7FEFF 		bl	printf
+ 232 004e 03E0     		b	.L27
+ 233              	.L36:
+ 234 0050 2146     		mov	r1, r4
+ 235 0052 1148     		ldr	r0, .L43+12
+ 236 0054 FFF7FEFF 		bl	printf
+ 237              	.L27:
+ 238 0058 10BD     		pop	{r4, pc}
+ 239              	.L35:
+ 240 005a 2146     		mov	r1, r4
+ 241 005c 0F48     		ldr	r0, .L43+16
+ 242 005e FFF7FEFF 		bl	printf
+ 243 0062 F9E7     		b	.L27
+ 244              	.L29:
+ 245 0064 2146     		mov	r1, r4
+ 246 0066 0E48     		ldr	r0, .L43+20
+ 247 0068 FFF7FEFF 		bl	printf
+ 248 006c F4E7     		b	.L27
+ 249              	.L32:
+ 250 006e 2146     		mov	r1, r4
+ 251 0070 0C48     		ldr	r0, .L43+24
+ 252 0072 FFF7FEFF 		bl	printf
+ 253 0076 EFE7     		b	.L27
+ 254              	.L31:
+ 255 0078 2146     		mov	r1, r4
+ 256 007a 0B48     		ldr	r0, .L43+28
+ 257 007c FFF7FEFF 		bl	printf
+ 258 0080 EAE7     		b	.L27
+ 259              	.L34:
+ 260 0082 2146     		mov	r1, r4
+ 261 0084 0948     		ldr	r0, .L43+32
+ 262 0086 FFF7FEFF 		bl	printf
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s 			page 6
+
+
+ 263 008a E5E7     		b	.L27
+ 264              	.L44:
+ 265              		.align	2
+ 266              	.L43:
+ 267 008c 00000000 		.word	.LC0
+ 268 0090 D8000000 		.word	.LC7
+ 269 0094 48000000 		.word	.LC3
+ 270 0098 04000000 		.word	.LC1
+ 271 009c 20000000 		.word	.LC2
+ 272 00a0 68000000 		.word	.LC4
+ 273 00a4 88000000 		.word	.LC5
+ 274 00a8 A8000000 		.word	.LC6
+ 275 00ac FC000000 		.word	.LC8
+ 277              		.section	.bss.bmp5_i2c_addr,"aw",%nobits
+ 280              	bmp5_i2c_addr:
+ 281 0000 00       		.space	1
+ 282              		.section	.bss.bmp5_hi2c,"aw",%nobits
+ 283              		.align	2
+ 286              	bmp5_hi2c:
+ 287 0000 00000000 		.space	4
+ 288              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 common.c
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:18     .text.bmp5_delay_us:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:23     .text.bmp5_delay_us:00000000 bmp5_delay_us
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:40     .text.bmp5_delay_us:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:43     .text.bmp5_i2c_write:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:48     .text.bmp5_i2c_write:00000000 bmp5_i2c_write
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:77     .text.bmp5_i2c_write:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:280    .bss.bmp5_i2c_addr:00000000 bmp5_i2c_addr
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:286    .bss.bmp5_hi2c:00000000 bmp5_hi2c
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:81     .text.bmp5_i2c_read:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:86     .text.bmp5_i2c_read:00000000 bmp5_i2c_read
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:115    .text.bmp5_i2c_read:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:119    .text.bmp5_interface_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:125    .text.bmp5_interface_init:00000000 bmp5_interface_init
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:156    .text.bmp5_interface_init:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:163    .rodata.bmp5_error_codes_print_result.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:192    .text.bmp5_error_codes_print_result:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:198    .text.bmp5_error_codes_print_result:00000000 bmp5_error_codes_print_result
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:267    .text.bmp5_error_codes_print_result:0000008c $d
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:281    .bss.bmp5_i2c_addr:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cchE6yRk.s:283    .bss.bmp5_hi2c:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_Delay
+HAL_I2C_Mem_Write
+HAL_I2C_Mem_Read
+printf

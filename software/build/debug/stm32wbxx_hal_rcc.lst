@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccgnvA2j.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       and I-Cache are disabled, and all peripherals are off except internal
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       SRAM, Flash and JTAG.
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  /tmp/ccgnvA2j.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 2
 
 
   31:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       (+) There is no prescaler on High speed (AHBs) and Low speed (APBs) buses:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** #define MEGA_HZ                    (1000000U) /* Division factor to convert Hz in Mhz */
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** /**
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @}
-ARM GAS  /tmp/ccgnvA2j.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 3
 
 
   88:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  142:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****            ##### Initialization and de-initialization functions #####
  143:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****  ===============================================================================
  144:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     [..]
-ARM GAS  /tmp/ccgnvA2j.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 4
 
 
  145:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       This section provides functions allowing to configure the internal and external oscillators
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  199:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****          (+) Several clock sources can be used to drive the System clock (SYSCLK): MSI, HSI,
  200:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****              HSE and main PLL.
  201:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****              The AHB clock (HCLK1) is derived from System clock through configurable
-ARM GAS  /tmp/ccgnvA2j.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 5
 
 
  202:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****              prescaler and used to clock the CPU, memory and peripherals mapped
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  256:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *           - MSI ON and used as system clock source
  257:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *           - HSE, HSI, PLL, PLLSAI1
  258:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *           - HCLK1, HCLK2, HCLK4, PCLK1 and PCLK2 prescalers set to 1.
-ARM GAS  /tmp/ccgnvA2j.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 6
 
 
  259:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *           - CSS, MCO OFF
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  313:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** #if defined(SAI1)
  314:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   CLEAR_BIT(RCC->CR, RCC_CR_HSION | RCC_CR_HSIKERON | RCC_CR_HSIASFS | RCC_CR_HSEON | RCC_CR_HSEPRE
  315:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             RCC_CR_PLLSAI1ON);
-ARM GAS  /tmp/ccgnvA2j.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 7
 
 
  316:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** #else
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  370:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
  371:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     return HAL_OK;
  372:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   }
-ARM GAS  /tmp/ccgnvA2j.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 8
 
 
  373:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** }
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  427:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           }
  428:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  429:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           /* Selects the Multiple Speed oscillator (MSI) clock range .*/
-ARM GAS  /tmp/ccgnvA2j.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 9
 
 
  430:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           __HAL_RCC_MSI_RANGE_CONFIG(RCC_OscInitStruct->MSIClockRange);
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  484:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       else
  485:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
  486:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         /* Disable the Internal High Speed oscillator (MSI). */
-ARM GAS  /tmp/ccgnvA2j.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 10
 
 
  487:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         __HAL_RCC_MSI_DISABLE();
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  541:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       else
  542:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
  543:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         /* Get Start Tick*/
-ARM GAS  /tmp/ccgnvA2j.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 11
 
 
  544:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         tickstart = HAL_GetTick();
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  598:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
  599:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             return HAL_TIMEOUT;
  600:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           }
-ARM GAS  /tmp/ccgnvA2j.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 12
 
 
  601:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         }
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  655:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****               return HAL_TIMEOUT;
  656:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             }
  657:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           }
-ARM GAS  /tmp/ccgnvA2j.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 13
 
 
  658:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         }
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  712:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         /*2. Switch OFF LSI2*/
  713:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  714:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         /* Disable the Internal Low Speed oscillator (LSI2). */
-ARM GAS  /tmp/ccgnvA2j.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 14
 
 
  715:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         __HAL_RCC_LSI2_DISABLE();
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  769:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     /* Requires to enable write access to Backup Domain of necessary */
  770:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  771:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     if (HAL_IS_BIT_CLR(PWR->CR1, PWR_CR1_DBP))
-ARM GAS  /tmp/ccgnvA2j.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 15
 
 
  772:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     {
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  826:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     /* Check the parameters */
  827:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     assert_param(IS_RCC_HSI48(RCC_OscInitStruct->HSI48State));
  828:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  /tmp/ccgnvA2j.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 16
 
 
  829:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     /* Check the HSI State */
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  883:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       assert_param(IS_RCC_PLLQ_VALUE(RCC_OscInitStruct->PLL.PLLQ));
  884:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       assert_param(IS_RCC_PLLR_VALUE(RCC_OscInitStruct->PLL.PLLR));
  885:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  /tmp/ccgnvA2j.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 17
 
 
  886:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       /* Do nothing if PLL configuration is unchanged */
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  940:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             /* Wait till PLL is ready */
  941:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             while (READ_BIT(RCC->CR, RCC_CR_PLLRDY) == 0U)
  942:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             {
-ARM GAS  /tmp/ccgnvA2j.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 18
 
 
  943:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****               if ((HAL_GetTick() - tickstart) > PLL_TIMEOUT_VALUE)
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  997:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
  998:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             return HAL_TIMEOUT;
  999:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           }
-ARM GAS  /tmp/ccgnvA2j.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 19
 
 
 1000:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         }
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1054:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @retval None
 1055:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   */
 1056:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, uint32_t FLatency)
-ARM GAS  /tmp/ccgnvA2j.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 20
 
 
 1057:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** {
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1111:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   /*-------------------------- HCLK2 Configuration --------------------------*/
 1112:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   if (((RCC_ClkInitStruct->ClockType) & RCC_CLOCKTYPE_HCLK2) == RCC_CLOCKTYPE_HCLK2)
 1113:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
-ARM GAS  /tmp/ccgnvA2j.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 21
 
 
 1114:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     assert_param(IS_RCC_HCLKx(RCC_ClkInitStruct->AHBCLK2Divider));
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1168:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     tickstart = HAL_GetTick();
 1169:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     while (LL_RCC_IsActiveFlag_PPRE2() == 0U)
 1170:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     {
-ARM GAS  /tmp/ccgnvA2j.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 22
 
 
 1171:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       if ((HAL_GetTick() - tickstart) > PRESCALER_TIMEOUT_VALUE)
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1225:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     tickstart = HAL_GetTick();
 1226:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
 1227:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     /* check system clock source switch status */
-ARM GAS  /tmp/ccgnvA2j.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 23
 
 
 1228:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     while (__HAL_RCC_GET_SYSCLK_SOURCE() != (RCC_ClkInitStruct->SYSCLKSource << RCC_CFGR_SWS_Pos))
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1282:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     (+) Enable the Clock Security System.
 1283:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
 1284:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** @endverbatim
-ARM GAS  /tmp/ccgnvA2j.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 24
 
 
 1285:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @{
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1339:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   mco_gpio_index = RCC_GET_MCO_GPIO_INDEX(RCC_MCOx);
 1340:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   SET_BIT(RCC->AHB2ENR, (1UL << mco_gpio_index));
 1341:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  /tmp/ccgnvA2j.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 25
 
 
 1342:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   /* Configure the MCOx pin in alternate function mode */
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1396:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @note   This function can be used by the user application to compute the
 1397:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *         baudrate for the communication peripherals or configure other parameters.
 1398:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *
-ARM GAS  /tmp/ccgnvA2j.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 26
 
 
 1399:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @note   Each time SYSCLK changes, this function must be called to update the
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1453:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         break;
 1454:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       case RCC_PLLSOURCE_MSI:  /* MSI used as PLL clock source */
 1455:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       default:
-ARM GAS  /tmp/ccgnvA2j.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 27
 
 
 1456:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         pllinputfreq = __LL_RCC_CALC_MSI_FREQ(LL_RCC_MSI_GetRange());
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1510:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @note   Each time PCLK2 changes, this function must be called to update the
 1511:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   *         right PCLK2 value. Otherwise, any configuration based on this function will be incorrec
 1512:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @retval PCLK2 frequency in Hz
-ARM GAS  /tmp/ccgnvA2j.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 28
 
 
 1513:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   */
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1567:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   RCC_OscInitStruct->PLL.PLLQ      = (regPLLCFGRvalue & RCC_PLLCFGR_PLLQ);
 1568:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   RCC_OscInitStruct->PLL.PLLR      = (regPLLCFGRvalue & RCC_PLLCFGR_PLLR);
 1569:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  /tmp/ccgnvA2j.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 29
 
 
 1570:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   /* Get Backup Domain register */
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1624:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
 1625:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   /* Get the AHBCLK4Divider configuration ------------------------------------*/
 1626:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   RCC_ClkInitStruct->AHBCLK4Divider = LL_RCC_GetAHB4Prescaler();
-ARM GAS  /tmp/ccgnvA2j.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 30
 
 
 1627:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1681:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   * @retval can be a combination of @ref RCC_Reset_Flag
 1682:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   */
 1683:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** uint32_t HAL_RCC_GetResetSource(void)
-ARM GAS  /tmp/ccgnvA2j.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 31
 
 
 1684:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** {
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1738:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   return RCC_SetFlashLatency((flash_clksrcfreq / MEGA_HZ), PWR_REGULATOR_VOLTAGE_SCALE1);
 1739:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** #endif /* PWR_CR1_VOS */
 1740:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** }
-ARM GAS  /tmp/ccgnvA2j.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 32
 
 
 1741:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
   64              	.LVL2:
 1760:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   uint32_t tickstart;
   65              		.loc 1 1760 3 view .LVU10
-ARM GAS  /tmp/ccgnvA2j.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 33
 
 
 1761:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1767:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
   98              		.loc 1 1767 7 view .LVU21
 1767:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
-ARM GAS  /tmp/ccgnvA2j.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 34
 
 
   99              		.loc 1 1767 55 is_stmt 0 view .LVU22
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  143              		.loc 1 1781 9 is_stmt 1 view .LVU36
  144 0080 00E0     		b	.L5
  145              	.LVL13:
-ARM GAS  /tmp/ccgnvA2j.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 35
 
 
  146              	.L17:
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1805:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     if ((HAL_GetTick() - tickstart) > LATENCY_TIMEOUT_VALUE)
  176              		.loc 1 1805 5 is_stmt 1 view .LVU47
  177              		.loc 1 1805 10 is_stmt 0 view .LVU48
-ARM GAS  /tmp/ccgnvA2j.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 36
 
 
  178 00a2 FFF7FEFF 		bl	HAL_GetTick
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  225              		.loc 1 1717 3 is_stmt 1 view .LVU57
 1718:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  226              		.loc 1 1718 3 view .LVU58
-ARM GAS  /tmp/ccgnvA2j.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 37
 
 
 1721:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
   34:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(RCC)
   35:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
   36:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL RCC
-ARM GAS  /tmp/ccgnvA2j.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 38
 
 
   37:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
   91:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
   92:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
   93:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  /tmp/ccgnvA2j.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 39
 
 
   94:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* USE_FULL_LL_DRIVER */
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  148:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(RCC_HSI48_SUPPORT)
  149:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CICR_HSI48RDYC              RCC_CICR_HSI48RDYC   /*!< HSI48 Ready Interrupt Clear   
  150:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* RCC_HSI48_SUPPORT */
-ARM GAS  /tmp/ccgnvA2j.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 40
 
 
  151:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  205:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CIER_PLLSAI1RDYIE           RCC_CIER_PLLSAI1RDYIE  /*!< PLLSAI1 Ready Interrupt Enab
  206:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* SAI1 */
  207:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_CIER_LSECSSIE               RCC_CIER_LSECSSIE      /*!< LSE CSS Interrupt Enable    
-ARM GAS  /tmp/ccgnvA2j.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 41
 
 
  208:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  262:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_HSEAMPTHRESHOLD_3_4         RCC_HSECR_HSES        /*!< HSE sense amplifier bias curr
  263:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
  264:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
-ARM GAS  /tmp/ccgnvA2j.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 42
 
 
  265:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  319:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_32               (RCC_CFGR_HPRE_2 | RCC_CFGR_HPRE_1 | RCC_CFGR_HPRE_0)   
  320:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_64               (RCC_CFGR_HPRE_3 | RCC_CFGR_HPRE_2)                     
  321:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_128              (RCC_CFGR_HPRE_3 | RCC_CFGR_HPRE_2 | RCC_CFGR_HPRE_0)   
-ARM GAS  /tmp/ccgnvA2j.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 43
 
 
  322:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_SYSCLK_DIV_256              (RCC_CFGR_HPRE_3 | RCC_CFGR_HPRE_2 | RCC_CFGR_HPRE_1)   
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  376:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_MCO1SOURCE_HSE_BEFORE_STAB  (RCC_CFGR_MCOSEL_2|RCC_CFGR_MCOSEL_3)         /*!< HSE b
  377:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
  378:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
-ARM GAS  /tmp/ccgnvA2j.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 44
 
 
  379:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  433:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
  434:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
  435:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  /tmp/ccgnvA2j.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 45
 
 
  436:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* USE_FULL_LL_DRIVER */
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  490:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
  491:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
  492:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
-ARM GAS  /tmp/ccgnvA2j.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 46
 
 
  493:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EC_SAI1_CLKSOURCE SAI1 CLKSOURCE
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  547:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
  548:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
  549:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  /tmp/ccgnvA2j.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 47
 
 
  550:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EC_RNG_CLKSRC RNG CLKSRC
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  604:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
  605:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* SAI1 */
  606:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  /tmp/ccgnvA2j.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 48
 
 
  607:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EC_CLK48 CLK48
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  661:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
  662:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
  663:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @}
-ARM GAS  /tmp/ccgnvA2j.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 49
 
 
  664:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  718:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_10                 (RCC_PLLCFGR_PLLP_0|RCC_PLLCFGR_PLLP_3)                 
  719:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_11                 (RCC_PLLCFGR_PLLP_1|RCC_PLLCFGR_PLLP_3)                 
  720:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_12                 (RCC_PLLCFGR_PLLP_0|RCC_PLLCFGR_PLLP_1|RCC_PLLCFGR_PLLP_
-ARM GAS  /tmp/ccgnvA2j.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 50
 
 
  721:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLP_DIV_13                 (RCC_PLLCFGR_PLLP_2|RCC_PLLCFGR_PLLP_3)                 
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  775:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EC_PLLSAI1P  PLLSAI1 division factor (PLLP)
  776:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
  777:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  /tmp/ccgnvA2j.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 51
 
 
  778:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define LL_RCC_PLLSAI1P_DIV_2                  (RCC_PLLSAI1CFGR_PLLP_0)                            
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  832:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /* Exported macro ------------------------------------------------------------*/
  833:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_Exported_Macros RCC Exported Macros
  834:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
-ARM GAS  /tmp/ccgnvA2j.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 52
 
 
  835:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  889:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****                                                                                 (((__PLLR__) >> RCC
  890:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
  891:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
-ARM GAS  /tmp/ccgnvA2j.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 53
 
 
  892:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  946:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note ex: @ref __LL_RCC_CALC_PLLCLK_ADC_FREQ (HSE_VALUE,@ref LL_RCC_PLL_GetDivider (),
  947:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *             @ref LL_RCC_PLL_GetN (), @ref LL_RCC_PLL_GetP ());
  948:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __INPUTFREQ__ PLL Input frequency (based on MSI/HSE/HSI)
-ARM GAS  /tmp/ccgnvA2j.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 54
 
 
  949:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  __PLLM__ This parameter can be one of the following values:
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1003:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_1
 1004:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_2
 1005:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_3
-ARM GAS  /tmp/ccgnvA2j.s 			page 55
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 55
 
 
 1006:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_4
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1060:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_20
 1061:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_21
 1062:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_22
-ARM GAS  /tmp/ccgnvA2j.s 			page 56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 56
 
 
 1063:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_23
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1117:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_4
 1118:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_5
 1119:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_6
-ARM GAS  /tmp/ccgnvA2j.s 			page 57
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 57
 
 
 1120:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_7
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1174:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_32
 1175:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_64
 1176:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_128
-ARM GAS  /tmp/ccgnvA2j.s 			page 58
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 58
 
 
 1177:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_256
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1231:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval PCLK2 clock frequency (in Hz)
 1232:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 1233:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #define __LL_RCC_CALC_PCLK2_FREQ(__HCLKFREQ__, __APB2PRESCALER__) ((__HCLKFREQ__) >> (APBPrescTable
-ARM GAS  /tmp/ccgnvA2j.s 			page 59
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 59
 
 
 1234:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****                                                                    & RCC_CFGR_PPRE2_Msk) >>  RCC_CF
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1288:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_HSE_DisableDiv2(void)
 1289:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 1290:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   CLEAR_BIT(RCC->CR, RCC_CR_HSEPRE);
-ARM GAS  /tmp/ccgnvA2j.s 			page 60
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 60
 
 
 1291:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1345:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll HSECR           UNLOCKED        LL_RCC_HSE_IsClockControlLocked
 1346:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval State of bit (1 or 0).
 1347:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  /tmp/ccgnvA2j.s 			page 61
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 61
 
 
 1348:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE uint32_t LL_RCC_HSE_IsClockControlLocked(void)
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1402:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_HSE_CURRENTMAX_4
 1403:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_HSE_CURRENTMAX_5
 1404:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_HSE_CURRENTMAX_6
-ARM GAS  /tmp/ccgnvA2j.s 			page 62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 62
 
 
 1405:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_HSE_CURRENTMAX_7
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1459:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 1460:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_HSI_DisableInStopMode(void)
 1461:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 63
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 63
 
 
 1462:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   CLEAR_BIT(RCC->CR, RCC_CR_HSIKERON);
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1516:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Disable HSI Automatic from stop mode
 1517:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CR           HSIASFS       LL_RCC_HSI_DisableAutoFromStop
 1518:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
-ARM GAS  /tmp/ccgnvA2j.s 			page 64
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 64
 
 
 1519:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1573:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 1574:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_HSI48_Enable(void)
 1575:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 65
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 65
 
 
 1576:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   SET_BIT(RCC->CRRCR, RCC_CRRCR_HSI48ON);
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1630:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll BDCR         LSEON         LL_RCC_LSE_Disable
 1631:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
 1632:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  /tmp/ccgnvA2j.s 			page 66
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 66
 
 
 1633:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_LSE_Disable(void)
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1687:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
 1688:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_LSEDRIVE_LOW
 1689:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_LSEDRIVE_MEDIUMLOW
-ARM GAS  /tmp/ccgnvA2j.s 			page 67
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 67
 
 
 1690:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_LSEDRIVE_MEDIUMHIGH
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1744:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EF_LSI1 LSI1
 1745:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
 1746:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  /tmp/ccgnvA2j.s 			page 68
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 68
 
 
 1747:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1801:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_LSI2_Disable(void)
 1802:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 1803:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   CLEAR_BIT(RCC->CSR, RCC_CSR_LSI2ON);
-ARM GAS  /tmp/ccgnvA2j.s 			page 69
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 69
 
 
 1804:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1858:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
 1859:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 1860:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_MSI_Disable(void)
-ARM GAS  /tmp/ccgnvA2j.s 			page 70
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 70
 
 
 1861:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1915:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MSIRANGE_9
 1916:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MSIRANGE_10
 1917:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_MSIRANGE_11
-ARM GAS  /tmp/ccgnvA2j.s 			page 71
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 71
 
 
 1918:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1972:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_MSI_SetCalibTrimming(uint32_t Value)
 1973:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 1974:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   MODIFY_REG(RCC->ICSCR, RCC_ICSCR_MSITRIM, Value << RCC_ICSCR_MSITRIM_Pos);
-ARM GAS  /tmp/ccgnvA2j.s 			page 72
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 72
 
 
 1975:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2029:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Get Low speed clock selection
 2030:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll BDCR         LSCOSEL       LL_RCC_LSCO_GetSource
 2031:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
-ARM GAS  /tmp/ccgnvA2j.s 			page 73
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 73
 
 
 2032:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_LSCO_CLKSOURCE_LSI
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2086:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return (uint32_t)(READ_BIT(RCC->EXTCFGR, RCC_EXTCFGR_RFCSS));
 2087:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 2088:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  /tmp/ccgnvA2j.s 			page 74
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 74
 
 
 2089:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2143:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_10
 2144:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_16
 2145:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_32
-ARM GAS  /tmp/ccgnvA2j.s 			page 75
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 75
 
 
 2146:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SYSCLK_DIV_64
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2200:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
 2201:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 2202:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_SetAHB4Prescaler(uint32_t Prescaler)
-ARM GAS  /tmp/ccgnvA2j.s 			page 76
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 76
 
 
 2203:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2257:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 2258:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE uint32_t LL_RCC_GetAHBPrescaler(void)
 2259:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 77
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 77
 
 
 2260:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return (uint32_t)(READ_BIT(RCC->CFGR, RCC_CFGR_HPRE));
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  247 000e D2F80821 		ldr	r2, [r2, #264]
  248              	.LBE226:
  249              	.LBE225:
-ARM GAS  /tmp/ccgnvA2j.s 			page 78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 78
 
 
 1733:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  294              		.section	.text.HAL_RCC_DeInit,"ax",%progbits
  295              		.align	1
  296              		.global	HAL_RCC_DeInit
-ARM GAS  /tmp/ccgnvA2j.s 			page 79
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 79
 
 
  297              		.syntax unified
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  342              	.LBE229:
  280:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
  343              		.loc 1 280 3 view .LVU89
-ARM GAS  /tmp/ccgnvA2j.s 			page 80
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 80
 
 
  344              	.LVL29:
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1974:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  386              		.loc 2 1974 3 is_stmt 0 view .LVU102
  387              	.LBE236:
-ARM GAS  /tmp/ccgnvA2j.s 			page 81
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 81
 
 
  388              	.LBE235:
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  306:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     {
  428              		.loc 1 306 8 discriminator 1 view .LVU117
  429 0068 41F28833 		movw	r3, #5000
-ARM GAS  /tmp/ccgnvA2j.s 			page 82
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 82
 
 
  430 006c 9842     		cmp	r0, r3
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2312:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Get APB1 prescaler
 2313:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CFGR         PPRE1         LL_RCC_GetAPB1Prescaler
 2314:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
-ARM GAS  /tmp/ccgnvA2j.s 			page 83
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 83
 
 
 2315:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_APB1_DIV_1
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2369:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 2370:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(RCC_SMPS_SUPPORT)
 2371:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /** @defgroup RCC_LL_EF_SMPS SMPS
-ARM GAS  /tmp/ccgnvA2j.s 			page 84
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 84
 
 
 2372:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @{
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2426:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SMPS_DIV_1
 2427:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SMPS_DIV_2
 2428:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_SMPS_DIV_3
-ARM GAS  /tmp/ccgnvA2j.s 			page 85
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 85
 
 
 2429:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2483:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 2484:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_ConfigMCO(uint32_t MCOxSource, uint32_t MCOxPrescaler)
 2485:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 86
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 86
 
 
 2486:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   MODIFY_REG(RCC->CFGR, RCC_CFGR_MCOSEL | RCC_CFGR_MCOPRE, MCOxSource | MCOxPrescaler);
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2540:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
 2541:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 2542:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_SetI2CClockSource(uint32_t I2CxSource)
-ARM GAS  /tmp/ccgnvA2j.s 			page 87
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 87
 
 
 2543:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2597:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 2598:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 2599:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Configure CLK48 clock source
-ARM GAS  /tmp/ccgnvA2j.s 			page 88
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 88
 
 
 2600:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CCIPR        CLK48SEL      LL_RCC_SetCLK48ClockSource
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2654:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   }
 2655:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   LL_RCC_SetRNGClockSource(RNGxSource);
 2656:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  /tmp/ccgnvA2j.s 			page 89
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 89
 
 
 2657:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2711:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 2712:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Get I2Cx clock source
 2713:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CCIPR        I2CxSEL       LL_RCC_GetI2CClockSource
-ARM GAS  /tmp/ccgnvA2j.s 			page 90
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 90
 
 
 2714:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  I2Cx This parameter can be one of the following values:
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2768:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #endif /* SAI1 */
 2769:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 2770:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  /tmp/ccgnvA2j.s 			page 91
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 91
 
 
 2771:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Get RNGx clock source
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2825:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
 2826:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_ADC_CLKSOURCE_NONE
 2827:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_ADC_CLKSOURCE_PLLSAI1 (*)
-ARM GAS  /tmp/ccgnvA2j.s 			page 92
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 92
 
 
 2828:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_ADC_CLKSOURCE_PLL
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2882:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 2883:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_EnableRTC(void)
 2884:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 93
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 93
 
 
 2885:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   SET_BIT(RCC->BDCR, RCC_BDCR_RTCEN);
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2939:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CR           PLLON         LL_RCC_PLL_Enable
 2940:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval None
 2941:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
-ARM GAS  /tmp/ccgnvA2j.s 			page 94
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 94
 
 
 2942:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_PLL_Enable(void)
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  494              	.LBI241:
 2966:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 2967:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
-ARM GAS  /tmp/ccgnvA2j.s 			page 95
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 95
 
 
 2968:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3022:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_2
 3023:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_3
 3024:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_4
-ARM GAS  /tmp/ccgnvA2j.s 			page 96
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 96
 
 
 3025:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_5
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3079:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         PLLCFGR      PLLP          LL_RCC_PLL_ConfigDomain_ADC
 3080:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @param  Source This parameter can be one of the following values:
 3081:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSOURCE_NONE
-ARM GAS  /tmp/ccgnvA2j.s 			page 97
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 97
 
 
 3082:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSOURCE_MSI
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3136:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Configure PLL used for 48Mhz domain clock
 3137:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note PLL Source and PLLM Divider can be written only when PLL is disabled
 3138:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *       PLLSAI1 are disabled
-ARM GAS  /tmp/ccgnvA2j.s 			page 98
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 98
 
 
 3139:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note PLLN/PLLQ can be written only when PLL is disabled
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3193:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_4
 3194:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_5
 3195:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_6
-ARM GAS  /tmp/ccgnvA2j.s 			page 99
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 99
 
 
 3196:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLP_DIV_7
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3250:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
 3251:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLR_DIV_2
 3252:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLR_DIV_3
-ARM GAS  /tmp/ccgnvA2j.s 			page 100
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 100
 
 
 3253:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLR_DIV_4
@@ -5998,7 +5998,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3307:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Check if PLL output mapped on SAI domain clock is enabled
 3308:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll PLLCFGR      PLLPEN        LL_RCC_PLL_IsEnabledDomain_SAI
 3309:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval State of bit (1 or 0).
-ARM GAS  /tmp/ccgnvA2j.s 			page 101
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 101
 
 
 3310:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -6058,7 +6058,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3364:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 3365:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_PLL_DisableDomain_48M(void)
 3366:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 102
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 102
 
 
 3367:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   CLEAR_BIT(RCC->PLLCFGR, RCC_PLLCFGR_PLLQEN);
@@ -6118,7 +6118,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3421:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 3422:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 3423:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Enable PLLSAI1
-ARM GAS  /tmp/ccgnvA2j.s 			page 103
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 103
 
 
 3424:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CR           PLLSAI1ON     LL_RCC_PLLSAI1_Enable
@@ -6178,7 +6178,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  362:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  519              		.loc 1 362 3 view .LVU147
  362:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  /tmp/ccgnvA2j.s 			page 104
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 104
 
 
  520              		.loc 1 362 19 is_stmt 0 view .LVU148
@@ -6238,7 +6238,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  560 0102 0320     		movs	r0, #3
  561 0104 B5E7     		b	.L30
  562              	.L43:
-ARM GAS  /tmp/ccgnvA2j.s 			page 105
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 105
 
 
  563 0106 00BF     		.align	2
@@ -6298,7 +6298,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  608              		.loc 1 1329 29 is_stmt 0 view .LVU173
  609 000c 0323     		movs	r3, #3
  610 000e 0493     		str	r3, [sp, #16]
-ARM GAS  /tmp/ccgnvA2j.s 			page 106
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 106
 
 
 1330:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -6358,7 +6358,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  648 003a 01A9     		add	r1, sp, #4
  649 003c 4FEA8E20 		lsl	r0, lr, #10
  650              	.LVL53:
-ARM GAS  /tmp/ccgnvA2j.s 			page 107
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 107
 
 
 1345:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -6418,7 +6418,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  691              	.LBB245:
  692              	.LBI245:
 2484:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 108
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 108
 
 
  693              		.loc 2 2484 22 view .LVU205
@@ -6478,7 +6478,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  737 0000 4FF0B043 		mov	r3, #1476395008
  738 0004 9B68     		ldr	r3, [r3, #8]
  739              	.LVL59:
-ARM GAS  /tmp/ccgnvA2j.s 			page 109
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 109
 
 
 2074:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -6538,7 +6538,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  778              		.loc 1 1416 18 discriminator 1 view .LVU233
  779 0022 7047     		bx	lr
  780              	.LVL65:
-ARM GAS  /tmp/ccgnvA2j.s 			page 110
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 110
 
 
  781              	.L62:
@@ -6598,7 +6598,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3472:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_5
 3473:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_6
 3474:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_7
-ARM GAS  /tmp/ccgnvA2j.s 			page 111
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 111
 
 
 3475:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLM_DIV_8
@@ -6658,7 +6658,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3529:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_12
 3530:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_13
 3531:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_14
-ARM GAS  /tmp/ccgnvA2j.s 			page 112
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 112
 
 
 3532:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_15
@@ -6718,7 +6718,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3586:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1R_DIV_3
 3587:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1R_DIV_4
 3588:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1R_DIV_5
-ARM GAS  /tmp/ccgnvA2j.s 			page 113
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 113
 
 
 3589:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1R_DIV_6
@@ -6778,7 +6778,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3643:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_30
 3644:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_31
 3645:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSAI1P_DIV_32
-ARM GAS  /tmp/ccgnvA2j.s 			page 114
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 114
 
 
 3646:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -6838,7 +6838,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3700:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Disable PLLSAI1 output mapped on SAI domain clock
 3701:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @note In order to save power, when  of the PLLSAI1 is
 3702:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *       not used, should be 0
-ARM GAS  /tmp/ccgnvA2j.s 			page 115
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 115
 
 
 3703:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll PLLSAI1CFGR  PLLPEN    LL_RCC_PLLSAI1_DisableDomain_SAI
@@ -6898,7 +6898,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3757:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
 3758:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE void LL_RCC_PLLSAI1_EnableDomain_ADC(void)
 3759:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 116
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 116
 
 
 3760:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   SET_BIT(RCC->PLLSAI1CFGR, RCC_PLLSAI1CFGR_PLLREN);
@@ -6958,7 +6958,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3814:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
 3815:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** 
 3816:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
-ARM GAS  /tmp/ccgnvA2j.s 			page 117
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 117
 
 
 3817:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Clear LSE ready interrupt flag
@@ -7018,7 +7018,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3871:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Get the oscillator used as PLL clock source.
 3872:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll PLLCFGR      PLLSRC        LL_RCC_PLL_GetMainSource
 3873:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval Returned value can be one of the following values:
-ARM GAS  /tmp/ccgnvA2j.s 			page 118
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 118
 
 
 3874:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   *         @arg @ref LL_RCC_PLLSOURCE_NONE
@@ -7078,7 +7078,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  843              	.LVL71:
  844              	.L63:
 1426:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     {
-ARM GAS  /tmp/ccgnvA2j.s 			page 119
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 119
 
 
  845              		.loc 1 1426 5 is_stmt 1 view .LVU256
@@ -7138,7 +7138,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  885              	.L55:
 1949:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  886              		.loc 2 1949 3 is_stmt 1 view .LVU271
-ARM GAS  /tmp/ccgnvA2j.s 			page 120
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 120
 
 
  887              	.LBE260:
@@ -7198,7 +7198,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3259:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
  928              		.loc 2 3259 26 is_stmt 1 view .LVU285
  929              	.LBB267:
-ARM GAS  /tmp/ccgnvA2j.s 			page 121
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 121
 
 
 3261:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -7258,7 +7258,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  972              		.loc 1 1432 20 view .LVU297
  973 00ae 0248     		ldr	r0, .L65+4
  974              	.LVL86:
-ARM GAS  /tmp/ccgnvA2j.s 			page 122
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 122
 
 
 1463:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** }
@@ -7318,7 +7318,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1474:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  1022              		.loc 1 1474 1 view .LVU307
  1023 0016 B0FBF3F0 		udiv	r0, r0, r3
-ARM GAS  /tmp/ccgnvA2j.s 			page 123
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 123
 
 
  1024 001a 08BD     		pop	{r3, pc}
@@ -7378,7 +7378,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  403:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  1069              		.loc 1 403 5 view .LVU319
  406:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     const uint32_t temp_plloscsrc = __HAL_RCC_GET_PLL_OSCSOURCE();
-ARM GAS  /tmp/ccgnvA2j.s 			page 124
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 124
 
 
  1070              		.loc 1 406 5 view .LVU320
@@ -7438,7 +7438,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1111              		.loc 1 461 10 view .LVU337
  1112 002a 002B     		cmp	r3, #0
  1113 002c 00F0A080 		beq	.L79
-ARM GAS  /tmp/ccgnvA2j.s 			page 125
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 125
 
 
  464:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -7498,7 +7498,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1154              	.LBB280:
  1155              	.LBI280:
 1920:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 126
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 126
 
 
  1156              		.loc 2 1920 22 view .LVU352
@@ -7558,7 +7558,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1198              	.LBI301:
 2072:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
  1199              		.loc 2 2072 26 view .LVU365
-ARM GAS  /tmp/ccgnvA2j.s 			page 127
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 127
 
 
  1200              	.LBB302:
@@ -7618,7 +7618,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1241              	.LBB305:
  1242              	.LBI305:
 1328:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 128
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 128
 
 
  1243              		.loc 2 1328 22 view .LVU383
@@ -7678,7 +7678,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1283              	.LBE307:
  535:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
  1284              		.loc 1 535 11 is_stmt 1 view .LVU398
-ARM GAS  /tmp/ccgnvA2j.s 			page 129
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 129
 
 
  535:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
@@ -7738,7 +7738,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1324              		.loc 2 1944 12 view .LVU413
  1325 00e6 03F0F003 		and	r3, r3, #240
  1326              	.LVL111:
-ARM GAS  /tmp/ccgnvA2j.s 			page 130
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 130
 
 
 1945:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   {
@@ -7798,7 +7798,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1368              	.LBB289:
  1369              	.LBI289:
 1972:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 131
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 131
 
 
  1370              		.loc 2 1972 22 view .LVU427
@@ -7858,7 +7858,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1412              		.loc 2 1947 14 view .LVU439
  1413              	.LBE286:
  1414              	.LBE291:
-ARM GAS  /tmp/ccgnvA2j.s 			page 132
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 132
 
 
  438:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           /* Adjusts the Multiple Speed oscillator (MSI) calibration value.*/
@@ -7918,7 +7918,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1456 0158 0028     		cmp	r0, #0
  1457 015a DED0     		beq	.L78
  445:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           }
-ARM GAS  /tmp/ccgnvA2j.s 			page 133
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 133
 
 
  1458              		.loc 1 445 20 view .LVU453
@@ -7978,7 +7978,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1499              	.L82:
  493:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         {
  1500              		.loc 1 493 37 view .LVU467
-ARM GAS  /tmp/ccgnvA2j.s 			page 134
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 134
 
 
  1501              	.LBB298:
@@ -8038,7 +8038,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1541 01a8 00F0A882 		beq	.L181
  1542              	.LVL139:
  1543              	.L83:
-ARM GAS  /tmp/ccgnvA2j.s 			page 135
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 135
 
 
  516:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
@@ -8098,7 +8098,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  568:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         ((temp_sysclksrc == RCC_SYSCLKSOURCE_STATUS_PLLCLK) && (temp_plloscsrc == RCC_PLLSOURCE_HSI
  1584              		.loc 1 568 5 is_stmt 1 view .LVU500
  568:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         ((temp_sysclksrc == RCC_SYSCLKSOURCE_STATUS_PLLCLK) && (temp_plloscsrc == RCC_PLLSOURCE_HSI
-ARM GAS  /tmp/ccgnvA2j.s 			page 136
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 136
 
 
  1585              		.loc 1 568 8 is_stmt 0 view .LVU501
@@ -8158,7 +8158,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1502:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  1626              		.loc 2 1502 3 view .LVU515
 1502:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  /tmp/ccgnvA2j.s 			page 137
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 137
 
 
  1627              		.loc 2 1502 12 is_stmt 0 view .LVU516
@@ -8218,7 +8218,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1668              	.LBE310:
  1669              	.LBE309:
  544:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
-ARM GAS  /tmp/ccgnvA2j.s 			page 138
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 138
 
 
  1670              		.loc 1 544 9 is_stmt 1 view .LVU530
@@ -8278,7 +8278,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1710 022c 022A     		cmp	r2, #2
  1711 022e CDD1     		bne	.L93
  1712              	.L92:
-ARM GAS  /tmp/ccgnvA2j.s 			page 139
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 139
 
 
  572:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
@@ -8338,7 +8338,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1755 025c 5360     		str	r3, [r2, #4]
  1756              	.LVL159:
  1757              	.L91:
-ARM GAS  /tmp/ccgnvA2j.s 			page 140
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 140
 
 
 1547:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -8398,7 +8398,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1795 0288 2ED1     		bne	.L102
  1796              	.LBE335:
  1797              	.LBE334:
-ARM GAS  /tmp/ccgnvA2j.s 			page 141
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 141
 
 
  645:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -8458,7 +8458,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  653:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             {
  1838              		.loc 1 653 16 discriminator 1 view .LVU588
  1839 02b4 0228     		cmp	r0, #2
-ARM GAS  /tmp/ccgnvA2j.s 			page 142
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 142
 
 
  1840 02b6 F3D9     		bls	.L103
@@ -8518,7 +8518,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1881              	.LBE331:
  1882              	.LBE330:
  617:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           {
-ARM GAS  /tmp/ccgnvA2j.s 			page 143
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 143
 
 
  1883              		.loc 1 617 11 is_stmt 1 view .LVU602
@@ -8578,7 +8578,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1813:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  1924              		.loc 2 1813 3 view .LVU616
 1813:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  /tmp/ccgnvA2j.s 			page 144
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 144
 
 
  1925              		.loc 2 1813 12 is_stmt 0 view .LVU617
@@ -8638,7 +8638,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  1967              	.LBB348:
 1765:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  1968              		.loc 2 1765 3 view .LVU630
-ARM GAS  /tmp/ccgnvA2j.s 			page 145
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 145
 
 
  1969 0330 D2F89430 		ldr	r3, [r2, #148]
@@ -8698,7 +8698,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  699:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  2010              		.loc 1 699 9 is_stmt 1 view .LVU644
  2011              	.LBB351:
-ARM GAS  /tmp/ccgnvA2j.s 			page 146
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 146
 
 
  2012              	.LBI351:
@@ -8758,7 +8758,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2052 038a F3D9     		bls	.L108
  709:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           }
  2053              		.loc 1 709 20 view .LVU659
-ARM GAS  /tmp/ccgnvA2j.s 			page 147
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 147
 
 
  2054 038c 0320     		movs	r0, #3
@@ -8818,7 +8818,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2094              		.loc 1 722 20 view .LVU673
  2095 03b8 0320     		movs	r0, #3
  2096 03ba A4E1     		b	.L72
-ARM GAS  /tmp/ccgnvA2j.s 			page 148
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 148
 
 
  2097              	.LVL182:
@@ -8878,7 +8878,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1765:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  2138              		.loc 2 1765 3 view .LVU687
  2139 03e0 4FF0B042 		mov	r2, #1476395008
-ARM GAS  /tmp/ccgnvA2j.s 			page 149
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 149
 
 
  2140 03e4 D2F89430 		ldr	r3, [r2, #148]
@@ -8938,7 +8938,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2181              	.L194:
  2182 0414 00000000 		.word	SystemCoreClock
  2183 0418 00000000 		.word	uwTickPrio
-ARM GAS  /tmp/ccgnvA2j.s 			page 150
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 150
 
 
  2184              	.L110:
@@ -8998,7 +8998,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2222              		.loc 1 789 5 discriminator 5 view .LVU716
  2223              	.LBB367:
  2224              	.LBI367:
-ARM GAS  /tmp/ccgnvA2j.s 			page 151
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 151
 
 
 1633:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
@@ -9058,7 +9058,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1727:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  2265              		.loc 2 1727 3 view .LVU731
 1727:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  /tmp/ccgnvA2j.s 			page 152
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 152
 
 
  2266              		.loc 2 1727 12 is_stmt 0 view .LVU732
@@ -9118,7 +9118,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2307 04a0 FFF7FEFF 		bl	HAL_GetTick
  2308              	.LVL197:
  781:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         {
-ARM GAS  /tmp/ccgnvA2j.s 			page 153
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 153
 
 
  2309              		.loc 1 781 28 discriminator 1 view .LVU746
@@ -9178,7 +9178,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2351              		.loc 2 1625 3 view .LVU758
  2352 04d0 D3F89020 		ldr	r2, [r3, #144]
  2353 04d4 42F00102 		orr	r2, r2, #1
-ARM GAS  /tmp/ccgnvA2j.s 			page 154
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 154
 
 
  2354 04d8 C3F89020 		str	r2, [r3, #144]
@@ -9238,7 +9238,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2393              		.loc 1 816 18 view .LVU773
  2394 0500 0320     		movs	r0, #3
  2395 0502 00E1     		b	.L72
-ARM GAS  /tmp/ccgnvA2j.s 			page 155
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 155
 
 
  2396              	.LVL202:
@@ -9298,7 +9298,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1596:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  2435              		.loc 2 1596 3 view .LVU789
 1596:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  /tmp/ccgnvA2j.s 			page 156
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 156
 
 
  2436              		.loc 2 1596 12 is_stmt 0 view .LVU790
@@ -9358,7 +9358,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  856:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
  2478              		.loc 1 856 37 view .LVU803
  2479              	.LBB387:
-ARM GAS  /tmp/ccgnvA2j.s 			page 157
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 157
 
 
  2480              	.LBI387:
@@ -9418,7 +9418,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2074:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  2519              		.loc 2 2074 3 view .LVU819
 2074:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
-ARM GAS  /tmp/ccgnvA2j.s 			page 158
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 158
 
 
  2520              		.loc 2 2074 21 is_stmt 0 view .LVU820
@@ -9478,7 +9478,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2559              		.loc 1 991 21 view .LVU835
  2560 05a2 0446     		mov	r4, r0
  2561              	.LVL215:
-ARM GAS  /tmp/ccgnvA2j.s 			page 159
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 159
 
 
  994:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****         {
@@ -9538,7 +9538,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2597 05c6 8342     		cmp	r3, r0
  2598 05c8 0AD0     		beq	.L188
  2599              	.LVL218:
-ARM GAS  /tmp/ccgnvA2j.s 			page 160
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 160
 
 
  2600              	.L128:
@@ -9598,7 +9598,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2638              		.loc 1 891 12 view .LVU870
  2639 05fe 02F06063 		and	r3, r2, #234881024
  891:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****           (READ_BIT(temp_pllconfig, RCC_PLLCFGR_PLLR) != RCC_OscInitStruct->PLL.PLLR))
-ARM GAS  /tmp/ccgnvA2j.s 			page 161
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 161
 
 
  2640              		.loc 1 891 80 view .LVU871
@@ -9658,7 +9658,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2681              	.LVL221:
  912:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  2682              		.loc 1 912 25 view .LVU885
-ARM GAS  /tmp/ccgnvA2j.s 			page 162
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 162
 
 
  2683 0632 0546     		mov	r5, r0
@@ -9718,7 +9718,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2726              	.LBB396:
  2727              	.LBI396:
 2942:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
-ARM GAS  /tmp/ccgnvA2j.s 			page 163
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 163
 
 
  2728              		.loc 2 2942 22 view .LVU897
@@ -9778,7 +9778,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2768              		.loc 1 945 24 view .LVU911
  2769              	.LBE400:
 1016:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** }
-ARM GAS  /tmp/ccgnvA2j.s 			page 164
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 164
 
 
  2770              		.loc 1 1016 10 view .LVU912
@@ -9838,7 +9838,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2811              	.LVL230:
  974:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****             {
  2812              		.loc 1 974 32 discriminator 1 view .LVU926
-ARM GAS  /tmp/ccgnvA2j.s 			page 165
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 165
 
 
  2813 06d2 031B     		subs	r3, r0, r4
@@ -9898,7 +9898,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2858              		.cfi_offset 5, -8
  2859              		.cfi_offset 14, -4
  2860              	.LBB404:
-ARM GAS  /tmp/ccgnvA2j.s 			page 166
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 166
 
 
  413:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       }
@@ -9958,7 +9958,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2904              		.align	2
  2905              	.L196:
  2906 070c 00040058 		.word	1476396032
-ARM GAS  /tmp/ccgnvA2j.s 			page 167
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 167
 
 
  2907 0710 8C80C111 		.word	297894028
@@ -10018,7 +10018,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1075:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
  2953              		.loc 1 1075 6 view .LVU957
  2954 0014 8B42     		cmp	r3, r1
-ARM GAS  /tmp/ccgnvA2j.s 			page 168
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 168
 
 
  2955 0016 2DD3     		bcc	.L237
@@ -10078,7 +10078,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  2993              		.loc 1 1179 3 is_stmt 1 view .LVU973
 1179:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   {
  2994              		.loc 1 1179 26 is_stmt 0 view .LVU974
-ARM GAS  /tmp/ccgnvA2j.s 			page 169
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 169
 
 
  2995 0044 2B68     		ldr	r3, [r5]
@@ -10138,7 +10138,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3033              		.loc 1 1078 5 is_stmt 1 view .LVU990
  3034 0074 794A     		ldr	r2, .L245
  3035 0076 1368     		ldr	r3, [r2]
-ARM GAS  /tmp/ccgnvA2j.s 			page 170
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 170
 
 
  3036 0078 23F00703 		bic	r3, r3, #7
@@ -10198,7 +10198,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2152:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
  3076              		.loc 2 2152 22 view .LVU1005
  3077              	.LBB411:
-ARM GAS  /tmp/ccgnvA2j.s 			page 171
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 171
 
 
 2154:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -10258,7 +10258,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3906:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
 3907:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 3908:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Clear PLLSAI1 ready interrupt flag
-ARM GAS  /tmp/ccgnvA2j.s 			page 172
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 172
 
 
 3909:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CICR         PLLSAI1RDYC   LL_RCC_ClearFlag_PLLSAI1RDY
@@ -10318,7 +10318,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 3963:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** __STATIC_INLINE uint32_t LL_RCC_IsActiveFlag_LSERDY(void)
 3964:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** {
 3965:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   return ((READ_BIT(RCC->CIFR, RCC_CIFR_LSERDYF) == (RCC_CIFR_LSERDYF)) ? 1UL : 0UL);
-ARM GAS  /tmp/ccgnvA2j.s 			page 173
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 173
 
 
 3966:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -10378,7 +10378,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 4020:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** #if defined(SAI1)
 4021:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** /**
 4022:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Check if PLLSAI1 ready interrupt occurred or not
-ARM GAS  /tmp/ccgnvA2j.s 			page 174
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 174
 
 
 4023:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll CIFR         PLLSAI1RDYF   LL_RCC_IsActiveFlag_PLLSAI1RDY
@@ -10438,7 +10438,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1104:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
  3116              		.loc 1 1104 26 discriminator 1 view .LVU1019
  3117 00c6 801B     		subs	r0, r0, r6
-ARM GAS  /tmp/ccgnvA2j.s 			page 175
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 175
 
 
 1104:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****       {
@@ -10498,7 +10498,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 4063:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @brief  Check if HCLK2 prescaler flag value has been applied or not
 4064:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @rmtoll EXTCFGR         C2HPREF       LL_RCC_IsActiveFlag_C2HPRE
 4065:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   * @retval State of bit (1 or 0).
-ARM GAS  /tmp/ccgnvA2j.s 			page 176
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 176
 
 
 4066:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h ****   */
@@ -10558,7 +10558,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3197              		.loc 2 2204 3 is_stmt 0 view .LVU1045
  3198              	.LBE419:
  3199              	.LBE418:
-ARM GAS  /tmp/ccgnvA2j.s 			page 177
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 177
 
 
 1134:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     while (LL_RCC_IsActiveFlag_SHDHPRE() == 0U)
@@ -10618,7 +10618,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3235              	.L241:
 1147:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     LL_RCC_SetAPB1Prescaler(RCC_ClkInitStruct->APB1CLKDivider);
  3236              		.loc 1 1147 5 is_stmt 1 view .LVU1059
-ARM GAS  /tmp/ccgnvA2j.s 			page 178
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 178
 
 
 1148:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -10678,7 +10678,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3271 0156 4FF0B043 		mov	r3, #1476395008
  3272 015a 9B68     		ldr	r3, [r3, #8]
  3273              		.loc 2 4090 77 view .LVU1072
-ARM GAS  /tmp/ccgnvA2j.s 			page 179
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 179
 
 
  3274 015c 13F4003F 		tst	r3, #131072
@@ -10738,7 +10738,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3315 0188 0646     		mov	r6, r0
  3316              	.LVL279:
 1169:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     {
-ARM GAS  /tmp/ccgnvA2j.s 			page 180
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 180
 
 
  3317              		.loc 1 1169 5 is_stmt 1 view .LVU1086
@@ -10798,7 +10798,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3352              		.loc 2 1340 3 view .LVU1099
 1340:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  3353              		.loc 2 1340 12 is_stmt 0 view .LVU1100
-ARM GAS  /tmp/ccgnvA2j.s 			page 181
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 181
 
 
  3354 01a6 4FF0B042 		mov	r2, #1476395008
@@ -10858,7 +10858,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3395              	.L215:
  3396              	.LBE435:
  3397              	.LBE434:
-ARM GAS  /tmp/ccgnvA2j.s 			page 182
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 182
 
 
 1222:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -10918,7 +10918,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3438 01f0 6A68     		ldr	r2, [r5, #4]
 1228:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****     {
  3439              		.loc 1 1228 42 discriminator 1 view .LVU1128
-ARM GAS  /tmp/ccgnvA2j.s 			page 183
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 183
 
 
  3440 01f2 B3EB820F 		cmp	r3, r2, lsl #2
@@ -10978,7 +10978,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3480              		.loc 1 1248 12 is_stmt 0 view .LVU1142
  3481 0228 0C4B     		ldr	r3, .L245
  3482 022a 1B68     		ldr	r3, [r3]
-ARM GAS  /tmp/ccgnvA2j.s 			page 184
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 184
 
 
  3483 022c 03F00703 		and	r3, r3, #7
@@ -11038,7 +11038,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3524              		.cfi_restore 14
 1063:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   }
  3525              		.loc 1 1063 12 view .LVU1156
-ARM GAS  /tmp/ccgnvA2j.s 			page 185
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 185
 
 
  3526 0254 0120     		movs	r0, #1
@@ -11098,7 +11098,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3574              		.loc 2 2284 21 is_stmt 0 view .LVU1164
  3575 0006 4FF0B043 		mov	r3, #1476395008
  3576 000a D3F80831 		ldr	r3, [r3, #264]
-ARM GAS  /tmp/ccgnvA2j.s 			page 186
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 186
 
 
  3577              	.LBE441:
@@ -11158,7 +11158,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3624              		.loc 1 1493 22 discriminator 2 view .LVU1173
  3625 000e 03F00F03 		and	r3, r3, #15
  3626 0012 034A     		ldr	r2, .L253
-ARM GAS  /tmp/ccgnvA2j.s 			page 187
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 187
 
 
  3627 0014 52F82330 		ldr	r3, [r2, r3, lsl #2]
@@ -11218,7 +11218,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3674              		.loc 1 1506 1 view .LVU1182
  3675 001a D840     		lsrs	r0, r0, r3
  3676 001c 08BD     		pop	{r3, pc}
-ARM GAS  /tmp/ccgnvA2j.s 			page 188
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 188
 
 
  3677              	.L258:
@@ -11278,7 +11278,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3725              	.L261:
  3726 0020 00000000 		.word	APBPrescTable
  3727              		.cfi_endproc
-ARM GAS  /tmp/ccgnvA2j.s 			page 189
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 189
 
 
  3728              	.LFE959:
@@ -11338,7 +11338,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3769              		.loc 1 1547 3 is_stmt 1 view .LVU1205
 1547:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  3770              		.loc 1 1547 19 is_stmt 0 view .LVU1206
-ARM GAS  /tmp/ccgnvA2j.s 			page 190
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 190
 
 
  3771 0014 CA68     		ldr	r2, [r1, #12]
@@ -11398,7 +11398,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3805              		.loc 1 1562 65 is_stmt 0 view .LVU1226
  3806 0046 C3F30063 		ubfx	r3, r3, #24, #1
  3807              	.LVL308:
-ARM GAS  /tmp/ccgnvA2j.s 			page 191
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 191
 
 
 1562:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   RCC_OscInitStruct->PLL.PLLSource = (regPLLCFGRvalue & RCC_PLLCFGR_PLLSRC);
@@ -11458,7 +11458,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3842 0070 4264     		str	r2, [r0, #68]
 1571:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  3843              		.loc 1 1571 3 is_stmt 1 view .LVU1247
-ARM GAS  /tmp/ccgnvA2j.s 			page 192
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 192
 
 
 1571:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
@@ -11518,7 +11518,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3881              		.cfi_endproc
  3882              	.LFE960:
  3884              		.section	.text.HAL_RCC_GetClockConfig,"ax",%progbits
-ARM GAS  /tmp/ccgnvA2j.s 			page 193
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 193
 
 
  3885              		.align	1
@@ -11578,7 +11578,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 2260:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  3926              		.loc 2 2260 21 is_stmt 0 view .LVU1279
  3927 0010 9A68     		ldr	r2, [r3, #8]
-ARM GAS  /tmp/ccgnvA2j.s 			page 194
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 194
 
 
 2260:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -11638,7 +11638,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  3966              	.LBB457:
 2284:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
  3967              		.loc 2 2284 3 view .LVU1296
-ARM GAS  /tmp/ccgnvA2j.s 			page 195
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 195
 
 
 2284:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_rcc.h **** }
@@ -11698,7 +11698,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  4010              		.syntax unified
  4011              		.thumb
  4012              		.thumb_func
-ARM GAS  /tmp/ccgnvA2j.s 			page 196
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 196
 
 
  4014              	HAL_RCC_EnableCSS:
@@ -11758,7 +11758,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  4065              	.LFB963:
 1653:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c ****   /* Check RCC CSSF interrupt flag  */
  4066              		.loc 1 1653 1 view -0
-ARM GAS  /tmp/ccgnvA2j.s 			page 197
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 197
 
 
  4067              		.cfi_startproc
@@ -11818,7 +11818,7 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
 1688:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_rcc.c **** 
  4113              		.loc 1 1688 14 is_stmt 0 view .LVU1328
  4114 0000 4FF0B043 		mov	r3, #1476395008
-ARM GAS  /tmp/ccgnvA2j.s 			page 198
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 198
 
 
  4115 0004 D3F89400 		ldr	r0, [r3, #148]
@@ -11862,8 +11862,8 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  4148 0028 03000000 		.word	3
  4149              		.text
  4150              	.Letext0:
- 4151              		.file 3 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
- 4152              		.file 4 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ 4151              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 4152              		.file 4 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
  4153              		.file 5 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/system_stm32wbxx.h"
  4154              		.file 6 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
  4155              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
@@ -11872,67 +11872,67 @@ ARM GAS  /tmp/ccgnvA2j.s 			page 1
  4158              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
  4159              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pwr_ex.h"
  4160              		.file 12 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pwr.h"
-ARM GAS  /tmp/ccgnvA2j.s 			page 199
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 199
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_rcc.c
-     /tmp/ccgnvA2j.s:21     .text.RCC_SetFlashLatency:00000000 $t
-     /tmp/ccgnvA2j.s:26     .text.RCC_SetFlashLatency:00000000 RCC_SetFlashLatency
-     /tmp/ccgnvA2j.s:202    .text.RCC_SetFlashLatency:000000b8 $d
-     /tmp/ccgnvA2j.s:208    .text.RCC_SetFlashLatencyFromMSIRange:00000000 $t
-     /tmp/ccgnvA2j.s:213    .text.RCC_SetFlashLatencyFromMSIRange:00000000 RCC_SetFlashLatencyFromMSIRange
-     /tmp/ccgnvA2j.s:288    .text.RCC_SetFlashLatencyFromMSIRange:00000044 $d
-     /tmp/ccgnvA2j.s:295    .text.HAL_RCC_DeInit:00000000 $t
-     /tmp/ccgnvA2j.s:301    .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
-     /tmp/ccgnvA2j.s:565    .text.HAL_RCC_DeInit:00000108 $d
-     /tmp/ccgnvA2j.s:574    .text.HAL_RCC_MCOConfig:00000000 $t
-     /tmp/ccgnvA2j.s:580    .text.HAL_RCC_MCOConfig:00000000 HAL_RCC_MCOConfig
-     /tmp/ccgnvA2j.s:714    .text.HAL_RCC_GetSysClockFreq:00000000 $t
-     /tmp/ccgnvA2j.s:720    .text.HAL_RCC_GetSysClockFreq:00000000 HAL_RCC_GetSysClockFreq
-     /tmp/ccgnvA2j.s:981    .text.HAL_RCC_GetSysClockFreq:000000b4 $d
-     /tmp/ccgnvA2j.s:988    .text.HAL_RCC_GetHCLKFreq:00000000 $t
-     /tmp/ccgnvA2j.s:994    .text.HAL_RCC_GetHCLKFreq:00000000 HAL_RCC_GetHCLKFreq
-     /tmp/ccgnvA2j.s:1028   .text.HAL_RCC_GetHCLKFreq:0000001c $d
-     /tmp/ccgnvA2j.s:1033   .text.HAL_RCC_OscConfig:00000000 $t
-     /tmp/ccgnvA2j.s:1039   .text.HAL_RCC_OscConfig:00000000 HAL_RCC_OscConfig
-     /tmp/ccgnvA2j.s:2182   .text.HAL_RCC_OscConfig:00000414 $d
-     /tmp/ccgnvA2j.s:2187   .text.HAL_RCC_OscConfig:0000041c $t
-     /tmp/ccgnvA2j.s:2906   .text.HAL_RCC_OscConfig:0000070c $d
-     /tmp/ccgnvA2j.s:2912   .text.HAL_RCC_OscConfig:00000718 $t
-     /tmp/ccgnvA2j.s:2919   .text.HAL_RCC_ClockConfig:00000000 $t
-     /tmp/ccgnvA2j.s:2925   .text.HAL_RCC_ClockConfig:00000000 HAL_RCC_ClockConfig
-     /tmp/ccgnvA2j.s:3543   .text.HAL_RCC_ClockConfig:0000025c $d
-     /tmp/ccgnvA2j.s:3549   .text.HAL_RCC_GetHCLK2Freq:00000000 $t
-     /tmp/ccgnvA2j.s:3555   .text.HAL_RCC_GetHCLK2Freq:00000000 HAL_RCC_GetHCLK2Freq
-     /tmp/ccgnvA2j.s:3589   .text.HAL_RCC_GetHCLK2Freq:00000020 $d
-     /tmp/ccgnvA2j.s:3594   .text.HAL_RCC_GetHCLK4Freq:00000000 $t
-     /tmp/ccgnvA2j.s:3600   .text.HAL_RCC_GetHCLK4Freq:00000000 HAL_RCC_GetHCLK4Freq
-     /tmp/ccgnvA2j.s:3634   .text.HAL_RCC_GetHCLK4Freq:00000020 $d
-     /tmp/ccgnvA2j.s:3639   .text.HAL_RCC_GetPCLK1Freq:00000000 $t
-     /tmp/ccgnvA2j.s:3645   .text.HAL_RCC_GetPCLK1Freq:00000000 HAL_RCC_GetPCLK1Freq
-     /tmp/ccgnvA2j.s:3680   .text.HAL_RCC_GetPCLK1Freq:00000020 $d
-     /tmp/ccgnvA2j.s:3685   .text.HAL_RCC_GetPCLK2Freq:00000000 $t
-     /tmp/ccgnvA2j.s:3691   .text.HAL_RCC_GetPCLK2Freq:00000000 HAL_RCC_GetPCLK2Freq
-     /tmp/ccgnvA2j.s:3726   .text.HAL_RCC_GetPCLK2Freq:00000020 $d
-     /tmp/ccgnvA2j.s:3731   .text.HAL_RCC_GetOscConfig:00000000 $t
-     /tmp/ccgnvA2j.s:3737   .text.HAL_RCC_GetOscConfig:00000000 HAL_RCC_GetOscConfig
-     /tmp/ccgnvA2j.s:3885   .text.HAL_RCC_GetClockConfig:00000000 $t
-     /tmp/ccgnvA2j.s:3891   .text.HAL_RCC_GetClockConfig:00000000 HAL_RCC_GetClockConfig
-     /tmp/ccgnvA2j.s:4003   .text.HAL_RCC_GetClockConfig:00000048 $d
-     /tmp/ccgnvA2j.s:4008   .text.HAL_RCC_EnableCSS:00000000 $t
-     /tmp/ccgnvA2j.s:4014   .text.HAL_RCC_EnableCSS:00000000 HAL_RCC_EnableCSS
-     /tmp/ccgnvA2j.s:4039   .text.HAL_RCC_CSSCallback:00000000 $t
-     /tmp/ccgnvA2j.s:4045   .text.HAL_RCC_CSSCallback:00000000 HAL_RCC_CSSCallback
-     /tmp/ccgnvA2j.s:4058   .text.HAL_RCC_NMI_IRQHandler:00000000 $t
-     /tmp/ccgnvA2j.s:4064   .text.HAL_RCC_NMI_IRQHandler:00000000 HAL_RCC_NMI_IRQHandler
-     /tmp/ccgnvA2j.s:4098   .text.HAL_RCC_GetResetSource:00000000 $t
-     /tmp/ccgnvA2j.s:4104   .text.HAL_RCC_GetResetSource:00000000 HAL_RCC_GetResetSource
-     /tmp/ccgnvA2j.s:4133   .rodata:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:21     .text.RCC_SetFlashLatency:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:26     .text.RCC_SetFlashLatency:00000000 RCC_SetFlashLatency
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:202    .text.RCC_SetFlashLatency:000000b8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:208    .text.RCC_SetFlashLatencyFromMSIRange:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:213    .text.RCC_SetFlashLatencyFromMSIRange:00000000 RCC_SetFlashLatencyFromMSIRange
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:288    .text.RCC_SetFlashLatencyFromMSIRange:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:295    .text.HAL_RCC_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:301    .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:565    .text.HAL_RCC_DeInit:00000108 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:574    .text.HAL_RCC_MCOConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:580    .text.HAL_RCC_MCOConfig:00000000 HAL_RCC_MCOConfig
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:714    .text.HAL_RCC_GetSysClockFreq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:720    .text.HAL_RCC_GetSysClockFreq:00000000 HAL_RCC_GetSysClockFreq
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:981    .text.HAL_RCC_GetSysClockFreq:000000b4 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:988    .text.HAL_RCC_GetHCLKFreq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:994    .text.HAL_RCC_GetHCLKFreq:00000000 HAL_RCC_GetHCLKFreq
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:1028   .text.HAL_RCC_GetHCLKFreq:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:1033   .text.HAL_RCC_OscConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:1039   .text.HAL_RCC_OscConfig:00000000 HAL_RCC_OscConfig
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:2182   .text.HAL_RCC_OscConfig:00000414 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:2187   .text.HAL_RCC_OscConfig:0000041c $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:2906   .text.HAL_RCC_OscConfig:0000070c $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:2912   .text.HAL_RCC_OscConfig:00000718 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:2919   .text.HAL_RCC_ClockConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:2925   .text.HAL_RCC_ClockConfig:00000000 HAL_RCC_ClockConfig
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3543   .text.HAL_RCC_ClockConfig:0000025c $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3549   .text.HAL_RCC_GetHCLK2Freq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3555   .text.HAL_RCC_GetHCLK2Freq:00000000 HAL_RCC_GetHCLK2Freq
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3589   .text.HAL_RCC_GetHCLK2Freq:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3594   .text.HAL_RCC_GetHCLK4Freq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3600   .text.HAL_RCC_GetHCLK4Freq:00000000 HAL_RCC_GetHCLK4Freq
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3634   .text.HAL_RCC_GetHCLK4Freq:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3639   .text.HAL_RCC_GetPCLK1Freq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3645   .text.HAL_RCC_GetPCLK1Freq:00000000 HAL_RCC_GetPCLK1Freq
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3680   .text.HAL_RCC_GetPCLK1Freq:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3685   .text.HAL_RCC_GetPCLK2Freq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3691   .text.HAL_RCC_GetPCLK2Freq:00000000 HAL_RCC_GetPCLK2Freq
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3726   .text.HAL_RCC_GetPCLK2Freq:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3731   .text.HAL_RCC_GetOscConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3737   .text.HAL_RCC_GetOscConfig:00000000 HAL_RCC_GetOscConfig
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3885   .text.HAL_RCC_GetClockConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:3891   .text.HAL_RCC_GetClockConfig:00000000 HAL_RCC_GetClockConfig
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:4003   .text.HAL_RCC_GetClockConfig:00000048 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:4008   .text.HAL_RCC_EnableCSS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:4014   .text.HAL_RCC_EnableCSS:00000000 HAL_RCC_EnableCSS
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:4039   .text.HAL_RCC_CSSCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:4045   .text.HAL_RCC_CSSCallback:00000000 HAL_RCC_CSSCallback
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:4058   .text.HAL_RCC_NMI_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:4064   .text.HAL_RCC_NMI_IRQHandler:00000000 HAL_RCC_NMI_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:4098   .text.HAL_RCC_GetResetSource:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:4104   .text.HAL_RCC_GetResetSource:00000000 HAL_RCC_GetResetSource
+C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s:4133   .rodata:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick
-ARM GAS  /tmp/ccgnvA2j.s 			page 200
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPgJqix.s 			page 200
 
 
 HAL_PWREx_GetVoltageRange

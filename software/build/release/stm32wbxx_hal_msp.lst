@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccVuYUpX.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccVuYUpX.s 			page 1
   58 0022 1CB0     		add	sp, sp, #112
   59              		@ sp needed
   60 0024 10BD     		pop	{r4, pc}
-ARM GAS  /tmp/ccVuYUpX.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s 			page 2
 
 
   61              	.L7:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccVuYUpX.s 			page 1
  117 0000 08B5     		push	{r3, lr}
  118 0002 0268     		ldr	r2, [r0]
  119 0004 0A4B     		ldr	r3, .L15
-ARM GAS  /tmp/ccVuYUpX.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s 			page 3
 
 
  120 0006 9A42     		cmp	r2, r3
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccVuYUpX.s 			page 1
  176 0030 029A     		ldr	r2, [sp, #8]
  177 0032 DA6C     		ldr	r2, [r3, #76]
  178 0034 42F00202 		orr	r2, r2, #2
-ARM GAS  /tmp/ccVuYUpX.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s 			page 4
 
 
  179 0038 DA64     		str	r2, [r3, #76]
@@ -234,25 +234,25 @@ ARM GAS  /tmp/ccVuYUpX.s 			page 1
  231 0024 00300140 		.word	1073819648
  232 0028 00040048 		.word	1207960576
  234              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  /tmp/ccVuYUpX.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_msp.c
-     /tmp/ccVuYUpX.s:18     .text.HAL_MspInit:00000000 $t
-     /tmp/ccVuYUpX.s:24     .text.HAL_MspInit:00000000 HAL_MspInit
-     /tmp/ccVuYUpX.s:32     .text.HAL_I2C_MspInit:00000000 $t
-     /tmp/ccVuYUpX.s:38     .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
-     /tmp/ccVuYUpX.s:104    .text.HAL_I2C_MspInit:00000084 $d
-     /tmp/ccVuYUpX.s:108    .text.HAL_I2C_MspDeInit:00000000 $t
-     /tmp/ccVuYUpX.s:114    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
-     /tmp/ccVuYUpX.s:139    .text.HAL_I2C_MspDeInit:00000030 $d
-     /tmp/ccVuYUpX.s:143    .text.HAL_SPI_MspInit:00000000 $t
-     /tmp/ccVuYUpX.s:149    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-     /tmp/ccVuYUpX.s:199    .text.HAL_SPI_MspInit:00000060 $d
-     /tmp/ccVuYUpX.s:203    .text.HAL_SPI_MspDeInit:00000000 $t
-     /tmp/ccVuYUpX.s:209    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-     /tmp/ccVuYUpX.s:231    .text.HAL_SPI_MspDeInit:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:18     .text.HAL_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:24     .text.HAL_MspInit:00000000 HAL_MspInit
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:32     .text.HAL_I2C_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:38     .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:104    .text.HAL_I2C_MspInit:00000084 $d
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:108    .text.HAL_I2C_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:114    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:139    .text.HAL_I2C_MspDeInit:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:143    .text.HAL_SPI_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:149    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:199    .text.HAL_SPI_MspInit:00000060 $d
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:203    .text.HAL_SPI_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:209    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:231    .text.HAL_SPI_MspDeInit:00000024 $d
 
 UNDEFINED SYMBOLS
 HAL_PWREx_EnableVddUSB

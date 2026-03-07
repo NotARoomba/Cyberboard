@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
   57              		.align	1
   58              		.global	USBD_CDC_GetDeviceQualifierDescriptor
   59              		.syntax unified
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 2
 
 
   60              		.thumb
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  117 0040 0048     		ldr	r0, .L15
  118 0042 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
  119              	.L16:
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 3
 
 
  120              		.align	2
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  178              	USBD_CDC_GetHSCfgDesc:
  179              		@ args = 0, pretend = 0, frame = 0
  180              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 4
 
 
  181 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  237 0018 D4F8D432 		ldr	r3, [r4, #724]
  238 001c B033     		adds	r3, r3, #176
  239 001e 04EB8304 		add	r4, r4, r3, lsl #2
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 5
 
 
  240 0022 6368     		ldr	r3, [r4, #4]
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  296 0062 03EB8303 		add	r3, r3, r3, lsl #2
  297 0066 00EB8303 		add	r3, r0, r3, lsl #2
  298 006a 5A61     		str	r2, [r3, #20]
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 6
 
 
  299 006c 1346     		mov	r3, r2
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  355 0058 EA88     		ldrh	r2, [r5, #6]
  356 005a 072A     		cmp	r2, #7
  357 005c 28BF     		it	cs
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 7
 
 
  358 005e 0722     		movcs	r2, #7
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  412 00cc FFF7FEFF 		bl	USBD_CtlError
  413 00d0 0326     		movs	r6, #3
  414 00d2 18E0     		b	.L43
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 8
 
 
  415              	.L60:
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  471 002a D4F8D432 		ldr	r3, [r4, #724]
  472 002e 03F1B002 		add	r2, r3, #176
  473 0032 54F82220 		ldr	r2, [r4, r2, lsl #2]
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 9
 
 
  474 0036 9AB1     		cbz	r2, .L63
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  530 0052 84F87761 		strb	r6, [r4, #375]
  531 0056 1023     		movs	r3, #16
  532 0058 6364     		str	r3, [r4, #68]
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 10
 
 
  533              	.L69:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  587 00dc 0121     		movs	r1, #1
  588 00de 2046     		mov	r0, r4
  589 00e0 FFF7FEFF 		bl	USBD_LL_PrepareReceive
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 11
 
 
  590 00e4 0025     		movs	r5, #0
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  650              		@ frame_needed = 0, uses_anonymous_args = 0
  651              		@ link register save eliminated.
  652 0000 D0F8D432 		ldr	r3, [r0, #724]
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 12
 
 
  653 0004 B033     		adds	r3, r3, #176
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  711 000c 92B1     		cbz	r2, .L92
  712 000e 047C     		ldrb	r4, [r0, #16]	@ zero_extendqisi2
  713 0010 44B9     		cbnz	r4, .L91
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 13
 
 
  714 0012 4FF40073 		mov	r3, #512
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  759 002c 00000000 		.word	USBD_CDC_GetFSCfgDesc
  760 0030 00000000 		.word	USBD_CDC_GetOtherSpeedCfgDesc
  761 0034 00000000 		.word	USBD_CDC_GetDeviceQualifierDescriptor
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 14
 
 
  762              		.section	.data.USBD_CDC_DeviceQualifierDesc,"aw"
@@ -788,51 +788,51 @@ ARM GAS  /tmp/cc2ABZ8Q.s 			page 1
  767      00000040 
  767      0100
  768              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  /tmp/cc2ABZ8Q.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_cdc.c
-     /tmp/cc2ABZ8Q.s:18     .text.USBD_CDC_EP0_RxReady:00000000 $t
-     /tmp/cc2ABZ8Q.s:23     .text.USBD_CDC_EP0_RxReady:00000000 USBD_CDC_EP0_RxReady
-     /tmp/cc2ABZ8Q.s:57     .text.USBD_CDC_GetDeviceQualifierDescriptor:00000000 $t
-     /tmp/cc2ABZ8Q.s:63     .text.USBD_CDC_GetDeviceQualifierDescriptor:00000000 USBD_CDC_GetDeviceQualifierDescriptor
-     /tmp/cc2ABZ8Q.s:74     .text.USBD_CDC_GetDeviceQualifierDescriptor:00000008 $d
-     /tmp/cc2ABZ8Q.s:766    .data.USBD_CDC_DeviceQualifierDesc:00000000 USBD_CDC_DeviceQualifierDesc
-     /tmp/cc2ABZ8Q.s:77     .text.USBD_CDC_GetOtherSpeedCfgDesc:00000000 $t
-     /tmp/cc2ABZ8Q.s:82     .text.USBD_CDC_GetOtherSpeedCfgDesc:00000000 USBD_CDC_GetOtherSpeedCfgDesc
-     /tmp/cc2ABZ8Q.s:122    .text.USBD_CDC_GetOtherSpeedCfgDesc:00000044 $d
-     /tmp/cc2ABZ8Q.s:736    .data.USBD_CDC_CfgDesc:00000000 USBD_CDC_CfgDesc
-     /tmp/cc2ABZ8Q.s:125    .text.USBD_CDC_GetFSCfgDesc:00000000 $t
-     /tmp/cc2ABZ8Q.s:130    .text.USBD_CDC_GetFSCfgDesc:00000000 USBD_CDC_GetFSCfgDesc
-     /tmp/cc2ABZ8Q.s:170    .text.USBD_CDC_GetFSCfgDesc:00000044 $d
-     /tmp/cc2ABZ8Q.s:173    .text.USBD_CDC_GetHSCfgDesc:00000000 $t
-     /tmp/cc2ABZ8Q.s:178    .text.USBD_CDC_GetHSCfgDesc:00000000 USBD_CDC_GetHSCfgDesc
-     /tmp/cc2ABZ8Q.s:218    .text.USBD_CDC_GetHSCfgDesc:00000044 $d
-     /tmp/cc2ABZ8Q.s:221    .text.USBD_CDC_DataOut:00000000 $t
-     /tmp/cc2ABZ8Q.s:226    .text.USBD_CDC_DataOut:00000000 USBD_CDC_DataOut
-     /tmp/cc2ABZ8Q.s:253    .text.USBD_CDC_DataIn:00000000 $t
-     /tmp/cc2ABZ8Q.s:258    .text.USBD_CDC_DataIn:00000000 USBD_CDC_DataIn
-     /tmp/cc2ABZ8Q.s:311    .text.USBD_CDC_Setup:00000000 $t
-     /tmp/cc2ABZ8Q.s:316    .text.USBD_CDC_Setup:00000000 USBD_CDC_Setup
-     /tmp/cc2ABZ8Q.s:448    .text.USBD_CDC_DeInit:00000000 $t
-     /tmp/cc2ABZ8Q.s:453    .text.USBD_CDC_DeInit:00000000 USBD_CDC_DeInit
-     /tmp/cc2ABZ8Q.s:493    .text.USBD_CDC_Init:00000000 $t
-     /tmp/cc2ABZ8Q.s:498    .text.USBD_CDC_Init:00000000 USBD_CDC_Init
-     /tmp/cc2ABZ8Q.s:597    .text.USBD_CDC_RegisterInterface:00000000 $t
-     /tmp/cc2ABZ8Q.s:603    .text.USBD_CDC_RegisterInterface:00000000 USBD_CDC_RegisterInterface
-     /tmp/cc2ABZ8Q.s:619    .text.USBD_CDC_SetTxBuffer:00000000 $t
-     /tmp/cc2ABZ8Q.s:625    .text.USBD_CDC_SetTxBuffer:00000000 USBD_CDC_SetTxBuffer
-     /tmp/cc2ABZ8Q.s:642    .text.USBD_CDC_SetRxBuffer:00000000 $t
-     /tmp/cc2ABZ8Q.s:648    .text.USBD_CDC_SetRxBuffer:00000000 USBD_CDC_SetRxBuffer
-     /tmp/cc2ABZ8Q.s:664    .text.USBD_CDC_TransmitPacket:00000000 $t
-     /tmp/cc2ABZ8Q.s:670    .text.USBD_CDC_TransmitPacket:00000000 USBD_CDC_TransmitPacket
-     /tmp/cc2ABZ8Q.s:698    .text.USBD_CDC_ReceivePacket:00000000 $t
-     /tmp/cc2ABZ8Q.s:704    .text.USBD_CDC_ReceivePacket:00000000 USBD_CDC_ReceivePacket
-     /tmp/cc2ABZ8Q.s:733    .data.USBD_CDC_CfgDesc:00000000 $d
-     /tmp/cc2ABZ8Q.s:747    .data.USBD_CDC:00000000 USBD_CDC
-     /tmp/cc2ABZ8Q.s:744    .data.USBD_CDC:00000000 $d
-     /tmp/cc2ABZ8Q.s:763    .data.USBD_CDC_DeviceQualifierDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:18     .text.USBD_CDC_EP0_RxReady:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:23     .text.USBD_CDC_EP0_RxReady:00000000 USBD_CDC_EP0_RxReady
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:57     .text.USBD_CDC_GetDeviceQualifierDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:63     .text.USBD_CDC_GetDeviceQualifierDescriptor:00000000 USBD_CDC_GetDeviceQualifierDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:74     .text.USBD_CDC_GetDeviceQualifierDescriptor:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:766    .data.USBD_CDC_DeviceQualifierDesc:00000000 USBD_CDC_DeviceQualifierDesc
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:77     .text.USBD_CDC_GetOtherSpeedCfgDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:82     .text.USBD_CDC_GetOtherSpeedCfgDesc:00000000 USBD_CDC_GetOtherSpeedCfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:122    .text.USBD_CDC_GetOtherSpeedCfgDesc:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:736    .data.USBD_CDC_CfgDesc:00000000 USBD_CDC_CfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:125    .text.USBD_CDC_GetFSCfgDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:130    .text.USBD_CDC_GetFSCfgDesc:00000000 USBD_CDC_GetFSCfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:170    .text.USBD_CDC_GetFSCfgDesc:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:173    .text.USBD_CDC_GetHSCfgDesc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:178    .text.USBD_CDC_GetHSCfgDesc:00000000 USBD_CDC_GetHSCfgDesc
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:218    .text.USBD_CDC_GetHSCfgDesc:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:221    .text.USBD_CDC_DataOut:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:226    .text.USBD_CDC_DataOut:00000000 USBD_CDC_DataOut
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:253    .text.USBD_CDC_DataIn:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:258    .text.USBD_CDC_DataIn:00000000 USBD_CDC_DataIn
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:311    .text.USBD_CDC_Setup:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:316    .text.USBD_CDC_Setup:00000000 USBD_CDC_Setup
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:448    .text.USBD_CDC_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:453    .text.USBD_CDC_DeInit:00000000 USBD_CDC_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:493    .text.USBD_CDC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:498    .text.USBD_CDC_Init:00000000 USBD_CDC_Init
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:597    .text.USBD_CDC_RegisterInterface:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:603    .text.USBD_CDC_RegisterInterface:00000000 USBD_CDC_RegisterInterface
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:619    .text.USBD_CDC_SetTxBuffer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:625    .text.USBD_CDC_SetTxBuffer:00000000 USBD_CDC_SetTxBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:642    .text.USBD_CDC_SetRxBuffer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:648    .text.USBD_CDC_SetRxBuffer:00000000 USBD_CDC_SetRxBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:664    .text.USBD_CDC_TransmitPacket:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:670    .text.USBD_CDC_TransmitPacket:00000000 USBD_CDC_TransmitPacket
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:698    .text.USBD_CDC_ReceivePacket:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:704    .text.USBD_CDC_ReceivePacket:00000000 USBD_CDC_ReceivePacket
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:733    .data.USBD_CDC_CfgDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:747    .data.USBD_CDC:00000000 USBD_CDC
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:744    .data.USBD_CDC:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCf4OaU.s:763    .data.USBD_CDC_DeviceQualifierDesc:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_GetEpDesc

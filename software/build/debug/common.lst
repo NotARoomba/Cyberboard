@@ -1,0 +1,723 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"common.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Drivers/BMP580/common/common.c"
+  20              		.section	.text.bmp5_delay_us,"ax",%progbits
+  21              		.align	1
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	bmp5_delay_us:
+  27              	.LVL0:
+  28              	.LFB955:
+   1:Drivers/BMP580/common/common.c **** /**
+   2:Drivers/BMP580/common/common.c ****  * @file  common.c
+   3:Drivers/BMP580/common/common.c ****  * @brief BMP5 platform abstraction – STM32 HAL I2C implementation
+   4:Drivers/BMP580/common/common.c ****  */
+   5:Drivers/BMP580/common/common.c **** 
+   6:Drivers/BMP580/common/common.c **** #include <stdint.h>
+   7:Drivers/BMP580/common/common.c **** #include <stdio.h>
+   8:Drivers/BMP580/common/common.c **** #include "common.h"
+   9:Drivers/BMP580/common/common.c **** #include "bmp5_defs.h"
+  10:Drivers/BMP580/common/common.c **** 
+  11:Drivers/BMP580/common/common.c **** /******************************************************************************/
+  12:Drivers/BMP580/common/common.c **** /*                       Static helpers                                       */
+  13:Drivers/BMP580/common/common.c **** /******************************************************************************/
+  14:Drivers/BMP580/common/common.c **** 
+  15:Drivers/BMP580/common/common.c **** /** The HAL handle is stored here by bmp5_interface_init() and retrieved inside
+  16:Drivers/BMP580/common/common.c ****  *  the read / write / delay callbacks via intf_ptr.                          */
+  17:Drivers/BMP580/common/common.c **** static I2C_HandleTypeDef *bmp5_hi2c;
+  18:Drivers/BMP580/common/common.c **** 
+  19:Drivers/BMP580/common/common.c **** /** 7-bit I2C address (unshifted) – set once by bmp5_interface_init(). */
+  20:Drivers/BMP580/common/common.c **** static uint8_t bmp5_i2c_addr;
+  21:Drivers/BMP580/common/common.c **** 
+  22:Drivers/BMP580/common/common.c **** /******************************************************************************/
+  23:Drivers/BMP580/common/common.c **** /*                       Read / Write / Delay                                 */
+  24:Drivers/BMP580/common/common.c **** /******************************************************************************/
+  25:Drivers/BMP580/common/common.c **** 
+  26:Drivers/BMP580/common/common.c **** static BMP5_INTF_RET_TYPE bmp5_i2c_read(uint8_t reg_addr, uint8_t *reg_data,
+  27:Drivers/BMP580/common/common.c ****                                          uint32_t length, void *intf_ptr)
+  28:Drivers/BMP580/common/common.c **** {
+  29:Drivers/BMP580/common/common.c ****     (void)intf_ptr;
+  30:Drivers/BMP580/common/common.c ****     HAL_StatusTypeDef status;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 2
+
+
+  31:Drivers/BMP580/common/common.c ****     status = HAL_I2C_Mem_Read(bmp5_hi2c, (uint16_t)(bmp5_i2c_addr << 1),
+  32:Drivers/BMP580/common/common.c ****                               reg_addr, I2C_MEMADD_SIZE_8BIT,
+  33:Drivers/BMP580/common/common.c ****                               reg_data, (uint16_t)length, HAL_MAX_DELAY);
+  34:Drivers/BMP580/common/common.c ****     return (status == HAL_OK) ? BMP5_INTF_RET_SUCCESS : BMP5_E_COM_FAIL;
+  35:Drivers/BMP580/common/common.c **** }
+  36:Drivers/BMP580/common/common.c **** 
+  37:Drivers/BMP580/common/common.c **** static BMP5_INTF_RET_TYPE bmp5_i2c_write(uint8_t reg_addr,
+  38:Drivers/BMP580/common/common.c ****                                           const uint8_t *reg_data,
+  39:Drivers/BMP580/common/common.c ****                                           uint32_t length, void *intf_ptr)
+  40:Drivers/BMP580/common/common.c **** {
+  41:Drivers/BMP580/common/common.c ****     (void)intf_ptr;
+  42:Drivers/BMP580/common/common.c ****     HAL_StatusTypeDef status;
+  43:Drivers/BMP580/common/common.c ****     status = HAL_I2C_Mem_Write(bmp5_hi2c, (uint16_t)(bmp5_i2c_addr << 1),
+  44:Drivers/BMP580/common/common.c ****                                reg_addr, I2C_MEMADD_SIZE_8BIT,
+  45:Drivers/BMP580/common/common.c ****                                (uint8_t *)reg_data, (uint16_t)length,
+  46:Drivers/BMP580/common/common.c ****                                HAL_MAX_DELAY);
+  47:Drivers/BMP580/common/common.c ****     return (status == HAL_OK) ? BMP5_INTF_RET_SUCCESS : BMP5_E_COM_FAIL;
+  48:Drivers/BMP580/common/common.c **** }
+  49:Drivers/BMP580/common/common.c **** 
+  50:Drivers/BMP580/common/common.c **** static void bmp5_delay_us(uint32_t period, void *intf_ptr)
+  51:Drivers/BMP580/common/common.c **** {
+  29              		.loc 1 51 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 51 1 is_stmt 0 view .LVU1
+  34 0000 08B5     		push	{r3, lr}
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 3, -8
+  37              		.cfi_offset 14, -4
+  52:Drivers/BMP580/common/common.c ****     (void)intf_ptr;
+  38              		.loc 1 52 5 is_stmt 1 view .LVU2
+  53:Drivers/BMP580/common/common.c ****     /* HAL_Delay works in ms – round up so we never wait less than requested */
+  54:Drivers/BMP580/common/common.c ****     uint32_t ms = (period + 999U) / 1000U;
+  39              		.loc 1 54 5 view .LVU3
+  40              		.loc 1 54 27 is_stmt 0 view .LVU4
+  41 0002 00F2E733 		addw	r3, r0, #999
+  42              		.loc 1 54 14 view .LVU5
+  43 0006 0548     		ldr	r0, .L5
+  44              	.LVL1:
+  45              		.loc 1 54 14 view .LVU6
+  46 0008 A0FB0320 		umull	r2, r0, r0, r3
+  47 000c 8009     		lsrs	r0, r0, #6
+  48              	.LVL2:
+  55:Drivers/BMP580/common/common.c ****     if (ms == 0U)
+  49              		.loc 1 55 5 is_stmt 1 view .LVU7
+  50              		.loc 1 55 8 is_stmt 0 view .LVU8
+  51 000e B3F57A7F 		cmp	r3, #1000
+  52 0012 00D2     		bcs	.L2
+  56:Drivers/BMP580/common/common.c ****         ms = 1U;
+  53              		.loc 1 56 12 view .LVU9
+  54 0014 0120     		movs	r0, #1
+  55              	.LVL3:
+  56              	.L2:
+  57:Drivers/BMP580/common/common.c ****     HAL_Delay(ms);
+  57              		.loc 1 57 5 is_stmt 1 view .LVU10
+  58 0016 FFF7FEFF 		bl	HAL_Delay
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 3
+
+
+  59              	.LVL4:
+  58:Drivers/BMP580/common/common.c **** }
+  60              		.loc 1 58 1 is_stmt 0 view .LVU11
+  61 001a 08BD     		pop	{r3, pc}
+  62              	.L6:
+  63              		.align	2
+  64              	.L5:
+  65 001c D34D6210 		.word	274877907
+  66              		.cfi_endproc
+  67              	.LFE955:
+  69              		.section	.text.bmp5_i2c_write,"ax",%progbits
+  70              		.align	1
+  71              		.syntax unified
+  72              		.thumb
+  73              		.thumb_func
+  75              	bmp5_i2c_write:
+  76              	.LVL5:
+  77              	.LFB954:
+  40:Drivers/BMP580/common/common.c ****     (void)intf_ptr;
+  78              		.loc 1 40 1 is_stmt 1 view -0
+  79              		.cfi_startproc
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  40:Drivers/BMP580/common/common.c ****     (void)intf_ptr;
+  82              		.loc 1 40 1 is_stmt 0 view .LVU13
+  83 0000 00B5     		push	{lr}
+  84              		.cfi_def_cfa_offset 4
+  85              		.cfi_offset 14, -4
+  86 0002 85B0     		sub	sp, sp, #20
+  87              		.cfi_def_cfa_offset 24
+  41:Drivers/BMP580/common/common.c ****     HAL_StatusTypeDef status;
+  88              		.loc 1 41 5 is_stmt 1 view .LVU14
+  42:Drivers/BMP580/common/common.c ****     status = HAL_I2C_Mem_Write(bmp5_hi2c, (uint16_t)(bmp5_i2c_addr << 1),
+  89              		.loc 1 42 5 view .LVU15
+  43:Drivers/BMP580/common/common.c ****                                reg_addr, I2C_MEMADD_SIZE_8BIT,
+  90              		.loc 1 43 5 view .LVU16
+  43:Drivers/BMP580/common/common.c ****                                reg_addr, I2C_MEMADD_SIZE_8BIT,
+  91              		.loc 1 43 43 is_stmt 0 view .LVU17
+  92 0004 0B4B     		ldr	r3, .L12
+  93              	.LVL6:
+  43:Drivers/BMP580/common/common.c ****                                reg_addr, I2C_MEMADD_SIZE_8BIT,
+  94              		.loc 1 43 43 view .LVU18
+  95 0006 93F800C0 		ldrb	ip, [r3]	@ zero_extendqisi2
+  43:Drivers/BMP580/common/common.c ****                                reg_addr, I2C_MEMADD_SIZE_8BIT,
+  96              		.loc 1 43 14 view .LVU19
+  97 000a 4FF0FF33 		mov	r3, #-1
+  98 000e 0293     		str	r3, [sp, #8]
+  99 0010 92B2     		uxth	r2, r2
+ 100              	.LVL7:
+  43:Drivers/BMP580/common/common.c ****                                reg_addr, I2C_MEMADD_SIZE_8BIT,
+ 101              		.loc 1 43 14 view .LVU20
+ 102 0012 0192     		str	r2, [sp, #4]
+ 103 0014 0091     		str	r1, [sp]
+ 104 0016 0123     		movs	r3, #1
+ 105 0018 0246     		mov	r2, r0
+ 106 001a 0CFA03F1 		lsl	r1, ip, r3
+ 107              	.LVL8:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 4
+
+
+  43:Drivers/BMP580/common/common.c ****                                reg_addr, I2C_MEMADD_SIZE_8BIT,
+ 108              		.loc 1 43 14 view .LVU21
+ 109 001e 0648     		ldr	r0, .L12+4
+ 110              	.LVL9:
+  43:Drivers/BMP580/common/common.c ****                                reg_addr, I2C_MEMADD_SIZE_8BIT,
+ 111              		.loc 1 43 14 view .LVU22
+ 112 0020 0068     		ldr	r0, [r0]
+ 113 0022 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 114              	.LVL10:
+  47:Drivers/BMP580/common/common.c **** }
+ 115              		.loc 1 47 5 is_stmt 1 view .LVU23
+  47:Drivers/BMP580/common/common.c **** }
+ 116              		.loc 1 47 55 is_stmt 0 view .LVU24
+ 117 0026 08B9     		cbnz	r0, .L11
+ 118              	.LVL11:
+ 119              	.L8:
+  48:Drivers/BMP580/common/common.c **** 
+ 120              		.loc 1 48 1 view .LVU25
+ 121 0028 05B0     		add	sp, sp, #20
+ 122              		.cfi_remember_state
+ 123              		.cfi_def_cfa_offset 4
+ 124              		@ sp needed
+ 125 002a 00BD     		pop	{pc}
+ 126              	.LVL12:
+ 127              	.L11:
+ 128              		.cfi_restore_state
+  47:Drivers/BMP580/common/common.c **** }
+ 129              		.loc 1 47 55 discriminator 2 view .LVU26
+ 130 002c 6FF00100 		mvn	r0, #1
+ 131              	.LVL13:
+  47:Drivers/BMP580/common/common.c **** }
+ 132              		.loc 1 47 55 discriminator 2 view .LVU27
+ 133 0030 FAE7     		b	.L8
+ 134              	.L13:
+ 135 0032 00BF     		.align	2
+ 136              	.L12:
+ 137 0034 00000000 		.word	bmp5_i2c_addr
+ 138 0038 00000000 		.word	bmp5_hi2c
+ 139              		.cfi_endproc
+ 140              	.LFE954:
+ 142              		.section	.text.bmp5_i2c_read,"ax",%progbits
+ 143              		.align	1
+ 144              		.syntax unified
+ 145              		.thumb
+ 146              		.thumb_func
+ 148              	bmp5_i2c_read:
+ 149              	.LVL14:
+ 150              	.LFB953:
+  28:Drivers/BMP580/common/common.c ****     (void)intf_ptr;
+ 151              		.loc 1 28 1 is_stmt 1 view -0
+ 152              		.cfi_startproc
+ 153              		@ args = 0, pretend = 0, frame = 0
+ 154              		@ frame_needed = 0, uses_anonymous_args = 0
+  28:Drivers/BMP580/common/common.c ****     (void)intf_ptr;
+ 155              		.loc 1 28 1 is_stmt 0 view .LVU29
+ 156 0000 00B5     		push	{lr}
+ 157              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 5
+
+
+ 158              		.cfi_offset 14, -4
+ 159 0002 85B0     		sub	sp, sp, #20
+ 160              		.cfi_def_cfa_offset 24
+  29:Drivers/BMP580/common/common.c ****     HAL_StatusTypeDef status;
+ 161              		.loc 1 29 5 is_stmt 1 view .LVU30
+  30:Drivers/BMP580/common/common.c ****     status = HAL_I2C_Mem_Read(bmp5_hi2c, (uint16_t)(bmp5_i2c_addr << 1),
+ 162              		.loc 1 30 5 view .LVU31
+  31:Drivers/BMP580/common/common.c ****                               reg_addr, I2C_MEMADD_SIZE_8BIT,
+ 163              		.loc 1 31 5 view .LVU32
+  31:Drivers/BMP580/common/common.c ****                               reg_addr, I2C_MEMADD_SIZE_8BIT,
+ 164              		.loc 1 31 42 is_stmt 0 view .LVU33
+ 165 0004 0B4B     		ldr	r3, .L19
+ 166              	.LVL15:
+  31:Drivers/BMP580/common/common.c ****                               reg_addr, I2C_MEMADD_SIZE_8BIT,
+ 167              		.loc 1 31 42 view .LVU34
+ 168 0006 93F800C0 		ldrb	ip, [r3]	@ zero_extendqisi2
+  31:Drivers/BMP580/common/common.c ****                               reg_addr, I2C_MEMADD_SIZE_8BIT,
+ 169              		.loc 1 31 14 view .LVU35
+ 170 000a 4FF0FF33 		mov	r3, #-1
+ 171 000e 0293     		str	r3, [sp, #8]
+ 172 0010 92B2     		uxth	r2, r2
+ 173              	.LVL16:
+  31:Drivers/BMP580/common/common.c ****                               reg_addr, I2C_MEMADD_SIZE_8BIT,
+ 174              		.loc 1 31 14 view .LVU36
+ 175 0012 0192     		str	r2, [sp, #4]
+ 176 0014 0091     		str	r1, [sp]
+ 177 0016 0123     		movs	r3, #1
+ 178 0018 0246     		mov	r2, r0
+ 179 001a 0CFA03F1 		lsl	r1, ip, r3
+ 180              	.LVL17:
+  31:Drivers/BMP580/common/common.c ****                               reg_addr, I2C_MEMADD_SIZE_8BIT,
+ 181              		.loc 1 31 14 view .LVU37
+ 182 001e 0648     		ldr	r0, .L19+4
+ 183              	.LVL18:
+  31:Drivers/BMP580/common/common.c ****                               reg_addr, I2C_MEMADD_SIZE_8BIT,
+ 184              		.loc 1 31 14 view .LVU38
+ 185 0020 0068     		ldr	r0, [r0]
+ 186 0022 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 187              	.LVL19:
+  34:Drivers/BMP580/common/common.c **** }
+ 188              		.loc 1 34 5 is_stmt 1 view .LVU39
+  34:Drivers/BMP580/common/common.c **** }
+ 189              		.loc 1 34 55 is_stmt 0 view .LVU40
+ 190 0026 08B9     		cbnz	r0, .L18
+ 191              	.LVL20:
+ 192              	.L15:
+  35:Drivers/BMP580/common/common.c **** 
+ 193              		.loc 1 35 1 view .LVU41
+ 194 0028 05B0     		add	sp, sp, #20
+ 195              		.cfi_remember_state
+ 196              		.cfi_def_cfa_offset 4
+ 197              		@ sp needed
+ 198 002a 00BD     		pop	{pc}
+ 199              	.LVL21:
+ 200              	.L18:
+ 201              		.cfi_restore_state
+  34:Drivers/BMP580/common/common.c **** }
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 6
+
+
+ 202              		.loc 1 34 55 discriminator 2 view .LVU42
+ 203 002c 6FF00100 		mvn	r0, #1
+ 204              	.LVL22:
+  34:Drivers/BMP580/common/common.c **** }
+ 205              		.loc 1 34 55 discriminator 2 view .LVU43
+ 206 0030 FAE7     		b	.L15
+ 207              	.L20:
+ 208 0032 00BF     		.align	2
+ 209              	.L19:
+ 210 0034 00000000 		.word	bmp5_i2c_addr
+ 211 0038 00000000 		.word	bmp5_hi2c
+ 212              		.cfi_endproc
+ 213              	.LFE953:
+ 215              		.section	.text.bmp5_interface_init,"ax",%progbits
+ 216              		.align	1
+ 217              		.global	bmp5_interface_init
+ 218              		.syntax unified
+ 219              		.thumb
+ 220              		.thumb_func
+ 222              	bmp5_interface_init:
+ 223              	.LVL23:
+ 224              	.LFB956:
+  59:Drivers/BMP580/common/common.c **** 
+  60:Drivers/BMP580/common/common.c **** /******************************************************************************/
+  61:Drivers/BMP580/common/common.c **** /*                       Public API                                           */
+  62:Drivers/BMP580/common/common.c **** /******************************************************************************/
+  63:Drivers/BMP580/common/common.c **** 
+  64:Drivers/BMP580/common/common.c **** int8_t bmp5_interface_init(struct bmp5_dev *bmp5_dev, I2C_HandleTypeDef *hi2c)
+  65:Drivers/BMP580/common/common.c **** {
+ 225              		.loc 1 65 1 is_stmt 1 view -0
+ 226              		.cfi_startproc
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 229              		@ link register save eliminated.
+  66:Drivers/BMP580/common/common.c ****     if (bmp5_dev == NULL || hi2c == NULL)
+ 230              		.loc 1 66 5 view .LVU45
+ 231              		.loc 1 66 8 is_stmt 0 view .LVU46
+ 232 0000 80B1     		cbz	r0, .L23
+ 233              		.loc 1 66 26 discriminator 1 view .LVU47
+ 234 0002 91B1     		cbz	r1, .L24
+  67:Drivers/BMP580/common/common.c ****         return BMP5_E_NULL_PTR;
+  68:Drivers/BMP580/common/common.c **** 
+  69:Drivers/BMP580/common/common.c ****     bmp5_hi2c    = hi2c;
+ 235              		.loc 1 69 5 is_stmt 1 view .LVU48
+ 236              		.loc 1 69 18 is_stmt 0 view .LVU49
+ 237 0004 0A4A     		ldr	r2, .L25
+ 238 0006 1160     		str	r1, [r2]
+  70:Drivers/BMP580/common/common.c ****     bmp5_i2c_addr = BMP5_I2C_ADDR_SEC;        /* 0x47 – SDO high / secondary address */
+ 239              		.loc 1 70 5 is_stmt 1 view .LVU50
+ 240              		.loc 1 70 19 is_stmt 0 view .LVU51
+ 241 0008 0A4A     		ldr	r2, .L25+4
+ 242 000a 4721     		movs	r1, #71
+ 243              	.LVL24:
+ 244              		.loc 1 70 19 view .LVU52
+ 245 000c 1170     		strb	r1, [r2]
+  71:Drivers/BMP580/common/common.c **** 
+  72:Drivers/BMP580/common/common.c ****     bmp5_dev->read      = bmp5_i2c_read;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 7
+
+
+ 246              		.loc 1 72 5 is_stmt 1 view .LVU53
+ 247              		.loc 1 72 25 is_stmt 0 view .LVU54
+ 248 000e 0A49     		ldr	r1, .L25+8
+ 249 0010 8160     		str	r1, [r0, #8]
+  73:Drivers/BMP580/common/common.c ****     bmp5_dev->write     = bmp5_i2c_write;
+ 250              		.loc 1 73 5 is_stmt 1 view .LVU55
+ 251              		.loc 1 73 25 is_stmt 0 view .LVU56
+ 252 0012 0A49     		ldr	r1, .L25+12
+ 253 0014 C160     		str	r1, [r0, #12]
+  74:Drivers/BMP580/common/common.c ****     bmp5_dev->delay_us  = bmp5_delay_us;
+ 254              		.loc 1 74 5 is_stmt 1 view .LVU57
+ 255              		.loc 1 74 25 is_stmt 0 view .LVU58
+ 256 0016 0A49     		ldr	r1, .L25+16
+ 257 0018 0161     		str	r1, [r0, #16]
+  75:Drivers/BMP580/common/common.c ****     bmp5_dev->intf      = BMP5_I2C_INTF;
+ 258              		.loc 1 75 5 is_stmt 1 view .LVU59
+ 259              		.loc 1 75 25 is_stmt 0 view .LVU60
+ 260 001a 0121     		movs	r1, #1
+ 261 001c 4175     		strb	r1, [r0, #21]
+  76:Drivers/BMP580/common/common.c ****     bmp5_dev->intf_ptr  = &bmp5_i2c_addr;
+ 262              		.loc 1 76 5 is_stmt 1 view .LVU61
+ 263              		.loc 1 76 25 is_stmt 0 view .LVU62
+ 264 001e 4260     		str	r2, [r0, #4]
+  77:Drivers/BMP580/common/common.c **** 
+  78:Drivers/BMP580/common/common.c ****     return BMP5_OK;
+ 265              		.loc 1 78 5 is_stmt 1 view .LVU63
+ 266              		.loc 1 78 12 is_stmt 0 view .LVU64
+ 267 0020 0020     		movs	r0, #0
+ 268              	.LVL25:
+ 269              		.loc 1 78 12 view .LVU65
+ 270 0022 7047     		bx	lr
+ 271              	.LVL26:
+ 272              	.L23:
+  67:Drivers/BMP580/common/common.c **** 
+ 273              		.loc 1 67 16 view .LVU66
+ 274 0024 4FF0FF30 		mov	r0, #-1
+ 275              	.LVL27:
+  67:Drivers/BMP580/common/common.c **** 
+ 276              		.loc 1 67 16 view .LVU67
+ 277 0028 7047     		bx	lr
+ 278              	.LVL28:
+ 279              	.L24:
+  67:Drivers/BMP580/common/common.c **** 
+ 280              		.loc 1 67 16 view .LVU68
+ 281 002a 4FF0FF30 		mov	r0, #-1
+ 282              	.LVL29:
+  79:Drivers/BMP580/common/common.c **** }
+ 283              		.loc 1 79 1 view .LVU69
+ 284 002e 7047     		bx	lr
+ 285              	.L26:
+ 286              		.align	2
+ 287              	.L25:
+ 288 0030 00000000 		.word	bmp5_hi2c
+ 289 0034 00000000 		.word	bmp5_i2c_addr
+ 290 0038 00000000 		.word	bmp5_i2c_read
+ 291 003c 00000000 		.word	bmp5_i2c_write
+ 292 0040 00000000 		.word	bmp5_delay_us
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 8
+
+
+ 293              		.cfi_endproc
+ 294              	.LFE956:
+ 296              		.section	.rodata.bmp5_error_codes_print_result.str1.4,"aMS",%progbits,1
+ 297              		.align	2
+ 298              	.LC0:
+ 299 0000 25730900 		.ascii	"%s\011\000"
+ 300              		.align	2
+ 301              	.LC1:
+ 302 0004 4572726F 		.ascii	"Error [%d] : Null pointer\015\012\000"
+ 302      72205B25 
+ 302      645D203A 
+ 302      204E756C 
+ 302      6C20706F 
+ 303              		.align	2
+ 304              	.LC2:
+ 305 0020 4572726F 		.ascii	"Error [%d] : Communication failure\015\012\000"
+ 305      72205B25 
+ 305      645D203A 
+ 305      20436F6D 
+ 305      6D756E69 
+ 306 0045 000000   		.align	2
+ 307              	.LC3:
+ 308 0048 4572726F 		.ascii	"Error [%d] : Device not found\015\012\000"
+ 308      72205B25 
+ 308      645D203A 
+ 308      20446576 
+ 308      69636520 
+ 309              		.align	2
+ 310              	.LC4:
+ 311 0068 4572726F 		.ascii	"Error [%d] : Invalid chip id\015\012\000"
+ 311      72205B25 
+ 311      645D203A 
+ 311      20496E76 
+ 311      616C6964 
+ 312 0087 00       		.align	2
+ 313              	.LC5:
+ 314 0088 4572726F 		.ascii	"Error [%d] : Power up error\015\012\000"
+ 314      72205B25 
+ 314      645D203A 
+ 314      20506F77 
+ 314      65722075 
+ 315 00a6 0000     		.align	2
+ 316              	.LC6:
+ 317 00a8 4572726F 		.ascii	"Error [%d] : Power-on reset/softreset failure\015\012"
+ 317      72205B25 
+ 317      645D203A 
+ 317      20506F77 
+ 317      65722D6F 
+ 318 00d7 00       		.ascii	"\000"
+ 319              		.align	2
+ 320              	.LC7:
+ 321 00d8 4572726F 		.ascii	"Error [%d] : Invalid powermode\015\012\000"
+ 321      72205B25 
+ 321      645D203A 
+ 321      20496E76 
+ 321      616C6964 
+ 322 00f9 000000   		.align	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 9
+
+
+ 323              	.LC8:
+ 324 00fc 4572726F 		.ascii	"Error [%d] : Unknown error code\015\012\000"
+ 324      72205B25 
+ 324      645D203A 
+ 324      20556E6B 
+ 324      6E6F776E 
+ 325              		.section	.text.bmp5_error_codes_print_result,"ax",%progbits
+ 326              		.align	1
+ 327              		.global	bmp5_error_codes_print_result
+ 328              		.syntax unified
+ 329              		.thumb
+ 330              		.thumb_func
+ 332              	bmp5_error_codes_print_result:
+ 333              	.LVL30:
+ 334              	.LFB957:
+  80:Drivers/BMP580/common/common.c **** 
+  81:Drivers/BMP580/common/common.c **** void bmp5_error_codes_print_result(const char api_name[], int8_t rslt)
+  82:Drivers/BMP580/common/common.c **** {
+ 335              		.loc 1 82 1 is_stmt 1 view -0
+ 336              		.cfi_startproc
+ 337              		@ args = 0, pretend = 0, frame = 0
+ 338              		@ frame_needed = 0, uses_anonymous_args = 0
+  83:Drivers/BMP580/common/common.c ****     if (rslt != BMP5_OK)
+ 339              		.loc 1 83 5 view .LVU71
+ 340              		.loc 1 83 8 is_stmt 0 view .LVU72
+ 341 0000 01B9     		cbnz	r1, .L42
+ 342 0002 7047     		bx	lr
+ 343              	.L42:
+  82:Drivers/BMP580/common/common.c ****     if (rslt != BMP5_OK)
+ 344              		.loc 1 82 1 view .LVU73
+ 345 0004 10B5     		push	{r4, lr}
+ 346              		.cfi_def_cfa_offset 8
+ 347              		.cfi_offset 4, -8
+ 348              		.cfi_offset 14, -4
+ 349 0006 0C46     		mov	r4, r1
+  84:Drivers/BMP580/common/common.c ****     {
+  85:Drivers/BMP580/common/common.c ****         printf("%s\t", api_name);
+ 350              		.loc 1 85 9 is_stmt 1 view .LVU74
+ 351 0008 0146     		mov	r1, r0
+ 352              	.LVL31:
+ 353              		.loc 1 85 9 is_stmt 0 view .LVU75
+ 354 000a 2048     		ldr	r0, .L43
+ 355              	.LVL32:
+ 356              		.loc 1 85 9 view .LVU76
+ 357 000c FFF7FEFF 		bl	printf
+ 358              	.LVL33:
+  86:Drivers/BMP580/common/common.c ****         switch (rslt)
+ 359              		.loc 1 86 9 is_stmt 1 view .LVU77
+ 360 0010 14F1040F 		cmn	r4, #4
+ 361 0014 26D0     		beq	.L29
+ 362 0016 0DDC     		bgt	.L30
+ 363 0018 14F1060F 		cmn	r4, #6
+ 364 001c 2CD0     		beq	.L31
+ 365 001e 14F1050F 		cmn	r4, #5
+ 366 0022 24D0     		beq	.L32
+ 367 0024 14F1070F 		cmn	r4, #7
+ 368 0028 2BD1     		bne	.L34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 10
+
+
+  87:Drivers/BMP580/common/common.c ****         {
+  88:Drivers/BMP580/common/common.c ****             case BMP5_E_NULL_PTR:        printf("Error [%d] : Null pointer\r\n", rslt);            
+  89:Drivers/BMP580/common/common.c ****             case BMP5_E_COM_FAIL:        printf("Error [%d] : Communication failure\r\n", rslt);   
+  90:Drivers/BMP580/common/common.c ****             case BMP5_E_DEV_NOT_FOUND:   printf("Error [%d] : Device not found\r\n", rslt);        
+  91:Drivers/BMP580/common/common.c ****             case BMP5_E_INVALID_CHIP_ID: printf("Error [%d] : Invalid chip id\r\n", rslt);         
+  92:Drivers/BMP580/common/common.c ****             case BMP5_E_POWER_UP:        printf("Error [%d] : Power up error\r\n", rslt);          
+  93:Drivers/BMP580/common/common.c ****             case BMP5_E_POR_SOFTRESET:   printf("Error [%d] : Power-on reset/softreset failure\r\n"
+  94:Drivers/BMP580/common/common.c ****             case BMP5_E_INVALID_POWERMODE: printf("Error [%d] : Invalid powermode\r\n", rslt);     
+ 369              		.loc 1 94 44 view .LVU78
+ 370 002a 2146     		mov	r1, r4
+ 371 002c 1848     		ldr	r0, .L43+4
+ 372 002e FFF7FEFF 		bl	printf
+ 373              	.LVL34:
+ 374              		.loc 1 94 107 discriminator 1 view .LVU79
+ 375              		.loc 1 94 107 is_stmt 0 view .LVU80
+ 376 0032 11E0     		b	.L27
+ 377              	.L30:
+  86:Drivers/BMP580/common/common.c ****         switch (rslt)
+ 378              		.loc 1 86 9 view .LVU81
+ 379 0034 14F1020F 		cmn	r4, #2
+ 380 0038 0FD0     		beq	.L35
+ 381 003a B4F1FF3F 		cmp	r4, #-1
+ 382 003e 07D0     		beq	.L36
+ 383 0040 14F1030F 		cmn	r4, #3
+ 384 0044 1DD1     		bne	.L34
+  90:Drivers/BMP580/common/common.c ****             case BMP5_E_INVALID_CHIP_ID: printf("Error [%d] : Invalid chip id\r\n", rslt);         
+ 385              		.loc 1 90 42 is_stmt 1 view .LVU82
+ 386 0046 2146     		mov	r1, r4
+ 387 0048 1248     		ldr	r0, .L43+8
+ 388 004a FFF7FEFF 		bl	printf
+ 389              	.LVL35:
+  90:Drivers/BMP580/common/common.c ****             case BMP5_E_INVALID_CHIP_ID: printf("Error [%d] : Invalid chip id\r\n", rslt);         
+ 390              		.loc 1 90 107 discriminator 1 view .LVU83
+  90:Drivers/BMP580/common/common.c ****             case BMP5_E_INVALID_CHIP_ID: printf("Error [%d] : Invalid chip id\r\n", rslt);         
+ 391              		.loc 1 90 107 is_stmt 0 view .LVU84
+ 392 004e 03E0     		b	.L27
+ 393              	.L36:
+  88:Drivers/BMP580/common/common.c ****             case BMP5_E_COM_FAIL:        printf("Error [%d] : Communication failure\r\n", rslt);   
+ 394              		.loc 1 88 42 is_stmt 1 view .LVU85
+ 395 0050 2146     		mov	r1, r4
+ 396 0052 1148     		ldr	r0, .L43+12
+ 397 0054 FFF7FEFF 		bl	printf
+ 398              	.LVL36:
+  88:Drivers/BMP580/common/common.c ****             case BMP5_E_COM_FAIL:        printf("Error [%d] : Communication failure\r\n", rslt);   
+ 399              		.loc 1 88 107 discriminator 1 view .LVU86
+ 400              	.L27:
+  95:Drivers/BMP580/common/common.c ****             default:                     printf("Error [%d] : Unknown error code\r\n", rslt);      
+  96:Drivers/BMP580/common/common.c ****         }
+  97:Drivers/BMP580/common/common.c ****     }
+  98:Drivers/BMP580/common/common.c **** }
+ 401              		.loc 1 98 1 is_stmt 0 view .LVU87
+ 402 0058 10BD     		pop	{r4, pc}
+ 403              	.L35:
+  89:Drivers/BMP580/common/common.c ****             case BMP5_E_DEV_NOT_FOUND:   printf("Error [%d] : Device not found\r\n", rslt);        
+ 404              		.loc 1 89 42 is_stmt 1 view .LVU88
+ 405 005a 2146     		mov	r1, r4
+ 406 005c 0F48     		ldr	r0, .L43+16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 11
+
+
+ 407 005e FFF7FEFF 		bl	printf
+ 408              	.LVL37:
+  89:Drivers/BMP580/common/common.c ****             case BMP5_E_DEV_NOT_FOUND:   printf("Error [%d] : Device not found\r\n", rslt);        
+ 409              		.loc 1 89 107 discriminator 1 view .LVU89
+  89:Drivers/BMP580/common/common.c ****             case BMP5_E_DEV_NOT_FOUND:   printf("Error [%d] : Device not found\r\n", rslt);        
+ 410              		.loc 1 89 107 is_stmt 0 view .LVU90
+ 411 0062 F9E7     		b	.L27
+ 412              	.L29:
+  91:Drivers/BMP580/common/common.c ****             case BMP5_E_POWER_UP:        printf("Error [%d] : Power up error\r\n", rslt);          
+ 413              		.loc 1 91 42 is_stmt 1 view .LVU91
+ 414 0064 2146     		mov	r1, r4
+ 415 0066 0E48     		ldr	r0, .L43+20
+ 416 0068 FFF7FEFF 		bl	printf
+ 417              	.LVL38:
+  91:Drivers/BMP580/common/common.c ****             case BMP5_E_POWER_UP:        printf("Error [%d] : Power up error\r\n", rslt);          
+ 418              		.loc 1 91 107 discriminator 1 view .LVU92
+  91:Drivers/BMP580/common/common.c ****             case BMP5_E_POWER_UP:        printf("Error [%d] : Power up error\r\n", rslt);          
+ 419              		.loc 1 91 107 is_stmt 0 view .LVU93
+ 420 006c F4E7     		b	.L27
+ 421              	.L32:
+  92:Drivers/BMP580/common/common.c ****             case BMP5_E_POR_SOFTRESET:   printf("Error [%d] : Power-on reset/softreset failure\r\n"
+ 422              		.loc 1 92 42 is_stmt 1 view .LVU94
+ 423 006e 2146     		mov	r1, r4
+ 424 0070 0C48     		ldr	r0, .L43+24
+ 425 0072 FFF7FEFF 		bl	printf
+ 426              	.LVL39:
+  92:Drivers/BMP580/common/common.c ****             case BMP5_E_POR_SOFTRESET:   printf("Error [%d] : Power-on reset/softreset failure\r\n"
+ 427              		.loc 1 92 107 discriminator 1 view .LVU95
+  92:Drivers/BMP580/common/common.c ****             case BMP5_E_POR_SOFTRESET:   printf("Error [%d] : Power-on reset/softreset failure\r\n"
+ 428              		.loc 1 92 107 is_stmt 0 view .LVU96
+ 429 0076 EFE7     		b	.L27
+ 430              	.L31:
+  93:Drivers/BMP580/common/common.c ****             case BMP5_E_INVALID_POWERMODE: printf("Error [%d] : Invalid powermode\r\n", rslt);     
+ 431              		.loc 1 93 42 is_stmt 1 view .LVU97
+ 432 0078 2146     		mov	r1, r4
+ 433 007a 0B48     		ldr	r0, .L43+28
+ 434 007c FFF7FEFF 		bl	printf
+ 435              	.LVL40:
+  93:Drivers/BMP580/common/common.c ****             case BMP5_E_INVALID_POWERMODE: printf("Error [%d] : Invalid powermode\r\n", rslt);     
+ 436              		.loc 1 93 109 discriminator 1 view .LVU98
+  93:Drivers/BMP580/common/common.c ****             case BMP5_E_INVALID_POWERMODE: printf("Error [%d] : Invalid powermode\r\n", rslt);     
+ 437              		.loc 1 93 109 is_stmt 0 view .LVU99
+ 438 0080 EAE7     		b	.L27
+ 439              	.L34:
+  95:Drivers/BMP580/common/common.c ****         }
+ 440              		.loc 1 95 42 is_stmt 1 view .LVU100
+ 441 0082 2146     		mov	r1, r4
+ 442 0084 0948     		ldr	r0, .L43+32
+ 443 0086 FFF7FEFF 		bl	printf
+ 444              	.LVL41:
+  95:Drivers/BMP580/common/common.c ****         }
+ 445              		.loc 1 95 107 discriminator 1 view .LVU101
+ 446              		.loc 1 98 1 is_stmt 0 view .LVU102
+ 447 008a E5E7     		b	.L27
+ 448              	.L44:
+ 449              		.align	2
+ 450              	.L43:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 12
+
+
+ 451 008c 00000000 		.word	.LC0
+ 452 0090 D8000000 		.word	.LC7
+ 453 0094 48000000 		.word	.LC3
+ 454 0098 04000000 		.word	.LC1
+ 455 009c 20000000 		.word	.LC2
+ 456 00a0 68000000 		.word	.LC4
+ 457 00a4 88000000 		.word	.LC5
+ 458 00a8 A8000000 		.word	.LC6
+ 459 00ac FC000000 		.word	.LC8
+ 460              		.cfi_endproc
+ 461              	.LFE957:
+ 463              		.section	.bss.bmp5_i2c_addr,"aw",%nobits
+ 466              	bmp5_i2c_addr:
+ 467 0000 00       		.space	1
+ 468              		.section	.bss.bmp5_hi2c,"aw",%nobits
+ 469              		.align	2
+ 472              	bmp5_hi2c:
+ 473 0000 00000000 		.space	4
+ 474              		.text
+ 475              	.Letext0:
+ 476              		.file 2 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 477              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 478              		.file 4 "Drivers/BMP580/bmp5_defs.h"
+ 479              		.file 5 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
+ 480              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
+ 481              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
+ 482              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h"
+ 483              		.file 9 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 484              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 common.c
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:21     .text.bmp5_delay_us:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:26     .text.bmp5_delay_us:00000000 bmp5_delay_us
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:65     .text.bmp5_delay_us:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:70     .text.bmp5_i2c_write:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:75     .text.bmp5_i2c_write:00000000 bmp5_i2c_write
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:137    .text.bmp5_i2c_write:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:466    .bss.bmp5_i2c_addr:00000000 bmp5_i2c_addr
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:472    .bss.bmp5_hi2c:00000000 bmp5_hi2c
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:143    .text.bmp5_i2c_read:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:148    .text.bmp5_i2c_read:00000000 bmp5_i2c_read
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:210    .text.bmp5_i2c_read:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:216    .text.bmp5_interface_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:222    .text.bmp5_interface_init:00000000 bmp5_interface_init
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:288    .text.bmp5_interface_init:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:297    .rodata.bmp5_error_codes_print_result.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:326    .text.bmp5_error_codes_print_result:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:332    .text.bmp5_error_codes_print_result:00000000 bmp5_error_codes_print_result
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:451    .text.bmp5_error_codes_print_result:0000008c $d
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:467    .bss.bmp5_i2c_addr:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:469    .bss.bmp5_hi2c:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_Delay
+HAL_I2C_Mem_Write
+HAL_I2C_Mem_Read
+printf

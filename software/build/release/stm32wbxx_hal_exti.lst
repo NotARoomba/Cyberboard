@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccoDYnYC.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccoDYnYC.s 			page 1
   56 0050 0443     		orrs	r4, r4, r0
   57              	.L7:
   58 0052 CEF80448 		str	r4, [lr, #2052]
-ARM GAS  /tmp/ccoDYnYC.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s 			page 2
 
 
   59 0056 0C68     		ldr	r4, [r1]
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccoDYnYC.s 			page 1
  113 00e0 7047     		bx	lr
  114              	.L13:
  115 00e2 0120     		movs	r0, #1
-ARM GAS  /tmp/ccoDYnYC.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s 			page 3
 
 
  116 00e4 7047     		bx	lr
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccoDYnYC.s 			page 1
  172 0072 00F1B040 		add	r0, r0, #1476395008
  173 0076 D0F80408 		ldr	r0, [r0, #2052]
  174 007a 0242     		tst	r2, r0
-ARM GAS  /tmp/ccoDYnYC.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s 			page 4
 
 
  175 007c 03D0     		beq	.L27
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccoDYnYC.s 			page 1
  231 000c CCF30041 		ubfx	r1, ip, #16, #1
  232 0010 0CF01F03 		and	r3, ip, #31
  233 0014 1D46     		mov	r5, r3
-ARM GAS  /tmp/ccoDYnYC.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s 			page 5
 
 
  234 0016 0122     		movs	r2, #1
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccoDYnYC.s 			page 1
  289              		.global	HAL_EXTI_RegisterCallback
  290              		.syntax unified
  291              		.thumb
-ARM GAS  /tmp/ccoDYnYC.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s 			page 6
 
 
  292              		.thumb_func
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccoDYnYC.s 			page 1
  351              	.L57:
  352 002a 08BD     		pop	{r3, pc}
  354              		.section	.text.HAL_EXTI_GetPending,"ax",%progbits
-ARM GAS  /tmp/ccoDYnYC.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s 			page 7
 
 
  355              		.align	1
@@ -418,36 +418,36 @@ ARM GAS  /tmp/ccoDYnYC.s 			page 1
  414 0010 5B01     		lsls	r3, r3, #5
  415 0012 03F1B043 		add	r3, r3, #1476395008
  416 0016 C3F80828 		str	r2, [r3, #2056]
-ARM GAS  /tmp/ccoDYnYC.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s 			page 8
 
 
  417 001a 7047     		bx	lr
  419              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  /tmp/ccoDYnYC.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_exti.c
-     /tmp/ccoDYnYC.s:18     .text.HAL_EXTI_SetConfigLine:00000000 $t
-     /tmp/ccoDYnYC.s:24     .text.HAL_EXTI_SetConfigLine:00000000 HAL_EXTI_SetConfigLine
-     /tmp/ccoDYnYC.s:120    .text.HAL_EXTI_SetConfigLine:000000e8 $d
-     /tmp/ccoDYnYC.s:123    .text.HAL_EXTI_GetConfigLine:00000000 $t
-     /tmp/ccoDYnYC.s:129    .text.HAL_EXTI_GetConfigLine:00000000 HAL_EXTI_GetConfigLine
-     /tmp/ccoDYnYC.s:214    .text.HAL_EXTI_GetConfigLine:000000c8 $d
-     /tmp/ccoDYnYC.s:217    .text.HAL_EXTI_ClearConfigLine:00000000 $t
-     /tmp/ccoDYnYC.s:223    .text.HAL_EXTI_ClearConfigLine:00000000 HAL_EXTI_ClearConfigLine
-     /tmp/ccoDYnYC.s:285    .text.HAL_EXTI_ClearConfigLine:0000009c $d
-     /tmp/ccoDYnYC.s:288    .text.HAL_EXTI_RegisterCallback:00000000 $t
-     /tmp/ccoDYnYC.s:294    .text.HAL_EXTI_RegisterCallback:00000000 HAL_EXTI_RegisterCallback
-     /tmp/ccoDYnYC.s:308    .text.HAL_EXTI_GetHandle:00000000 $t
-     /tmp/ccoDYnYC.s:314    .text.HAL_EXTI_GetHandle:00000000 HAL_EXTI_GetHandle
-     /tmp/ccoDYnYC.s:327    .text.HAL_EXTI_IRQHandler:00000000 $t
-     /tmp/ccoDYnYC.s:333    .text.HAL_EXTI_IRQHandler:00000000 HAL_EXTI_IRQHandler
-     /tmp/ccoDYnYC.s:355    .text.HAL_EXTI_GetPending:00000000 $t
-     /tmp/ccoDYnYC.s:361    .text.HAL_EXTI_GetPending:00000000 HAL_EXTI_GetPending
-     /tmp/ccoDYnYC.s:378    .text.HAL_EXTI_ClearPending:00000000 $t
-     /tmp/ccoDYnYC.s:384    .text.HAL_EXTI_ClearPending:00000000 HAL_EXTI_ClearPending
-     /tmp/ccoDYnYC.s:399    .text.HAL_EXTI_GenerateSWI:00000000 $t
-     /tmp/ccoDYnYC.s:405    .text.HAL_EXTI_GenerateSWI:00000000 HAL_EXTI_GenerateSWI
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:18     .text.HAL_EXTI_SetConfigLine:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:24     .text.HAL_EXTI_SetConfigLine:00000000 HAL_EXTI_SetConfigLine
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:120    .text.HAL_EXTI_SetConfigLine:000000e8 $d
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:123    .text.HAL_EXTI_GetConfigLine:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:129    .text.HAL_EXTI_GetConfigLine:00000000 HAL_EXTI_GetConfigLine
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:214    .text.HAL_EXTI_GetConfigLine:000000c8 $d
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:217    .text.HAL_EXTI_ClearConfigLine:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:223    .text.HAL_EXTI_ClearConfigLine:00000000 HAL_EXTI_ClearConfigLine
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:285    .text.HAL_EXTI_ClearConfigLine:0000009c $d
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:288    .text.HAL_EXTI_RegisterCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:294    .text.HAL_EXTI_RegisterCallback:00000000 HAL_EXTI_RegisterCallback
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:308    .text.HAL_EXTI_GetHandle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:314    .text.HAL_EXTI_GetHandle:00000000 HAL_EXTI_GetHandle
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:327    .text.HAL_EXTI_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:333    .text.HAL_EXTI_IRQHandler:00000000 HAL_EXTI_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:355    .text.HAL_EXTI_GetPending:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:361    .text.HAL_EXTI_GetPending:00000000 HAL_EXTI_GetPending
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:378    .text.HAL_EXTI_ClearPending:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:384    .text.HAL_EXTI_ClearPending:00000000 HAL_EXTI_ClearPending
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:399    .text.HAL_EXTI_GenerateSWI:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchJE3Kj.s:405    .text.HAL_EXTI_GenerateSWI:00000000 HAL_EXTI_GenerateSWI
 
 NO UNDEFINED SYMBOLS

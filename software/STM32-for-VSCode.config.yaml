@@ -48,8 +48,7 @@ assemblyFlags:
   - -ffunction-sections
 
 linkerFlags: 
-  - -Wl,--print-memory-usage
-  - -u _printf_float
+  - -Wl,--print-memory-usage,-u _printf_float
 
 
 # libraries to be included. The -l prefix to the library will be automatically added.
@@ -70,7 +69,6 @@ excludes:
   - "**/Example/**"
   - "**/example/**"
   - "**_template.*"
-  - Drivers/ICM42688/src/**
 
 
 # Include directories (directories containing .h or .hpp files)
@@ -83,6 +81,8 @@ includeDirectories:
   - Core/Src/**
   - Core/Lib/**
   - Drivers/ICM42688/**
+  - Drivers/BMP580/**
+  - Drivers/BMP580/common/**
 
 
 # Files that should be included in the compilation.
@@ -95,6 +95,8 @@ sourceFiles:
   - Core/Src/**
   - Core/Lib/**
   - Drivers/ICM42688/*.c
+  - Drivers/BMP580/*.c
+  - Drivers/BMP580/common/*.c
 
 
 # When no makefile is present it will show a warning pop-up.

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccsVj0FL.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccsVj0FL.s 			page 1
   61              		.section	.text._exit,"ax",%progbits
   62              		.align	1
   63              		.global	_exit
-ARM GAS  /tmp/ccsVj0FL.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s 			page 2
 
 
   64              		.syntax unified
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccsVj0FL.s 			page 1
  123 0012 0135     		adds	r5, r5, #1
  124              	.L13:
  125 0014 B542     		cmp	r5, r6
-ARM GAS  /tmp/ccsVj0FL.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s 			page 3
 
 
  126 0016 F8DB     		blt	.L14
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccsVj0FL.s 			page 1
  189              		.align	1
  190              		.global	_open
  191              		.syntax unified
-ARM GAS  /tmp/ccsVj0FL.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s 			page 4
 
 
  192              		.thumb
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccsVj0FL.s 			page 1
  254              		.global	_stat
  255              		.syntax unified
  256              		.thumb
-ARM GAS  /tmp/ccsVj0FL.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s 			page 5
 
 
  257              		.thumb_func
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccsVj0FL.s 			page 1
  319              		.global	environ
  320              		.section	.data.environ,"aw"
  321              		.align	2
-ARM GAS  /tmp/ccsVj0FL.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s 			page 6
 
 
  324              	environ:
@@ -311,51 +311,51 @@ ARM GAS  /tmp/ccsVj0FL.s 			page 1
  333              		.weak	__io_putchar
  334              		.weak	__io_getchar
  335              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  /tmp/ccsVj0FL.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 syscalls.c
-     /tmp/ccsVj0FL.s:18     .text.initialise_monitor_handles:00000000 $t
-     /tmp/ccsVj0FL.s:24     .text.initialise_monitor_handles:00000000 initialise_monitor_handles
-     /tmp/ccsVj0FL.s:31     .text._getpid:00000000 $t
-     /tmp/ccsVj0FL.s:37     .text._getpid:00000000 _getpid
-     /tmp/ccsVj0FL.s:45     .text._kill:00000000 $t
-     /tmp/ccsVj0FL.s:51     .text._kill:00000000 _kill
-     /tmp/ccsVj0FL.s:62     .text._exit:00000000 $t
-     /tmp/ccsVj0FL.s:68     .text._exit:00000000 _exit
-     /tmp/ccsVj0FL.s:79     .text._read:00000000 $t
-     /tmp/ccsVj0FL.s:85     .text._read:00000000 _read
-     /tmp/ccsVj0FL.s:106    .text._write:00000000 $t
-     /tmp/ccsVj0FL.s:112    .text._write:00000000 _write
-     /tmp/ccsVj0FL.s:131    .text._close:00000000 $t
-     /tmp/ccsVj0FL.s:137    .text._close:00000000 _close
-     /tmp/ccsVj0FL.s:145    .text._fstat:00000000 $t
-     /tmp/ccsVj0FL.s:151    .text._fstat:00000000 _fstat
-     /tmp/ccsVj0FL.s:161    .text._isatty:00000000 $t
-     /tmp/ccsVj0FL.s:167    .text._isatty:00000000 _isatty
-     /tmp/ccsVj0FL.s:175    .text._lseek:00000000 $t
-     /tmp/ccsVj0FL.s:181    .text._lseek:00000000 _lseek
-     /tmp/ccsVj0FL.s:189    .text._open:00000000 $t
-     /tmp/ccsVj0FL.s:195    .text._open:00000000 _open
-     /tmp/ccsVj0FL.s:205    .text._wait:00000000 $t
-     /tmp/ccsVj0FL.s:211    .text._wait:00000000 _wait
-     /tmp/ccsVj0FL.s:222    .text._unlink:00000000 $t
-     /tmp/ccsVj0FL.s:228    .text._unlink:00000000 _unlink
-     /tmp/ccsVj0FL.s:239    .text._times:00000000 $t
-     /tmp/ccsVj0FL.s:245    .text._times:00000000 _times
-     /tmp/ccsVj0FL.s:253    .text._stat:00000000 $t
-     /tmp/ccsVj0FL.s:259    .text._stat:00000000 _stat
-     /tmp/ccsVj0FL.s:269    .text._link:00000000 $t
-     /tmp/ccsVj0FL.s:275    .text._link:00000000 _link
-     /tmp/ccsVj0FL.s:286    .text._fork:00000000 $t
-     /tmp/ccsVj0FL.s:292    .text._fork:00000000 _fork
-     /tmp/ccsVj0FL.s:303    .text._execve:00000000 $t
-     /tmp/ccsVj0FL.s:309    .text._execve:00000000 _execve
-     /tmp/ccsVj0FL.s:324    .data.environ:00000000 environ
-     /tmp/ccsVj0FL.s:321    .data.environ:00000000 $d
-     /tmp/ccsVj0FL.s:331    .bss.__env:00000000 __env
-     /tmp/ccsVj0FL.s:328    .bss.__env:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:18     .text.initialise_monitor_handles:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:24     .text.initialise_monitor_handles:00000000 initialise_monitor_handles
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:31     .text._getpid:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:37     .text._getpid:00000000 _getpid
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:45     .text._kill:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:51     .text._kill:00000000 _kill
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:62     .text._exit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:68     .text._exit:00000000 _exit
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:79     .text._read:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:85     .text._read:00000000 _read
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:106    .text._write:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:112    .text._write:00000000 _write
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:131    .text._close:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:137    .text._close:00000000 _close
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:145    .text._fstat:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:151    .text._fstat:00000000 _fstat
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:161    .text._isatty:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:167    .text._isatty:00000000 _isatty
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:175    .text._lseek:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:181    .text._lseek:00000000 _lseek
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:189    .text._open:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:195    .text._open:00000000 _open
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:205    .text._wait:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:211    .text._wait:00000000 _wait
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:222    .text._unlink:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:228    .text._unlink:00000000 _unlink
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:239    .text._times:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:245    .text._times:00000000 _times
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:253    .text._stat:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:259    .text._stat:00000000 _stat
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:269    .text._link:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:275    .text._link:00000000 _link
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:286    .text._fork:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:292    .text._fork:00000000 _fork
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:303    .text._execve:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:309    .text._execve:00000000 _execve
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:324    .data.environ:00000000 environ
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:321    .data.environ:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:331    .bss.__env:00000000 __env
+C:\Users\Nathan\AppData\Local\Temp\cceLufFS.s:328    .bss.__env:00000000 $d
 
 UNDEFINED SYMBOLS
 __errno

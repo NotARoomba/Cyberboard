@@ -4,6 +4,8 @@
       "name": "STM32",
       "includePath": [
         "Core/Inc",
+        "Drivers/BMP580",
+        "Drivers/BMP580/common",
         "Drivers/CMSIS/Device/ST/STM32WBxx/Include",
         "Drivers/CMSIS/Include",
         "Drivers/ICM42688",
@@ -18,7 +20,7 @@
         "STM32WB55xx",
         "USE_HAL_DRIVER"
       ],
-      "compilerPath": "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/arm-none-eabi-gcc"
+      "compilerPath": "c:\\Users\\Nathan\\AppData\\Roaming\\Code\\User\\globalStorage\\bmd.stm32-for-vscode\\@xpack-dev-tools\\arm-none-eabi-gcc\\15.2.1-1.1.1\\.content\\bin\\arm-none-eabi-gcc.EXE"
     }
   ],
   "version": 4

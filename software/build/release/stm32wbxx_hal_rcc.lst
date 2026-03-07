@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccxIGv2p.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
   56 004c 0CAA     		add	r2, sp, #48
   57 004e 02EB8302 		add	r2, r2, r3, lsl #2
   58 0052 52F8102C 		ldr	r2, [r2, #-16]
-ARM GAS  /tmp/ccxIGv2p.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 2
 
 
   59 0056 A242     		cmp	r2, r4
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  114              		.section	.text.RCC_SetFlashLatencyFromMSIRange,"ax",%progbits
  115              		.align	1
  116              		.syntax unified
-ARM GAS  /tmp/ccxIGv2p.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 3
 
 
  117              		.thumb
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  174 0016 42F00102 		orr	r2, r2, #1
  175 001a 1A60     		str	r2, [r3]
  176              	.L31:
-ARM GAS  /tmp/ccxIGv2p.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 4
 
 
  177 001c 4FF0B043 		mov	r3, #1476395008
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  231 00a4 194A     		ldr	r2, .L42+4
  232 00a6 DA60     		str	r2, [r3, #12]
  233 00a8 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  /tmp/ccxIGv2p.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 5
 
 
  234 00ac 0446     		mov	r4, r0
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  290              		@ args = 0, pretend = 0, frame = 24
  291              		@ frame_needed = 0, uses_anonymous_args = 0
  292 0000 70B5     		push	{r4, r5, r6, lr}
-ARM GAS  /tmp/ccxIGv2p.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 6
 
 
  293 0002 86B0     		sub	sp, sp, #24
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  349              		@ frame_needed = 0, uses_anonymous_args = 0
  350              		@ link register save eliminated.
  351 0000 4FF0B043 		mov	r3, #1476395008
-ARM GAS  /tmp/ccxIGv2p.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 7
 
 
  352 0004 9B68     		ldr	r3, [r3, #8]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  406 007e C3F30623 		ubfx	r3, r3, #8, #7
  407 0082 03FB00F0 		mul	r0, r3, r0
  408 0086 D368     		ldr	r3, [r2, #12]
-ARM GAS  /tmp/ccxIGv2p.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 8
 
 
  409 0088 C3F30213 		ubfx	r3, r3, #4, #3
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  466              		.syntax unified
  467              		.thumb
  468              		.thumb_func
-ARM GAS  /tmp/ccxIGv2p.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 9
 
 
  470              	HAL_RCC_OscConfig:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  524 008a 00F08B80 		beq	.L84
  525 008e 0C2B     		cmp	r3, #12
  526 0090 00F08580 		beq	.L178
-ARM GAS  /tmp/ccxIGv2p.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 10
 
 
  527              	.L85:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  581 0118 5360     		str	r3, [r2, #4]
  582              	.L78:
  583 011a FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
-ARM GAS  /tmp/ccxIGv2p.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 11
 
 
  584 011e BD4B     		ldr	r3, .L194
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  638              	.L178:
  639 019e 032A     		cmp	r2, #3
  640 01a0 7FF478AF 		bne	.L85
-ARM GAS  /tmp/ccxIGv2p.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 12
 
 
  641              	.L84:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  695 0224 6428     		cmp	r0, #100
  696 0226 F4D9     		bls	.L90
  697 0228 0320     		movs	r0, #3
-ARM GAS  /tmp/ccxIGv2p.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 13
 
 
  698 022a 6CE2     		b	.L72
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  752 02ba 24E2     		b	.L72
  753              	.L94:
  754 02bc 4FF0B042 		mov	r2, #1476395008
-ARM GAS  /tmp/ccxIGv2p.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 14
 
 
  755 02c0 1368     		ldr	r3, [r2]
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  809 0358 F3D9     		bls	.L106
  810 035a 0320     		movs	r0, #3
  811 035c D3E1     		b	.L72
-ARM GAS  /tmp/ccxIGv2p.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 15
 
 
  812              	.L101:
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  866 03fa D3F89430 		ldr	r3, [r3, #148]
  867 03fe 13F0020F 		tst	r3, #2
  868 0402 12D0     		beq	.L99
-ARM GAS  /tmp/ccxIGv2p.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 16
 
 
  869 0404 FFF7FEFF 		bl	HAL_GetTick
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  923 0488 0320     		movs	r0, #3
  924 048a 3CE1     		b	.L72
  925              	.L183:
-ARM GAS  /tmp/ccxIGv2p.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 17
 
 
  926 048c FFF7FEFF 		bl	HAL_PWR_EnableBkUpAccess
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  980 0520 FFF7FEFF 		bl	HAL_GetTick
  981 0524 0546     		mov	r5, r0
  982              	.L125:
-ARM GAS  /tmp/ccxIGv2p.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 18
 
 
  983 0526 4FF0B043 		mov	r3, #1476395008
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1037 05ba F3D9     		bls	.L136
  1038 05bc 0320     		movs	r0, #3
  1039 05be A2E0     		b	.L72
-ARM GAS  /tmp/ccxIGv2p.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 19
 
 
  1040              	.L186:
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1094 0644 401B     		subs	r0, r0, r5
  1095 0646 0228     		cmp	r0, #2
  1096 0648 F4D9     		bls	.L130
-ARM GAS  /tmp/ccxIGv2p.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 20
 
 
  1097 064a 0320     		movs	r0, #3
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1151 06c6 1B68     		ldr	r3, [r3]
  1152 06c8 13F0007F 		tst	r3, #33554432
  1153 06cc 06D1     		bne	.L193
-ARM GAS  /tmp/ccxIGv2p.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 21
 
 
  1154 06ce FFF7FEFF 		bl	HAL_GetTick
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1210              	HAL_RCC_ClockConfig:
  1211              		@ args = 0, pretend = 0, frame = 0
  1212              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccxIGv2p.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 22
 
 
  1213 0000 0028     		cmp	r0, #0
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1267 0084 0646     		mov	r6, r0
  1268              	.L201:
  1269 0086 754B     		ldr	r3, .L245
-ARM GAS  /tmp/ccxIGv2p.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 23
 
 
  1270 0088 1B68     		ldr	r3, [r3]
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1324 0110 23F00F03 		bic	r3, r3, #15
  1325 0114 43EA1113 		orr	r3, r3, r1, lsr #4
  1326 0118 C2F80831 		str	r3, [r2, #264]
-ARM GAS  /tmp/ccxIGv2p.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 24
 
 
  1327 011c FFF7FEFF 		bl	HAL_GetTick
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1381 01a6 4FF0B042 		mov	r2, #1476395008
  1382 01aa 1268     		ldr	r2, [r2]
  1383 01ac 12F4003F 		tst	r2, #131072
-ARM GAS  /tmp/ccxIGv2p.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 25
 
 
  1384 01b0 0FD1     		bne	.L215
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1438 0230 A342     		cmp	r3, r4
  1439 0232 06D0     		beq	.L220
  1440 0234 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  /tmp/ccxIGv2p.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 26
 
 
  1441 0238 401B     		subs	r0, r0, r5
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1499              		@ frame_needed = 0, uses_anonymous_args = 0
  1500 0000 08B5     		push	{r3, lr}
  1501 0002 FFF7FEFF 		bl	HAL_RCC_GetSysClockFreq
-ARM GAS  /tmp/ccxIGv2p.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 27
 
 
  1502 0006 4FF0B043 		mov	r3, #1476395008
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1560 001e 00BF     		.align	2
  1561              	.L261:
  1562 0020 00000000 		.word	APBPrescTable
-ARM GAS  /tmp/ccxIGv2p.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 28
 
 
  1564              		.section	.text.HAL_RCC_GetOscConfig,"ax",%progbits
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1619 008a 4FF0B043 		mov	r3, #1476395008
  1620 008e D3F89830 		ldr	r3, [r3, #152]
  1621 0092 03F00103 		and	r3, r3, #1
-ARM GAS  /tmp/ccxIGv2p.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 29
 
 
  1622 0096 8362     		str	r3, [r0, #40]
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1680 0004 1368     		ldr	r3, [r2]
  1681 0006 43F40023 		orr	r3, r3, #524288
  1682 000a 1360     		str	r3, [r2]
-ARM GAS  /tmp/ccxIGv2p.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 30
 
 
  1683 000c 7047     		bx	lr
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1744              	.LC0:
  1745 0000 12000000 		.word	18
  1746 0004 24000000 		.word	36
-ARM GAS  /tmp/ccxIGv2p.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 31
 
 
  1747 0008 36000000 		.word	54
@@ -1813,67 +1813,67 @@ ARM GAS  /tmp/ccxIGv2p.s 			page 1
  1756 0024 02000000 		.word	2
  1757 0028 03000000 		.word	3
  1758              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  /tmp/ccxIGv2p.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 32
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_rcc.c
-     /tmp/ccxIGv2p.s:18     .text.RCC_SetFlashLatency:00000000 $t
-     /tmp/ccxIGv2p.s:23     .text.RCC_SetFlashLatency:00000000 RCC_SetFlashLatency
-     /tmp/ccxIGv2p.s:111    .text.RCC_SetFlashLatency:000000b8 $d
-     /tmp/ccxIGv2p.s:115    .text.RCC_SetFlashLatencyFromMSIRange:00000000 $t
-     /tmp/ccxIGv2p.s:120    .text.RCC_SetFlashLatencyFromMSIRange:00000000 RCC_SetFlashLatencyFromMSIRange
-     /tmp/ccxIGv2p.s:152    .text.RCC_SetFlashLatencyFromMSIRange:00000044 $d
-     /tmp/ccxIGv2p.s:157    .text.HAL_RCC_DeInit:00000000 $t
-     /tmp/ccxIGv2p.s:163    .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
-     /tmp/ccxIGv2p.s:276    .text.HAL_RCC_DeInit:00000108 $d
-     /tmp/ccxIGv2p.s:283    .text.HAL_RCC_MCOConfig:00000000 $t
-     /tmp/ccxIGv2p.s:289    .text.HAL_RCC_MCOConfig:00000000 HAL_RCC_MCOConfig
-     /tmp/ccxIGv2p.s:341    .text.HAL_RCC_GetSysClockFreq:00000000 $t
-     /tmp/ccxIGv2p.s:347    .text.HAL_RCC_GetSysClockFreq:00000000 HAL_RCC_GetSysClockFreq
-     /tmp/ccxIGv2p.s:435    .text.HAL_RCC_GetSysClockFreq:000000b4 $d
-     /tmp/ccxIGv2p.s:440    .text.HAL_RCC_GetHCLKFreq:00000000 $t
-     /tmp/ccxIGv2p.s:446    .text.HAL_RCC_GetHCLKFreq:00000000 HAL_RCC_GetHCLKFreq
-     /tmp/ccxIGv2p.s:461    .text.HAL_RCC_GetHCLKFreq:0000001c $d
-     /tmp/ccxIGv2p.s:464    .text.HAL_RCC_OscConfig:00000000 $t
-     /tmp/ccxIGv2p.s:470    .text.HAL_RCC_OscConfig:00000000 HAL_RCC_OscConfig
-     /tmp/ccxIGv2p.s:878    .text.HAL_RCC_OscConfig:00000414 $d
-     /tmp/ccxIGv2p.s:881    .text.HAL_RCC_OscConfig:0000041c $t
-     /tmp/ccxIGv2p.s:1196   .text.HAL_RCC_OscConfig:0000070c $d
-     /tmp/ccxIGv2p.s:1200   .text.HAL_RCC_OscConfig:00000718 $t
-     /tmp/ccxIGv2p.s:1204   .text.HAL_RCC_ClockConfig:00000000 $t
-     /tmp/ccxIGv2p.s:1210   .text.HAL_RCC_ClockConfig:00000000 HAL_RCC_ClockConfig
-     /tmp/ccxIGv2p.s:1463   .text.HAL_RCC_ClockConfig:0000025c $d
-     /tmp/ccxIGv2p.s:1467   .text.HAL_RCC_GetHCLK2Freq:00000000 $t
-     /tmp/ccxIGv2p.s:1473   .text.HAL_RCC_GetHCLK2Freq:00000000 HAL_RCC_GetHCLK2Freq
-     /tmp/ccxIGv2p.s:1488   .text.HAL_RCC_GetHCLK2Freq:00000020 $d
-     /tmp/ccxIGv2p.s:1491   .text.HAL_RCC_GetHCLK4Freq:00000000 $t
-     /tmp/ccxIGv2p.s:1497   .text.HAL_RCC_GetHCLK4Freq:00000000 HAL_RCC_GetHCLK4Freq
-     /tmp/ccxIGv2p.s:1512   .text.HAL_RCC_GetHCLK4Freq:00000020 $d
-     /tmp/ccxIGv2p.s:1515   .text.HAL_RCC_GetPCLK1Freq:00000000 $t
-     /tmp/ccxIGv2p.s:1521   .text.HAL_RCC_GetPCLK1Freq:00000000 HAL_RCC_GetPCLK1Freq
-     /tmp/ccxIGv2p.s:1537   .text.HAL_RCC_GetPCLK1Freq:00000020 $d
-     /tmp/ccxIGv2p.s:1540   .text.HAL_RCC_GetPCLK2Freq:00000000 $t
-     /tmp/ccxIGv2p.s:1546   .text.HAL_RCC_GetPCLK2Freq:00000000 HAL_RCC_GetPCLK2Freq
-     /tmp/ccxIGv2p.s:1562   .text.HAL_RCC_GetPCLK2Freq:00000020 $d
-     /tmp/ccxIGv2p.s:1565   .text.HAL_RCC_GetOscConfig:00000000 $t
-     /tmp/ccxIGv2p.s:1571   .text.HAL_RCC_GetOscConfig:00000000 HAL_RCC_GetOscConfig
-     /tmp/ccxIGv2p.s:1626   .text.HAL_RCC_GetClockConfig:00000000 $t
-     /tmp/ccxIGv2p.s:1632   .text.HAL_RCC_GetClockConfig:00000000 HAL_RCC_GetClockConfig
-     /tmp/ccxIGv2p.s:1666   .text.HAL_RCC_GetClockConfig:00000048 $d
-     /tmp/ccxIGv2p.s:1669   .text.HAL_RCC_EnableCSS:00000000 $t
-     /tmp/ccxIGv2p.s:1675   .text.HAL_RCC_EnableCSS:00000000 HAL_RCC_EnableCSS
-     /tmp/ccxIGv2p.s:1686   .text.HAL_RCC_CSSCallback:00000000 $t
-     /tmp/ccxIGv2p.s:1692   .text.HAL_RCC_CSSCallback:00000000 HAL_RCC_CSSCallback
-     /tmp/ccxIGv2p.s:1699   .text.HAL_RCC_NMI_IRQHandler:00000000 $t
-     /tmp/ccxIGv2p.s:1705   .text.HAL_RCC_NMI_IRQHandler:00000000 HAL_RCC_NMI_IRQHandler
-     /tmp/ccxIGv2p.s:1723   .text.HAL_RCC_GetResetSource:00000000 $t
-     /tmp/ccxIGv2p.s:1729   .text.HAL_RCC_GetResetSource:00000000 HAL_RCC_GetResetSource
-     /tmp/ccxIGv2p.s:1742   .rodata:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:18     .text.RCC_SetFlashLatency:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:23     .text.RCC_SetFlashLatency:00000000 RCC_SetFlashLatency
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:111    .text.RCC_SetFlashLatency:000000b8 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:115    .text.RCC_SetFlashLatencyFromMSIRange:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:120    .text.RCC_SetFlashLatencyFromMSIRange:00000000 RCC_SetFlashLatencyFromMSIRange
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:152    .text.RCC_SetFlashLatencyFromMSIRange:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:157    .text.HAL_RCC_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:163    .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:276    .text.HAL_RCC_DeInit:00000108 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:283    .text.HAL_RCC_MCOConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:289    .text.HAL_RCC_MCOConfig:00000000 HAL_RCC_MCOConfig
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:341    .text.HAL_RCC_GetSysClockFreq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:347    .text.HAL_RCC_GetSysClockFreq:00000000 HAL_RCC_GetSysClockFreq
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:435    .text.HAL_RCC_GetSysClockFreq:000000b4 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:440    .text.HAL_RCC_GetHCLKFreq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:446    .text.HAL_RCC_GetHCLKFreq:00000000 HAL_RCC_GetHCLKFreq
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:461    .text.HAL_RCC_GetHCLKFreq:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:464    .text.HAL_RCC_OscConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:470    .text.HAL_RCC_OscConfig:00000000 HAL_RCC_OscConfig
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:878    .text.HAL_RCC_OscConfig:00000414 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:881    .text.HAL_RCC_OscConfig:0000041c $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1196   .text.HAL_RCC_OscConfig:0000070c $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1200   .text.HAL_RCC_OscConfig:00000718 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1204   .text.HAL_RCC_ClockConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1210   .text.HAL_RCC_ClockConfig:00000000 HAL_RCC_ClockConfig
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1463   .text.HAL_RCC_ClockConfig:0000025c $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1467   .text.HAL_RCC_GetHCLK2Freq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1473   .text.HAL_RCC_GetHCLK2Freq:00000000 HAL_RCC_GetHCLK2Freq
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1488   .text.HAL_RCC_GetHCLK2Freq:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1491   .text.HAL_RCC_GetHCLK4Freq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1497   .text.HAL_RCC_GetHCLK4Freq:00000000 HAL_RCC_GetHCLK4Freq
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1512   .text.HAL_RCC_GetHCLK4Freq:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1515   .text.HAL_RCC_GetPCLK1Freq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1521   .text.HAL_RCC_GetPCLK1Freq:00000000 HAL_RCC_GetPCLK1Freq
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1537   .text.HAL_RCC_GetPCLK1Freq:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1540   .text.HAL_RCC_GetPCLK2Freq:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1546   .text.HAL_RCC_GetPCLK2Freq:00000000 HAL_RCC_GetPCLK2Freq
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1562   .text.HAL_RCC_GetPCLK2Freq:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1565   .text.HAL_RCC_GetOscConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1571   .text.HAL_RCC_GetOscConfig:00000000 HAL_RCC_GetOscConfig
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1626   .text.HAL_RCC_GetClockConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1632   .text.HAL_RCC_GetClockConfig:00000000 HAL_RCC_GetClockConfig
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1666   .text.HAL_RCC_GetClockConfig:00000048 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1669   .text.HAL_RCC_EnableCSS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1675   .text.HAL_RCC_EnableCSS:00000000 HAL_RCC_EnableCSS
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1686   .text.HAL_RCC_CSSCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1692   .text.HAL_RCC_CSSCallback:00000000 HAL_RCC_CSSCallback
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1699   .text.HAL_RCC_NMI_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1705   .text.HAL_RCC_NMI_IRQHandler:00000000 HAL_RCC_NMI_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1723   .text.HAL_RCC_GetResetSource:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1729   .text.HAL_RCC_GetResetSource:00000000 HAL_RCC_GetResetSource
+C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s:1742   .rodata:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick
-ARM GAS  /tmp/ccxIGv2p.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6IA64v.s 			page 33
 
 
 HAL_PWREx_GetVoltageRange

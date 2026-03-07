@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccqJvKEq.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
   28:Core/Src/system_stm32wbxx.c ****   *        System Clock source                    | MSI
   29:Core/Src/system_stm32wbxx.c ****   *-----------------------------------------------------------------------------
   30:Core/Src/system_stm32wbxx.c ****   *        SYSCLK(Hz)                             | 4000000
-ARM GAS  /tmp/ccqJvKEq.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 2
 
 
   31:Core/Src/system_stm32wbxx.c ****   *-----------------------------------------------------------------------------
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
   85:Core/Src/system_stm32wbxx.c **** #include "stm32wbxx.h"
   86:Core/Src/system_stm32wbxx.c **** 
   87:Core/Src/system_stm32wbxx.c **** #if !defined  (HSE_VALUE)
-ARM GAS  /tmp/ccqJvKEq.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 3
 
 
   88:Core/Src/system_stm32wbxx.c **** #define HSE_VALUE    (32000000UL) /*!< Value of the External oscillator in Hz */
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
  142:Core/Src/system_stm32wbxx.c ****                                                      This value must be a multiple of 0x200. */
  143:Core/Src/system_stm32wbxx.c **** #endif /* VECT_TAB_OFFSET */
  144:Core/Src/system_stm32wbxx.c **** 
-ARM GAS  /tmp/ccqJvKEq.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 4
 
 
  145:Core/Src/system_stm32wbxx.c **** #else
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
  199:Core/Src/system_stm32wbxx.c ****   */
  200:Core/Src/system_stm32wbxx.c **** 
  201:Core/Src/system_stm32wbxx.c **** /** @addtogroup STM32WBxx_System_Private_FunctionPrototypes
-ARM GAS  /tmp/ccqJvKEq.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 5
 
 
  202:Core/Src/system_stm32wbxx.c ****   * @{
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
   49              		.loc 1 235 13 is_stmt 0 view .LVU8
   50 001a 4FF4E022 		mov	r2, #458752
   51 001e 9A60     		str	r2, [r3, #8]
-ARM GAS  /tmp/ccqJvKEq.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 6
 
 
  236:Core/Src/system_stm32wbxx.c **** 
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
  257:Core/Src/system_stm32wbxx.c ****   /* Disable all interrupts */
  258:Core/Src/system_stm32wbxx.c ****   RCC->CIER = 0x00000000;
   85              		.loc 1 258 3 is_stmt 1 view .LVU25
-ARM GAS  /tmp/ccqJvKEq.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 7
 
 
   86              		.loc 1 258 13 is_stmt 0 view .LVU26
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
  293:Core/Src/system_stm32wbxx.c ****   *              32 MHz), user has to ensure that HSE_VALUE is same as the real
  294:Core/Src/system_stm32wbxx.c ****   *              frequency of the crystal used. Otherwise, this function may
  295:Core/Src/system_stm32wbxx.c ****   *              have wrong result.
-ARM GAS  /tmp/ccqJvKEq.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 8
 
 
  296:Core/Src/system_stm32wbxx.c ****   *
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
  136              		.loc 1 321 7 is_stmt 1 view .LVU38
  137              		.loc 1 321 23 is_stmt 0 view .LVU39
  138 0022 224B     		ldr	r3, .L17+4
-ARM GAS  /tmp/ccqJvKEq.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 9
 
 
  139 0024 224A     		ldr	r2, .L17+8
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
  344:Core/Src/system_stm32wbxx.c ****       {
  345:Core/Src/system_stm32wbxx.c ****         pllvco = (msirange / pllm);
  170              		.loc 1 345 9 is_stmt 1 view .LVU53
-ARM GAS  /tmp/ccqJvKEq.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 10
 
 
  171              		.loc 1 345 16 is_stmt 0 view .LVU54
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
  353:Core/Src/system_stm32wbxx.c **** 
  354:Core/Src/system_stm32wbxx.c ****     default:
  355:Core/Src/system_stm32wbxx.c ****       SystemCoreClock = msirange;
-ARM GAS  /tmp/ccqJvKEq.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 11
 
 
  356:Core/Src/system_stm32wbxx.c ****       break;
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
  252              		.loc 1 337 16 view .LVU86
  253 0098 D8E7     		b	.L13
  254              	.LVL17:
-ARM GAS  /tmp/ccqJvKEq.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 12
 
 
  255              	.L16:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
  305 003c 06000000 		.word	6
  306 0040 04000000 		.word	4
  307 0044 08000000 		.word	8
-ARM GAS  /tmp/ccqJvKEq.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 13
 
 
  308 0048 04000000 		.word	4
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
  368 0030 40000000 		.word	64
  369 0034 80000000 		.word	128
  370 0038 00010000 		.word	256
-ARM GAS  /tmp/ccqJvKEq.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 14
 
 
  371 003c 00020000 		.word	512
@@ -789,31 +789,31 @@ ARM GAS  /tmp/ccqJvKEq.s 			page 1
  378 0000 00093D00 		.word	4000000
  379              		.text
  380              	.Letext0:
- 381              		.file 2 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
- 382              		.file 3 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ 381              		.file 2 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 382              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
  383              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
  384              		.file 5 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/system_stm32wbxx.h"
  385              		.file 6 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
-ARM GAS  /tmp/ccqJvKEq.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_stm32wbxx.c
-     /tmp/ccqJvKEq.s:21     .text.SystemInit:00000000 $t
-     /tmp/ccqJvKEq.s:27     .text.SystemInit:00000000 SystemInit
-     /tmp/ccqJvKEq.s:94     .text.SystemInit:0000005c $d
-     /tmp/ccqJvKEq.s:100    .text.SystemCoreClockUpdate:00000000 $t
-     /tmp/ccqJvKEq.s:106    .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
-     /tmp/ccqJvKEq.s:276    .text.SystemCoreClockUpdate:000000a8 $d
-     /tmp/ccqJvKEq.s:319    .rodata.MSIRangeTable:00000000 MSIRangeTable
-     /tmp/ccqJvKEq.s:377    .data.SystemCoreClock:00000000 SystemCoreClock
-     /tmp/ccqJvKEq.s:355    .rodata.AHBPrescTable:00000000 AHBPrescTable
-     /tmp/ccqJvKEq.s:289    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
-     /tmp/ccqJvKEq.s:286    .rodata.SmpsPrescalerTable:00000000 $d
-     /tmp/ccqJvKEq.s:316    .rodata.MSIRangeTable:00000000 $d
-     /tmp/ccqJvKEq.s:341    .rodata.APBPrescTable:00000000 APBPrescTable
-     /tmp/ccqJvKEq.s:338    .rodata.APBPrescTable:00000000 $d
-     /tmp/ccqJvKEq.s:352    .rodata.AHBPrescTable:00000000 $d
-     /tmp/ccqJvKEq.s:374    .data.SystemCoreClock:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:21     .text.SystemInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:27     .text.SystemInit:00000000 SystemInit
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:94     .text.SystemInit:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:100    .text.SystemCoreClockUpdate:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:106    .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:276    .text.SystemCoreClockUpdate:000000a8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:319    .rodata.MSIRangeTable:00000000 MSIRangeTable
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:377    .data.SystemCoreClock:00000000 SystemCoreClock
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:355    .rodata.AHBPrescTable:00000000 AHBPrescTable
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:289    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:286    .rodata.SmpsPrescalerTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:316    .rodata.MSIRangeTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:341    .rodata.APBPrescTable:00000000 APBPrescTable
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:338    .rodata.APBPrescTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:352    .rodata.AHBPrescTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccVxS14f.s:374    .data.SystemCoreClock:00000000 $d
 
 NO UNDEFINED SYMBOLS

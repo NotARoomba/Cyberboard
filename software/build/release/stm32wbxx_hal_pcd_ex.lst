@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccqtgApA.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccqtgApA.s 			page 1
   57              		.align	1
   58              		.global	HAL_PCDEx_ActivateBCD
   59              		.syntax unified
-ARM GAS  /tmp/ccqtgApA.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s 			page 2
 
 
   60              		.thumb
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccqtgApA.s 			page 1
  119              		@ link register save eliminated.
  120 0000 0346     		mov	r3, r0
  121 0002 0268     		ldr	r2, [r0]
-ARM GAS  /tmp/ccqtgApA.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s 			page 3
 
 
  122 0004 0121     		movs	r1, #1
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccqtgApA.s 			page 1
  181              		.thumb_func
  183              	HAL_PCDEx_BCD_Callback:
  184              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/ccqtgApA.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s 			page 4
 
 
  185              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccqtgApA.s 			page 1
  241 007a FD21     		movs	r1, #253
  242 007c 2046     		mov	r0, r4
  243 007e FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
-ARM GAS  /tmp/ccqtgApA.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s 			page 5
 
 
  244              	.L15:
@@ -259,27 +259,27 @@ ARM GAS  /tmp/ccqtgApA.s 			page 1
  259 00a2 FFF7FEFF 		bl	HAL_PCDEx_BCD_Callback
  260 00a6 F9E7     		b	.L12
  262              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  /tmp/ccqtgApA.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_pcd_ex.c
-     /tmp/ccqtgApA.s:18     .text.HAL_PCDEx_PMAConfig:00000000 $t
-     /tmp/ccqtgApA.s:24     .text.HAL_PCDEx_PMAConfig:00000000 HAL_PCDEx_PMAConfig
-     /tmp/ccqtgApA.s:57     .text.HAL_PCDEx_ActivateBCD:00000000 $t
-     /tmp/ccqtgApA.s:63     .text.HAL_PCDEx_ActivateBCD:00000000 HAL_PCDEx_ActivateBCD
-     /tmp/ccqtgApA.s:88     .text.HAL_PCDEx_DeActivateBCD:00000000 $t
-     /tmp/ccqtgApA.s:94     .text.HAL_PCDEx_DeActivateBCD:00000000 HAL_PCDEx_DeActivateBCD
-     /tmp/ccqtgApA.s:110    .text.HAL_PCDEx_ActivateLPM:00000000 $t
-     /tmp/ccqtgApA.s:116    .text.HAL_PCDEx_ActivateLPM:00000000 HAL_PCDEx_ActivateLPM
-     /tmp/ccqtgApA.s:137    .text.HAL_PCDEx_DeActivateLPM:00000000 $t
-     /tmp/ccqtgApA.s:143    .text.HAL_PCDEx_DeActivateLPM:00000000 HAL_PCDEx_DeActivateLPM
-     /tmp/ccqtgApA.s:164    .text.HAL_PCDEx_LPM_Callback:00000000 $t
-     /tmp/ccqtgApA.s:170    .text.HAL_PCDEx_LPM_Callback:00000000 HAL_PCDEx_LPM_Callback
-     /tmp/ccqtgApA.s:177    .text.HAL_PCDEx_BCD_Callback:00000000 $t
-     /tmp/ccqtgApA.s:183    .text.HAL_PCDEx_BCD_Callback:00000000 HAL_PCDEx_BCD_Callback
-     /tmp/ccqtgApA.s:190    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 $t
-     /tmp/ccqtgApA.s:196    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 HAL_PCDEx_BCD_VBUSDetect
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:18     .text.HAL_PCDEx_PMAConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:24     .text.HAL_PCDEx_PMAConfig:00000000 HAL_PCDEx_PMAConfig
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:57     .text.HAL_PCDEx_ActivateBCD:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:63     .text.HAL_PCDEx_ActivateBCD:00000000 HAL_PCDEx_ActivateBCD
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:88     .text.HAL_PCDEx_DeActivateBCD:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:94     .text.HAL_PCDEx_DeActivateBCD:00000000 HAL_PCDEx_DeActivateBCD
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:110    .text.HAL_PCDEx_ActivateLPM:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:116    .text.HAL_PCDEx_ActivateLPM:00000000 HAL_PCDEx_ActivateLPM
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:137    .text.HAL_PCDEx_DeActivateLPM:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:143    .text.HAL_PCDEx_DeActivateLPM:00000000 HAL_PCDEx_DeActivateLPM
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:164    .text.HAL_PCDEx_LPM_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:170    .text.HAL_PCDEx_LPM_Callback:00000000 HAL_PCDEx_LPM_Callback
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:177    .text.HAL_PCDEx_BCD_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:183    .text.HAL_PCDEx_BCD_Callback:00000000 HAL_PCDEx_BCD_Callback
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:190    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cce7p2zp.s:196    .text.HAL_PCDEx_BCD_VBUSDetect:00000000 HAL_PCDEx_BCD_VBUSDetect
 
 UNDEFINED SYMBOLS
 HAL_GetTick

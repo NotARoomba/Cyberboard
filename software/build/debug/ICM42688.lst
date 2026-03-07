@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cchAWY9c.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
   31              		@ args = 0, pretend = 0, frame = 16
   32              		@ frame_needed = 0, uses_anonymous_args = 0
   33              		.loc 1 25 68 is_stmt 0 view .LVU1
-ARM GAS  /tmp/cchAWY9c.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 2
 
 
   34 0000 F0B5     		push	{r4, r5, r6, r7, lr}
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
   78 0026 2068     		ldr	r0, [r4]
   79 0028 FFF7FEFF 		bl	HAL_SPI_Transmit
   80              	.LVL6:
-ARM GAS  /tmp/cchAWY9c.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 3
 
 
   81 002c 0746     		mov	r7, r0
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
   12:Drivers/ICM42688/ICM42688.c ****   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_RESET);
  120              		.loc 1 12 20 view .LVU28
  121              	.LBB40:
-ARM GAS  /tmp/cchAWY9c.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 4
 
 
   13:Drivers/ICM42688/ICM42688.c **** }
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  163              		.loc 1 49 3 is_stmt 1 view .LVU41
  164              		.loc 1 49 26 is_stmt 0 view .LVU42
  165 007c 9E42     		cmp	r6, r3
-ARM GAS  /tmp/cchAWY9c.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 5
 
 
  166 007e 08D1     		bne	.L5
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
   64:Drivers/ICM42688/ICM42688.c ****   memset(tx_buf, 0, count + 1);
   65:Drivers/ICM42688/ICM42688.c ****   tx_buf[0] = reg | 0x80; /* bit 7 = 1 → read */
   66:Drivers/ICM42688/ICM42688.c **** 
-ARM GAS  /tmp/cchAWY9c.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 6
 
 
   67:Drivers/ICM42688/ICM42688.c ****   cs_low(h);
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  237 0014 0020     		movs	r0, #0
  238              	.LVL25:
   84:Drivers/ICM42688/ICM42688.c ****     return 0;
-ARM GAS  /tmp/cchAWY9c.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 7
 
 
  239              		.loc 1 84 12 view .LVU60
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  286 0018 0021     		movs	r1, #0
  287              	.LVL28:
   64:Drivers/ICM42688/ICM42688.c ****   tx_buf[0] = reg | 0x80; /* bit 7 = 1 → read */
-ARM GAS  /tmp/cchAWY9c.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 8
 
 
  288              		.loc 1 64 3 view .LVU70
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  330              		.loc 1 18 3 view .LVU82
  331 0044 0122     		movs	r2, #1
  332 0046 2189     		ldrh	r1, [r4, #8]
-ARM GAS  /tmp/cchAWY9c.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 9
 
 
  333 0048 6068     		ldr	r0, [r4, #4]
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  378              		.cfi_offset 7, -16
  379              		.cfi_offset 8, -12
  380              		.cfi_offset 9, -8
-ARM GAS  /tmp/cchAWY9c.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 10
 
 
  381              		.cfi_offset 14, -4
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
   95:Drivers/ICM42688/ICM42688.c ****     return 0;
   96:Drivers/ICM42688/ICM42688.c ****   return val;
  429              		.loc 1 96 3 is_stmt 1 view .LVU101
-ARM GAS  /tmp/cchAWY9c.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 11
 
 
  430              		.loc 1 96 10 is_stmt 0 view .LVU102
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  479              		.loc 1 102 3 view .LVU110
  480              		.loc 1 102 7 is_stmt 0 view .LVU111
  481 000e 0DF10703 		add	r3, sp, #7
-ARM GAS  /tmp/cchAWY9c.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 12
 
 
  482 0012 0122     		movs	r2, #1
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  527 005c 0020     		movs	r0, #0
  528              	.L23:
  112:Drivers/ICM42688/ICM42688.c **** }
-ARM GAS  /tmp/cchAWY9c.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 13
 
 
  529              		.loc 1 112 1 view .LVU130
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  580 000a FFF7FEFF 		bl	set_bank
  581              	.LVL52:
  116:Drivers/ICM42688/ICM42688.c ****   uint8_t reg;
-ARM GAS  /tmp/cchAWY9c.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 14
 
 
  582              		.loc 1 116 3 is_stmt 1 view .LVU137
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  628              		.loc 1 124 14 is_stmt 0 view .LVU155
  629 005e 6575     		strb	r5, [r4, #21]
  125:Drivers/ICM42688/ICM42688.c ****   return 0;
-ARM GAS  /tmp/cchAWY9c.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 15
 
 
  630              		.loc 1 125 3 is_stmt 1 view .LVU156
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  681 0006 0D46     		mov	r5, r1
  129:Drivers/ICM42688/ICM42688.c ****   set_bank(h, 0);
  682              		.loc 1 129 3 is_stmt 1 view .LVU163
-ARM GAS  /tmp/cchAWY9c.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 16
 
 
  683 0008 0021     		movs	r1, #0
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  132:Drivers/ICM42688/ICM42688.c ****   reg = (uint8_t)odr | (reg & 0xF0);
  729              		.loc 1 132 12 view .LVU177
  730 0042 4FF0FF30 		mov	r0, #-1
-ARM GAS  /tmp/cchAWY9c.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 17
 
 
  731 0046 FAE7     		b	.L37
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  143:Drivers/ICM42688/ICM42688.c ****     return -1;
  144:Drivers/ICM42688/ICM42688.c ****   reg = (uint8_t)odr | (reg & 0xF0);
  781              		.loc 1 144 3 is_stmt 1 view .LVU187
-ARM GAS  /tmp/cchAWY9c.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 18
 
 
  782              		.loc 1 144 29 is_stmt 0 view .LVU188
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  830              		.loc 1 150 39 is_stmt 1 view -0
  831              		.cfi_startproc
  832              		@ args = 0, pretend = 0, frame = 8
-ARM GAS  /tmp/cchAWY9c.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 19
 
 
  833              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  876 001c 3022     		movs	r2, #48
  877              	.LVL73:
  878              		.loc 1 157 35 view .LVU211
-ARM GAS  /tmp/cchAWY9c.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 20
 
 
  879 001e DA61     		str	r2, [r3, #28]
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  919              	.LVL78:
  920              	.LBB53:
  166:Drivers/ICM42688/ICM42688.c **** 
-ARM GAS  /tmp/cchAWY9c.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 21
 
 
  167:Drivers/ICM42688/ICM42688.c ****   /* ── Dummy read to fully activate SPI interface ── */
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  963              	.LVL82:
   18:Drivers/ICM42688/ICM42688.c **** }
  964              		.loc 1 18 3 is_stmt 0 view .LVU235
-ARM GAS  /tmp/cchAWY9c.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 22
 
 
  965              	.LBE57:
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  1004              		.loc 1 18 3 view .LVU246
  1005 009a 0122     		movs	r2, #1
  1006 009c 2189     		ldrh	r1, [r4, #8]
-ARM GAS  /tmp/cchAWY9c.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 23
 
 
  1007 009e 6068     		ldr	r0, [r4, #4]
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  1047              		.loc 1 18 3 is_stmt 0 view .LVU257
  1048              	.LBE66:
  1049              	.LBE65:
-ARM GAS  /tmp/cchAWY9c.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 24
 
 
  191:Drivers/ICM42688/ICM42688.c ****   HAL_Delay(1);
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  1090 00e6 F2E7     		b	.L48
  1091              	.LVL100:
  1092              	.L49:
-ARM GAS  /tmp/cchAWY9c.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 25
 
 
  198:Drivers/ICM42688/ICM42688.c ****     wai = ICM42688_WhoAmI(h);
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  218:Drivers/ICM42688/ICM42688.c ****     return -4;
  219:Drivers/ICM42688/ICM42688.c **** 
  220:Drivers/ICM42688/ICM42688.c ****   /* default ODR: 1 kHz */
-ARM GAS  /tmp/cchAWY9c.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 26
 
 
  221:Drivers/ICM42688/ICM42688.c ****   if (ICM42688_SetAccelODR(h, ICM42688_ODR_1K) < 0)
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  1173 0156 2046     		mov	r0, r4
  1174 0158 FFF7FEFF 		bl	set_bank
  1175              	.LVL111:
-ARM GAS  /tmp/cchAWY9c.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 27
 
 
  233:Drivers/ICM42688/ICM42688.c **** 
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  224:Drivers/ICM42688/ICM42688.c **** 
  1218              		.loc 1 224 12 view .LVU310
  1219 018e 6FF00500 		mvn	r0, #5
-ARM GAS  /tmp/cchAWY9c.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 28
 
 
  1220 0192 EAE7     		b	.L47
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  1268              		.loc 1 247 19 is_stmt 0 view .LVU321
  1269 001a 9DF80F30 		ldrb	r3, [sp, #15]	@ zero_extendqisi2
  1270              		.loc 1 247 10 view .LVU322
-ARM GAS  /tmp/cchAWY9c.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 29
 
 
  1271 001e 13F0080F 		tst	r3, #8
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  1312              		.loc 1 260 19 view .LVU337
  1313 005e 1B02     		lsls	r3, r3, #8
  1314 0060 1BB2     		sxth	r3, r3
-ARM GAS  /tmp/cchAWY9c.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 30
 
 
  1315              		.loc 1 260 56 view .LVU338
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  1365 00aa 0B43     		orrs	r3, r3, r1
  1366 00ac 06EE903A 		vmov	s13, r3	@ int
  1367              	.LVL126:
-ARM GAS  /tmp/cchAWY9c.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 31
 
 
  265:Drivers/ICM42688/ICM42688.c ****   int16_t raw_gy = (int16_t)((uint16_t)buf[10] << 8 | buf[11]);
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  1415 00f4 D4ED035A 		vldr.32	s11, [r4, #12]
  1416              		.loc 1 271 24 view .LVU382
  1417 00f8 B8EEC66A 		vcvt.f32.s32	s12, s12
-ARM GAS  /tmp/cchAWY9c.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 32
 
 
  1418              	.LVL132:
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  1466              		.loc 1 277 10 is_stmt 0 view .LVU406
  1467 0150 0020     		movs	r0, #0
  1468              	.LVL136:
-ARM GAS  /tmp/cchAWY9c.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 33
 
 
  1469              	.L59:
@@ -1949,45 +1949,45 @@ ARM GAS  /tmp/cchAWY9c.s 			page 1
  1491              	.LFE961:
  1493              		.text
  1494              	.Letext0:
- 1495              		.file 2 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
- 1496              		.file 3 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ 1495              		.file 2 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 1496              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
  1497              		.file 4 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
  1498              		.file 5 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
  1499              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_dma.h"
  1500              		.file 7 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
  1501              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_spi.h"
  1502              		.file 9 "Drivers/ICM42688/ICM42688.h"
- 1503              		.file 10 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-n
+ 1503              		.file 10 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
  1504              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
  1505              		.file 12 "<built-in>"
-ARM GAS  /tmp/cchAWY9c.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s 			page 34
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ICM42688.c
-     /tmp/cchAWY9c.s:21     .text.write_reg:00000000 $t
-     /tmp/cchAWY9c.s:26     .text.write_reg:00000000 write_reg
-     /tmp/cchAWY9c.s:197    .text.set_bank:00000000 $t
-     /tmp/cchAWY9c.s:202    .text.set_bank:00000000 set_bank
-     /tmp/cchAWY9c.s:245    .text.read_regs:00000000 $t
-     /tmp/cchAWY9c.s:250    .text.read_regs:00000000 read_regs
-     /tmp/cchAWY9c.s:389    .text.ICM42688_WhoAmI:00000000 $t
-     /tmp/cchAWY9c.s:395    .text.ICM42688_WhoAmI:00000000 ICM42688_WhoAmI
-     /tmp/cchAWY9c.s:449    .text.ICM42688_SetAccelFS:00000000 $t
-     /tmp/cchAWY9c.s:455    .text.ICM42688_SetAccelFS:00000000 ICM42688_SetAccelFS
-     /tmp/cchAWY9c.s:548    .text.ICM42688_SetAccelFS:00000070 $d
-     /tmp/cchAWY9c.s:553    .text.ICM42688_SetGyroFS:00000000 $t
-     /tmp/cchAWY9c.s:559    .text.ICM42688_SetGyroFS:00000000 ICM42688_SetGyroFS
-     /tmp/cchAWY9c.s:653    .text.ICM42688_SetGyroFS:00000074 $d
-     /tmp/cchAWY9c.s:659    .text.ICM42688_SetAccelODR:00000000 $t
-     /tmp/cchAWY9c.s:665    .text.ICM42688_SetAccelODR:00000000 ICM42688_SetAccelODR
-     /tmp/cchAWY9c.s:740    .text.ICM42688_SetGyroODR:00000000 $t
-     /tmp/cchAWY9c.s:746    .text.ICM42688_SetGyroODR:00000000 ICM42688_SetGyroODR
-     /tmp/cchAWY9c.s:821    .text.ICM42688_Init:00000000 $t
-     /tmp/cchAWY9c.s:827    .text.ICM42688_Init:00000000 ICM42688_Init
-     /tmp/cchAWY9c.s:1225   .text.ICM42688_ReadOnce:00000000 $t
-     /tmp/cchAWY9c.s:1231   .text.ICM42688_ReadOnce:00000000 ICM42688_ReadOnce
-     /tmp/cchAWY9c.s:1489   .text.ICM42688_ReadOnce:00000164 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:21     .text.write_reg:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:26     .text.write_reg:00000000 write_reg
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:197    .text.set_bank:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:202    .text.set_bank:00000000 set_bank
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:245    .text.read_regs:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:250    .text.read_regs:00000000 read_regs
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:389    .text.ICM42688_WhoAmI:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:395    .text.ICM42688_WhoAmI:00000000 ICM42688_WhoAmI
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:449    .text.ICM42688_SetAccelFS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:455    .text.ICM42688_SetAccelFS:00000000 ICM42688_SetAccelFS
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:548    .text.ICM42688_SetAccelFS:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:553    .text.ICM42688_SetGyroFS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:559    .text.ICM42688_SetGyroFS:00000000 ICM42688_SetGyroFS
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:653    .text.ICM42688_SetGyroFS:00000074 $d
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:659    .text.ICM42688_SetAccelODR:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:665    .text.ICM42688_SetAccelODR:00000000 ICM42688_SetAccelODR
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:740    .text.ICM42688_SetGyroODR:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:746    .text.ICM42688_SetGyroODR:00000000 ICM42688_SetGyroODR
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:821    .text.ICM42688_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:827    .text.ICM42688_Init:00000000 ICM42688_Init
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:1225   .text.ICM42688_ReadOnce:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:1231   .text.ICM42688_ReadOnce:00000000 ICM42688_ReadOnce
+C:\Users\Nathan\AppData\Local\Temp\ccsFXu1N.s:1489   .text.ICM42688_ReadOnce:00000164 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

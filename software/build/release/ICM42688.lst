@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cctkd8x0.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
   56 0052 2189     		ldrh	r1, [r4, #8]
   57 0054 6068     		ldr	r0, [r4, #4]
   58 0056 FFF7FEFF 		bl	HAL_GPIO_WritePin
-ARM GAS  /tmp/cctkd8x0.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 2
 
 
   59 005a 6423     		movs	r3, #100
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  116              		.thumb
  117              		.thumb_func
  119              	read_regs:
-ARM GAS  /tmp/cctkd8x0.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 3
 
 
  120              		@ args = 0, pretend = 0, frame = 32
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  175              		.thumb
  176              		.thumb_func
  178              	ICM42688_WhoAmI:
-ARM GAS  /tmp/cctkd8x0.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 4
 
 
  179              		@ args = 0, pretend = 0, frame = 8
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  235 003a 0028     		cmp	r0, #0
  236 003c 14DB     		blt	.L26
  237 003e C5F10402 		rsb	r2, r5, #4
-ARM GAS  /tmp/cctkd8x0.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 5
 
 
  238 0042 0123     		movs	r3, #1
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  294 003c 16DB     		blt	.L33
  295 003e 0123     		movs	r3, #1
  296 0040 AB40     		lsls	r3, r3, r5
-ARM GAS  /tmp/cctkd8x0.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 6
 
 
  297 0042 07EE903A 		vmov	s15, r3	@ int
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  353 0038 0028     		cmp	r0, #0
  354 003a 05DB     		blt	.L40
  355 003c 0020     		movs	r0, #0
-ARM GAS  /tmp/cctkd8x0.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 7
 
 
  356              	.L37:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  413              		.align	1
  414              		.global	ICM42688_Init
  415              		.syntax unified
-ARM GAS  /tmp/cctkd8x0.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 8
 
 
  416              		.thumb
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  471 007c 40F21113 		movw	r3, #273
  472 0080 ADF80C30 		strh	r3, [sp, #12]	@ movhi
  473 0084 2A46     		mov	r2, r5
-ARM GAS  /tmp/cctkd8x0.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 9
 
 
  474 0086 2189     		ldrh	r1, [r4, #8]
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  528 0108 0028     		cmp	r0, #0
  529 010a 37DB     		blt	.L54
  530 010c 0021     		movs	r1, #0
-ARM GAS  /tmp/cctkd8x0.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 10
 
 
  531 010e 2046     		mov	r0, r4
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  585 018c EDE7     		b	.L47
  586              	.L57:
  587 018e 6FF00500 		mvn	r0, #5
-ARM GAS  /tmp/cctkd8x0.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 11
 
 
  588 0192 EAE7     		b	.L47
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  644 0074 0B43     		orrs	r3, r3, r1
  645 0076 05EE103A 		vmov	s10, r3	@ int
  646 007a 9DF80430 		ldrb	r3, [sp, #4]	@ zero_extendqisi2
-ARM GAS  /tmp/cctkd8x0.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 12
 
 
  647 007e 1B02     		lsls	r3, r3, #8
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  701 0138 F8EEE77A 		vcvt.f32.s32	s15, s15
  702 013c DFED096A 		vldr.32	s13, .L68
  703 0140 87EEA67A 		vdiv.f32	s14, s15, s13
-ARM GAS  /tmp/cctkd8x0.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 13
 
 
  704 0144 F3EE097A 		vmov.f32	s15, #2.5e+1
@@ -740,34 +740,34 @@ ARM GAS  /tmp/cctkd8x0.s 			page 1
  720              	.L68:
  721 0164 E17A0443 		.word	1124367073
  723              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  /tmp/cctkd8x0.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ICM42688.c
-     /tmp/cctkd8x0.s:18     .text.write_reg:00000000 $t
-     /tmp/cctkd8x0.s:23     .text.write_reg:00000000 write_reg
-     /tmp/cctkd8x0.s:91     .text.set_bank:00000000 $t
-     /tmp/cctkd8x0.s:96     .text.set_bank:00000000 set_bank
-     /tmp/cctkd8x0.s:114    .text.read_regs:00000000 $t
-     /tmp/cctkd8x0.s:119    .text.read_regs:00000000 read_regs
-     /tmp/cctkd8x0.s:172    .text.ICM42688_WhoAmI:00000000 $t
-     /tmp/cctkd8x0.s:178    .text.ICM42688_WhoAmI:00000000 ICM42688_WhoAmI
-     /tmp/cctkd8x0.s:205    .text.ICM42688_SetAccelFS:00000000 $t
-     /tmp/cctkd8x0.s:211    .text.ICM42688_SetAccelFS:00000000 ICM42688_SetAccelFS
-     /tmp/cctkd8x0.s:260    .text.ICM42688_SetAccelFS:00000070 $d
-     /tmp/cctkd8x0.s:263    .text.ICM42688_SetGyroFS:00000000 $t
-     /tmp/cctkd8x0.s:269    .text.ICM42688_SetGyroFS:00000000 ICM42688_SetGyroFS
-     /tmp/cctkd8x0.s:319    .text.ICM42688_SetGyroFS:00000074 $d
-     /tmp/cctkd8x0.s:323    .text.ICM42688_SetAccelODR:00000000 $t
-     /tmp/cctkd8x0.s:329    .text.ICM42688_SetAccelODR:00000000 ICM42688_SetAccelODR
-     /tmp/cctkd8x0.s:368    .text.ICM42688_SetGyroODR:00000000 $t
-     /tmp/cctkd8x0.s:374    .text.ICM42688_SetGyroODR:00000000 ICM42688_SetGyroODR
-     /tmp/cctkd8x0.s:413    .text.ICM42688_Init:00000000 $t
-     /tmp/cctkd8x0.s:419    .text.ICM42688_Init:00000000 ICM42688_Init
-     /tmp/cctkd8x0.s:591    .text.ICM42688_ReadOnce:00000000 $t
-     /tmp/cctkd8x0.s:597    .text.ICM42688_ReadOnce:00000000 ICM42688_ReadOnce
-     /tmp/cctkd8x0.s:721    .text.ICM42688_ReadOnce:00000164 $d
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:18     .text.write_reg:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:23     .text.write_reg:00000000 write_reg
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:91     .text.set_bank:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:96     .text.set_bank:00000000 set_bank
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:114    .text.read_regs:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:119    .text.read_regs:00000000 read_regs
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:172    .text.ICM42688_WhoAmI:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:178    .text.ICM42688_WhoAmI:00000000 ICM42688_WhoAmI
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:205    .text.ICM42688_SetAccelFS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:211    .text.ICM42688_SetAccelFS:00000000 ICM42688_SetAccelFS
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:260    .text.ICM42688_SetAccelFS:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:263    .text.ICM42688_SetGyroFS:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:269    .text.ICM42688_SetGyroFS:00000000 ICM42688_SetGyroFS
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:319    .text.ICM42688_SetGyroFS:00000074 $d
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:323    .text.ICM42688_SetAccelODR:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:329    .text.ICM42688_SetAccelODR:00000000 ICM42688_SetAccelODR
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:368    .text.ICM42688_SetGyroODR:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:374    .text.ICM42688_SetGyroODR:00000000 ICM42688_SetGyroODR
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:413    .text.ICM42688_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:419    .text.ICM42688_Init:00000000 ICM42688_Init
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:591    .text.ICM42688_ReadOnce:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:597    .text.ICM42688_ReadOnce:00000000 ICM42688_ReadOnce
+C:\Users\Nathan\AppData\Local\Temp\ccfnbyjM.s:721    .text.ICM42688_ReadOnce:00000164 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

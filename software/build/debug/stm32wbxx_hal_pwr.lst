@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccNwgdod.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
   28:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   * @{
   29:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   */
   30:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** 
-ARM GAS  /tmp/ccNwgdod.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 2
 
 
   31:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** /** @addtogroup PWR
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
   85:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *
   86:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** @verbatim
   87:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****  ===============================================================================
-ARM GAS  /tmp/ccNwgdod.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 3
 
 
   88:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****               ##### Initialization and de-initialization functions #####
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  114:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   LL_PWR_WriteReg(PUCRC, PWR_PUCRC_RESET_VALUE);
   57              		.loc 1 114 3 view .LVU10
   58 0022 1A63     		str	r2, [r3, #48]
-ARM GAS  /tmp/ccNwgdod.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 4
 
 
  115:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   LL_PWR_WriteReg(PDCRC, PWR_PDCRC_RESET_VALUE);
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  148:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** #elif defined(PWR_CR5_SMPSEN)
  149:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   LL_PWR_WriteReg(SCR,
  150:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****                 LL_PWR_SCR_CC2HF
-ARM GAS  /tmp/ccNwgdod.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 5
 
 
  151:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****                 | LL_PWR_SCR_CBLEAF
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  186:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** void HAL_PWR_EnableBkUpAccess(void)
  187:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** {
  101              		.loc 1 187 1 is_stmt 1 view -0
-ARM GAS  /tmp/ccNwgdod.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 6
 
 
  102              		.cfi_startproc
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  146              	.LFE952:
  148              		.section	.text.HAL_PWR_ConfigPVD,"ax",%progbits
  149              		.align	1
-ARM GAS  /tmp/ccNwgdod.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 7
 
 
  150              		.global	HAL_PWR_ConfigPVD
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  247:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** 
  248:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****       (+) Standby mode with SRAM2a: all clocks are stopped except LSI and LSE, SRAM2a content prese
  249:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****           Note: On devices STM32WB15xx, STM32WB10xx, STM32WB1Mxx retention is extended to SRAM1, SR
-ARM GAS  /tmp/ccNwgdod.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 8
 
 
  250:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****       (+) Standby mode without SRAM2a: all clocks are stopped except LSI and LSE, main and low powe
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  304:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****                when programmed in wakeup mode.
  305:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****       (+) WFE Exit:
  306:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****           (++) Any EXTI Line (Internal or External) configured in Event mode.
-ARM GAS  /tmp/ccNwgdod.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 9
 
 
  307:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** 
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  361:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** 
  362:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****         (++) To wake up from the Stop mode with an RTC Tamper or time stamp event, it
  363:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****              is necessary to configure the RTC to detect the tamper or time stamp event using the
-ARM GAS  /tmp/ccNwgdod.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 10
 
 
  364:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****              HAL_RTCEx_SetTimeStamp_IT() or HAL_RTCEx_SetTamper_IT() functions.
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  174              	.LBB16:
  175              	.LBI16:
  176              		.file 2 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h"
-ARM GAS  /tmp/ccNwgdod.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 11
 
 
    1:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /**
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
   55:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @{
   56:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
   57:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** typedef struct
-ARM GAS  /tmp/ccNwgdod.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 12
 
 
   58:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  112:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #if defined (STM32WB55xx) || defined (STM32WB5Mxx) || defined (STM32WB35xx)
  113:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_LINE_21                EXTI_IMR1_IM21          /*!< Extended line 21 */
  114:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #endif /* STM32WB55xx || STM32WB5Mxx || STM32WB35xx */
-ARM GAS  /tmp/ccNwgdod.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 13
 
 
  115:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_LINE_22                EXTI_IMR1_IM22          /*!< Extended line 22 */
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  169:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_LINE_40                EXTI_IMR2_IM40          /*!< Extended line 40 */
  170:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_LINE_41                EXTI_IMR2_IM41          /*!< Extended line 41 */
  171:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_LINE_42                EXTI_IMR2_IM42          /*!< Extended line 42 */
-ARM GAS  /tmp/ccNwgdod.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 14
 
 
  172:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #if defined (STM32WB55xx) || defined (STM32WB5Mxx)
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  226:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_TRIGGER_RISING          ((uint8_t)0x01U) /*!< Trigger Rising Mode */
  227:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_TRIGGER_FALLING         ((uint8_t)0x02U) /*!< Trigger Falling Mode */
  228:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** #define LL_EXTI_TRIGGER_RISING_FALLING  ((uint8_t)0x03U) /*!< Trigger Rising & Falling Mode */
-ARM GAS  /tmp/ccNwgdod.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 15
 
 
  229:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  283:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** 
  284:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /**
  285:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @brief  Enable ExtiLine Interrupt request for Lines in range 0 to 31
-ARM GAS  /tmp/ccNwgdod.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 16
 
 
  286:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @rmtoll IMR1         IMx           LL_EXTI_EnableIT_0_31
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  340:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_9
  341:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_10
  342:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_11
-ARM GAS  /tmp/ccNwgdod.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 17
 
 
  343:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_12
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  397:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @brief  Enable ExtiLine Interrupt request for Lines in range 32 to 63 for cpu2
  398:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @rmtoll C2IMR2         IMx           LL_C2_EXTI_EnableIT_32_63
  399:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @param  ExtiLine This parameter can be a combination of the following values:
-ARM GAS  /tmp/ccNwgdod.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 18
 
 
  400:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_33
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  454:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_30
  455:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_31 (*)
  456:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_ALL_0_31
-ARM GAS  /tmp/ccNwgdod.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 19
 
 
  457:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         (*) value not defined in all devices
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  496:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_29
  497:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_30
  498:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_31 (*)
-ARM GAS  /tmp/ccNwgdod.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 20
 
 
  499:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_ALL_0_31
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  538:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_33
  539:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_36
  540:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_37
-ARM GAS  /tmp/ccNwgdod.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 21
 
 
  541:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_38
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  595:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         (*) value not defined in all devices
  596:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @retval State of bit (1 or 0).
  597:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
-ARM GAS  /tmp/ccNwgdod.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 22
 
 
  598:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** __STATIC_INLINE uint32_t LL_EXTI_IsEnabledIT_0_31(uint32_t ExtiLine)
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  652:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_37
  653:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_38
  654:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_39
-ARM GAS  /tmp/ccNwgdod.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 23
 
 
  655:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_40
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  709:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @param  ExtiLine This parameter can be a combination of the following values:
  710:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_0
  711:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_1
-ARM GAS  /tmp/ccNwgdod.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 24
 
 
  712:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_2
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  766:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
  767:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** __STATIC_INLINE void LL_C2_EXTI_EnableEvent_0_31(uint32_t ExtiLine)
  768:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
-ARM GAS  /tmp/ccNwgdod.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 25
 
 
  769:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   SET_BIT(EXTI->C2EMR1, ExtiLine);
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  823:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @retval None
  824:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
  825:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** __STATIC_INLINE void LL_EXTI_DisableEvent_0_31(uint32_t ExtiLine)
-ARM GAS  /tmp/ccNwgdod.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 26
 
 
  826:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  880:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @param  ExtiLine This parameter can be a combination of the following values:
  881:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_40
  882:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_41
-ARM GAS  /tmp/ccNwgdod.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 27
 
 
  883:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @retval None
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  937:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_9
  938:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_10
  939:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_11
-ARM GAS  /tmp/ccNwgdod.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 28
 
 
  940:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_12
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  994:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @note The configurable wakeup lines are edge-triggered. No glitch must be
  995:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *       generated on these lines. If a rising edge on a configurable interrupt
  996:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *       line occurs during a write operation in the EXTI_RTSR register, the
-ARM GAS  /tmp/ccNwgdod.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 29
 
 
  997:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *       pending bit is not set.
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
 1051:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** __STATIC_INLINE void LL_EXTI_EnableRisingTrig_32_63(uint32_t ExtiLine)
 1052:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
 1053:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   SET_BIT(EXTI->RTSR2, ExtiLine);
-ARM GAS  /tmp/ccNwgdod.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 30
 
 
 1054:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** }
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
 1108:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @rmtoll RTSR2        RTx           LL_EXTI_DisableRisingTrig_32_63
 1109:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @param  ExtiLine This parameter can be a combination of the following values:
 1110:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_33 (*)
-ARM GAS  /tmp/ccNwgdod.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 31
 
 
 1111:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *         @arg @ref LL_EXTI_LINE_40
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
 1165:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
 1166:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** __STATIC_INLINE uint32_t LL_EXTI_IsEnabledRisingTrig_32_63(uint32_t ExtiLine)
 1167:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** {
-ARM GAS  /tmp/ccNwgdod.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 32
 
 
 1168:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   return ((READ_BIT(EXTI->RTSR2, ExtiLine) == (ExtiLine)) ? 1UL : 0UL);
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
 1222:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** /**
 1223:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @brief  Enable ExtiLine Falling Edge Trigger for Lines in range 32 to 63
 1224:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @note The configurable wakeup lines are edge-triggered. No glitch must be
-ARM GAS  /tmp/ccNwgdod.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 33
 
 
 1225:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   *       generated on these lines. If a Falling edge on a configurable interrupt
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
 1279:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   * @retval None
 1280:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h ****   */
 1281:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** __STATIC_INLINE void LL_EXTI_DisableFallingTrig_0_31(uint32_t ExtiLine)
-ARM GAS  /tmp/ccNwgdod.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 34
 
 
  204              		.loc 2 1281 22 view .LVU42
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  244              	.LVL7:
  245              	.L11:
  324:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_exti.h **** }
-ARM GAS  /tmp/ccNwgdod.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 35
 
 
  246              		.loc 2 324 3 is_stmt 0 view .LVU55
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  284 0068 044A     		ldr	r2, .L14+4
  285 006a 5368     		ldr	r3, [r2, #4]
  286 006c 43F48033 		orr	r3, r3, #65536
-ARM GAS  /tmp/ccNwgdod.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 36
 
 
  287 0070 5360     		str	r3, [r2, #4]
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  328              	.L18:
  329              		.align	2
  330              	.L17:
-ARM GAS  /tmp/ccNwgdod.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 37
 
 
  331 000c 00040058 		.word	1476396032
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  453:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *         i.e. detection on high level (rising edge):
  454:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *           @arg @ref PWR_WAKEUP_PIN1, PWR_WAKEUP_PIN2, PWR_WAKEUP_PIN3, PWR_WAKEUP_PIN4, PWR_WAK
  455:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *
-ARM GAS  /tmp/ccNwgdod.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 38
 
 
  456:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *         or one of the following value where the user can explicitly specify the enabled pin and
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  408              	HAL_PWR_DisableWakeUpPin:
  409              	.LVL15:
  410              	.LFB957:
-ARM GAS  /tmp/ccNwgdod.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 39
 
 
  477:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** 
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  500:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *          This parameter can be one of the following values:
  501:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *            @arg @ref PWR_MAINREGULATOR_ON Sleep mode (regulator in main mode)
  502:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *            @arg @ref PWR_LOWPOWERREGULATOR_ON Low-power Sleep mode (regulator in low-power mode
-ARM GAS  /tmp/ccNwgdod.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 40
 
 
  503:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   * @note  Low-power Sleep mode is entered from Low-power Run mode. Therefore, if not yet
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  533:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****       {
  534:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****         return ;
  535:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****       }
-ARM GAS  /tmp/ccNwgdod.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 41
 
 
  536:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****     }
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  565:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** }
  493              		.loc 1 565 1 is_stmt 0 view .LVU105
  494 0024 10BD     		pop	{r4, pc}
-ARM GAS  /tmp/ccNwgdod.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 42
 
 
  495              	.LVL19:
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  541              		.thumb_func
  543              	HAL_PWR_EnterSTOPMode:
  544              	.LVL23:
-ARM GAS  /tmp/ccNwgdod.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 43
 
 
  545              	.LFB959:
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  557              		.loc 1 607 6 is_stmt 0 view .LVU119
  558 0002 B0F5804F 		cmp	r0, #16384
  559 0006 03D0     		beq	.L42
-ARM GAS  /tmp/ccNwgdod.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 44
 
 
  608:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   {
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  630:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *        Pull Down state, HAL_PWREx_DisableGPIOPullUp() and HAL_PWREx_DisableGPIOPullDown() disab
  631:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *        same.
  632:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *        These states are effective in Standby mode only if APC bit is set through
-ARM GAS  /tmp/ccNwgdod.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 45
 
 
  633:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   *        HAL_PWREx_EnablePullUpPullDownConfig() API.
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  618              		.loc 1 659 1 is_stmt 0 view .LVU131
  619 0022 7047     		bx	lr
  620              	.L45:
-ARM GAS  /tmp/ccNwgdod.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 46
 
 
  621              		.align	2
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  674:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** 
  675:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** /**
  676:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   * @brief  Disable Sleep-On-Exit feature when returning from Handler mode to Thread mode.
-ARM GAS  /tmp/ccNwgdod.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 47
 
 
  677:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c ****   * @note   Clear SLEEPONEXIT bit of SCR register. When this bit is set, the processor
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  700 0002 1369     		ldr	r3, [r2, #16]
  701 0004 43F01003 		orr	r3, r3, #16
  702 0008 1361     		str	r3, [r2, #16]
-ARM GAS  /tmp/ccNwgdod.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 48
 
 
  698:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** }
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  747              	HAL_PWR_PVDCallback:
  748              	.LFB965:
  712:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** 
-ARM GAS  /tmp/ccNwgdod.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 49
 
 
  713:Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_pwr.c **** 
@@ -2903,65 +2903,65 @@ ARM GAS  /tmp/ccNwgdod.s 			page 1
  757              	.LFE965:
  759              		.text
  760              	.Letext0:
- 761              		.file 3 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
- 762              		.file 4 "/home/roomba/.config/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-tools/arm-no
+ 761              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 762              		.file 4 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
  763              		.file 5 "Drivers/CMSIS/Include/core_cm4.h"
  764              		.file 6 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
  765              		.file 7 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wbxx.h"
  766              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_def.h"
  767              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pwr.h"
  768              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_pwr_ex.h"
-ARM GAS  /tmp/ccNwgdod.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s 			page 50
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_pwr.c
-     /tmp/ccNwgdod.s:21     .text.HAL_PWR_DeInit:00000000 $t
-     /tmp/ccNwgdod.s:27     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
-     /tmp/ccNwgdod.s:88     .text.HAL_PWR_DeInit:00000048 $d
-     /tmp/ccNwgdod.s:93     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
-     /tmp/ccNwgdod.s:99     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
-     /tmp/ccNwgdod.s:116    .text.HAL_PWR_EnableBkUpAccess:0000000c $d
-     /tmp/ccNwgdod.s:121    .text.HAL_PWR_DisableBkUpAccess:00000000 $t
-     /tmp/ccNwgdod.s:127    .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
-     /tmp/ccNwgdod.s:144    .text.HAL_PWR_DisableBkUpAccess:0000000c $d
-     /tmp/ccNwgdod.s:149    .text.HAL_PWR_ConfigPVD:00000000 $t
-     /tmp/ccNwgdod.s:155    .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
-     /tmp/ccNwgdod.s:302    .text.HAL_PWR_ConfigPVD:00000078 $d
-     /tmp/ccNwgdod.s:308    .text.HAL_PWR_EnablePVD:00000000 $t
-     /tmp/ccNwgdod.s:314    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
-     /tmp/ccNwgdod.s:331    .text.HAL_PWR_EnablePVD:0000000c $d
-     /tmp/ccNwgdod.s:336    .text.HAL_PWR_DisablePVD:00000000 $t
-     /tmp/ccNwgdod.s:342    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
-     /tmp/ccNwgdod.s:359    .text.HAL_PWR_DisablePVD:0000000c $d
-     /tmp/ccNwgdod.s:364    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
-     /tmp/ccNwgdod.s:370    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
-     /tmp/ccNwgdod.s:397    .text.HAL_PWR_EnableWakeUpPin:0000001c $d
-     /tmp/ccNwgdod.s:402    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
-     /tmp/ccNwgdod.s:408    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
-     /tmp/ccNwgdod.s:430    .text.HAL_PWR_DisableWakeUpPin:00000010 $d
-     /tmp/ccNwgdod.s:435    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
-     /tmp/ccNwgdod.s:441    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
-     /tmp/ccNwgdod.s:531    .text.HAL_PWR_EnterSLEEPMode:00000044 $d
-     /tmp/ccNwgdod.s:537    .text.HAL_PWR_EnterSTOPMode:00000000 $t
-     /tmp/ccNwgdod.s:543    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
-     /tmp/ccNwgdod.s:583    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
-     /tmp/ccNwgdod.s:589    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
-     /tmp/ccNwgdod.s:623    .text.HAL_PWR_EnterSTANDBYMode:00000024 $d
-     /tmp/ccNwgdod.s:629    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
-     /tmp/ccNwgdod.s:635    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
-     /tmp/ccNwgdod.s:652    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
-     /tmp/ccNwgdod.s:657    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
-     /tmp/ccNwgdod.s:663    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
-     /tmp/ccNwgdod.s:680    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
-     /tmp/ccNwgdod.s:685    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
-     /tmp/ccNwgdod.s:691    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
-     /tmp/ccNwgdod.s:708    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
-     /tmp/ccNwgdod.s:713    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
-     /tmp/ccNwgdod.s:719    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
-     /tmp/ccNwgdod.s:736    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
-     /tmp/ccNwgdod.s:741    .text.HAL_PWR_PVDCallback:00000000 $t
-     /tmp/ccNwgdod.s:747    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:21     .text.HAL_PWR_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:27     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:88     .text.HAL_PWR_DeInit:00000048 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:93     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:99     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:116    .text.HAL_PWR_EnableBkUpAccess:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:121    .text.HAL_PWR_DisableBkUpAccess:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:127    .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:144    .text.HAL_PWR_DisableBkUpAccess:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:149    .text.HAL_PWR_ConfigPVD:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:155    .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:302    .text.HAL_PWR_ConfigPVD:00000078 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:308    .text.HAL_PWR_EnablePVD:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:314    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:331    .text.HAL_PWR_EnablePVD:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:336    .text.HAL_PWR_DisablePVD:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:342    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:359    .text.HAL_PWR_DisablePVD:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:364    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:370    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:397    .text.HAL_PWR_EnableWakeUpPin:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:402    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:408    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:430    .text.HAL_PWR_DisableWakeUpPin:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:435    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:441    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:531    .text.HAL_PWR_EnterSLEEPMode:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:537    .text.HAL_PWR_EnterSTOPMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:543    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:583    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:589    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:623    .text.HAL_PWR_EnterSTANDBYMode:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:629    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:635    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:652    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:657    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:663    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:680    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:685    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:691    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:708    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:713    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:719    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:736    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:741    .text.HAL_PWR_PVDCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHK1VRu.s:747    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
 
 UNDEFINED SYMBOLS
 HAL_PWREx_DisableLowPowerRunMode
