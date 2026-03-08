@@ -37,24 +37,6 @@
 #include <string.h>
 #include <math.h>
 
-/* Debug: blink LED N times (works even before HAL GPIO init, using raw registers) */
-static void dbg_blink(int n)
-{
-  /* Enable GPIOC clock */
-  RCC->AHB2ENR |= RCC_AHB2ENR_GPIOCEN;
-  /* PC13 as output (MODER bits [27:26] = 01) */
-  GPIOC->MODER = (GPIOC->MODER & ~(3u << 26)) | (1u << 26);
-
-  for (int i = 0; i < n; i++) {
-    GPIOC->BSRR = (1u << 13);       /* LED off (active low) */
-    for (volatile int d = 0; d < 200000; d++);
-    GPIOC->BSRR = (1u << (13+16));  /* LED on */
-    for (volatile int d = 0; d < 200000; d++);
-  }
-  GPIOC->BSRR = (1u << 13);         /* LED off */
-  for (volatile int d = 0; d < 400000; d++);  /* pause between stages */
-}
-
 static void dbg_print(const char *msg)
 {
   CDC_Transmit_FS((uint8_t *)msg, strlen(msg));
@@ -305,24 +287,25 @@ int main(void)
         float roll  = Kalman_Update(&kf_roll,  imu_data.gyr_x - gyro_bias_x, accel_roll,  dt);
 
 #if ENABLE_USB_LOG
-        /* Bias-corrected gyro for logging and BLE */
-        float gx_cor = imu_data.gyr_x - gyro_bias_x;
-        float gy_cor = imu_data.gyr_y - gyro_bias_y;
-        float gz_cor = imu_data.gyr_z - gyro_bias_z;
+        {
+          float gx_cor = imu_data.gyr_x - gyro_bias_x;
+          float gy_cor = imu_data.gyr_y - gyro_bias_y;
+          float gz_cor = imu_data.gyr_z - gyro_bias_z;
 
-        int len = snprintf(serial_buf, sizeof(serial_buf),
-                           "A:%.2f,%.2f,%.2f G:%.1f,%.1f,%.1f T:%.1f P:%.2f R:%.2f\r\n",
-                           imu_data.acc_x, imu_data.acc_y, imu_data.acc_z,
-                           gx_cor, gy_cor, gz_cor,
-                           imu_data.temp_c, pitch, roll);
-        CDC_Transmit_FS((uint8_t *)serial_buf, len);
+          int len = snprintf(serial_buf, sizeof(serial_buf),
+                             "A:%.2f,%.2f,%.2f G:%.1f,%.1f,%.1f T:%.1f P:%.2f R:%.2f\r\n",
+                             imu_data.acc_x, imu_data.acc_y, imu_data.acc_z,
+                             gx_cor, gy_cor, gz_cor,
+                             imu_data.temp_c, pitch, roll);
+          CDC_Transmit_FS((uint8_t *)serial_buf, len);
+        }
 #endif
 
 #if ENABLE_BLE
         if (ble_ready) {
           float imu_ble[7] = {
             imu_data.acc_x, imu_data.acc_y, imu_data.acc_z,
-            gx_cor, gy_cor, gz_cor,
+            imu_data.gyr_x, imu_data.gyr_y, imu_data.gyr_z,
             imu_data.temp_c
           };
           Custom_STM_App_Update_Char(BLE_CHAR_IMU, (uint8_t *)imu_ble);

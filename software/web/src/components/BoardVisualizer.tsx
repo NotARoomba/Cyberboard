@@ -1,6 +1,6 @@
 import { useRef, useMemo, useState, Component, type ReactNode } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, Center } from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
 interface BoardProps {
@@ -48,24 +48,65 @@ function useOrientationFromGravity(
   });
 }
 
+function enhanceMaterials(scene: THREE.Object3D) {
+  scene.traverse((child) => {
+    if (!(child instanceof THREE.Mesh) || !child.material) return;
+    const mat = child.material as THREE.MeshStandardMaterial;
+    if (!mat.color) return;
+
+    const hex = "#" + mat.color.getHexString();
+    if (hex === "#1a1a1a" || hex === "#0d0d0d" || hex === "#000000") {
+      // PCB substrate — dark matte
+      mat.roughness = 0.9;
+      mat.metalness = 0.0;
+    } else if (hex === "#c0c0c0" || hex === "#808080" || hex === "#a0a0a0" || mat.color.r > 0.6 && mat.color.g > 0.6 && mat.color.b > 0.6) {
+      // Metal pads/pins — shiny
+      mat.roughness = 0.2;
+      mat.metalness = 0.8;
+    } else if (mat.color.g > 0.3 && mat.color.r < 0.2 && mat.color.b < 0.2) {
+      // Green solder mask
+      mat.roughness = 0.4;
+      mat.metalness = 0.1;
+    } else if (mat.color.r > 0.8 && mat.color.g > 0.8 && mat.color.b < 0.3) {
+      // Yellow silkscreen
+      mat.roughness = 0.5;
+      mat.metalness = 0.0;
+      mat.emissive = new THREE.Color("#F4F244");
+      mat.emissiveIntensity = 0.15;
+    } else {
+      // ICs/components — semi-matte plastic
+      mat.roughness = 0.6;
+      mat.metalness = 0.15;
+    }
+    mat.needsUpdate = true;
+  });
+}
+
 function CyberboardModel({ accelX, accelY, accelZ }: BoardProps) {
   const { scene } = useGLTF("/Cyberboard.glb");
   const wrapperRef = useRef<THREE.Group>(null);
 
-  // Clone scene so React strict mode re-renders don't dispose the cached original
-  const clonedScene = useMemo(() => scene.clone(true), [scene]);
+  const clonedScene = useMemo(() => {
+    const s = scene.clone(true);
+    enhanceMaterials(s);
+
+    // Apply the intended rotation and scale, then re-center at the origin
+    s.rotation.set(-Math.PI / 2, -Math.PI / 2, 0);
+    s.scale.setScalar(0.1);
+    s.updateMatrixWorld(true);
+
+    const box = new THREE.Box3().setFromObject(s);
+    const center = box.getCenter(new THREE.Vector3());
+    s.position.sub(center);
+
+    return s;
+  }, [scene]);
 
   useOrientationFromGravity(wrapperRef, accelX, accelY, accelZ);
 
   return (
     <group ref={wrapperRef}>
-      <Center>
-        <primitive
-          object={clonedScene}
-          scale={0.2}
-          rotation={[-Math.PI / 2, -Math.PI / 2, 0]}
-        />
-      </Center>
+      <primitive object={clonedScene} />
     </group>
   );
 }
@@ -148,44 +189,33 @@ export default function BoardVisualizer(props: BoardProps) {
         style={{ background: "transparent" }}
         gl={{ antialias: true, alpha: true, powerPreference: "default" }}
         onCreated={({ gl }) => {
-          const canvas = gl.domElement;
-          canvas.addEventListener("webglcontextlost", (e) => {
-            e.preventDefault();
-          });
-          canvas.addEventListener("webglcontextrestored", () => {
-            gl.compile(gl.domElement as unknown as THREE.Object3D, gl.domElement as unknown as THREE.Camera);
-          });
+          gl.domElement.addEventListener("webglcontextlost", (e) =>
+            e.preventDefault(),
+          );
         }}
       >
         {/* Ambient fill */}
-        <ambientLight intensity={0.6} />
-        {/* Key light */}
-        <directionalLight position={[5, 8, 5]} intensity={1.2} />
+        <ambientLight intensity={0.8} />
+        {/* Key light — bright */}
+        <directionalLight position={[5, 8, 5]} intensity={1.8} />
         {/* Cyber accent from below-left */}
         <directionalLight
           position={[-4, -2, 3]}
-          intensity={0.5}
+          intensity={0.7}
           color="#F4F244"
         />
         {/* Rim light from behind */}
         <directionalLight
           position={[-2, 3, -5]}
-          intensity={0.4}
+          intensity={0.5}
           color="#4488ff"
         />
         {/* Cyber point glow */}
         <pointLight
-          position={[0, 2, 0]}
-          intensity={0.8}
+          position={[0, 3, 0]}
+          intensity={1.2}
           color="#F4F244"
-          distance={10}
-        />
-        {/* Fill from below */}
-        <pointLight
-          position={[0, -2, 0]}
-          intensity={0.3}
-          color="#44ff88"
-          distance={8}
+          distance={12}
         />
 
         <SceneContent {...props} />
@@ -195,6 +225,7 @@ export default function BoardVisualizer(props: BoardProps) {
           dampingFactor={0.1}
           minDistance={1.5}
           maxDistance={12}
+          target={[0, 0, 0]}
         />
         <gridHelper
           args={[10, 20, "#F4F244", "#1a1a1a"]}

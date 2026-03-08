@@ -58,6 +58,7 @@ struct AuthMessage {
 }
 
 #[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
 struct StatusMessage {
     r#type: String,
     viewers: usize,

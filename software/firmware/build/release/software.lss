@@ -5388,7 +5388,7 @@ Disassembly of section .text:
  8003724:	f7fd fe7c 	bl	8001420 <MX_APPE_Init>
  8003728:	481d      	ldr	r0, [pc, #116]	@ (80037a0 <main+0x338>)
  800372a:	f7ff fe13 	bl	8003354 <dbg_print>
- 800372e:	e0f3      	b.n	8003918 <main+0x4b0>
+ 800372e:	e0f4      	b.n	800391a <main+0x4b2>
  8003730:	0800d360 	.word	0x0800d360
  8003734:	0800d380 	.word	0x0800d380
  8003738:	0800d3b4 	.word	0x0800d3b4
@@ -5457,16 +5457,16 @@ Disassembly of section .text:
  800382c:	4868      	ldr	r0, [pc, #416]	@ (80039d0 <main+0x568>)
  800382e:	f7ff fc5f 	bl	80030f0 <Kalman_Update>
  8003832:	ee10 0a10 	vmov	r0, s0
- 8003836:	ed94 9a03 	vldr	s18, [r4, #12]
+ 8003836:	ed94 8a03 	vldr	s16, [r4, #12]
  800383a:	edd7 7a00 	vldr	s15, [r7]
- 800383e:	ee39 9a67 	vsub.f32	s18, s18, s15
+ 800383e:	ee38 8a67 	vsub.f32	s16, s16, s15
  8003842:	edd4 8a04 	vldr	s17, [r4, #16]
  8003846:	edd6 7a00 	vldr	s15, [r6]
  800384a:	ee78 8ae7 	vsub.f32	s17, s17, s15
- 800384e:	ed94 8a05 	vldr	s16, [r4, #20]
+ 800384e:	ed94 9a05 	vldr	s18, [r4, #20]
  8003852:	4b60      	ldr	r3, [pc, #384]	@ (80039d4 <main+0x56c>)
  8003854:	edd3 7a00 	vldr	s15, [r3]
- 8003858:	ee38 8a67 	vsub.f32	s16, s16, s15
+ 8003858:	ee39 9a67 	vsub.f32	s18, s18, s15
  800385c:	6826      	ldr	r6, [r4, #0]
  800385e:	6867      	ldr	r7, [r4, #4]
  8003860:	f8d4 8008 	ldr.w	r8, [r4, #8]
@@ -5480,13 +5480,13 @@ Disassembly of section .text:
  800387c:	4648      	mov	r0, r9
  800387e:	f7fc fe1b 	bl	80004b8 <__aeabi_f2d>
  8003882:	e9cd 010c 	strd	r0, r1, [sp, #48]	@ 0x30
- 8003886:	ee18 0a10 	vmov	r0, s16
+ 8003886:	ee19 0a10 	vmov	r0, s18
  800388a:	f7fc fe15 	bl	80004b8 <__aeabi_f2d>
  800388e:	e9cd 010a 	strd	r0, r1, [sp, #40]	@ 0x28
  8003892:	ee18 0a90 	vmov	r0, s17
  8003896:	f7fc fe0f 	bl	80004b8 <__aeabi_f2d>
  800389a:	e9cd 0108 	strd	r0, r1, [sp, #32]
- 800389e:	ee19 0a10 	vmov	r0, s18
+ 800389e:	ee18 0a10 	vmov	r0, s16
  80038a2:	f7fc fe09 	bl	80004b8 <__aeabi_f2d>
  80038a6:	e9cd 0106 	strd	r0, r1, [sp, #24]
  80038aa:	4640      	mov	r0, r8
@@ -5507,89 +5507,92 @@ Disassembly of section .text:
  80038d8:	f005 fc26 	bl	8009128 <CDC_Transmit_FS>
  80038dc:	4b40      	ldr	r3, [pc, #256]	@ (80039e0 <main+0x578>)
  80038de:	781b      	ldrb	r3, [r3, #0]
- 80038e0:	b363      	cbz	r3, 800393c <main+0x4d4>
- 80038e2:	4b35      	ldr	r3, [pc, #212]	@ (80039b8 <main+0x550>)
- 80038e4:	681a      	ldr	r2, [r3, #0]
- 80038e6:	9213      	str	r2, [sp, #76]	@ 0x4c
- 80038e8:	685a      	ldr	r2, [r3, #4]
- 80038ea:	9214      	str	r2, [sp, #80]	@ 0x50
- 80038ec:	689a      	ldr	r2, [r3, #8]
- 80038ee:	9215      	str	r2, [sp, #84]	@ 0x54
- 80038f0:	ed8d 9a16 	vstr	s18, [sp, #88]	@ 0x58
- 80038f4:	edcd 8a17 	vstr	s17, [sp, #92]	@ 0x5c
- 80038f8:	ed8d 8a18 	vstr	s16, [sp, #96]	@ 0x60
- 80038fc:	699b      	ldr	r3, [r3, #24]
- 80038fe:	9319      	str	r3, [sp, #100]	@ 0x64
- 8003900:	a913      	add	r1, sp, #76	@ 0x4c
- 8003902:	2000      	movs	r0, #0
- 8003904:	f7fe ff9c 	bl	8002840 <Custom_STM_App_Update_Char>
- 8003908:	e018      	b.n	800393c <main+0x4d4>
- 800390a:	f44f 5100 	mov.w	r1, #8192	@ 0x2000
- 800390e:	4835      	ldr	r0, [pc, #212]	@ (80039e4 <main+0x57c>)
- 8003910:	f000 fe01 	bl	8004516 <HAL_GPIO_TogglePin>
- 8003914:	f7fd fdac 	bl	8001470 <MX_APPE_Process>
- 8003918:	f000 fc70 	bl	80041fc <HAL_GetTick>
- 800391c:	4b32      	ldr	r3, [pc, #200]	@ (80039e8 <main+0x580>)
- 800391e:	681b      	ldr	r3, [r3, #0]
- 8003920:	1ac0      	subs	r0, r0, r3
- 8003922:	2831      	cmp	r0, #49	@ 0x31
- 8003924:	d9f6      	bls.n	8003914 <main+0x4ac>
- 8003926:	f000 fc69 	bl	80041fc <HAL_GetTick>
- 800392a:	4b2f      	ldr	r3, [pc, #188]	@ (80039e8 <main+0x580>)
- 800392c:	6018      	str	r0, [r3, #0]
- 800392e:	4922      	ldr	r1, [pc, #136]	@ (80039b8 <main+0x550>)
- 8003930:	482e      	ldr	r0, [pc, #184]	@ (80039ec <main+0x584>)
- 8003932:	f7fd fa17 	bl	8000d64 <ICM42688_ReadOnce>
- 8003936:	2800      	cmp	r0, #0
- 8003938:	f43f af34 	beq.w	80037a4 <main+0x33c>
- 800393c:	2300      	movs	r3, #0
- 800393e:	f88d 304b 	strb.w	r3, [sp, #75]	@ 0x4b
- 8003942:	492b      	ldr	r1, [pc, #172]	@ (80039f0 <main+0x588>)
- 8003944:	f10d 004b 	add.w	r0, sp, #75	@ 0x4b
- 8003948:	f7fe faed 	bl	8001f26 <bmp5_get_interrupt_status>
- 800394c:	2800      	cmp	r0, #0
- 800394e:	d1dc      	bne.n	800390a <main+0x4a2>
- 8003950:	f89d 304b 	ldrb.w	r3, [sp, #75]	@ 0x4b
- 8003954:	f013 0f01 	tst.w	r3, #1
- 8003958:	d0d7      	beq.n	800390a <main+0x4a2>
- 800395a:	4a25      	ldr	r2, [pc, #148]	@ (80039f0 <main+0x588>)
- 800395c:	4925      	ldr	r1, [pc, #148]	@ (80039f4 <main+0x58c>)
- 800395e:	4826      	ldr	r0, [pc, #152]	@ (80039f8 <main+0x590>)
- 8003960:	f7fe fb48 	bl	8001ff4 <bmp5_get_sensor_data>
- 8003964:	2800      	cmp	r0, #0
- 8003966:	d1d0      	bne.n	800390a <main+0x4a2>
- 8003968:	4b23      	ldr	r3, [pc, #140]	@ (80039f8 <main+0x590>)
- 800396a:	681d      	ldr	r5, [r3, #0]
- 800396c:	4c1a      	ldr	r4, [pc, #104]	@ (80039d8 <main+0x570>)
- 800396e:	6858      	ldr	r0, [r3, #4]
- 8003970:	f7fc fda2 	bl	80004b8 <__aeabi_f2d>
- 8003974:	e9cd 0102 	strd	r0, r1, [sp, #8]
- 8003978:	4628      	mov	r0, r5
- 800397a:	f7fc fd9d 	bl	80004b8 <__aeabi_f2d>
- 800397e:	e9cd 0100 	strd	r0, r1, [sp]
- 8003982:	4a1e      	ldr	r2, [pc, #120]	@ (80039fc <main+0x594>)
- 8003984:	f44f 7180 	mov.w	r1, #256	@ 0x100
- 8003988:	4620      	mov	r0, r4
- 800398a:	f007 f945 	bl	800ac18 <sniprintf>
- 800398e:	b281      	uxth	r1, r0
- 8003990:	4620      	mov	r0, r4
- 8003992:	f005 fbc9 	bl	8009128 <CDC_Transmit_FS>
- 8003996:	4b12      	ldr	r3, [pc, #72]	@ (80039e0 <main+0x578>)
- 8003998:	781b      	ldrb	r3, [r3, #0]
- 800399a:	2b00      	cmp	r3, #0
- 800399c:	d0b5      	beq.n	800390a <main+0x4a2>
- 800399e:	4b16      	ldr	r3, [pc, #88]	@ (80039f8 <main+0x590>)
- 80039a0:	681a      	ldr	r2, [r3, #0]
- 80039a2:	9213      	str	r2, [sp, #76]	@ 0x4c
- 80039a4:	685b      	ldr	r3, [r3, #4]
- 80039a6:	9314      	str	r3, [sp, #80]	@ 0x50
- 80039a8:	2300      	movs	r3, #0
- 80039aa:	9315      	str	r3, [sp, #84]	@ 0x54
- 80039ac:	a913      	add	r1, sp, #76	@ 0x4c
- 80039ae:	2001      	movs	r0, #1
- 80039b0:	f7fe ff46 	bl	8002840 <Custom_STM_App_Update_Char>
- 80039b4:	e7a9      	b.n	800390a <main+0x4a2>
- 80039b6:	bf00      	nop
+ 80038e0:	2b00      	cmp	r3, #0
+ 80038e2:	d02c      	beq.n	800393e <main+0x4d6>
+ 80038e4:	4b34      	ldr	r3, [pc, #208]	@ (80039b8 <main+0x550>)
+ 80038e6:	681a      	ldr	r2, [r3, #0]
+ 80038e8:	9213      	str	r2, [sp, #76]	@ 0x4c
+ 80038ea:	685a      	ldr	r2, [r3, #4]
+ 80038ec:	9214      	str	r2, [sp, #80]	@ 0x50
+ 80038ee:	689a      	ldr	r2, [r3, #8]
+ 80038f0:	9215      	str	r2, [sp, #84]	@ 0x54
+ 80038f2:	68da      	ldr	r2, [r3, #12]
+ 80038f4:	9216      	str	r2, [sp, #88]	@ 0x58
+ 80038f6:	691a      	ldr	r2, [r3, #16]
+ 80038f8:	9217      	str	r2, [sp, #92]	@ 0x5c
+ 80038fa:	695a      	ldr	r2, [r3, #20]
+ 80038fc:	9218      	str	r2, [sp, #96]	@ 0x60
+ 80038fe:	699b      	ldr	r3, [r3, #24]
+ 8003900:	9319      	str	r3, [sp, #100]	@ 0x64
+ 8003902:	a913      	add	r1, sp, #76	@ 0x4c
+ 8003904:	2000      	movs	r0, #0
+ 8003906:	f7fe ff9b 	bl	8002840 <Custom_STM_App_Update_Char>
+ 800390a:	e018      	b.n	800393e <main+0x4d6>
+ 800390c:	f44f 5100 	mov.w	r1, #8192	@ 0x2000
+ 8003910:	4834      	ldr	r0, [pc, #208]	@ (80039e4 <main+0x57c>)
+ 8003912:	f000 fe00 	bl	8004516 <HAL_GPIO_TogglePin>
+ 8003916:	f7fd fdab 	bl	8001470 <MX_APPE_Process>
+ 800391a:	f000 fc6f 	bl	80041fc <HAL_GetTick>
+ 800391e:	4b32      	ldr	r3, [pc, #200]	@ (80039e8 <main+0x580>)
+ 8003920:	681b      	ldr	r3, [r3, #0]
+ 8003922:	1ac0      	subs	r0, r0, r3
+ 8003924:	2831      	cmp	r0, #49	@ 0x31
+ 8003926:	d9f6      	bls.n	8003916 <main+0x4ae>
+ 8003928:	f000 fc68 	bl	80041fc <HAL_GetTick>
+ 800392c:	4b2e      	ldr	r3, [pc, #184]	@ (80039e8 <main+0x580>)
+ 800392e:	6018      	str	r0, [r3, #0]
+ 8003930:	4921      	ldr	r1, [pc, #132]	@ (80039b8 <main+0x550>)
+ 8003932:	482e      	ldr	r0, [pc, #184]	@ (80039ec <main+0x584>)
+ 8003934:	f7fd fa16 	bl	8000d64 <ICM42688_ReadOnce>
+ 8003938:	2800      	cmp	r0, #0
+ 800393a:	f43f af33 	beq.w	80037a4 <main+0x33c>
+ 800393e:	2300      	movs	r3, #0
+ 8003940:	f88d 304b 	strb.w	r3, [sp, #75]	@ 0x4b
+ 8003944:	492a      	ldr	r1, [pc, #168]	@ (80039f0 <main+0x588>)
+ 8003946:	f10d 004b 	add.w	r0, sp, #75	@ 0x4b
+ 800394a:	f7fe faec 	bl	8001f26 <bmp5_get_interrupt_status>
+ 800394e:	2800      	cmp	r0, #0
+ 8003950:	d1dc      	bne.n	800390c <main+0x4a4>
+ 8003952:	f89d 304b 	ldrb.w	r3, [sp, #75]	@ 0x4b
+ 8003956:	f013 0f01 	tst.w	r3, #1
+ 800395a:	d0d7      	beq.n	800390c <main+0x4a4>
+ 800395c:	4a24      	ldr	r2, [pc, #144]	@ (80039f0 <main+0x588>)
+ 800395e:	4925      	ldr	r1, [pc, #148]	@ (80039f4 <main+0x58c>)
+ 8003960:	4825      	ldr	r0, [pc, #148]	@ (80039f8 <main+0x590>)
+ 8003962:	f7fe fb47 	bl	8001ff4 <bmp5_get_sensor_data>
+ 8003966:	2800      	cmp	r0, #0
+ 8003968:	d1d0      	bne.n	800390c <main+0x4a4>
+ 800396a:	4b23      	ldr	r3, [pc, #140]	@ (80039f8 <main+0x590>)
+ 800396c:	681d      	ldr	r5, [r3, #0]
+ 800396e:	4c1a      	ldr	r4, [pc, #104]	@ (80039d8 <main+0x570>)
+ 8003970:	6858      	ldr	r0, [r3, #4]
+ 8003972:	f7fc fda1 	bl	80004b8 <__aeabi_f2d>
+ 8003976:	e9cd 0102 	strd	r0, r1, [sp, #8]
+ 800397a:	4628      	mov	r0, r5
+ 800397c:	f7fc fd9c 	bl	80004b8 <__aeabi_f2d>
+ 8003980:	e9cd 0100 	strd	r0, r1, [sp]
+ 8003984:	4a1d      	ldr	r2, [pc, #116]	@ (80039fc <main+0x594>)
+ 8003986:	f44f 7180 	mov.w	r1, #256	@ 0x100
+ 800398a:	4620      	mov	r0, r4
+ 800398c:	f007 f944 	bl	800ac18 <sniprintf>
+ 8003990:	b281      	uxth	r1, r0
+ 8003992:	4620      	mov	r0, r4
+ 8003994:	f005 fbc8 	bl	8009128 <CDC_Transmit_FS>
+ 8003998:	4b11      	ldr	r3, [pc, #68]	@ (80039e0 <main+0x578>)
+ 800399a:	781b      	ldrb	r3, [r3, #0]
+ 800399c:	2b00      	cmp	r3, #0
+ 800399e:	d0b5      	beq.n	800390c <main+0x4a4>
+ 80039a0:	4b15      	ldr	r3, [pc, #84]	@ (80039f8 <main+0x590>)
+ 80039a2:	681a      	ldr	r2, [r3, #0]
+ 80039a4:	9213      	str	r2, [sp, #76]	@ 0x4c
+ 80039a6:	685b      	ldr	r3, [r3, #4]
+ 80039a8:	9314      	str	r3, [sp, #80]	@ 0x50
+ 80039aa:	2300      	movs	r3, #0
+ 80039ac:	9315      	str	r3, [sp, #84]	@ 0x54
+ 80039ae:	a913      	add	r1, sp, #76	@ 0x4c
+ 80039b0:	2001      	movs	r0, #1
+ 80039b2:	f7fe ff45 	bl	8002840 <Custom_STM_App_Update_Char>
+ 80039b6:	e7a9      	b.n	800390c <main+0x4a4>
  80039b8:	200006bc 	.word	0x200006bc
  80039bc:	42652ee0 	.word	0x42652ee0
  80039c0:	3d4ccccd 	.word	0x3d4ccccd
