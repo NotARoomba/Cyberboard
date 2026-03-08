@@ -67,7 +67,10 @@ static void dbg_print(const char *msg)
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+/* Set to 1 to enable BLE characteristic updates, 0 for USB serial logging only */
+#define ENABLE_BLE       1
+/* Set to 1 to enable USB CDC serial logging, 0 to disable */
+#define ENABLE_USB_LOG   1
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -235,21 +238,22 @@ int main(void)
   dbg_print("[OK] Entering main loop\r\n");
 
   while (1) {
-    /* USER CODE END WHILE */
-
-    /* --- Sensor polling (every 50 ms) --- */
+     /* --- Sensor polling (every 50 ms) --- */
     if (HAL_GetTick() - last_sensor_poll >= 50) {
       last_sensor_poll = HAL_GetTick();
 
       /* IMU */
       if (ICM42688_ReadOnce(&icm, &imu_data) == 0) {
+#if ENABLE_USB_LOG
         int len = snprintf(serial_buf, sizeof(serial_buf),
                            "A:%.2f,%.2f,%.2f G:%.1f,%.1f,%.1f T:%.1f\r\n",
                            imu_data.acc_x, imu_data.acc_y, imu_data.acc_z,
                            imu_data.gyr_x, imu_data.gyr_y, imu_data.gyr_z,
                            imu_data.temp_c);
         CDC_Transmit_FS((uint8_t *)serial_buf, len);
+#endif
 
+#if ENABLE_BLE
         if (ble_ready) {
           float imu_ble[7] = {
             imu_data.acc_x, imu_data.acc_y, imu_data.acc_z,
@@ -258,6 +262,7 @@ int main(void)
           };
           Custom_STM_App_Update_Char(BLE_CHAR_IMU, (uint8_t *)imu_ble);
         }
+#endif
       }
 
       /* Barometer */
@@ -266,11 +271,14 @@ int main(void)
         if (bmp5_get_interrupt_status(&int_status, &bmp5) == BMP5_OK) {
           if (int_status & BMP5_INT_ASSERTED_DRDY) {
             if (bmp5_get_sensor_data(&bmp5_data, &bmp5_osr_cfg, &bmp5) == BMP5_OK) {
+#if ENABLE_USB_LOG
               int len = snprintf(serial_buf, sizeof(serial_buf),
                                  "P:%.2f Pa  T:%.2f C\r\n",
                                  bmp5_data.pressure, bmp5_data.temperature);
               CDC_Transmit_FS((uint8_t *)serial_buf, len);
+#endif
 
+#if ENABLE_BLE
               if (ble_ready) {
                 float baro_ble[3] = {
                   (float)bmp5_data.pressure,
@@ -279,6 +287,7 @@ int main(void)
                 };
                 Custom_STM_App_Update_Char(BLE_CHAR_BARO, (uint8_t *)baro_ble);
               }
+#endif
             }
           }
         }
@@ -286,8 +295,8 @@ int main(void)
 
       HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
     }
-
-    /* BLE sequencer — process pending BLE events */
+    
+    /* USER CODE END WHILE */
     MX_APPE_Process();
 
     /* USER CODE BEGIN 3 */
