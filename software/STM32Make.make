@@ -94,6 +94,7 @@ Core/Src/system_stm32wbxx.c \
 Drivers/BMP580/bmp5.c \
 Drivers/BMP580/common/common.c \
 Drivers/ICM42688/ICM42688.c \
+Drivers/Kalman/kalman.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_cortex.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_dma.c \
@@ -253,6 +254,7 @@ C_INCLUDES =  \
 -IDrivers/CMSIS/Device/ST/STM32WBxx/Include \
 -IDrivers/CMSIS/Include \
 -IDrivers/ICM42688 \
+-IDrivers/Kalman \
 -IDrivers/STM32WBxx_HAL_Driver/Inc \
 -IDrivers/STM32WBxx_HAL_Driver/Inc/Legacy \
 -IMiddlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc \

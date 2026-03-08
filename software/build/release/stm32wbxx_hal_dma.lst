@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
   56 003e 0368     		ldr	r3, [r0]
   57 0040 D960     		str	r1, [r3, #12]
   58 0042 F9E7     		b	.L1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 2
 
 
   60              		.section	.text.DMA_CalcDMAMUXChannelBaseAndMask,"ax",%progbits
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  117 0002 03F03F03 		and	r3, r3, #63
  118 0006 074A     		ldr	r2, .L13
  119 0008 1A44     		add	r2, r2, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 3
 
 
  120 000a 9200     		lsls	r2, r2, #2
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  176 0040 0343     		orrs	r3, r3, r0
  177 0042 E069     		ldr	r0, [r4, #28]
  178 0044 0343     		orrs	r3, r3, r0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 4
 
 
  179 0046 206A     		ldr	r0, [r4, #32]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  233 00b6 E26D     		ldr	r2, [r4, #92]
  234 00b8 5A60     		str	r2, [r3, #4]
  235 00ba DFE7     		b	.L21
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 5
 
 
  236              	.L22:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  292 0048 1D60     		str	r5, [r3]
  293 004a E36C     		ldr	r3, [r4, #76]
  294 004c 226D     		ldr	r2, [r4, #80]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 6
 
 
  295 004e 5A60     		str	r2, [r3, #4]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  350              		.thumb
  351              		.thumb_func
  353              	HAL_DMA_Start:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 7
 
 
  354              		@ args = 0, pretend = 0, frame = 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  410 0016 0128     		cmp	r0, #1
  411 0018 04D0     		beq	.L59
  412 001a 0023     		movs	r3, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 8
 
 
  413 001c 84F82430 		strb	r3, [r4, #36]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  467 0096 C4E7     		b	.L51
  469              		.section	.text.HAL_DMA_Abort,"ax",%progbits
  470              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 9
 
 
  471              		.global	HAL_DMA_Abort
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  526 0068 83F82400 		strb	r0, [r3, #36]
  527 006c 7047     		bx	lr
  528              	.L64:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 10
 
 
  529 006e 0120     		movs	r0, #1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  585 005e 80F82430 		strb	r3, [r0, #36]
  586 0062 836B     		ldr	r3, [r0, #56]
  587 0064 13B1     		cbz	r3, .L69
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 11
 
 
  588 0066 9847     		blx	r3
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  644 005c B5F1FF3F 		cmp	r5, #-1
  645 0060 EDD0     		beq	.L79
  646 0062 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 12
 
 
  647 0066 4346     		mov	r3, r8
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  701 00d8 226D     		ldr	r2, [r4, #80]
  702 00da 1142     		tst	r1, r2
  703 00dc 04D0     		beq	.L83
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 13
 
 
  704 00de 5A60     		str	r2, [r3, #4]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  760              	.L91:
  761 0038 436C     		ldr	r3, [r0, #68]
  762 003a 03F01C02 		and	r2, r3, #28
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 14
 
 
  763 003e 016C     		ldr	r1, [r0, #64]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  817 00c2 C263     		str	r2, [r0, #60]
  818 00c4 80F82520 		strb	r2, [r0, #37]
  819 00c8 0023     		movs	r3, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 15
 
 
  820 00ca 80F82430 		strb	r3, [r0, #36]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  876 004e E7E7     		b	.L98
  877              	.L104:
  878 0050 0220     		movs	r0, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 16
 
 
  879 0052 7047     		bx	lr
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  935 0054 E2E7     		b	.L109
  936              	.L114:
  937 0056 0020     		movs	r0, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 17
 
 
  938 0058 9863     		str	r0, [r3, #56]
@@ -991,45 +991,45 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 1
  969 0000 C06B     		ldr	r0, [r0, #60]
  970 0002 7047     		bx	lr
  972              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_dma.c
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:18     .text.DMA_SetConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:23     .text.DMA_SetConfig:00000000 DMA_SetConfig
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:61     .text.DMA_CalcDMAMUXChannelBaseAndMask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:66     .text.DMA_CalcDMAMUXChannelBaseAndMask:00000000 DMA_CalcDMAMUXChannelBaseAndMask
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:101    .text.DMA_CalcDMAMUXChannelBaseAndMask:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:107    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:112    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000000 DMA_CalcDMAMUXRequestGenBaseAndMask
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:133    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:137    .text.HAL_DMA_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:143    .text.HAL_DMA_Init:00000000 HAL_DMA_Init
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:242    .text.HAL_DMA_Init:000000c0 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:250    .text.HAL_DMA_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:256    .text.HAL_DMA_DeInit:00000000 HAL_DMA_DeInit
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:339    .text.HAL_DMA_DeInit:000000a0 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:347    .text.HAL_DMA_Start:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:353    .text.HAL_DMA_Start:00000000 HAL_DMA_Start
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:393    .text.HAL_DMA_Start_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:399    .text.HAL_DMA_Start_IT:00000000 HAL_DMA_Start_IT
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:470    .text.HAL_DMA_Abort:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:476    .text.HAL_DMA_Abort:00000000 HAL_DMA_Abort
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:533    .text.HAL_DMA_Abort_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:539    .text.HAL_DMA_Abort_IT:00000000 HAL_DMA_Abort_IT
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:596    .text.HAL_DMA_PollForTransfer:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:602    .text.HAL_DMA_PollForTransfer:00000000 HAL_DMA_PollForTransfer
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:732    .text.HAL_DMA_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:738    .text.HAL_DMA_IRQHandler:00000000 HAL_DMA_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:828    .text.HAL_DMA_RegisterCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:834    .text.HAL_DMA_RegisterCallback:00000000 HAL_DMA_RegisterCallback
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:882    .text.HAL_DMA_UnRegisterCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:888    .text.HAL_DMA_UnRegisterCallback:00000000 HAL_DMA_UnRegisterCallback
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:945    .text.HAL_DMA_GetState:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:951    .text.HAL_DMA_GetState:00000000 HAL_DMA_GetState
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:959    .text.HAL_DMA_GetError:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSIiSJ6.s:965    .text.HAL_DMA_GetError:00000000 HAL_DMA_GetError
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:18     .text.DMA_SetConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:23     .text.DMA_SetConfig:00000000 DMA_SetConfig
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:61     .text.DMA_CalcDMAMUXChannelBaseAndMask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:66     .text.DMA_CalcDMAMUXChannelBaseAndMask:00000000 DMA_CalcDMAMUXChannelBaseAndMask
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:101    .text.DMA_CalcDMAMUXChannelBaseAndMask:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:107    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:112    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000000 DMA_CalcDMAMUXRequestGenBaseAndMask
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:133    .text.DMA_CalcDMAMUXRequestGenBaseAndMask:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:137    .text.HAL_DMA_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:143    .text.HAL_DMA_Init:00000000 HAL_DMA_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:242    .text.HAL_DMA_Init:000000c0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:250    .text.HAL_DMA_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:256    .text.HAL_DMA_DeInit:00000000 HAL_DMA_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:339    .text.HAL_DMA_DeInit:000000a0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:347    .text.HAL_DMA_Start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:353    .text.HAL_DMA_Start:00000000 HAL_DMA_Start
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:393    .text.HAL_DMA_Start_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:399    .text.HAL_DMA_Start_IT:00000000 HAL_DMA_Start_IT
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:470    .text.HAL_DMA_Abort:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:476    .text.HAL_DMA_Abort:00000000 HAL_DMA_Abort
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:533    .text.HAL_DMA_Abort_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:539    .text.HAL_DMA_Abort_IT:00000000 HAL_DMA_Abort_IT
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:596    .text.HAL_DMA_PollForTransfer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:602    .text.HAL_DMA_PollForTransfer:00000000 HAL_DMA_PollForTransfer
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:732    .text.HAL_DMA_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:738    .text.HAL_DMA_IRQHandler:00000000 HAL_DMA_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:828    .text.HAL_DMA_RegisterCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:834    .text.HAL_DMA_RegisterCallback:00000000 HAL_DMA_RegisterCallback
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:882    .text.HAL_DMA_UnRegisterCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:888    .text.HAL_DMA_UnRegisterCallback:00000000 HAL_DMA_UnRegisterCallback
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:945    .text.HAL_DMA_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:951    .text.HAL_DMA_GetState:00000000 HAL_DMA_GetState
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:959    .text.HAL_DMA_GetError:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRIf235.s:965    .text.HAL_DMA_GetError:00000000 HAL_DMA_GetError
 
 UNDEFINED SYMBOLS
 HAL_GetTick

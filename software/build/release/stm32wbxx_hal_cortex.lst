@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
   58 000e 2030     		adds	r0, r0, #32
   59 0010 034A     		ldr	r2, .L7
   60 0012 42F82030 		str	r3, [r2, r0, lsl #2]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 2
 
 
   61              		.syntax unified
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
  119 0004 00F16040 		add	r0, r0, #-536870912
  120 0008 00F56140 		add	r0, r0, #57600
  121 000c 90F80003 		ldrb	r0, [r0, #768]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 3
 
 
  122 0010 0009     		lsrs	r0, r0, #4
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
  180 000a BCF1040F 		cmp	ip, #4
  181 000e 07D8     		bhi	.L25
  182 0010 C1F10704 		rsb	r4, r1, #7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 4
 
 
  183 0014 0431     		adds	r1, r1, #4
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
  239              	.L30:
  240 001a 00BF     		.align	2
  241              	.L29:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 5
 
 
  242 001c 00ED00E0 		.word	-536810240
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
  301              		.syntax unified
  302              		.thumb
  303              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 6
 
 
  305              	HAL_NVIC_EnableIRQ:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
  365 0020 0120     		movs	r0, #1
  366 0022 7047     		bx	lr
  367              	.L48:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 7
 
 
  368              		.align	2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
  428 000a 0123     		movs	r3, #1
  429 000c 9340     		lsls	r3, r3, r2
  430 000e 4030     		adds	r0, r0, #64
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 8
 
 
  431 0010 014A     		ldr	r2, .L56
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
  489              	.L63:
  490 0016 7047     		bx	lr
  491              	.L66:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 9
 
 
  492              		.align	2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
  553              		.thumb_func
  555              	HAL_MPU_Disable:
  556              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 10
 
 
  557              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
  614              		.thumb_func
  616              	HAL_MPU_EnableRegion:
  617              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 11
 
 
  618              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
  676 0024 817A     		ldrb	r1, [r0, #10]	@ zero_extendqisi2
  677 0026 43EAC143 		orr	r3, r3, r1, lsl #19
  678 002a 417B     		ldrb	r1, [r0, #13]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 12
 
 
  679 002c 43EA8143 		orr	r3, r3, r1, lsl #18
@@ -679,82 +679,82 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 1
  694              	.L87:
  695 0054 00ED00E0 		.word	-536810240
  697              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_cortex.c
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:18     .text.__NVIC_EnableIRQ:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:23     .text.__NVIC_EnableIRQ:00000000 __NVIC_EnableIRQ
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:40     .text.__NVIC_EnableIRQ:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:43     .text.__NVIC_DisableIRQ:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:48     .text.__NVIC_DisableIRQ:00000000 __NVIC_DisableIRQ
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:75     .text.__NVIC_DisableIRQ:00000020 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:78     .text.__NVIC_SetPriority:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:83     .text.__NVIC_SetPriority:00000000 __NVIC_SetPriority
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:105    .text.__NVIC_SetPriority:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:108    .text.__NVIC_GetPriority:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:113    .text.__NVIC_GetPriority:00000000 __NVIC_GetPriority
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:133    .text.__NVIC_GetPriority:00000020 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:136    .text.NVIC_EncodePriority:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:141    .text.NVIC_EncodePriority:00000000 NVIC_EncodePriority
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:169    .text.NVIC_DecodePriority:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:174    .text.NVIC_DecodePriority:00000000 NVIC_DecodePriority
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:203    .text.__NVIC_SystemReset:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:208    .text.__NVIC_SystemReset:00000000 __NVIC_SystemReset
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:242    .text.__NVIC_SystemReset:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:246    .text.HAL_NVIC_SetPriorityGrouping:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:252    .text.HAL_NVIC_SetPriorityGrouping:00000000 HAL_NVIC_SetPriorityGrouping
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:271    .text.HAL_NVIC_SetPriorityGrouping:00000020 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:274    .text.HAL_NVIC_SetPriority:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:280    .text.HAL_NVIC_SetPriority:00000000 HAL_NVIC_SetPriority
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:296    .text.HAL_NVIC_SetPriority:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:299    .text.HAL_NVIC_EnableIRQ:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:305    .text.HAL_NVIC_EnableIRQ:00000000 HAL_NVIC_EnableIRQ
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:313    .text.HAL_NVIC_DisableIRQ:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:319    .text.HAL_NVIC_DisableIRQ:00000000 HAL_NVIC_DisableIRQ
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:327    .text.HAL_NVIC_SystemReset:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:333    .text.HAL_NVIC_SystemReset:00000000 HAL_NVIC_SystemReset
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:341    .text.HAL_SYSTICK_Config:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:347    .text.HAL_SYSTICK_Config:00000000 HAL_SYSTICK_Config
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:370    .text.HAL_SYSTICK_Config:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:373    .text.HAL_NVIC_GetPriorityGrouping:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:379    .text.HAL_NVIC_GetPriorityGrouping:00000000 HAL_NVIC_GetPriorityGrouping
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:390    .text.HAL_NVIC_GetPriorityGrouping:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:393    .text.HAL_NVIC_GetPriority:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:399    .text.HAL_NVIC_GetPriority:00000000 HAL_NVIC_GetPriority
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:414    .text.HAL_NVIC_SetPendingIRQ:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:420    .text.HAL_NVIC_SetPendingIRQ:00000000 HAL_NVIC_SetPendingIRQ
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:438    .text.HAL_NVIC_SetPendingIRQ:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:441    .text.HAL_NVIC_GetPendingIRQ:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:447    .text.HAL_NVIC_GetPendingIRQ:00000000 HAL_NVIC_GetPendingIRQ
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:467    .text.HAL_NVIC_GetPendingIRQ:00000020 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:470    .text.HAL_NVIC_ClearPendingIRQ:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:476    .text.HAL_NVIC_ClearPendingIRQ:00000000 HAL_NVIC_ClearPendingIRQ
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:494    .text.HAL_NVIC_ClearPendingIRQ:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:497    .text.HAL_SYSTICK_CLKSourceConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:503    .text.HAL_SYSTICK_CLKSourceConfig:00000000 HAL_SYSTICK_CLKSourceConfig
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:522    .text.HAL_SYSTICK_Callback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:528    .text.HAL_SYSTICK_Callback:00000000 HAL_SYSTICK_Callback
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:535    .text.HAL_SYSTICK_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:541    .text.HAL_SYSTICK_IRQHandler:00000000 HAL_SYSTICK_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:549    .text.HAL_MPU_Disable:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s 			page 14
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:18     .text.__NVIC_EnableIRQ:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:23     .text.__NVIC_EnableIRQ:00000000 __NVIC_EnableIRQ
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:40     .text.__NVIC_EnableIRQ:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:43     .text.__NVIC_DisableIRQ:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:48     .text.__NVIC_DisableIRQ:00000000 __NVIC_DisableIRQ
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:75     .text.__NVIC_DisableIRQ:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:78     .text.__NVIC_SetPriority:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:83     .text.__NVIC_SetPriority:00000000 __NVIC_SetPriority
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:105    .text.__NVIC_SetPriority:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:108    .text.__NVIC_GetPriority:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:113    .text.__NVIC_GetPriority:00000000 __NVIC_GetPriority
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:133    .text.__NVIC_GetPriority:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:136    .text.NVIC_EncodePriority:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:141    .text.NVIC_EncodePriority:00000000 NVIC_EncodePriority
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:169    .text.NVIC_DecodePriority:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:174    .text.NVIC_DecodePriority:00000000 NVIC_DecodePriority
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:203    .text.__NVIC_SystemReset:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:208    .text.__NVIC_SystemReset:00000000 __NVIC_SystemReset
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:242    .text.__NVIC_SystemReset:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:246    .text.HAL_NVIC_SetPriorityGrouping:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:252    .text.HAL_NVIC_SetPriorityGrouping:00000000 HAL_NVIC_SetPriorityGrouping
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:271    .text.HAL_NVIC_SetPriorityGrouping:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:274    .text.HAL_NVIC_SetPriority:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:280    .text.HAL_NVIC_SetPriority:00000000 HAL_NVIC_SetPriority
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:296    .text.HAL_NVIC_SetPriority:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:299    .text.HAL_NVIC_EnableIRQ:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:305    .text.HAL_NVIC_EnableIRQ:00000000 HAL_NVIC_EnableIRQ
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:313    .text.HAL_NVIC_DisableIRQ:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:319    .text.HAL_NVIC_DisableIRQ:00000000 HAL_NVIC_DisableIRQ
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:327    .text.HAL_NVIC_SystemReset:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:333    .text.HAL_NVIC_SystemReset:00000000 HAL_NVIC_SystemReset
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:341    .text.HAL_SYSTICK_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:347    .text.HAL_SYSTICK_Config:00000000 HAL_SYSTICK_Config
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:370    .text.HAL_SYSTICK_Config:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:373    .text.HAL_NVIC_GetPriorityGrouping:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:379    .text.HAL_NVIC_GetPriorityGrouping:00000000 HAL_NVIC_GetPriorityGrouping
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:390    .text.HAL_NVIC_GetPriorityGrouping:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:393    .text.HAL_NVIC_GetPriority:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:399    .text.HAL_NVIC_GetPriority:00000000 HAL_NVIC_GetPriority
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:414    .text.HAL_NVIC_SetPendingIRQ:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:420    .text.HAL_NVIC_SetPendingIRQ:00000000 HAL_NVIC_SetPendingIRQ
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:438    .text.HAL_NVIC_SetPendingIRQ:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:441    .text.HAL_NVIC_GetPendingIRQ:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:447    .text.HAL_NVIC_GetPendingIRQ:00000000 HAL_NVIC_GetPendingIRQ
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:467    .text.HAL_NVIC_GetPendingIRQ:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:470    .text.HAL_NVIC_ClearPendingIRQ:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:476    .text.HAL_NVIC_ClearPendingIRQ:00000000 HAL_NVIC_ClearPendingIRQ
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:494    .text.HAL_NVIC_ClearPendingIRQ:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:497    .text.HAL_SYSTICK_CLKSourceConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:503    .text.HAL_SYSTICK_CLKSourceConfig:00000000 HAL_SYSTICK_CLKSourceConfig
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:522    .text.HAL_SYSTICK_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:528    .text.HAL_SYSTICK_Callback:00000000 HAL_SYSTICK_Callback
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:535    .text.HAL_SYSTICK_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:541    .text.HAL_SYSTICK_IRQHandler:00000000 HAL_SYSTICK_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:549    .text.HAL_MPU_Disable:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s 			page 14
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:555    .text.HAL_MPU_Disable:00000000 HAL_MPU_Disable
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:575    .text.HAL_MPU_Disable:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:578    .text.HAL_MPU_Enable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:584    .text.HAL_MPU_Enable:00000000 HAL_MPU_Enable
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:607    .text.HAL_MPU_Enable:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:610    .text.HAL_MPU_EnableRegion:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:616    .text.HAL_MPU_EnableRegion:00000000 HAL_MPU_EnableRegion
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:629    .text.HAL_MPU_EnableRegion:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:632    .text.HAL_MPU_DisableRegion:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:638    .text.HAL_MPU_DisableRegion:00000000 HAL_MPU_DisableRegion
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:651    .text.HAL_MPU_DisableRegion:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:654    .text.HAL_MPU_ConfigRegion:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:660    .text.HAL_MPU_ConfigRegion:00000000 HAL_MPU_ConfigRegion
-C:\Users\Nathan\AppData\Local\Temp\ccUxt8M3.s:695    .text.HAL_MPU_ConfigRegion:00000054 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:555    .text.HAL_MPU_Disable:00000000 HAL_MPU_Disable
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:575    .text.HAL_MPU_Disable:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:578    .text.HAL_MPU_Enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:584    .text.HAL_MPU_Enable:00000000 HAL_MPU_Enable
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:607    .text.HAL_MPU_Enable:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:610    .text.HAL_MPU_EnableRegion:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:616    .text.HAL_MPU_EnableRegion:00000000 HAL_MPU_EnableRegion
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:629    .text.HAL_MPU_EnableRegion:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:632    .text.HAL_MPU_DisableRegion:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:638    .text.HAL_MPU_DisableRegion:00000000 HAL_MPU_DisableRegion
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:651    .text.HAL_MPU_DisableRegion:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:654    .text.HAL_MPU_ConfigRegion:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:660    .text.HAL_MPU_ConfigRegion:00000000 HAL_MPU_ConfigRegion
+C:\Users\Nathan\AppData\Local\Temp\ccNgAPV2.s:695    .text.HAL_MPU_ConfigRegion:00000054 $d
 
 NO UNDEFINED SYMBOLS

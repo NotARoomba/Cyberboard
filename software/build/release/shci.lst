@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
   58 0008 0090     		str	r0, [sp]
   59 000a 0421     		movs	r1, #4
   60              	.L5:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 2
 
 
   61 000c 13B1     		cbz	r3, .L6
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  119              		@ sp needed
  120 0018 00BD     		pop	{pc}
  122              		.section	.text.SHCI_C2_FUS_UpdateAuthKey,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 3
 
 
  123              		.align	1
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  182 000c 0ED0     		beq	.L21
  183 000e 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
  184 0010 0233     		adds	r3, r3, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 4
 
 
  185 0012 D9B2     		uxtb	r1, r3
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  243 0016 05B0     		add	sp, sp, #20
  244              		@ sp needed
  245 0018 00BD     		pop	{pc}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 5
 
 
  247              		.section	.text.SHCI_C2_FUS_LockUsrKey,"ax",%progbits
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  306 0006 0022     		movs	r2, #0
  307 0008 1146     		mov	r1, r2
  308 000a 4FF65F40 		movw	r0, #64607
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 6
 
 
  309 000e FFF7FEFF 		bl	shci_send
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  369 0000 00B5     		push	{lr}
  370 0002 85B0     		sub	sp, sp, #20
  371 0004 0A46     		mov	r2, r1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 7
 
 
  372 0006 6B46     		mov	r3, sp
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  432              	SHCI_C2_DEBUG_Init:
  433              		@ args = 0, pretend = 0, frame = 16
  434              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 8
 
 
  435 0000 00B5     		push	{lr}
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  494              		.align	1
  495              		.global	SHCI_C2_CONCURRENT_GetNextBleEvtTime
  496              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 9
 
 
  497              		.thumb
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  556 000e 4FF66B40 		movw	r0, #64619
  557 0012 FFF7FEFF 		bl	shci_send
  558 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 10
 
 
  559 001a 05B0     		add	sp, sp, #20
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  619              		@ frame_needed = 0, uses_anonymous_args = 0
  620 0000 00B5     		push	{lr}
  621 0002 85B0     		sub	sp, sp, #20
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 11
 
 
  622 0004 6B46     		mov	r3, sp
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  681              		.align	1
  682              		.global	SHCI_C2_SetFlashActivityControl
  683              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 12
 
 
  684              		.thumb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  743 0016 05B0     		add	sp, sp, #20
  744              		@ sp needed
  745 0018 00BD     		pop	{pc}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 13
 
 
  747              		.section	.text.SHCI_C2_SetSystemClock,"ax",%progbits
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  804 0038 C3F30314 		ubfx	r4, r3, #4, #4
  805 003c C470     		strb	r4, [r0, #3]
  806 003e 03F00F03 		and	r3, r3, #15
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 14
 
 
  807 0042 0371     		strb	r3, [r0, #4]
@@ -816,81 +816,81 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
  839 0088 00400058 		.word	1476411392
  840 008c B95646A9 		.word	-1455008071
  842              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 shci.c
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:18     .text.SHCI_C2_FUS_GetState:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:24     .text.SHCI_C2_FUS_GetState:00000000 SHCI_C2_FUS_GetState
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:45     .text.SHCI_C2_FUS_FwUpgrade:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:51     .text.SHCI_C2_FUS_FwUpgrade:00000000 SHCI_C2_FUS_FwUpgrade
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:79     .text.SHCI_C2_FUS_FwDelete:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:85     .text.SHCI_C2_FUS_FwDelete:00000000 SHCI_C2_FUS_FwDelete
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:101    .text.SHCI_C2_FUS_FwPurge:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:107    .text.SHCI_C2_FUS_FwPurge:00000000 SHCI_C2_FUS_FwPurge
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:123    .text.SHCI_C2_FUS_UpdateAuthKey:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:129    .text.SHCI_C2_FUS_UpdateAuthKey:00000000 SHCI_C2_FUS_UpdateAuthKey
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:145    .text.SHCI_C2_FUS_LockAuthKey:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:151    .text.SHCI_C2_FUS_LockAuthKey:00000000 SHCI_C2_FUS_LockAuthKey
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:167    .text.SHCI_C2_FUS_StoreUsrKey:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:173    .text.SHCI_C2_FUS_StoreUsrKey:00000000 SHCI_C2_FUS_StoreUsrKey
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:203    .text.SHCI_C2_FUS_LoadUsrKey:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:209    .text.SHCI_C2_FUS_LoadUsrKey:00000000 SHCI_C2_FUS_LoadUsrKey
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:226    .text.SHCI_C2_FUS_StartWs:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:232    .text.SHCI_C2_FUS_StartWs:00000000 SHCI_C2_FUS_StartWs
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:248    .text.SHCI_C2_FUS_LockUsrKey:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:254    .text.SHCI_C2_FUS_LockUsrKey:00000000 SHCI_C2_FUS_LockUsrKey
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:271    .text.SHCI_C2_FUS_UnloadUsrKey:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:277    .text.SHCI_C2_FUS_UnloadUsrKey:00000000 SHCI_C2_FUS_UnloadUsrKey
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:294    .text.SHCI_C2_FUS_ActivateAntiRollback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:300    .text.SHCI_C2_FUS_ActivateAntiRollback:00000000 SHCI_C2_FUS_ActivateAntiRollback
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:316    .text.SHCI_C2_BLE_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:322    .text.SHCI_C2_BLE_Init:00000000 SHCI_C2_BLE_Init
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:338    .text.SHCI_C2_THREAD_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:344    .text.SHCI_C2_THREAD_Init:00000000 SHCI_C2_THREAD_Init
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:360    .text.SHCI_C2_LLDTESTS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:366    .text.SHCI_C2_LLDTESTS_Init:00000000 SHCI_C2_LLDTESTS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:382    .text.SHCI_C2_BLE_LLD_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:388    .text.SHCI_C2_BLE_LLD_Init:00000000 SHCI_C2_BLE_LLD_Init
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:404    .text.SHCI_C2_ZIGBEE_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:410    .text.SHCI_C2_ZIGBEE_Init:00000000 SHCI_C2_ZIGBEE_Init
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:426    .text.SHCI_C2_DEBUG_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:432    .text.SHCI_C2_DEBUG_Init:00000000 SHCI_C2_DEBUG_Init
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:448    .text.SHCI_C2_FLASH_EraseActivity:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:454    .text.SHCI_C2_FLASH_EraseActivity:00000000 SHCI_C2_FLASH_EraseActivity
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:471    .text.SHCI_C2_CONCURRENT_SetMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:477    .text.SHCI_C2_CONCURRENT_SetMode:00000000 SHCI_C2_CONCURRENT_SetMode
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:494    .text.SHCI_C2_CONCURRENT_GetNextBleEvtTime:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:500    .text.SHCI_C2_CONCURRENT_GetNextBleEvtTime:00000000 SHCI_C2_CONCURRENT_GetNextBleEvtTime
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:519    .text.SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:525    .text.SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification:00000000 SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:541    .text.SHCI_C2_FLASH_StoreData:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:547    .text.SHCI_C2_FLASH_StoreData:00000000 SHCI_C2_FLASH_StoreData
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:564    .text.SHCI_C2_FLASH_EraseData:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:570    .text.SHCI_C2_FLASH_EraseData:00000000 SHCI_C2_FLASH_EraseData
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:587    .text.SHCI_C2_RADIO_AllowLowPower:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:593    .text.SHCI_C2_RADIO_AllowLowPower:00000000 SHCI_C2_RADIO_AllowLowPower
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:611    .text.SHCI_C2_MAC_802_15_4_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:617    .text.SHCI_C2_MAC_802_15_4_Init:00000000 SHCI_C2_MAC_802_15_4_Init
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:633    .text.SHCI_C2_Reinit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:639    .text.SHCI_C2_Reinit:00000000 SHCI_C2_Reinit
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:655    .text.SHCI_C2_ExtpaConfig:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 16
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:18     .text.SHCI_C2_FUS_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:24     .text.SHCI_C2_FUS_GetState:00000000 SHCI_C2_FUS_GetState
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:45     .text.SHCI_C2_FUS_FwUpgrade:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:51     .text.SHCI_C2_FUS_FwUpgrade:00000000 SHCI_C2_FUS_FwUpgrade
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:79     .text.SHCI_C2_FUS_FwDelete:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:85     .text.SHCI_C2_FUS_FwDelete:00000000 SHCI_C2_FUS_FwDelete
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:101    .text.SHCI_C2_FUS_FwPurge:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:107    .text.SHCI_C2_FUS_FwPurge:00000000 SHCI_C2_FUS_FwPurge
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:123    .text.SHCI_C2_FUS_UpdateAuthKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:129    .text.SHCI_C2_FUS_UpdateAuthKey:00000000 SHCI_C2_FUS_UpdateAuthKey
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:145    .text.SHCI_C2_FUS_LockAuthKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:151    .text.SHCI_C2_FUS_LockAuthKey:00000000 SHCI_C2_FUS_LockAuthKey
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:167    .text.SHCI_C2_FUS_StoreUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:173    .text.SHCI_C2_FUS_StoreUsrKey:00000000 SHCI_C2_FUS_StoreUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:203    .text.SHCI_C2_FUS_LoadUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:209    .text.SHCI_C2_FUS_LoadUsrKey:00000000 SHCI_C2_FUS_LoadUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:226    .text.SHCI_C2_FUS_StartWs:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:232    .text.SHCI_C2_FUS_StartWs:00000000 SHCI_C2_FUS_StartWs
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:248    .text.SHCI_C2_FUS_LockUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:254    .text.SHCI_C2_FUS_LockUsrKey:00000000 SHCI_C2_FUS_LockUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:271    .text.SHCI_C2_FUS_UnloadUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:277    .text.SHCI_C2_FUS_UnloadUsrKey:00000000 SHCI_C2_FUS_UnloadUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:294    .text.SHCI_C2_FUS_ActivateAntiRollback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:300    .text.SHCI_C2_FUS_ActivateAntiRollback:00000000 SHCI_C2_FUS_ActivateAntiRollback
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:316    .text.SHCI_C2_BLE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:322    .text.SHCI_C2_BLE_Init:00000000 SHCI_C2_BLE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:338    .text.SHCI_C2_THREAD_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:344    .text.SHCI_C2_THREAD_Init:00000000 SHCI_C2_THREAD_Init
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:360    .text.SHCI_C2_LLDTESTS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:366    .text.SHCI_C2_LLDTESTS_Init:00000000 SHCI_C2_LLDTESTS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:382    .text.SHCI_C2_BLE_LLD_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:388    .text.SHCI_C2_BLE_LLD_Init:00000000 SHCI_C2_BLE_LLD_Init
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:404    .text.SHCI_C2_ZIGBEE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:410    .text.SHCI_C2_ZIGBEE_Init:00000000 SHCI_C2_ZIGBEE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:426    .text.SHCI_C2_DEBUG_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:432    .text.SHCI_C2_DEBUG_Init:00000000 SHCI_C2_DEBUG_Init
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:448    .text.SHCI_C2_FLASH_EraseActivity:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:454    .text.SHCI_C2_FLASH_EraseActivity:00000000 SHCI_C2_FLASH_EraseActivity
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:471    .text.SHCI_C2_CONCURRENT_SetMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:477    .text.SHCI_C2_CONCURRENT_SetMode:00000000 SHCI_C2_CONCURRENT_SetMode
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:494    .text.SHCI_C2_CONCURRENT_GetNextBleEvtTime:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:500    .text.SHCI_C2_CONCURRENT_GetNextBleEvtTime:00000000 SHCI_C2_CONCURRENT_GetNextBleEvtTime
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:519    .text.SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:525    .text.SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification:00000000 SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:541    .text.SHCI_C2_FLASH_StoreData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:547    .text.SHCI_C2_FLASH_StoreData:00000000 SHCI_C2_FLASH_StoreData
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:564    .text.SHCI_C2_FLASH_EraseData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:570    .text.SHCI_C2_FLASH_EraseData:00000000 SHCI_C2_FLASH_EraseData
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:587    .text.SHCI_C2_RADIO_AllowLowPower:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:593    .text.SHCI_C2_RADIO_AllowLowPower:00000000 SHCI_C2_RADIO_AllowLowPower
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:611    .text.SHCI_C2_MAC_802_15_4_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:617    .text.SHCI_C2_MAC_802_15_4_Init:00000000 SHCI_C2_MAC_802_15_4_Init
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:633    .text.SHCI_C2_Reinit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:639    .text.SHCI_C2_Reinit:00000000 SHCI_C2_Reinit
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:655    .text.SHCI_C2_ExtpaConfig:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s 			page 16
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:661    .text.SHCI_C2_ExtpaConfig:00000000 SHCI_C2_ExtpaConfig
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:681    .text.SHCI_C2_SetFlashActivityControl:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:687    .text.SHCI_C2_SetFlashActivityControl:00000000 SHCI_C2_SetFlashActivityControl
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:704    .text.SHCI_C2_Config:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:710    .text.SHCI_C2_Config:00000000 SHCI_C2_Config
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:726    .text.SHCI_C2_802_15_4_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:732    .text.SHCI_C2_802_15_4_DeInit:00000000 SHCI_C2_802_15_4_DeInit
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:748    .text.SHCI_C2_SetSystemClock:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:754    .text.SHCI_C2_SetSystemClock:00000000 SHCI_C2_SetSystemClock
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:771    .text.SHCI_GetWirelessFwInfo:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:777    .text.SHCI_GetWirelessFwInfo:00000000 SHCI_GetWirelessFwInfo
-C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:839    .text.SHCI_GetWirelessFwInfo:00000088 $d
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:661    .text.SHCI_C2_ExtpaConfig:00000000 SHCI_C2_ExtpaConfig
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:681    .text.SHCI_C2_SetFlashActivityControl:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:687    .text.SHCI_C2_SetFlashActivityControl:00000000 SHCI_C2_SetFlashActivityControl
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:704    .text.SHCI_C2_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:710    .text.SHCI_C2_Config:00000000 SHCI_C2_Config
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:726    .text.SHCI_C2_802_15_4_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:732    .text.SHCI_C2_802_15_4_DeInit:00000000 SHCI_C2_802_15_4_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:748    .text.SHCI_C2_SetSystemClock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:754    .text.SHCI_C2_SetSystemClock:00000000 SHCI_C2_SetSystemClock
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:771    .text.SHCI_GetWirelessFwInfo:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:777    .text.SHCI_GetWirelessFwInfo:00000000 SHCI_GetWirelessFwInfo
+C:\Users\Nathan\AppData\Local\Temp\ccz5X08F.s:839    .text.SHCI_GetWirelessFwInfo:00000088 $d
 
 UNDEFINED SYMBOLS
 shci_send

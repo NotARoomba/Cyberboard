@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
   61              		.syntax unified
   62              		.thumb
   63              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 2
 
 
   65              	hci_encryption_change_event_process:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  126              		.thumb
  127              		.thumb_func
  129              	hci_hardware_error_event_process:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 3
 
 
  130              		@ args = 0, pretend = 0, frame = 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  193              		.section	.text.hci_le_connection_complete_event,"ax",%progbits
  194              		.align	1
  195              		.weak	hci_le_connection_complete_event
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 4
 
 
  196              		.syntax unified
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  257              		@ frame_needed = 0, uses_anonymous_args = 0
  258 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
  259 0004 84B0     		sub	sp, sp, #16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 5
 
 
  260 0006 8046     		mov	r8, r0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  318 0016 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
  319 0018 FFF7FEFF 		bl	hci_le_connection_update_complete_event
  320 001c 03B0     		add	sp, sp, #12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 6
 
 
  321              		@ sp needed
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  384              		.weak	hci_le_data_length_change_event
  385              		.syntax unified
  386              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 7
 
 
  387              		.thumb_func
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  449              		.thumb
  450              		.thumb_func
  452              	hci_le_generate_dhkey_complete_event:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 8
 
 
  453              		@ args = 0, pretend = 0, frame = 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  513 0038 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
  514 003c 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
  515 003e FFF7FEFF 		bl	hci_le_enhanced_connection_complete_event
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 9
 
 
  516 0042 09B0     		add	sp, sp, #36
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  579              		.align	1
  580              		.weak	hci_le_extended_advertising_report_event
  581              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 10
 
 
  582              		.thumb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  641              		@ link register save eliminated.
  642 0000 7047     		bx	lr
  644              		.section	.text.hci_le_scan_timeout_event_process,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 11
 
 
  645              		.align	1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  708              		@ frame_needed = 0, uses_anonymous_args = 0
  709 0000 08B5     		push	{r3, lr}
  710 0002 821C     		adds	r2, r0, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 12
 
 
  711 0004 4178     		ldrb	r1, [r0, #1]	@ zero_extendqisi2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  774              		.align	1
  775              		.weak	aci_gap_limited_discoverable_event
  776              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 13
 
 
  777              		.thumb
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  841              		.section	.text.aci_gap_pass_key_req_event_process,"ax",%progbits
  842              		.align	1
  843              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 14
 
 
  844              		.thumb
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  907 0008 08BD     		pop	{r3, pc}
  909              		.section	.text.aci_gap_proc_complete_event,"ax",%progbits
  910              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 15
 
 
  911              		.weak	aci_gap_proc_complete_event
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  974              		@ args = 0, pretend = 0, frame = 0
  975              		@ frame_needed = 0, uses_anonymous_args = 0
  976              		@ link register save eliminated.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 16
 
 
  977 0000 7047     		bx	lr
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1041              	aci_gap_pairing_request_event_process:
  1042              		@ args = 0, pretend = 0, frame = 0
  1043              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 17
 
 
  1044 0000 08B5     		push	{r3, lr}
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1106 000c 08BD     		pop	{r3, pc}
  1108              		.section	.text.aci_l2cap_connection_update_req_event,"ax",%progbits
  1109              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 18
 
 
  1110              		.weak	aci_l2cap_connection_update_req_event
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1171 0004 831D     		adds	r3, r0, #6
  1172 0006 0093     		str	r3, [sp]
  1173 0008 4379     		ldrb	r3, [r0, #5]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 19
 
 
  1174 000a B0F80320 		ldrh	r2, [r0, #3]	@ unaligned
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1235              		.thumb
  1236              		.thumb_func
  1238              	aci_l2cap_coc_connect_confirm_event_process:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 20
 
 
  1239              		@ args = 0, pretend = 0, frame = 0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1298              		.thumb_func
  1300              	aci_l2cap_coc_reconf_confirm_event:
  1301              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 21
 
 
  1302              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1365              		.thumb_func
  1367              	aci_l2cap_coc_flow_control_event_process:
  1368              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 22
 
 
  1369              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1432              		.align	1
  1433              		.weak	aci_gatt_attribute_modified_event
  1434              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 23
 
 
  1435              		.thumb
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1497              		.thumb
  1498              		.thumb_func
  1500              	aci_att_exchange_mtu_resp_event:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 24
 
 
  1501              		@ args = 0, pretend = 0, frame = 0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1564              		.section	.text.aci_att_find_by_type_value_resp_event_process,"ax",%progbits
  1565              		.align	1
  1566              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 25
 
 
  1567              		.thumb
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1630              		@ args = 0, pretend = 0, frame = 0
  1631              		@ frame_needed = 0, uses_anonymous_args = 0
  1632 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 26
 
 
  1633 0002 C21C     		adds	r2, r0, #3
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1695 000c 08BD     		pop	{r3, pc}
  1697              		.section	.text.aci_att_read_by_group_type_resp_event,"ax",%progbits
  1698              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 27
 
 
  1699              		.weak	aci_att_read_by_group_type_resp_event
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1760 0016 00BD     		pop	{pc}
  1762              		.section	.text.aci_att_exec_write_resp_event,"ax",%progbits
  1763              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 28
 
 
  1764              		.weak	aci_att_exec_write_resp_event
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1827              		@ args = 0, pretend = 0, frame = 0
  1828              		@ frame_needed = 0, uses_anonymous_args = 0
  1829              		@ link register save eliminated.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 29
 
 
  1830 0000 7047     		bx	lr
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1893              		.thumb
  1894              		.thumb_func
  1896              	aci_gatt_error_resp_event_process:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 30
 
 
  1897              		@ args = 0, pretend = 0, frame = 0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  1959 0000 08B5     		push	{r3, lr}
  1960 0002 431D     		adds	r3, r0, #5
  1961 0004 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 31
 
 
  1962 0006 4188     		ldrh	r1, [r0, #2]	@ unaligned
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  2025              		.section	.text.aci_gatt_tx_pool_available_event,"ax",%progbits
  2026              		.align	1
  2027              		.weak	aci_gatt_tx_pool_available_event
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 32
 
 
  2028              		.syntax unified
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  2091 0000 7047     		bx	lr
  2093              		.section	.text.aci_gatt_prepare_write_permit_req_event_process,"ax",%progbits
  2094              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 33
 
 
  2095              		.syntax unified
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  2156 0000 7047     		bx	lr
  2158              		.section	.text.aci_gatt_mult_notification_event_process,"ax",%progbits
  2159              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 34
 
 
  2160              		.syntax unified
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  2223              		@ frame_needed = 0, uses_anonymous_args = 0
  2224 0000 08B5     		push	{r3, lr}
  2225 0002 831D     		adds	r3, r0, #6
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 35
 
 
  2226 0004 8288     		ldrh	r2, [r0, #4]	@ unaligned
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  2288              		@ frame_needed = 0, uses_anonymous_args = 0
  2289 0000 00B5     		push	{lr}
  2290 0002 83B0     		sub	sp, sp, #12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 36
 
 
  2291 0004 00F10803 		add	r3, r0, #8
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  2352              		.syntax unified
  2353              		.thumb
  2354              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 37
 
 
  2356              	aci_hal_scan_req_report_event_process:
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  2413 006c 00000000 		.word	aci_l2cap_connection_update_req_event_process
  2414 0070 0A08     		.short	2058
  2415 0072 0000     		.space	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 38
 
 
  2416 0074 00000000 		.word	aci_l2cap_command_reject_event_process
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  2470 0104 00000000 		.word	aci_att_read_by_group_type_resp_event_process
  2471 0108 0C0C     		.short	3084
  2472 010a 0000     		.space	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 39
 
 
  2473 010c 00000000 		.word	aci_att_prepare_write_resp_event_process
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  2527 019c 00000000 		.word	aci_gatt_notification_ext_event_process
  2528 01a0 0418     		.short	6148
  2529 01a2 0000     		.space	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 40
 
 
  2530 01a4 00000000 		.word	aci_hal_end_of_radio_activity_event_process
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  2586 007a 0000     		.space	2
  2587 007c 00000000 		.word	hci_le_channel_selection_algorithm_event_process
  2588              		.global	hci_event_table
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 41
 
 
  2589              		.section	.rodata.hci_event_table,"a"
@@ -2423,336 +2423,336 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
  2610 002a 0000     		.space	2
  2611 002c 00000000 		.word	hci_encryption_key_refresh_complete_event_process
  2612              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 42
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ble_events.c
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:18     .text.hci_disconnection_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:24     .text.hci_disconnection_complete_event:00000000 hci_disconnection_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:31     .text.hci_disconnection_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:36     .text.hci_disconnection_complete_event_process:00000000 hci_disconnection_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:47     .text.hci_encryption_change_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:53     .text.hci_encryption_change_event:00000000 hci_encryption_change_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:60     .text.hci_encryption_change_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:65     .text.hci_encryption_change_event_process:00000000 hci_encryption_change_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:76     .text.hci_read_remote_version_information_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:82     .text.hci_read_remote_version_information_complete_event:00000000 hci_read_remote_version_information_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:89     .text.hci_read_remote_version_information_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:94     .text.hci_read_remote_version_information_complete_event_process:00000000 hci_read_remote_version_information_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:111    .text.hci_hardware_error_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:117    .text.hci_hardware_error_event:00000000 hci_hardware_error_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:124    .text.hci_hardware_error_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:129    .text.hci_hardware_error_event_process:00000000 hci_hardware_error_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:138    .text.hci_number_of_completed_packets_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:144    .text.hci_number_of_completed_packets_event:00000000 hci_number_of_completed_packets_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:151    .text.hci_number_of_completed_packets_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:156    .text.hci_number_of_completed_packets_event_process:00000000 hci_number_of_completed_packets_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:166    .text.hci_encryption_key_refresh_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:172    .text.hci_encryption_key_refresh_complete_event:00000000 hci_encryption_key_refresh_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:179    .text.hci_encryption_key_refresh_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:184    .text.hci_encryption_key_refresh_complete_event_process:00000000 hci_encryption_key_refresh_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:194    .text.hci_le_connection_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:200    .text.hci_le_connection_complete_event:00000000 hci_le_connection_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:207    .text.hci_le_connection_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:212    .text.hci_le_connection_complete_event_process:00000000 hci_le_connection_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:237    .text.hci_le_advertising_report_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:243    .text.hci_le_advertising_report_event:00000000 hci_le_advertising_report_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:250    .text.hci_le_advertising_report_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:255    .text.hci_le_advertising_report_event_process:00000000 hci_le_advertising_report_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:290    .text.hci_le_connection_update_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:296    .text.hci_le_connection_update_complete_event:00000000 hci_le_connection_update_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:303    .text.hci_le_connection_update_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:308    .text.hci_le_connection_update_complete_event_process:00000000 hci_le_connection_update_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:325    .text.hci_le_read_remote_features_page_0_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:331    .text.hci_le_read_remote_features_page_0_complete_event:00000000 hci_le_read_remote_features_page_0_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:338    .text.hci_le_read_remote_features_page_0_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:343    .text.hci_le_read_remote_features_page_0_complete_event_process:00000000 hci_le_read_remote_features_page_0_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:354    .text.hci_le_long_term_key_request_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:360    .text.hci_le_long_term_key_request_event:00000000 hci_le_long_term_key_request_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:367    .text.hci_le_long_term_key_request_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:372    .text.hci_le_long_term_key_request_event_process:00000000 hci_le_long_term_key_request_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:383    .text.hci_le_data_length_change_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:389    .text.hci_le_data_length_change_event:00000000 hci_le_data_length_change_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:396    .text.hci_le_data_length_change_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:401    .text.hci_le_data_length_change_event_process:00000000 hci_le_data_length_change_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:418    .text.hci_le_read_local_p256_public_key_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:424    .text.hci_le_read_local_p256_public_key_complete_event:00000000 hci_le_read_local_p256_public_key_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:431    .text.hci_le_read_local_p256_public_key_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:436    .text.hci_le_read_local_p256_public_key_complete_event_process:00000000 hci_le_read_local_p256_public_key_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:446    .text.hci_le_generate_dhkey_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:452    .text.hci_le_generate_dhkey_complete_event:00000000 hci_le_generate_dhkey_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:459    .text.hci_le_generate_dhkey_complete_event_process:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 43
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:18     .text.hci_disconnection_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:24     .text.hci_disconnection_complete_event:00000000 hci_disconnection_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:31     .text.hci_disconnection_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:36     .text.hci_disconnection_complete_event_process:00000000 hci_disconnection_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:47     .text.hci_encryption_change_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:53     .text.hci_encryption_change_event:00000000 hci_encryption_change_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:60     .text.hci_encryption_change_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:65     .text.hci_encryption_change_event_process:00000000 hci_encryption_change_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:76     .text.hci_read_remote_version_information_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:82     .text.hci_read_remote_version_information_complete_event:00000000 hci_read_remote_version_information_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:89     .text.hci_read_remote_version_information_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:94     .text.hci_read_remote_version_information_complete_event_process:00000000 hci_read_remote_version_information_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:111    .text.hci_hardware_error_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:117    .text.hci_hardware_error_event:00000000 hci_hardware_error_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:124    .text.hci_hardware_error_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:129    .text.hci_hardware_error_event_process:00000000 hci_hardware_error_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:138    .text.hci_number_of_completed_packets_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:144    .text.hci_number_of_completed_packets_event:00000000 hci_number_of_completed_packets_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:151    .text.hci_number_of_completed_packets_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:156    .text.hci_number_of_completed_packets_event_process:00000000 hci_number_of_completed_packets_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:166    .text.hci_encryption_key_refresh_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:172    .text.hci_encryption_key_refresh_complete_event:00000000 hci_encryption_key_refresh_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:179    .text.hci_encryption_key_refresh_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:184    .text.hci_encryption_key_refresh_complete_event_process:00000000 hci_encryption_key_refresh_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:194    .text.hci_le_connection_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:200    .text.hci_le_connection_complete_event:00000000 hci_le_connection_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:207    .text.hci_le_connection_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:212    .text.hci_le_connection_complete_event_process:00000000 hci_le_connection_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:237    .text.hci_le_advertising_report_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:243    .text.hci_le_advertising_report_event:00000000 hci_le_advertising_report_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:250    .text.hci_le_advertising_report_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:255    .text.hci_le_advertising_report_event_process:00000000 hci_le_advertising_report_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:290    .text.hci_le_connection_update_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:296    .text.hci_le_connection_update_complete_event:00000000 hci_le_connection_update_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:303    .text.hci_le_connection_update_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:308    .text.hci_le_connection_update_complete_event_process:00000000 hci_le_connection_update_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:325    .text.hci_le_read_remote_features_page_0_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:331    .text.hci_le_read_remote_features_page_0_complete_event:00000000 hci_le_read_remote_features_page_0_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:338    .text.hci_le_read_remote_features_page_0_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:343    .text.hci_le_read_remote_features_page_0_complete_event_process:00000000 hci_le_read_remote_features_page_0_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:354    .text.hci_le_long_term_key_request_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:360    .text.hci_le_long_term_key_request_event:00000000 hci_le_long_term_key_request_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:367    .text.hci_le_long_term_key_request_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:372    .text.hci_le_long_term_key_request_event_process:00000000 hci_le_long_term_key_request_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:383    .text.hci_le_data_length_change_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:389    .text.hci_le_data_length_change_event:00000000 hci_le_data_length_change_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:396    .text.hci_le_data_length_change_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:401    .text.hci_le_data_length_change_event_process:00000000 hci_le_data_length_change_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:418    .text.hci_le_read_local_p256_public_key_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:424    .text.hci_le_read_local_p256_public_key_complete_event:00000000 hci_le_read_local_p256_public_key_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:431    .text.hci_le_read_local_p256_public_key_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:436    .text.hci_le_read_local_p256_public_key_complete_event_process:00000000 hci_le_read_local_p256_public_key_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:446    .text.hci_le_generate_dhkey_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:452    .text.hci_le_generate_dhkey_complete_event:00000000 hci_le_generate_dhkey_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:459    .text.hci_le_generate_dhkey_complete_event_process:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 43
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:464    .text.hci_le_generate_dhkey_complete_event_process:00000000 hci_le_generate_dhkey_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:474    .text.hci_le_enhanced_connection_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:480    .text.hci_le_enhanced_connection_complete_event:00000000 hci_le_enhanced_connection_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:487    .text.hci_le_enhanced_connection_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:492    .text.hci_le_enhanced_connection_complete_event_process:00000000 hci_le_enhanced_connection_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:521    .text.hci_le_directed_advertising_report_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:527    .text.hci_le_directed_advertising_report_event:00000000 hci_le_directed_advertising_report_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:534    .text.hci_le_directed_advertising_report_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:539    .text.hci_le_directed_advertising_report_event_process:00000000 hci_le_directed_advertising_report_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:549    .text.hci_le_phy_update_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:555    .text.hci_le_phy_update_complete_event:00000000 hci_le_phy_update_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:562    .text.hci_le_phy_update_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:567    .text.hci_le_phy_update_complete_event_process:00000000 hci_le_phy_update_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:579    .text.hci_le_extended_advertising_report_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:585    .text.hci_le_extended_advertising_report_event:00000000 hci_le_extended_advertising_report_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:592    .text.hci_le_extended_advertising_report_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:597    .text.hci_le_extended_advertising_report_event_process:00000000 hci_le_extended_advertising_report_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:632    .text.hci_le_scan_timeout_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:638    .text.hci_le_scan_timeout_event:00000000 hci_le_scan_timeout_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:645    .text.hci_le_scan_timeout_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:650    .text.hci_le_scan_timeout_event_process:00000000 hci_le_scan_timeout_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:658    .text.hci_le_advertising_set_terminated_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:664    .text.hci_le_advertising_set_terminated_event:00000000 hci_le_advertising_set_terminated_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:671    .text.hci_le_advertising_set_terminated_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:676    .text.hci_le_advertising_set_terminated_event_process:00000000 hci_le_advertising_set_terminated_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:688    .text.hci_le_scan_request_received_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:694    .text.hci_le_scan_request_received_event:00000000 hci_le_scan_request_received_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:701    .text.hci_le_scan_request_received_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:706    .text.hci_le_scan_request_received_event_process:00000000 hci_le_scan_request_received_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:717    .text.hci_le_channel_selection_algorithm_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:723    .text.hci_le_channel_selection_algorithm_event:00000000 hci_le_channel_selection_algorithm_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:730    .text.hci_le_channel_selection_algorithm_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:735    .text.hci_le_channel_selection_algorithm_event_process:00000000 hci_le_channel_selection_algorithm_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:745    .text.aci_warning_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:751    .text.aci_warning_event:00000000 aci_warning_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:758    .text.aci_warning_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:763    .text.aci_warning_event_process:00000000 aci_warning_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:774    .text.aci_gap_limited_discoverable_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:780    .text.aci_gap_limited_discoverable_event:00000000 aci_gap_limited_discoverable_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:787    .text.aci_gap_limited_discoverable_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:792    .text.aci_gap_limited_discoverable_event_process:00000000 aci_gap_limited_discoverable_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:800    .text.aci_gap_pairing_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:806    .text.aci_gap_pairing_complete_event:00000000 aci_gap_pairing_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:813    .text.aci_gap_pairing_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:818    .text.aci_gap_pairing_complete_event_process:00000000 aci_gap_pairing_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:829    .text.aci_gap_pass_key_req_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:835    .text.aci_gap_pass_key_req_event:00000000 aci_gap_pass_key_req_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:842    .text.aci_gap_pass_key_req_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:847    .text.aci_gap_pass_key_req_event_process:00000000 aci_gap_pass_key_req_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:856    .text.aci_gap_authorization_req_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:862    .text.aci_gap_authorization_req_event:00000000 aci_gap_authorization_req_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:869    .text.aci_gap_authorization_req_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:874    .text.aci_gap_authorization_req_event_process:00000000 aci_gap_authorization_req_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:883    .text.aci_gap_bond_lost_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:889    .text.aci_gap_bond_lost_event:00000000 aci_gap_bond_lost_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:896    .text.aci_gap_bond_lost_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:901    .text.aci_gap_bond_lost_event_process:00000000 aci_gap_bond_lost_event_process
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 44
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:464    .text.hci_le_generate_dhkey_complete_event_process:00000000 hci_le_generate_dhkey_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:474    .text.hci_le_enhanced_connection_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:480    .text.hci_le_enhanced_connection_complete_event:00000000 hci_le_enhanced_connection_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:487    .text.hci_le_enhanced_connection_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:492    .text.hci_le_enhanced_connection_complete_event_process:00000000 hci_le_enhanced_connection_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:521    .text.hci_le_directed_advertising_report_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:527    .text.hci_le_directed_advertising_report_event:00000000 hci_le_directed_advertising_report_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:534    .text.hci_le_directed_advertising_report_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:539    .text.hci_le_directed_advertising_report_event_process:00000000 hci_le_directed_advertising_report_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:549    .text.hci_le_phy_update_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:555    .text.hci_le_phy_update_complete_event:00000000 hci_le_phy_update_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:562    .text.hci_le_phy_update_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:567    .text.hci_le_phy_update_complete_event_process:00000000 hci_le_phy_update_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:579    .text.hci_le_extended_advertising_report_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:585    .text.hci_le_extended_advertising_report_event:00000000 hci_le_extended_advertising_report_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:592    .text.hci_le_extended_advertising_report_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:597    .text.hci_le_extended_advertising_report_event_process:00000000 hci_le_extended_advertising_report_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:632    .text.hci_le_scan_timeout_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:638    .text.hci_le_scan_timeout_event:00000000 hci_le_scan_timeout_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:645    .text.hci_le_scan_timeout_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:650    .text.hci_le_scan_timeout_event_process:00000000 hci_le_scan_timeout_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:658    .text.hci_le_advertising_set_terminated_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:664    .text.hci_le_advertising_set_terminated_event:00000000 hci_le_advertising_set_terminated_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:671    .text.hci_le_advertising_set_terminated_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:676    .text.hci_le_advertising_set_terminated_event_process:00000000 hci_le_advertising_set_terminated_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:688    .text.hci_le_scan_request_received_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:694    .text.hci_le_scan_request_received_event:00000000 hci_le_scan_request_received_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:701    .text.hci_le_scan_request_received_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:706    .text.hci_le_scan_request_received_event_process:00000000 hci_le_scan_request_received_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:717    .text.hci_le_channel_selection_algorithm_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:723    .text.hci_le_channel_selection_algorithm_event:00000000 hci_le_channel_selection_algorithm_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:730    .text.hci_le_channel_selection_algorithm_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:735    .text.hci_le_channel_selection_algorithm_event_process:00000000 hci_le_channel_selection_algorithm_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:745    .text.aci_warning_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:751    .text.aci_warning_event:00000000 aci_warning_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:758    .text.aci_warning_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:763    .text.aci_warning_event_process:00000000 aci_warning_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:774    .text.aci_gap_limited_discoverable_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:780    .text.aci_gap_limited_discoverable_event:00000000 aci_gap_limited_discoverable_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:787    .text.aci_gap_limited_discoverable_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:792    .text.aci_gap_limited_discoverable_event_process:00000000 aci_gap_limited_discoverable_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:800    .text.aci_gap_pairing_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:806    .text.aci_gap_pairing_complete_event:00000000 aci_gap_pairing_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:813    .text.aci_gap_pairing_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:818    .text.aci_gap_pairing_complete_event_process:00000000 aci_gap_pairing_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:829    .text.aci_gap_pass_key_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:835    .text.aci_gap_pass_key_req_event:00000000 aci_gap_pass_key_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:842    .text.aci_gap_pass_key_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:847    .text.aci_gap_pass_key_req_event_process:00000000 aci_gap_pass_key_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:856    .text.aci_gap_authorization_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:862    .text.aci_gap_authorization_req_event:00000000 aci_gap_authorization_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:869    .text.aci_gap_authorization_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:874    .text.aci_gap_authorization_req_event_process:00000000 aci_gap_authorization_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:883    .text.aci_gap_bond_lost_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:889    .text.aci_gap_bond_lost_event:00000000 aci_gap_bond_lost_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:896    .text.aci_gap_bond_lost_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:901    .text.aci_gap_bond_lost_event_process:00000000 aci_gap_bond_lost_event_process
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 44
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:910    .text.aci_gap_proc_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:916    .text.aci_gap_proc_complete_event:00000000 aci_gap_proc_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:923    .text.aci_gap_proc_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:928    .text.aci_gap_proc_complete_event_process:00000000 aci_gap_proc_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:940    .text.aci_gap_addr_not_resolved_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:946    .text.aci_gap_addr_not_resolved_event:00000000 aci_gap_addr_not_resolved_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:953    .text.aci_gap_addr_not_resolved_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:958    .text.aci_gap_addr_not_resolved_event_process:00000000 aci_gap_addr_not_resolved_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:967    .text.aci_gap_numeric_comparison_value_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:973    .text.aci_gap_numeric_comparison_value_event:00000000 aci_gap_numeric_comparison_value_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:980    .text.aci_gap_numeric_comparison_value_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:985    .text.aci_gap_numeric_comparison_value_event_process:00000000 aci_gap_numeric_comparison_value_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:995    .text.aci_gap_keypress_notification_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1001   .text.aci_gap_keypress_notification_event:00000000 aci_gap_keypress_notification_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1008   .text.aci_gap_keypress_notification_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1013   .text.aci_gap_keypress_notification_event_process:00000000 aci_gap_keypress_notification_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1023   .text.aci_gap_pairing_request_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1029   .text.aci_gap_pairing_request_event:00000000 aci_gap_pairing_request_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1036   .text.aci_gap_pairing_request_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1041   .text.aci_gap_pairing_request_event_process:00000000 aci_gap_pairing_request_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1052   .text.aci_l2cap_connection_update_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1058   .text.aci_l2cap_connection_update_resp_event:00000000 aci_l2cap_connection_update_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1065   .text.aci_l2cap_connection_update_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1070   .text.aci_l2cap_connection_update_resp_event_process:00000000 aci_l2cap_connection_update_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1080   .text.aci_l2cap_proc_timeout_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1086   .text.aci_l2cap_proc_timeout_event:00000000 aci_l2cap_proc_timeout_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1093   .text.aci_l2cap_proc_timeout_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1098   .text.aci_l2cap_proc_timeout_event_process:00000000 aci_l2cap_proc_timeout_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1109   .text.aci_l2cap_connection_update_req_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1115   .text.aci_l2cap_connection_update_req_event:00000000 aci_l2cap_connection_update_req_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1122   .text.aci_l2cap_connection_update_req_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1127   .text.aci_l2cap_connection_update_req_event_process:00000000 aci_l2cap_connection_update_req_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1148   .text.aci_l2cap_command_reject_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1154   .text.aci_l2cap_command_reject_event:00000000 aci_l2cap_command_reject_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1161   .text.aci_l2cap_command_reject_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1166   .text.aci_l2cap_command_reject_event_process:00000000 aci_l2cap_command_reject_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1183   .text.aci_l2cap_coc_connect_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1189   .text.aci_l2cap_coc_connect_event:00000000 aci_l2cap_coc_connect_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1196   .text.aci_l2cap_coc_connect_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1201   .text.aci_l2cap_coc_connect_event_process:00000000 aci_l2cap_coc_connect_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1220   .text.aci_l2cap_coc_connect_confirm_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1226   .text.aci_l2cap_coc_connect_confirm_event:00000000 aci_l2cap_coc_connect_confirm_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1233   .text.aci_l2cap_coc_connect_confirm_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1238   .text.aci_l2cap_coc_connect_confirm_event_process:00000000 aci_l2cap_coc_connect_confirm_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1259   .text.aci_l2cap_coc_reconf_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1265   .text.aci_l2cap_coc_reconf_event:00000000 aci_l2cap_coc_reconf_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1272   .text.aci_l2cap_coc_reconf_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1277   .text.aci_l2cap_coc_reconf_event_process:00000000 aci_l2cap_coc_reconf_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1294   .text.aci_l2cap_coc_reconf_confirm_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1300   .text.aci_l2cap_coc_reconf_confirm_event:00000000 aci_l2cap_coc_reconf_confirm_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1307   .text.aci_l2cap_coc_reconf_confirm_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1312   .text.aci_l2cap_coc_reconf_confirm_event_process:00000000 aci_l2cap_coc_reconf_confirm_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1322   .text.aci_l2cap_coc_disconnect_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1328   .text.aci_l2cap_coc_disconnect_event:00000000 aci_l2cap_coc_disconnect_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1335   .text.aci_l2cap_coc_disconnect_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1340   .text.aci_l2cap_coc_disconnect_event_process:00000000 aci_l2cap_coc_disconnect_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1349   .text.aci_l2cap_coc_flow_control_event:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 45
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:910    .text.aci_gap_proc_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:916    .text.aci_gap_proc_complete_event:00000000 aci_gap_proc_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:923    .text.aci_gap_proc_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:928    .text.aci_gap_proc_complete_event_process:00000000 aci_gap_proc_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:940    .text.aci_gap_addr_not_resolved_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:946    .text.aci_gap_addr_not_resolved_event:00000000 aci_gap_addr_not_resolved_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:953    .text.aci_gap_addr_not_resolved_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:958    .text.aci_gap_addr_not_resolved_event_process:00000000 aci_gap_addr_not_resolved_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:967    .text.aci_gap_numeric_comparison_value_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:973    .text.aci_gap_numeric_comparison_value_event:00000000 aci_gap_numeric_comparison_value_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:980    .text.aci_gap_numeric_comparison_value_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:985    .text.aci_gap_numeric_comparison_value_event_process:00000000 aci_gap_numeric_comparison_value_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:995    .text.aci_gap_keypress_notification_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1001   .text.aci_gap_keypress_notification_event:00000000 aci_gap_keypress_notification_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1008   .text.aci_gap_keypress_notification_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1013   .text.aci_gap_keypress_notification_event_process:00000000 aci_gap_keypress_notification_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1023   .text.aci_gap_pairing_request_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1029   .text.aci_gap_pairing_request_event:00000000 aci_gap_pairing_request_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1036   .text.aci_gap_pairing_request_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1041   .text.aci_gap_pairing_request_event_process:00000000 aci_gap_pairing_request_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1052   .text.aci_l2cap_connection_update_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1058   .text.aci_l2cap_connection_update_resp_event:00000000 aci_l2cap_connection_update_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1065   .text.aci_l2cap_connection_update_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1070   .text.aci_l2cap_connection_update_resp_event_process:00000000 aci_l2cap_connection_update_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1080   .text.aci_l2cap_proc_timeout_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1086   .text.aci_l2cap_proc_timeout_event:00000000 aci_l2cap_proc_timeout_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1093   .text.aci_l2cap_proc_timeout_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1098   .text.aci_l2cap_proc_timeout_event_process:00000000 aci_l2cap_proc_timeout_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1109   .text.aci_l2cap_connection_update_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1115   .text.aci_l2cap_connection_update_req_event:00000000 aci_l2cap_connection_update_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1122   .text.aci_l2cap_connection_update_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1127   .text.aci_l2cap_connection_update_req_event_process:00000000 aci_l2cap_connection_update_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1148   .text.aci_l2cap_command_reject_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1154   .text.aci_l2cap_command_reject_event:00000000 aci_l2cap_command_reject_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1161   .text.aci_l2cap_command_reject_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1166   .text.aci_l2cap_command_reject_event_process:00000000 aci_l2cap_command_reject_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1183   .text.aci_l2cap_coc_connect_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1189   .text.aci_l2cap_coc_connect_event:00000000 aci_l2cap_coc_connect_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1196   .text.aci_l2cap_coc_connect_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1201   .text.aci_l2cap_coc_connect_event_process:00000000 aci_l2cap_coc_connect_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1220   .text.aci_l2cap_coc_connect_confirm_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1226   .text.aci_l2cap_coc_connect_confirm_event:00000000 aci_l2cap_coc_connect_confirm_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1233   .text.aci_l2cap_coc_connect_confirm_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1238   .text.aci_l2cap_coc_connect_confirm_event_process:00000000 aci_l2cap_coc_connect_confirm_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1259   .text.aci_l2cap_coc_reconf_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1265   .text.aci_l2cap_coc_reconf_event:00000000 aci_l2cap_coc_reconf_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1272   .text.aci_l2cap_coc_reconf_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1277   .text.aci_l2cap_coc_reconf_event_process:00000000 aci_l2cap_coc_reconf_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1294   .text.aci_l2cap_coc_reconf_confirm_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1300   .text.aci_l2cap_coc_reconf_confirm_event:00000000 aci_l2cap_coc_reconf_confirm_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1307   .text.aci_l2cap_coc_reconf_confirm_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1312   .text.aci_l2cap_coc_reconf_confirm_event_process:00000000 aci_l2cap_coc_reconf_confirm_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1322   .text.aci_l2cap_coc_disconnect_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1328   .text.aci_l2cap_coc_disconnect_event:00000000 aci_l2cap_coc_disconnect_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1335   .text.aci_l2cap_coc_disconnect_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1340   .text.aci_l2cap_coc_disconnect_event_process:00000000 aci_l2cap_coc_disconnect_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1349   .text.aci_l2cap_coc_flow_control_event:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 45
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1355   .text.aci_l2cap_coc_flow_control_event:00000000 aci_l2cap_coc_flow_control_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1362   .text.aci_l2cap_coc_flow_control_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1367   .text.aci_l2cap_coc_flow_control_event_process:00000000 aci_l2cap_coc_flow_control_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1377   .text.aci_l2cap_coc_rx_data_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1383   .text.aci_l2cap_coc_rx_data_event:00000000 aci_l2cap_coc_rx_data_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1390   .text.aci_l2cap_coc_rx_data_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1395   .text.aci_l2cap_coc_rx_data_event_process:00000000 aci_l2cap_coc_rx_data_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1406   .text.aci_l2cap_coc_tx_pool_available_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1412   .text.aci_l2cap_coc_tx_pool_available_event:00000000 aci_l2cap_coc_tx_pool_available_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1419   .text.aci_l2cap_coc_tx_pool_available_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1424   .text.aci_l2cap_coc_tx_pool_available_event_process:00000000 aci_l2cap_coc_tx_pool_available_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1432   .text.aci_gatt_attribute_modified_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1438   .text.aci_gatt_attribute_modified_event:00000000 aci_gatt_attribute_modified_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1445   .text.aci_gatt_attribute_modified_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1450   .text.aci_gatt_attribute_modified_event_process:00000000 aci_gatt_attribute_modified_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1467   .text.aci_gatt_proc_timeout_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1473   .text.aci_gatt_proc_timeout_event:00000000 aci_gatt_proc_timeout_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1480   .text.aci_gatt_proc_timeout_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1485   .text.aci_gatt_proc_timeout_event_process:00000000 aci_gatt_proc_timeout_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1494   .text.aci_att_exchange_mtu_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1500   .text.aci_att_exchange_mtu_resp_event:00000000 aci_att_exchange_mtu_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1507   .text.aci_att_exchange_mtu_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1512   .text.aci_att_exchange_mtu_resp_event_process:00000000 aci_att_exchange_mtu_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1522   .text.aci_att_find_info_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1528   .text.aci_att_find_info_resp_event:00000000 aci_att_find_info_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1535   .text.aci_att_find_info_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1540   .text.aci_att_find_info_resp_event_process:00000000 aci_att_find_info_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1552   .text.aci_att_find_by_type_value_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1558   .text.aci_att_find_by_type_value_resp_event:00000000 aci_att_find_by_type_value_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1565   .text.aci_att_find_by_type_value_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1570   .text.aci_att_find_by_type_value_resp_event_process:00000000 aci_att_find_by_type_value_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1581   .text.aci_att_read_by_type_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1587   .text.aci_att_read_by_type_resp_event:00000000 aci_att_read_by_type_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1594   .text.aci_att_read_by_type_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1599   .text.aci_att_read_by_type_resp_event_process:00000000 aci_att_read_by_type_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1611   .text.aci_att_read_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1617   .text.aci_att_read_resp_event:00000000 aci_att_read_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1624   .text.aci_att_read_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1629   .text.aci_att_read_resp_event_process:00000000 aci_att_read_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1640   .text.aci_att_read_blob_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1646   .text.aci_att_read_blob_resp_event:00000000 aci_att_read_blob_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1653   .text.aci_att_read_blob_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1658   .text.aci_att_read_blob_resp_event_process:00000000 aci_att_read_blob_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1669   .text.aci_att_read_multiple_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1675   .text.aci_att_read_multiple_resp_event:00000000 aci_att_read_multiple_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1682   .text.aci_att_read_multiple_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1687   .text.aci_att_read_multiple_resp_event_process:00000000 aci_att_read_multiple_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1698   .text.aci_att_read_by_group_type_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1704   .text.aci_att_read_by_group_type_resp_event:00000000 aci_att_read_by_group_type_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1711   .text.aci_att_read_by_group_type_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1716   .text.aci_att_read_by_group_type_resp_event_process:00000000 aci_att_read_by_group_type_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1728   .text.aci_att_prepare_write_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1734   .text.aci_att_prepare_write_resp_event:00000000 aci_att_prepare_write_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1741   .text.aci_att_prepare_write_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1746   .text.aci_att_prepare_write_resp_event_process:00000000 aci_att_prepare_write_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1763   .text.aci_att_exec_write_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1769   .text.aci_att_exec_write_resp_event:00000000 aci_att_exec_write_resp_event
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 46
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1355   .text.aci_l2cap_coc_flow_control_event:00000000 aci_l2cap_coc_flow_control_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1362   .text.aci_l2cap_coc_flow_control_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1367   .text.aci_l2cap_coc_flow_control_event_process:00000000 aci_l2cap_coc_flow_control_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1377   .text.aci_l2cap_coc_rx_data_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1383   .text.aci_l2cap_coc_rx_data_event:00000000 aci_l2cap_coc_rx_data_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1390   .text.aci_l2cap_coc_rx_data_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1395   .text.aci_l2cap_coc_rx_data_event_process:00000000 aci_l2cap_coc_rx_data_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1406   .text.aci_l2cap_coc_tx_pool_available_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1412   .text.aci_l2cap_coc_tx_pool_available_event:00000000 aci_l2cap_coc_tx_pool_available_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1419   .text.aci_l2cap_coc_tx_pool_available_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1424   .text.aci_l2cap_coc_tx_pool_available_event_process:00000000 aci_l2cap_coc_tx_pool_available_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1432   .text.aci_gatt_attribute_modified_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1438   .text.aci_gatt_attribute_modified_event:00000000 aci_gatt_attribute_modified_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1445   .text.aci_gatt_attribute_modified_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1450   .text.aci_gatt_attribute_modified_event_process:00000000 aci_gatt_attribute_modified_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1467   .text.aci_gatt_proc_timeout_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1473   .text.aci_gatt_proc_timeout_event:00000000 aci_gatt_proc_timeout_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1480   .text.aci_gatt_proc_timeout_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1485   .text.aci_gatt_proc_timeout_event_process:00000000 aci_gatt_proc_timeout_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1494   .text.aci_att_exchange_mtu_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1500   .text.aci_att_exchange_mtu_resp_event:00000000 aci_att_exchange_mtu_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1507   .text.aci_att_exchange_mtu_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1512   .text.aci_att_exchange_mtu_resp_event_process:00000000 aci_att_exchange_mtu_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1522   .text.aci_att_find_info_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1528   .text.aci_att_find_info_resp_event:00000000 aci_att_find_info_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1535   .text.aci_att_find_info_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1540   .text.aci_att_find_info_resp_event_process:00000000 aci_att_find_info_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1552   .text.aci_att_find_by_type_value_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1558   .text.aci_att_find_by_type_value_resp_event:00000000 aci_att_find_by_type_value_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1565   .text.aci_att_find_by_type_value_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1570   .text.aci_att_find_by_type_value_resp_event_process:00000000 aci_att_find_by_type_value_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1581   .text.aci_att_read_by_type_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1587   .text.aci_att_read_by_type_resp_event:00000000 aci_att_read_by_type_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1594   .text.aci_att_read_by_type_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1599   .text.aci_att_read_by_type_resp_event_process:00000000 aci_att_read_by_type_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1611   .text.aci_att_read_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1617   .text.aci_att_read_resp_event:00000000 aci_att_read_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1624   .text.aci_att_read_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1629   .text.aci_att_read_resp_event_process:00000000 aci_att_read_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1640   .text.aci_att_read_blob_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1646   .text.aci_att_read_blob_resp_event:00000000 aci_att_read_blob_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1653   .text.aci_att_read_blob_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1658   .text.aci_att_read_blob_resp_event_process:00000000 aci_att_read_blob_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1669   .text.aci_att_read_multiple_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1675   .text.aci_att_read_multiple_resp_event:00000000 aci_att_read_multiple_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1682   .text.aci_att_read_multiple_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1687   .text.aci_att_read_multiple_resp_event_process:00000000 aci_att_read_multiple_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1698   .text.aci_att_read_by_group_type_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1704   .text.aci_att_read_by_group_type_resp_event:00000000 aci_att_read_by_group_type_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1711   .text.aci_att_read_by_group_type_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1716   .text.aci_att_read_by_group_type_resp_event_process:00000000 aci_att_read_by_group_type_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1728   .text.aci_att_prepare_write_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1734   .text.aci_att_prepare_write_resp_event:00000000 aci_att_prepare_write_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1741   .text.aci_att_prepare_write_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1746   .text.aci_att_prepare_write_resp_event_process:00000000 aci_att_prepare_write_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1763   .text.aci_att_exec_write_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1769   .text.aci_att_exec_write_resp_event:00000000 aci_att_exec_write_resp_event
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 46
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1776   .text.aci_att_exec_write_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1781   .text.aci_att_exec_write_resp_event_process:00000000 aci_att_exec_write_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1790   .text.aci_gatt_indication_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1796   .text.aci_gatt_indication_event:00000000 aci_gatt_indication_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1803   .text.aci_gatt_indication_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1808   .text.aci_gatt_indication_event_process:00000000 aci_gatt_indication_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1820   .text.aci_gatt_notification_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1826   .text.aci_gatt_notification_event:00000000 aci_gatt_notification_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1833   .text.aci_gatt_notification_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1838   .text.aci_gatt_notification_event_process:00000000 aci_gatt_notification_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1850   .text.aci_gatt_proc_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1856   .text.aci_gatt_proc_complete_event:00000000 aci_gatt_proc_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1863   .text.aci_gatt_proc_complete_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1868   .text.aci_gatt_proc_complete_event_process:00000000 aci_gatt_proc_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1878   .text.aci_gatt_error_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1884   .text.aci_gatt_error_resp_event:00000000 aci_gatt_error_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1891   .text.aci_gatt_error_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1896   .text.aci_gatt_error_resp_event_process:00000000 aci_gatt_error_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1908   .text.aci_gatt_disc_read_char_by_uuid_resp_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1914   .text.aci_gatt_disc_read_char_by_uuid_resp_event:00000000 aci_gatt_disc_read_char_by_uuid_resp_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1921   .text.aci_gatt_disc_read_char_by_uuid_resp_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1926   .text.aci_gatt_disc_read_char_by_uuid_resp_event_process:00000000 aci_gatt_disc_read_char_by_uuid_resp_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1938   .text.aci_gatt_write_permit_req_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1944   .text.aci_gatt_write_permit_req_event:00000000 aci_gatt_write_permit_req_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1951   .text.aci_gatt_write_permit_req_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1956   .text.aci_gatt_write_permit_req_event_process:00000000 aci_gatt_write_permit_req_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1968   .text.aci_gatt_read_permit_req_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1974   .text.aci_gatt_read_permit_req_event:00000000 aci_gatt_read_permit_req_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1981   .text.aci_gatt_read_permit_req_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1986   .text.aci_gatt_read_permit_req_event_process:00000000 aci_gatt_read_permit_req_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1997   .text.aci_gatt_read_multi_permit_req_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2003   .text.aci_gatt_read_multi_permit_req_event:00000000 aci_gatt_read_multi_permit_req_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2010   .text.aci_gatt_read_multi_permit_req_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2015   .text.aci_gatt_read_multi_permit_req_event_process:00000000 aci_gatt_read_multi_permit_req_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2026   .text.aci_gatt_tx_pool_available_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2032   .text.aci_gatt_tx_pool_available_event:00000000 aci_gatt_tx_pool_available_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2039   .text.aci_gatt_tx_pool_available_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2044   .text.aci_gatt_tx_pool_available_event_process:00000000 aci_gatt_tx_pool_available_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2054   .text.aci_gatt_server_confirmation_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2060   .text.aci_gatt_server_confirmation_event:00000000 aci_gatt_server_confirmation_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2067   .text.aci_gatt_server_confirmation_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2072   .text.aci_gatt_server_confirmation_event_process:00000000 aci_gatt_server_confirmation_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2081   .text.aci_gatt_prepare_write_permit_req_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2087   .text.aci_gatt_prepare_write_permit_req_event:00000000 aci_gatt_prepare_write_permit_req_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2094   .text.aci_gatt_prepare_write_permit_req_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2099   .text.aci_gatt_prepare_write_permit_req_event_process:00000000 aci_gatt_prepare_write_permit_req_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2116   .text.aci_gatt_eatt_bearer_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2122   .text.aci_gatt_eatt_bearer_event:00000000 aci_gatt_eatt_bearer_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2129   .text.aci_gatt_eatt_bearer_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2134   .text.aci_gatt_eatt_bearer_event_process:00000000 aci_gatt_eatt_bearer_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2146   .text.aci_gatt_mult_notification_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2152   .text.aci_gatt_mult_notification_event:00000000 aci_gatt_mult_notification_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2159   .text.aci_gatt_mult_notification_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2164   .text.aci_gatt_mult_notification_event_process:00000000 aci_gatt_mult_notification_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2176   .text.aci_gatt_notification_complete_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2182   .text.aci_gatt_notification_complete_event:00000000 aci_gatt_notification_complete_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2189   .text.aci_gatt_notification_complete_event_process:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 47
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1776   .text.aci_att_exec_write_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1781   .text.aci_att_exec_write_resp_event_process:00000000 aci_att_exec_write_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1790   .text.aci_gatt_indication_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1796   .text.aci_gatt_indication_event:00000000 aci_gatt_indication_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1803   .text.aci_gatt_indication_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1808   .text.aci_gatt_indication_event_process:00000000 aci_gatt_indication_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1820   .text.aci_gatt_notification_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1826   .text.aci_gatt_notification_event:00000000 aci_gatt_notification_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1833   .text.aci_gatt_notification_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1838   .text.aci_gatt_notification_event_process:00000000 aci_gatt_notification_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1850   .text.aci_gatt_proc_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1856   .text.aci_gatt_proc_complete_event:00000000 aci_gatt_proc_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1863   .text.aci_gatt_proc_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1868   .text.aci_gatt_proc_complete_event_process:00000000 aci_gatt_proc_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1878   .text.aci_gatt_error_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1884   .text.aci_gatt_error_resp_event:00000000 aci_gatt_error_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1891   .text.aci_gatt_error_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1896   .text.aci_gatt_error_resp_event_process:00000000 aci_gatt_error_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1908   .text.aci_gatt_disc_read_char_by_uuid_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1914   .text.aci_gatt_disc_read_char_by_uuid_resp_event:00000000 aci_gatt_disc_read_char_by_uuid_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1921   .text.aci_gatt_disc_read_char_by_uuid_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1926   .text.aci_gatt_disc_read_char_by_uuid_resp_event_process:00000000 aci_gatt_disc_read_char_by_uuid_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1938   .text.aci_gatt_write_permit_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1944   .text.aci_gatt_write_permit_req_event:00000000 aci_gatt_write_permit_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1951   .text.aci_gatt_write_permit_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1956   .text.aci_gatt_write_permit_req_event_process:00000000 aci_gatt_write_permit_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1968   .text.aci_gatt_read_permit_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1974   .text.aci_gatt_read_permit_req_event:00000000 aci_gatt_read_permit_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1981   .text.aci_gatt_read_permit_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1986   .text.aci_gatt_read_permit_req_event_process:00000000 aci_gatt_read_permit_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:1997   .text.aci_gatt_read_multi_permit_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2003   .text.aci_gatt_read_multi_permit_req_event:00000000 aci_gatt_read_multi_permit_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2010   .text.aci_gatt_read_multi_permit_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2015   .text.aci_gatt_read_multi_permit_req_event_process:00000000 aci_gatt_read_multi_permit_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2026   .text.aci_gatt_tx_pool_available_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2032   .text.aci_gatt_tx_pool_available_event:00000000 aci_gatt_tx_pool_available_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2039   .text.aci_gatt_tx_pool_available_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2044   .text.aci_gatt_tx_pool_available_event_process:00000000 aci_gatt_tx_pool_available_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2054   .text.aci_gatt_server_confirmation_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2060   .text.aci_gatt_server_confirmation_event:00000000 aci_gatt_server_confirmation_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2067   .text.aci_gatt_server_confirmation_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2072   .text.aci_gatt_server_confirmation_event_process:00000000 aci_gatt_server_confirmation_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2081   .text.aci_gatt_prepare_write_permit_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2087   .text.aci_gatt_prepare_write_permit_req_event:00000000 aci_gatt_prepare_write_permit_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2094   .text.aci_gatt_prepare_write_permit_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2099   .text.aci_gatt_prepare_write_permit_req_event_process:00000000 aci_gatt_prepare_write_permit_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2116   .text.aci_gatt_eatt_bearer_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2122   .text.aci_gatt_eatt_bearer_event:00000000 aci_gatt_eatt_bearer_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2129   .text.aci_gatt_eatt_bearer_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2134   .text.aci_gatt_eatt_bearer_event_process:00000000 aci_gatt_eatt_bearer_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2146   .text.aci_gatt_mult_notification_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2152   .text.aci_gatt_mult_notification_event:00000000 aci_gatt_mult_notification_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2159   .text.aci_gatt_mult_notification_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2164   .text.aci_gatt_mult_notification_event_process:00000000 aci_gatt_mult_notification_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2176   .text.aci_gatt_notification_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2182   .text.aci_gatt_notification_complete_event:00000000 aci_gatt_notification_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2189   .text.aci_gatt_notification_complete_event_process:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s 			page 47
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2194   .text.aci_gatt_notification_complete_event_process:00000000 aci_gatt_notification_complete_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2203   .text.aci_gatt_read_ext_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2209   .text.aci_gatt_read_ext_event:00000000 aci_gatt_read_ext_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2216   .text.aci_gatt_read_ext_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2221   .text.aci_gatt_read_ext_event_process:00000000 aci_gatt_read_ext_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2233   .text.aci_gatt_indication_ext_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2239   .text.aci_gatt_indication_ext_event:00000000 aci_gatt_indication_ext_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2246   .text.aci_gatt_indication_ext_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2251   .text.aci_gatt_indication_ext_event_process:00000000 aci_gatt_indication_ext_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2268   .text.aci_gatt_notification_ext_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2274   .text.aci_gatt_notification_ext_event:00000000 aci_gatt_notification_ext_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2281   .text.aci_gatt_notification_ext_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2286   .text.aci_gatt_notification_ext_event_process:00000000 aci_gatt_notification_ext_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2303   .text.aci_hal_end_of_radio_activity_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2309   .text.aci_hal_end_of_radio_activity_event:00000000 aci_hal_end_of_radio_activity_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2316   .text.aci_hal_end_of_radio_activity_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2321   .text.aci_hal_end_of_radio_activity_event_process:00000000 aci_hal_end_of_radio_activity_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2338   .text.aci_hal_scan_req_report_event:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2344   .text.aci_hal_scan_req_report_event:00000000 aci_hal_scan_req_report_event
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2351   .text.aci_hal_scan_req_report_event_process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2356   .text.aci_hal_scan_req_report_event_process:00000000 aci_hal_scan_req_report_event_process
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2371   .rodata.hci_vs_event_table:00000000 hci_vs_event_table
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2368   .rodata.hci_vs_event_table:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2539   .rodata.hci_le_event_table:00000000 hci_le_event_table
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2536   .rodata.hci_le_event_table:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2593   .rodata.hci_event_table:00000000 hci_event_table
-C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2590   .rodata.hci_event_table:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2194   .text.aci_gatt_notification_complete_event_process:00000000 aci_gatt_notification_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2203   .text.aci_gatt_read_ext_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2209   .text.aci_gatt_read_ext_event:00000000 aci_gatt_read_ext_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2216   .text.aci_gatt_read_ext_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2221   .text.aci_gatt_read_ext_event_process:00000000 aci_gatt_read_ext_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2233   .text.aci_gatt_indication_ext_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2239   .text.aci_gatt_indication_ext_event:00000000 aci_gatt_indication_ext_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2246   .text.aci_gatt_indication_ext_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2251   .text.aci_gatt_indication_ext_event_process:00000000 aci_gatt_indication_ext_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2268   .text.aci_gatt_notification_ext_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2274   .text.aci_gatt_notification_ext_event:00000000 aci_gatt_notification_ext_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2281   .text.aci_gatt_notification_ext_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2286   .text.aci_gatt_notification_ext_event_process:00000000 aci_gatt_notification_ext_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2303   .text.aci_hal_end_of_radio_activity_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2309   .text.aci_hal_end_of_radio_activity_event:00000000 aci_hal_end_of_radio_activity_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2316   .text.aci_hal_end_of_radio_activity_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2321   .text.aci_hal_end_of_radio_activity_event_process:00000000 aci_hal_end_of_radio_activity_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2338   .text.aci_hal_scan_req_report_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2344   .text.aci_hal_scan_req_report_event:00000000 aci_hal_scan_req_report_event
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2351   .text.aci_hal_scan_req_report_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2356   .text.aci_hal_scan_req_report_event_process:00000000 aci_hal_scan_req_report_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2371   .rodata.hci_vs_event_table:00000000 hci_vs_event_table
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2368   .rodata.hci_vs_event_table:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2539   .rodata.hci_le_event_table:00000000 hci_le_event_table
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2536   .rodata.hci_le_event_table:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2593   .rodata.hci_event_table:00000000 hci_event_table
+C:\Users\Nathan\AppData\Local\Temp\ccqHKmUq.s:2590   .rodata.hci_event_table:00000000 $d
 
 UNDEFINED SYMBOLS
 Osal_MemCpy

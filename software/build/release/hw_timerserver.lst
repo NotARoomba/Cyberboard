@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
   58 0004 0F4B     		ldr	r3, .L8
   59 0006 03EBC203 		add	r3, r3, r2, lsl #3
   60 000a 5B7D     		ldrb	r3, [r3, #21]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 2
 
 
   61 000c 5FFA83FC 		uxtb	ip, r3
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  117              	.L11:
  118 0044 064B     		ldr	r3, .L13+4
  119 0046 00EB4002 		add	r2, r0, r0, lsl #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 3
 
 
  120 004a 03EBC202 		add	r2, r3, r2, lsl #3
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  176 005c 062B     		cmp	r3, #6
  177 005e 0ED0     		beq	.L21
  178              	.L15:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 4
 
 
  179 0060 10BD     		pop	{r4, pc}
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  235              	.L27:
  236 0024 084A     		ldr	r2, .L31+4
  237 0026 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 5
 
 
  238 0028 03FB00F0 		mul	r0, r3, r0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  294 0036 FFF7FEFF 		bl	ReturnTimeElapsed
  295 003a 0646     		mov	r6, r0
  296 003c 254B     		ldr	r3, .L41+8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 6
 
 
  297 003e 04EB4402 		add	r2, r4, r4, lsl #1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  351 00c2 034A     		ldr	r2, .L41+4
  352 00c4 1370     		strb	r3, [r2]
  353 00c6 2C70     		strb	r4, [r5]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 7
 
 
  354 00c8 B3E7     		b	.L35
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  410 0056 10BD     		pop	{r4, pc}
  411              	.L50:
  412 0058 FFF7FEFF 		bl	ReadRtcSsrValue
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 8
 
 
  413 005c 084B     		ldr	r3, .L52+12
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  469 003e 04D9     		bls	.L57
  470 0040 224B     		ldr	r3, .L66+16
  471 0042 0122     		movs	r2, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 9
 
 
  472 0044 1A70     		strb	r2, [r3]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  526 00ba 38BD     		pop	{r3, r4, r5, pc}
  527              	.L67:
  528              		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 10
 
 
  529              	.L66:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  585 004e C1F30E01 		ubfx	r1, r1, #0, #15
  586 0052 0131     		adds	r1, r1, #1
  587 0054 DFF8F8C0 		ldr	ip, .L78+40
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 11
 
 
  588 0058 ACF80010 		strh	r1, [ip]	@ movhi
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  642 00d4 9360     		str	r3, [r2, #8]
  643 00d6 D368     		ldr	r3, [r2, #12]
  644 00d8 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 12
 
 
  645 00da 63F49063 		orn	r3, r3, #1152
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  701              		@ frame_needed = 0, uses_anonymous_args = 0
  702 0000 F0B5     		push	{r4, r5, r6, r7, lr}
  703 0002 0446     		mov	r4, r0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 13
 
 
  704 0004 0D46     		mov	r5, r1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  758              		.syntax unified
  759 0068 0120     		movs	r0, #1
  760 006a FAE7     		b	.L85
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 14
 
 
  761              	.L88:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  817              		.syntax unified
  818 0040 38BD     		pop	{r3, r4, r5, pc}
  819              	.L96:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 15
 
 
  820 0042 0021     		movs	r1, #0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  875              		.section	.text.HW_TS_Delete,"ax",%progbits
  876              		.align	1
  877              		.global	HW_TS_Delete
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 16
 
 
  878              		.syntax unified
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  935 0026 1B68     		ldr	r3, [r3]
  936 0028 CA22     		movs	r2, #202
  937 002a 5A62     		str	r2, [r3, #36]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 17
 
 
  938 002c 5322     		movs	r2, #83
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  993              		.global	HW_TS_RTC_ReadLeftTicksToCount
  994              		.syntax unified
  995              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 18
 
 
  996              		.thumb_func
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  1053              	HW_TS_RTC_Int_AppNot:
  1054              		@ args = 0, pretend = 0, frame = 0
  1055              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 19
 
 
  1056 0000 08B5     		push	{r3, lr}
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  1112 004c DA60     		str	r2, [r3, #12]
  1113              		.syntax unified
  1114              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 20
 
 
  1115 004e 85F31088 		MSR primask, r5
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  1169 00b0 85F31088 		MSR primask, r5
  1170              	@ 0 "" 2
  1171              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 21
 
 
  1172              		.syntax unified
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  1241 0000 00       		.space	1
  1242              		.section	.bss.CurrentRunningTimerID,"aw",%nobits
  1245              	CurrentRunningTimerID:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 22
 
 
  1246 0000 00       		.space	1
@@ -1272,79 +1272,79 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 1
  1252      00000000 
  1253              		.weak	HW_TS_RTC_CountUpdated_AppNot
  1254              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 23
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 hw_timerserver.c
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:18     .text.ReadRtcSsrValue:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:23     .text.ReadRtcSsrValue:00000000 ReadRtcSsrValue
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:45     .text.ReadRtcSsrValue:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:48     .text.LinkTimerAfter:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:53     .text.LinkTimerAfter:00000000 LinkTimerAfter
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:83     .text.LinkTimerAfter:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1251   .bss.aTimerContext:00000000 aTimerContext
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:86     .text.LinkTimerBefore:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:91     .text.LinkTimerBefore:00000000 LinkTimerBefore
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:129    .text.LinkTimerBefore:0000005c $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1245   .bss.CurrentRunningTimerID:00000000 CurrentRunningTimerID
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:133    .text.UnlinkTimer:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:138    .text.UnlinkTimer:00000000 UnlinkTimer
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:203    .text.UnlinkTimer:0000008c $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1240   .bss.PreviousRunningTimerID:00000000 PreviousRunningTimerID
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1235   .bss.SSRValueOnLastSetup:00000000 SSRValueOnLastSetup
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:209    .text.ReturnTimeElapsed:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:214    .text.ReturnTimeElapsed:00000000 ReturnTimeElapsed
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:254    .text.ReturnTimeElapsed:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1219   .bss.AsynchPrescalerUserConfig:00000000 AsynchPrescalerUserConfig
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1224   .bss.WakeupTimerDivider:00000000 WakeupTimerDivider
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1214   .bss.SynchPrescalerUserConfig:00000000 SynchPrescalerUserConfig
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:260    .text.linkTimer:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:265    .text.linkTimer:00000000 linkTimer
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:358    .text.linkTimer:000000cc $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:364    .text.RestartWakeupCounter:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:369    .text.RestartWakeupCounter:00000000 RestartWakeupCounter
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:427    .text.RestartWakeupCounter:00000074 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:434    .text.RescheduleTimerList:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:439    .text.RescheduleTimerList:00000000 RescheduleTimerList
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:530    .text.RescheduleTimerList:000000bc $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1229   .bss.WakeupTimerLimitation:00000000 WakeupTimerLimitation
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1208   .bss.MaxWakeupTimerSetup:00000000 MaxWakeupTimerSetup
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:538    .text.HW_TS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:544    .text.HW_TS_Init:00000000 HW_TS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:680    .text.HW_TS_Init:00000128 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:693    .text.HW_TS_Create:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:699    .text.HW_TS_Create:00000000 HW_TS_Create
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:764    .text.HW_TS_Create:0000006c $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:767    .text.HW_TS_Stop:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:773    .text.HW_TS_Stop:00000000 HW_TS_Stop
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:868    .text.HW_TS_Stop:000000a8 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:876    .text.HW_TS_Delete:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:882    .text.HW_TS_Delete:00000000 HW_TS_Delete
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:897    .text.HW_TS_Delete:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:900    .text.HW_TS_Start:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:906    .text.HW_TS_Start:00000000 HW_TS_Start
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:986    .text.HW_TS_Start:0000008c $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:992    .text.HW_TS_RTC_ReadLeftTicksToCount:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:998    .text.HW_TS_RTC_ReadLeftTicksToCount:00000000 HW_TS_RTC_ReadLeftTicksToCount
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1044   .text.HW_TS_RTC_ReadLeftTicksToCount:00000038 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1047   .text.HW_TS_RTC_Int_AppNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1053   .text.HW_TS_RTC_Int_AppNot:00000000 HW_TS_RTC_Int_AppNot
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1061   .text.HW_TS_RTC_Wakeup_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1067   .text.HW_TS_RTC_Wakeup_Handler:00000000 HW_TS_RTC_Wakeup_Handler
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s 			page 24
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:18     .text.ReadRtcSsrValue:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:23     .text.ReadRtcSsrValue:00000000 ReadRtcSsrValue
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:45     .text.ReadRtcSsrValue:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:48     .text.LinkTimerAfter:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:53     .text.LinkTimerAfter:00000000 LinkTimerAfter
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:83     .text.LinkTimerAfter:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1251   .bss.aTimerContext:00000000 aTimerContext
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:86     .text.LinkTimerBefore:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:91     .text.LinkTimerBefore:00000000 LinkTimerBefore
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:129    .text.LinkTimerBefore:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1245   .bss.CurrentRunningTimerID:00000000 CurrentRunningTimerID
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:133    .text.UnlinkTimer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:138    .text.UnlinkTimer:00000000 UnlinkTimer
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:203    .text.UnlinkTimer:0000008c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1240   .bss.PreviousRunningTimerID:00000000 PreviousRunningTimerID
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1235   .bss.SSRValueOnLastSetup:00000000 SSRValueOnLastSetup
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:209    .text.ReturnTimeElapsed:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:214    .text.ReturnTimeElapsed:00000000 ReturnTimeElapsed
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:254    .text.ReturnTimeElapsed:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1219   .bss.AsynchPrescalerUserConfig:00000000 AsynchPrescalerUserConfig
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1224   .bss.WakeupTimerDivider:00000000 WakeupTimerDivider
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1214   .bss.SynchPrescalerUserConfig:00000000 SynchPrescalerUserConfig
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:260    .text.linkTimer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:265    .text.linkTimer:00000000 linkTimer
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:358    .text.linkTimer:000000cc $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:364    .text.RestartWakeupCounter:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:369    .text.RestartWakeupCounter:00000000 RestartWakeupCounter
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:427    .text.RestartWakeupCounter:00000074 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:434    .text.RescheduleTimerList:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:439    .text.RescheduleTimerList:00000000 RescheduleTimerList
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:530    .text.RescheduleTimerList:000000bc $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1229   .bss.WakeupTimerLimitation:00000000 WakeupTimerLimitation
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1208   .bss.MaxWakeupTimerSetup:00000000 MaxWakeupTimerSetup
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:538    .text.HW_TS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:544    .text.HW_TS_Init:00000000 HW_TS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:680    .text.HW_TS_Init:00000128 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:693    .text.HW_TS_Create:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:699    .text.HW_TS_Create:00000000 HW_TS_Create
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:764    .text.HW_TS_Create:0000006c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:767    .text.HW_TS_Stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:773    .text.HW_TS_Stop:00000000 HW_TS_Stop
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:868    .text.HW_TS_Stop:000000a8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:876    .text.HW_TS_Delete:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:882    .text.HW_TS_Delete:00000000 HW_TS_Delete
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:897    .text.HW_TS_Delete:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:900    .text.HW_TS_Start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:906    .text.HW_TS_Start:00000000 HW_TS_Start
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:986    .text.HW_TS_Start:0000008c $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:992    .text.HW_TS_RTC_ReadLeftTicksToCount:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:998    .text.HW_TS_RTC_ReadLeftTicksToCount:00000000 HW_TS_RTC_ReadLeftTicksToCount
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1044   .text.HW_TS_RTC_ReadLeftTicksToCount:00000038 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1047   .text.HW_TS_RTC_Int_AppNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1053   .text.HW_TS_RTC_Int_AppNot:00000000 HW_TS_RTC_Int_AppNot
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1061   .text.HW_TS_RTC_Wakeup_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1067   .text.HW_TS_RTC_Wakeup_Handler:00000000 HW_TS_RTC_Wakeup_Handler
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s 			page 24
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1198   .text.HW_TS_RTC_Wakeup_Handler:000000e0 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1205   .bss.MaxWakeupTimerSetup:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1211   .bss.SynchPrescalerUserConfig:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1220   .bss.AsynchPrescalerUserConfig:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1225   .bss.WakeupTimerDivider:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1230   .bss.WakeupTimerLimitation:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1232   .bss.SSRValueOnLastSetup:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1241   .bss.PreviousRunningTimerID:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1246   .bss.CurrentRunningTimerID:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccSZHRiQ.s:1248   .bss.aTimerContext:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1198   .text.HW_TS_RTC_Wakeup_Handler:000000e0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1205   .bss.MaxWakeupTimerSetup:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1211   .bss.SynchPrescalerUserConfig:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1220   .bss.AsynchPrescalerUserConfig:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1225   .bss.WakeupTimerDivider:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1230   .bss.WakeupTimerLimitation:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1232   .bss.SSRValueOnLastSetup:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1241   .bss.PreviousRunningTimerID:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1246   .bss.CurrentRunningTimerID:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccNwOKng.s:1248   .bss.aTimerContext:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_ClearPendingIRQ

@@ -60,8 +60,8 @@ build/release/main.o: Core/Src/main.c Core/Inc/main.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
  USB_Device/Target/usbd_conf.h Core/Inc/gpio.h \
  Drivers/ICM42688/ICM42688.h Drivers/BMP580/bmp5.h \
- Drivers/BMP580/bmp5_defs.h Drivers/BMP580/common/common.h \
- USB_Device/App/usbd_cdc_if.h \
+ Drivers/BMP580/bmp5_defs.h Drivers/Kalman/kalman.h \
+ Drivers/BMP580/common/common.h USB_Device/App/usbd_cdc_if.h \
  Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
@@ -143,6 +143,7 @@ Core/Inc/gpio.h:
 Drivers/ICM42688/ICM42688.h:
 Drivers/BMP580/bmp5.h:
 Drivers/BMP580/bmp5_defs.h:
+Drivers/Kalman/kalman.h:
 Drivers/BMP580/common/common.h:
 USB_Device/App/usbd_cdc_if.h:
 Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:

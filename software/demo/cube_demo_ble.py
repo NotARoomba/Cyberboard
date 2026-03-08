@@ -461,8 +461,6 @@ def main():
     clock = pygame.time.Clock()
 
     smooth_q = (1.0, 0.0, 0.0, 0.0)
-    yaw_angle = 0.0
-    last_gyro_time = 0.0
     alpha = 0.15
 
     cam_yaw = 0.0
@@ -497,24 +495,12 @@ def main():
         gx, gy, gz = shared["gx"], shared["gy"], shared["gz"]
         gyro_time = shared["gyro_time"]
 
-        if last_gyro_time > 0 and gyro_time > last_gyro_time:
-            dt = gyro_time - last_gyro_time
-            dt = min(dt, 0.1)
-            g_mag = math.sqrt(ax*ax + ay*ay + az*az)
-            if g_mag > 0.1:
-                gnx, gny, gnz = ax/g_mag, ay/g_mag, az/g_mag
-                yaw_rate_dps = gx*gnx + gy*gny + gz*gnz
-                yaw_angle += math.radians(yaw_rate_dps) * dt
         last_gyro_time = gyro_time
 
-        tilt_q = quat_from_gravity(ax, ay, az)
-        g_mag = math.sqrt(ax*ax + ay*ay + az*az)
-        if g_mag > 0.1:
-            gn = (ax/g_mag, ay/g_mag, az/g_mag)
-        else:
-            gn = (0, 0, 1)
-        yaw_q = quat_from_axis_angle(gn, yaw_angle)
-        target_q = quat_multiply(yaw_q, tilt_q)
+        # Yaw (rotation around gravity) is disabled — without a magnetometer
+        # the gyro drifts on this axis with no way to correct it.
+        # Only tilt (pitch/roll from gravity) is used.
+        target_q = quat_from_gravity(ax, ay, az)
 
         smooth_q = quat_slerp(smooth_q, target_q, alpha)
         mat = quat_to_matrix(smooth_q)

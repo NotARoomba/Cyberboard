@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 1
   57              		.syntax unified
   58              		.thumb
   59              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s 			page 2
 
 
   61              	TlInit:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 1
  117              	.L16:
  118              		.align	2
  119              	.L15:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s 			page 3
 
 
  120 0014 0C000000 		.word	SHciAsynchEventQueue
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 1
  178 0022 00BD     		pop	{pc}
  179              	.L28:
  180 0024 03A9     		add	r1, sp, #12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s 			page 4
 
 
  181 0026 1248     		ldr	r0, .L30
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 1
  237 0008 0248     		ldr	r0, .L34+4
  238 000a FFF7FEFF 		bl	shci_notify_asynch_evt
  239 000e 08BD     		pop	{r3, pc}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s 			page 5
 
 
  240              	.L35:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 1
  298 0030 0021     		movs	r1, #0
  299 0032 0846     		mov	r0, r1
  300 0034 9847     		blx	r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s 			page 6
 
 
  301 0036 48F2E800 		movw	r0, #33000
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 1
  364              		.section	.bss.shciContext,"aw",%nobits
  365              		.align	2
  368              	shciContext:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s 			page 7
 
 
  369 0000 00000000 		.space	32
@@ -380,51 +380,51 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 1
  389 000c 00000000 		.space	8
  389      00000000 
  390              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 shci_tl.c
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:18     .text.Cmd_SetStatus:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:23     .text.Cmd_SetStatus:00000000 Cmd_SetStatus
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:52     .text.Cmd_SetStatus:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:362    .bss.StatusNotCallBackFunction:00000000 StatusNotCallBackFunction
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:383    SYSTEM_DRIVER_CONTEXT:00000008 SHCICmdStatus
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:56     .text.TlInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:61     .text.TlInit:00000000 TlInit
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:93     .text.TlInit:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:379    SYSTEM_DRIVER_CONTEXT:00000004 pCmdBuffer
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:388    SYSTEM_DRIVER_CONTEXT:0000000c SHciAsynchEventQueue
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:374    SYSTEM_DRIVER_CONTEXT:00000000 SHCI_TL_UserEventFlow
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:368    .bss.shciContext:00000000 shciContext
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:345    .text.TlCmdEvtReceived:00000000 TlCmdEvtReceived
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:106    .text.TlUserEvtReceived:00000000 TlUserEvtReceived
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:101    .text.TlUserEvtReceived:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:120    .text.TlUserEvtReceived:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:123    .text.shci_init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:129    .text.shci_init:00000000 shci_init
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:147    .text.shci_init:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:151    .text.shci_user_evt_proc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:157    .text.shci_user_evt_proc:00000000 shci_user_evt_proc
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:219    .text.shci_user_evt_proc:00000070 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:224    .text.shci_resume_flow:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:230    .text.shci_resume_flow:00000000 shci_resume_flow
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:243    .text.shci_resume_flow:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:247    .text.shci_cmd_resp_wait:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:253    .text.shci_cmd_resp_wait:00000000 shci_cmd_resp_wait
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:266    .text.shci_cmd_resp_wait:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:356    .bss.CmdRspStatusFlag:00000000 CmdRspStatusFlag
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:269    .text.shci_send:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:275    .text.shci_send:00000000 shci_send
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:315    .text.shci_send:00000058 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:320    .text.shci_cmd_resp_release:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:326    .text.shci_cmd_resp_release:00000000 shci_cmd_resp_release
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:337    .text.shci_cmd_resp_release:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:340    .text.TlCmdEvtReceived:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:357    .bss.CmdRspStatusFlag:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:359    .bss.StatusNotCallBackFunction:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:365    .bss.shciContext:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:375    SYSTEM_DRIVER_CONTEXT:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:18     .text.Cmd_SetStatus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:23     .text.Cmd_SetStatus:00000000 Cmd_SetStatus
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:52     .text.Cmd_SetStatus:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:362    .bss.StatusNotCallBackFunction:00000000 StatusNotCallBackFunction
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:383    SYSTEM_DRIVER_CONTEXT:00000008 SHCICmdStatus
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:56     .text.TlInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:61     .text.TlInit:00000000 TlInit
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:93     .text.TlInit:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:379    SYSTEM_DRIVER_CONTEXT:00000004 pCmdBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:388    SYSTEM_DRIVER_CONTEXT:0000000c SHciAsynchEventQueue
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:374    SYSTEM_DRIVER_CONTEXT:00000000 SHCI_TL_UserEventFlow
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:368    .bss.shciContext:00000000 shciContext
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:345    .text.TlCmdEvtReceived:00000000 TlCmdEvtReceived
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:106    .text.TlUserEvtReceived:00000000 TlUserEvtReceived
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:101    .text.TlUserEvtReceived:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:120    .text.TlUserEvtReceived:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:123    .text.shci_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:129    .text.shci_init:00000000 shci_init
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:147    .text.shci_init:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:151    .text.shci_user_evt_proc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:157    .text.shci_user_evt_proc:00000000 shci_user_evt_proc
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:219    .text.shci_user_evt_proc:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:224    .text.shci_resume_flow:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:230    .text.shci_resume_flow:00000000 shci_resume_flow
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:243    .text.shci_resume_flow:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:247    .text.shci_cmd_resp_wait:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:253    .text.shci_cmd_resp_wait:00000000 shci_cmd_resp_wait
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:266    .text.shci_cmd_resp_wait:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:356    .bss.CmdRspStatusFlag:00000000 CmdRspStatusFlag
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:269    .text.shci_send:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:275    .text.shci_send:00000000 shci_send
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:315    .text.shci_send:00000058 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:320    .text.shci_cmd_resp_release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:326    .text.shci_cmd_resp_release:00000000 shci_cmd_resp_release
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:337    .text.shci_cmd_resp_release:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:340    .text.TlCmdEvtReceived:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:357    .bss.CmdRspStatusFlag:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:359    .bss.StatusNotCallBackFunction:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:365    .bss.shciContext:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccHLLYaJ.s:375    SYSTEM_DRIVER_CONTEXT:00000000 $d
 
 UNDEFINED SYMBOLS
 LST_init_head

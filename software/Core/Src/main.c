@@ -30,10 +30,12 @@
 /* USER CODE BEGIN Includes */
 #include "ICM42688.h"
 #include "bmp5.h"
+#include "kalman.h"
 #include "common.h"
 #include "usbd_cdc_if.h"
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 /* Debug: blink LED N times (works even before HAL GPIO init, using raw registers) */
 static void dbg_blink(int n)
@@ -87,6 +89,12 @@ ICM42688_Data imu_data;
 struct bmp5_dev bmp5;
 struct bmp5_osr_odr_press_config bmp5_osr_cfg;
 struct bmp5_sensor_data bmp5_data;
+
+Kalman_t kf_pitch;
+Kalman_t kf_roll;
+
+/* Gyro bias measured at startup (subtracted from every reading) */
+float gyro_bias_x = 0.0f, gyro_bias_y = 0.0f, gyro_bias_z = 0.0f;
 
 char serial_buf[256];
 /* USER CODE END PV */
@@ -210,6 +218,39 @@ int main(void)
     HAL_Delay(10);
   }
 
+  /* Startup calibration: average accel (for initial angle) and gyro (for bias).
+   * Board must be stationary during this phase. */
+  {
+    const int cal_samples = 32;
+    float sum_pitch = 0.0f, sum_roll = 0.0f;
+    float sum_gx = 0.0f, sum_gy = 0.0f, sum_gz = 0.0f;
+    int good = 0;
+    dbg_print("[  ] Calibrating (hold still)...\r\n");
+    for (int i = 0; i < cal_samples; i++) {
+      if (ICM42688_ReadOnce(&icm, &imu_data) == 0) {
+        sum_pitch += atan2f(-imu_data.acc_x, sqrtf(imu_data.acc_y * imu_data.acc_y + imu_data.acc_z * imu_data.acc_z));
+        sum_roll  += atan2f( imu_data.acc_y, sqrtf(imu_data.acc_x * imu_data.acc_x + imu_data.acc_z * imu_data.acc_z));
+        sum_gx += imu_data.gyr_x;
+        sum_gy += imu_data.gyr_y;
+        sum_gz += imu_data.gyr_z;
+        good++;
+      }
+      HAL_Delay(2);
+    }
+    if (good > 0) {
+      float deg = 180.0f / (float)M_PI;
+      Kalman_Init(&kf_pitch, (sum_pitch / good) * deg);
+      Kalman_Init(&kf_roll,  (sum_roll  / good) * deg);
+      gyro_bias_x = sum_gx / good;
+      gyro_bias_y = sum_gy / good;
+      gyro_bias_z = sum_gz / good;
+    } else {
+      Kalman_Init(&kf_pitch, 0.0f);
+      Kalman_Init(&kf_roll,  0.0f);
+    }
+  }
+  dbg_print("[OK] Kalman filters initialized\r\n");
+
   dbg_print("[  ] BMP580 setup...\r\n");
   /* BMP580 barometric pressure sensor setup */
   int8_t bmp_err = BMP580_Setup();
@@ -244,12 +285,36 @@ int main(void)
 
       /* IMU */
       if (ICM42688_ReadOnce(&icm, &imu_data) == 0) {
+        /* Kalman filter: fuse accel + gyro into stable pitch/roll angles.
+         *
+         * accel_pitch/roll: tilt angles derived from gravity direction.
+         *   - Accurate on average, but noisy and wrong during acceleration.
+         * gyro: rotation rate integrated over dt to track angle changes.
+         *   - Smooth and responsive, but drifts over time.
+         *
+         * The Kalman filter blends both to get the best of each. */
+        float dt = 0.05f;  /* 50 ms polling interval */
+
+        /* atan2(axis, sqrt(other_two²)) gives tilt that stays valid at all angles.
+         * Using just atan2(x, z) breaks down when z→0 (board near 90° tilt). */
+        float accel_pitch = atan2f(-imu_data.acc_x, sqrtf(imu_data.acc_y * imu_data.acc_y + imu_data.acc_z * imu_data.acc_z)) * (180.0f / (float)M_PI);
+        float accel_roll  = atan2f( imu_data.acc_y, sqrtf(imu_data.acc_x * imu_data.acc_x + imu_data.acc_z * imu_data.acc_z)) * (180.0f / (float)M_PI);
+
+        /* Subtract startup bias from gyro before feeding into the filter */
+        float pitch = Kalman_Update(&kf_pitch, imu_data.gyr_y - gyro_bias_y, accel_pitch, dt);
+        float roll  = Kalman_Update(&kf_roll,  imu_data.gyr_x - gyro_bias_x, accel_roll,  dt);
+
 #if ENABLE_USB_LOG
+        /* Bias-corrected gyro for logging and BLE */
+        float gx_cor = imu_data.gyr_x - gyro_bias_x;
+        float gy_cor = imu_data.gyr_y - gyro_bias_y;
+        float gz_cor = imu_data.gyr_z - gyro_bias_z;
+
         int len = snprintf(serial_buf, sizeof(serial_buf),
-                           "A:%.2f,%.2f,%.2f G:%.1f,%.1f,%.1f T:%.1f\r\n",
+                           "A:%.2f,%.2f,%.2f G:%.1f,%.1f,%.1f T:%.1f P:%.2f R:%.2f\r\n",
                            imu_data.acc_x, imu_data.acc_y, imu_data.acc_z,
-                           imu_data.gyr_x, imu_data.gyr_y, imu_data.gyr_z,
-                           imu_data.temp_c);
+                           gx_cor, gy_cor, gz_cor,
+                           imu_data.temp_c, pitch, roll);
         CDC_Transmit_FS((uint8_t *)serial_buf, len);
 #endif
 
@@ -257,7 +322,7 @@ int main(void)
         if (ble_ready) {
           float imu_ble[7] = {
             imu_data.acc_x, imu_data.acc_y, imu_data.acc_z,
-            imu_data.gyr_x, imu_data.gyr_y, imu_data.gyr_z,
+            gx_cor, gy_cor, gz_cor,
             imu_data.temp_c
           };
           Custom_STM_App_Update_Char(BLE_CHAR_IMU, (uint8_t *)imu_ble);

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 1
   58 0004 53F82020 		ldr	r2, [r3, r0, lsl #2]
   59 0008 044B     		ldr	r3, .L9+4
   60 000a 9A42     		cmp	r2, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s 			page 2
 
 
   61 000c 01D0     		beq	.L8
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 1
  120              		.global	HAL_HSEM_ReleaseAll
  121              		.syntax unified
  122              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s 			page 3
 
 
  123              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 1
  183              		.global	HAL_HSEM_ActivateNotification
  184              		.syntax unified
  185              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s 			page 4
 
 
  186              		.thumb_func
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 1
  247 0002 054B     		ldr	r3, .L38
  248 0004 D868     		ldr	r0, [r3, #12]
  249 0006 1A68     		ldr	r2, [r3]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s 			page 5
 
 
  250 0008 22EA0002 		bic	r2, r2, r0
@@ -251,42 +251,42 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 1
  257              	.L38:
  258 0018 00150058 		.word	1476400384
  260              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_hsem.c
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:18     .text.HAL_HSEM_Take:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:24     .text.HAL_HSEM_Take:00000000 HAL_HSEM_Take
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:43     .text.HAL_HSEM_Take:00000020 $d
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:46     .text.HAL_HSEM_FastTake:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:52     .text.HAL_HSEM_FastTake:00000000 HAL_HSEM_FastTake
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:70     .text.HAL_HSEM_FastTake:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:74     .text.HAL_HSEM_IsSemTaken:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:80     .text.HAL_HSEM_IsSemTaken:00000000 HAL_HSEM_IsSemTaken
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:96     .text.HAL_HSEM_IsSemTaken:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:99     .text.HAL_HSEM_Release:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:105    .text.HAL_HSEM_Release:00000000 HAL_HSEM_Release
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:116    .text.HAL_HSEM_Release:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:119    .text.HAL_HSEM_ReleaseAll:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:125    .text.HAL_HSEM_ReleaseAll:00000000 HAL_HSEM_ReleaseAll
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:137    .text.HAL_HSEM_ReleaseAll:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:140    .text.HAL_HSEM_SetClearKey:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:146    .text.HAL_HSEM_SetClearKey:00000000 HAL_HSEM_SetClearKey
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:159    .text.HAL_HSEM_SetClearKey:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:162    .text.HAL_HSEM_GetClearKey:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:168    .text.HAL_HSEM_GetClearKey:00000000 HAL_HSEM_GetClearKey
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:179    .text.HAL_HSEM_GetClearKey:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:182    .text.HAL_HSEM_ActivateNotification:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:188    .text.HAL_HSEM_ActivateNotification:00000000 HAL_HSEM_ActivateNotification
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:200    .text.HAL_HSEM_ActivateNotification:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:203    .text.HAL_HSEM_DeactivateNotification:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:209    .text.HAL_HSEM_DeactivateNotification:00000000 HAL_HSEM_DeactivateNotification
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:221    .text.HAL_HSEM_DeactivateNotification:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:224    .text.HAL_HSEM_FreeCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:230    .text.HAL_HSEM_FreeCallback:00000000 HAL_HSEM_FreeCallback
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:237    .text.HAL_HSEM_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:243    .text.HAL_HSEM_IRQHandler:00000000 HAL_HSEM_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:258    .text.HAL_HSEM_IRQHandler:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:18     .text.HAL_HSEM_Take:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:24     .text.HAL_HSEM_Take:00000000 HAL_HSEM_Take
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:43     .text.HAL_HSEM_Take:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:46     .text.HAL_HSEM_FastTake:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:52     .text.HAL_HSEM_FastTake:00000000 HAL_HSEM_FastTake
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:70     .text.HAL_HSEM_FastTake:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:74     .text.HAL_HSEM_IsSemTaken:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:80     .text.HAL_HSEM_IsSemTaken:00000000 HAL_HSEM_IsSemTaken
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:96     .text.HAL_HSEM_IsSemTaken:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:99     .text.HAL_HSEM_Release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:105    .text.HAL_HSEM_Release:00000000 HAL_HSEM_Release
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:116    .text.HAL_HSEM_Release:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:119    .text.HAL_HSEM_ReleaseAll:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:125    .text.HAL_HSEM_ReleaseAll:00000000 HAL_HSEM_ReleaseAll
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:137    .text.HAL_HSEM_ReleaseAll:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:140    .text.HAL_HSEM_SetClearKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:146    .text.HAL_HSEM_SetClearKey:00000000 HAL_HSEM_SetClearKey
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:159    .text.HAL_HSEM_SetClearKey:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:162    .text.HAL_HSEM_GetClearKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:168    .text.HAL_HSEM_GetClearKey:00000000 HAL_HSEM_GetClearKey
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:179    .text.HAL_HSEM_GetClearKey:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:182    .text.HAL_HSEM_ActivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:188    .text.HAL_HSEM_ActivateNotification:00000000 HAL_HSEM_ActivateNotification
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:200    .text.HAL_HSEM_ActivateNotification:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:203    .text.HAL_HSEM_DeactivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:209    .text.HAL_HSEM_DeactivateNotification:00000000 HAL_HSEM_DeactivateNotification
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:221    .text.HAL_HSEM_DeactivateNotification:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:224    .text.HAL_HSEM_FreeCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:230    .text.HAL_HSEM_FreeCallback:00000000 HAL_HSEM_FreeCallback
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:237    .text.HAL_HSEM_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:243    .text.HAL_HSEM_IRQHandler:00000000 HAL_HSEM_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\cccZtqNc.s:258    .text.HAL_HSEM_IRQHandler:00000018 $d
 
 NO UNDEFINED SYMBOLS

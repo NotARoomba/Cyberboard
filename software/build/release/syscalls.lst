@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 1
   61              		.section	.text._exit,"ax",%progbits
   62              		.align	1
   63              		.global	_exit
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s 			page 2
 
 
   64              		.syntax unified
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 1
  123 0012 0135     		adds	r5, r5, #1
  124              	.L13:
  125 0014 B542     		cmp	r5, r6
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s 			page 3
 
 
  126 0016 F8DB     		blt	.L14
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 1
  189              		.align	1
  190              		.global	_open
  191              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s 			page 4
 
 
  192              		.thumb
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 1
  254              		.global	_stat
  255              		.syntax unified
  256              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s 			page 5
 
 
  257              		.thumb_func
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 1
  319              		.global	environ
  320              		.section	.data.environ,"aw"
  321              		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s 			page 6
 
 
  324              	environ:
@@ -311,51 +311,51 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 1
  333              		.weak	__io_putchar
  334              		.weak	__io_getchar
  335              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 syscalls.c
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:18     .text.initialise_monitor_handles:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:24     .text.initialise_monitor_handles:00000000 initialise_monitor_handles
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:31     .text._getpid:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:37     .text._getpid:00000000 _getpid
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:45     .text._kill:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:51     .text._kill:00000000 _kill
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:62     .text._exit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:68     .text._exit:00000000 _exit
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:79     .text._read:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:85     .text._read:00000000 _read
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:106    .text._write:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:112    .text._write:00000000 _write
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:131    .text._close:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:137    .text._close:00000000 _close
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:145    .text._fstat:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:151    .text._fstat:00000000 _fstat
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:161    .text._isatty:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:167    .text._isatty:00000000 _isatty
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:175    .text._lseek:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:181    .text._lseek:00000000 _lseek
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:189    .text._open:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:195    .text._open:00000000 _open
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:205    .text._wait:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:211    .text._wait:00000000 _wait
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:222    .text._unlink:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:228    .text._unlink:00000000 _unlink
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:239    .text._times:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:245    .text._times:00000000 _times
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:253    .text._stat:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:259    .text._stat:00000000 _stat
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:269    .text._link:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:275    .text._link:00000000 _link
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:286    .text._fork:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:292    .text._fork:00000000 _fork
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:303    .text._execve:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:309    .text._execve:00000000 _execve
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:324    .data.environ:00000000 environ
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:321    .data.environ:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:331    .bss.__env:00000000 __env
-C:\Users\Nathan\AppData\Local\Temp\ccehp1Oa.s:328    .bss.__env:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:18     .text.initialise_monitor_handles:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:24     .text.initialise_monitor_handles:00000000 initialise_monitor_handles
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:31     .text._getpid:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:37     .text._getpid:00000000 _getpid
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:45     .text._kill:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:51     .text._kill:00000000 _kill
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:62     .text._exit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:68     .text._exit:00000000 _exit
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:79     .text._read:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:85     .text._read:00000000 _read
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:106    .text._write:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:112    .text._write:00000000 _write
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:131    .text._close:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:137    .text._close:00000000 _close
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:145    .text._fstat:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:151    .text._fstat:00000000 _fstat
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:161    .text._isatty:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:167    .text._isatty:00000000 _isatty
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:175    .text._lseek:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:181    .text._lseek:00000000 _lseek
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:189    .text._open:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:195    .text._open:00000000 _open
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:205    .text._wait:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:211    .text._wait:00000000 _wait
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:222    .text._unlink:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:228    .text._unlink:00000000 _unlink
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:239    .text._times:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:245    .text._times:00000000 _times
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:253    .text._stat:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:259    .text._stat:00000000 _stat
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:269    .text._link:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:275    .text._link:00000000 _link
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:286    .text._fork:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:292    .text._fork:00000000 _fork
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:303    .text._execve:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:309    .text._execve:00000000 _execve
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:324    .data.environ:00000000 environ
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:321    .data.environ:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:331    .bss.__env:00000000 __env
+C:\Users\Nathan\AppData\Local\Temp\cc7HMUKh.s:328    .bss.__env:00000000 $d
 
 UNDEFINED SYMBOLS
 __errno

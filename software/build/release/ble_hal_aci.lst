@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
   56 0050 3846     		mov	r0, r7
   57 0052 FFF7FEFF 		bl	hci_send_req
   58 0056 A842     		cmp	r0, r5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 2
 
 
   59 0058 04DB     		blt	.L3
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  115 0056 0DF5067D 		add	sp, sp, #536
  116              		@ sp needed
  117 005a BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 3
 
 
  118              	.L9:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  174 0050 FBE7     		b	.L11
  176              		.section	.text.aci_hal_le_tx_test_packet_number,"ax",%progbits
  177              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 4
 
 
  178              		.global	aci_hal_le_tx_test_packet_number
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  235 0008 0024     		movs	r4, #0
  236 000a 8DF80740 		strb	r4, [sp, #7]
  237 000e 02AD     		add	r5, sp, #8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 5
 
 
  238 0010 8DF80800 		strb	r0, [sp, #8]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  294 0028 0123     		movs	r3, #1
  295 002a 0793     		str	r3, [sp, #28]
  296 002c 2146     		mov	r1, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 6
 
 
  297 002e 2846     		mov	r0, r5
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  353              	.L30:
  354 004a 0822     		movs	r2, #8
  355 004c 0DF10501 		add	r1, sp, #5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 7
 
 
  356 0050 3846     		mov	r0, r7
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  413              		.section	.text.aci_hal_get_anchor_period,"ax",%progbits
  414              		.align	1
  415              		.global	aci_hal_get_anchor_period
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 8
 
 
  416              		.syntax unified
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  473 0000 F0B5     		push	{r4, r5, r6, r7, lr}
  474 0002 C9B0     		sub	sp, sp, #292
  475 0004 0DF10706 		add	r6, sp, #7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 9
 
 
  476 0008 0024     		movs	r4, #0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  532 0022 ADF80831 		strh	r3, [sp, #264]	@ movhi
  533 0026 2023     		movs	r3, #32
  534 0028 ADF80A31 		strh	r3, [sp, #266]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 10
 
 
  535 002c 4497     		str	r7, [sp, #272]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  591 0042 9DF80530 		ldrb	r3, [sp, #5]	@ zero_extendqisi2
  592 0046 3370     		strb	r3, [r6]
  593              	.L48:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 11
 
 
  594 0048 08B0     		add	sp, sp, #32
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  650 006a FC23     		movs	r3, #252
  651 006c 8593     		str	r3, [sp, #532]
  652 006e 0021     		movs	r1, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 12
 
 
  653 0070 3046     		mov	r0, r6
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  709 0036 4593     		str	r3, [sp, #276]
  710 0038 4695     		str	r5, [sp, #280]
  711 003a 0223     		movs	r3, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 13
 
 
  712 003c 4793     		str	r3, [sp, #284]
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  768 0048 3878     		ldrb	r0, [r7]	@ zero_extendqisi2
  769              	.L61:
  770 004a 49B0     		add	sp, sp, #292
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 14
 
 
  771              		@ sp needed
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  827 0058 F3E7     		b	.L65
  829              		.section	.text.aci_hal_rx_start,"ax",%progbits
  830              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 15
 
 
  831              		.global	aci_hal_rx_start
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  888 000a 02AD     		add	r5, sp, #8
  889 000c 1822     		movs	r2, #24
  890 000e 2146     		mov	r1, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 16
 
 
  891 0010 2846     		mov	r0, r5
@@ -925,47 +925,47 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 1
  912 0040 FF20     		movs	r0, #255
  913 0042 FBE7     		b	.L74
  915              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ble_hal_aci.c
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:18     .text.aci_hal_write_config_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:24     .text.aci_hal_write_config_data:00000000 aci_hal_write_config_data
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:70     .text.aci_hal_read_config_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:76     .text.aci_hal_read_config_data:00000000 aci_hal_read_config_data
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:130    .text.aci_hal_set_tx_power_level:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:136    .text.aci_hal_set_tx_power_level:00000000 aci_hal_set_tx_power_level
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:177    .text.aci_hal_le_tx_test_packet_number:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:183    .text.aci_hal_le_tx_test_packet_number:00000000 aci_hal_le_tx_test_packet_number
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:223    .text.aci_hal_tone_start:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:229    .text.aci_hal_tone_start:00000000 aci_hal_tone_start
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:270    .text.aci_hal_tone_stop:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:276    .text.aci_hal_tone_stop:00000000 aci_hal_tone_stop
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:311    .text.aci_hal_get_link_status:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:317    .text.aci_hal_get_link_status:00000000 aci_hal_get_link_status
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:368    .text.aci_hal_set_radio_activity_mask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:374    .text.aci_hal_set_radio_activity_mask:00000000 aci_hal_set_radio_activity_mask
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:414    .text.aci_hal_get_anchor_period:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:420    .text.aci_hal_get_anchor_period:00000000 aci_hal_get_anchor_period
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:464    .text.aci_hal_set_event_mask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:470    .text.aci_hal_set_event_mask:00000000 aci_hal_set_event_mask
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:510    .text.aci_hal_set_peripheral_latency:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:516    .text.aci_hal_set_peripheral_latency:00000000 aci_hal_set_peripheral_latency
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:555    .text.aci_hal_read_rssi:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:561    .text.aci_hal_read_rssi:00000000 aci_hal_read_rssi
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:602    .text.aci_hal_ead_encrypt_decrypt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:608    .text.aci_hal_ead_encrypt_decrypt:00000000 aci_hal_ead_encrypt_decrypt
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:678    .text.aci_hal_read_radio_reg:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:684    .text.aci_hal_read_radio_reg:00000000 aci_hal_read_radio_reg
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:731    .text.aci_hal_write_radio_reg:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:737    .text.aci_hal_write_radio_reg:00000000 aci_hal_write_radio_reg
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:778    .text.aci_hal_read_raw_rssi:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:784    .text.aci_hal_read_raw_rssi:00000000 aci_hal_read_raw_rssi
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:830    .text.aci_hal_rx_start:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:836    .text.aci_hal_rx_start:00000000 aci_hal_rx_start
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:875    .text.aci_hal_rx_stop:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccrpBz7F.s:881    .text.aci_hal_rx_stop:00000000 aci_hal_rx_stop
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:18     .text.aci_hal_write_config_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:24     .text.aci_hal_write_config_data:00000000 aci_hal_write_config_data
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:70     .text.aci_hal_read_config_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:76     .text.aci_hal_read_config_data:00000000 aci_hal_read_config_data
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:130    .text.aci_hal_set_tx_power_level:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:136    .text.aci_hal_set_tx_power_level:00000000 aci_hal_set_tx_power_level
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:177    .text.aci_hal_le_tx_test_packet_number:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:183    .text.aci_hal_le_tx_test_packet_number:00000000 aci_hal_le_tx_test_packet_number
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:223    .text.aci_hal_tone_start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:229    .text.aci_hal_tone_start:00000000 aci_hal_tone_start
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:270    .text.aci_hal_tone_stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:276    .text.aci_hal_tone_stop:00000000 aci_hal_tone_stop
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:311    .text.aci_hal_get_link_status:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:317    .text.aci_hal_get_link_status:00000000 aci_hal_get_link_status
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:368    .text.aci_hal_set_radio_activity_mask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:374    .text.aci_hal_set_radio_activity_mask:00000000 aci_hal_set_radio_activity_mask
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:414    .text.aci_hal_get_anchor_period:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:420    .text.aci_hal_get_anchor_period:00000000 aci_hal_get_anchor_period
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:464    .text.aci_hal_set_event_mask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:470    .text.aci_hal_set_event_mask:00000000 aci_hal_set_event_mask
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:510    .text.aci_hal_set_peripheral_latency:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:516    .text.aci_hal_set_peripheral_latency:00000000 aci_hal_set_peripheral_latency
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:555    .text.aci_hal_read_rssi:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:561    .text.aci_hal_read_rssi:00000000 aci_hal_read_rssi
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:602    .text.aci_hal_ead_encrypt_decrypt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:608    .text.aci_hal_ead_encrypt_decrypt:00000000 aci_hal_ead_encrypt_decrypt
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:678    .text.aci_hal_read_radio_reg:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:684    .text.aci_hal_read_radio_reg:00000000 aci_hal_read_radio_reg
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:731    .text.aci_hal_write_radio_reg:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:737    .text.aci_hal_write_radio_reg:00000000 aci_hal_write_radio_reg
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:778    .text.aci_hal_read_raw_rssi:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:784    .text.aci_hal_read_raw_rssi:00000000 aci_hal_read_raw_rssi
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:830    .text.aci_hal_rx_start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:836    .text.aci_hal_rx_start:00000000 aci_hal_rx_start
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:875    .text.aci_hal_rx_stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK3t8EG.s:881    .text.aci_hal_rx_stop:00000000 aci_hal_rx_stop
 
 UNDEFINED SYMBOLS
 Osal_MemCpy

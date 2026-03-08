@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 1
   58 0004 0446     		mov	r4, r0
   59 0006 0A48     		ldr	r0, .L10
   60 0008 FFF7FEFF 		bl	LST_init_head
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s 			page 2
 
 
   61 000c 094B     		ldr	r3, .L10+4
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 1
  117              	.L14:
  118 002c 04000000 		.word	pCmdBuffer
  119 0030 00000000 		.word	hciContext
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s 			page 3
 
 
  121              		.section	.text.hci_init,"ax",%progbits
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 1
  178              	.L27:
  179 0024 03A9     		add	r1, sp, #12
  180 0026 1248     		ldr	r0, .L29
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s 			page 4
 
 
  181 0028 FFF7FEFF 		bl	LST_remove_head
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 1
  237 000a FFF7FEFF 		bl	hci_notify_asynch_evt
  238 000e 08BD     		pop	{r3, pc}
  239              	.L34:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s 			page 5
 
 
  240              		.align	2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 1
  298 0030 48F2E800 		movw	r0, #33000
  299 0034 FFF7FEFF 		bl	hci_cmd_resp_wait
  300 0038 05E0     		b	.L41
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s 			page 6
 
 
  301              	.L53:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 1
  355              		@ sp needed
  356 00a2 F0BD     		pop	{r4, r5, r6, r7, pc}
  357              	.L56:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s 			page 7
 
 
  358              		.align	2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 1
  417              		.section	.bss.CmdRspStatusFlag,"aw",%nobits
  420              	CmdRspStatusFlag:
  421 0000 00       		.space	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s 			page 8
 
 
  422              		.section	.bss.StatusNotCallBackFunction,"aw",%nobits
@@ -452,54 +452,54 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 1
  458              	hci_timer_id:
  459 0010 00       		.space	1
  460              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 hci_tl.c
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:18     .text.NotifyCmdStatus:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:23     .text.NotifyCmdStatus:00000000 NotifyCmdStatus
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:45     .text.NotifyCmdStatus:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:426    .bss.StatusNotCallBackFunction:00000000 StatusNotCallBackFunction
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:48     .text.TlInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:53     .text.TlInit:00000000 TlInit
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:83     .text.TlInit:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:432    .bss.HciCmdEventQueue:00000000 HciCmdEventQueue
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:449    BLE_DRIVER_CONTEXT:00000004 pCmdBuffer
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:454    BLE_DRIVER_CONTEXT:00000008 HciAsynchEventQueue
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:444    BLE_DRIVER_CONTEXT:00000000 UserEventFlow
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:438    .bss.hciContext:00000000 hciContext
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:389    .text.TlEvtReceived:00000000 TlEvtReceived
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:91     .text.SendCmd:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:96     .text.SendCmd:00000000 SendCmd
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:118    .text.SendCmd:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:122    .text.hci_init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:128    .text.hci_init:00000000 hci_init
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:146    .text.hci_init:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:150    .text.hci_user_evt_proc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:156    .text.hci_user_evt_proc:00000000 hci_user_evt_proc
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:218    .text.hci_user_evt_proc:00000070 $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:223    .text.hci_resume_flow:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:229    .text.hci_resume_flow:00000000 hci_resume_flow
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:242    .text.hci_resume_flow:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:246    .text.hci_cmd_resp_wait:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:252    .text.hci_cmd_resp_wait:00000000 hci_cmd_resp_wait
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:265    .text.hci_cmd_resp_wait:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:420    .bss.CmdRspStatusFlag:00000000 CmdRspStatusFlag
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:268    .text.hci_send_req:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:274    .text.hci_send_req:00000000 hci_send_req
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:360    .text.hci_send_req:000000a4 $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:364    .text.hci_cmd_resp_release:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:370    .text.hci_cmd_resp_release:00000000 hci_cmd_resp_release
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:381    .text.hci_cmd_resp_release:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:384    .text.TlEvtReceived:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:414    .text.TlEvtReceived:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:421    .bss.CmdRspStatusFlag:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:423    .bss.StatusNotCallBackFunction:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:429    .bss.HciCmdEventQueue:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:435    .bss.hciContext:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:445    BLE_DRIVER_CONTEXT:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc6mnT0B.s:458    BLE_DRIVER_CONTEXT:00000010 hci_timer_id
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:18     .text.NotifyCmdStatus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:23     .text.NotifyCmdStatus:00000000 NotifyCmdStatus
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:45     .text.NotifyCmdStatus:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:426    .bss.StatusNotCallBackFunction:00000000 StatusNotCallBackFunction
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:48     .text.TlInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:53     .text.TlInit:00000000 TlInit
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:83     .text.TlInit:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:432    .bss.HciCmdEventQueue:00000000 HciCmdEventQueue
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:449    BLE_DRIVER_CONTEXT:00000004 pCmdBuffer
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:454    BLE_DRIVER_CONTEXT:00000008 HciAsynchEventQueue
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:444    BLE_DRIVER_CONTEXT:00000000 UserEventFlow
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:438    .bss.hciContext:00000000 hciContext
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:389    .text.TlEvtReceived:00000000 TlEvtReceived
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:91     .text.SendCmd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:96     .text.SendCmd:00000000 SendCmd
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:118    .text.SendCmd:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:122    .text.hci_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:128    .text.hci_init:00000000 hci_init
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:146    .text.hci_init:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:150    .text.hci_user_evt_proc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:156    .text.hci_user_evt_proc:00000000 hci_user_evt_proc
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:218    .text.hci_user_evt_proc:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:223    .text.hci_resume_flow:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:229    .text.hci_resume_flow:00000000 hci_resume_flow
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:242    .text.hci_resume_flow:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:246    .text.hci_cmd_resp_wait:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:252    .text.hci_cmd_resp_wait:00000000 hci_cmd_resp_wait
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:265    .text.hci_cmd_resp_wait:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:420    .bss.CmdRspStatusFlag:00000000 CmdRspStatusFlag
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:268    .text.hci_send_req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:274    .text.hci_send_req:00000000 hci_send_req
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:360    .text.hci_send_req:000000a4 $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:364    .text.hci_cmd_resp_release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:370    .text.hci_cmd_resp_release:00000000 hci_cmd_resp_release
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:381    .text.hci_cmd_resp_release:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:384    .text.TlEvtReceived:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:414    .text.TlEvtReceived:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:421    .bss.CmdRspStatusFlag:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:423    .bss.StatusNotCallBackFunction:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:429    .bss.HciCmdEventQueue:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:435    .bss.hciContext:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:445    BLE_DRIVER_CONTEXT:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cccuQsmh.s:458    BLE_DRIVER_CONTEXT:00000010 hci_timer_id
 
 UNDEFINED SYMBOLS
 LST_init_head

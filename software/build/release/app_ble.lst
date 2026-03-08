@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
   58 000a 0193     		str	r3, [sp, #4]
   59 000c 6946     		mov	r1, sp
   60 000e 0448     		ldr	r0, .L9+8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 2
 
 
   61 0010 FFF7FEFF 		bl	hci_init
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
  120              		.thumb
  121              		.thumb_func
  123              	BleGetBdAddress:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 3
 
 
  124              		@ args = 0, pretend = 0, frame = 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
  178 0012 0246     		mov	r2, r0
  179 0014 0621     		movs	r1, #6
  180 0016 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 4
 
 
  181 0018 FFF7FEFF 		bl	aci_hal_write_config_data
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
  235 00a6 0296     		str	r6, [sp, #8]
  236 00a8 0192     		str	r2, [sp, #4]
  237 00aa 0093     		str	r3, [sp]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 5
 
 
  238 00ac 2346     		mov	r3, r4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
  294 0030 00000000 		.word	BleApplicationContext
  295 0034 00000000 		.word	a_AdvData
  297              		.section	.text.APP_BLE_Init,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 6
 
 
  298              		.align	1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
  353 008e 0021     		movs	r1, #0
  354 0090 2046     		mov	r0, r4
  355 0092 FFF7FEFF 		bl	UTIL_SEQ_RegTask
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 7
 
 
  356 0096 3046     		mov	r0, r6
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
  412 0016 9A42     		cmp	r2, r3
  413 0018 0CD0     		beq	.L53
  414              	.L47:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 8
 
 
  415 001a 0120     		movs	r0, #1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
  469 0092 CDD1     		bne	.L46
  470 0094 0A49     		ldr	r1, .L55+8
  471 0096 084B     		ldr	r3, .L55
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 9
 
 
  472 0098 9889     		ldrh	r0, [r3, #12]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
  531              		.syntax unified
  532              		.thumb
  533              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 10
 
 
  535              	hci_cmd_resp_release:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
  594              		.align	2
  597              	MagicKeywordAddress:
  598 0000 00000000 		.word	MagicKeywordValue
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 11
 
 
  599              		.global	MagicKeywordValue
@@ -639,71 +639,71 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 1
  635      00000000 
  635      00000000 
  636              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 app_ble.c
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:18     .text.Adv_Cancel:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:23     .text.Adv_Cancel:00000000 Adv_Cancel
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:42     .text.Adv_Cancel:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:590    .bss.BleApplicationContext:00000000 BleApplicationContext
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:45     .text.Ble_Tl_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:50     .text.Ble_Tl_Init:00000000 Ble_Tl_Init
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:68     .text.Ble_Tl_Init:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:634    MB_MEM1:00000000 BleCmdBuffer
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:101    .text.BLE_StatusNot:00000000 BLE_StatusNot
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:78     .text.BLE_UserEvtRx:00000000 BLE_UserEvtRx
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:73     .text.BLE_UserEvtRx:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:96     .text.BLE_StatusNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:118    .text.BleGetBdAddress:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:123    .text.BleGetBdAddress:00000000 BleGetBdAddress
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:155    .text.BleGetBdAddress:00000040 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:622    .bss.a_BdAddrUdn:00000000 a_BdAddrUdn
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:628    .rodata.a_MBdAddr:00000000 a_MBdAddr
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:160    .rodata.Ble_Hci_Gap_Gatt_Init.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:164    .text.Ble_Hci_Gap_Gatt_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:169    .text.Ble_Hci_Gap_Gatt_Init:00000000 Ble_Hci_Gap_Gatt_Init
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:255    .text.Ble_Hci_Gap_Gatt_Init:000000c8 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:616    .rodata.a_BLE_CfgIrValue:00000000 a_BLE_CfgIrValue
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:610    .rodata.a_BLE_CfgErValue:00000000 a_BLE_CfgErValue
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:261    .text.Adv_Request:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:266    .text.Adv_Request:00000000 Adv_Request
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:294    .text.Adv_Request:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:577    .data.a_AdvData:00000000 a_AdvData
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:298    .text.APP_BLE_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:304    .text.APP_BLE_Init:00000000 APP_BLE_Init
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:387    .text.APP_BLE_Init:000000dc $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:392    .text.SVCCTL_App_Notification:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:398    .text.SVCCTL_App_Notification:00000000 SVCCTL_App_Notification
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:489    .text.SVCCTL_App_Notification:000000b8 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:584    .bss.HandleNotification:00000000 HandleNotification
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:494    .text.APP_BLE_Get_Server_Connection_Status:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:500    .text.APP_BLE_Get_Server_Connection_Status:00000000 APP_BLE_Get_Server_Connection_Status
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:510    .text.APP_BLE_Get_Server_Connection_Status:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:513    .text.hci_notify_asynch_evt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:519    .text.hci_notify_asynch_evt:00000000 hci_notify_asynch_evt
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:529    .text.hci_cmd_resp_release:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:535    .text.hci_cmd_resp_release:00000000 hci_cmd_resp_release
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:544    .text.hci_cmd_resp_wait:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:550    .text.hci_cmd_resp_wait:00000000 hci_cmd_resp_wait
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:559    .text.SVCCTL_ResumeUserEventFlow:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:565    .text.SVCCTL_ResumeUserEventFlow:00000000 SVCCTL_ResumeUserEventFlow
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:574    .data.a_AdvData:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:581    .bss.HandleNotification:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:587    .bss.BleApplicationContext:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:597    TAG_OTA_START:00000000 MagicKeywordAddress
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:594    TAG_OTA_START:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:604    TAG_OTA_END:00000000 MagicKeywordValue
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:601    TAG_OTA_END:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:607    .rodata.a_BLE_CfgErValue:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:613    .rodata.a_BLE_CfgIrValue:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:619    .bss.a_BdAddrUdn:00000000 $d
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s 			page 13
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:18     .text.Adv_Cancel:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:23     .text.Adv_Cancel:00000000 Adv_Cancel
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:42     .text.Adv_Cancel:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:590    .bss.BleApplicationContext:00000000 BleApplicationContext
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:45     .text.Ble_Tl_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:50     .text.Ble_Tl_Init:00000000 Ble_Tl_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:68     .text.Ble_Tl_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:634    MB_MEM1:00000000 BleCmdBuffer
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:101    .text.BLE_StatusNot:00000000 BLE_StatusNot
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:78     .text.BLE_UserEvtRx:00000000 BLE_UserEvtRx
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:73     .text.BLE_UserEvtRx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:96     .text.BLE_StatusNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:118    .text.BleGetBdAddress:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:123    .text.BleGetBdAddress:00000000 BleGetBdAddress
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:155    .text.BleGetBdAddress:00000040 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:622    .bss.a_BdAddrUdn:00000000 a_BdAddrUdn
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:628    .rodata.a_MBdAddr:00000000 a_MBdAddr
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:160    .rodata.Ble_Hci_Gap_Gatt_Init.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:164    .text.Ble_Hci_Gap_Gatt_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:169    .text.Ble_Hci_Gap_Gatt_Init:00000000 Ble_Hci_Gap_Gatt_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:255    .text.Ble_Hci_Gap_Gatt_Init:000000c8 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:616    .rodata.a_BLE_CfgIrValue:00000000 a_BLE_CfgIrValue
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:610    .rodata.a_BLE_CfgErValue:00000000 a_BLE_CfgErValue
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:261    .text.Adv_Request:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:266    .text.Adv_Request:00000000 Adv_Request
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:294    .text.Adv_Request:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:577    .data.a_AdvData:00000000 a_AdvData
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:298    .text.APP_BLE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:304    .text.APP_BLE_Init:00000000 APP_BLE_Init
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:387    .text.APP_BLE_Init:000000dc $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:392    .text.SVCCTL_App_Notification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:398    .text.SVCCTL_App_Notification:00000000 SVCCTL_App_Notification
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:489    .text.SVCCTL_App_Notification:000000b8 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:584    .bss.HandleNotification:00000000 HandleNotification
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:494    .text.APP_BLE_Get_Server_Connection_Status:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:500    .text.APP_BLE_Get_Server_Connection_Status:00000000 APP_BLE_Get_Server_Connection_Status
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:510    .text.APP_BLE_Get_Server_Connection_Status:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:513    .text.hci_notify_asynch_evt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:519    .text.hci_notify_asynch_evt:00000000 hci_notify_asynch_evt
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:529    .text.hci_cmd_resp_release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:535    .text.hci_cmd_resp_release:00000000 hci_cmd_resp_release
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:544    .text.hci_cmd_resp_wait:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:550    .text.hci_cmd_resp_wait:00000000 hci_cmd_resp_wait
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:559    .text.SVCCTL_ResumeUserEventFlow:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:565    .text.SVCCTL_ResumeUserEventFlow:00000000 SVCCTL_ResumeUserEventFlow
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:574    .data.a_AdvData:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:581    .bss.HandleNotification:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:587    .bss.BleApplicationContext:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:597    TAG_OTA_START:00000000 MagicKeywordAddress
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:594    TAG_OTA_START:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:604    TAG_OTA_END:00000000 MagicKeywordValue
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:601    TAG_OTA_END:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:607    .rodata.a_BLE_CfgErValue:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:613    .rodata.a_BLE_CfgIrValue:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:619    .bss.a_BdAddrUdn:00000000 $d
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s 			page 13
 
 
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:625    .rodata.a_MBdAddr:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cca3nonh.s:631    MB_MEM1:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:625    .rodata.a_MBdAddr:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4TpTWk.s:631    MB_MEM1:00000000 $d
 
 UNDEFINED SYMBOLS
 aci_gap_set_non_discoverable

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4VNOCV.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s 			page 1
   57              	DbgTraceBuffer:
   58              		@ args = 4, pretend = 8, frame = 8
   59              		@ frame_needed = 0, uses_anonymous_args = 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4VNOCV.s 			page 2
 
 
   60 0000 0CB4     		push	{r2, r3}
@@ -101,19 +101,19 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s 			page 1
   99              		@ link register save eliminated.
  100 0000 7047     		bx	lr
  102              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc4VNOCV.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 dbg_trace.c
-C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s:18     .text.DbgTraceGetFileName:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s:24     .text.DbgTraceGetFileName:00000000 DbgTraceGetFileName
-C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s:47     .rodata.DbgTraceBuffer.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s:51     .text.DbgTraceBuffer:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s:57     .text.DbgTraceBuffer:00000000 DbgTraceBuffer
-C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s:87     .text.DbgTraceBuffer:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s:90     .text.DbgTraceInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccmLVcox.s:96     .text.DbgTraceInit:00000000 DbgTraceInit
+C:\Users\Nathan\AppData\Local\Temp\cc4VNOCV.s:18     .text.DbgTraceGetFileName:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4VNOCV.s:24     .text.DbgTraceGetFileName:00000000 DbgTraceGetFileName
+C:\Users\Nathan\AppData\Local\Temp\cc4VNOCV.s:47     .rodata.DbgTraceBuffer.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4VNOCV.s:51     .text.DbgTraceBuffer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4VNOCV.s:57     .text.DbgTraceBuffer:00000000 DbgTraceBuffer
+C:\Users\Nathan\AppData\Local\Temp\cc4VNOCV.s:87     .text.DbgTraceBuffer:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cc4VNOCV.s:90     .text.DbgTraceInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc4VNOCV.s:96     .text.DbgTraceInit:00000000 DbgTraceInit
 
 UNDEFINED SYMBOLS
 strrchr

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
   57              		.thumb_func
   59              	TL_Enable:
   60              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 2
 
 
   61              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
  118              		.syntax unified
  119              		.thumb
  120              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 3
 
 
  122              	TL_BLE_Init:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
  178 0016 00BF     		.align	2
  179              	.L19:
  180 0018 00000000 		.word	TL_RefTable
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 4
 
 
  182              		.section	.text.HW_IPCC_BLE_RxEvtNot,"ax",%progbits
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
  239              	.L29:
  240 0018 00000000 		.word	TL_RefTable
  242              		.section	.text.HW_IPCC_BLE_AclDataAckNot,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 5
 
 
  243              		.align	1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
  301              		.global	TL_SYS_SendCmd
  302              		.syntax unified
  303              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 6
 
 
  304              		.thumb_func
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
  363 0006 01A9     		add	r1, sp, #4
  364 0008 0648     		ldr	r0, .L51
  365 000a FFF7FEFF 		bl	LST_remove_head
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 7
 
 
  366 000e 064B     		ldr	r3, .L51+4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
  422 0038 18000000 		.word	FreeBufQueue
  423 003c 00000000 		.word	LocalFreeBufQueue
  424 0040 00000000 		.word	TL_RefTable
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 8
 
 
  425 0044 00000000 		.word	p_mem_manager_table.0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
  485              		@ link register save eliminated.
  486 0000 7047     		bx	lr
  488              		.section	.text.HW_IPCC_TRACES_EvtNot,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 9
 
 
  489              		.align	1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
  556              		.section	MB_MEM1,"aw"
  557              		.align	2
  560              	SystemEvtQueue:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 10
 
 
  561 0000 00000000 		.space	8
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
  619              		.align	2
  622              	TL_ThreadTable:
  623 0070 00000000 		.space	16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 11
 
 
  623      00000000 
@@ -626,94 +626,94 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 1
  639      00000000 
  639      00000000 
  640              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 tl_mbox.c
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:18     .text.SendFreeBuf:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:23     .text.SendFreeBuf:00000000 SendFreeBuf
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:49     .text.SendFreeBuf:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:554    .bss.LocalFreeBufQueue:00000000 LocalFreeBufQueue
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:638    MAPPING_TABLE:00000000 TL_RefTable
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:53     .text.TL_Enable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:59     .text.TL_Enable:00000000 TL_Enable
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:67     .text.TL_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:73     .text.TL_Init:00000000 TL_Init
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:103    .text.TL_Init:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:632    MB_MEM1:00000090 TL_DeviceInfoTable
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:627    MB_MEM1:00000080 TL_BleTable
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:622    MB_MEM1:00000070 TL_ThreadTable
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:617    MB_MEM1:00000068 TL_LldTestsTable
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:612    MB_MEM1:00000060 TL_BleLldTable
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:607    MB_MEM1:00000058 TL_SysTable
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:602    MB_MEM1:0000003c TL_MemManagerTable
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:597    MB_MEM1:00000038 TL_TracesTable
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:592    MB_MEM1:0000002c TL_Mac_802_15_4_Table
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:587    MB_MEM1:00000020 TL_Zigbee_Table
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:116    .text.TL_BLE_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:122    .text.TL_BLE_Init:00000000 TL_BLE_Init
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:151    .text.TL_BLE_Init:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:565    MB_MEM1:00000008 EvtQueue
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:571    MB_MEM2:00000000 CsBuffer
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:548    .bss.BLE_IoBusEvtCallBackFunction:00000000 BLE_IoBusEvtCallBackFunction
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:542    .bss.BLE_IoBusAclDataTxAck:00000000 BLE_IoBusAclDataTxAck
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:158    .text.TL_BLE_SendCmd:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:164    .text.TL_BLE_SendCmd:00000000 TL_BLE_SendCmd
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:180    .text.TL_BLE_SendCmd:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:183    .text.HW_IPCC_BLE_RxEvtNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:189    .text.HW_IPCC_BLE_RxEvtNot:00000000 HW_IPCC_BLE_RxEvtNot
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:214    .text.HW_IPCC_BLE_RxEvtNot:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:218    .text.TL_BLE_SendAclData:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:224    .text.TL_BLE_SendAclData:00000000 TL_BLE_SendAclData
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:240    .text.TL_BLE_SendAclData:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:243    .text.HW_IPCC_BLE_AclDataAckNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:249    .text.HW_IPCC_BLE_AclDataAckNot:00000000 HW_IPCC_BLE_AclDataAckNot
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:260    .text.HW_IPCC_BLE_AclDataAckNot:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:263    .text.TL_SYS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:269    .text.TL_SYS_Init:00000000 TL_SYS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:294    .text.TL_SYS_Init:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:560    MB_MEM1:00000000 SystemEvtQueue
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:536    .bss.SYS_CMD_IoBusCallBackFunction:00000000 SYS_CMD_IoBusCallBackFunction
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:530    .bss.SYS_EVT_IoBusCallBackFunction:00000000 SYS_EVT_IoBusCallBackFunction
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:300    .text.TL_SYS_SendCmd:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:306    .text.TL_SYS_SendCmd:00000000 TL_SYS_SendCmd
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:322    .text.TL_SYS_SendCmd:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:325    .text.HW_IPCC_SYS_CmdEvtNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:331    .text.HW_IPCC_SYS_CmdEvtNot:00000000 HW_IPCC_SYS_CmdEvtNot
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:346    .text.HW_IPCC_SYS_CmdEvtNot:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:350    .text.HW_IPCC_SYS_EvtNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:356    .text.HW_IPCC_SYS_EvtNot:00000000 HW_IPCC_SYS_EvtNot
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:381    .text.HW_IPCC_SYS_EvtNot:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:385    .text.TL_MM_Init:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s 			page 13
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:18     .text.SendFreeBuf:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:23     .text.SendFreeBuf:00000000 SendFreeBuf
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:49     .text.SendFreeBuf:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:554    .bss.LocalFreeBufQueue:00000000 LocalFreeBufQueue
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:638    MAPPING_TABLE:00000000 TL_RefTable
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:53     .text.TL_Enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:59     .text.TL_Enable:00000000 TL_Enable
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:67     .text.TL_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:73     .text.TL_Init:00000000 TL_Init
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:103    .text.TL_Init:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:632    MB_MEM1:00000090 TL_DeviceInfoTable
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:627    MB_MEM1:00000080 TL_BleTable
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:622    MB_MEM1:00000070 TL_ThreadTable
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:617    MB_MEM1:00000068 TL_LldTestsTable
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:612    MB_MEM1:00000060 TL_BleLldTable
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:607    MB_MEM1:00000058 TL_SysTable
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:602    MB_MEM1:0000003c TL_MemManagerTable
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:597    MB_MEM1:00000038 TL_TracesTable
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:592    MB_MEM1:0000002c TL_Mac_802_15_4_Table
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:587    MB_MEM1:00000020 TL_Zigbee_Table
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:116    .text.TL_BLE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:122    .text.TL_BLE_Init:00000000 TL_BLE_Init
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:151    .text.TL_BLE_Init:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:565    MB_MEM1:00000008 EvtQueue
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:571    MB_MEM2:00000000 CsBuffer
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:548    .bss.BLE_IoBusEvtCallBackFunction:00000000 BLE_IoBusEvtCallBackFunction
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:542    .bss.BLE_IoBusAclDataTxAck:00000000 BLE_IoBusAclDataTxAck
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:158    .text.TL_BLE_SendCmd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:164    .text.TL_BLE_SendCmd:00000000 TL_BLE_SendCmd
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:180    .text.TL_BLE_SendCmd:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:183    .text.HW_IPCC_BLE_RxEvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:189    .text.HW_IPCC_BLE_RxEvtNot:00000000 HW_IPCC_BLE_RxEvtNot
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:214    .text.HW_IPCC_BLE_RxEvtNot:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:218    .text.TL_BLE_SendAclData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:224    .text.TL_BLE_SendAclData:00000000 TL_BLE_SendAclData
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:240    .text.TL_BLE_SendAclData:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:243    .text.HW_IPCC_BLE_AclDataAckNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:249    .text.HW_IPCC_BLE_AclDataAckNot:00000000 HW_IPCC_BLE_AclDataAckNot
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:260    .text.HW_IPCC_BLE_AclDataAckNot:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:263    .text.TL_SYS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:269    .text.TL_SYS_Init:00000000 TL_SYS_Init
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:294    .text.TL_SYS_Init:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:560    MB_MEM1:00000000 SystemEvtQueue
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:536    .bss.SYS_CMD_IoBusCallBackFunction:00000000 SYS_CMD_IoBusCallBackFunction
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:530    .bss.SYS_EVT_IoBusCallBackFunction:00000000 SYS_EVT_IoBusCallBackFunction
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:300    .text.TL_SYS_SendCmd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:306    .text.TL_SYS_SendCmd:00000000 TL_SYS_SendCmd
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:322    .text.TL_SYS_SendCmd:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:325    .text.HW_IPCC_SYS_CmdEvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:331    .text.HW_IPCC_SYS_CmdEvtNot:00000000 HW_IPCC_SYS_CmdEvtNot
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:346    .text.HW_IPCC_SYS_CmdEvtNot:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:350    .text.HW_IPCC_SYS_EvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:356    .text.HW_IPCC_SYS_EvtNot:00000000 HW_IPCC_SYS_EvtNot
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:381    .text.HW_IPCC_SYS_EvtNot:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:385    .text.TL_MM_Init:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s 			page 13
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:391    .text.TL_MM_Init:00000000 TL_MM_Init
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:422    .text.TL_MM_Init:00000038 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:582    MB_MEM1:00000018 FreeBufQueue
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:524    .bss.p_mem_manager_table.0:00000000 p_mem_manager_table.0
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:428    .text.TL_MM_EvtDone:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:434    .text.TL_MM_EvtDone:00000000 TL_MM_EvtDone
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:447    .text.TL_MM_EvtDone:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:451    .text.TL_TRACES_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:457    .text.TL_TRACES_Init:00000000 TL_TRACES_Init
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:472    .text.TL_TRACES_Init:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:577    MB_MEM1:00000010 TracesEvtQueue
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:476    .text.TL_TRACES_EvtReceived:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:482    .text.TL_TRACES_EvtReceived:00000000 TL_TRACES_EvtReceived
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:489    .text.HW_IPCC_TRACES_EvtNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:495    .text.HW_IPCC_TRACES_EvtNot:00000000 HW_IPCC_TRACES_EvtNot
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:518    .text.HW_IPCC_TRACES_EvtNot:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:521    .bss.p_mem_manager_table.0:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:527    .bss.SYS_EVT_IoBusCallBackFunction:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:533    .bss.SYS_CMD_IoBusCallBackFunction:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:539    .bss.BLE_IoBusAclDataTxAck:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:545    .bss.BLE_IoBusEvtCallBackFunction:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:551    .bss.LocalFreeBufQueue:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:557    MB_MEM1:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:568    MB_MEM2:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccT3ehkz.s:635    MAPPING_TABLE:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:391    .text.TL_MM_Init:00000000 TL_MM_Init
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:422    .text.TL_MM_Init:00000038 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:582    MB_MEM1:00000018 FreeBufQueue
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:524    .bss.p_mem_manager_table.0:00000000 p_mem_manager_table.0
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:428    .text.TL_MM_EvtDone:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:434    .text.TL_MM_EvtDone:00000000 TL_MM_EvtDone
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:447    .text.TL_MM_EvtDone:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:451    .text.TL_TRACES_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:457    .text.TL_TRACES_Init:00000000 TL_TRACES_Init
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:472    .text.TL_TRACES_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:577    MB_MEM1:00000010 TracesEvtQueue
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:476    .text.TL_TRACES_EvtReceived:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:482    .text.TL_TRACES_EvtReceived:00000000 TL_TRACES_EvtReceived
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:489    .text.HW_IPCC_TRACES_EvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:495    .text.HW_IPCC_TRACES_EvtNot:00000000 HW_IPCC_TRACES_EvtNot
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:518    .text.HW_IPCC_TRACES_EvtNot:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:521    .bss.p_mem_manager_table.0:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:527    .bss.SYS_EVT_IoBusCallBackFunction:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:533    .bss.SYS_CMD_IoBusCallBackFunction:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:539    .bss.BLE_IoBusAclDataTxAck:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:545    .bss.BLE_IoBusEvtCallBackFunction:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:551    .bss.LocalFreeBufQueue:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:557    MB_MEM1:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:568    MB_MEM2:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cctl2QSq.s:635    MAPPING_TABLE:00000000 $d
 
 UNDEFINED SYMBOLS
 LST_remove_head

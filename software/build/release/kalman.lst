@@ -1,0 +1,126 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUf8l37.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"kalman.c"
+  16              		.text
+  17              		.section	.text.Kalman_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	Kalman_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	Kalman_Init:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 80ED000A 		vstr.32	s0, [r0]
+  29 0004 0023     		movs	r3, #0
+  30 0006 4360     		str	r3, [r0, #4]	@ float
+  31 0008 4FF07E52 		mov	r2, #1065353216
+  32 000c 8260     		str	r2, [r0, #8]	@ float
+  33 000e C360     		str	r3, [r0, #12]	@ float
+  34 0010 0361     		str	r3, [r0, #16]	@ float
+  35 0012 4261     		str	r2, [r0, #20]	@ float
+  36 0014 034B     		ldr	r3, .L2
+  37 0016 8361     		str	r3, [r0, #24]	@ float
+  38 0018 034B     		ldr	r3, .L2+4
+  39 001a C361     		str	r3, [r0, #28]	@ float
+  40 001c 034B     		ldr	r3, .L2+8
+  41 001e 0362     		str	r3, [r0, #32]	@ float
+  42 0020 7047     		bx	lr
+  43              	.L3:
+  44 0022 00BF     		.align	2
+  45              	.L2:
+  46 0024 6F12833A 		.word	981668463
+  47 0028 A69B443B 		.word	994352038
+  48 002c 8FC2F53C 		.word	1022739087
+  50              		.section	.text.Kalman_Update,"ax",%progbits
+  51              		.align	1
+  52              		.global	Kalman_Update
+  53              		.syntax unified
+  54              		.thumb
+  55              		.thumb_func
+  57              	Kalman_Update:
+  58              		@ args = 0, pretend = 0, frame = 0
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUf8l37.s 			page 2
+
+
+  61 0000 D0ED007A 		vldr.32	s15, [r0]
+  62 0004 90ED015A 		vldr.32	s10, [r0, #4]
+  63 0008 30EE450A 		vsub.f32	s0, s0, s10
+  64 000c 20EE010A 		vmul.f32	s0, s0, s2
+  65 0010 37EE800A 		vadd.f32	s0, s15, s0
+  66 0014 80ED000A 		vstr.32	s0, [r0]
+  67 0018 D0ED027A 		vldr.32	s15, [r0, #8]
+  68 001c 90ED056A 		vldr.32	s12, [r0, #20]
+  69 0020 66EE014A 		vmul.f32	s9, s12, s2
+  70 0024 90ED037A 		vldr.32	s14, [r0, #12]
+  71 0028 74EEC75A 		vsub.f32	s11, s9, s14
+  72 002c D0ED046A 		vldr.32	s13, [r0, #16]
+  73 0030 75EEE65A 		vsub.f32	s11, s11, s13
+  74 0034 90ED064A 		vldr.32	s8, [r0, #24]
+  75 0038 75EE845A 		vadd.f32	s11, s11, s8
+  76 003c 65EE815A 		vmul.f32	s11, s11, s2
+  77 0040 77EEA57A 		vadd.f32	s15, s15, s11
+  78 0044 C0ED027A 		vstr.32	s15, [r0, #8]
+  79 0048 37EE647A 		vsub.f32	s14, s14, s9
+  80 004c 80ED037A 		vstr.32	s14, [r0, #12]
+  81 0050 76EEE46A 		vsub.f32	s13, s13, s9
+  82 0054 C0ED046A 		vstr.32	s13, [r0, #16]
+  83 0058 D0ED075A 		vldr.32	s11, [r0, #28]
+  84 005c 65EE815A 		vmul.f32	s11, s11, s2
+  85 0060 36EE256A 		vadd.f32	s12, s12, s11
+  86 0064 80ED056A 		vstr.32	s12, [r0, #20]
+  87 0068 70EEC00A 		vsub.f32	s1, s1, s0
+  88 006c D0ED084A 		vldr.32	s9, [r0, #32]
+  89 0070 77EEA44A 		vadd.f32	s9, s15, s9
+  90 0074 C7EEA45A 		vdiv.f32	s11, s15, s9
+  91 0078 86EEA44A 		vdiv.f32	s8, s13, s9
+  92 007c 60EEA54A 		vmul.f32	s9, s1, s11
+  93 0080 30EE240A 		vadd.f32	s0, s0, s9
+  94 0084 80ED000A 		vstr.32	s0, [r0]
+  95 0088 60EE840A 		vmul.f32	s1, s1, s8
+  96 008c 35EE205A 		vadd.f32	s10, s10, s1
+  97 0090 80ED015A 		vstr.32	s10, [r0, #4]
+  98 0094 27EEA55A 		vmul.f32	s10, s15, s11
+  99 0098 37EEC55A 		vsub.f32	s10, s15, s10
+ 100 009c 80ED025A 		vstr.32	s10, [r0, #8]
+ 101 00a0 67EE255A 		vmul.f32	s11, s14, s11
+ 102 00a4 77EE655A 		vsub.f32	s11, s14, s11
+ 103 00a8 C0ED035A 		vstr.32	s11, [r0, #12]
+ 104 00ac 67EE847A 		vmul.f32	s15, s15, s8
+ 105 00b0 76EEE76A 		vsub.f32	s13, s13, s15
+ 106 00b4 C0ED046A 		vstr.32	s13, [r0, #16]
+ 107 00b8 27EE047A 		vmul.f32	s14, s14, s8
+ 108 00bc 36EE476A 		vsub.f32	s12, s12, s14
+ 109 00c0 80ED056A 		vstr.32	s12, [r0, #20]
+ 110 00c4 7047     		bx	lr
+ 112              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUf8l37.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 kalman.c
+C:\Users\Nathan\AppData\Local\Temp\ccUf8l37.s:18     .text.Kalman_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUf8l37.s:24     .text.Kalman_Init:00000000 Kalman_Init
+C:\Users\Nathan\AppData\Local\Temp\ccUf8l37.s:46     .text.Kalman_Init:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUf8l37.s:51     .text.Kalman_Update:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUf8l37.s:57     .text.Kalman_Update:00000000 Kalman_Update
+
+NO UNDEFINED SYMBOLS

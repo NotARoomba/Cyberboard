@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
   58 0008 5361     		str	r3, [r2, #20]
   59              		.syntax unified
   60              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 2
 
 
   61 000a EFF3108C 		MRS ip, primask
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
  120              		.global	HAL_FLASH_IRQHandler
  121              		.syntax unified
  122              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 3
 
 
  123              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
  178 0068 134B     		ldr	r3, .L25+4
  179 006a 9B68     		ldr	r3, [r3, #8]
  180 006c 3BB9     		cbnz	r3, .L11
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 4
 
 
  181 006e 114A     		ldr	r2, .L25
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
  237 0004 002B     		cmp	r3, #0
  238 0006 01DB     		blt	.L31
  239 0008 0020     		movs	r0, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 5
 
 
  240 000a 7047     		bx	lr
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
  298              		@ frame_needed = 0, uses_anonymous_args = 0
  299              		@ link register save eliminated.
  300 0000 0A4B     		ldr	r3, .L44
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 6
 
 
  301 0002 5B69     		ldr	r3, [r3, #20]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
  358              		.thumb
  359              		.thumb_func
  361              	HAL_FLASH_OB_Launch:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 7
 
 
  362              		@ args = 0, pretend = 0, frame = 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
  420 0020 38BD     		pop	{r3, r4, r5, pc}
  421              	.L69:
  422 0022 194B     		ldr	r3, .L72
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 8
 
 
  423 0024 1B69     		ldr	r3, [r3, #16]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
  478              		.syntax unified
  479              		.thumb
  480              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 9
 
 
  482              	HAL_FLASH_Program:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
  537              		.global	HAL_FLASH_Program_IT
  538              		.syntax unified
  539              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 10
 
 
  540              		.thumb_func
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
  595              	.L91:
  596 0068 00000000 		.word	pFlash
  597 006c 00400058 		.word	1476411392
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 11
 
 
  599              		.global	pFlash
@@ -611,53 +611,53 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 1
  605      00000000 
  605      00000000 
  606              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_flash.c
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:18     .text.FLASH_Program_DoubleWord:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:23     .text.FLASH_Program_DoubleWord:00000000 FLASH_Program_DoubleWord
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:43     .text.FLASH_Program_DoubleWord:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:46     .RamFunc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:51     .RamFunc:00000000 FLASH_Program_Fast
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:90     .RamFunc:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:93     .text.HAL_FLASH_EndOfOperationCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:99     .text.HAL_FLASH_EndOfOperationCallback:00000000 HAL_FLASH_EndOfOperationCallback
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:106    .text.HAL_FLASH_OperationErrorCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:112    .text.HAL_FLASH_OperationErrorCallback:00000000 HAL_FLASH_OperationErrorCallback
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:119    .text.HAL_FLASH_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:125    .text.HAL_FLASH_IRQHandler:00000000 HAL_FLASH_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:220    .text.HAL_FLASH_IRQHandler:000000b4 $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:604    .bss.pFlash:00000000 pFlash
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:225    .text.HAL_FLASH_Unlock:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:231    .text.HAL_FLASH_Unlock:00000000 HAL_FLASH_Unlock
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:258    .text.HAL_FLASH_Unlock:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:262    .text.HAL_FLASH_Lock:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:268    .text.HAL_FLASH_Lock:00000000 HAL_FLASH_Lock
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:287    .text.HAL_FLASH_Lock:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:290    .text.HAL_FLASH_OB_Unlock:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:296    .text.HAL_FLASH_OB_Unlock:00000000 HAL_FLASH_OB_Unlock
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:323    .text.HAL_FLASH_OB_Unlock:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:327    .text.HAL_FLASH_OB_Lock:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:333    .text.HAL_FLASH_OB_Lock:00000000 HAL_FLASH_OB_Lock
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:352    .text.HAL_FLASH_OB_Lock:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:355    .text.HAL_FLASH_OB_Launch:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:361    .text.HAL_FLASH_OB_Launch:00000000 HAL_FLASH_OB_Launch
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:374    .text.HAL_FLASH_OB_Launch:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:377    .text.HAL_FLASH_GetError:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:383    .text.HAL_FLASH_GetError:00000000 HAL_FLASH_GetError
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:393    .text.HAL_FLASH_GetError:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:396    .text.FLASH_WaitForLastOperation:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:402    .text.FLASH_WaitForLastOperation:00000000 FLASH_WaitForLastOperation
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:472    .text.FLASH_WaitForLastOperation:00000088 $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:476    .text.HAL_FLASH_Program:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:482    .text.HAL_FLASH_Program:00000000 HAL_FLASH_Program
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:532    .text.HAL_FLASH_Program:0000005c $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:536    .text.HAL_FLASH_Program_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:542    .text.HAL_FLASH_Program_IT:00000000 HAL_FLASH_Program_IT
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:596    .text.HAL_FLASH_Program_IT:00000068 $d
-C:\Users\Nathan\AppData\Local\Temp\ccoRCLnd.s:601    .bss.pFlash:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:18     .text.FLASH_Program_DoubleWord:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:23     .text.FLASH_Program_DoubleWord:00000000 FLASH_Program_DoubleWord
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:43     .text.FLASH_Program_DoubleWord:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:46     .RamFunc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:51     .RamFunc:00000000 FLASH_Program_Fast
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:90     .RamFunc:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:93     .text.HAL_FLASH_EndOfOperationCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:99     .text.HAL_FLASH_EndOfOperationCallback:00000000 HAL_FLASH_EndOfOperationCallback
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:106    .text.HAL_FLASH_OperationErrorCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:112    .text.HAL_FLASH_OperationErrorCallback:00000000 HAL_FLASH_OperationErrorCallback
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:119    .text.HAL_FLASH_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:125    .text.HAL_FLASH_IRQHandler:00000000 HAL_FLASH_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:220    .text.HAL_FLASH_IRQHandler:000000b4 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:604    .bss.pFlash:00000000 pFlash
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:225    .text.HAL_FLASH_Unlock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:231    .text.HAL_FLASH_Unlock:00000000 HAL_FLASH_Unlock
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:258    .text.HAL_FLASH_Unlock:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:262    .text.HAL_FLASH_Lock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:268    .text.HAL_FLASH_Lock:00000000 HAL_FLASH_Lock
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:287    .text.HAL_FLASH_Lock:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:290    .text.HAL_FLASH_OB_Unlock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:296    .text.HAL_FLASH_OB_Unlock:00000000 HAL_FLASH_OB_Unlock
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:323    .text.HAL_FLASH_OB_Unlock:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:327    .text.HAL_FLASH_OB_Lock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:333    .text.HAL_FLASH_OB_Lock:00000000 HAL_FLASH_OB_Lock
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:352    .text.HAL_FLASH_OB_Lock:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:355    .text.HAL_FLASH_OB_Launch:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:361    .text.HAL_FLASH_OB_Launch:00000000 HAL_FLASH_OB_Launch
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:374    .text.HAL_FLASH_OB_Launch:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:377    .text.HAL_FLASH_GetError:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:383    .text.HAL_FLASH_GetError:00000000 HAL_FLASH_GetError
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:393    .text.HAL_FLASH_GetError:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:396    .text.FLASH_WaitForLastOperation:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:402    .text.FLASH_WaitForLastOperation:00000000 FLASH_WaitForLastOperation
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:472    .text.FLASH_WaitForLastOperation:00000088 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:476    .text.HAL_FLASH_Program:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:482    .text.HAL_FLASH_Program:00000000 HAL_FLASH_Program
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:532    .text.HAL_FLASH_Program:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:536    .text.HAL_FLASH_Program_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:542    .text.HAL_FLASH_Program_IT:00000000 HAL_FLASH_Program_IT
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:596    .text.HAL_FLASH_Program_IT:00000068 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPnrPJh.s:601    .bss.pFlash:00000000 $d
 
 UNDEFINED SYMBOLS
 FLASH_PageErase

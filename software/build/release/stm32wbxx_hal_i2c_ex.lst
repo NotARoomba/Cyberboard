@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s 			page 1
   56 0046 83F84120 		strb	r2, [r3, #65]
   57 004a 0020     		movs	r0, #0
   58 004c 83F84000 		strb	r0, [r3, #64]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s 			page 2
 
 
   59 0050 7047     		bx	lr
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s 			page 1
  116              		.global	HAL_I2CEx_EnableWakeUp
  117              		.syntax unified
  118              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s 			page 3
 
 
  119              		.thumb_func
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s 			page 1
  176 000e 012A     		cmp	r2, #1
  177 0010 1DD0     		beq	.L16
  178 0012 0122     		movs	r2, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s 			page 4
 
 
  179 0014 80F84020 		strb	r2, [r0, #64]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s 			page 1
  237              		@ link register save eliminated.
  238 0000 024A     		ldr	r2, .L21
  239 0002 5368     		ldr	r3, [r2, #4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s 			page 5
 
 
  240 0004 23EA0003 		bic	r3, r3, r0
@@ -249,24 +249,24 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s 			page 1
  245              	.L21:
  246 000c 00000140 		.word	1073807360
  248              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_i2c_ex.c
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:18     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:24     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 HAL_I2CEx_ConfigAnalogFilter
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:68     .text.HAL_I2CEx_ConfigDigitalFilter:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:74     .text.HAL_I2CEx_ConfigDigitalFilter:00000000 HAL_I2CEx_ConfigDigitalFilter
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:115    .text.HAL_I2CEx_EnableWakeUp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:121    .text.HAL_I2CEx_EnableWakeUp:00000000 HAL_I2CEx_EnableWakeUp
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:161    .text.HAL_I2CEx_DisableWakeUp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:167    .text.HAL_I2CEx_DisableWakeUp:00000000 HAL_I2CEx_DisableWakeUp
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:207    .text.HAL_I2CEx_EnableFastModePlus:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:213    .text.HAL_I2CEx_EnableFastModePlus:00000000 HAL_I2CEx_EnableFastModePlus
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:225    .text.HAL_I2CEx_EnableFastModePlus:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:228    .text.HAL_I2CEx_DisableFastModePlus:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:234    .text.HAL_I2CEx_DisableFastModePlus:00000000 HAL_I2CEx_DisableFastModePlus
-C:\Users\Nathan\AppData\Local\Temp\ccBVshsg.s:246    .text.HAL_I2CEx_DisableFastModePlus:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:18     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:24     .text.HAL_I2CEx_ConfigAnalogFilter:00000000 HAL_I2CEx_ConfigAnalogFilter
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:68     .text.HAL_I2CEx_ConfigDigitalFilter:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:74     .text.HAL_I2CEx_ConfigDigitalFilter:00000000 HAL_I2CEx_ConfigDigitalFilter
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:115    .text.HAL_I2CEx_EnableWakeUp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:121    .text.HAL_I2CEx_EnableWakeUp:00000000 HAL_I2CEx_EnableWakeUp
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:161    .text.HAL_I2CEx_DisableWakeUp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:167    .text.HAL_I2CEx_DisableWakeUp:00000000 HAL_I2CEx_DisableWakeUp
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:207    .text.HAL_I2CEx_EnableFastModePlus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:213    .text.HAL_I2CEx_EnableFastModePlus:00000000 HAL_I2CEx_EnableFastModePlus
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:225    .text.HAL_I2CEx_EnableFastModePlus:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:228    .text.HAL_I2CEx_DisableFastModePlus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:234    .text.HAL_I2CEx_DisableFastModePlus:00000000 HAL_I2CEx_DisableFastModePlus
+C:\Users\Nathan\AppData\Local\Temp\ccM9NKIk.s:246    .text.HAL_I2CEx_DisableFastModePlus:0000000c $d
 
 NO UNDEFINED SYMBOLS

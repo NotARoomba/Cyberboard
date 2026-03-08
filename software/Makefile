@@ -42,6 +42,7 @@ Core/Src/stm32wbxx_hal_msp.c \
 Core/Src/sysmem.c \
 Core/Src/syscalls.c \
 Drivers/ICM42688/ICM42688.c \
+Drivers/Kalman/kalman.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_tim_ex.c \
 Drivers/STM32WBxx_HAL_Driver/Src/stm32wbxx_hal_uart.c \
@@ -180,6 +181,7 @@ C_INCLUDES =  \
 -IDrivers/CMSIS/Device/ST/STM32WBxx/Include \
 -IDrivers/CMSIS/Include \
 -IDrivers/ICM42688 \
+-IDrivers/Kalman \
 -IUSB_Device/App \
 -IUSB_Device/Target \
 -IMiddlewares/ST/STM32_USB_Device_Library/Core/Inc \

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
   56 0042 FBE7     		b	.L2
   58              		.section	.text.aci_gap_set_limited_discoverable,"ax",%progbits
   59              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 2
 
 
   60              		.global	aci_gap_set_limited_discoverable
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  115 008c ADF81231 		strh	r3, [sp, #274]	@ movhi
  116 0090 0F23     		movs	r3, #15
  117 0092 4593     		str	r3, [sp, #276]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 3
 
 
  118 0094 4694     		str	r4, [sp, #280]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  174 0058 0936     		adds	r6, r6, #9
  175 005a 2A46     		mov	r2, r5
  176 005c 5899     		ldr	r1, [sp, #352]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 4
 
 
  177 005e 0BF10100 		add	r0, fp, #1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  233 001c 0622     		movs	r2, #6
  234 001e 1946     		mov	r1, r3
  235 0020 0DF10B00 		add	r0, sp, #11
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 5
 
 
  236 0024 FFF7FEFF 		bl	Osal_MemCpy
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  292 0020 3F23     		movs	r3, #63
  293 0022 ADF80831 		strh	r3, [sp, #264]	@ movhi
  294 0026 8523     		movs	r3, #133
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 6
 
 
  295 0028 ADF80A31 		strh	r3, [sp, #266]	@ movhi
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  351 0054 ADF80831 		strh	r3, [sp, #264]	@ movhi
  352 0058 8623     		movs	r3, #134
  353 005a ADF80A31 		strh	r3, [sp, #266]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 7
 
 
  354 005e 4494     		str	r4, [sp, #272]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  410 0044 A042     		cmp	r0, r4
  411 0046 02DB     		blt	.L27
  412 0048 3878     		ldrb	r0, [r7]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 8
 
 
  413              	.L26:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  470              		.global	aci_gap_authorization_resp
  471              		.syntax unified
  472              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 9
 
 
  473              		.thumb_func
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  530 000c 9946     		mov	r9, r3
  531 000e 0722     		movs	r2, #7
  532 0010 0021     		movs	r1, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 10
 
 
  533 0012 6846     		mov	r0, sp
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  589 0004 0DF10707 		add	r7, sp, #7
  590 0008 0024     		movs	r4, #0
  591 000a 8DF80740 		strb	r4, [sp, #7]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 11
 
 
  592 000e 02AD     		add	r5, sp, #8
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  648 0028 FFF7FEFF 		bl	Osal_MemSet
  649 002c 3F23     		movs	r3, #63
  650 002e ADF80831 		strh	r3, [sp, #264]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 12
 
 
  651 0032 8C23     		movs	r3, #140
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  707 003c 2146     		mov	r1, r4
  708 003e 2846     		mov	r0, r5
  709 0040 FFF7FEFF 		bl	hci_send_req
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 13
 
 
  710 0044 A042     		cmp	r0, r4
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  766 005a BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
  767              	.L55:
  768 005e FF20     		movs	r0, #255
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 14
 
 
  769 0060 FAE7     		b	.L54
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  827 0004 C8B0     		sub	sp, sp, #288
  828 0006 0446     		mov	r4, r0
  829 0008 8846     		mov	r8, r1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 15
 
 
  830 000a 1746     		mov	r7, r2
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  886 000a 8DF80740 		strb	r4, [sp, #7]
  887 000e 02AF     		add	r7, sp, #8
  888 0010 ADF80800 		strh	r0, [sp, #8]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 16
 
 
  889 0014 42AD     		add	r5, sp, #264
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  945 002c 2146     		mov	r1, r4
  946 002e 2846     		mov	r0, r5
  947 0030 FFF7FEFF 		bl	hci_send_req
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 17
 
 
  948 0034 A042     		cmp	r0, r4
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1004              	.L75:
  1005 0052 FF20     		movs	r0, #255
  1006 0054 FBE7     		b	.L74
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 18
 
 
  1008              		.section	.text.aci_gap_clear_security_db,"ax",%progbits
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1065 0010 ADF80800 		strh	r0, [sp, #8]	@ movhi
  1066 0014 42AD     		add	r5, sp, #264
  1067 0016 1822     		movs	r2, #24
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 19
 
 
  1068 0018 2146     		mov	r1, r4
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1124 0038 0F23     		movs	r3, #15
  1125 003a 4393     		str	r3, [sp, #268]
  1126 003c 4494     		str	r4, [sp, #272]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 20
 
 
  1127 003e 0623     		movs	r3, #6
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1183 0048 2946     		mov	r1, r5
  1184 004a 3046     		mov	r0, r6
  1185 004c FFF7FEFF 		bl	hci_send_req
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 21
 
 
  1186 0050 A842     		cmp	r0, r5
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1242 0076 9923     		movs	r3, #153
  1243 0078 ADF80A31 		strh	r3, [sp, #266]	@ movhi
  1244 007c 0F23     		movs	r3, #15
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 22
 
 
  1245 007e 4393     		str	r3, [sp, #268]
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1301 004e 0823     		movs	r3, #8
  1302 0050 4593     		str	r3, [sp, #276]
  1303 0052 4697     		str	r7, [sp, #280]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 23
 
 
  1304 0054 0123     		movs	r3, #1
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1360 0060 ADF80A31 		strh	r3, [sp, #266]	@ movhi
  1361 0064 0F23     		movs	r3, #15
  1362 0066 4393     		str	r3, [sp, #268]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 24
 
 
  1363 0068 4495     		str	r5, [sp, #272]
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1419 0060 42AE     		add	r6, sp, #264
  1420 0062 1822     		movs	r2, #24
  1421 0064 2946     		mov	r1, r5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 25
 
 
  1422 0066 3046     		mov	r0, r6
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1478 0030 4593     		str	r3, [sp, #276]
  1479 0032 4696     		str	r6, [sp, #280]
  1480 0034 4793     		str	r3, [sp, #284]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 26
 
 
  1481 0036 2146     		mov	r1, r4
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1537 005e 4793     		str	r3, [sp, #284]
  1538 0060 2946     		mov	r1, r5
  1539 0062 3046     		mov	r0, r6
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 27
 
 
  1540 0064 FFF7FEFF 		bl	hci_send_req
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1596 0050 F0BD     		pop	{r4, r5, r6, r7, pc}
  1597              	.L119:
  1598 0052 FF20     		movs	r0, #255
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 28
 
 
  1599 0054 FBE7     		b	.L118
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1655 0086 B842     		cmp	r0, r7
  1656 0088 04DB     		blt	.L123
  1657 008a 98F80000 		ldrb	r0, [r8]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 29
 
 
  1658              	.L122:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1714 0066 49B0     		add	sp, sp, #292
  1715              		@ sp needed
  1716 0068 F0BD     		pop	{r4, r5, r6, r7, pc}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 30
 
 
  1717              	.L127:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1773 0062 EFE7     		b	.L130
  1775              		.section	.text.aci_gap_check_bonded_device,"ax",%progbits
  1776              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 31
 
 
  1777              		.global	aci_gap_check_bonded_device
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1832 0074 0DF10201 		add	r1, sp, #2
  1833 0078 4046     		mov	r0, r8
  1834 007a FFF7FEFF 		bl	Osal_MemCpy
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 32
 
 
  1835 007e F0E7     		b	.L135
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1892              		.thumb_func
  1894              	aci_gap_passkey_input:
  1895              		@ args = 0, pretend = 0, frame = 288
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 33
 
 
  1896              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  1952 0012 0021     		movs	r1, #0
  1953 0014 2846     		mov	r0, r5
  1954 0016 FFF7FEFF 		bl	Osal_MemSet
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 34
 
 
  1955 001a 08AE     		add	r6, sp, #32
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2011              		@ frame_needed = 0, uses_anonymous_args = 0
  2012 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
  2013 0004 C8B0     		sub	sp, sp, #288
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 35
 
 
  2014 0006 0E46     		mov	r6, r1
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2070              		@ args = 0, pretend = 0, frame = 288
  2071              		@ frame_needed = 0, uses_anonymous_args = 0
  2072 0000 F0B5     		push	{r4, r5, r6, r7, lr}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 36
 
 
  2073 0002 C9B0     		sub	sp, sp, #292
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2129 0016 8DF80750 		strb	r5, [sp, #7]
  2130 001a 8DF80800 		strb	r0, [sp, #8]
  2131 001e 2246     		mov	r2, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 37
 
 
  2132 0020 0DF10900 		add	r0, sp, #9
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2188 0026 ADF80831 		strh	r3, [sp, #264]	@ movhi
  2189 002a AD23     		movs	r3, #173
  2190 002c ADF80A31 		strh	r3, [sp, #266]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 38
 
 
  2191 0030 4495     		str	r5, [sp, #272]
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2247 004e 0D23     		movs	r3, #13
  2248 0050 4593     		str	r3, [sp, #276]
  2249 0052 4697     		str	r7, [sp, #280]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 39
 
 
  2250 0054 0123     		movs	r3, #1
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2307              		.section	.text.aci_gap_additional_beacon_set_data,"ax",%progbits
  2308              		.align	1
  2309              		.global	aci_gap_additional_beacon_set_data
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 40
 
 
  2310              		.syntax unified
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2367 0000 F0B5     		push	{r4, r5, r6, r7, lr}
  2368 0002 C9B0     		sub	sp, sp, #292
  2369 0004 0DF10707 		add	r7, sp, #7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 41
 
 
  2370 0008 0025     		movs	r5, #0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2424              		@ sp needed
  2425 00aa F0BD     		pop	{r4, r5, r6, r7, pc}
  2426              	.L182:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 42
 
 
  2427 00ac FF20     		movs	r0, #255
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2484              		.align	1
  2485              		.global	aci_gap_adv_set_adv_data
  2486              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 43
 
 
  2487              		.thumb
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2544              	aci_gap_adv_set_scan_resp_data:
  2545              		@ args = 4, pretend = 0, frame = 288
  2546              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 44
 
 
  2547 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2603 0004 0DF10706 		add	r6, sp, #7
  2604 0008 0024     		movs	r4, #0
  2605 000a 8DF80740 		strb	r4, [sp, #7]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 45
 
 
  2606 000e 02AF     		add	r7, sp, #8
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2662 002a 0793     		str	r3, [sp, #28]
  2663 002c 2146     		mov	r1, r4
  2664 002e 2846     		mov	r0, r5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 46
 
 
  2665 0030 FFF7FEFF 		bl	hci_send_req
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2721 0052 F0BD     		pop	{r4, r5, r6, r7, pc}
  2722              	.L206:
  2723 0054 FF20     		movs	r0, #255
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 47
 
 
  2724 0056 FBE7     		b	.L205
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2780 0080 3878     		ldrb	r0, [r7]	@ zero_extendqisi2
  2781              	.L209:
  2782 0082 49B0     		add	sp, sp, #292
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 48
 
 
  2783              		@ sp needed
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2839 0078 4697     		str	r7, [sp, #280]
  2840 007a 0123     		movs	r3, #1
  2841 007c 4793     		str	r3, [sp, #284]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 49
 
 
  2842 007e 2946     		mov	r1, r5
@@ -2895,120 +2895,120 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 1
  2853 0090 FF20     		movs	r0, #255
  2854 0092 FBE7     		b	.L213
  2856              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 50
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ble_gap_aci.c
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:18     .text.aci_gap_set_non_discoverable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:24     .text.aci_gap_set_non_discoverable:00000000 aci_gap_set_non_discoverable
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:59     .text.aci_gap_set_limited_discoverable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:65     .text.aci_gap_set_limited_discoverable:00000000 aci_gap_set_limited_discoverable
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:138    .text.aci_gap_set_discoverable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:144    .text.aci_gap_set_discoverable:00000000 aci_gap_set_discoverable
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:215    .text.aci_gap_set_direct_connectable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:221    .text.aci_gap_set_direct_connectable:00000000 aci_gap_set_direct_connectable
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:271    .text.aci_gap_set_io_capability:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:277    .text.aci_gap_set_io_capability:00000000 aci_gap_set_io_capability
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:316    .text.aci_gap_set_authentication_requirement:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:322    .text.aci_gap_set_authentication_requirement:00000000 aci_gap_set_authentication_requirement
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:375    .text.aci_gap_set_authorization_requirement:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:381    .text.aci_gap_set_authorization_requirement:00000000 aci_gap_set_authorization_requirement
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:422    .text.aci_gap_pass_key_resp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:428    .text.aci_gap_pass_key_resp:00000000 aci_gap_pass_key_resp
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:469    .text.aci_gap_authorization_resp:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:475    .text.aci_gap_authorization_resp:00000000 aci_gap_authorization_resp
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:516    .text.aci_gap_init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:522    .text.aci_gap_init:00000000 aci_gap_init
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:578    .text.aci_gap_set_non_connectable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:584    .text.aci_gap_set_non_connectable:00000000 aci_gap_set_non_connectable
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:625    .text.aci_gap_set_undirected_connectable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:631    .text.aci_gap_set_undirected_connectable:00000000 aci_gap_set_undirected_connectable
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:674    .text.aci_gap_peripheral_security_req:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:680    .text.aci_gap_peripheral_security_req:00000000 aci_gap_peripheral_security_req
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:722    .text.aci_gap_update_adv_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:728    .text.aci_gap_update_adv_data:00000000 aci_gap_update_adv_data
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:772    .text.aci_gap_delete_ad_type:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:778    .text.aci_gap_delete_ad_type:00000000 aci_gap_delete_ad_type
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:817    .text.aci_gap_get_security_level:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:823    .text.aci_gap_get_security_level:00000000 aci_gap_get_security_level
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:873    .text.aci_gap_set_event_mask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:879    .text.aci_gap_set_event_mask:00000000 aci_gap_set_event_mask
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:919    .text.aci_gap_configure_filter_accept_list:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:925    .text.aci_gap_configure_filter_accept_list:00000000 aci_gap_configure_filter_accept_list
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:960    .text.aci_gap_terminate:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:966    .text.aci_gap_terminate:00000000 aci_gap_terminate
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1009   .text.aci_gap_clear_security_db:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1015   .text.aci_gap_clear_security_db:00000000 aci_gap_clear_security_db
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1050   .text.aci_gap_allow_rebond:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1056   .text.aci_gap_allow_rebond:00000000 aci_gap_allow_rebond
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1096   .text.aci_gap_start_limited_discovery_proc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1102   .text.aci_gap_start_limited_discovery_proc:00000000 aci_gap_start_limited_discovery_proc
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1147   .text.aci_gap_start_general_discovery_proc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1153   .text.aci_gap_start_general_discovery_proc:00000000 aci_gap_start_general_discovery_proc
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1198   .text.aci_gap_start_auto_connection_establish_proc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1204   .text.aci_gap_start_auto_connection_establish_proc:00000000 aci_gap_start_auto_connection_establish_proc
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1266   .text.aci_gap_start_general_connection_establish_proc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1272   .text.aci_gap_start_general_connection_establish_proc:00000000 aci_gap_start_general_connection_establish_proc
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1321   .text.aci_gap_start_selective_connection_establish_proc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1327   .text.aci_gap_start_selective_connection_establish_proc:00000000 aci_gap_start_selective_connection_establish_proc
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1383   .text.aci_gap_create_connection:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1389   .text.aci_gap_create_connection:00000000 aci_gap_create_connection
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1451   .text.aci_gap_terminate_gap_proc:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s 			page 51
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:18     .text.aci_gap_set_non_discoverable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:24     .text.aci_gap_set_non_discoverable:00000000 aci_gap_set_non_discoverable
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:59     .text.aci_gap_set_limited_discoverable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:65     .text.aci_gap_set_limited_discoverable:00000000 aci_gap_set_limited_discoverable
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:138    .text.aci_gap_set_discoverable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:144    .text.aci_gap_set_discoverable:00000000 aci_gap_set_discoverable
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:215    .text.aci_gap_set_direct_connectable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:221    .text.aci_gap_set_direct_connectable:00000000 aci_gap_set_direct_connectable
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:271    .text.aci_gap_set_io_capability:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:277    .text.aci_gap_set_io_capability:00000000 aci_gap_set_io_capability
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:316    .text.aci_gap_set_authentication_requirement:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:322    .text.aci_gap_set_authentication_requirement:00000000 aci_gap_set_authentication_requirement
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:375    .text.aci_gap_set_authorization_requirement:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:381    .text.aci_gap_set_authorization_requirement:00000000 aci_gap_set_authorization_requirement
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:422    .text.aci_gap_pass_key_resp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:428    .text.aci_gap_pass_key_resp:00000000 aci_gap_pass_key_resp
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:469    .text.aci_gap_authorization_resp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:475    .text.aci_gap_authorization_resp:00000000 aci_gap_authorization_resp
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:516    .text.aci_gap_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:522    .text.aci_gap_init:00000000 aci_gap_init
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:578    .text.aci_gap_set_non_connectable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:584    .text.aci_gap_set_non_connectable:00000000 aci_gap_set_non_connectable
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:625    .text.aci_gap_set_undirected_connectable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:631    .text.aci_gap_set_undirected_connectable:00000000 aci_gap_set_undirected_connectable
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:674    .text.aci_gap_peripheral_security_req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:680    .text.aci_gap_peripheral_security_req:00000000 aci_gap_peripheral_security_req
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:722    .text.aci_gap_update_adv_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:728    .text.aci_gap_update_adv_data:00000000 aci_gap_update_adv_data
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:772    .text.aci_gap_delete_ad_type:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:778    .text.aci_gap_delete_ad_type:00000000 aci_gap_delete_ad_type
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:817    .text.aci_gap_get_security_level:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:823    .text.aci_gap_get_security_level:00000000 aci_gap_get_security_level
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:873    .text.aci_gap_set_event_mask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:879    .text.aci_gap_set_event_mask:00000000 aci_gap_set_event_mask
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:919    .text.aci_gap_configure_filter_accept_list:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:925    .text.aci_gap_configure_filter_accept_list:00000000 aci_gap_configure_filter_accept_list
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:960    .text.aci_gap_terminate:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:966    .text.aci_gap_terminate:00000000 aci_gap_terminate
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1009   .text.aci_gap_clear_security_db:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1015   .text.aci_gap_clear_security_db:00000000 aci_gap_clear_security_db
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1050   .text.aci_gap_allow_rebond:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1056   .text.aci_gap_allow_rebond:00000000 aci_gap_allow_rebond
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1096   .text.aci_gap_start_limited_discovery_proc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1102   .text.aci_gap_start_limited_discovery_proc:00000000 aci_gap_start_limited_discovery_proc
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1147   .text.aci_gap_start_general_discovery_proc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1153   .text.aci_gap_start_general_discovery_proc:00000000 aci_gap_start_general_discovery_proc
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1198   .text.aci_gap_start_auto_connection_establish_proc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1204   .text.aci_gap_start_auto_connection_establish_proc:00000000 aci_gap_start_auto_connection_establish_proc
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1266   .text.aci_gap_start_general_connection_establish_proc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1272   .text.aci_gap_start_general_connection_establish_proc:00000000 aci_gap_start_general_connection_establish_proc
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1321   .text.aci_gap_start_selective_connection_establish_proc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1327   .text.aci_gap_start_selective_connection_establish_proc:00000000 aci_gap_start_selective_connection_establish_proc
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1383   .text.aci_gap_create_connection:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1389   .text.aci_gap_create_connection:00000000 aci_gap_create_connection
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1451   .text.aci_gap_terminate_gap_proc:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s 			page 51
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1457   .text.aci_gap_terminate_gap_proc:00000000 aci_gap_terminate_gap_proc
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1496   .text.aci_gap_start_connection_update:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1502   .text.aci_gap_start_connection_update:00000000 aci_gap_start_connection_update
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1553   .text.aci_gap_send_pairing_req:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1559   .text.aci_gap_send_pairing_req:00000000 aci_gap_send_pairing_req
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1602   .text.aci_gap_set_broadcast_mode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1608   .text.aci_gap_set_broadcast_mode:00000000 aci_gap_set_broadcast_mode
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1667   .text.aci_gap_start_observation_proc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1673   .text.aci_gap_start_observation_proc:00000000 aci_gap_start_observation_proc
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1722   .text.aci_gap_get_bonded_devices:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1728   .text.aci_gap_get_bonded_devices:00000000 aci_gap_get_bonded_devices
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1776   .text.aci_gap_check_bonded_device:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1782   .text.aci_gap_check_bonded_device:00000000 aci_gap_check_bonded_device
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1841   .text.aci_gap_numeric_comparison_value_confirm_yesno:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1847   .text.aci_gap_numeric_comparison_value_confirm_yesno:00000000 aci_gap_numeric_comparison_value_confirm_yesno
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1888   .text.aci_gap_passkey_input:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1894   .text.aci_gap_passkey_input:00000000 aci_gap_passkey_input
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1935   .text.aci_gap_get_oob_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:1941   .text.aci_gap_get_oob_data:00000000 aci_gap_get_oob_data
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2003   .text.aci_gap_set_oob_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2009   .text.aci_gap_set_oob_data:00000000 aci_gap_set_oob_data
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2063   .text.aci_gap_remove_bonded_device:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2069   .text.aci_gap_remove_bonded_device:00000000 aci_gap_remove_bonded_device
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2112   .text.aci_gap_add_devices_to_list:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2118   .text.aci_gap_add_devices_to_list:00000000 aci_gap_add_devices_to_list
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2165   .text.aci_gap_pairing_request_reply:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2171   .text.aci_gap_pairing_request_reply:00000000 aci_gap_pairing_request_reply
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2212   .text.aci_gap_additional_beacon_start:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2218   .text.aci_gap_additional_beacon_start:00000000 aci_gap_additional_beacon_start
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2267   .text.aci_gap_additional_beacon_stop:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2273   .text.aci_gap_additional_beacon_stop:00000000 aci_gap_additional_beacon_stop
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2308   .text.aci_gap_additional_beacon_set_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2314   .text.aci_gap_additional_beacon_set_data:00000000 aci_gap_additional_beacon_set_data
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2358   .text.aci_gap_adv_set_configuration:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2364   .text.aci_gap_adv_set_configuration:00000000 aci_gap_adv_set_configuration
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2431   .text.aci_gap_adv_set_enable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2437   .text.aci_gap_adv_set_enable:00000000 aci_gap_adv_set_enable
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2484   .text.aci_gap_adv_set_adv_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2490   .text.aci_gap_adv_set_adv_data:00000000 aci_gap_adv_set_adv_data
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2538   .text.aci_gap_adv_set_scan_resp_data:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2544   .text.aci_gap_adv_set_scan_resp_data:00000000 aci_gap_adv_set_scan_resp_data
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2592   .text.aci_gap_adv_remove_set:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2598   .text.aci_gap_adv_remove_set:00000000 aci_gap_adv_remove_set
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2637   .text.aci_gap_adv_clear_sets:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2643   .text.aci_gap_adv_clear_sets:00000000 aci_gap_adv_clear_sets
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2678   .text.aci_gap_adv_set_random_address:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2684   .text.aci_gap_adv_set_random_address:00000000 aci_gap_adv_set_random_address
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2727   .text.aci_gap_ext_start_scan:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2733   .text.aci_gap_ext_start_scan:00000000 aci_gap_ext_start_scan
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2790   .text.aci_gap_ext_create_connection:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccLlnawt.s:2796   .text.aci_gap_ext_create_connection:00000000 aci_gap_ext_create_connection
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1457   .text.aci_gap_terminate_gap_proc:00000000 aci_gap_terminate_gap_proc
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1496   .text.aci_gap_start_connection_update:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1502   .text.aci_gap_start_connection_update:00000000 aci_gap_start_connection_update
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1553   .text.aci_gap_send_pairing_req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1559   .text.aci_gap_send_pairing_req:00000000 aci_gap_send_pairing_req
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1602   .text.aci_gap_set_broadcast_mode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1608   .text.aci_gap_set_broadcast_mode:00000000 aci_gap_set_broadcast_mode
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1667   .text.aci_gap_start_observation_proc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1673   .text.aci_gap_start_observation_proc:00000000 aci_gap_start_observation_proc
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1722   .text.aci_gap_get_bonded_devices:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1728   .text.aci_gap_get_bonded_devices:00000000 aci_gap_get_bonded_devices
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1776   .text.aci_gap_check_bonded_device:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1782   .text.aci_gap_check_bonded_device:00000000 aci_gap_check_bonded_device
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1841   .text.aci_gap_numeric_comparison_value_confirm_yesno:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1847   .text.aci_gap_numeric_comparison_value_confirm_yesno:00000000 aci_gap_numeric_comparison_value_confirm_yesno
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1888   .text.aci_gap_passkey_input:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1894   .text.aci_gap_passkey_input:00000000 aci_gap_passkey_input
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1935   .text.aci_gap_get_oob_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:1941   .text.aci_gap_get_oob_data:00000000 aci_gap_get_oob_data
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2003   .text.aci_gap_set_oob_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2009   .text.aci_gap_set_oob_data:00000000 aci_gap_set_oob_data
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2063   .text.aci_gap_remove_bonded_device:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2069   .text.aci_gap_remove_bonded_device:00000000 aci_gap_remove_bonded_device
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2112   .text.aci_gap_add_devices_to_list:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2118   .text.aci_gap_add_devices_to_list:00000000 aci_gap_add_devices_to_list
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2165   .text.aci_gap_pairing_request_reply:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2171   .text.aci_gap_pairing_request_reply:00000000 aci_gap_pairing_request_reply
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2212   .text.aci_gap_additional_beacon_start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2218   .text.aci_gap_additional_beacon_start:00000000 aci_gap_additional_beacon_start
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2267   .text.aci_gap_additional_beacon_stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2273   .text.aci_gap_additional_beacon_stop:00000000 aci_gap_additional_beacon_stop
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2308   .text.aci_gap_additional_beacon_set_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2314   .text.aci_gap_additional_beacon_set_data:00000000 aci_gap_additional_beacon_set_data
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2358   .text.aci_gap_adv_set_configuration:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2364   .text.aci_gap_adv_set_configuration:00000000 aci_gap_adv_set_configuration
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2431   .text.aci_gap_adv_set_enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2437   .text.aci_gap_adv_set_enable:00000000 aci_gap_adv_set_enable
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2484   .text.aci_gap_adv_set_adv_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2490   .text.aci_gap_adv_set_adv_data:00000000 aci_gap_adv_set_adv_data
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2538   .text.aci_gap_adv_set_scan_resp_data:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2544   .text.aci_gap_adv_set_scan_resp_data:00000000 aci_gap_adv_set_scan_resp_data
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2592   .text.aci_gap_adv_remove_set:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2598   .text.aci_gap_adv_remove_set:00000000 aci_gap_adv_remove_set
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2637   .text.aci_gap_adv_clear_sets:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2643   .text.aci_gap_adv_clear_sets:00000000 aci_gap_adv_clear_sets
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2678   .text.aci_gap_adv_set_random_address:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2684   .text.aci_gap_adv_set_random_address:00000000 aci_gap_adv_set_random_address
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2727   .text.aci_gap_ext_start_scan:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2733   .text.aci_gap_ext_start_scan:00000000 aci_gap_ext_start_scan
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2790   .text.aci_gap_ext_create_connection:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccSDI7lx.s:2796   .text.aci_gap_ext_create_connection:00000000 aci_gap_ext_create_connection
 
 UNDEFINED SYMBOLS
 Osal_MemSet
