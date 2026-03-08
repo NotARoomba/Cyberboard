@@ -151,8 +151,7 @@ export default function Dashboard() {
   }, []);
 
   const connectWebSocket = useCallback(() => {
-    const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-    const ws = new WebSocket(`${protocol}//${window.location.host}/ws`);
+    const ws = new WebSocket("wss://api.cyberboard.notaroomba.dev/ws");
     ws.binaryType = "arraybuffer";
     wsRef.current = ws;
 
