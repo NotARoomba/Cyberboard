@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
   28:Drivers/BMP580/common/common.c **** {
   29:Drivers/BMP580/common/common.c ****     (void)intf_ptr;
   30:Drivers/BMP580/common/common.c ****     HAL_StatusTypeDef status;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 2
 
 
   31:Drivers/BMP580/common/common.c ****     status = HAL_I2C_Mem_Read(bmp5_hi2c, (uint16_t)(bmp5_i2c_addr << 1),
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
   57:Drivers/BMP580/common/common.c ****     HAL_Delay(ms);
   57              		.loc 1 57 5 is_stmt 1 view .LVU10
   58 0016 FFF7FEFF 		bl	HAL_Delay
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 3
 
 
   59              	.LVL4:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
  105 0018 0246     		mov	r2, r0
  106 001a 0CFA03F1 		lsl	r1, ip, r3
  107              	.LVL8:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 4
 
 
   43:Drivers/BMP580/common/common.c ****                                reg_addr, I2C_MEMADD_SIZE_8BIT,
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
  155              		.loc 1 28 1 is_stmt 0 view .LVU29
  156 0000 00B5     		push	{lr}
  157              		.cfi_def_cfa_offset 4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 5
 
 
  158              		.cfi_offset 14, -4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
  200              	.L18:
  201              		.cfi_restore_state
   34:Drivers/BMP580/common/common.c **** }
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 6
 
 
  202              		.loc 1 34 55 discriminator 2 view .LVU42
@@ -348,17 +348,17 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
  236              		.loc 1 69 18 is_stmt 0 view .LVU49
  237 0004 0A4A     		ldr	r2, .L25
  238 0006 1160     		str	r1, [r2]
-  70:Drivers/BMP580/common/common.c ****     bmp5_i2c_addr = BMP5_I2C_ADDR_SEC;        /* 0x47 – SDO high / secondary address */
+  70:Drivers/BMP580/common/common.c ****     bmp5_i2c_addr = BMP5_I2C_ADDR_PRIM;        /* 0x47 – SDO high / secondary address */
  239              		.loc 1 70 5 is_stmt 1 view .LVU50
  240              		.loc 1 70 19 is_stmt 0 view .LVU51
  241 0008 0A4A     		ldr	r2, .L25+4
- 242 000a 4721     		movs	r1, #71
+ 242 000a 4621     		movs	r1, #70
  243              	.LVL24:
  244              		.loc 1 70 19 view .LVU52
  245 000c 1170     		strb	r1, [r2]
   71:Drivers/BMP580/common/common.c **** 
   72:Drivers/BMP580/common/common.c ****     bmp5_dev->read      = bmp5_i2c_read;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 7
 
 
  246              		.loc 1 72 5 is_stmt 1 view .LVU53
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
  290 0038 00000000 		.word	bmp5_i2c_read
  291 003c 00000000 		.word	bmp5_i2c_write
  292 0040 00000000 		.word	bmp5_delay_us
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 8
 
 
  293              		.cfi_endproc
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
  321      20496E76 
  321      616C6964 
  322 00f9 000000   		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 9
 
 
  323              	.LC8:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
  366 0022 24D0     		beq	.L32
  367 0024 14F1070F 		cmn	r4, #7
  368 0028 2BD1     		bne	.L34
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 10
 
 
   87:Drivers/BMP580/common/common.c ****         {
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
  404              		.loc 1 89 42 is_stmt 1 view .LVU88
  405 005a 2146     		mov	r1, r4
  406 005c 0F48     		ldr	r0, .L43+16
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 11
 
 
  407 005e FFF7FEFF 		bl	printf
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
  448              	.L44:
  449              		.align	2
  450              	.L43:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 12
 
 
  451 008c 00000000 		.word	.LC0
@@ -690,31 +690,31 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 1
  482              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h"
  483              		.file 9 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
  484              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 common.c
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:21     .text.bmp5_delay_us:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:26     .text.bmp5_delay_us:00000000 bmp5_delay_us
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:65     .text.bmp5_delay_us:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:70     .text.bmp5_i2c_write:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:75     .text.bmp5_i2c_write:00000000 bmp5_i2c_write
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:137    .text.bmp5_i2c_write:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:466    .bss.bmp5_i2c_addr:00000000 bmp5_i2c_addr
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:472    .bss.bmp5_hi2c:00000000 bmp5_hi2c
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:143    .text.bmp5_i2c_read:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:148    .text.bmp5_i2c_read:00000000 bmp5_i2c_read
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:210    .text.bmp5_i2c_read:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:216    .text.bmp5_interface_init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:222    .text.bmp5_interface_init:00000000 bmp5_interface_init
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:288    .text.bmp5_interface_init:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:297    .rodata.bmp5_error_codes_print_result.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:326    .text.bmp5_error_codes_print_result:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:332    .text.bmp5_error_codes_print_result:00000000 bmp5_error_codes_print_result
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:451    .text.bmp5_error_codes_print_result:0000008c $d
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:467    .bss.bmp5_i2c_addr:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\cc0etO0U.s:469    .bss.bmp5_hi2c:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:21     .text.bmp5_delay_us:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:26     .text.bmp5_delay_us:00000000 bmp5_delay_us
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:65     .text.bmp5_delay_us:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:70     .text.bmp5_i2c_write:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:75     .text.bmp5_i2c_write:00000000 bmp5_i2c_write
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:137    .text.bmp5_i2c_write:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:466    .bss.bmp5_i2c_addr:00000000 bmp5_i2c_addr
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:472    .bss.bmp5_hi2c:00000000 bmp5_hi2c
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:143    .text.bmp5_i2c_read:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:148    .text.bmp5_i2c_read:00000000 bmp5_i2c_read
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:210    .text.bmp5_i2c_read:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:216    .text.bmp5_interface_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:222    .text.bmp5_interface_init:00000000 bmp5_interface_init
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:288    .text.bmp5_interface_init:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:297    .rodata.bmp5_error_codes_print_result.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:326    .text.bmp5_error_codes_print_result:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:332    .text.bmp5_error_codes_print_result:00000000 bmp5_error_codes_print_result
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:451    .text.bmp5_error_codes_print_result:0000008c $d
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:467    .bss.bmp5_i2c_addr:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccaLy3hY.s:469    .bss.bmp5_hi2c:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_Delay

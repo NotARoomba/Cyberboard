@@ -1,0 +1,224 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"i2c.c"
+  16              		.text
+  17              		.section	.text.MX_I2C1_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	MX_I2C1_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	MX_I2C1_Init:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 08B5     		push	{r3, lr}
+  28 0002 1248     		ldr	r0, .L9
+  29 0004 124B     		ldr	r3, .L9+4
+  30 0006 0360     		str	r3, [r0]
+  31 0008 124B     		ldr	r3, .L9+8
+  32 000a 4360     		str	r3, [r0, #4]
+  33 000c 0023     		movs	r3, #0
+  34 000e 8360     		str	r3, [r0, #8]
+  35 0010 0122     		movs	r2, #1
+  36 0012 C260     		str	r2, [r0, #12]
+  37 0014 0361     		str	r3, [r0, #16]
+  38 0016 4361     		str	r3, [r0, #20]
+  39 0018 8361     		str	r3, [r0, #24]
+  40 001a C361     		str	r3, [r0, #28]
+  41 001c 0362     		str	r3, [r0, #32]
+  42 001e FFF7FEFF 		bl	HAL_I2C_Init
+  43 0022 50B9     		cbnz	r0, .L6
+  44              	.L2:
+  45 0024 0021     		movs	r1, #0
+  46 0026 0948     		ldr	r0, .L9
+  47 0028 FFF7FEFF 		bl	HAL_I2CEx_ConfigAnalogFilter
+  48 002c 40B9     		cbnz	r0, .L7
+  49              	.L3:
+  50 002e 0021     		movs	r1, #0
+  51 0030 0648     		ldr	r0, .L9
+  52 0032 FFF7FEFF 		bl	HAL_I2CEx_ConfigDigitalFilter
+  53 0036 30B9     		cbnz	r0, .L8
+  54              	.L1:
+  55 0038 08BD     		pop	{r3, pc}
+  56              	.L6:
+  57 003a FFF7FEFF 		bl	Error_Handler
+  58 003e F1E7     		b	.L2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s 			page 2
+
+
+  59              	.L7:
+  60 0040 FFF7FEFF 		bl	Error_Handler
+  61 0044 F3E7     		b	.L3
+  62              	.L8:
+  63 0046 FFF7FEFF 		bl	Error_Handler
+  64 004a F5E7     		b	.L1
+  65              	.L10:
+  66              		.align	2
+  67              	.L9:
+  68 004c 00000000 		.word	hi2c1
+  69 0050 00540040 		.word	1073763328
+  70 0054 B57DB110 		.word	280067509
+  72              		.section	.text.HAL_I2C_MspInit,"ax",%progbits
+  73              		.align	1
+  74              		.global	HAL_I2C_MspInit
+  75              		.syntax unified
+  76              		.thumb
+  77              		.thumb_func
+  79              	HAL_I2C_MspInit:
+  80              		@ args = 0, pretend = 0, frame = 112
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82 0000 10B5     		push	{r4, lr}
+  83 0002 9CB0     		sub	sp, sp, #112
+  84 0004 0446     		mov	r4, r0
+  85 0006 0021     		movs	r1, #0
+  86 0008 1791     		str	r1, [sp, #92]
+  87 000a 1891     		str	r1, [sp, #96]
+  88 000c 1991     		str	r1, [sp, #100]
+  89 000e 1A91     		str	r1, [sp, #104]
+  90 0010 1B91     		str	r1, [sp, #108]
+  91 0012 5022     		movs	r2, #80
+  92 0014 03A8     		add	r0, sp, #12
+  93 0016 FFF7FEFF 		bl	memset
+  94 001a 2268     		ldr	r2, [r4]
+  95 001c 194B     		ldr	r3, .L17
+  96 001e 9A42     		cmp	r2, r3
+  97 0020 01D0     		beq	.L15
+  98              	.L11:
+  99 0022 1CB0     		add	sp, sp, #112
+ 100              		@ sp needed
+ 101 0024 10BD     		pop	{r4, pc}
+ 102              	.L15:
+ 103 0026 0423     		movs	r3, #4
+ 104 0028 0393     		str	r3, [sp, #12]
+ 105 002a 4FF44033 		mov	r3, #196608
+ 106 002e 0B93     		str	r3, [sp, #44]
+ 107 0030 03A8     		add	r0, sp, #12
+ 108 0032 FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 109 0036 10BB     		cbnz	r0, .L16
+ 110              	.L13:
+ 111 0038 4FF0B044 		mov	r4, #1476395008
+ 112 003c E36C     		ldr	r3, [r4, #76]
+ 113 003e 43F00203 		orr	r3, r3, #2
+ 114 0042 E364     		str	r3, [r4, #76]
+ 115 0044 E36C     		ldr	r3, [r4, #76]
+ 116 0046 03F00203 		and	r3, r3, #2
+ 117 004a 0293     		str	r3, [sp, #8]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s 			page 3
+
+
+ 118 004c 029B     		ldr	r3, [sp, #8]
+ 119 004e 4FF44073 		mov	r3, #768
+ 120 0052 1793     		str	r3, [sp, #92]
+ 121 0054 1223     		movs	r3, #18
+ 122 0056 1893     		str	r3, [sp, #96]
+ 123 0058 0023     		movs	r3, #0
+ 124 005a 1993     		str	r3, [sp, #100]
+ 125 005c 1A93     		str	r3, [sp, #104]
+ 126 005e 0423     		movs	r3, #4
+ 127 0060 1B93     		str	r3, [sp, #108]
+ 128 0062 17A9     		add	r1, sp, #92
+ 129 0064 0848     		ldr	r0, .L17+4
+ 130 0066 FFF7FEFF 		bl	HAL_GPIO_Init
+ 131 006a A36D     		ldr	r3, [r4, #88]
+ 132 006c 43F40013 		orr	r3, r3, #2097152
+ 133 0070 A365     		str	r3, [r4, #88]
+ 134 0072 A36D     		ldr	r3, [r4, #88]
+ 135 0074 03F40013 		and	r3, r3, #2097152
+ 136 0078 0193     		str	r3, [sp, #4]
+ 137 007a 019B     		ldr	r3, [sp, #4]
+ 138 007c D1E7     		b	.L11
+ 139              	.L16:
+ 140 007e FFF7FEFF 		bl	Error_Handler
+ 141 0082 D9E7     		b	.L13
+ 142              	.L18:
+ 143              		.align	2
+ 144              	.L17:
+ 145 0084 00540040 		.word	1073763328
+ 146 0088 00040048 		.word	1207960576
+ 148              		.section	.text.HAL_I2C_MspDeInit,"ax",%progbits
+ 149              		.align	1
+ 150              		.global	HAL_I2C_MspDeInit
+ 151              		.syntax unified
+ 152              		.thumb
+ 153              		.thumb_func
+ 155              	HAL_I2C_MspDeInit:
+ 156              		@ args = 0, pretend = 0, frame = 0
+ 157              		@ frame_needed = 0, uses_anonymous_args = 0
+ 158 0000 08B5     		push	{r3, lr}
+ 159 0002 0268     		ldr	r2, [r0]
+ 160 0004 0A4B     		ldr	r3, .L23
+ 161 0006 9A42     		cmp	r2, r3
+ 162 0008 00D0     		beq	.L22
+ 163              	.L19:
+ 164 000a 08BD     		pop	{r3, pc}
+ 165              	.L22:
+ 166 000c 4FF0B042 		mov	r2, #1476395008
+ 167 0010 936D     		ldr	r3, [r2, #88]
+ 168 0012 23F40013 		bic	r3, r3, #2097152
+ 169 0016 9365     		str	r3, [r2, #88]
+ 170 0018 4FF48071 		mov	r1, #256
+ 171 001c 0548     		ldr	r0, .L23+4
+ 172 001e FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 173 0022 4FF40071 		mov	r1, #512
+ 174 0026 0348     		ldr	r0, .L23+4
+ 175 0028 FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 176 002c EDE7     		b	.L19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s 			page 4
+
+
+ 177              	.L24:
+ 178 002e 00BF     		.align	2
+ 179              	.L23:
+ 180 0030 00540040 		.word	1073763328
+ 181 0034 00040048 		.word	1207960576
+ 183              		.global	hi2c1
+ 184              		.section	.bss.hi2c1,"aw",%nobits
+ 185              		.align	2
+ 188              	hi2c1:
+ 189 0000 00000000 		.space	84
+ 189      00000000 
+ 189      00000000 
+ 189      00000000 
+ 189      00000000 
+ 190              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 i2c.c
+C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s:18     .text.MX_I2C1_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s:24     .text.MX_I2C1_Init:00000000 MX_I2C1_Init
+C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s:68     .text.MX_I2C1_Init:0000004c $d
+C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s:188    .bss.hi2c1:00000000 hi2c1
+C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s:73     .text.HAL_I2C_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s:79     .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
+C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s:145    .text.HAL_I2C_MspInit:00000084 $d
+C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s:149    .text.HAL_I2C_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s:155    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s:180    .text.HAL_I2C_MspDeInit:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\cchrQKJA.s:185    .bss.hi2c1:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_I2C_Init
+HAL_I2CEx_ConfigAnalogFilter
+HAL_I2CEx_ConfigDigitalFilter
+Error_Handler
+memset
+HAL_RCCEx_PeriphCLKConfig
+HAL_GPIO_Init
+HAL_GPIO_DeInit

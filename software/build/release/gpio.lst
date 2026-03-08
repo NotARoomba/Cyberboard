@@ -1,0 +1,136 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cckEKHoz.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"gpio.c"
+  16              		.text
+  17              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	MX_GPIO_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	MX_GPIO_Init:
+  25              		@ args = 0, pretend = 0, frame = 40
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+  28 0004 8BB0     		sub	sp, sp, #44
+  29 0006 05AD     		add	r5, sp, #20
+  30 0008 0024     		movs	r4, #0
+  31 000a 0594     		str	r4, [sp, #20]
+  32 000c 0694     		str	r4, [sp, #24]
+  33 000e 0794     		str	r4, [sp, #28]
+  34 0010 0894     		str	r4, [sp, #32]
+  35 0012 0994     		str	r4, [sp, #36]
+  36 0014 4FF0B043 		mov	r3, #1476395008
+  37 0018 DA6C     		ldr	r2, [r3, #76]
+  38 001a 42F00402 		orr	r2, r2, #4
+  39 001e DA64     		str	r2, [r3, #76]
+  40 0020 DA6C     		ldr	r2, [r3, #76]
+  41 0022 02F00402 		and	r2, r2, #4
+  42 0026 0492     		str	r2, [sp, #16]
+  43 0028 049A     		ldr	r2, [sp, #16]
+  44 002a DA6C     		ldr	r2, [r3, #76]
+  45 002c 42F00202 		orr	r2, r2, #2
+  46 0030 DA64     		str	r2, [r3, #76]
+  47 0032 DA6C     		ldr	r2, [r3, #76]
+  48 0034 02F00202 		and	r2, r2, #2
+  49 0038 0392     		str	r2, [sp, #12]
+  50 003a 039A     		ldr	r2, [sp, #12]
+  51 003c DA6C     		ldr	r2, [r3, #76]
+  52 003e 42F00102 		orr	r2, r2, #1
+  53 0042 DA64     		str	r2, [r3, #76]
+  54 0044 DA6C     		ldr	r2, [r3, #76]
+  55 0046 02F00102 		and	r2, r2, #1
+  56 004a 0292     		str	r2, [sp, #8]
+  57 004c 029A     		ldr	r2, [sp, #8]
+  58 004e DA6C     		ldr	r2, [r3, #76]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cckEKHoz.s 			page 2
+
+
+  59 0050 42F00802 		orr	r2, r2, #8
+  60 0054 DA64     		str	r2, [r3, #76]
+  61 0056 DB6C     		ldr	r3, [r3, #76]
+  62 0058 03F00803 		and	r3, r3, #8
+  63 005c 0193     		str	r3, [sp, #4]
+  64 005e 019B     		ldr	r3, [sp, #4]
+  65 0060 1C4F     		ldr	r7, .L3
+  66 0062 0122     		movs	r2, #1
+  67 0064 4FF40051 		mov	r1, #8192
+  68 0068 3846     		mov	r0, r7
+  69 006a FFF7FEFF 		bl	HAL_GPIO_WritePin
+  70 006e DFF86C90 		ldr	r9, .L3+8
+  71 0072 0122     		movs	r2, #1
+  72 0074 0221     		movs	r1, #2
+  73 0076 4846     		mov	r0, r9
+  74 0078 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  75 007c 4FF40053 		mov	r3, #8192
+  76 0080 0593     		str	r3, [sp, #20]
+  77 0082 0126     		movs	r6, #1
+  78 0084 0696     		str	r6, [sp, #24]
+  79 0086 0796     		str	r6, [sp, #28]
+  80 0088 0894     		str	r4, [sp, #32]
+  81 008a 2946     		mov	r1, r5
+  82 008c 3846     		mov	r0, r7
+  83 008e FFF7FEFF 		bl	HAL_GPIO_Init
+  84 0092 0596     		str	r6, [sp, #20]
+  85 0094 4FF48818 		mov	r8, #1114112
+  86 0098 CDF81880 		str	r8, [sp, #24]
+  87 009c 0794     		str	r4, [sp, #28]
+  88 009e 2946     		mov	r1, r5
+  89 00a0 3846     		mov	r0, r7
+  90 00a2 FFF7FEFF 		bl	HAL_GPIO_Init
+  91 00a6 0223     		movs	r3, #2
+  92 00a8 0593     		str	r3, [sp, #20]
+  93 00aa 0696     		str	r6, [sp, #24]
+  94 00ac 0794     		str	r4, [sp, #28]
+  95 00ae 0323     		movs	r3, #3
+  96 00b0 0893     		str	r3, [sp, #32]
+  97 00b2 2946     		mov	r1, r5
+  98 00b4 4846     		mov	r0, r9
+  99 00b6 FFF7FEFF 		bl	HAL_GPIO_Init
+ 100 00ba C023     		movs	r3, #192
+ 101 00bc 0593     		str	r3, [sp, #20]
+ 102 00be CDF81880 		str	r8, [sp, #24]
+ 103 00c2 0794     		str	r4, [sp, #28]
+ 104 00c4 2946     		mov	r1, r5
+ 105 00c6 0448     		ldr	r0, .L3+4
+ 106 00c8 FFF7FEFF 		bl	HAL_GPIO_Init
+ 107 00cc 0BB0     		add	sp, sp, #44
+ 108              		@ sp needed
+ 109 00ce BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 110              	.L4:
+ 111 00d2 00BF     		.align	2
+ 112              	.L3:
+ 113 00d4 00080048 		.word	1207961600
+ 114 00d8 00040048 		.word	1207960576
+ 115 00dc 000C0048 		.word	1207962624
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cckEKHoz.s 			page 3
+
+
+ 117              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cckEKHoz.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gpio.c
+C:\Users\Nathan\AppData\Local\Temp\cckEKHoz.s:18     .text.MX_GPIO_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cckEKHoz.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\Nathan\AppData\Local\Temp\cckEKHoz.s:113    .text.MX_GPIO_Init:000000d4 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_GPIO_Init

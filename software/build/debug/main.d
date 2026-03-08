@@ -35,12 +35,13 @@ build/debug/main.o: Core/Src/main.c Core/Inc/main.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_crs.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_spi.h \
  Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_spi_ex.h \
- Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h \
- USB_Device/App/usb_device.h \
+ Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h Core/Inc/i2c.h \
+ Core/Inc/main.h Core/Inc/spi.h USB_Device/App/usb_device.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
- USB_Device/Target/usbd_conf.h Drivers/ICM42688/ICM42688.h \
- Drivers/BMP580/bmp5.h Drivers/BMP580/bmp5_defs.h \
- Drivers/BMP580/common/common.h USB_Device/App/usbd_cdc_if.h \
+ USB_Device/Target/usbd_conf.h Core/Inc/gpio.h \
+ Drivers/ICM42688/ICM42688.h Drivers/BMP580/bmp5.h \
+ Drivers/BMP580/bmp5_defs.h Drivers/BMP580/common/common.h \
+ USB_Device/App/usbd_cdc_if.h \
  Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
@@ -87,9 +88,13 @@ Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_crs.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_spi.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_spi_ex.h:
 Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_system.h:
+Core/Inc/i2c.h:
+Core/Inc/main.h:
+Core/Inc/spi.h:
 USB_Device/App/usb_device.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
 USB_Device/Target/usbd_conf.h:
+Core/Inc/gpio.h:
 Drivers/ICM42688/ICM42688.h:
 Drivers/BMP580/bmp5.h:
 Drivers/BMP580/bmp5_defs.h:

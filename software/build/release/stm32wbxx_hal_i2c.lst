@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
   58 000e 41EA0C01 		orr	r1, r1, ip
   59 0012 21F00041 		bic	r1, r1, #-2147483648
   60 0016 0268     		ldr	r2, [r0]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 2
 
 
   61 0018 5368     		ldr	r3, [r2, #4]
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  117              	.L6:
  118 0048 11F4004F 		tst	r1, #32768
  119 004c 13D1     		bne	.L18
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 3
 
 
  120 004e 0023     		movs	r3, #0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  176 000e 282B     		cmp	r3, #40
  177 0010 01D0     		beq	.L33
  178 0012 F223     		movs	r3, #242
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 4
 
 
  179 0014 02E0     		b	.L24
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  235 0000 C36A     		ldr	r3, [r0, #44]
  236 0002 AA2B     		cmp	r3, #170
  237 0004 04D0     		beq	.L40
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 5
 
 
  238 0006 C36A     		ldr	r3, [r0, #44]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  294 004c 8869     		ldr	r0, [r1, #24]
  295 004e 10F4004F 		tst	r0, #32768
  296 0052 02D0     		beq	.L49
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 6
 
 
  297 0054 0BB9     		cbnz	r3, .L49
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  351 00d0 0125     		movs	r5, #1
  352              	.L57:
  353 00d2 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 7
 
 
  354 00d4 FFF7FEFF 		bl	I2C_Flush_TXDR
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  410 002e 002D     		cmp	r5, #0
  411 0030 EAD1     		bne	.L65
  412              	.L66:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 8
 
 
  413 0032 2368     		ldr	r3, [r4]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  469 003e 01D8     		bhi	.L75
  470 0040 002D     		cmp	r5, #0
  471 0042 E5D1     		bne	.L74
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 9
 
 
  472              	.L75:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  528              	.L83:
  529 002e 079B     		ldr	r3, [sp, #28]
  530 0030 0093     		str	r3, [sp]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 10
 
 
  531 0032 069B     		ldr	r3, [sp, #24]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  587 0016 079A     		ldr	r2, [sp, #28]
  588 0018 0699     		ldr	r1, [sp, #24]
  589 001a 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 11
 
 
  590 001c FFF7FEFF 		bl	I2C_WaitOnTXISFlagUntilTimeout
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  646 0000 70B5     		push	{r4, r5, r6, lr}
  647 0002 0446     		mov	r4, r0
  648 0004 0D46     		mov	r5, r1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 12
 
 
  649 0006 1646     		mov	r6, r2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  705 0008 0025     		movs	r5, #0
  706 000a 17E0     		b	.L112
  707              	.L115:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 13
 
 
  708 000c 0023     		movs	r3, #0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  762 0084 23F48B33 		bic	r3, r3, #71168
  763 0088 23F4FF73 		bic	r3, r3, #510
  764 008c 23F00103 		bic	r3, r3, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 14
 
 
  765 0090 4B60     		str	r3, [r1, #4]
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  823 003a A368     		ldr	r3, [r4, #8]
  824 003c 2268     		ldr	r2, [r4]
  825 003e 43F40443 		orr	r3, r3, #33792
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 15
 
 
  826 0042 9360     		str	r3, [r2, #8]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  880 00ba 5368     		ldr	r3, [r2, #4]
  881 00bc 43F40063 		orr	r3, r3, #2048
  882 00c0 5360     		str	r3, [r2, #4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 16
 
 
  883 00c2 C7E7     		b	.L129
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  943 0004 83B0     		sub	sp, sp, #12
  944 0006 8946     		mov	r9, r1
  945 0008 0A9E     		ldr	r6, [sp, #40]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 17
 
 
  946 000a 90F84110 		ldrb	r1, [r0, #65]	@ zero_extendqisi2
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1000 0090 D2B2     		uxtb	r2, r2
  1001 0092 0132     		adds	r2, r2, #1
  1002 0094 4049     		ldr	r1, .L164
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 18
 
 
  1003 0096 0091     		str	r1, [sp]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1057 0106 013B     		subs	r3, r3, #1
  1058 0108 9BB2     		uxth	r3, r3
  1059 010a 2385     		strh	r3, [r4, #40]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 19
 
 
  1060 010c 628D     		ldrh	r2, [r4, #42]
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1114 0186 FAE7     		b	.L147
  1115              	.L158:
  1116 0188 0120     		movs	r0, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 20
 
 
  1117 018a F8E7     		b	.L147
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1173 005a A4F82A80 		strh	r8, [r4, #42]	@ movhi
  1174 005e 6063     		str	r0, [r4, #52]
  1175 0060 638D     		ldrh	r3, [r4, #42]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 21
 
 
  1176 0062 9BB2     		uxth	r3, r3
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1230 00d6 013A     		subs	r2, r2, #1
  1231 00d8 92B2     		uxth	r2, r2
  1232 00da 2285     		strh	r2, [r4, #40]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 22
 
 
  1233 00dc 638D     		ldrh	r3, [r4, #42]
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1287              		@ sp needed
  1288 0158 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
  1289              	.L175:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 23
 
 
  1290 015c 0220     		movs	r0, #2
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1346 0048 A4F82A80 		strh	r8, [r4, #42]	@ movhi
  1347 004c 6363     		str	r3, [r4, #52]
  1348 004e 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 24
 
 
  1349 0050 5368     		ldr	r3, [r2, #4]
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1403              	.L186:
  1404 00cc 4FF40073 		mov	r3, #512
  1405 00d0 6364     		str	r3, [r4, #68]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 25
 
 
  1406 00d2 0120     		movs	r0, #1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1460 0142 51E0     		b	.L185
  1461              	.L208:
  1462 0144 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 26
 
 
  1463 0146 5368     		ldr	r3, [r2, #4]
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1517 01ba D8E7     		b	.L197
  1518              	.L210:
  1519 01bc 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 27
 
 
  1520 01be 5368     		ldr	r3, [r2, #4]
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1576 0038 2023     		movs	r3, #32
  1577 003a 84F84230 		strb	r3, [r4, #66]
  1578 003e 0022     		movs	r2, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 28
 
 
  1579 0040 6264     		str	r2, [r4, #68]
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1633 00b6 6362     		str	r3, [r4, #36]
  1634 00b8 B4F82AC0 		ldrh	ip, [r4, #42]
  1635 00bc 1FFA8CFC 		uxth	ip, ip
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 29
 
 
  1636 00c0 0CF1FF3C 		add	ip, ip, #-1
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1690 0132 2022     		movs	r2, #32
  1691 0134 DA61     		str	r2, [r3, #28]
  1692 0136 CDF80080 		str	r8, [sp]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 30
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 30
 
 
  1693 013a 2B46     		mov	r3, r5
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1749 0024 4FF0010C 		mov	ip, #1
  1750 0028 84F840C0 		strb	ip, [r4, #64]
  1751 002c 4FF0210C 		mov	ip, #33
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 31
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 31
 
 
  1752 0030 84F841C0 		strb	ip, [r4, #65]
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1806              	.L230:
  1807 00ac 638D     		ldrh	r3, [r4, #42]
  1808 00ae 2385     		strh	r3, [r4, #40]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 32
 
 
  1809 00b0 4FF00073 		mov	r3, #33554432
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1865 0036 6262     		str	r2, [r4, #36]
  1866 0038 6385     		strh	r3, [r4, #42]	@ movhi
  1867 003a 144B     		ldr	r3, .L248
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 33
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 33
 
 
  1868 003c E362     		str	r3, [r4, #44]
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1924              		@ frame_needed = 0, uses_anonymous_args = 0
  1925 0000 08B5     		push	{r3, lr}
  1926 0002 90F84130 		ldrb	r3, [r0, #65]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 34
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 34
 
 
  1927 0006 202B     		cmp	r3, #32
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  1981 0084 EDE7     		b	.L251
  1982              	.L254:
  1983 0086 0220     		movs	r0, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 35
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 35
 
 
  1984 0088 EBE7     		b	.L251
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2040 0062 FAE7     		b	.L260
  2041              	.L265:
  2042              		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 36
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 36
 
 
  2043              	.L264:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2099 0072 0133     		adds	r3, r3, #1
  2100 0074 6362     		str	r3, [r4, #36]
  2101 0076 218D     		ldrh	r1, [r4, #40]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 37
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 37
 
 
  2102 0078 638D     		ldrh	r3, [r4, #42]
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2156 00f0 84F84020 		strb	r2, [r4, #64]
  2157 00f4 0120     		movs	r0, #1
  2158 00f6 32E0     		b	.L267
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 38
 
 
  2159              	.L281:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2213 0166 0220     		movs	r0, #2
  2214 0168 F9E7     		b	.L267
  2215              	.L283:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 39
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 39
 
 
  2216 016a 00BF     		.align	2
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2272 005c 218D     		ldrh	r1, [r4, #40]
  2273 005e 0029     		cmp	r1, #0
  2274 0060 50D0     		beq	.L288
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 40
 
 
  2275 0062 E36B     		ldr	r3, [r4, #60]
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2329 00e0 9BB2     		uxth	r3, r3
  2330 00e2 228D     		ldrh	r2, [r4, #40]
  2331 00e4 9B1A     		subs	r3, r3, r2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 41
 
 
  2332 00e6 9BB2     		uxth	r3, r3
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2387              		.syntax unified
  2388              		.thumb
  2389              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 42
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 42
 
 
  2391              	HAL_I2C_Slave_Transmit_DMA:
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2445 0074 2832     		adds	r2, r2, #40
  2446 0076 616A     		ldr	r1, [r4, #36]
  2447 0078 A06B     		ldr	r0, [r4, #56]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 43
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 43
 
 
  2448 007a FFF7FEFF 		bl	HAL_DMA_Start_IT
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2502 00f6 FFF7FEFF 		bl	I2C_Enable_IRQ
  2503 00fa 2268     		ldr	r2, [r4]
  2504 00fc 1368     		ldr	r3, [r2]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 44
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 44
 
 
  2505 00fe 43F48043 		orr	r3, r3, #16384
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2561 0028 2023     		movs	r3, #32
  2562 002a 80F84230 		strb	r3, [r0, #66]
  2563 002e 0023     		movs	r3, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 45
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 45
 
 
  2564 0030 4364     		str	r3, [r0, #68]
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2618 00ac 80F84020 		strb	r2, [r0, #64]
  2619 00b0 0123     		movs	r3, #1
  2620 00b2 1D46     		mov	r5, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 46
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 46
 
 
  2621 00b4 14E0     		b	.L323
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2677 0020 BAB1     		cbz	r2, .L338
  2678 0022 B3B1     		cbz	r3, .L338
  2679 0024 90F84030 		ldrb	r3, [r0, #64]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 47
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 47
 
 
  2680 0028 012B     		cmp	r3, #1
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2734 00aa 0120     		movs	r0, #1
  2735 00ac 6CE0     		b	.L337
  2736              	.L341:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 48
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 48
 
 
  2737 00ae 628D     		ldrh	r2, [r4, #42]
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2791 011e 002B     		cmp	r3, #0
  2792 0120 DED1     		bne	.L343
  2793 0122 0095     		str	r5, [sp]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 49
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 49
 
 
  2794 0124 0C9B     		ldr	r3, [sp, #48]
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2848              	.L351:
  2849 019a 0120     		movs	r0, #1
  2850 019c F4E7     		b	.L337
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 50
 
 
  2852              		.section	.text.HAL_I2C_Mem_Read,"ax",%progbits
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2907 0074 0195     		str	r5, [sp, #4]
  2908 0076 0C9B     		ldr	r3, [sp, #48]
  2909 0078 0093     		str	r3, [sp]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 51
 
 
  2910 007a 4346     		mov	r3, r8
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  2964 00ec 0C9B     		ldr	r3, [sp, #48]
  2965 00ee 0022     		movs	r2, #0
  2966 00f0 0421     		movs	r1, #4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 52
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 52
 
 
  2967 00f2 2046     		mov	r0, r4
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3021 0166 4B68     		ldr	r3, [r1, #4]
  3022 0168 23F0FF73 		bic	r3, r3, #33423360
  3023 016c 23F48B33 		bic	r3, r3, #71168
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 53
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 53
 
 
  3024 0170 23F4FF73 		bic	r3, r3, #510
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3080 0024 1EF4004F 		tst	lr, #32768
  3081 0028 46D1     		bne	.L385
  3082 002a 94F840E0 		ldrb	lr, [r4, #64]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 54
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 54
 
 
  3083 002e BEF1010F 		cmp	lr, #1
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3137              		@ sp needed
  3138 00b6 30BD     		pop	{r4, r5, pc}
  3139              	.L385:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 55
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 55
 
 
  3140 00b8 0220     		movs	r0, #2
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3196 0060 6363     		str	r3, [r4, #52]
  3197 0062 E164     		str	r1, [r4, #76]
  3198 0064 BCF1010F 		cmp	ip, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 56
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 56
 
 
  3199 0068 1AD0     		beq	.L401
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3255              	HAL_I2C_Mem_Write_DMA:
  3256              		@ args = 8, pretend = 0, frame = 0
  3257              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 57
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 57
 
 
  3258 0000 F0B5     		push	{r4, r5, r6, r7, lr}
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3312 0086 DA62     		str	r2, [r3, #44]
  3313 0088 A36B     		ldr	r3, [r4, #56]
  3314 008a 2F4A     		ldr	r2, .L422+12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 58
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 58
 
 
  3315 008c 5A63     		str	r2, [r3, #52]
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3369 0104 0093     		str	r3, [sp]
  3370 0106 4FF08073 		mov	r3, #16777216
  3371 010a FAB2     		uxtb	r2, r7
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 59
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 59
 
 
  3372 010c 3146     		mov	r1, r6
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3428 001e 002B     		cmp	r3, #0
  3429 0020 51D0     		beq	.L426
  3430 0022 2068     		ldr	r0, [r4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 60
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 60
 
 
  3431 0024 8169     		ldr	r1, [r0, #24]
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3485 00a0 FFF7FEFF 		bl	HAL_DMA_Start_IT
  3486 00a4 0546     		mov	r5, r0
  3487 00a6 60B3     		cbz	r0, .L441
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 61
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 61
 
 
  3488 00a8 2023     		movs	r3, #32
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3542 0122 0223     		movs	r3, #2
  3543 0124 1D46     		mov	r5, r3
  3544              	.L425:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 62
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 62
 
 
  3545 0126 2846     		mov	r0, r5
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3601 0044 45E0     		b	.L457
  3602              	.L468:
  3603 0046 C8F30903 		ubfx	r3, r8, #0, #10
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 63
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 63
 
 
  3604 004a 43F00073 		orr	r3, r3, #33554432
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3658 00c0 039B     		ldr	r3, [sp, #12]
  3659 00c2 BB42     		cmp	r3, r7
  3660 00c4 02D2     		bcs	.L456
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 64
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 64
 
 
  3661 00c6 4B46     		mov	r3, r9
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3715              	.L462:
  3716 0138 0123     		movs	r3, #1
  3717 013a 9946     		mov	r9, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 65
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 65
 
 
  3718 013c BDE7     		b	.L455
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3774 0034 E362     		str	r3, [r4, #44]
  3775 0036 334B     		ldr	r3, .L487
  3776 0038 6363     		str	r3, [r4, #52]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 66
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 66
 
 
  3777 003a 638D     		ldrh	r3, [r4, #42]
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3831              	.L475:
  3832 00a2 2046     		mov	r0, r4
  3833 00a4 FFF7FEFF 		bl	I2C_ConvertOtherXferOptions
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 67
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 67
 
 
  3834 00a8 638D     		ldrh	r3, [r4, #42]
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3889              		.global	HAL_I2C_Master_Seq_Transmit_DMA
  3890              		.syntax unified
  3891              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 68
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 68
 
 
  3892              		.thumb_func
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  3947 0072 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
  3948 0074 9A62     		str	r2, [r3, #40]
  3949 0076 636A     		ldr	r3, [r4, #36]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 69
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 69
 
 
  3950 0078 0133     		adds	r3, r3, #1
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4004 00e0 238D     		ldrh	r3, [r4, #40]
  4005 00e2 2832     		adds	r2, r2, #40
  4006 00e4 616A     		ldr	r1, [r4, #36]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 70
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 70
 
 
  4007 00e6 A06B     		ldr	r0, [r4, #56]
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4061 0164 43F48043 		orr	r3, r3, #16384
  4062 0168 1360     		str	r3, [r2]
  4063 016a 1EE0     		b	.L504
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 71
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 71
 
 
  4064              	.L502:
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4118 01d8 00000000 		.word	I2C_DMAError
  4119 01dc 00000000 		.word	I2C_Master_ISR_IT
  4121              		.section	.text.HAL_I2C_Master_Seq_Receive_IT,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 72
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 72
 
 
  4122              		.align	1
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4177 0066 C36A     		ldr	r3, [r0, #44]
  4178 0068 1E46     		mov	r6, r3
  4179 006a EFE7     		b	.L521
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 73
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 73
 
 
  4180              	.L522:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4236 000a 1046     		mov	r0, r2
  4237 000c 1546     		mov	r5, r2
  4238 000e 089A     		ldr	r2, [sp, #32]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 74
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 74
 
 
  4239 0010 94F84110 		ldrb	r1, [r4, #65]	@ zero_extendqisi2
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4293 008a 9846     		mov	r8, r3
  4294              	.L536:
  4295 008c 228D     		ldrh	r2, [r4, #40]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 75
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 75
 
 
  4296 008e 002A     		cmp	r2, #0
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4350 010c 9BB2     		uxth	r3, r3
  4351 010e 228D     		ldrh	r2, [r4, #40]
  4352 0110 9B1A     		subs	r3, r3, r2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 76
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 76
 
 
  4353 0112 9BB2     		uxth	r3, r3
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4409              		@ args = 0, pretend = 0, frame = 0
  4410              		@ frame_needed = 0, uses_anonymous_args = 0
  4411 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 77
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 77
 
 
  4412 0002 0446     		mov	r4, r0
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4466              	.L556:
  4467 0082 4FF00003 		mov	r3, #0
  4468 0086 84F84030 		strb	r3, [r4, #64]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 78
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 78
 
 
  4469 008a 48F20101 		movw	r1, #32769
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4525 000c 2828     		cmp	r0, #40
  4526 000e 40F0C080 		bne	.L574
  4527 0012 0D46     		mov	r5, r1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 79
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 79
 
 
  4528 0014 1646     		mov	r6, r2
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4582 0092 2832     		adds	r2, r2, #40
  4583 0094 A06B     		ldr	r0, [r4, #56]
  4584 0096 FFF7FEFF 		bl	HAL_DMA_Start_IT
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 80
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 80
 
 
  4585 009a 0546     		mov	r5, r0
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4639 0116 002B     		cmp	r3, #0
  4640 0118 97D0     		beq	.L568
  4641 011a 244A     		ldr	r2, .L580+12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 81
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 81
 
 
  4642 011c 9A63     		str	r2, [r3, #56]
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4696 0194 1D46     		mov	r5, r3
  4697              	.L564:
  4698 0196 2846     		mov	r0, r5
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 82
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 82
 
 
  4699 0198 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4755 0050 0023     		movs	r3, #0
  4756 0052 6364     		str	r3, [r4, #68]
  4757 0054 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 83
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 83
 
 
  4758 0056 5368     		ldr	r3, [r2, #4]
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4812 00d0 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
  4813              	.L589:
  4814 00d2 0220     		movs	r0, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 84
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 84
 
 
  4815 00d4 FCE7     		b	.L583
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4871 0062 2268     		ldr	r2, [r4]
  4872 0064 5368     		ldr	r3, [r2, #4]
  4873 0066 23F40043 		bic	r3, r3, #32768
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 85
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 85
 
 
  4874 006a 5360     		str	r3, [r2, #4]
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4928 00e4 1A60     		str	r2, [r3]
  4929 00e6 A36B     		ldr	r3, [r4, #56]
  4930 00e8 2F4A     		ldr	r2, .L611+12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 86
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 86
 
 
  4931 00ea 9A63     		str	r2, [r3, #56]
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  4985 0162 11F4803F 		tst	r1, #65536
  4986 0166 0DD0     		beq	.L603
  4987              	.L604:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 87
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 87
 
 
  4988 0168 0023     		movs	r3, #0
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5044 0018 4FF40041 		mov	r1, #32768
  5045 001c FFF7FEFF 		bl	I2C_Enable_IRQ
  5046 0020 0020     		movs	r0, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 88
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 88
 
 
  5047 0022 F3E7     		b	.L614
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5105 0012 402A     		cmp	r2, #64
  5106 0014 33D1     		bne	.L630
  5107              	.L626:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 89
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 89
 
 
  5108 0016 94F84030 		ldrb	r3, [r4, #64]	@ zero_extendqisi2
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5162 0088 00400080 		.word	-2147467264
  5164              		.section	.text.HAL_I2C_EV_IRQHandler,"ax",%progbits
  5165              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 90
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 90
 
 
  5166              		.global	HAL_I2C_EV_IRQHandler
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5227 0014 80F84130 		strb	r3, [r0, #65]
  5228 0018 1223     		movs	r3, #18
  5229 001a 0363     		str	r3, [r0, #48]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 91
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 91
 
 
  5230 001c 0023     		movs	r3, #0
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5290 0000 10B5     		push	{r4, lr}
  5291 0002 0446     		mov	r4, r0
  5292 0004 0368     		ldr	r3, [r0]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 92
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 92
 
 
  5293 0006 1A68     		ldr	r2, [r3]
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5348              		.thumb_func
  5350              	I2C_DMASlaveTransmitCplt:
  5351              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 93
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 93
 
 
  5352              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5411              		.syntax unified
  5412              		.thumb
  5413              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 94
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 94
 
 
  5415              	I2C_ITAddrCplt:
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5469 0078 FFF7FEFF 		bl	I2C_Disable_IRQ
  5470 007c 0023     		movs	r3, #0
  5471 007e 84F84030 		strb	r3, [r4, #64]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 95
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 95
 
 
  5472 0082 3A46     		mov	r2, r7
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5530 002c 038D     		ldrh	r3, [r0, #40]
  5531 002e 53B1     		cbz	r3, .L675
  5532 0030 013B     		subs	r3, r3, #1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 96
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 96
 
 
  5533 0032 0385     		strh	r3, [r0, #40]	@ movhi
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5593              		@ args = 0, pretend = 0, frame = 0
  5594              		@ frame_needed = 0, uses_anonymous_args = 0
  5595              		@ link register save eliminated.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 97
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 97
 
 
  5596 0000 7047     		bx	lr
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5656 0014 626C     		ldr	r2, [r4, #68]
  5657 0016 0A43     		orrs	r2, r2, r1
  5658 0018 6264     		str	r2, [r4, #68]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 98
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 98
 
 
  5659 001a 283B     		subs	r3, r3, #40
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5713              	.L692:
  5714 0092 2368     		ldr	r3, [r4]
  5715 0094 2022     		movs	r2, #32
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 99
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 99
 
 
  5716 0096 DA61     		str	r2, [r3, #28]
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5770 010a FFF7FEFF 		bl	HAL_DMA_Abort_IT
  5771 010e 0028     		cmp	r0, #0
  5772 0110 A0D0     		beq	.L688
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 100
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 100
 
 
  5773 0112 E06B     		ldr	r0, [r4, #60]
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5829 0048 2363     		str	r3, [r4, #48]
  5830              	.L708:
  5831 004a 2268     		ldr	r2, [r4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 101
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 101
 
 
  5832 004c 5368     		ldr	r3, [r2, #4]
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5886 00ca 16F0100F 		tst	r6, #16
  5887 00ce 0ED0     		beq	.L715
  5888 00d0 638D     		ldrh	r3, [r4, #42]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 102
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 102
 
 
  5889 00d2 9BB2     		uxth	r3, r3
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  5943 014c 9BB2     		uxth	r3, r3
  5944 014e 6385     		strh	r3, [r4, #42]	@ movhi
  5945 0150 9CE7     		b	.L712
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 103
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 103
 
 
  5946              	.L725:
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6000 01ce 2046     		mov	r0, r4
  6001 01d0 FFF7FEFF 		bl	HAL_I2C_ListenCpltCallback
  6002              	.L705:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 104
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 104
 
 
  6003 01d4 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6059              	.L748:
  6060 004c 2046     		mov	r0, r4
  6061 004e FFF7FEFF 		bl	I2C_ITSlaveCplt
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 105
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 105
 
 
  6062              	.L735:
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6116 00c6 2385     		strh	r3, [r4, #40]	@ movhi
  6117 00c8 638D     		ldrh	r3, [r4, #42]
  6118 00ca 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 106
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 106
 
 
  6119 00cc 013B     		subs	r3, r3, #1
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6173 013e 88E7     		b	.L735
  6174              	.L746:
  6175 0140 0220     		movs	r0, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 107
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 107
 
 
  6176 0142 89E7     		b	.L733
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6232              	.L757:
  6233 006c 616C     		ldr	r1, [r4, #68]
  6234 006e 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 108
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 108
 
 
  6235 0070 FFF7FEFF 		bl	I2C_ITError
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6289 00e8 84F84230 		strb	r3, [r4, #66]
  6290 00ec 84F84030 		strb	r3, [r4, #64]
  6291 00f0 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 109
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 109
 
 
  6292 00f2 FFF7FEFF 		bl	HAL_I2C_MasterTxCpltCallback
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6348 004c 9BB2     		uxth	r3, r3
  6349 004e 013B     		subs	r3, r3, #1
  6350 0050 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 110
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 110
 
 
  6351 0052 6385     		strh	r3, [r4, #42]	@ movhi
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6405 00ca 638D     		ldrh	r3, [r4, #42]
  6406 00cc 9BB2     		uxth	r3, r3
  6407 00ce 5BB3     		cbz	r3, .L777
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 111
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 111
 
 
  6408 00d0 238D     		ldrh	r3, [r4, #40]
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6462 0146 85D0     		beq	.L773
  6463 0148 16F0400F 		tst	r6, #64
  6464 014c 82D0     		beq	.L773
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 112
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 112
 
 
  6465 014e 638D     		ldrh	r3, [r4, #42]
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6521 0028 12F0020F 		tst	r2, #2
  6522 002c 18D0     		beq	.L796
  6523 002e 2368     		ldr	r3, [r4]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 113
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 113
 
 
  6524 0030 226D     		ldr	r2, [r4, #80]
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6578 00aa 1AD9     		bls	.L799
  6579 00ac FF22     		movs	r2, #255
  6580 00ae 2285     		strh	r2, [r4, #40]	@ movhi
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 114
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 114
 
 
  6581 00b0 E16C     		ldr	r1, [r4, #76]
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6635 0128 222B     		cmp	r3, #34
  6636 012a 1ED0     		beq	.L808
  6637 012c 1A48     		ldr	r0, .L818
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 115
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 115
 
 
  6638              	.L803:
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6692              	.L818:
  6693 0198 00200080 		.word	-2147475456
  6694 019c 00240080 		.word	-2147474432
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 116
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 116
 
 
  6696              		.section	.text.I2C_Slave_ISR_DMA,"ax",%progbits
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6751 0070 DBB1     		cbz	r3, .L829
  6752              	.L828:
  6753 0072 BEF1000F 		cmp	lr, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 117
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 117
 
 
  6754 0076 18D1     		bne	.L829
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6808 00e8 10E0     		b	.L823
  6809              	.L834:
  6810 00ea 2123     		movs	r3, #33
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 118
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 118
 
 
  6811 00ec 2363     		str	r3, [r4, #48]
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6867 0030 1368     		ldr	r3, [r2]
  6868 0032 23F04003 		bic	r3, r3, #64
  6869 0036 1360     		str	r3, [r2]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 119
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 119
 
 
  6870 0038 638D     		ldrh	r3, [r4, #42]
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6924 00ae E36A     		ldr	r3, [r4, #44]
  6925 00b0 13F5803F 		cmn	r3, #65536
  6926 00b4 01D0     		beq	.L859
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 120
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 120
 
 
  6927 00b6 E36A     		ldr	r3, [r4, #44]
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  6981 012c B8D0     		beq	.L848
  6982 012e 12F0200F 		tst	r2, #32
  6983 0132 B5D0     		beq	.L848
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 121
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 121
 
 
  6984 0134 2046     		mov	r0, r4
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  7042 002e A06B     		ldr	r0, [r4, #56]
  7043 0030 FFF7FEFF 		bl	HAL_DMA_Start_IT
  7044 0034 60B1     		cbz	r0, .L873
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 122
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 122
 
 
  7045 0036 1021     		movs	r1, #16
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  7101 0038 2046     		mov	r0, r4
  7102 003a FFF7FEFF 		bl	I2C_ITError
  7103              	.L876:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 123
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 123
 
 
  7104 003e 10BD     		pop	{r4, pc}
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  7160 004c 9BB2     		uxth	r3, r3
  7161 004e 013B     		subs	r3, r3, #1
  7162 0050 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 124
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 124
 
 
  7163 0052 6385     		strh	r3, [r4, #42]	@ movhi
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  7217 00c6 2AD0     		beq	.L891
  7218 00c8 16F0400F 		tst	r6, #64
  7219 00cc 27D0     		beq	.L891
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 125
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 125
 
 
  7220 00ce 638D     		ldrh	r3, [r4, #42]
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  7274 0146 9BB2     		uxth	r3, r3
  7275 0148 FF2B     		cmp	r3, #255
  7276 014a 0CD9     		bls	.L895
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 126
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 126
 
 
  7277 014c FF22     		movs	r2, #255
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  7333 0014 D0F844C0 		ldr	ip, [r0, #68]
  7334 0018 4CF0010C 		orr	ip, ip, #1
  7335 001c C0F844C0 		str	ip, [r0, #68]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 127
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 127
 
 
  7336 0020 4FF4807C 		mov	ip, #256
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  7392 0018 08BD     		pop	{r3, pc}
  7394              		.section	.text.HAL_I2C_GetState,"ax",%progbits
  7395              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 128
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 128
 
 
  7396              		.global	HAL_I2C_GetState
@@ -7656,215 +7656,215 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 1
  7433 0000 406C     		ldr	r0, [r0, #68]
  7434 0002 7047     		bx	lr
  7436              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 129
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 129
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_i2c.c
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:18     .text.I2C_Flush_TXDR:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:23     .text.I2C_Flush_TXDR:00000000 I2C_Flush_TXDR
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:45     .text.I2C_TransferConfig:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:50     .text.I2C_TransferConfig:00000000 I2C_TransferConfig
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:74     .text.I2C_Enable_IRQ:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:79     .text.I2C_Enable_IRQ:00000000 I2C_Enable_IRQ
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:158    .text.I2C_Enable_IRQ:00000090 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6846   .text.I2C_Master_ISR_DMA:00000000 I2C_Master_ISR_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6702   .text.I2C_Slave_ISR_DMA:00000000 I2C_Slave_ISR_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6503   .text.I2C_Mem_ISR_DMA:00000000 I2C_Mem_ISR_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:163    .text.I2C_Disable_IRQ:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:168    .text.I2C_Disable_IRQ:00000000 I2C_Disable_IRQ
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:226    .text.I2C_ConvertOtherXferOptions:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:231    .text.I2C_ConvertOtherXferOptions:00000000 I2C_ConvertOtherXferOptions
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:253    .text.I2C_IsErrorOccurred:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:258    .text.I2C_IsErrorOccurred:00000000 I2C_IsErrorOccurred
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:382    .text.I2C_WaitOnTXISFlagUntilTimeout:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:387    .text.I2C_WaitOnTXISFlagUntilTimeout:00000000 I2C_WaitOnTXISFlagUntilTimeout
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:436    .text.I2C_WaitOnFlagUntilTimeout:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:441    .text.I2C_WaitOnFlagUntilTimeout:00000000 I2C_WaitOnFlagUntilTimeout
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:500    .text.I2C_RequestMemoryWrite:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:505    .text.I2C_RequestMemoryWrite:00000000 I2C_RequestMemoryWrite
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:566    .text.I2C_RequestMemoryWrite:0000006c $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:569    .text.I2C_RequestMemoryRead:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:574    .text.I2C_RequestMemoryRead:00000000 I2C_RequestMemoryRead
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:635    .text.I2C_RequestMemoryRead:00000068 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:638    .text.I2C_WaitOnSTOPFlagUntilTimeout:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:643    .text.I2C_WaitOnSTOPFlagUntilTimeout:00000000 I2C_WaitOnSTOPFlagUntilTimeout
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:693    .text.I2C_WaitOnRXNEFlagUntilTimeout:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:698    .text.I2C_WaitOnRXNEFlagUntilTimeout:00000000 I2C_WaitOnRXNEFlagUntilTimeout
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:776    .text.HAL_I2C_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:782    .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:789    .text.HAL_I2C_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:795    .text.HAL_I2C_Init:00000000 HAL_I2C_Init
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:889    .text.HAL_I2C_MspDeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:895    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:902    .text.HAL_I2C_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:908    .text.HAL_I2C_DeInit:00000000 HAL_I2C_DeInit
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:933    .text.HAL_I2C_Master_Transmit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:939    .text.HAL_I2C_Master_Transmit:00000000 HAL_I2C_Master_Transmit
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1130   .text.HAL_I2C_Master_Transmit:00000198 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1133   .text.HAL_I2C_Master_Receive:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1139   .text.HAL_I2C_Master_Receive:00000000 HAL_I2C_Master_Receive
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1307   .text.HAL_I2C_Master_Receive:00000170 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1310   .text.HAL_I2C_Slave_Transmit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1316   .text.HAL_I2C_Slave_Transmit:00000000 HAL_I2C_Slave_Transmit
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1547   .text.HAL_I2C_Slave_Receive:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1553   .text.HAL_I2C_Slave_Receive:00000000 HAL_I2C_Slave_Receive
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1727   .text.HAL_I2C_Master_Transmit_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1733   .text.HAL_I2C_Master_Transmit_IT:00000000 HAL_I2C_Master_Transmit_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1830   .text.HAL_I2C_Master_Transmit_IT:000000d4 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6314   .text.I2C_Master_ISR_IT:00000000 I2C_Master_ISR_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1835   .text.HAL_I2C_Master_Receive_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1841   .text.HAL_I2C_Master_Receive_IT:00000000 HAL_I2C_Master_Receive_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1911   .text.HAL_I2C_Master_Receive_IT:0000008c $d
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 130
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:18     .text.I2C_Flush_TXDR:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:23     .text.I2C_Flush_TXDR:00000000 I2C_Flush_TXDR
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:45     .text.I2C_TransferConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:50     .text.I2C_TransferConfig:00000000 I2C_TransferConfig
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:74     .text.I2C_Enable_IRQ:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:79     .text.I2C_Enable_IRQ:00000000 I2C_Enable_IRQ
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:158    .text.I2C_Enable_IRQ:00000090 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6846   .text.I2C_Master_ISR_DMA:00000000 I2C_Master_ISR_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6702   .text.I2C_Slave_ISR_DMA:00000000 I2C_Slave_ISR_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6503   .text.I2C_Mem_ISR_DMA:00000000 I2C_Mem_ISR_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:163    .text.I2C_Disable_IRQ:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:168    .text.I2C_Disable_IRQ:00000000 I2C_Disable_IRQ
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:226    .text.I2C_ConvertOtherXferOptions:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:231    .text.I2C_ConvertOtherXferOptions:00000000 I2C_ConvertOtherXferOptions
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:253    .text.I2C_IsErrorOccurred:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:258    .text.I2C_IsErrorOccurred:00000000 I2C_IsErrorOccurred
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:382    .text.I2C_WaitOnTXISFlagUntilTimeout:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:387    .text.I2C_WaitOnTXISFlagUntilTimeout:00000000 I2C_WaitOnTXISFlagUntilTimeout
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:436    .text.I2C_WaitOnFlagUntilTimeout:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:441    .text.I2C_WaitOnFlagUntilTimeout:00000000 I2C_WaitOnFlagUntilTimeout
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:500    .text.I2C_RequestMemoryWrite:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:505    .text.I2C_RequestMemoryWrite:00000000 I2C_RequestMemoryWrite
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:566    .text.I2C_RequestMemoryWrite:0000006c $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:569    .text.I2C_RequestMemoryRead:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:574    .text.I2C_RequestMemoryRead:00000000 I2C_RequestMemoryRead
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:635    .text.I2C_RequestMemoryRead:00000068 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:638    .text.I2C_WaitOnSTOPFlagUntilTimeout:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:643    .text.I2C_WaitOnSTOPFlagUntilTimeout:00000000 I2C_WaitOnSTOPFlagUntilTimeout
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:693    .text.I2C_WaitOnRXNEFlagUntilTimeout:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:698    .text.I2C_WaitOnRXNEFlagUntilTimeout:00000000 I2C_WaitOnRXNEFlagUntilTimeout
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:776    .text.HAL_I2C_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:782    .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:789    .text.HAL_I2C_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:795    .text.HAL_I2C_Init:00000000 HAL_I2C_Init
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:889    .text.HAL_I2C_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:895    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:902    .text.HAL_I2C_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:908    .text.HAL_I2C_DeInit:00000000 HAL_I2C_DeInit
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:933    .text.HAL_I2C_Master_Transmit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:939    .text.HAL_I2C_Master_Transmit:00000000 HAL_I2C_Master_Transmit
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1130   .text.HAL_I2C_Master_Transmit:00000198 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1133   .text.HAL_I2C_Master_Receive:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1139   .text.HAL_I2C_Master_Receive:00000000 HAL_I2C_Master_Receive
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1307   .text.HAL_I2C_Master_Receive:00000170 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1310   .text.HAL_I2C_Slave_Transmit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1316   .text.HAL_I2C_Slave_Transmit:00000000 HAL_I2C_Slave_Transmit
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1547   .text.HAL_I2C_Slave_Receive:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1553   .text.HAL_I2C_Slave_Receive:00000000 HAL_I2C_Slave_Receive
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1727   .text.HAL_I2C_Master_Transmit_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1733   .text.HAL_I2C_Master_Transmit_IT:00000000 HAL_I2C_Master_Transmit_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1830   .text.HAL_I2C_Master_Transmit_IT:000000d4 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6314   .text.I2C_Master_ISR_IT:00000000 I2C_Master_ISR_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1835   .text.HAL_I2C_Master_Receive_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1841   .text.HAL_I2C_Master_Receive_IT:00000000 HAL_I2C_Master_Receive_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1911   .text.HAL_I2C_Master_Receive_IT:0000008c $d
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 130
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1916   .text.HAL_I2C_Slave_Transmit_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1922   .text.HAL_I2C_Slave_Transmit_IT:00000000 HAL_I2C_Slave_Transmit_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1988   .text.HAL_I2C_Slave_Transmit_IT:0000008c $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6024   .text.I2C_Slave_ISR_IT:00000000 I2C_Slave_ISR_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1992   .text.HAL_I2C_Slave_Receive_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:1998   .text.HAL_I2C_Slave_Receive_IT:00000000 HAL_I2C_Slave_Receive_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2044   .text.HAL_I2C_Slave_Receive_IT:00000064 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2048   .text.HAL_I2C_Master_Transmit_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2054   .text.HAL_I2C_Master_Transmit_DMA:00000000 HAL_I2C_Master_Transmit_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2218   .text.HAL_I2C_Master_Transmit_DMA:0000016c $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7016   .text.I2C_DMAMasterTransmitCplt:00000000 I2C_DMAMasterTransmitCplt
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6997   .text.I2C_DMAError:00000000 I2C_DMAError
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2226   .text.HAL_I2C_Master_Receive_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2232   .text.HAL_I2C_Master_Receive_DMA:00000000 HAL_I2C_Master_Receive_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2377   .text.HAL_I2C_Master_Receive_DMA:0000013c $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7071   .text.I2C_DMAMasterReceiveCplt:00000000 I2C_DMAMasterReceiveCplt
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2385   .text.HAL_I2C_Slave_Transmit_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2391   .text.HAL_I2C_Slave_Transmit_DMA:00000000 HAL_I2C_Slave_Transmit_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2530   .text.HAL_I2C_Slave_Transmit_DMA:0000012c $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5350   .text.I2C_DMASlaveTransmitCplt:00000000 I2C_DMASlaveTransmitCplt
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2536   .text.HAL_I2C_Slave_Receive_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2542   .text.HAL_I2C_Slave_Receive_DMA:00000000 HAL_I2C_Slave_Receive_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2650   .text.HAL_I2C_Slave_Receive_DMA:000000ec $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5374   .text.I2C_DMASlaveReceiveCplt:00000000 I2C_DMASlaveReceiveCplt
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2656   .text.HAL_I2C_Mem_Write:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2662   .text.HAL_I2C_Mem_Write:00000000 HAL_I2C_Mem_Write
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2853   .text.HAL_I2C_Mem_Read:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:2859   .text.HAL_I2C_Mem_Read:00000000 HAL_I2C_Mem_Read
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3053   .text.HAL_I2C_Mem_Read:000001a4 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3056   .text.HAL_I2C_Mem_Write_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3062   .text.HAL_I2C_Mem_Write_IT:00000000 HAL_I2C_Mem_Write_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3148   .text.HAL_I2C_Mem_Write_IT:000000c0 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7126   .text.I2C_Mem_ISR_IT:00000000 I2C_Mem_ISR_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3153   .text.HAL_I2C_Mem_Read_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3159   .text.HAL_I2C_Mem_Read_IT:00000000 HAL_I2C_Mem_Read_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3244   .text.HAL_I2C_Mem_Read_IT:000000bc $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3249   .text.HAL_I2C_Mem_Write_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3255   .text.HAL_I2C_Mem_Write_DMA:00000000 HAL_I2C_Mem_Write_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3400   .text.HAL_I2C_Mem_Write_DMA:0000013c $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3407   .text.HAL_I2C_Mem_Read_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3413   .text.HAL_I2C_Mem_Read_DMA:00000000 HAL_I2C_Mem_Read_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3560   .text.HAL_I2C_Mem_Read_DMA:00000138 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3567   .text.HAL_I2C_IsDeviceReady:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3573   .text.HAL_I2C_IsDeviceReady:00000000 HAL_I2C_IsDeviceReady
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3744   .text.HAL_I2C_Master_Seq_Transmit_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3750   .text.HAL_I2C_Master_Seq_Transmit_IT:00000000 HAL_I2C_Master_Seq_Transmit_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3884   .text.HAL_I2C_Master_Seq_Transmit_IT:00000104 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3888   .text.HAL_I2C_Master_Seq_Transmit_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:3894   .text.HAL_I2C_Master_Seq_Transmit_DMA:00000000 HAL_I2C_Master_Seq_Transmit_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4115   .text.HAL_I2C_Master_Seq_Transmit_DMA:000001cc $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4122   .text.HAL_I2C_Master_Seq_Receive_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4128   .text.HAL_I2C_Master_Seq_Receive_IT:00000000 HAL_I2C_Master_Seq_Receive_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4219   .text.HAL_I2C_Master_Seq_Receive_IT:000000b4 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4223   .text.HAL_I2C_Master_Seq_Receive_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4229   .text.HAL_I2C_Master_Seq_Receive_DMA:00000000 HAL_I2C_Master_Seq_Receive_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4395   .text.HAL_I2C_Master_Seq_Receive_DMA:00000164 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4402   .text.HAL_I2C_Slave_Seq_Transmit_IT:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 131
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1916   .text.HAL_I2C_Slave_Transmit_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1922   .text.HAL_I2C_Slave_Transmit_IT:00000000 HAL_I2C_Slave_Transmit_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1988   .text.HAL_I2C_Slave_Transmit_IT:0000008c $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6024   .text.I2C_Slave_ISR_IT:00000000 I2C_Slave_ISR_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1992   .text.HAL_I2C_Slave_Receive_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:1998   .text.HAL_I2C_Slave_Receive_IT:00000000 HAL_I2C_Slave_Receive_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2044   .text.HAL_I2C_Slave_Receive_IT:00000064 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2048   .text.HAL_I2C_Master_Transmit_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2054   .text.HAL_I2C_Master_Transmit_DMA:00000000 HAL_I2C_Master_Transmit_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2218   .text.HAL_I2C_Master_Transmit_DMA:0000016c $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7016   .text.I2C_DMAMasterTransmitCplt:00000000 I2C_DMAMasterTransmitCplt
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6997   .text.I2C_DMAError:00000000 I2C_DMAError
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2226   .text.HAL_I2C_Master_Receive_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2232   .text.HAL_I2C_Master_Receive_DMA:00000000 HAL_I2C_Master_Receive_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2377   .text.HAL_I2C_Master_Receive_DMA:0000013c $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7071   .text.I2C_DMAMasterReceiveCplt:00000000 I2C_DMAMasterReceiveCplt
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2385   .text.HAL_I2C_Slave_Transmit_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2391   .text.HAL_I2C_Slave_Transmit_DMA:00000000 HAL_I2C_Slave_Transmit_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2530   .text.HAL_I2C_Slave_Transmit_DMA:0000012c $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5350   .text.I2C_DMASlaveTransmitCplt:00000000 I2C_DMASlaveTransmitCplt
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2536   .text.HAL_I2C_Slave_Receive_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2542   .text.HAL_I2C_Slave_Receive_DMA:00000000 HAL_I2C_Slave_Receive_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2650   .text.HAL_I2C_Slave_Receive_DMA:000000ec $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5374   .text.I2C_DMASlaveReceiveCplt:00000000 I2C_DMASlaveReceiveCplt
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2656   .text.HAL_I2C_Mem_Write:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2662   .text.HAL_I2C_Mem_Write:00000000 HAL_I2C_Mem_Write
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2853   .text.HAL_I2C_Mem_Read:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:2859   .text.HAL_I2C_Mem_Read:00000000 HAL_I2C_Mem_Read
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3053   .text.HAL_I2C_Mem_Read:000001a4 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3056   .text.HAL_I2C_Mem_Write_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3062   .text.HAL_I2C_Mem_Write_IT:00000000 HAL_I2C_Mem_Write_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3148   .text.HAL_I2C_Mem_Write_IT:000000c0 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7126   .text.I2C_Mem_ISR_IT:00000000 I2C_Mem_ISR_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3153   .text.HAL_I2C_Mem_Read_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3159   .text.HAL_I2C_Mem_Read_IT:00000000 HAL_I2C_Mem_Read_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3244   .text.HAL_I2C_Mem_Read_IT:000000bc $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3249   .text.HAL_I2C_Mem_Write_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3255   .text.HAL_I2C_Mem_Write_DMA:00000000 HAL_I2C_Mem_Write_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3400   .text.HAL_I2C_Mem_Write_DMA:0000013c $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3407   .text.HAL_I2C_Mem_Read_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3413   .text.HAL_I2C_Mem_Read_DMA:00000000 HAL_I2C_Mem_Read_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3560   .text.HAL_I2C_Mem_Read_DMA:00000138 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3567   .text.HAL_I2C_IsDeviceReady:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3573   .text.HAL_I2C_IsDeviceReady:00000000 HAL_I2C_IsDeviceReady
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3744   .text.HAL_I2C_Master_Seq_Transmit_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3750   .text.HAL_I2C_Master_Seq_Transmit_IT:00000000 HAL_I2C_Master_Seq_Transmit_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3884   .text.HAL_I2C_Master_Seq_Transmit_IT:00000104 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3888   .text.HAL_I2C_Master_Seq_Transmit_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:3894   .text.HAL_I2C_Master_Seq_Transmit_DMA:00000000 HAL_I2C_Master_Seq_Transmit_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4115   .text.HAL_I2C_Master_Seq_Transmit_DMA:000001cc $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4122   .text.HAL_I2C_Master_Seq_Receive_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4128   .text.HAL_I2C_Master_Seq_Receive_IT:00000000 HAL_I2C_Master_Seq_Receive_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4219   .text.HAL_I2C_Master_Seq_Receive_IT:000000b4 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4223   .text.HAL_I2C_Master_Seq_Receive_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4229   .text.HAL_I2C_Master_Seq_Receive_DMA:00000000 HAL_I2C_Master_Seq_Receive_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4395   .text.HAL_I2C_Master_Seq_Receive_DMA:00000164 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4402   .text.HAL_I2C_Slave_Seq_Transmit_IT:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 131
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4408   .text.HAL_I2C_Slave_Seq_Transmit_IT:00000000 HAL_I2C_Slave_Seq_Transmit_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4508   .text.HAL_I2C_Slave_Seq_Transmit_IT:000000d8 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7376   .text.I2C_DMAAbort:00000000 I2C_DMAAbort
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4512   .text.HAL_I2C_Slave_Seq_Transmit_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4518   .text.HAL_I2C_Slave_Seq_Transmit_DMA:00000000 HAL_I2C_Slave_Seq_Transmit_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4707   .text.HAL_I2C_Slave_Seq_Transmit_DMA:000001a0 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4713   .text.HAL_I2C_Slave_Seq_Receive_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4719   .text.HAL_I2C_Slave_Seq_Receive_IT:00000000 HAL_I2C_Slave_Seq_Receive_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4819   .text.HAL_I2C_Slave_Seq_Receive_IT:000000d8 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4823   .text.HAL_I2C_Slave_Seq_Receive_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:4829   .text.HAL_I2C_Slave_Seq_Receive_DMA:00000000 HAL_I2C_Slave_Seq_Receive_DMA
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5017   .text.HAL_I2C_Slave_Seq_Receive_DMA:0000019c $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5023   .text.HAL_I2C_EnableListen_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5029   .text.HAL_I2C_EnableListen_IT:00000000 HAL_I2C_EnableListen_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5051   .text.HAL_I2C_EnableListen_IT:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5054   .text.HAL_I2C_DisableListen_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5060   .text.HAL_I2C_DisableListen_IT:00000000 HAL_I2C_DisableListen_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5088   .text.HAL_I2C_Master_Abort_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5094   .text.HAL_I2C_Master_Abort_IT:00000000 HAL_I2C_Master_Abort_IT
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5162   .text.HAL_I2C_Master_Abort_IT:00000088 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5165   .text.HAL_I2C_EV_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5171   .text.HAL_I2C_EV_IRQHandler:00000000 HAL_I2C_EV_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5185   .text.HAL_I2C_MasterTxCpltCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5191   .text.HAL_I2C_MasterTxCpltCallback:00000000 HAL_I2C_MasterTxCpltCallback
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5198   .text.HAL_I2C_MasterRxCpltCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5204   .text.HAL_I2C_MasterRxCpltCallback:00000000 HAL_I2C_MasterRxCpltCallback
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5211   .text.I2C_ITMasterSeqCplt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5216   .text.I2C_ITMasterSeqCplt:00000000 I2C_ITMasterSeqCplt
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5256   .text.HAL_I2C_SlaveTxCpltCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5262   .text.HAL_I2C_SlaveTxCpltCallback:00000000 HAL_I2C_SlaveTxCpltCallback
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5269   .text.HAL_I2C_SlaveRxCpltCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5275   .text.HAL_I2C_SlaveRxCpltCallback:00000000 HAL_I2C_SlaveRxCpltCallback
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5282   .text.I2C_ITSlaveSeqCplt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5287   .text.I2C_ITSlaveSeqCplt:00000000 I2C_ITSlaveSeqCplt
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5345   .text.I2C_DMASlaveTransmitCplt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5369   .text.I2C_DMASlaveReceiveCplt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5397   .text.HAL_I2C_AddrCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5403   .text.HAL_I2C_AddrCallback:00000000 HAL_I2C_AddrCallback
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5410   .text.I2C_ITAddrCplt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5415   .text.I2C_ITAddrCplt:00000000 I2C_ITAddrCplt
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5490   .text.HAL_I2C_ListenCpltCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5496   .text.HAL_I2C_ListenCpltCallback:00000000 HAL_I2C_ListenCpltCallback
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5503   .text.I2C_ITListenCplt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5508   .text.I2C_ITListenCplt:00000000 I2C_ITListenCplt
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5557   .text.I2C_ITListenCplt:00000064 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5560   .text.HAL_I2C_MemTxCpltCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5566   .text.HAL_I2C_MemTxCpltCallback:00000000 HAL_I2C_MemTxCpltCallback
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5573   .text.HAL_I2C_MemRxCpltCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5579   .text.HAL_I2C_MemRxCpltCallback:00000000 HAL_I2C_MemRxCpltCallback
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5586   .text.HAL_I2C_ErrorCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5592   .text.HAL_I2C_ErrorCallback:00000000 HAL_I2C_ErrorCallback
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5599   .text.HAL_I2C_AbortCpltCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5605   .text.HAL_I2C_AbortCpltCallback:00000000 HAL_I2C_AbortCpltCallback
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5612   .text.I2C_TreatErrorCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5617   .text.I2C_TreatErrorCallback:00000000 I2C_TreatErrorCallback
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5640   .text.I2C_ITError:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5645   .text.I2C_ITError:00000000 I2C_ITError
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s 			page 132
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4408   .text.HAL_I2C_Slave_Seq_Transmit_IT:00000000 HAL_I2C_Slave_Seq_Transmit_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4508   .text.HAL_I2C_Slave_Seq_Transmit_IT:000000d8 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7376   .text.I2C_DMAAbort:00000000 I2C_DMAAbort
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4512   .text.HAL_I2C_Slave_Seq_Transmit_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4518   .text.HAL_I2C_Slave_Seq_Transmit_DMA:00000000 HAL_I2C_Slave_Seq_Transmit_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4707   .text.HAL_I2C_Slave_Seq_Transmit_DMA:000001a0 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4713   .text.HAL_I2C_Slave_Seq_Receive_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4719   .text.HAL_I2C_Slave_Seq_Receive_IT:00000000 HAL_I2C_Slave_Seq_Receive_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4819   .text.HAL_I2C_Slave_Seq_Receive_IT:000000d8 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4823   .text.HAL_I2C_Slave_Seq_Receive_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:4829   .text.HAL_I2C_Slave_Seq_Receive_DMA:00000000 HAL_I2C_Slave_Seq_Receive_DMA
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5017   .text.HAL_I2C_Slave_Seq_Receive_DMA:0000019c $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5023   .text.HAL_I2C_EnableListen_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5029   .text.HAL_I2C_EnableListen_IT:00000000 HAL_I2C_EnableListen_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5051   .text.HAL_I2C_EnableListen_IT:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5054   .text.HAL_I2C_DisableListen_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5060   .text.HAL_I2C_DisableListen_IT:00000000 HAL_I2C_DisableListen_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5088   .text.HAL_I2C_Master_Abort_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5094   .text.HAL_I2C_Master_Abort_IT:00000000 HAL_I2C_Master_Abort_IT
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5162   .text.HAL_I2C_Master_Abort_IT:00000088 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5165   .text.HAL_I2C_EV_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5171   .text.HAL_I2C_EV_IRQHandler:00000000 HAL_I2C_EV_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5185   .text.HAL_I2C_MasterTxCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5191   .text.HAL_I2C_MasterTxCpltCallback:00000000 HAL_I2C_MasterTxCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5198   .text.HAL_I2C_MasterRxCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5204   .text.HAL_I2C_MasterRxCpltCallback:00000000 HAL_I2C_MasterRxCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5211   .text.I2C_ITMasterSeqCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5216   .text.I2C_ITMasterSeqCplt:00000000 I2C_ITMasterSeqCplt
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5256   .text.HAL_I2C_SlaveTxCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5262   .text.HAL_I2C_SlaveTxCpltCallback:00000000 HAL_I2C_SlaveTxCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5269   .text.HAL_I2C_SlaveRxCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5275   .text.HAL_I2C_SlaveRxCpltCallback:00000000 HAL_I2C_SlaveRxCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5282   .text.I2C_ITSlaveSeqCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5287   .text.I2C_ITSlaveSeqCplt:00000000 I2C_ITSlaveSeqCplt
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5345   .text.I2C_DMASlaveTransmitCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5369   .text.I2C_DMASlaveReceiveCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5397   .text.HAL_I2C_AddrCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5403   .text.HAL_I2C_AddrCallback:00000000 HAL_I2C_AddrCallback
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5410   .text.I2C_ITAddrCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5415   .text.I2C_ITAddrCplt:00000000 I2C_ITAddrCplt
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5490   .text.HAL_I2C_ListenCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5496   .text.HAL_I2C_ListenCpltCallback:00000000 HAL_I2C_ListenCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5503   .text.I2C_ITListenCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5508   .text.I2C_ITListenCplt:00000000 I2C_ITListenCplt
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5557   .text.I2C_ITListenCplt:00000064 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5560   .text.HAL_I2C_MemTxCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5566   .text.HAL_I2C_MemTxCpltCallback:00000000 HAL_I2C_MemTxCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5573   .text.HAL_I2C_MemRxCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5579   .text.HAL_I2C_MemRxCpltCallback:00000000 HAL_I2C_MemRxCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5586   .text.HAL_I2C_ErrorCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5592   .text.HAL_I2C_ErrorCallback:00000000 HAL_I2C_ErrorCallback
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5599   .text.HAL_I2C_AbortCpltCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5605   .text.HAL_I2C_AbortCpltCallback:00000000 HAL_I2C_AbortCpltCallback
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5612   .text.I2C_TreatErrorCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5617   .text.I2C_TreatErrorCallback:00000000 I2C_TreatErrorCallback
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5640   .text.I2C_ITError:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5645   .text.I2C_ITError:00000000 I2C_ITError
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s 			page 132
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5784   .text.I2C_ITError:00000124 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5789   .text.I2C_ITSlaveCplt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:5794   .text.I2C_ITSlaveCplt:00000000 I2C_ITSlaveCplt
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6016   .text.I2C_ITSlaveCplt:000001ec $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6019   .text.I2C_Slave_ISR_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6179   .text.I2C_ITMasterCplt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6184   .text.I2C_ITMasterCplt:00000000 I2C_ITMasterCplt
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6309   .text.I2C_Master_ISR_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6498   .text.I2C_Mem_ISR_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6693   .text.I2C_Mem_ISR_DMA:00000198 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6697   .text.I2C_Slave_ISR_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6841   .text.I2C_Master_ISR_DMA:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:6992   .text.I2C_DMAError:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7011   .text.I2C_DMAMasterTransmitCplt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7066   .text.I2C_DMAMasterReceiveCplt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7121   .text.I2C_Mem_ISR_IT:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7312   .text.I2C_Mem_ISR_IT:00000190 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7316   .text.HAL_I2C_ER_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7322   .text.HAL_I2C_ER_IRQHandler:00000000 HAL_I2C_ER_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7371   .text.I2C_DMAAbort:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7395   .text.HAL_I2C_GetState:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7401   .text.HAL_I2C_GetState:00000000 HAL_I2C_GetState
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7409   .text.HAL_I2C_GetMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7415   .text.HAL_I2C_GetMode:00000000 HAL_I2C_GetMode
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7423   .text.HAL_I2C_GetError:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQGajni.s:7429   .text.HAL_I2C_GetError:00000000 HAL_I2C_GetError
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5784   .text.I2C_ITError:00000124 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5789   .text.I2C_ITSlaveCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:5794   .text.I2C_ITSlaveCplt:00000000 I2C_ITSlaveCplt
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6016   .text.I2C_ITSlaveCplt:000001ec $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6019   .text.I2C_Slave_ISR_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6179   .text.I2C_ITMasterCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6184   .text.I2C_ITMasterCplt:00000000 I2C_ITMasterCplt
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6309   .text.I2C_Master_ISR_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6498   .text.I2C_Mem_ISR_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6693   .text.I2C_Mem_ISR_DMA:00000198 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6697   .text.I2C_Slave_ISR_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6841   .text.I2C_Master_ISR_DMA:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:6992   .text.I2C_DMAError:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7011   .text.I2C_DMAMasterTransmitCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7066   .text.I2C_DMAMasterReceiveCplt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7121   .text.I2C_Mem_ISR_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7312   .text.I2C_Mem_ISR_IT:00000190 $d
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7316   .text.HAL_I2C_ER_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7322   .text.HAL_I2C_ER_IRQHandler:00000000 HAL_I2C_ER_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7371   .text.I2C_DMAAbort:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7395   .text.HAL_I2C_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7401   .text.HAL_I2C_GetState:00000000 HAL_I2C_GetState
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7409   .text.HAL_I2C_GetMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7415   .text.HAL_I2C_GetMode:00000000 HAL_I2C_GetMode
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7423   .text.HAL_I2C_GetError:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc54VXEY.s:7429   .text.HAL_I2C_GetError:00000000 HAL_I2C_GetError
 
 UNDEFINED SYMBOLS
 HAL_GetTick

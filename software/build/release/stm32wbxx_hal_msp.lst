@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0TkeTH.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -26,238 +26,15 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s 			page 1
   24              	HAL_MspInit:
   25              		@ args = 0, pretend = 0, frame = 0
   26              		@ frame_needed = 0, uses_anonymous_args = 0
-  27 0000 08B5     		push	{r3, lr}
-  28 0002 FFF7FEFF 		bl	HAL_PWREx_EnableVddUSB
-  29 0006 08BD     		pop	{r3, pc}
-  31              		.section	.text.HAL_I2C_MspInit,"ax",%progbits
-  32              		.align	1
-  33              		.global	HAL_I2C_MspInit
-  34              		.syntax unified
-  35              		.thumb
-  36              		.thumb_func
-  38              	HAL_I2C_MspInit:
-  39              		@ args = 0, pretend = 0, frame = 112
-  40              		@ frame_needed = 0, uses_anonymous_args = 0
-  41 0000 10B5     		push	{r4, lr}
-  42 0002 9CB0     		sub	sp, sp, #112
-  43 0004 0446     		mov	r4, r0
-  44 0006 0021     		movs	r1, #0
-  45 0008 1791     		str	r1, [sp, #92]
-  46 000a 1891     		str	r1, [sp, #96]
-  47 000c 1991     		str	r1, [sp, #100]
-  48 000e 1A91     		str	r1, [sp, #104]
-  49 0010 1B91     		str	r1, [sp, #108]
-  50 0012 5022     		movs	r2, #80
-  51 0014 03A8     		add	r0, sp, #12
-  52 0016 FFF7FEFF 		bl	memset
-  53 001a 2268     		ldr	r2, [r4]
-  54 001c 194B     		ldr	r3, .L9
-  55 001e 9A42     		cmp	r2, r3
-  56 0020 01D0     		beq	.L7
-  57              	.L3:
-  58 0022 1CB0     		add	sp, sp, #112
-  59              		@ sp needed
-  60 0024 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s 			page 2
-
-
-  61              	.L7:
-  62 0026 0423     		movs	r3, #4
-  63 0028 0393     		str	r3, [sp, #12]
-  64 002a 4FF44033 		mov	r3, #196608
-  65 002e 0B93     		str	r3, [sp, #44]
-  66 0030 03A8     		add	r0, sp, #12
-  67 0032 FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
-  68 0036 10BB     		cbnz	r0, .L8
-  69              	.L5:
-  70 0038 4FF0B044 		mov	r4, #1476395008
-  71 003c E36C     		ldr	r3, [r4, #76]
-  72 003e 43F00203 		orr	r3, r3, #2
-  73 0042 E364     		str	r3, [r4, #76]
-  74 0044 E36C     		ldr	r3, [r4, #76]
-  75 0046 03F00203 		and	r3, r3, #2
-  76 004a 0293     		str	r3, [sp, #8]
-  77 004c 029B     		ldr	r3, [sp, #8]
-  78 004e 4FF44073 		mov	r3, #768
-  79 0052 1793     		str	r3, [sp, #92]
-  80 0054 1223     		movs	r3, #18
-  81 0056 1893     		str	r3, [sp, #96]
-  82 0058 0023     		movs	r3, #0
-  83 005a 1993     		str	r3, [sp, #100]
-  84 005c 1A93     		str	r3, [sp, #104]
-  85 005e 0423     		movs	r3, #4
-  86 0060 1B93     		str	r3, [sp, #108]
-  87 0062 17A9     		add	r1, sp, #92
-  88 0064 0848     		ldr	r0, .L9+4
-  89 0066 FFF7FEFF 		bl	HAL_GPIO_Init
-  90 006a A36D     		ldr	r3, [r4, #88]
-  91 006c 43F40013 		orr	r3, r3, #2097152
-  92 0070 A365     		str	r3, [r4, #88]
-  93 0072 A36D     		ldr	r3, [r4, #88]
-  94 0074 03F40013 		and	r3, r3, #2097152
-  95 0078 0193     		str	r3, [sp, #4]
-  96 007a 019B     		ldr	r3, [sp, #4]
-  97 007c D1E7     		b	.L3
-  98              	.L8:
-  99 007e FFF7FEFF 		bl	Error_Handler
- 100 0082 D9E7     		b	.L5
- 101              	.L10:
- 102              		.align	2
- 103              	.L9:
- 104 0084 00540040 		.word	1073763328
- 105 0088 00040048 		.word	1207960576
- 107              		.section	.text.HAL_I2C_MspDeInit,"ax",%progbits
- 108              		.align	1
- 109              		.global	HAL_I2C_MspDeInit
- 110              		.syntax unified
- 111              		.thumb
- 112              		.thumb_func
- 114              	HAL_I2C_MspDeInit:
- 115              		@ args = 0, pretend = 0, frame = 0
- 116              		@ frame_needed = 0, uses_anonymous_args = 0
- 117 0000 08B5     		push	{r3, lr}
- 118 0002 0268     		ldr	r2, [r0]
- 119 0004 0A4B     		ldr	r3, .L15
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s 			page 3
-
-
- 120 0006 9A42     		cmp	r2, r3
- 121 0008 00D0     		beq	.L14
- 122              	.L11:
- 123 000a 08BD     		pop	{r3, pc}
- 124              	.L14:
- 125 000c 4FF0B042 		mov	r2, #1476395008
- 126 0010 936D     		ldr	r3, [r2, #88]
- 127 0012 23F40013 		bic	r3, r3, #2097152
- 128 0016 9365     		str	r3, [r2, #88]
- 129 0018 4FF48071 		mov	r1, #256
- 130 001c 0548     		ldr	r0, .L15+4
- 131 001e FFF7FEFF 		bl	HAL_GPIO_DeInit
- 132 0022 4FF40071 		mov	r1, #512
- 133 0026 0348     		ldr	r0, .L15+4
- 134 0028 FFF7FEFF 		bl	HAL_GPIO_DeInit
- 135 002c EDE7     		b	.L11
- 136              	.L16:
- 137 002e 00BF     		.align	2
- 138              	.L15:
- 139 0030 00540040 		.word	1073763328
- 140 0034 00040048 		.word	1207960576
- 142              		.section	.text.HAL_SPI_MspInit,"ax",%progbits
- 143              		.align	1
- 144              		.global	HAL_SPI_MspInit
- 145              		.syntax unified
- 146              		.thumb
- 147              		.thumb_func
- 149              	HAL_SPI_MspInit:
- 150              		@ args = 0, pretend = 0, frame = 32
- 151              		@ frame_needed = 0, uses_anonymous_args = 0
- 152 0000 00B5     		push	{lr}
- 153 0002 89B0     		sub	sp, sp, #36
- 154 0004 0023     		movs	r3, #0
- 155 0006 0393     		str	r3, [sp, #12]
- 156 0008 0493     		str	r3, [sp, #16]
- 157 000a 0593     		str	r3, [sp, #20]
- 158 000c 0693     		str	r3, [sp, #24]
- 159 000e 0793     		str	r3, [sp, #28]
- 160 0010 0268     		ldr	r2, [r0]
- 161 0012 134B     		ldr	r3, .L21
- 162 0014 9A42     		cmp	r2, r3
- 163 0016 01D0     		beq	.L20
- 164              	.L17:
- 165 0018 09B0     		add	sp, sp, #36
- 166              		@ sp needed
- 167 001a 00BD     		pop	{pc}
- 168              	.L20:
- 169 001c 4FF0B043 		mov	r3, #1476395008
- 170 0020 1A6E     		ldr	r2, [r3, #96]
- 171 0022 42F48052 		orr	r2, r2, #4096
- 172 0026 1A66     		str	r2, [r3, #96]
- 173 0028 1A6E     		ldr	r2, [r3, #96]
- 174 002a 02F48052 		and	r2, r2, #4096
- 175 002e 0292     		str	r2, [sp, #8]
- 176 0030 029A     		ldr	r2, [sp, #8]
- 177 0032 DA6C     		ldr	r2, [r3, #76]
- 178 0034 42F00202 		orr	r2, r2, #2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s 			page 4
-
-
- 179 0038 DA64     		str	r2, [r3, #76]
- 180 003a DB6C     		ldr	r3, [r3, #76]
- 181 003c 03F00203 		and	r3, r3, #2
- 182 0040 0193     		str	r3, [sp, #4]
- 183 0042 019B     		ldr	r3, [sp, #4]
- 184 0044 3823     		movs	r3, #56
- 185 0046 0393     		str	r3, [sp, #12]
- 186 0048 0223     		movs	r3, #2
- 187 004a 0493     		str	r3, [sp, #16]
- 188 004c 0323     		movs	r3, #3
- 189 004e 0693     		str	r3, [sp, #24]
- 190 0050 0523     		movs	r3, #5
- 191 0052 0793     		str	r3, [sp, #28]
- 192 0054 03A9     		add	r1, sp, #12
- 193 0056 0348     		ldr	r0, .L21+4
- 194 0058 FFF7FEFF 		bl	HAL_GPIO_Init
- 195 005c DCE7     		b	.L17
- 196              	.L22:
- 197 005e 00BF     		.align	2
- 198              	.L21:
- 199 0060 00300140 		.word	1073819648
- 200 0064 00040048 		.word	1207960576
- 202              		.section	.text.HAL_SPI_MspDeInit,"ax",%progbits
- 203              		.align	1
- 204              		.global	HAL_SPI_MspDeInit
- 205              		.syntax unified
- 206              		.thumb
- 207              		.thumb_func
- 209              	HAL_SPI_MspDeInit:
- 210              		@ args = 0, pretend = 0, frame = 0
- 211              		@ frame_needed = 0, uses_anonymous_args = 0
- 212 0000 08B5     		push	{r3, lr}
- 213 0002 0268     		ldr	r2, [r0]
- 214 0004 074B     		ldr	r3, .L27
- 215 0006 9A42     		cmp	r2, r3
- 216 0008 00D0     		beq	.L26
- 217              	.L23:
- 218 000a 08BD     		pop	{r3, pc}
- 219              	.L26:
- 220 000c 4FF0B042 		mov	r2, #1476395008
- 221 0010 136E     		ldr	r3, [r2, #96]
- 222 0012 23F48053 		bic	r3, r3, #4096
- 223 0016 1366     		str	r3, [r2, #96]
- 224 0018 3821     		movs	r1, #56
- 225 001a 0348     		ldr	r0, .L27+4
- 226 001c FFF7FEFF 		bl	HAL_GPIO_DeInit
- 227 0020 F3E7     		b	.L23
- 228              	.L28:
- 229 0022 00BF     		.align	2
- 230              	.L27:
- 231 0024 00300140 		.word	1073819648
- 232 0028 00040048 		.word	1207960576
- 234              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s 			page 5
+  27              		@ link register save eliminated.
+  28 0000 7047     		bx	lr
+  30              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0TkeTH.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_msp.c
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:18     .text.HAL_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:24     .text.HAL_MspInit:00000000 HAL_MspInit
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:32     .text.HAL_I2C_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:38     .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:104    .text.HAL_I2C_MspInit:00000084 $d
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:108    .text.HAL_I2C_MspDeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:114    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:139    .text.HAL_I2C_MspDeInit:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:143    .text.HAL_SPI_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:149    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:199    .text.HAL_SPI_MspInit:00000060 $d
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:203    .text.HAL_SPI_MspDeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:209    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-C:\Users\Nathan\AppData\Local\Temp\cczZLEjO.s:231    .text.HAL_SPI_MspDeInit:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cc0TkeTH.s:18     .text.HAL_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc0TkeTH.s:24     .text.HAL_MspInit:00000000 HAL_MspInit
 
-UNDEFINED SYMBOLS
-HAL_PWREx_EnableVddUSB
-memset
-HAL_RCCEx_PeriphCLKConfig
-HAL_GPIO_Init
-Error_Handler
-HAL_GPIO_DeInit
+NO UNDEFINED SYMBOLS

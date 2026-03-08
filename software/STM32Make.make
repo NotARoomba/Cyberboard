@@ -75,7 +75,10 @@ endif
 ######################################
 # C sources
 C_SOURCES =  \
+Core/Src/gpio.c \
+Core/Src/i2c.c \
 Core/Src/main.c \
+Core/Src/spi.c \
 Core/Src/stm32wbxx_hal_msp.c \
 Core/Src/stm32wbxx_it.c \
 Core/Src/syscalls.c \

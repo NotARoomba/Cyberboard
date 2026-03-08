@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 1
   59              		.syntax unified
   60              		.thumb
   61              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s 			page 2
 
 
   63              	IntToUnicode:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 1
  119 0022 044B     		ldr	r3, .L24+4
  120 0024 03F11001 		add	r1, r3, #16
  121 0028 2046     		mov	r0, r4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s 			page 3
 
 
  122 002a FFF7FEFF 		bl	IntToUnicode
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 1
  176 0014 0248     		ldr	r0, .L34+4
  177 0016 FFF7FEFF 		bl	USBD_GetString
  178 001a F8E7     		b	.L32
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s 			page 4
 
 
  179              	.L35:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 1
  231 0008 0548     		ldr	r0, .L44+4
  232 000a FFF7FEFF 		bl	USBD_GetString
  233              	.L42:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s 			page 5
 
 
  234 000e 0348     		ldr	r0, .L44
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 1
  288      00000000 
  288      00000000 
  288      00000000 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s 			page 6
 
 
  289              		.global	USBD_StrDesc
@@ -337,51 +337,51 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 1
  323 0018 00000000 		.word	USBD_CDC_InterfaceStrDescriptor
  324 001c 00000000 		.space	4
  325              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_desc.c
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:18     .text.USBD_CDC_DeviceDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:24     .text.USBD_CDC_DeviceDescriptor:00000000 USBD_CDC_DeviceDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:35     .text.USBD_CDC_DeviceDescriptor:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:308    .data.USBD_CDC_DeviceDesc:00000000 USBD_CDC_DeviceDesc
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:38     .text.USBD_CDC_LangIDStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:44     .text.USBD_CDC_LangIDStrDescriptor:00000000 USBD_CDC_LangIDStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:55     .text.USBD_CDC_LangIDStrDescriptor:00000008 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:301    .data.USBD_LangIDDesc:00000000 USBD_LangIDDesc
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:58     .text.IntToUnicode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:63     .text.IntToUnicode:00000000 IntToUnicode
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:97     .text.Get_SerialNum:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:102    .text.Get_SerialNum:00000000 Get_SerialNum
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:127    .text.Get_SerialNum:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:286    .data.USBD_StringSerial:00000000 USBD_StringSerial
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:131    .text.USBD_CDC_SerialStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:137    .text.USBD_CDC_SerialStrDescriptor:00000000 USBD_CDC_SerialStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:149    .text.USBD_CDC_SerialStrDescriptor:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:152    .rodata.USBD_CDC_ProductStrDescriptor.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:156    .text.USBD_CDC_ProductStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:162    .text.USBD_CDC_ProductStrDescriptor:00000000 USBD_CDC_ProductStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:182    .text.USBD_CDC_ProductStrDescriptor:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:294    .bss.USBD_StrDesc:00000000 USBD_StrDesc
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:186    .rodata.USBD_CDC_ManufacturerStrDescriptor.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:190    .text.USBD_CDC_ManufacturerStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:196    .text.USBD_CDC_ManufacturerStrDescriptor:00000000 USBD_CDC_ManufacturerStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:210    .text.USBD_CDC_ManufacturerStrDescriptor:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:214    .rodata.USBD_CDC_ConfigStrDescriptor.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:218    .text.USBD_CDC_ConfigStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:224    .text.USBD_CDC_ConfigStrDescriptor:00000000 USBD_CDC_ConfigStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:244    .text.USBD_CDC_ConfigStrDescriptor:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:248    .rodata.USBD_CDC_InterfaceStrDescriptor.str1.4:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:252    .text.USBD_CDC_InterfaceStrDescriptor:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:258    .text.USBD_CDC_InterfaceStrDescriptor:00000000 USBD_CDC_InterfaceStrDescriptor
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:278    .text.USBD_CDC_InterfaceStrDescriptor:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:283    .data.USBD_StringSerial:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:291    .bss.USBD_StrDesc:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:298    .data.USBD_LangIDDesc:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:305    .data.USBD_CDC_DeviceDesc:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:316    .data.CDC_Desc:00000000 CDC_Desc
-C:\Users\Nathan\AppData\Local\Temp\ccajtMk5.s:313    .data.CDC_Desc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:18     .text.USBD_CDC_DeviceDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:24     .text.USBD_CDC_DeviceDescriptor:00000000 USBD_CDC_DeviceDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:35     .text.USBD_CDC_DeviceDescriptor:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:308    .data.USBD_CDC_DeviceDesc:00000000 USBD_CDC_DeviceDesc
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:38     .text.USBD_CDC_LangIDStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:44     .text.USBD_CDC_LangIDStrDescriptor:00000000 USBD_CDC_LangIDStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:55     .text.USBD_CDC_LangIDStrDescriptor:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:301    .data.USBD_LangIDDesc:00000000 USBD_LangIDDesc
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:58     .text.IntToUnicode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:63     .text.IntToUnicode:00000000 IntToUnicode
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:97     .text.Get_SerialNum:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:102    .text.Get_SerialNum:00000000 Get_SerialNum
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:127    .text.Get_SerialNum:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:286    .data.USBD_StringSerial:00000000 USBD_StringSerial
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:131    .text.USBD_CDC_SerialStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:137    .text.USBD_CDC_SerialStrDescriptor:00000000 USBD_CDC_SerialStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:149    .text.USBD_CDC_SerialStrDescriptor:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:152    .rodata.USBD_CDC_ProductStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:156    .text.USBD_CDC_ProductStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:162    .text.USBD_CDC_ProductStrDescriptor:00000000 USBD_CDC_ProductStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:182    .text.USBD_CDC_ProductStrDescriptor:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:294    .bss.USBD_StrDesc:00000000 USBD_StrDesc
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:186    .rodata.USBD_CDC_ManufacturerStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:190    .text.USBD_CDC_ManufacturerStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:196    .text.USBD_CDC_ManufacturerStrDescriptor:00000000 USBD_CDC_ManufacturerStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:210    .text.USBD_CDC_ManufacturerStrDescriptor:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:214    .rodata.USBD_CDC_ConfigStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:218    .text.USBD_CDC_ConfigStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:224    .text.USBD_CDC_ConfigStrDescriptor:00000000 USBD_CDC_ConfigStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:244    .text.USBD_CDC_ConfigStrDescriptor:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:248    .rodata.USBD_CDC_InterfaceStrDescriptor.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:252    .text.USBD_CDC_InterfaceStrDescriptor:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:258    .text.USBD_CDC_InterfaceStrDescriptor:00000000 USBD_CDC_InterfaceStrDescriptor
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:278    .text.USBD_CDC_InterfaceStrDescriptor:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:283    .data.USBD_StringSerial:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:291    .bss.USBD_StrDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:298    .data.USBD_LangIDDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:305    .data.USBD_CDC_DeviceDesc:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:316    .data.CDC_Desc:00000000 CDC_Desc
+C:\Users\Nathan\AppData\Local\Temp\ccAQOBPJ.s:313    .data.CDC_Desc:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_GetString

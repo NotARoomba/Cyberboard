@@ -1,278 +1,152 @@
 /**
  * @file ICM42688.c
- * @brief ICM-42688-P IMU driver – pure C, STM32 HAL SPI, one-shot reads
+ * @brief ICM-42688-PC (Tokmas) driver — SPI, one-shot reads.
+ *
+ * Register map from C48586483 datasheet. This is NOT the TDK ICM-42688-P.
  */
 
 #include "ICM42688.h"
 #include <string.h>
 
-/* ───────────────────── Private helpers ───────────────────── */
+/* ───────────────────── SPI helpers ───────────────────── */
 
-/** CS low (select) */
-static inline void cs_low(ICM42688_Handle *h) {
+static inline void cs_low(ICM42688_Handle *h)
+{
   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_RESET);
 }
 
-/** CS high (deselect) */
-static inline void cs_high(ICM42688_Handle *h) {
+static inline void cs_high(ICM42688_Handle *h)
+{
   HAL_GPIO_WritePin(h->cs_port, h->cs_pin, GPIO_PIN_SET);
 }
 
-/**
- * @brief Write a single register
- * @retval 0 on success, <0 on error
- */
-static int write_reg(ICM42688_Handle *h, uint8_t reg, uint8_t val) {
-  uint8_t tx[2] = {reg & 0x7F, val}; /* bit 7 = 0 → write */
-
+static int write_reg(ICM42688_Handle *h, uint8_t reg, uint8_t val)
+{
+  uint8_t tx[2] = { reg & 0x7Fu, val };   /* bit 7 = 0 → write */
+  uint8_t rx[2];
   cs_low(h);
-  HAL_StatusTypeDef st = HAL_SPI_Transmit(h->hspi, tx, 2, 100);
+  HAL_StatusTypeDef st = HAL_SPI_TransmitReceive(h->hspi, tx, rx, 2, 100);
   cs_high(h);
-
-  if (st != HAL_OK)
-    return -1;
-
-  /* read-back verify */
-  HAL_Delay(10);
-  uint8_t rd = 0;
-  uint8_t tx_rd[2] = {reg | 0x80, 0x00};
-  uint8_t rx_rd[2] = {0};
-
-  cs_low(h);
-  st = HAL_SPI_TransmitReceive(h->hspi, tx_rd, rx_rd, 2, 100);
-  cs_high(h);
-
-  if (st != HAL_OK)
-    return -2;
-  rd = rx_rd[1];
-
-  return (rd == val) ? 0 : -3;
+  return (st == HAL_OK) ? 0 : -1;
 }
 
-/**
- * @brief Read one or more registers into dest[]
- * @retval 0 on success, <0 on error
- */
 static int read_regs(ICM42688_Handle *h, uint8_t reg, uint8_t count,
-                     uint8_t *dest) {
-  uint8_t tx_buf[15 + 1]; /* max burst we ever need */
-  uint8_t rx_buf[15 + 1];
+                     uint8_t *dest)
+{
+  uint8_t tx[15 + 1];
+  uint8_t rx[15 + 1];
 
-  if (count > 15)
-    return -1;
+  if (count > 15) return -1;
 
-  memset(tx_buf, 0, count + 1);
-  tx_buf[0] = reg | 0x80; /* bit 7 = 1 → read */
+  memset(tx, 0, count + 1u);
+  tx[0] = reg | 0x80u;                    /* bit 7 = 1 → read */
 
   cs_low(h);
   HAL_StatusTypeDef st =
-      HAL_SPI_TransmitReceive(h->hspi, tx_buf, rx_buf, count + 1, 100);
+      HAL_SPI_TransmitReceive(h->hspi, tx, rx, count + 1u, 100);
   cs_high(h);
 
-  if (st != HAL_OK)
-    return -2;
-
-  memcpy(dest, &rx_buf[1], count);
+  if (st != HAL_OK) return -2;
+  memcpy(dest, &rx[1], count);
   return 0;
 }
 
-/**
- * @brief Switch register bank (0-4).  Skips write if already selected.
- */
-static int set_bank(ICM42688_Handle *h, uint8_t bank) {
-  if (h->current_bank == bank)
-    return 0;
-  h->current_bank = bank;
-  return write_reg(h, ICM42688_REG_BANK_SEL, bank);
+static uint8_t read_reg(ICM42688_Handle *h, uint8_t reg)
+{
+  uint8_t val = 0;
+  read_regs(h, reg, 1, &val);
+  return val;
 }
 
 /* ───────────────────── Public API ───────────────────── */
 
-uint8_t ICM42688_WhoAmI(ICM42688_Handle *h) {
-  set_bank(h, 0);
-  uint8_t val = 0;
-  if (read_regs(h, ICM42688_UB0_WHO_AM_I, 1, &val) < 0)
-    return 0;
-  return val;
+uint8_t ICM42688_WhoAmI(ICM42688_Handle *h)
+{
+  return read_reg(h, ICM42688_WHO_AM_I);
 }
 
-int ICM42688_SetAccelFS(ICM42688_Handle *h, ICM42688_AccelFS fs) {
-  set_bank(h, 0);
-  uint8_t reg;
-  if (read_regs(h, ICM42688_UB0_ACCEL_CONFIG0, 1, &reg) < 0)
-    return -1;
-  reg = ((uint8_t)fs << 5) | (reg & 0x1F);
-  if (write_reg(h, ICM42688_UB0_ACCEL_CONFIG0, reg) < 0)
-    return -2;
-
-  /* pre-compute scale: full-scale / 32768 */
-  h->accel_scale = (float)(1 << (4 - (uint8_t)fs)) / 32768.0f;
-  h->accel_fs = fs;
-  return 0;
-}
-
-int ICM42688_SetGyroFS(ICM42688_Handle *h, ICM42688_GyroFS fs) {
-  set_bank(h, 0);
-  uint8_t reg;
-  if (read_regs(h, ICM42688_UB0_GYRO_CONFIG0, 1, &reg) < 0)
-    return -1;
-  reg = ((uint8_t)fs << 5) | (reg & 0x1F);
-  if (write_reg(h, ICM42688_UB0_GYRO_CONFIG0, reg) < 0)
-    return -2;
-
-  h->gyro_scale = (2000.0f / (float)(1 << (uint8_t)fs)) / 32768.0f;
-  h->gyro_fs = fs;
-  return 0;
-}
-
-int ICM42688_SetAccelODR(ICM42688_Handle *h, ICM42688_ODR odr) {
-  set_bank(h, 0);
-  uint8_t reg;
-  if (read_regs(h, ICM42688_UB0_ACCEL_CONFIG0, 1, &reg) < 0)
-    return -1;
-  reg = (uint8_t)odr | (reg & 0xF0);
-  if (write_reg(h, ICM42688_UB0_ACCEL_CONFIG0, reg) < 0)
-    return -2;
-  return 0;
-}
-
-int ICM42688_SetGyroODR(ICM42688_Handle *h, ICM42688_ODR odr) {
-  set_bank(h, 0);
-  uint8_t reg;
-  if (read_regs(h, ICM42688_UB0_GYRO_CONFIG0, 1, &reg) < 0)
-    return -1;
-  reg = (uint8_t)odr | (reg & 0xF0);
-  if (write_reg(h, ICM42688_UB0_GYRO_CONFIG0, reg) < 0)
-    return -2;
-  return 0;
-}
-
-int ICM42688_Init(ICM42688_Handle *h) {
-  /* make sure CS starts de-asserted */
+int ICM42688_Init(ICM42688_Handle *h)
+{
   cs_high(h);
-  h->current_bank = 0;
 
-  /* ── Slow SPI to ≤1 MHz for register configuration ── */
-  uint32_t saved_prescaler = h->hspi->Init.BaudRatePrescaler;
-  h->hspi->Init.BaudRatePrescaler =
-      SPI_BAUDRATEPRESCALER_128; /* 64MHz/128 = 500kHz */
-  HAL_SPI_Init(h->hspi);
-
-  /* ── Toggle CS to latch SPI mode (chip defaults to I2C if CS is high) ── */
+  /* Datasheet: first SPI transaction may be incomplete after POR.
+     Toggle CS and do a dummy read to synchronise the SPI interface. */
   cs_low(h);
   HAL_Delay(1);
   cs_high(h);
   HAL_Delay(1);
-
-  /* ── Dummy read to fully activate SPI interface ── */
-  {
-    uint8_t tx[2] = {0x75 | 0x80, 0x00}; /* read WHO_AM_I register */
-    uint8_t rx[2] = {0};
-    cs_low(h);
-    HAL_SPI_TransmitReceive(h->hspi, tx, rx, 2, 100);
-    cs_high(h);
-    HAL_Delay(1);
-  }
-
-  /* software reset */
-  /* Don't verify reset write — the bit self-clears */
-  {
-    uint8_t tx[2] = {ICM42688_UB0_DEVICE_CONFIG & 0x7F, 0x01};
-    cs_low(h);
-    HAL_SPI_Transmit(h->hspi, tx, 2, 100);
-    cs_high(h);
-  }
-  HAL_Delay(50); /* wait for reset to complete */
-
-  /* After reset, re-latch SPI mode */
-  cs_low(h);
-  HAL_Delay(1);
-  cs_high(h);
+  (void)read_reg(h, 0x00);   /* dummy read */
   HAL_Delay(1);
 
-  /* After reset, bank is 0 */
-  h->current_bank = 0;
+  /* CTRL1: enable address auto-increment, keep big-endian (default),
+     enable INT1 push-pull output */
+  write_reg(h, ICM42688_CTRL1, CTRL1_ADDR_AI | CTRL1_BE | CTRL1_INT1_EN);
+  HAL_Delay(1);
 
-  /* verify WHO_AM_I (retry a few times) */
-  uint8_t wai = 0;
-  for (int i = 0; i < 5; i++) {
-    wai = ICM42688_WhoAmI(h);
-    if (wai == ICM42688_WHO_AM_I_VAL)
-      break;
-    HAL_Delay(10);
-  }
-  if (wai != ICM42688_WHO_AM_I_VAL) {
-    return -1;
-  }
+  /* CTRL2: Accel ±16g, ODR = 896.8 Hz (setting 0011) */
+  write_reg(h, ICM42688_CTRL2, ACCEL_FS_16G | ACCEL_ODR_897);
 
-  /* turn on accel + gyro in Low Noise mode */
-  if (write_reg(h, ICM42688_UB0_PWR_MGMT0, 0x0F) < 0) {
-    return -2;
-  }
-  HAL_Delay(1); /* wait for sensors to stabilise */
+  /* CTRL3: Gyro ±2048 dps, ODR = 896.8 Hz (setting 0011) */
+  write_reg(h, ICM42688_CTRL3, GYRO_FS_2048DPS | GYRO_ODR_897);
 
-  /* default full-scale: ±16 g, 2000 dps */
-  if (ICM42688_SetAccelFS(h, ICM42688_ACCEL_FS_16G) < 0)
-    return -3;
-  if (ICM42688_SetGyroFS(h, ICM42688_GYRO_FS_2000DPS) < 0)
-    return -4;
+  /* CTRL5: disable LPF for now (can enable later if needed) */
+  write_reg(h, ICM42688_CTRL5, 0x00);
 
-  /* default ODR: 1 kHz */
-  if (ICM42688_SetAccelODR(h, ICM42688_ODR_1K) < 0)
-    return -5;
-  if (ICM42688_SetGyroODR(h, ICM42688_ODR_1K) < 0)
-    return -6;
+  /* CTRL7: enable accelerometer and gyroscope */
+  write_reg(h, ICM42688_CTRL7, CTRL7_AEN | CTRL7_GEN);
 
-  /* disable inner filters (AAF + Notch) for lowest latency */
-  set_bank(h, 1);
-  write_reg(h, ICM42688_UB1_GYRO_CONFIG_STATIC2,
-            0x03); /* NF disable | AAF disable */
-  set_bank(h, 2);
-  write_reg(h, ICM42688_UB2_ACCEL_CONFIG_STATIC2, 0x01); /* AAF disable */
-  set_bank(h, 0);
+  /* Gyro startup time: 150ms + 3/ODR ≈ 153 ms */
+  HAL_Delay(200);
 
-  /* ── Restore fast SPI for data reads ── */
-  h->hspi->Init.BaudRatePrescaler = saved_prescaler;
-  HAL_SPI_Init(h->hspi);
+  /* Pre-compute scales:
+   *   ±16g     → 16 / 32768 g/LSB
+   *   ±2048 dps → 2048 / 32768 dps/LSB */
+  h->accel_scale = 16.0f   / 32768.0f;
+  h->gyro_scale  = 2048.0f / 32768.0f;
 
   return 0;
 }
 
-int ICM42688_ReadOnce(ICM42688_Handle *h, ICM42688_Data *data) {
-  set_bank(h, 0);
-
-  /* ── Wait for data-ready (INT_STATUS bit 3) ── */
+int ICM42688_ReadOnce(ICM42688_Handle *h, ICM42688_Data *data)
+{
+  /* Poll STATUS0 for data ready (aDA and gDA) */
   uint8_t status = 0;
-  uint32_t start = HAL_GetTick();
-  while (!(status & ICM42688_INT_STATUS_DATA_RDY)) {
-    if (read_regs(h, ICM42688_UB0_INT_STATUS, 1, &status) < 0)
+  uint32_t t0 = HAL_GetTick();
+  while ((status & (STATUS0_ADA | STATUS0_GDA)) != (STATUS0_ADA | STATUS0_GDA)) {
+    if (read_regs(h, ICM42688_STATUS0, 1, &status) < 0)
       return -1;
-    if ((HAL_GetTick() - start) > 10)
-      return -2; /* 10 ms timeout */
+    if ((HAL_GetTick() - t0) > 10)
+      return -2;  /* timeout */
   }
 
-  /* ── Burst-read 14 bytes: temp(2) + accel(6) + gyro(6) ── */
+  /* Burst-read 14 bytes starting at TEMP_L (0x33):
+     temp(2) + accel(6) + gyro(6) */
   uint8_t buf[14];
-  if (read_regs(h, ICM42688_UB0_TEMP_DATA1, 14, buf) < 0)
+  if (read_regs(h, ICM42688_TEMP_L, 14, buf) < 0)
     return -3;
 
-  /* combine bytes → signed 16-bit (big-endian on wire) */
-  int16_t raw_t = (int16_t)((uint16_t)buf[0] << 8 | buf[1]);
-  int16_t raw_ax = (int16_t)((uint16_t)buf[2] << 8 | buf[3]);
-  int16_t raw_ay = (int16_t)((uint16_t)buf[4] << 8 | buf[5]);
-  int16_t raw_az = (int16_t)((uint16_t)buf[6] << 8 | buf[7]);
-  int16_t raw_gx = (int16_t)((uint16_t)buf[8] << 8 | buf[9]);
-  int16_t raw_gy = (int16_t)((uint16_t)buf[10] << 8 | buf[11]);
-  int16_t raw_gz = (int16_t)((uint16_t)buf[12] << 8 | buf[13]);
+  /* Combine bytes. CTRL1.BE=1 → big-endian: H byte first in register order.
+     But register layout is L then H (0x33=TEMP_L, 0x34=TEMP_H), so with
+     auto-increment we read L first, then H. This is little-endian byte order
+     in the buffer regardless of the BE setting (BE controls the byte order
+     within each register pair). With BE=1: buf[0]=low, buf[1]=high */
+  int16_t raw_t  = (int16_t)((uint16_t)buf[1]  << 8 | buf[0]);
+  int16_t raw_ax = (int16_t)((uint16_t)buf[3]  << 8 | buf[2]);
+  int16_t raw_ay = (int16_t)((uint16_t)buf[5]  << 8 | buf[4]);
+  int16_t raw_az = (int16_t)((uint16_t)buf[7]  << 8 | buf[6]);
+  int16_t raw_gx = (int16_t)((uint16_t)buf[9]  << 8 | buf[8]);
+  int16_t raw_gy = (int16_t)((uint16_t)buf[11] << 8 | buf[10]);
+  int16_t raw_gz = (int16_t)((uint16_t)buf[13] << 8 | buf[12]);
 
-  /* scale to engineering units */
   data->acc_x = raw_ax * h->accel_scale;
   data->acc_y = raw_ay * h->accel_scale;
   data->acc_z = raw_az * h->accel_scale;
   data->gyr_x = raw_gx * h->gyro_scale;
   data->gyr_y = raw_gy * h->gyro_scale;
   data->gyr_z = raw_gz * h->gyro_scale;
-  data->temp_c = (float)raw_t / 132.48f + 25.0f;
+
+  /* Temperature: T = (TEMP_H * 256 + TEMP_L) / 256 °C */
+  data->temp_c = (float)raw_t / ICM42688_TEMP_SCALE;
 
   return 0;
 }
