@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s 			page 1
   60              	UTIL_LPM_SetStopMode:
   61              		@ args = 0, pretend = 0, frame = 0
   62              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s 			page 2
 
 
   63              		@ link register save eliminated.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s 			page 1
  119 0006 41B1     		cbz	r1, .L11
  120 0008 0129     		cmp	r1, #1
  121 000a 03D1     		bne	.L12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s 			page 3
 
 
  122 000c 0649     		ldr	r1, .L13
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s 			page 1
  178 0018 83F31088 		MSR primask, r3
  179              	@ 0 "" 2
  180              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s 			page 4
 
 
  181              		.syntax unified
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s 			page 1
  237 0028 A368     		ldr	r3, [r4, #8]
  238 002a 9847     		blx	r3
  239 002c E368     		ldr	r3, [r4, #12]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s 			page 5
 
 
  240 002e 9847     		blx	r3
@@ -265,32 +265,32 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s 			page 1
  266              	StopModeDisable:
  267 0000 00000000 		.space	4
  268              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32_lpm.c
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:18     .text.UTIL_LPM_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:24     .text.UTIL_LPM_Init:00000000 UTIL_LPM_Init
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:37     .text.UTIL_LPM_Init:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:266    .bss.StopModeDisable:00000000 StopModeDisable
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:260    .bss.OffModeDisable:00000000 OffModeDisable
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:41     .text.UTIL_LPM_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:47     .text.UTIL_LPM_DeInit:00000000 UTIL_LPM_DeInit
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:54     .text.UTIL_LPM_SetStopMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:60     .text.UTIL_LPM_SetStopMode:00000000 UTIL_LPM_SetStopMode
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:97     .text.UTIL_LPM_SetStopMode:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:100    .text.UTIL_LPM_SetOffMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:106    .text.UTIL_LPM_SetOffMode:00000000 UTIL_LPM_SetOffMode
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:143    .text.UTIL_LPM_SetOffMode:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:146    .text.UTIL_LPM_GetMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:152    .text.UTIL_LPM_GetMode:00000000 UTIL_LPM_GetMode
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:189    .text.UTIL_LPM_GetMode:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:193    .text.UTIL_LPM_EnterLowPower:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:199    .text.UTIL_LPM_EnterLowPower:00000000 UTIL_LPM_EnterLowPower
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:252    .text.UTIL_LPM_EnterLowPower:00000040 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:257    .bss.OffModeDisable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccQHbmWQ.s:263    .bss.StopModeDisable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:18     .text.UTIL_LPM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:24     .text.UTIL_LPM_Init:00000000 UTIL_LPM_Init
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:37     .text.UTIL_LPM_Init:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:266    .bss.StopModeDisable:00000000 StopModeDisable
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:260    .bss.OffModeDisable:00000000 OffModeDisable
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:41     .text.UTIL_LPM_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:47     .text.UTIL_LPM_DeInit:00000000 UTIL_LPM_DeInit
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:54     .text.UTIL_LPM_SetStopMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:60     .text.UTIL_LPM_SetStopMode:00000000 UTIL_LPM_SetStopMode
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:97     .text.UTIL_LPM_SetStopMode:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:100    .text.UTIL_LPM_SetOffMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:106    .text.UTIL_LPM_SetOffMode:00000000 UTIL_LPM_SetOffMode
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:143    .text.UTIL_LPM_SetOffMode:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:146    .text.UTIL_LPM_GetMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:152    .text.UTIL_LPM_GetMode:00000000 UTIL_LPM_GetMode
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:189    .text.UTIL_LPM_GetMode:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:193    .text.UTIL_LPM_EnterLowPower:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:199    .text.UTIL_LPM_EnterLowPower:00000000 UTIL_LPM_EnterLowPower
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:252    .text.UTIL_LPM_EnterLowPower:00000040 $d
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:257    .bss.OffModeDisable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc2iZS0e.s:263    .bss.StopModeDisable:00000000 $d
 
 UNDEFINED SYMBOLS
 UTIL_PowerDriver

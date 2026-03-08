@@ -97,7 +97,16 @@ static int8_t BMP580_Setup(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+/* Forward-declare the BLE update function without pulling in full BLE headers.
+   Opcode 0 = IMU_DATA, 1 = BARO_DATA  (matches Custom_STM_Char_Opcode_t). */
+extern uint8_t Custom_STM_App_Update_Char(uint8_t CharOpcode, uint8_t *pPayload);
+#define BLE_CHAR_IMU   0
+#define BLE_CHAR_BARO  1
 
+/* Set to 1 by Custom_APP_Init() once BLE stack + GATT services are ready */
+volatile uint8_t ble_ready = 0;
+
+static uint32_t last_sensor_poll = 0;
 /* USER CODE END 0 */
 
 /**
@@ -116,12 +125,9 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  dbg_blink(1);  /* 1 blink = entering HAL_Init */
   HAL_Init();
-  dbg_blink(2);  /* 2 blinks = HAL_Init done, entering MX_APPE_Config */
   /* Config code for STM32_WPAN (HSE Tuning must be done before system clock configuration) */
   MX_APPE_Config();
-  dbg_blink(3);  /* 3 blinks = MX_APPE_Config done */
 
   /* USER CODE BEGIN Init */
 
@@ -129,14 +135,12 @@ int main(void)
 
   /* Configure the system clock */
   SystemClock_Config();
-  dbg_blink(4);  /* 4 blinks = clocks configured */
 
   /* Configure the peripherals common clocks */
   PeriphCommonClock_Config();
 
   /* IPCC initialisation */
   MX_IPCC_Init();
-  dbg_blink(5);  /* 5 blinks = IPCC done */
 
   /* USER CODE BEGIN SysInit */
 
@@ -149,7 +153,6 @@ int main(void)
   MX_USB_Device_Init();
   MX_RTC_Init();
   MX_RF_Init();
-  dbg_blink(6);  /* 6 blinks = all peripherals initialized */
   /* USER CODE BEGIN 2 */
   /* Give USB time to enumerate before any CDC transmits */
   HAL_Delay(2000);
@@ -224,43 +227,67 @@ int main(void)
   }
   /* USER CODE END 2 */
 
-  dbg_print("[  ] MX_APPE_Init (BLE stack)...\r\n");
-  dbg_blink(7);  /* 7 blinks = entering BLE init */
   /* Init code for STM32_WPAN */
   MX_APPE_Init();
-  dbg_blink(8);  /* 8 blinks = BLE init done */
-  dbg_print("[OK] MX_APPE_Init done\r\n");
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1) {
-    if (ICM42688_ReadOnce(&icm, &imu_data) == 0) {
-      int len = snprintf(serial_buf, sizeof(serial_buf),
-                         "A:%.2f,%.2f,%.2f G:%.1f,%.1f,%.1f T:%.1f\r\n",
-                         imu_data.acc_x, imu_data.acc_y, imu_data.acc_z,
-                         imu_data.gyr_x, imu_data.gyr_y, imu_data.gyr_z,
-                         imu_data.temp_c);
-      CDC_Transmit_FS((uint8_t *)serial_buf, len);
-    }
+  dbg_print("[OK] Entering main loop\r\n");
 
-    /* BMP580 – read pressure & temperature (normal mode, DRDY polling) */
-    {
-      uint8_t int_status = 0;
-      if (bmp5_get_interrupt_status(&int_status, &bmp5) == BMP5_OK) {
-        if (int_status & BMP5_INT_ASSERTED_DRDY) {
-          if (bmp5_get_sensor_data(&bmp5_data, &bmp5_osr_cfg, &bmp5) == BMP5_OK) {
-            int len = snprintf(serial_buf, sizeof(serial_buf),
-                               "P:%.2f Pa  T:%.2f C\r\n",
-                               bmp5_data.pressure, bmp5_data.temperature);
-            CDC_Transmit_FS((uint8_t *)serial_buf, len);
+  while (1) {
+    /* USER CODE END WHILE */
+
+    /* --- Sensor polling (every 50 ms) --- */
+    if (HAL_GetTick() - last_sensor_poll >= 50) {
+      last_sensor_poll = HAL_GetTick();
+
+      /* IMU */
+      if (ICM42688_ReadOnce(&icm, &imu_data) == 0) {
+        int len = snprintf(serial_buf, sizeof(serial_buf),
+                           "A:%.2f,%.2f,%.2f G:%.1f,%.1f,%.1f T:%.1f\r\n",
+                           imu_data.acc_x, imu_data.acc_y, imu_data.acc_z,
+                           imu_data.gyr_x, imu_data.gyr_y, imu_data.gyr_z,
+                           imu_data.temp_c);
+        CDC_Transmit_FS((uint8_t *)serial_buf, len);
+
+        if (ble_ready) {
+          float imu_ble[7] = {
+            imu_data.acc_x, imu_data.acc_y, imu_data.acc_z,
+            imu_data.gyr_x, imu_data.gyr_y, imu_data.gyr_z,
+            imu_data.temp_c
+          };
+          Custom_STM_App_Update_Char(BLE_CHAR_IMU, (uint8_t *)imu_ble);
+        }
+      }
+
+      /* Barometer */
+      {
+        uint8_t int_status = 0;
+        if (bmp5_get_interrupt_status(&int_status, &bmp5) == BMP5_OK) {
+          if (int_status & BMP5_INT_ASSERTED_DRDY) {
+            if (bmp5_get_sensor_data(&bmp5_data, &bmp5_osr_cfg, &bmp5) == BMP5_OK) {
+              int len = snprintf(serial_buf, sizeof(serial_buf),
+                                 "P:%.2f Pa  T:%.2f C\r\n",
+                                 bmp5_data.pressure, bmp5_data.temperature);
+              CDC_Transmit_FS((uint8_t *)serial_buf, len);
+
+              if (ble_ready) {
+                float baro_ble[3] = {
+                  (float)bmp5_data.pressure,
+                  (float)bmp5_data.temperature,
+                  0.0f
+                };
+                Custom_STM_App_Update_Char(BLE_CHAR_BARO, (uint8_t *)baro_ble);
+              }
+            }
           }
         }
       }
+
+      HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
     }
 
-    HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-    HAL_Delay(100);
-    /* USER CODE END WHILE */
+    /* BLE sequencer — process pending BLE events */
     MX_APPE_Process();
 
     /* USER CODE BEGIN 3 */

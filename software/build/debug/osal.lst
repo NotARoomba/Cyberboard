@@ -1,0 +1,176 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccmwRQAc.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"osal.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/ST/STM32_WPAN/ble/core/template/osal.c"
+  20              		.section	.text.Osal_MemCpy,"ax",%progbits
+  21              		.align	1
+  22              		.global	Osal_MemCpy
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	Osal_MemCpy:
+  28              	.LVL0:
+  29              	.LFB0:
+   1:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** /*****************************************************************************
+   2:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  * @file    osal.c
+   3:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  *
+   4:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  * @brief   Implements the interface defined in "osal.h" needed by the stack.
+   5:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  *          Actually, only memset, memcpy and memcmp wrappers are implemented.
+   6:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  *****************************************************************************
+   7:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  * @attention
+   8:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  *
+   9:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  * Copyright (c) 2018-2025 STMicroelectronics.
+  10:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  * All rights reserved.
+  11:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  *
+  12:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  * This software is licensed under terms that can be found in the LICENSE file
+  13:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  * in the root directory of this software component.
+  14:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  *
+  16:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  *****************************************************************************
+  17:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  */
+  18:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** 
+  19:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** #include <string.h>
+  20:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** #include "osal.h"
+  21:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** 
+  22:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** 
+  23:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** /**
+  24:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  * Osal_MemCpy
+  25:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  *
+  26:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  */
+  27:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** 
+  28:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** void* Osal_MemCpy( void *dest, const void *src, unsigned int size )
+  29:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** {
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccmwRQAc.s 			page 2
+
+
+  30              		.loc 1 29 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 29 1 is_stmt 0 view .LVU1
+  35 0000 08B5     		push	{r3, lr}
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 3, -8
+  38              		.cfi_offset 14, -4
+  30:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****   return memcpy( dest, src, size );
+  39              		.loc 1 30 3 is_stmt 1 view .LVU2
+  40              		.loc 1 30 10 is_stmt 0 view .LVU3
+  41 0002 FFF7FEFF 		bl	memcpy
+  42              	.LVL1:
+  31:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** }
+  43              		.loc 1 31 1 view .LVU4
+  44 0006 08BD     		pop	{r3, pc}
+  45              		.cfi_endproc
+  46              	.LFE0:
+  48              		.section	.text.Osal_MemSet,"ax",%progbits
+  49              		.align	1
+  50              		.global	Osal_MemSet
+  51              		.syntax unified
+  52              		.thumb
+  53              		.thumb_func
+  55              	Osal_MemSet:
+  56              	.LVL2:
+  57              	.LFB1:
+  32:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** 
+  33:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** /**
+  34:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  * Osal_MemSet
+  35:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  *
+  36:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  */
+  37:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** 
+  38:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** void* Osal_MemSet( void *ptr, int value, unsigned int size )
+  39:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** {
+  58              		.loc 1 39 1 is_stmt 1 view -0
+  59              		.cfi_startproc
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62              		.loc 1 39 1 is_stmt 0 view .LVU6
+  63 0000 08B5     		push	{r3, lr}
+  64              		.cfi_def_cfa_offset 8
+  65              		.cfi_offset 3, -8
+  66              		.cfi_offset 14, -4
+  40:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****   return memset( ptr, value, size );
+  67              		.loc 1 40 3 is_stmt 1 view .LVU7
+  68              		.loc 1 40 10 is_stmt 0 view .LVU8
+  69 0002 FFF7FEFF 		bl	memset
+  70              	.LVL3:
+  41:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** }
+  71              		.loc 1 41 1 view .LVU9
+  72 0006 08BD     		pop	{r3, pc}
+  73              		.cfi_endproc
+  74              	.LFE1:
+  76              		.section	.text.Osal_MemCmp,"ax",%progbits
+  77              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccmwRQAc.s 			page 3
+
+
+  78              		.global	Osal_MemCmp
+  79              		.syntax unified
+  80              		.thumb
+  81              		.thumb_func
+  83              	Osal_MemCmp:
+  84              	.LVL4:
+  85              	.LFB2:
+  42:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** 
+  43:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** /**
+  44:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  * Osal_MemCmp
+  45:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  *
+  46:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****  */
+  47:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** int Osal_MemCmp( const void *s1, const void *s2, unsigned int size )
+  48:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** {
+  86              		.loc 1 48 1 is_stmt 1 view -0
+  87              		.cfi_startproc
+  88              		@ args = 0, pretend = 0, frame = 0
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90              		.loc 1 48 1 is_stmt 0 view .LVU11
+  91 0000 08B5     		push	{r3, lr}
+  92              		.cfi_def_cfa_offset 8
+  93              		.cfi_offset 3, -8
+  94              		.cfi_offset 14, -4
+  49:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c ****   return memcmp( s1, s2, size );
+  95              		.loc 1 49 3 is_stmt 1 view .LVU12
+  96              		.loc 1 49 10 is_stmt 0 view .LVU13
+  97 0002 FFF7FEFF 		bl	memcmp
+  98              	.LVL5:
+  50:Middlewares/ST/STM32_WPAN/ble/core/template/osal.c **** }
+  99              		.loc 1 50 1 view .LVU14
+ 100 0006 08BD     		pop	{r3, pc}
+ 101              		.cfi_endproc
+ 102              	.LFE2:
+ 104              		.text
+ 105              	.Letext0:
+ 106              		.file 2 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 107              		.file 3 "<built-in>"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccmwRQAc.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 osal.c
+C:\Users\Nathan\AppData\Local\Temp\ccmwRQAc.s:21     .text.Osal_MemCpy:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccmwRQAc.s:27     .text.Osal_MemCpy:00000000 Osal_MemCpy
+C:\Users\Nathan\AppData\Local\Temp\ccmwRQAc.s:49     .text.Osal_MemSet:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccmwRQAc.s:55     .text.Osal_MemSet:00000000 Osal_MemSet
+C:\Users\Nathan\AppData\Local\Temp\ccmwRQAc.s:77     .text.Osal_MemCmp:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccmwRQAc.s:83     .text.Osal_MemCmp:00000000 Osal_MemCmp
+
+UNDEFINED SYMBOLS
+memcpy
+memset
+memcmp

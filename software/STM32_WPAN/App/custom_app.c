@@ -195,7 +195,8 @@ void Custom_APP_Notification(Custom_App_ConnHandle_Not_evt_t *pNotification)
 void Custom_APP_Init(void)
 {
   /* USER CODE BEGIN CUSTOM_APP_Init */
-
+  extern volatile uint8_t ble_ready;
+  ble_ready = 1;
   /* USER CODE END CUSTOM_APP_Init */
   return;
 }

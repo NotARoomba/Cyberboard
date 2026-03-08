@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 1
   61              		.thumb_func
   63              	DIS_Init:
   64              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s 			page 2
 
 
   65              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 1
  129              		@ args = 0, pretend = 0, frame = 0
  130              		@ frame_needed = 0, uses_anonymous_args = 0
  131              		@ link register save eliminated.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s 			page 3
 
 
  132 0000 7047     		bx	lr
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 1
  196              		@ link register save eliminated.
  197 0000 7047     		bx	lr
  199              		.section	.text.OTAS_STM_Init,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s 			page 4
 
 
  200              		.align	1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 1
  263 0006 FFF7FEFF 		bl	BLS_Init
  264 000a FFF7FEFF 		bl	CRS_STM_Init
  265 000e FFF7FEFF 		bl	DIS_Init
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s 			page 5
 
 
  266 0012 FFF7FEFF 		bl	EDS_STM_Init
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 1
  324 000e 00BF     		.align	2
  325              	.L26:
  326 0010 00000000 		.word	SVCCTL_EvtHandler
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s 			page 6
 
 
  328              		.section	.text.SVCCTL_RegisterCltHandler,"ax",%progbits
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 1
  385 0044 022A     		cmp	r2, #2
  386 0046 01D1     		bne	.L36
  387 0048 0020     		movs	r0, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s 			page 7
 
 
  388 004a E8E7     		b	.L34
@@ -383,66 +383,66 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 1
  409      00000000 
  409      00000000 
  410              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 svc_ctl.c
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:18     .text.BAS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:24     .text.BAS_Init:00000000 BAS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:31     .text.BLS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:37     .text.BLS_Init:00000000 BLS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:44     .text.CRS_STM_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:50     .text.CRS_STM_Init:00000000 CRS_STM_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:57     .text.DIS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:63     .text.DIS_Init:00000000 DIS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:70     .text.EDS_STM_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:76     .text.EDS_STM_Init:00000000 EDS_STM_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:83     .text.HIDS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:89     .text.HIDS_Init:00000000 HIDS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:96     .text.HRS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:102    .text.HRS_Init:00000000 HRS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:109    .text.HTS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:115    .text.HTS_Init:00000000 HTS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:122    .text.IAS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:128    .text.IAS_Init:00000000 IAS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:135    .text.LLS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:141    .text.LLS_Init:00000000 LLS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:148    .text.TPS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:154    .text.TPS_Init:00000000 TPS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:161    .text.MOTENV_STM_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:167    .text.MOTENV_STM_Init:00000000 MOTENV_STM_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:174    .text.P2PS_STM_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:180    .text.P2PS_STM_Init:00000000 P2PS_STM_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:187    .text.ZDD_STM_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:193    .text.ZDD_STM_Init:00000000 ZDD_STM_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:200    .text.OTAS_STM_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:206    .text.OTAS_STM_Init:00000000 OTAS_STM_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:213    .text.MESH_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:219    .text.MESH_Init:00000000 MESH_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:226    .text.BVOPUS_STM_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:232    .text.BVOPUS_STM_Init:00000000 BVOPUS_STM_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:239    .text.SVCCTL_InitCustomSvc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:245    .text.SVCCTL_InitCustomSvc:00000000 SVCCTL_InitCustomSvc
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:252    .text.SVCCTL_SvcInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:258    .text.SVCCTL_SvcInit:00000000 SVCCTL_SvcInit
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:283    .text.SVCCTL_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:289    .text.SVCCTL_Init:00000000 SVCCTL_Init
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:303    .text.SVCCTL_Init:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:408    BLE_DRIVER_CONTEXT:00000004 SVCCTL_EvtHandler
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:402    BLE_DRIVER_CONTEXT:00000000 SVCCTL_CltHandler
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:307    .text.SVCCTL_RegisterSvcHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:313    .text.SVCCTL_RegisterSvcHandler:00000000 SVCCTL_RegisterSvcHandler
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:326    .text.SVCCTL_RegisterSvcHandler:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:329    .text.SVCCTL_RegisterCltHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:335    .text.SVCCTL_RegisterCltHandler:00000000 SVCCTL_RegisterCltHandler
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:342    .text.SVCCTL_UserEvtRx:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:348    .text.SVCCTL_UserEvtRx:00000000 SVCCTL_UserEvtRx
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:395    .text.SVCCTL_UserEvtRx:00000050 $d
-C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:399    BLE_DRIVER_CONTEXT:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:18     .text.BAS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:24     .text.BAS_Init:00000000 BAS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:31     .text.BLS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:37     .text.BLS_Init:00000000 BLS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:44     .text.CRS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:50     .text.CRS_STM_Init:00000000 CRS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:57     .text.DIS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:63     .text.DIS_Init:00000000 DIS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:70     .text.EDS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:76     .text.EDS_STM_Init:00000000 EDS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:83     .text.HIDS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:89     .text.HIDS_Init:00000000 HIDS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:96     .text.HRS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:102    .text.HRS_Init:00000000 HRS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:109    .text.HTS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:115    .text.HTS_Init:00000000 HTS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:122    .text.IAS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:128    .text.IAS_Init:00000000 IAS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:135    .text.LLS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:141    .text.LLS_Init:00000000 LLS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:148    .text.TPS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:154    .text.TPS_Init:00000000 TPS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:161    .text.MOTENV_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:167    .text.MOTENV_STM_Init:00000000 MOTENV_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:174    .text.P2PS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:180    .text.P2PS_STM_Init:00000000 P2PS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:187    .text.ZDD_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:193    .text.ZDD_STM_Init:00000000 ZDD_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:200    .text.OTAS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:206    .text.OTAS_STM_Init:00000000 OTAS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:213    .text.MESH_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:219    .text.MESH_Init:00000000 MESH_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:226    .text.BVOPUS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:232    .text.BVOPUS_STM_Init:00000000 BVOPUS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:239    .text.SVCCTL_InitCustomSvc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:245    .text.SVCCTL_InitCustomSvc:00000000 SVCCTL_InitCustomSvc
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:252    .text.SVCCTL_SvcInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:258    .text.SVCCTL_SvcInit:00000000 SVCCTL_SvcInit
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:283    .text.SVCCTL_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:289    .text.SVCCTL_Init:00000000 SVCCTL_Init
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:303    .text.SVCCTL_Init:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:408    BLE_DRIVER_CONTEXT:00000004 SVCCTL_EvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:402    BLE_DRIVER_CONTEXT:00000000 SVCCTL_CltHandler
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:307    .text.SVCCTL_RegisterSvcHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:313    .text.SVCCTL_RegisterSvcHandler:00000000 SVCCTL_RegisterSvcHandler
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:326    .text.SVCCTL_RegisterSvcHandler:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:329    .text.SVCCTL_RegisterCltHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:335    .text.SVCCTL_RegisterCltHandler:00000000 SVCCTL_RegisterCltHandler
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:342    .text.SVCCTL_UserEvtRx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:348    .text.SVCCTL_UserEvtRx:00000000 SVCCTL_UserEvtRx
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:395    .text.SVCCTL_UserEvtRx:00000050 $d
+C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s:399    BLE_DRIVER_CONTEXT:00000000 $d
 
 UNDEFINED SYMBOLS
 SVCCTL_App_Notification
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccrpqGhx.s 			page 9
 
 

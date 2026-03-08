@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 1
   57              		.align	1
   58              		.syntax unified
   59              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s 			page 2
 
 
   60              		.thumb_func
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 1
  117 0012 F7D0     		beq	.L19
  118 0014 0123     		movs	r3, #1
  119 0016 F6E7     		b	.L14
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s 			page 3
 
 
  120              	.L21:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 1
  176 000a 084A     		ldr	r2, .L26
  177 000c 1F23     		movs	r3, #31
  178 000e 9361     		str	r3, [r2, #24]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s 			page 4
 
 
  179 0010 1368     		ldr	r3, [r2]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 1
  236              		.align	1
  237              		.global	PWR_EnterSleepMode
  238              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s 			page 5
 
 
  239              		.thumb
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 1
  300              		@ args = 0, pretend = 0, frame = 0
  301              		@ frame_needed = 0, uses_anonymous_args = 0
  302 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s 			page 6
 
 
  303 0002 FFF7FEFF 		bl	HAL_ResumeTick
@@ -314,36 +314,36 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 1
  316 0010 00000000 		.word	PWR_EnterOffMode
  317 0014 00000000 		.word	PWR_ExitOffMode
  318              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32_lpm_if.c
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:18     .text.ExitLowPower:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:23     .text.ExitLowPower:00000000 ExitLowPower
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:53     .text.ExitLowPower:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:57     .text.Switch_On_HSI:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:62     .text.Switch_On_HSI:00000000 Switch_On_HSI
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:98     .text.EnterLowPower:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:103    .text.EnterLowPower:00000000 EnterLowPower
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:158    .text.EnterLowPower:0000006c $d
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:164    .text.PWR_EnterOffMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:170    .text.PWR_EnterOffMode:00000000 PWR_EnterOffMode
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:197    .text.PWR_EnterOffMode:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:201    .text.PWR_EnterStopMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:207    .text.PWR_EnterStopMode:00000000 PWR_EnterStopMode
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:232    .text.PWR_EnterStopMode:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:236    .text.PWR_EnterSleepMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:242    .text.PWR_EnterSleepMode:00000000 PWR_EnterSleepMode
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:261    .text.PWR_EnterSleepMode:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:264    .text.PWR_ExitOffMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:270    .text.PWR_ExitOffMode:00000000 PWR_ExitOffMode
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:278    .text.PWR_ExitStopMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:284    .text.PWR_ExitStopMode:00000000 PWR_ExitStopMode
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:293    .text.PWR_ExitSleepMode:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:299    .text.PWR_ExitSleepMode:00000000 PWR_ExitSleepMode
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:311    .rodata.UTIL_PowerDriver:00000000 UTIL_PowerDriver
-C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:308    .rodata.UTIL_PowerDriver:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:18     .text.ExitLowPower:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:23     .text.ExitLowPower:00000000 ExitLowPower
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:53     .text.ExitLowPower:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:57     .text.Switch_On_HSI:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:62     .text.Switch_On_HSI:00000000 Switch_On_HSI
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:98     .text.EnterLowPower:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:103    .text.EnterLowPower:00000000 EnterLowPower
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:158    .text.EnterLowPower:0000006c $d
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:164    .text.PWR_EnterOffMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:170    .text.PWR_EnterOffMode:00000000 PWR_EnterOffMode
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:197    .text.PWR_EnterOffMode:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:201    .text.PWR_EnterStopMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:207    .text.PWR_EnterStopMode:00000000 PWR_EnterStopMode
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:232    .text.PWR_EnterStopMode:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:236    .text.PWR_EnterSleepMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:242    .text.PWR_EnterSleepMode:00000000 PWR_EnterSleepMode
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:261    .text.PWR_EnterSleepMode:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:264    .text.PWR_ExitOffMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:270    .text.PWR_ExitOffMode:00000000 PWR_ExitOffMode
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:278    .text.PWR_ExitStopMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:284    .text.PWR_ExitStopMode:00000000 PWR_ExitStopMode
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:293    .text.PWR_ExitSleepMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:299    .text.PWR_ExitSleepMode:00000000 PWR_ExitSleepMode
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:311    .rodata.UTIL_PowerDriver:00000000 UTIL_PowerDriver
+C:\Users\Nathan\AppData\Local\Temp\ccvJFt4c.s:308    .rodata.UTIL_PowerDriver:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_SuspendTick

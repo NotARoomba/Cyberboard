@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -49,74 +49,83 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s 			page 1
   51              		@ args = 0, pretend = 0, frame = 0
   52              		@ frame_needed = 0, uses_anonymous_args = 0
   53              		@ link register save eliminated.
-  54 0000 7047     		bx	lr
-  56              		.section	.text.Custom_Imu_data_Update_Char,"ax",%progbits
-  57              		.align	1
-  58              		.syntax unified
-  59              		.thumb
-  60              		.thumb_func
-  62              	Custom_Imu_data_Update_Char:
-  63              		@ args = 0, pretend = 0, frame = 0
-  64              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s 			page 2
+  54 0000 014B     		ldr	r3, .L4
+  55 0002 0122     		movs	r2, #1
+  56 0004 1A70     		strb	r2, [r3]
+  57 0006 7047     		bx	lr
+  58              	.L5:
+  59              		.align	2
+  60              	.L4:
+  61 0008 00000000 		.word	ble_ready
+  63              		.section	.text.Custom_Imu_data_Update_Char,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s 			page 2
 
 
-  65              		@ link register save eliminated.
-  66 0000 7047     		bx	lr
-  68              		.section	.text.Custom_Baro_data_Update_Char,"ax",%progbits
-  69              		.align	1
-  70              		.syntax unified
-  71              		.thumb
-  72              		.thumb_func
-  74              	Custom_Baro_data_Update_Char:
-  75              		@ args = 0, pretend = 0, frame = 0
-  76              		@ frame_needed = 0, uses_anonymous_args = 0
-  77              		@ link register save eliminated.
-  78 0000 7047     		bx	lr
-  80              		.global	Connection_Handle
-  81              		.section	.bss.Connection_Handle,"aw",%nobits
-  82              		.align	1
-  85              	Connection_Handle:
-  86 0000 0000     		.space	2
-  87              		.global	NotifyCharData
-  88              		.section	.bss.NotifyCharData,"aw",%nobits
-  89              		.align	2
-  92              	NotifyCharData:
-  93 0000 00000000 		.space	512
-  93      00000000 
-  93      00000000 
-  93      00000000 
-  93      00000000 
-  94              		.global	UpdateCharData
-  95              		.section	.bss.UpdateCharData,"aw",%nobits
+  64              		.align	1
+  65              		.syntax unified
+  66              		.thumb
+  67              		.thumb_func
+  69              	Custom_Imu_data_Update_Char:
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+  72              		@ link register save eliminated.
+  73 0000 7047     		bx	lr
+  75              		.section	.text.Custom_Baro_data_Update_Char,"ax",%progbits
+  76              		.align	1
+  77              		.syntax unified
+  78              		.thumb
+  79              		.thumb_func
+  81              	Custom_Baro_data_Update_Char:
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84              		@ link register save eliminated.
+  85 0000 7047     		bx	lr
+  87              		.global	Connection_Handle
+  88              		.section	.bss.Connection_Handle,"aw",%nobits
+  89              		.align	1
+  92              	Connection_Handle:
+  93 0000 0000     		.space	2
+  94              		.global	NotifyCharData
+  95              		.section	.bss.NotifyCharData,"aw",%nobits
   96              		.align	2
-  99              	UpdateCharData:
+  99              	NotifyCharData:
  100 0000 00000000 		.space	512
  100      00000000 
  100      00000000 
  100      00000000 
  100      00000000 
- 101              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s 			page 3
+ 101              		.global	UpdateCharData
+ 102              		.section	.bss.UpdateCharData,"aw",%nobits
+ 103              		.align	2
+ 106              	UpdateCharData:
+ 107 0000 00000000 		.space	512
+ 107      00000000 
+ 107      00000000 
+ 107      00000000 
+ 107      00000000 
+ 108              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 custom_app.c
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:18     .text.Custom_STM_App_Notification:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:24     .text.Custom_STM_App_Notification:00000000 Custom_STM_App_Notification
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:31     .text.Custom_APP_Notification:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:37     .text.Custom_APP_Notification:00000000 Custom_APP_Notification
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:44     .text.Custom_APP_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:50     .text.Custom_APP_Init:00000000 Custom_APP_Init
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:57     .text.Custom_Imu_data_Update_Char:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:62     .text.Custom_Imu_data_Update_Char:00000000 Custom_Imu_data_Update_Char
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:69     .text.Custom_Baro_data_Update_Char:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:74     .text.Custom_Baro_data_Update_Char:00000000 Custom_Baro_data_Update_Char
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:85     .bss.Connection_Handle:00000000 Connection_Handle
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:82     .bss.Connection_Handle:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:92     .bss.NotifyCharData:00000000 NotifyCharData
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:89     .bss.NotifyCharData:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:99     .bss.UpdateCharData:00000000 UpdateCharData
-C:\Users\Nathan\AppData\Local\Temp\ccxgkhhO.s:96     .bss.UpdateCharData:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:18     .text.Custom_STM_App_Notification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:24     .text.Custom_STM_App_Notification:00000000 Custom_STM_App_Notification
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:31     .text.Custom_APP_Notification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:37     .text.Custom_APP_Notification:00000000 Custom_APP_Notification
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:44     .text.Custom_APP_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:50     .text.Custom_APP_Init:00000000 Custom_APP_Init
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:61     .text.Custom_APP_Init:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:64     .text.Custom_Imu_data_Update_Char:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:69     .text.Custom_Imu_data_Update_Char:00000000 Custom_Imu_data_Update_Char
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:76     .text.Custom_Baro_data_Update_Char:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:81     .text.Custom_Baro_data_Update_Char:00000000 Custom_Baro_data_Update_Char
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:92     .bss.Connection_Handle:00000000 Connection_Handle
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:89     .bss.Connection_Handle:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:99     .bss.NotifyCharData:00000000 NotifyCharData
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:96     .bss.NotifyCharData:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:106    .bss.UpdateCharData:00000000 UpdateCharData
+C:\Users\Nathan\AppData\Local\Temp\ccgCtuVX.s:103    .bss.UpdateCharData:00000000 $d
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+ble_ready

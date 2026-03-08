@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,7 +27,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
   24              		.thumb
   25              		.thumb_func
   27              	MX_I2C1_Init:
-  28              	.LFB950:
+  28              	.LFB1261:
    1:Core/Src/i2c.c **** /* USER CODE BEGIN Header */
    2:Core/Src/i2c.c **** /**
    3:Core/Src/i2c.c ****   ******************************************************************************
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
   28:Core/Src/i2c.c **** 
   29:Core/Src/i2c.c **** /* I2C1 init function */
   30:Core/Src/i2c.c **** void MX_I2C1_Init(void)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 2
 
 
   31:Core/Src/i2c.c **** {
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
   48:Core/Src/i2c.c ****   hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
   66              		.loc 1 48 3 is_stmt 1 view .LVU17
   67              		.loc 1 48 28 is_stmt 0 view .LVU18
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 3
 
 
   68 001c 0362     		str	r3, [r0, #32]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
   98 003a FFF7FEFF 		bl	Error_Handler
   99              	.LVL3:
  100 003e F1E7     		b	.L2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 4
 
 
  101              	.L7:
@@ -201,7 +201,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  116 0050 00540040 		.word	1073763328
  117 0054 B57DB110 		.word	280067509
  118              		.cfi_endproc
- 119              	.LFE950:
+ 119              	.LFE1261:
  121              		.section	.text.HAL_I2C_MspInit,"ax",%progbits
  122              		.align	1
  123              		.global	HAL_I2C_MspInit
@@ -210,7 +210,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  126              		.thumb_func
  128              	HAL_I2C_MspInit:
  129              	.LVL6:
- 130              	.LFB951:
+ 130              	.LFB1262:
   72:Core/Src/i2c.c **** 
   73:Core/Src/i2c.c **** void HAL_I2C_MspInit(I2C_HandleTypeDef* i2cHandle)
   74:Core/Src/i2c.c **** {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  150 0010 1B91     		str	r1, [sp, #108]
   77:Core/Src/i2c.c ****   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
  151              		.loc 1 77 3 is_stmt 1 view .LVU37
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 5
 
 
  152              		.loc 1 77 28 is_stmt 0 view .LVU38
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  172              		@ sp needed
  173 0024 10BD     		pop	{r4, pc}
  174              	.LVL10:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 6
 
 
  175              	.L15:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
   24:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****       (+) This delay depends on the peripheral mapping.
   25:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****         (++) AHB & APB peripherals, 1 dummy read is necessary
   26:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 7
 
 
   27:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****     [..]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
   81:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB1_GRP1_PERIPH_SRAM1          RCC_AHB1SMENR_SRAM1SMEN
   82:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB1_GRP1_PERIPH_CRC            RCC_AHB1ENR_CRCEN
   83:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(TSC)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 8
 
 
   84:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB1_GRP1_PERIPH_TSC            RCC_AHB1ENR_TSCEN
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  138:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #endif /* LCD */
  139:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB1_GRP1_PERIPH_RTCAPB         RCC_APB1ENR1_RTCAPBEN
  140:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB1_GRP1_PERIPH_WWDG           RCC_APB1ENR1_WWDGEN
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 9
 
 
  141:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(SPI2)
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  195:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  196:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
  197:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_EC_APB3_GRP1_PERIPH  APB3 GRP1 PERIPH
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 10
 
 
  198:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  252:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB3_GRP1_PERIPH_RNG          RCC_C2AHB3ENR_RNGEN
  253:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB3_GRP1_PERIPH_HSEM         RCC_C2AHB3ENR_HSEMEN
  254:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB3_GRP1_PERIPH_IPCC         RCC_C2AHB3ENR_IPCCEN
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 11
 
 
  255:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB3_GRP1_PERIPH_FLASH        RCC_C2AHB3ENR_FLASHEN
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  309:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(TIM17)
  310:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_APB2_GRP1_PERIPH_TIM17        RCC_C2APB2ENR_TIM17EN
  311:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #endif /* TIM17 */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 12
 
 
  312:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(SAI1)
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  366:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   __IO uint32_t tmpreg;
  367:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   SET_BIT(RCC->AHB1ENR, Periphs);
  368:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   /* Delay after an RCC peripheral clock enabling */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 13
 
 
  369:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   tmpreg = READ_BIT(RCC->AHB1ENR, Periphs);
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  423:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_ALL
  424:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_DMA1
  425:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_DMA2 (*)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 14
 
 
  426:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB1_GRP1_PERIPH_DMAMUX1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  480:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   SET_BIT(RCC->AHB1SMENR, Periphs);
  481:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   /* Delay after an RCC peripheral clock enabling */
  482:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   tmpreg = READ_BIT(RCC->AHB1SMENR, Periphs);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 15
 
 
  483:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   (void)tmpreg;
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  537:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @retval None
  538:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  539:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** __STATIC_INLINE void LL_AHB2_GRP1_EnableClock(uint32_t Periphs)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 16
 
 
  198              		.loc 2 539 22 view .LVU52
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  236              		.loc 1 102 31 is_stmt 0 view .LVU70
  237 005e 0423     		movs	r3, #4
  238 0060 1B93     		str	r3, [sp, #108]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 17
 
 
  103:Core/Src/i2c.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  590:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_GPIOE
  591:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_GPIOH
  592:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_ADC (*)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 18
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 18
 
 
  593:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_AES1 (*)
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  647:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_GPIOH
  648:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_ADC (*)
  649:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_AES1 (*)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 19
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 19
 
 
  650:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @note  (*) Not supported by all the devices
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  704:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_GPIOE
  705:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_GPIOH
  706:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_ADC (*)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 20
 
 
  707:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB2_GRP1_PERIPH_AES1 (*)
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  761:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB3ENR      FLASHEN       LL_AHB3_GRP1_IsEnabledClock
  762:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @param  Periphs This parameter can be a combination of the following values:
  763:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB3_GRP1_PERIPH_QUADSPI (*)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 21
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 21
 
 
  764:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB3_GRP1_PERIPH_PKA
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  818:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB3_GRP1_PERIPH_HSEM
  819:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB3_GRP1_PERIPH_IPCC
  820:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_AHB3_GRP1_PERIPH_FLASH
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 22
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 22
 
 
  821:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @note  (*) Not supported by all the devices
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  875:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   __IO uint32_t tmpreg;
  876:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   SET_BIT(RCC->AHB3SMENR, Periphs);
  877:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   /* Delay after an RCC peripheral clock enabling */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 23
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 23
 
 
  878:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   tmpreg = READ_BIT(RCC->AHB3SMENR, Periphs);
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  932:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_I2C3 (*)
  933:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_CRS (*)
  934:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_USB (*)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 24
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 24
 
 
  935:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP1_PERIPH_LPTIM1
@@ -1426,7 +1426,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  277 0084 00540040 		.word	1073763328
  278 0088 00040048 		.word	1207960576
  279              		.cfi_endproc
- 280              	.LFE951:
+ 280              	.LFE1262:
  282              		.section	.text.HAL_I2C_MspDeInit,"ax",%progbits
  283              		.align	1
  284              		.global	HAL_I2C_MspDeInit
@@ -1435,10 +1435,10 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  287              		.thumb_func
  289              	HAL_I2C_MspDeInit:
  290              	.LVL19:
- 291              	.LFB952:
+ 291              	.LFB1263:
  112:Core/Src/i2c.c **** 
  113:Core/Src/i2c.c **** void HAL_I2C_MspDeInit(I2C_HandleTypeDef* i2cHandle)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 25
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 25
 
 
  114:Core/Src/i2c.c **** {
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  951:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         APB1ENR2     LPTIM2EN      LL_APB1_GRP2_EnableClock
  952:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @param  Periphs This parameter can be a combination of the following values:
  953:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP2_PERIPH_LPUART1 (*)
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 26
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 26
 
 
  954:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         @arg @ref LL_APB1_GRP2_PERIPH_LPTIM2
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
 1008:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** __STATIC_INLINE uint32_t LL_APB1_GRP2_IsEnabledClock(uint32_t Periphs)
 1009:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** {
 1010:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   return ((READ_BIT(RCC->APB1ENR2, Periphs) == (Periphs)) ? 1UL : 0UL);
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 27
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 27
 
 
 1011:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** }
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  338 0028 FFF7FEFF 		bl	HAL_GPIO_DeInit
  339              	.LVL25:
  340              		.loc 1 136 1 is_stmt 0 view .LVU96
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 28
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 28
 
 
  341 002c EDE7     		b	.L19
@@ -1628,7 +1628,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  345 0030 00540040 		.word	1073763328
  346 0034 00040048 		.word	1207960576
  347              		.cfi_endproc
- 348              	.LFE952:
+ 348              	.LFE1263:
  350              		.global	hi2c1
  351              		.section	.bss.hi2c1,"aw",%nobits
  352              		.align	2
@@ -1648,26 +1648,27 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 1
  364              		.file 8 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
  365              		.file 9 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c.h"
  366              		.file 10 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_rcc_ex.h"
- 367              		.file 11 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c_ex.h"
- 368              		.file 12 "Core/Inc/i2c.h"
- 369              		.file 13 "Core/Inc/main.h"
- 370              		.file 14 "<built-in>"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s 			page 29
+ 367              		.file 11 "Core/Inc/app_conf.h"
+ 368              		.file 12 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_i2c_ex.h"
+ 369              		.file 13 "Core/Inc/i2c.h"
+ 370              		.file 14 "Core/Inc/main.h"
+ 371              		.file 15 "<built-in>"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s 			page 29
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 i2c.c
-C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s:21     .text.MX_I2C1_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s:27     .text.MX_I2C1_Init:00000000 MX_I2C1_Init
-C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s:115    .text.MX_I2C1_Init:0000004c $d
-C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s:355    .bss.hi2c1:00000000 hi2c1
-C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s:122    .text.HAL_I2C_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s:128    .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
-C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s:277    .text.HAL_I2C_MspInit:00000084 $d
-C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s:283    .text.HAL_I2C_MspDeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s:289    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
-C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s:345    .text.HAL_I2C_MspDeInit:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\cc81RwO3.s:352    .bss.hi2c1:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s:21     .text.MX_I2C1_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s:27     .text.MX_I2C1_Init:00000000 MX_I2C1_Init
+C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s:115    .text.MX_I2C1_Init:0000004c $d
+C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s:355    .bss.hi2c1:00000000 hi2c1
+C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s:122    .text.HAL_I2C_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s:128    .text.HAL_I2C_MspInit:00000000 HAL_I2C_MspInit
+C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s:277    .text.HAL_I2C_MspInit:00000084 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s:283    .text.HAL_I2C_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s:289    .text.HAL_I2C_MspDeInit:00000000 HAL_I2C_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s:345    .text.HAL_I2C_MspDeInit:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1pg916.s:352    .bss.hi2c1:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_I2C_Init

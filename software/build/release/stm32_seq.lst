@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
   56 003e 5C60     		str	r4, [r3, #4]
   57 0040 0134     		adds	r4, r4, #1
   58 0042 F2E7     		b	.L2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 2
 
 
   59              	.L6:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  117              		.thumb
  118              		.syntax unified
  119 001e 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 3
 
 
  120              	.L10:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  177              		.global	UTIL_SEQ_PauseTask
  178              		.syntax unified
  179              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 4
 
 
  180              		.thumb_func
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  237              		.syntax unified
  238              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  239 0012 83F31088 		MSR primask, r3
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 5
 
 
  240              	@ 0 "" 2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  298 0000 EFF31081 		MRS r1, primask
  299              	@ 0 "" 2
  300              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 6
 
 
  301 0004 72B6     		cpsid i
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  358              		.align	1
  359              		.global	UTIL_SEQ_IsEvtPend
  360              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 7
 
 
  361              		.thumb
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  423              		.thumb
  424              		.thumb_func
  426              	UTIL_SEQ_PreTask:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 8
 
 
  427              		@ args = 0, pretend = 0, frame = 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  489 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
  490 0004 83B0     		sub	sp, sp, #12
  491 0006 714B     		ldr	r3, .L67
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 9
 
 
  492 0008 D3F80090 		ldr	r9, [r3]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  546 0074 DAF80030 		ldr	r3, [r10]
  547 0078 1F2B     		cmp	r3, #31
  548 007a 04D8     		bhi	.L51
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 10
 
 
  549 007c 5A4A     		ldr	r2, .L67+28
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  603 00f8 3949     		ldr	r1, .L67+20
  604 00fa 51F83430 		ldr	r3, [r1, r4, lsl #3]
  605 00fe 0340     		ands	r3, r3, r0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 11
 
 
  606 0100 41F83430 		str	r3, [r1, r4, lsl #3]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  660              	.L57:
  661 0178 1A4B     		ldr	r3, .L67+24
  662 017a 4FF0FF32 		mov	r2, #-1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 12
 
 
  663 017e 1A60     		str	r2, [r3]
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  717 01d4 00000000 		.word	EvtSet
  718 01d8 00000000 		.word	TaskMask
  719 01dc 00000000 		.word	EvtWaited
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 13
 
 
  720 01e0 00000000 		.word	TaskPrio
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  778              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  779 0032 EFF31081 		MRS r1, primask
  780              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 14
 
 
  781              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  837              	.L82:
  838 001a 00BF     		.align	2
  839              	.L81:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 15
 
 
  840 001c 00000000 		.word	TaskCb
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  900              		.align	2
  903              	TaskCb:
  904 0000 00000000 		.space	128
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 16
 
 
  904      00000000 
@@ -930,89 +930,89 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
  939              	TaskSet:
  940 0000 00000000 		.space	4
  941              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32_seq.c
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:18     .text.UTIL_SEQ_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:24     .text.UTIL_SEQ_Init:00000000 UTIL_SEQ_Init
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:62     .text.UTIL_SEQ_Init:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:939    .bss.TaskSet:00000000 TaskSet
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:933    .data.TaskMask:00000000 TaskMask
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:927    .data.SuperMask:00000000 SuperMask
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:921    .bss.EvtSet:00000000 EvtSet
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:915    .bss.EvtWaited:00000000 EvtWaited
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:909    .bss.CurrentTaskIdx:00000000 CurrentTaskIdx
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:903    .bss.TaskCb:00000000 TaskCb
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:891    .bss.TaskClearList:00000000 TaskClearList
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:897    .bss.TaskPrio:00000000 TaskPrio
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:73     .text.UTIL_SEQ_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:79     .text.UTIL_SEQ_DeInit:00000000 UTIL_SEQ_DeInit
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:86     .text.UTIL_SEQ_SetTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:92     .text.UTIL_SEQ_SetTask:00000000 UTIL_SEQ_SetTask
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:123    .text.UTIL_SEQ_SetTask:00000020 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:127    .text.UTIL_SEQ_IsSchedulableTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:133    .text.UTIL_SEQ_IsSchedulableTask:00000000 UTIL_SEQ_IsSchedulableTask
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:171    .text.UTIL_SEQ_IsSchedulableTask:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:176    .text.UTIL_SEQ_PauseTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:182    .text.UTIL_SEQ_PauseTask:00000000 UTIL_SEQ_PauseTask
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:209    .text.UTIL_SEQ_PauseTask:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:212    .text.UTIL_SEQ_IsPauseTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:218    .text.UTIL_SEQ_IsPauseTask:00000000 UTIL_SEQ_IsPauseTask
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:247    .text.UTIL_SEQ_IsPauseTask:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:250    .text.UTIL_SEQ_ResumeTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:256    .text.UTIL_SEQ_ResumeTask:00000000 UTIL_SEQ_ResumeTask
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:283    .text.UTIL_SEQ_ResumeTask:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:286    .text.UTIL_SEQ_SetEvt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:292    .text.UTIL_SEQ_SetEvt:00000000 UTIL_SEQ_SetEvt
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:319    .text.UTIL_SEQ_SetEvt:00000014 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:322    .text.UTIL_SEQ_ClrEvt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:328    .text.UTIL_SEQ_ClrEvt:00000000 UTIL_SEQ_ClrEvt
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:355    .text.UTIL_SEQ_ClrEvt:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:358    .text.UTIL_SEQ_IsEvtPend:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:364    .text.UTIL_SEQ_IsEvtPend:00000000 UTIL_SEQ_IsEvtPend
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:377    .text.UTIL_SEQ_IsEvtPend:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:381    .text.UTIL_SEQ_Idle:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:387    .text.UTIL_SEQ_Idle:00000000 UTIL_SEQ_Idle
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:394    .text.UTIL_SEQ_PreIdle:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:400    .text.UTIL_SEQ_PreIdle:00000000 UTIL_SEQ_PreIdle
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:407    .text.UTIL_SEQ_PostIdle:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:413    .text.UTIL_SEQ_PostIdle:00000000 UTIL_SEQ_PostIdle
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:420    .text.UTIL_SEQ_PreTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:426    .text.UTIL_SEQ_PreTask:00000000 UTIL_SEQ_PreTask
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:433    .text.UTIL_SEQ_PostTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:439    .text.UTIL_SEQ_PostTask:00000000 UTIL_SEQ_PostTask
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:446    .text.UTIL_SEQ_CatchWarning:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:452    .text.UTIL_SEQ_CatchWarning:00000000 UTIL_SEQ_CatchWarning
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:459    .text.SEQ_BitPosition:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:465    .text.SEQ_BitPosition:00000000 SEQ_BitPosition
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:480    .text.UTIL_SEQ_Run:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:486    .text.UTIL_SEQ_Run:00000000 UTIL_SEQ_Run
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:715    .text.UTIL_SEQ_Run:000001cc $d
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 18
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:18     .text.UTIL_SEQ_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:24     .text.UTIL_SEQ_Init:00000000 UTIL_SEQ_Init
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:62     .text.UTIL_SEQ_Init:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:939    .bss.TaskSet:00000000 TaskSet
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:933    .data.TaskMask:00000000 TaskMask
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:927    .data.SuperMask:00000000 SuperMask
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:921    .bss.EvtSet:00000000 EvtSet
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:915    .bss.EvtWaited:00000000 EvtWaited
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:909    .bss.CurrentTaskIdx:00000000 CurrentTaskIdx
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:903    .bss.TaskCb:00000000 TaskCb
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:891    .bss.TaskClearList:00000000 TaskClearList
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:897    .bss.TaskPrio:00000000 TaskPrio
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:73     .text.UTIL_SEQ_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:79     .text.UTIL_SEQ_DeInit:00000000 UTIL_SEQ_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:86     .text.UTIL_SEQ_SetTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:92     .text.UTIL_SEQ_SetTask:00000000 UTIL_SEQ_SetTask
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:123    .text.UTIL_SEQ_SetTask:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:127    .text.UTIL_SEQ_IsSchedulableTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:133    .text.UTIL_SEQ_IsSchedulableTask:00000000 UTIL_SEQ_IsSchedulableTask
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:171    .text.UTIL_SEQ_IsSchedulableTask:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:176    .text.UTIL_SEQ_PauseTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:182    .text.UTIL_SEQ_PauseTask:00000000 UTIL_SEQ_PauseTask
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:209    .text.UTIL_SEQ_PauseTask:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:212    .text.UTIL_SEQ_IsPauseTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:218    .text.UTIL_SEQ_IsPauseTask:00000000 UTIL_SEQ_IsPauseTask
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:247    .text.UTIL_SEQ_IsPauseTask:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:250    .text.UTIL_SEQ_ResumeTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:256    .text.UTIL_SEQ_ResumeTask:00000000 UTIL_SEQ_ResumeTask
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:283    .text.UTIL_SEQ_ResumeTask:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:286    .text.UTIL_SEQ_SetEvt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:292    .text.UTIL_SEQ_SetEvt:00000000 UTIL_SEQ_SetEvt
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:319    .text.UTIL_SEQ_SetEvt:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:322    .text.UTIL_SEQ_ClrEvt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:328    .text.UTIL_SEQ_ClrEvt:00000000 UTIL_SEQ_ClrEvt
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:355    .text.UTIL_SEQ_ClrEvt:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:358    .text.UTIL_SEQ_IsEvtPend:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:364    .text.UTIL_SEQ_IsEvtPend:00000000 UTIL_SEQ_IsEvtPend
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:377    .text.UTIL_SEQ_IsEvtPend:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:381    .text.UTIL_SEQ_Idle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:387    .text.UTIL_SEQ_Idle:00000000 UTIL_SEQ_Idle
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:394    .text.UTIL_SEQ_PreIdle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:400    .text.UTIL_SEQ_PreIdle:00000000 UTIL_SEQ_PreIdle
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:407    .text.UTIL_SEQ_PostIdle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:413    .text.UTIL_SEQ_PostIdle:00000000 UTIL_SEQ_PostIdle
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:420    .text.UTIL_SEQ_PreTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:426    .text.UTIL_SEQ_PreTask:00000000 UTIL_SEQ_PreTask
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:433    .text.UTIL_SEQ_PostTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:439    .text.UTIL_SEQ_PostTask:00000000 UTIL_SEQ_PostTask
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:446    .text.UTIL_SEQ_CatchWarning:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:452    .text.UTIL_SEQ_CatchWarning:00000000 UTIL_SEQ_CatchWarning
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:459    .text.SEQ_BitPosition:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:465    .text.SEQ_BitPosition:00000000 SEQ_BitPosition
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:480    .text.UTIL_SEQ_Run:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:486    .text.UTIL_SEQ_Run:00000000 UTIL_SEQ_Run
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:715    .text.UTIL_SEQ_Run:000001cc $d
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s 			page 18
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:726    .text.UTIL_SEQ_EvtIdle:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:732    .text.UTIL_SEQ_EvtIdle:00000000 UTIL_SEQ_EvtIdle
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:741    .text.UTIL_SEQ_WaitEvt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:747    .text.UTIL_SEQ_WaitEvt:00000000 UTIL_SEQ_WaitEvt
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:802    .text.UTIL_SEQ_WaitEvt:0000004c $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:807    .text.UTIL_SEQ_RegTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:813    .text.UTIL_SEQ_RegTask:00000000 UTIL_SEQ_RegTask
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:840    .text.UTIL_SEQ_RegTask:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:843    .text.UTIL_SEQ_IsRegisteredTask:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:849    .text.UTIL_SEQ_IsRegisteredTask:00000000 UTIL_SEQ_IsRegisteredTask
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:885    .text.UTIL_SEQ_IsRegisteredTask:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:888    .bss.TaskClearList:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:894    .bss.TaskPrio:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:900    .bss.TaskCb:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:906    .bss.CurrentTaskIdx:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:912    .bss.EvtWaited:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:918    .bss.EvtSet:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:924    .data.SuperMask:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:930    .data.TaskMask:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:936    .bss.TaskSet:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:726    .text.UTIL_SEQ_EvtIdle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:732    .text.UTIL_SEQ_EvtIdle:00000000 UTIL_SEQ_EvtIdle
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:741    .text.UTIL_SEQ_WaitEvt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:747    .text.UTIL_SEQ_WaitEvt:00000000 UTIL_SEQ_WaitEvt
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:802    .text.UTIL_SEQ_WaitEvt:0000004c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:807    .text.UTIL_SEQ_RegTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:813    .text.UTIL_SEQ_RegTask:00000000 UTIL_SEQ_RegTask
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:840    .text.UTIL_SEQ_RegTask:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:843    .text.UTIL_SEQ_IsRegisteredTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:849    .text.UTIL_SEQ_IsRegisteredTask:00000000 UTIL_SEQ_IsRegisteredTask
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:885    .text.UTIL_SEQ_IsRegisteredTask:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:888    .bss.TaskClearList:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:894    .bss.TaskPrio:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:900    .bss.TaskCb:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:906    .bss.CurrentTaskIdx:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:912    .bss.EvtWaited:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:918    .bss.EvtSet:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:924    .data.SuperMask:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:930    .data.TaskMask:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTJ0s6i.s:936    .bss.TaskSet:00000000 $d
 
 UNDEFINED SYMBOLS
 memset

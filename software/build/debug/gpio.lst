@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,7 +27,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
   24              		.thumb
   25              		.thumb_func
   27              	MX_GPIO_Init:
-  28              	.LFB950:
+  28              	.LFB1261:
    1:Core/Src/gpio.c **** /* USER CODE BEGIN Header */
    2:Core/Src/gpio.c **** /**
    3:Core/Src/gpio.c ****   ******************************************************************************
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
   28:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
   29:Core/Src/gpio.c **** /* Configure GPIO                                                             */
   30:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 2
 
 
   31:Core/Src/gpio.c **** /* USER CODE BEGIN 1 */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
    8:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *
    9:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * Copyright (c) 2019 STMicroelectronics.
   10:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * All rights reserved.
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 3
 
 
   11:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
   65:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
   66:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /* Exported constants --------------------------------------------------------*/
   67:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** /** @defgroup BUS_LL_Exported_Constants BUS Exported Constants
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 4
 
 
   68:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @{
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  122:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_RNG            RCC_AHB3ENR_RNGEN
  123:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_HSEM           RCC_AHB3ENR_HSEMEN
  124:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_IPCC           RCC_AHB3ENR_IPCCEN
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 5
 
 
  125:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_AHB3_GRP1_PERIPH_SRAM2          RCC_AHB3SMENR_SRAM2SMEN
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  179:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_ADC            RCC_APB2ENR_ADCEN
  180:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #endif /* ADC_SUPPORT_2_5_MSPS */
  181:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_TIM1           RCC_APB2ENR_TIM1EN
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 6
 
 
  182:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_APB2_GRP1_PERIPH_SPI1           RCC_APB2ENR_SPI1EN
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  236:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(ADC_SUPPORT_5_MSPS)
  237:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #define LL_C2_AHB2_GRP1_PERIPH_ADC          RCC_C2AHB2ENR_ADCEN
  238:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #endif /* ADC_SUPPORT_5_MSPS */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 7
 
 
  239:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** #if defined(AES1)
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  293:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @}
  294:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
  295:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 8
 
 
  296:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  350:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @rmtoll AHB1ENR      DMA1EN        LL_AHB1_GRP1_EnableClock\n
  351:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      DMA2EN        LL_AHB1_GRP1_EnableClock\n
  352:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      DMAMUX1EN      LL_AHB1_GRP1_EnableClock\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 9
 
 
  353:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1ENR      CRCEN         LL_AHB1_GRP1_EnableClock\n
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  407:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @note  (*) Not supported by all the devices
  408:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @retval None
  409:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   */
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 10
 
 
  410:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h **** __STATIC_INLINE void LL_AHB1_GRP1_DisableClock(uint32_t Periphs)
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  464:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1SMENR    SRAM1SMEN     LL_AHB1_GRP1_EnableClockSleep\n
  465:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1SMENR    CRCSMEN       LL_AHB1_GRP1_EnableClockSleep\n
  466:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB1SMENR    TSCSMEN       LL_AHB1_GRP1_EnableClockSleep
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 11
 
 
  467:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   * @param  Periphs This parameter can be a combination of the following values:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  521:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIOCEN       LL_AHB2_GRP1_EnableClock\n
  522:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIODEN       LL_AHB2_GRP1_EnableClock\n
  523:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIOEEN       LL_AHB2_GRP1_EnableClock\n
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 12
 
 
  524:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   *         AHB2ENR      GPIOHEN       LL_AHB2_GRP1_EnableClock\n
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
   86 002c 42F00202 		orr	r2, r2, #2
   87 0030 DA64     		str	r2, [r3, #76]
  544:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   (void)tmpreg;
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 13
 
 
   88              		.loc 2 544 3 view .LVU16
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  129 004e DA6C     		ldr	r2, [r3, #76]
  130 0050 42F00802 		orr	r2, r2, #8
  131 0054 DA64     		str	r2, [r3, #76]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 14
 
 
  544:Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_ll_bus.h ****   (void)tmpreg;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  171 0088 0894     		str	r4, [sp, #32]
   64:Core/Src/gpio.c ****   HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
  172              		.loc 1 64 3 is_stmt 1 view .LVU49
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 15
 
 
  173 008a 2946     		mov	r1, r5
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  211              		.loc 1 80 3 view .LVU66
  212              		.loc 1 80 23 is_stmt 0 view .LVU67
  213 00ba C023     		movs	r3, #192
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 16
 
 
  214 00bc 0593     		str	r3, [sp, #20]
@@ -930,21 +930,21 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 1
  235 00d8 00040048 		.word	1207960576
  236 00dc 000C0048 		.word	1207962624
  237              		.cfi_endproc
- 238              	.LFE950:
+ 238              	.LFE1261:
  240              		.text
  241              	.Letext0:
  242              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
  243              		.file 4 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
  244              		.file 5 "Drivers/CMSIS/Device/ST/STM32WBxx/Include/stm32wb55xx.h"
  245              		.file 6 "Drivers/STM32WBxx_HAL_Driver/Inc/stm32wbxx_hal_gpio.h"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s 			page 17
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s:21     .text.MX_GPIO_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\Nathan\AppData\Local\Temp\ccx6ShyG.s:234    .text.MX_GPIO_Init:000000d4 $d
+C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s:21     .text.MX_GPIO_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\Nathan\AppData\Local\Temp\ccXdoAPN.s:234    .text.MX_GPIO_Init:000000d4 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

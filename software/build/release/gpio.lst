@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBkB7ag.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2MXSFz.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBkB7ag.s 			page 1
   56 004a 0292     		str	r2, [sp, #8]
   57 004c 029A     		ldr	r2, [sp, #8]
   58 004e DA6C     		ldr	r2, [r3, #76]
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBkB7ag.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2MXSFz.s 			page 2
 
 
   59 0050 42F00802 		orr	r2, r2, #8
@@ -118,18 +118,18 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBkB7ag.s 			page 1
  113 00d4 00080048 		.word	1207961600
  114 00d8 00040048 		.word	1207960576
  115 00dc 000C0048 		.word	1207962624
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBkB7ag.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2MXSFz.s 			page 3
 
 
  117              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccBkB7ag.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc2MXSFz.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-C:\Users\Nathan\AppData\Local\Temp\ccBkB7ag.s:18     .text.MX_GPIO_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccBkB7ag.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\Nathan\AppData\Local\Temp\ccBkB7ag.s:113    .text.MX_GPIO_Init:000000d4 $d
+C:\Users\Nathan\AppData\Local\Temp\cc2MXSFz.s:18     .text.MX_GPIO_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc2MXSFz.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\Nathan\AppData\Local\Temp\cc2MXSFz.s:113    .text.MX_GPIO_Init:000000d4 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

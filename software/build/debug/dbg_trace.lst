@@ -1,0 +1,461 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"dbg_trace.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c"
+  20              		.section	.text.DbgTraceGetFileName,"ax",%progbits
+  21              		.align	1
+  22              		.global	DbgTraceGetFileName
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	DbgTraceGetFileName:
+  28              	.LVL0:
+  29              	.LFB1261:
+   1:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /**
+   2:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   ******************************************************************************
+   3:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   * @file    dbg_trace.c
+   4:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   * @author  MCD Application Team
+   5:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   * @brief   This file contains the Interface with BLE Drivers functions.
+   6:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   ******************************************************************************
+   7:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   * @attention
+   8:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   *
+   9:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   * Copyright (c) 2018-2021 STMicroelectronics.
+  10:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   * All rights reserved.
+  11:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   *
+  12:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  13:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   * in the root directory of this software component.
+  14:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   *
+  16:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   ******************************************************************************
+  17:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   */
+  18:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  19:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  20:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /* Includes ------------------------------------------------------------------*/
+  21:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #include "utilities_common.h"
+  22:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #include "stm_queue.h"
+  23:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #include "dbg_trace.h"
+  24:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  25:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /* Definition of the function */
+  26:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #if !defined(__GNUC__)  /* SW4STM32 */
+  27:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** size_t __write(int handle, const unsigned char * buf, size_t bufSize);
+  28:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #endif
+  29:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s 			page 2
+
+
+  30:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /** @addtogroup TRACE
+  31:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @{
+  32:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  33:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  34:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  35:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /** @defgroup TRACE_LOG
+  36:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @brief TRACE Logging functions
+  37:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @{
+  38:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  39:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  40:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /* Private typedef -----------------------------------------------------------*/
+  41:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /** @defgroup TRACE Log private typedef 
+  42:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @{
+  43:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  44:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  45:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /**
+  46:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @}
+  47:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  48:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  49:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /* Private defines -----------------------------------------------------------*/
+  50:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /** @defgroup TRACE Log private defines 
+  51:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @{
+  52:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  53:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  54:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /**
+  55:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @}
+  56:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  57:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  58:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /* Private macros ------------------------------------------------------------*/
+  59:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /** @defgroup TRACE Log private macros 
+  60:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @{
+  61:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  62:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /**
+  63:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @}
+  64:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  65:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  66:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /* Private variables ---------------------------------------------------------*/
+  67:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /** @defgroup TRACE Log private variables 
+  68:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @{
+  69:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  70:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #if (( CFG_DEBUG_TRACE_FULL != 0 ) || ( CFG_DEBUG_TRACE_LIGHT != 0 ))
+  71:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #if (DBG_TRACE_USE_CIRCULAR_QUEUE != 0)
+  72:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** static queue_t MsgDbgTraceQueue;
+  73:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** static uint8_t MsgDbgTraceQueueBuff[DBG_TRACE_MSG_QUEUE_SIZE];
+  74:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #endif
+  75:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** __IO ITStatus DbgTracePeripheralReady = SET;
+  76:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #endif
+  77:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /**
+  78:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @}
+  79:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  80:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  81:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /* Global variables ----------------------------------------------------------*/
+  82:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /** @defgroup TRACE Log Global variable
+  83:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @{
+  84:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  85:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /**
+  86:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s 			page 3
+
+
+  87:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  88:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  89:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /* Private function prototypes -----------------------------------------------*/
+  90:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /** @defgroup TRACE Log private function prototypes 
+  91:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @{
+  92:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+  93:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #if (( CFG_DEBUG_TRACE_FULL != 0 ) || ( CFG_DEBUG_TRACE_LIGHT != 0 ))
+  94:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** static void DbgTrace_TxCpltCallback(void);
+  95:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #endif
+  96:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  97:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  98:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /**
+  99:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @}
+ 100:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+ 101:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 102:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 103:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /* Private Functions Definition ------------------------------------------------------*/
+ 104:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /** @defgroup TRACE Log Private function 
+ 105:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @{
+ 106:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+ 107:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 108:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 109:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /* Functions Definition ------------------------------------------------------*/
+ 110:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /** @defgroup TRACE Log APIs 
+ 111:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @{
+ 112:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+ 113:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 114:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /**
+ 115:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @brief  DbgTraceGetFileName: Return filename string extracted from full path information
+ 116:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @param  *fullPath Fullpath string (path + filename)
+ 117:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @retval char* Pointer on filename string
+ 118:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+ 119:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 120:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** const char *DbgTraceGetFileName(const char *fullpath)
+ 121:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** {
+  30              		.loc 1 121 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 121 1 is_stmt 0 view .LVU1
+  35 0000 10B5     		push	{r4, lr}
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 4, -8
+  38              		.cfi_offset 14, -4
+  39 0002 0446     		mov	r4, r0
+ 122:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   const char *ret = fullpath;
+  40              		.loc 1 122 3 is_stmt 1 view .LVU2
+  41              	.LVL1:
+ 123:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 124:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   if (strrchr(fullpath, '\\') != NULL)
+  42              		.loc 1 124 3 view .LVU3
+  43              		.loc 1 124 7 is_stmt 0 view .LVU4
+  44 0004 5C21     		movs	r1, #92
+  45 0006 FFF7FEFF 		bl	strrchr
+  46              	.LVL2:
+  47              		.loc 1 124 6 discriminator 1 view .LVU5
+  48 000a 08B1     		cbz	r0, .L2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s 			page 4
+
+
+ 125:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   {
+ 126:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****     ret = strrchr(fullpath, '\\') + 1;
+  49              		.loc 1 126 5 is_stmt 1 view .LVU6
+  50              		.loc 1 126 9 is_stmt 0 discriminator 1 view .LVU7
+  51 000c 0130     		adds	r0, r0, #1
+  52              	.LVL3:
+  53              	.L1:
+ 127:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   }
+ 128:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   else if (strrchr(fullpath, '/') != NULL)
+ 129:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   {
+ 130:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****     ret = strrchr(fullpath, '/') + 1;
+ 131:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   }
+ 132:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 133:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   return ret;
+ 134:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** }
+  54              		.loc 1 134 1 view .LVU8
+  55 000e 10BD     		pop	{r4, pc}
+  56              	.LVL4:
+  57              	.L2:
+ 128:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   {
+  58              		.loc 1 128 8 is_stmt 1 view .LVU9
+ 128:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   {
+  59              		.loc 1 128 12 is_stmt 0 view .LVU10
+  60 0010 2F21     		movs	r1, #47
+  61 0012 2046     		mov	r0, r4
+  62 0014 FFF7FEFF 		bl	strrchr
+  63              	.LVL5:
+ 128:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   {
+  64              		.loc 1 128 11 discriminator 1 view .LVU11
+  65 0018 08B1     		cbz	r0, .L4
+ 130:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   }
+  66              		.loc 1 130 5 is_stmt 1 view .LVU12
+ 130:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   }
+  67              		.loc 1 130 9 is_stmt 0 discriminator 1 view .LVU13
+  68 001a 0130     		adds	r0, r0, #1
+  69              	.LVL6:
+ 130:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   }
+  70              		.loc 1 130 9 discriminator 1 view .LVU14
+  71 001c F7E7     		b	.L1
+  72              	.LVL7:
+  73              	.L4:
+ 122:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+  74              		.loc 1 122 15 view .LVU15
+  75 001e 2046     		mov	r0, r4
+  76              	.LVL8:
+ 133:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** }
+  77              		.loc 1 133 3 is_stmt 1 view .LVU16
+ 133:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** }
+  78              		.loc 1 133 10 is_stmt 0 view .LVU17
+  79 0020 F5E7     		b	.L1
+  80              		.cfi_endproc
+  81              	.LFE1261:
+  83              		.section	.rodata.DbgTraceBuffer.str1.4,"aMS",%progbits,1
+  84              		.align	2
+  85              	.LC0:
+  86 0000 20253032 		.ascii	" %02X\000"
+  86      5800
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s 			page 5
+
+
+  87              		.section	.text.DbgTraceBuffer,"ax",%progbits
+  88              		.align	1
+  89              		.global	DbgTraceBuffer
+  90              		.syntax unified
+  91              		.thumb
+  92              		.thumb_func
+  94              	DbgTraceBuffer:
+  95              	.LVL9:
+  96              	.LFB1262:
+ 135:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 136:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /**
+ 137:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @brief  DbgTraceBuffer: Output buffer content information to output Stream
+ 138:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @param  *pBuffer  Pointer on buffer to be output
+ 139:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @param  u32Length buffer Size
+ 140:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @paramt strFormat string as expected by "printf" function. Used to desrcibe buffer content infor
+ 141:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @param  ...       Parameters to be "formatted" in strFormat string (if any)
+ 142:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @retval None
+ 143:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+ 144:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 145:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** void DbgTraceBuffer(const void *pBuffer, uint32_t u32Length, const char *strFormat, ...)
+ 146:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** {
+  97              		.loc 1 146 1 is_stmt 1 view -0
+  98              		.cfi_startproc
+  99              		@ args = 4, pretend = 8, frame = 8
+ 100              		@ frame_needed = 0, uses_anonymous_args = 1
+ 101              		.loc 1 146 1 is_stmt 0 view .LVU19
+ 102 0000 0CB4     		push	{r2, r3}
+ 103              		.cfi_def_cfa_offset 8
+ 104              		.cfi_offset 2, -8
+ 105              		.cfi_offset 3, -4
+ 106 0002 70B5     		push	{r4, r5, r6, lr}
+ 107              		.cfi_def_cfa_offset 24
+ 108              		.cfi_offset 4, -24
+ 109              		.cfi_offset 5, -20
+ 110              		.cfi_offset 6, -16
+ 111              		.cfi_offset 14, -12
+ 112 0004 82B0     		sub	sp, sp, #8
+ 113              		.cfi_def_cfa_offset 32
+ 114 0006 0646     		mov	r6, r0
+ 115 0008 0D46     		mov	r5, r1
+ 116 000a 06A9     		add	r1, sp, #24
+ 117              	.LVL10:
+ 118              		.loc 1 146 1 view .LVU20
+ 119 000c 51F8040B 		ldr	r0, [r1], #4
+ 120              	.LVL11:
+ 147:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   va_list vaArgs;
+ 121              		.loc 1 147 3 is_stmt 1 view .LVU21
+ 148:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   uint32_t u32Index;
+ 122              		.loc 1 148 3 view .LVU22
+ 149:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   va_start(vaArgs, strFormat);
+ 123              		.loc 1 149 3 view .LVU23
+ 124 0010 0191     		str	r1, [sp, #4]
+ 150:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   vprintf(strFormat, vaArgs);
+ 125              		.loc 1 150 3 view .LVU24
+ 126 0012 FFF7FEFF 		bl	vprintf
+ 127              	.LVL12:
+ 151:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   va_end(vaArgs);
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s 			page 6
+
+
+ 128              		.loc 1 151 3 view .LVU25
+ 152:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   for (u32Index = 0; u32Index < u32Length; u32Index ++)
+ 129              		.loc 1 152 3 view .LVU26
+ 130              		.loc 1 152 17 is_stmt 0 view .LVU27
+ 131 0016 0024     		movs	r4, #0
+ 132              		.loc 1 152 3 view .LVU28
+ 133 0018 04E0     		b	.L7
+ 134              	.LVL13:
+ 135              	.L8:
+ 153:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   {
+ 154:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****     printf(" %02X", ((const uint8_t *) pBuffer)[u32Index]);
+ 136              		.loc 1 154 5 is_stmt 1 view .LVU29
+ 137 001a 315D     		ldrb	r1, [r6, r4]	@ zero_extendqisi2
+ 138 001c 0548     		ldr	r0, .L10
+ 139 001e FFF7FEFF 		bl	printf
+ 140              	.LVL14:
+ 152:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   for (u32Index = 0; u32Index < u32Length; u32Index ++)
+ 141              		.loc 1 152 53 discriminator 3 view .LVU30
+ 142 0022 0134     		adds	r4, r4, #1
+ 143              	.LVL15:
+ 144              	.L7:
+ 152:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   for (u32Index = 0; u32Index < u32Length; u32Index ++)
+ 145              		.loc 1 152 31 discriminator 1 view .LVU31
+ 146 0024 AC42     		cmp	r4, r5
+ 147 0026 F8D3     		bcc	.L8
+ 155:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   }
+ 156:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** }
+ 148              		.loc 1 156 1 is_stmt 0 view .LVU32
+ 149 0028 02B0     		add	sp, sp, #8
+ 150              		.cfi_def_cfa_offset 24
+ 151              		@ sp needed
+ 152 002a BDE87040 		pop	{r4, r5, r6, lr}
+ 153              		.cfi_restore 14
+ 154              		.cfi_restore 6
+ 155              		.cfi_restore 5
+ 156              		.cfi_restore 4
+ 157              		.cfi_def_cfa_offset 8
+ 158              	.LVL16:
+ 159              		.loc 1 156 1 view .LVU33
+ 160 002e 02B0     		add	sp, sp, #8
+ 161              		.cfi_restore 3
+ 162              		.cfi_restore 2
+ 163              		.cfi_def_cfa_offset 0
+ 164 0030 7047     		bx	lr
+ 165              	.L11:
+ 166 0032 00BF     		.align	2
+ 167              	.L10:
+ 168 0034 00000000 		.word	.LC0
+ 169              		.cfi_endproc
+ 170              	.LFE1262:
+ 172              		.section	.text.DbgTraceInit,"ax",%progbits
+ 173              		.align	1
+ 174              		.global	DbgTraceInit
+ 175              		.syntax unified
+ 176              		.thumb
+ 177              		.thumb_func
+ 179              	DbgTraceInit:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s 			page 7
+
+
+ 180              	.LFB1263:
+ 157:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 158:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #if (( CFG_DEBUG_TRACE_FULL != 0 ) || ( CFG_DEBUG_TRACE_LIGHT != 0 ))
+ 159:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** /**
+ 160:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @brief  DBG_TRACE USART Tx Transfer completed callback
+ 161:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @param  UartHandle: UART handle.
+ 162:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @note   Indicate the end of the transmission of a DBG_TRACE trace buffer to DBG_TRACE USART. If 
+ 163:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  *         contains new trace data to transmit, start a new transmission.
+ 164:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  * @retval None
+ 165:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****  */
+ 166:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** static void DbgTrace_TxCpltCallback(void)
+ 167:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** {
+ 168:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #if (DBG_TRACE_USE_CIRCULAR_QUEUE != 0)
+ 169:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   uint8_t* buf;
+ 170:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   uint16_t bufSize;
+ 171:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 172:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   BACKUP_PRIMASK();
+ 173:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 174:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   DISABLE_IRQ();			/**< Disable all interrupts by setting PRIMASK bit on Cortex*/
+ 175:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   /* Remove element just sent to UART */
+ 176:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   CircularQueue_Remove(&MsgDbgTraceQueue,&bufSize);
+ 177:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 178:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   /* Sense if new data to be sent */
+ 179:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   buf=CircularQueue_Sense(&MsgDbgTraceQueue,&bufSize);
+ 180:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 181:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 182:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   if ( buf != NULL) 
+ 183:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   {
+ 184:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****     RESTORE_PRIMASK();
+ 185:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****     DbgOutputTraces((uint8_t*)buf, bufSize, DbgTrace_TxCpltCallback);
+ 186:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   } 
+ 187:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   else
+ 188:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   {
+ 189:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****     DbgTracePeripheralReady = SET;
+ 190:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****     RESTORE_PRIMASK();
+ 191:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   }
+ 192:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 193:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #else
+ 194:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   BACKUP_PRIMASK();
+ 195:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 196:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   DISABLE_IRQ();      /**< Disable all interrupts by setting PRIMASK bit on Cortex*/
+ 197:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 198:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   DbgTracePeripheralReady = SET;
+ 199:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 200:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   RESTORE_PRIMASK();
+ 201:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #endif
+ 202:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** }
+ 203:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #endif
+ 204:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** 
+ 205:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** void DbgTraceInit( void )
+ 206:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** {
+ 181              		.loc 1 206 1 is_stmt 1 view -0
+ 182              		.cfi_startproc
+ 183              		@ args = 0, pretend = 0, frame = 0
+ 184              		@ frame_needed = 0, uses_anonymous_args = 0
+ 185              		@ link register save eliminated.
+ 207:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #if (( CFG_DEBUG_TRACE_FULL != 0 ) || ( CFG_DEBUG_TRACE_LIGHT != 0 ))
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s 			page 8
+
+
+ 208:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   DbgOutputInit();
+ 209:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #if (DBG_TRACE_USE_CIRCULAR_QUEUE != 0)
+ 210:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   CircularQueue_Init(&MsgDbgTraceQueue, MsgDbgTraceQueueBuff, DBG_TRACE_MSG_QUEUE_SIZE, 0, CIRCULAR
+ 211:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #endif 
+ 212:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** #endif
+ 213:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c ****   return;
+ 186              		.loc 1 213 3 view .LVU35
+ 214:Middlewares/ST/STM32_WPAN/utilities/dbg_trace.c **** }
+ 187              		.loc 1 214 1 is_stmt 0 view .LVU36
+ 188 0000 7047     		bx	lr
+ 189              		.cfi_endproc
+ 190              	.LFE1263:
+ 192              		.text
+ 193              	.Letext0:
+ 194              		.file 2 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 195              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 196              		.file 4 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 197              		.file 5 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 198              		.file 6 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 199              		.file 7 "<built-in>"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 dbg_trace.c
+C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s:21     .text.DbgTraceGetFileName:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s:27     .text.DbgTraceGetFileName:00000000 DbgTraceGetFileName
+C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s:84     .rodata.DbgTraceBuffer.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s:88     .text.DbgTraceBuffer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s:94     .text.DbgTraceBuffer:00000000 DbgTraceBuffer
+C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s:168    .text.DbgTraceBuffer:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s:173    .text.DbgTraceInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc7AgkbL.s:179    .text.DbgTraceInit:00000000 DbgTraceInit
+
+UNDEFINED SYMBOLS
+strrchr
+vprintf
+printf

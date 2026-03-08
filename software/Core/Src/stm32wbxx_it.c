@@ -231,16 +231,20 @@ void HSEM_IRQHandler(void)
 /**
   * @brief This function handles IPCC RX occupied interrupt.
   */
+volatile uint32_t ipcc_rx_count = 0;
 void IPCC_C1_RX_IRQHandler(void)
 {
+  ipcc_rx_count++;
   HW_IPCC_Rx_Handler();
 }
 
 /**
   * @brief This function handles IPCC TX free interrupt.
   */
+volatile uint32_t ipcc_tx_count = 0;
 void IPCC_C1_TX_IRQHandler(void)
 {
+  ipcc_tx_count++;
   HW_IPCC_Tx_Handler();
 }
 /* USER CODE END 1 */

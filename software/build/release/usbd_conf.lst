@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
   59              		.thumb
   60              		.thumb_func
   62              	HAL_PCD_MspInit:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 2
 
 
   63              		@ args = 0, pretend = 0, frame = 112
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  117 0078 1993     		str	r3, [sp, #100]
  118 007a 1A93     		str	r3, [sp, #104]
  119 007c 0A23     		movs	r3, #10
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 3
 
 
  120 007e 1B93     		str	r3, [sp, #108]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  176              	.L21:
  177 002c 00680040 		.word	1073768448
  179              		.section	.text.HAL_PCD_SetupStageCallback,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 4
 
 
  180              		.align	1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  241 0000 08B5     		push	{r3, lr}
  242 0002 D0F8D802 		ldr	r0, [r0, #728]
  243 0006 FFF7FEFF 		bl	USBD_LL_SOF
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 5
 
 
  244 000a 08BD     		pop	{r3, pc}
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  303              		.thumb
  304              		.thumb_func
  306              	HAL_PCD_ResumeCallback:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 6
 
 
  307              		@ args = 0, pretend = 0, frame = 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  367              		@ args = 0, pretend = 0, frame = 0
  368              		@ frame_needed = 0, uses_anonymous_args = 0
  369 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 7
 
 
  370 0002 D0F8D802 		ldr	r0, [r0, #728]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  428 0044 8021     		movs	r1, #128
  429 0046 D5F8C802 		ldr	r0, [r5, #712]
  430 004a FFF7FEFF 		bl	HAL_PCDEx_PMAConfig
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 8
 
 
  431 004e C023     		movs	r3, #192
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  490              		.align	1
  491              		.global	USBD_LL_Stop
  492              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 9
 
 
  493              		.thumb
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  554 000e 08BD     		pop	{r3, pc}
  556              		.section	.text.USBD_LL_StallEP,"ax",%progbits
  557              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 10
 
 
  558              		.global	USBD_LL_StallEP
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  618              		.thumb
  619              		.thumb_func
  621              	USBD_LL_SetUSBAddress:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 11
 
 
  622              		@ args = 0, pretend = 0, frame = 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  684              	HAL_PCDEx_LPM_Callback:
  685              		@ args = 0, pretend = 0, frame = 0
  686              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 12
 
 
  687 0000 10B5     		push	{r4, lr}
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  745              		@ link register save eliminated.
  746 0000 0048     		ldr	r0, .L100
  747 0002 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 13
 
 
  748              	.L101:
@@ -754,91 +754,91 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 1
  778      00000000 
  778      00000000 
  779              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_conf.c
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:18     .text.USBD_Get_USB_Status:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:23     .text.USBD_Get_USB_Status:00000000 USBD_Get_USB_Status
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:43     .text.SystemClockConfig_Resume:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:48     .text.SystemClockConfig_Resume:00000000 SystemClockConfig_Resume
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:56     .text.HAL_PCD_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:62     .text.HAL_PCD_MspInit:00000000 HAL_PCD_MspInit
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:144    .text.HAL_PCD_MspInit:000000b4 $d
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:147    .text.HAL_PCD_MspDeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:153    .text.HAL_PCD_MspDeInit:00000000 HAL_PCD_MspDeInit
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:177    .text.HAL_PCD_MspDeInit:0000002c $d
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:180    .text.HAL_PCD_SetupStageCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:186    .text.HAL_PCD_SetupStageCallback:00000000 HAL_PCD_SetupStageCallback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:196    .text.HAL_PCD_DataOutStageCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:202    .text.HAL_PCD_DataOutStageCallback:00000000 HAL_PCD_DataOutStageCallback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:214    .text.HAL_PCD_DataInStageCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:220    .text.HAL_PCD_DataInStageCallback:00000000 HAL_PCD_DataInStageCallback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:232    .text.HAL_PCD_SOFCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:238    .text.HAL_PCD_SOFCallback:00000000 HAL_PCD_SOFCallback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:247    .text.HAL_PCD_ResetCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:253    .text.HAL_PCD_ResetCallback:00000000 HAL_PCD_ResetCallback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:273    .text.HAL_PCD_SuspendCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:279    .text.HAL_PCD_SuspendCallback:00000000 HAL_PCD_SuspendCallback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:297    .text.HAL_PCD_SuspendCallback:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:300    .text.HAL_PCD_ResumeCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:306    .text.HAL_PCD_ResumeCallback:00000000 HAL_PCD_ResumeCallback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:327    .text.HAL_PCD_ResumeCallback:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:330    .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:336    .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 HAL_PCD_ISOOUTIncompleteCallback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:345    .text.HAL_PCD_ISOINIncompleteCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:351    .text.HAL_PCD_ISOINIncompleteCallback:00000000 HAL_PCD_ISOINIncompleteCallback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:360    .text.HAL_PCD_ConnectCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:366    .text.HAL_PCD_ConnectCallback:00000000 HAL_PCD_ConnectCallback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:375    .text.HAL_PCD_DisconnectCallback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:381    .text.HAL_PCD_DisconnectCallback:00000000 HAL_PCD_DisconnectCallback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:390    .text.USBD_LL_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:396    .text.USBD_LL_Init:00000000 USBD_LL_Init
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:454    .text.USBD_LL_Init:00000088 $d
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:777    .bss.hpcd_USB_FS:00000000 hpcd_USB_FS
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:458    .text.USBD_LL_DeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:464    .text.USBD_LL_DeInit:00000000 USBD_LL_DeInit
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:474    .text.USBD_LL_Start:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:480    .text.USBD_LL_Start:00000000 USBD_LL_Start
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:490    .text.USBD_LL_Stop:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:496    .text.USBD_LL_Stop:00000000 USBD_LL_Stop
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:506    .text.USBD_LL_OpenEP:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:512    .text.USBD_LL_OpenEP:00000000 USBD_LL_OpenEP
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:525    .text.USBD_LL_CloseEP:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:531    .text.USBD_LL_CloseEP:00000000 USBD_LL_CloseEP
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:541    .text.USBD_LL_FlushEP:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:547    .text.USBD_LL_FlushEP:00000000 USBD_LL_FlushEP
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:557    .text.USBD_LL_StallEP:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:563    .text.USBD_LL_StallEP:00000000 USBD_LL_StallEP
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:573    .text.USBD_LL_ClearStallEP:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:579    .text.USBD_LL_ClearStallEP:00000000 USBD_LL_ClearStallEP
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:589    .text.USBD_LL_IsStallEP:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 15
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:18     .text.USBD_Get_USB_Status:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:23     .text.USBD_Get_USB_Status:00000000 USBD_Get_USB_Status
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:43     .text.SystemClockConfig_Resume:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:48     .text.SystemClockConfig_Resume:00000000 SystemClockConfig_Resume
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:56     .text.HAL_PCD_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:62     .text.HAL_PCD_MspInit:00000000 HAL_PCD_MspInit
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:144    .text.HAL_PCD_MspInit:000000b4 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:147    .text.HAL_PCD_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:153    .text.HAL_PCD_MspDeInit:00000000 HAL_PCD_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:177    .text.HAL_PCD_MspDeInit:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:180    .text.HAL_PCD_SetupStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:186    .text.HAL_PCD_SetupStageCallback:00000000 HAL_PCD_SetupStageCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:196    .text.HAL_PCD_DataOutStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:202    .text.HAL_PCD_DataOutStageCallback:00000000 HAL_PCD_DataOutStageCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:214    .text.HAL_PCD_DataInStageCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:220    .text.HAL_PCD_DataInStageCallback:00000000 HAL_PCD_DataInStageCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:232    .text.HAL_PCD_SOFCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:238    .text.HAL_PCD_SOFCallback:00000000 HAL_PCD_SOFCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:247    .text.HAL_PCD_ResetCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:253    .text.HAL_PCD_ResetCallback:00000000 HAL_PCD_ResetCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:273    .text.HAL_PCD_SuspendCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:279    .text.HAL_PCD_SuspendCallback:00000000 HAL_PCD_SuspendCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:297    .text.HAL_PCD_SuspendCallback:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:300    .text.HAL_PCD_ResumeCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:306    .text.HAL_PCD_ResumeCallback:00000000 HAL_PCD_ResumeCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:327    .text.HAL_PCD_ResumeCallback:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:330    .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:336    .text.HAL_PCD_ISOOUTIncompleteCallback:00000000 HAL_PCD_ISOOUTIncompleteCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:345    .text.HAL_PCD_ISOINIncompleteCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:351    .text.HAL_PCD_ISOINIncompleteCallback:00000000 HAL_PCD_ISOINIncompleteCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:360    .text.HAL_PCD_ConnectCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:366    .text.HAL_PCD_ConnectCallback:00000000 HAL_PCD_ConnectCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:375    .text.HAL_PCD_DisconnectCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:381    .text.HAL_PCD_DisconnectCallback:00000000 HAL_PCD_DisconnectCallback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:390    .text.USBD_LL_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:396    .text.USBD_LL_Init:00000000 USBD_LL_Init
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:454    .text.USBD_LL_Init:00000088 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:777    .bss.hpcd_USB_FS:00000000 hpcd_USB_FS
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:458    .text.USBD_LL_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:464    .text.USBD_LL_DeInit:00000000 USBD_LL_DeInit
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:474    .text.USBD_LL_Start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:480    .text.USBD_LL_Start:00000000 USBD_LL_Start
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:490    .text.USBD_LL_Stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:496    .text.USBD_LL_Stop:00000000 USBD_LL_Stop
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:506    .text.USBD_LL_OpenEP:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:512    .text.USBD_LL_OpenEP:00000000 USBD_LL_OpenEP
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:525    .text.USBD_LL_CloseEP:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:531    .text.USBD_LL_CloseEP:00000000 USBD_LL_CloseEP
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:541    .text.USBD_LL_FlushEP:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:547    .text.USBD_LL_FlushEP:00000000 USBD_LL_FlushEP
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:557    .text.USBD_LL_StallEP:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:563    .text.USBD_LL_StallEP:00000000 USBD_LL_StallEP
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:573    .text.USBD_LL_ClearStallEP:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:579    .text.USBD_LL_ClearStallEP:00000000 USBD_LL_ClearStallEP
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:589    .text.USBD_LL_IsStallEP:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 15
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:595    .text.USBD_LL_IsStallEP:00000000 USBD_LL_IsStallEP
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:615    .text.USBD_LL_SetUSBAddress:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:621    .text.USBD_LL_SetUSBAddress:00000000 USBD_LL_SetUSBAddress
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:631    .text.USBD_LL_Transmit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:637    .text.USBD_LL_Transmit:00000000 USBD_LL_Transmit
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:647    .text.USBD_LL_PrepareReceive:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:653    .text.USBD_LL_PrepareReceive:00000000 USBD_LL_PrepareReceive
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:663    .text.USBD_LL_GetRxDataSize:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:669    .text.USBD_LL_GetRxDataSize:00000000 USBD_LL_GetRxDataSize
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:678    .text.HAL_PCDEx_LPM_Callback:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:684    .text.HAL_PCDEx_LPM_Callback:00000000 HAL_PCDEx_LPM_Callback
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:719    .text.HAL_PCDEx_LPM_Callback:00000040 $d
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:722    .text.USBD_LL_Delay:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:728    .text.USBD_LL_Delay:00000000 USBD_LL_Delay
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:736    .text.USBD_static_malloc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:742    .text.USBD_static_malloc:00000000 USBD_static_malloc
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:751    .text.USBD_static_malloc:00000004 $d
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:770    .bss.mem.0:00000000 mem.0
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:754    .text.USBD_static_free:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:760    .text.USBD_static_free:00000000 USBD_static_free
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:767    .bss.mem.0:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s:774    .bss.hpcd_USB_FS:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:595    .text.USBD_LL_IsStallEP:00000000 USBD_LL_IsStallEP
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:615    .text.USBD_LL_SetUSBAddress:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:621    .text.USBD_LL_SetUSBAddress:00000000 USBD_LL_SetUSBAddress
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:631    .text.USBD_LL_Transmit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:637    .text.USBD_LL_Transmit:00000000 USBD_LL_Transmit
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:647    .text.USBD_LL_PrepareReceive:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:653    .text.USBD_LL_PrepareReceive:00000000 USBD_LL_PrepareReceive
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:663    .text.USBD_LL_GetRxDataSize:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:669    .text.USBD_LL_GetRxDataSize:00000000 USBD_LL_GetRxDataSize
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:678    .text.HAL_PCDEx_LPM_Callback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:684    .text.HAL_PCDEx_LPM_Callback:00000000 HAL_PCDEx_LPM_Callback
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:719    .text.HAL_PCDEx_LPM_Callback:00000040 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:722    .text.USBD_LL_Delay:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:728    .text.USBD_LL_Delay:00000000 USBD_LL_Delay
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:736    .text.USBD_static_malloc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:742    .text.USBD_static_malloc:00000000 USBD_static_malloc
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:751    .text.USBD_static_malloc:00000004 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:770    .bss.mem.0:00000000 mem.0
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:754    .text.USBD_static_free:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:760    .text.USBD_static_free:00000000 USBD_static_free
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:767    .bss.mem.0:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s:774    .bss.hpcd_USB_FS:00000000 $d
 
 UNDEFINED SYMBOLS
 SystemClock_Config
@@ -874,7 +874,7 @@ HAL_PCD_EP_Flush
 HAL_PCD_EP_SetStall
 HAL_PCD_EP_ClrStall
 HAL_PCD_SetAddress
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccokFpfw.s 			page 16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1Hq69A.s 			page 16
 
 
 HAL_PCD_EP_Transmit

@@ -1,0 +1,161 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaALJ9h.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"otp.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/ST/STM32_WPAN/utilities/otp.c"
+  20              		.section	.text.OTP_Read,"ax",%progbits
+  21              		.align	1
+  22              		.global	OTP_Read
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	OTP_Read:
+  28              	.LVL0:
+  29              	.LFB1261:
+   1:Middlewares/ST/STM32_WPAN/utilities/otp.c **** /**
+   2:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   ******************************************************************************
+   3:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   * @file    otp.c
+   4:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   * @author  MCD Application Team
+   5:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   * @brief   OTP manager
+   6:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   ******************************************************************************
+   7:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   * @attention
+   8:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   *
+   9:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   * Copyright (c) 2018-2021 STMicroelectronics.
+  10:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   * All rights reserved.
+  11:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   *
+  12:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  13:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   * in the root directory of this software component.
+  14:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   *
+  16:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   ******************************************************************************
+  17:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   */
+  18:Middlewares/ST/STM32_WPAN/utilities/otp.c **** 
+  19:Middlewares/ST/STM32_WPAN/utilities/otp.c **** 
+  20:Middlewares/ST/STM32_WPAN/utilities/otp.c **** /* Includes ------------------------------------------------------------------*/
+  21:Middlewares/ST/STM32_WPAN/utilities/otp.c **** #include "utilities_common.h"
+  22:Middlewares/ST/STM32_WPAN/utilities/otp.c **** 
+  23:Middlewares/ST/STM32_WPAN/utilities/otp.c **** #include "otp.h"
+  24:Middlewares/ST/STM32_WPAN/utilities/otp.c **** 
+  25:Middlewares/ST/STM32_WPAN/utilities/otp.c **** /* Private typedef -----------------------------------------------------------*/
+  26:Middlewares/ST/STM32_WPAN/utilities/otp.c **** /* Private defines -----------------------------------------------------------*/
+  27:Middlewares/ST/STM32_WPAN/utilities/otp.c **** /* Private macros ------------------------------------------------------------*/
+  28:Middlewares/ST/STM32_WPAN/utilities/otp.c **** /* Private variables ---------------------------------------------------------*/
+  29:Middlewares/ST/STM32_WPAN/utilities/otp.c **** /* Global variables ----------------------------------------------------------*/
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaALJ9h.s 			page 2
+
+
+  30:Middlewares/ST/STM32_WPAN/utilities/otp.c **** /* Private function prototypes -----------------------------------------------*/
+  31:Middlewares/ST/STM32_WPAN/utilities/otp.c **** /* Functions Definition ------------------------------------------------------*/
+  32:Middlewares/ST/STM32_WPAN/utilities/otp.c **** 
+  33:Middlewares/ST/STM32_WPAN/utilities/otp.c **** uint8_t * OTP_Read( uint8_t id )
+  34:Middlewares/ST/STM32_WPAN/utilities/otp.c **** {
+  30              		.loc 1 34 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              		.loc 1 34 1 is_stmt 0 view .LVU1
+  36 0000 0146     		mov	r1, r0
+  35:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   uint8_t *p_id;
+  37              		.loc 1 35 3 is_stmt 1 view .LVU2
+  36:Middlewares/ST/STM32_WPAN/utilities/otp.c **** 
+  37:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   p_id = (uint8_t*)(CFG_OTP_END_ADRESS - 7) ;
+  38              		.loc 1 37 3 view .LVU3
+  39              	.LVL1:
+  38:Middlewares/ST/STM32_WPAN/utilities/otp.c **** 
+  39:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   while( ((*( p_id + 7 )) != id) && ( p_id != (uint8_t*)CFG_OTP_BASE_ADDRESS) )
+  40              		.loc 1 39 3 view .LVU4
+  37:Middlewares/ST/STM32_WPAN/utilities/otp.c **** 
+  41              		.loc 1 37 8 is_stmt 0 view .LVU5
+  42 0002 0748     		ldr	r0, .L8
+  43              	.LVL2:
+  44              	.L2:
+  45              		.loc 1 39 34 is_stmt 1 view .LVU6
+  46              		.loc 1 39 12 is_stmt 0 view .LVU7
+  47 0004 C379     		ldrb	r3, [r0, #7]	@ zero_extendqisi2
+  48              		.loc 1 39 34 view .LVU8
+  49 0006 8B42     		cmp	r3, r1
+  50 0008 04D0     		beq	.L3
+  51              		.loc 1 39 34 discriminator 1 view .LVU9
+  52 000a 064A     		ldr	r2, .L8+4
+  53 000c 9042     		cmp	r0, r2
+  54 000e 01D0     		beq	.L3
+  40:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   {
+  41:Middlewares/ST/STM32_WPAN/utilities/otp.c ****     p_id -= 8 ;
+  55              		.loc 1 41 5 is_stmt 1 view .LVU10
+  56              		.loc 1 41 10 is_stmt 0 view .LVU11
+  57 0010 0838     		subs	r0, r0, #8
+  58              	.LVL3:
+  59              		.loc 1 41 10 view .LVU12
+  60 0012 F7E7     		b	.L2
+  61              	.LVL4:
+  62              	.L3:
+  42:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   }
+  43:Middlewares/ST/STM32_WPAN/utilities/otp.c **** 
+  44:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   if((*( p_id + 7 )) != id)
+  63              		.loc 1 44 3 is_stmt 1 view .LVU13
+  64              		.loc 1 44 5 is_stmt 0 view .LVU14
+  65 0014 8B42     		cmp	r3, r1
+  66 0016 00D1     		bne	.L7
+  67              	.LVL5:
+  68              	.L1:
+  45:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   {
+  46:Middlewares/ST/STM32_WPAN/utilities/otp.c ****     p_id = 0 ;
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaALJ9h.s 			page 3
+
+
+  47:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   }
+  48:Middlewares/ST/STM32_WPAN/utilities/otp.c **** 
+  49:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   return p_id ;
+  50:Middlewares/ST/STM32_WPAN/utilities/otp.c **** }
+  69              		.loc 1 50 1 view .LVU15
+  70 0018 7047     		bx	lr
+  71              	.LVL6:
+  72              	.L7:
+  46:Middlewares/ST/STM32_WPAN/utilities/otp.c ****   }
+  73              		.loc 1 46 10 view .LVU16
+  74 001a 0020     		movs	r0, #0
+  75              	.LVL7:
+  49:Middlewares/ST/STM32_WPAN/utilities/otp.c **** }
+  76              		.loc 1 49 3 is_stmt 1 view .LVU17
+  49:Middlewares/ST/STM32_WPAN/utilities/otp.c **** }
+  77              		.loc 1 49 10 is_stmt 0 view .LVU18
+  78 001c FCE7     		b	.L1
+  79              	.L9:
+  80 001e 00BF     		.align	2
+  81              	.L8:
+  82 0020 F873FF1F 		.word	536835064
+  83 0024 0070FF1F 		.word	536834048
+  84              		.cfi_endproc
+  85              	.LFE1261:
+  87              		.text
+  88              	.Letext0:
+  89              		.file 2 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+  90              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccaALJ9h.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 otp.c
+C:\Users\Nathan\AppData\Local\Temp\ccaALJ9h.s:21     .text.OTP_Read:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccaALJ9h.s:27     .text.OTP_Read:00000000 OTP_Read
+C:\Users\Nathan\AppData\Local\Temp\ccaALJ9h.s:82     .text.OTP_Read:00000020 $d
+
+NO UNDEFINED SYMBOLS

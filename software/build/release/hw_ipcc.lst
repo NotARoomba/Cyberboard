@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
   56 0028 00000000 		.word	FreeBufCb
   58              		.section	.text.HW_IPCC_Enable,"ax",%progbits
   59              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 2
 
 
   60              		.global	HW_IPCC_Enable
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
  117 0000 00B5     		push	{lr}
  118 0002 83B0     		sub	sp, sp, #12
  119 0004 4FF0B043 		mov	r3, #1476395008
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 3
 
 
  120 0008 1A6D     		ldr	r2, [r3, #80]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
  176 0014 7047     		bx	lr
  177              	.L15:
  178 0016 00BF     		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 4
 
 
  179              	.L14:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
  237              	.L20:
  238 001c 000C0058 		.word	1476398080
  240              		.section	.text.HW_IPCC_BLE_AclDataAckNot,"ax",%progbits
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 5
 
 
  241              		.align	1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
  300 0000 7047     		bx	lr
  302              		.section	.text.HW_IPCC_BLE_EvtHandler,"ax",%progbits
  303              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 6
 
 
  304              		.syntax unified
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
  362              		.thumb
  363              		.thumb_func
  365              	HW_IPCC_SYS_SendCmd:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 7
 
 
  366              		@ args = 0, pretend = 0, frame = 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
  424 0006 72B6     		cpsid i
  425              	@ 0 "" 2
  426              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 8
 
 
  427              		.syntax unified
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
  483 003e 08BD     		pop	{r3, pc}
  484              	.L48:
  485 0040 FFF7FEFF 		bl	HW_IPCC_SYS_CmdEvtHandler
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 9
 
 
  486 0044 FBE7     		b	.L43
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
  546 000c 8047     		blx	r0
  547 000e 094B     		ldr	r3, .L63
  548 0010 4FF40022 		mov	r2, #524288
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 10
 
 
  549 0014 9A60     		str	r2, [r3, #8]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
  605              		.syntax unified
  606              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  607 0010 81F31088 		MSR primask, r1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 11
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 11
 
 
  608              	@ 0 "" 2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
  668 0010 13F0010F 		tst	r3, #1
  669 0014 0DD1     		bne	.L79
  670              	.L76:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 12
 
 
  671 0016 0F4B     		ldr	r3, .L81
@@ -697,77 +697,77 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
  707              	FreeBufCb:
  708 0000 00000000 		.space	4
  709              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 13
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 hw_ipcc.c
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:18     .text.HW_IPCC_MM_FreeBufHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:23     .text.HW_IPCC_MM_FreeBufHandler:00000000 HW_IPCC_MM_FreeBufHandler
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:55     .text.HW_IPCC_MM_FreeBufHandler:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:707    .bss.FreeBufCb:00000000 FreeBufCb
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:59     .text.HW_IPCC_Enable:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:65     .text.HW_IPCC_Enable:00000000 HW_IPCC_Enable
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:104    .text.HW_IPCC_Enable:00000048 $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:108    .text.HW_IPCC_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:114    .text.HW_IPCC_Init:00000000 HW_IPCC_Init
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:144    .text.HW_IPCC_Init:0000003c $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:147    .text.HW_IPCC_BLE_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:153    .text.HW_IPCC_BLE_Init:00000000 HW_IPCC_BLE_Init
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:180    .text.HW_IPCC_BLE_Init:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:183    .text.HW_IPCC_BLE_SendCmd:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:189    .text.HW_IPCC_BLE_SendCmd:00000000 HW_IPCC_BLE_SendCmd
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:200    .text.HW_IPCC_BLE_SendCmd:0000000c $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:203    .text.HW_IPCC_BLE_SendAclData:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:209    .text.HW_IPCC_BLE_SendAclData:00000000 HW_IPCC_BLE_SendAclData
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:238    .text.HW_IPCC_BLE_SendAclData:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:241    .text.HW_IPCC_BLE_AclDataAckNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:247    .text.HW_IPCC_BLE_AclDataAckNot:00000000 HW_IPCC_BLE_AclDataAckNot
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:254    .text.HW_IPCC_BLE_AclDataEvtHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:259    .text.HW_IPCC_BLE_AclDataEvtHandler:00000000 HW_IPCC_BLE_AclDataEvtHandler
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:287    .text.HW_IPCC_BLE_AclDataEvtHandler:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:290    .text.HW_IPCC_BLE_RxEvtNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:296    .text.HW_IPCC_BLE_RxEvtNot:00000000 HW_IPCC_BLE_RxEvtNot
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:303    .text.HW_IPCC_BLE_EvtHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:308    .text.HW_IPCC_BLE_EvtHandler:00000000 HW_IPCC_BLE_EvtHandler
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:320    .text.HW_IPCC_BLE_EvtHandler:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:323    .text.HW_IPCC_SYS_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:329    .text.HW_IPCC_SYS_Init:00000000 HW_IPCC_SYS_Init
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:356    .text.HW_IPCC_SYS_Init:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:359    .text.HW_IPCC_SYS_SendCmd:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:365    .text.HW_IPCC_SYS_SendCmd:00000000 HW_IPCC_SYS_SendCmd
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:394    .text.HW_IPCC_SYS_SendCmd:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:397    .text.HW_IPCC_SYS_CmdEvtNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:403    .text.HW_IPCC_SYS_CmdEvtNot:00000000 HW_IPCC_SYS_CmdEvtNot
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:410    .text.HW_IPCC_SYS_CmdEvtHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:415    .text.HW_IPCC_SYS_CmdEvtHandler:00000000 HW_IPCC_SYS_CmdEvtHandler
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:443    .text.HW_IPCC_SYS_CmdEvtHandler:0000001c $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:446    .text.HW_IPCC_Tx_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:452    .text.HW_IPCC_Tx_Handler:00000000 HW_IPCC_Tx_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:496    .text.HW_IPCC_Tx_Handler:00000054 $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:499    .text.HW_IPCC_SYS_EvtNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:505    .text.HW_IPCC_SYS_EvtNot:00000000 HW_IPCC_SYS_EvtNot
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:512    .text.HW_IPCC_SYS_EvtHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:517    .text.HW_IPCC_SYS_EvtHandler:00000000 HW_IPCC_SYS_EvtHandler
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:529    .text.HW_IPCC_SYS_EvtHandler:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:532    .text.HW_IPCC_MM_SendFreeBuf:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:538    .text.HW_IPCC_MM_SendFreeBuf:00000000 HW_IPCC_MM_SendFreeBuf
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:578    .text.HW_IPCC_MM_SendFreeBuf:00000034 $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:582    .text.HW_IPCC_TRACES_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:588    .text.HW_IPCC_TRACES_Init:00000000 HW_IPCC_TRACES_Init
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:615    .text.HW_IPCC_TRACES_Init:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:618    .text.HW_IPCC_TRACES_EvtNot:00000000 $t
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 14
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:18     .text.HW_IPCC_MM_FreeBufHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:23     .text.HW_IPCC_MM_FreeBufHandler:00000000 HW_IPCC_MM_FreeBufHandler
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:55     .text.HW_IPCC_MM_FreeBufHandler:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:707    .bss.FreeBufCb:00000000 FreeBufCb
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:59     .text.HW_IPCC_Enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:65     .text.HW_IPCC_Enable:00000000 HW_IPCC_Enable
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:104    .text.HW_IPCC_Enable:00000048 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:108    .text.HW_IPCC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:114    .text.HW_IPCC_Init:00000000 HW_IPCC_Init
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:144    .text.HW_IPCC_Init:0000003c $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:147    .text.HW_IPCC_BLE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:153    .text.HW_IPCC_BLE_Init:00000000 HW_IPCC_BLE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:180    .text.HW_IPCC_BLE_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:183    .text.HW_IPCC_BLE_SendCmd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:189    .text.HW_IPCC_BLE_SendCmd:00000000 HW_IPCC_BLE_SendCmd
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:200    .text.HW_IPCC_BLE_SendCmd:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:203    .text.HW_IPCC_BLE_SendAclData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:209    .text.HW_IPCC_BLE_SendAclData:00000000 HW_IPCC_BLE_SendAclData
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:238    .text.HW_IPCC_BLE_SendAclData:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:241    .text.HW_IPCC_BLE_AclDataAckNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:247    .text.HW_IPCC_BLE_AclDataAckNot:00000000 HW_IPCC_BLE_AclDataAckNot
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:254    .text.HW_IPCC_BLE_AclDataEvtHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:259    .text.HW_IPCC_BLE_AclDataEvtHandler:00000000 HW_IPCC_BLE_AclDataEvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:287    .text.HW_IPCC_BLE_AclDataEvtHandler:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:290    .text.HW_IPCC_BLE_RxEvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:296    .text.HW_IPCC_BLE_RxEvtNot:00000000 HW_IPCC_BLE_RxEvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:303    .text.HW_IPCC_BLE_EvtHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:308    .text.HW_IPCC_BLE_EvtHandler:00000000 HW_IPCC_BLE_EvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:320    .text.HW_IPCC_BLE_EvtHandler:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:323    .text.HW_IPCC_SYS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:329    .text.HW_IPCC_SYS_Init:00000000 HW_IPCC_SYS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:356    .text.HW_IPCC_SYS_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:359    .text.HW_IPCC_SYS_SendCmd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:365    .text.HW_IPCC_SYS_SendCmd:00000000 HW_IPCC_SYS_SendCmd
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:394    .text.HW_IPCC_SYS_SendCmd:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:397    .text.HW_IPCC_SYS_CmdEvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:403    .text.HW_IPCC_SYS_CmdEvtNot:00000000 HW_IPCC_SYS_CmdEvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:410    .text.HW_IPCC_SYS_CmdEvtHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:415    .text.HW_IPCC_SYS_CmdEvtHandler:00000000 HW_IPCC_SYS_CmdEvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:443    .text.HW_IPCC_SYS_CmdEvtHandler:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:446    .text.HW_IPCC_Tx_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:452    .text.HW_IPCC_Tx_Handler:00000000 HW_IPCC_Tx_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:496    .text.HW_IPCC_Tx_Handler:00000054 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:499    .text.HW_IPCC_SYS_EvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:505    .text.HW_IPCC_SYS_EvtNot:00000000 HW_IPCC_SYS_EvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:512    .text.HW_IPCC_SYS_EvtHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:517    .text.HW_IPCC_SYS_EvtHandler:00000000 HW_IPCC_SYS_EvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:529    .text.HW_IPCC_SYS_EvtHandler:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:532    .text.HW_IPCC_MM_SendFreeBuf:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:538    .text.HW_IPCC_MM_SendFreeBuf:00000000 HW_IPCC_MM_SendFreeBuf
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:578    .text.HW_IPCC_MM_SendFreeBuf:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:582    .text.HW_IPCC_TRACES_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:588    .text.HW_IPCC_TRACES_Init:00000000 HW_IPCC_TRACES_Init
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:615    .text.HW_IPCC_TRACES_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:618    .text.HW_IPCC_TRACES_EvtNot:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s 			page 14
 
 
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:624    .text.HW_IPCC_TRACES_EvtNot:00000000 HW_IPCC_TRACES_EvtNot
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:631    .text.HW_IPCC_TRACES_EvtHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:636    .text.HW_IPCC_TRACES_EvtHandler:00000000 HW_IPCC_TRACES_EvtHandler
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:648    .text.HW_IPCC_TRACES_EvtHandler:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:651    .text.HW_IPCC_Rx_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:657    .text.HW_IPCC_Rx_Handler:00000000 HW_IPCC_Rx_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:701    .text.HW_IPCC_Rx_Handler:00000054 $d
-C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:704    .bss.FreeBufCb:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:624    .text.HW_IPCC_TRACES_EvtNot:00000000 HW_IPCC_TRACES_EvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:631    .text.HW_IPCC_TRACES_EvtHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:636    .text.HW_IPCC_TRACES_EvtHandler:00000000 HW_IPCC_TRACES_EvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:648    .text.HW_IPCC_TRACES_EvtHandler:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:651    .text.HW_IPCC_Rx_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:657    .text.HW_IPCC_Rx_Handler:00000000 HW_IPCC_Rx_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:701    .text.HW_IPCC_Rx_Handler:00000054 $d
+C:\Users\Nathan\AppData\Local\Temp\ccoG16uN.s:704    .bss.FreeBufCb:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_EnableIRQ

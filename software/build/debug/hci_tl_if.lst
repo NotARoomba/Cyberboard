@@ -1,0 +1,105 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJO17mO.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"hci_tl_if.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c"
+  20              		.section	.text.hci_register_io_bus,"ax",%progbits
+  21              		.align	1
+  22              		.global	hci_register_io_bus
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	hci_register_io_bus:
+  28              	.LVL0:
+  29              	.LFB107:
+   1:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c **** /**
+   2:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  ******************************************************************************
+   3:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  * @file    hci_tl_if.c
+   4:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  * @author  MCD Application Team
+   5:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  * @brief   Transport layer interface to BLE
+   6:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  ******************************************************************************
+   7:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  * @attention
+   8:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  *
+   9:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  * Copyright (c) 2018-2021 STMicroelectronics.
+  10:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  * All rights reserved.
+  11:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  *
+  12:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  * This software is licensed under terms that can be found in the LICENSE file
+  13:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  * in the root directory of this software component.
+  14:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  * If no LICENSE file comes with this software, it is provided AS-IS.
+  15:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  *
+  16:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  ******************************************************************************
+  17:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****  */
+  18:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c **** 
+  19:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c **** #include "hci_tl.h"
+  20:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c **** #include "tl.h"
+  21:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c **** 
+  22:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c **** 
+  23:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c **** void hci_register_io_bus(tHciIO* fops)
+  24:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c **** {
+  30              		.loc 1 24 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJO17mO.s 			page 2
+
+
+  25:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****   /* Register IO bus services */
+  26:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****   fops->Init    = TL_BLE_Init;
+  35              		.loc 1 26 3 view .LVU1
+  36              		.loc 1 26 17 is_stmt 0 view .LVU2
+  37 0000 024B     		ldr	r3, .L2
+  38 0002 0360     		str	r3, [r0]
+  27:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****   fops->Send    = TL_BLE_SendCmd;
+  39              		.loc 1 27 3 is_stmt 1 view .LVU3
+  40              		.loc 1 27 17 is_stmt 0 view .LVU4
+  41 0004 024B     		ldr	r3, .L2+4
+  42 0006 0361     		str	r3, [r0, #16]
+  28:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c **** 
+  29:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c ****   return;
+  43              		.loc 1 29 3 is_stmt 1 view .LVU5
+  30:Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl_if.c **** }
+  44              		.loc 1 30 1 is_stmt 0 view .LVU6
+  45 0008 7047     		bx	lr
+  46              	.L3:
+  47 000a 00BF     		.align	2
+  48              	.L2:
+  49 000c 00000000 		.word	TL_BLE_Init
+  50 0010 00000000 		.word	TL_BLE_SendCmd
+  51              		.cfi_endproc
+  52              	.LFE107:
+  54              		.text
+  55              	.Letext0:
+  56              		.file 2 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+  57              		.file 3 "C:/Users/Nathan/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+  58              		.file 4 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/hci_tl.h"
+  59              		.file 5 "Middlewares/ST/STM32_WPAN/interface/patterns/ble_thread/tl/tl.h"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccJO17mO.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 hci_tl_if.c
+C:\Users\Nathan\AppData\Local\Temp\ccJO17mO.s:21     .text.hci_register_io_bus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccJO17mO.s:27     .text.hci_register_io_bus:00000000 hci_register_io_bus
+C:\Users\Nathan\AppData\Local\Temp\ccJO17mO.s:49     .text.hci_register_io_bus:0000000c $d
+
+UNDEFINED SYMBOLS
+TL_BLE_Init
+TL_BLE_SendCmd

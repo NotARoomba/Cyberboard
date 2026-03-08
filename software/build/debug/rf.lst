@@ -1,0 +1,95 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cckRjB8j.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"rf.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/rf.c"
+  20              		.section	.text.MX_RF_Init,"ax",%progbits
+  21              		.align	1
+  22              		.global	MX_RF_Init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	MX_RF_Init:
+  28              	.LFB1261:
+   1:Core/Src/rf.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/rf.c **** /**
+   3:Core/Src/rf.c ****   ******************************************************************************
+   4:Core/Src/rf.c ****   * @file    rf.c
+   5:Core/Src/rf.c ****   * @brief   This file provides code for the configuration
+   6:Core/Src/rf.c ****   *          of the RF instances.
+   7:Core/Src/rf.c ****   ******************************************************************************
+   8:Core/Src/rf.c ****   * @attention
+   9:Core/Src/rf.c ****   *
+  10:Core/Src/rf.c ****   * Copyright (c) 2026 STMicroelectronics.
+  11:Core/Src/rf.c ****   * All rights reserved.
+  12:Core/Src/rf.c ****   *
+  13:Core/Src/rf.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:Core/Src/rf.c ****   * in the root directory of this software component.
+  15:Core/Src/rf.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  16:Core/Src/rf.c ****   *
+  17:Core/Src/rf.c ****   ******************************************************************************
+  18:Core/Src/rf.c ****   */
+  19:Core/Src/rf.c **** /* USER CODE END Header */
+  20:Core/Src/rf.c **** /* Includes ------------------------------------------------------------------*/
+  21:Core/Src/rf.c **** #include "rf.h"
+  22:Core/Src/rf.c **** 
+  23:Core/Src/rf.c **** /* USER CODE BEGIN 0 */
+  24:Core/Src/rf.c **** 
+  25:Core/Src/rf.c **** /* USER CODE END 0 */
+  26:Core/Src/rf.c **** 
+  27:Core/Src/rf.c **** /* RF init function */
+  28:Core/Src/rf.c **** void MX_RF_Init(void)
+  29:Core/Src/rf.c **** {
+  29              		.loc 1 29 1 view -0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cckRjB8j.s 			page 2
+
+
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  30:Core/Src/rf.c **** 
+  31:Core/Src/rf.c ****   /* USER CODE BEGIN RF_Init 0 */
+  32:Core/Src/rf.c **** 
+  33:Core/Src/rf.c ****   /* USER CODE END RF_Init 0 */
+  34:Core/Src/rf.c **** 
+  35:Core/Src/rf.c ****   /* USER CODE BEGIN RF_Init 1 */
+  36:Core/Src/rf.c **** 
+  37:Core/Src/rf.c ****   /* USER CODE END RF_Init 1 */
+  38:Core/Src/rf.c ****   /* USER CODE BEGIN RF_Init 2 */
+  39:Core/Src/rf.c **** 
+  40:Core/Src/rf.c ****   /* USER CODE END RF_Init 2 */
+  41:Core/Src/rf.c **** 
+  42:Core/Src/rf.c **** }
+  34              		.loc 1 42 1 view .LVU1
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE1261:
+  39              		.text
+  40              	.Letext0:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cckRjB8j.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 rf.c
+C:\Users\Nathan\AppData\Local\Temp\cckRjB8j.s:21     .text.MX_RF_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cckRjB8j.s:27     .text.MX_RF_Init:00000000 MX_RF_Init
+
+NO UNDEFINED SYMBOLS

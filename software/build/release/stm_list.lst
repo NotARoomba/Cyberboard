@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 1
   58              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
   59 000e 83F31088 		MSR primask, r3
   60              	@ 0 "" 2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s 			page 2
 
 
   61              		.thumb
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 1
  119              	@ 0 "" 2
  120              		.thumb
  121              		.syntax unified
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s 			page 3
 
 
  122 0006 0860     		str	r0, [r1]	@ unaligned
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 1
  180 0000 10B5     		push	{r4, lr}
  181              		.syntax unified
  182              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s 			page 4
 
 
  183 0002 EFF31084 		MRS r4, primask
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 1
  241              	LST_insert_node_after:
  242              		@ args = 0, pretend = 0, frame = 0
  243              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s 			page 5
 
 
  244              		@ link register save eliminated.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 1
  300 0016 7047     		bx	lr
  302              		.section	.text.LST_get_size,"ax",%progbits
  303              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s 			page 6
 
 
  304              		.global	LST_get_size
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 1
  361 0008 0A60     		str	r2, [r1]
  362              		.syntax unified
  363              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s 			page 7
 
 
  364 000a 83F31088 		MSR primask, r3
@@ -395,34 +395,34 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 1
  397              		.syntax unified
  398 000e 7047     		bx	lr
  400              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm_list.c
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:18     .text.LST_init_head:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:24     .text.LST_init_head:00000000 LST_init_head
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:33     .text.LST_is_empty:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:39     .text.LST_is_empty:00000000 LST_is_empty
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:69     .text.LST_insert_head:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:75     .text.LST_insert_head:00000000 LST_insert_head
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:103    .text.LST_insert_tail:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:109    .text.LST_insert_tail:00000000 LST_insert_tail
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:137    .text.LST_remove_node:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:143    .text.LST_remove_node:00000000 LST_remove_node
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:171    .text.LST_remove_head:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:177    .text.LST_remove_head:00000000 LST_remove_head
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:203    .text.LST_remove_tail:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:209    .text.LST_remove_tail:00000000 LST_remove_tail
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:235    .text.LST_insert_node_after:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:241    .text.LST_insert_node_after:00000000 LST_insert_node_after
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:269    .text.LST_insert_node_before:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:275    .text.LST_insert_node_before:00000000 LST_insert_node_before
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:303    .text.LST_get_size:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:309    .text.LST_get_size:00000000 LST_get_size
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:341    .text.LST_get_next_node:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:347    .text.LST_get_next_node:00000000 LST_get_next_node
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:371    .text.LST_get_prev_node:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:377    .text.LST_get_prev_node:00000000 LST_get_prev_node
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:18     .text.LST_init_head:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:24     .text.LST_init_head:00000000 LST_init_head
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:33     .text.LST_is_empty:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:39     .text.LST_is_empty:00000000 LST_is_empty
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:69     .text.LST_insert_head:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:75     .text.LST_insert_head:00000000 LST_insert_head
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:103    .text.LST_insert_tail:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:109    .text.LST_insert_tail:00000000 LST_insert_tail
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:137    .text.LST_remove_node:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:143    .text.LST_remove_node:00000000 LST_remove_node
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:171    .text.LST_remove_head:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:177    .text.LST_remove_head:00000000 LST_remove_head
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:203    .text.LST_remove_tail:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:209    .text.LST_remove_tail:00000000 LST_remove_tail
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:235    .text.LST_insert_node_after:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:241    .text.LST_insert_node_after:00000000 LST_insert_node_after
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:269    .text.LST_insert_node_before:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:275    .text.LST_insert_node_before:00000000 LST_insert_node_before
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:303    .text.LST_get_size:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:309    .text.LST_get_size:00000000 LST_get_size
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:341    .text.LST_get_next_node:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:347    .text.LST_get_next_node:00000000 LST_get_next_node
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:371    .text.LST_get_prev_node:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRCjcls.s:377    .text.LST_get_prev_node:00000000 LST_get_prev_node
 
 NO UNDEFINED SYMBOLS

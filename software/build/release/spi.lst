@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s 			page 1
   56 0040 FBE7     		b	.L1
   57              	.L6:
   58 0042 00BF     		.align	2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s 			page 2
 
 
   59              	.L5:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s 			page 1
  115              	.L12:
  116 005a 00BF     		.align	2
  117              	.L11:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s 			page 3
 
 
  118 005c 00300140 		.word	1073819648
@@ -163,22 +163,22 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s 			page 1
  159      00000000 
  159      00000000 
  160              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 spi.c
-C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:18     .text.MX_SPI1_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:24     .text.MX_SPI1_Init:00000000 MX_SPI1_Init
-C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:60     .text.MX_SPI1_Init:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:158    .bss.hspi1:00000000 hspi1
-C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:64     .text.HAL_SPI_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:70     .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:118    .text.HAL_SPI_MspInit:0000005c $d
-C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:122    .text.HAL_SPI_MspDeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:128    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:150    .text.HAL_SPI_MspDeInit:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:155    .bss.hspi1:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s:18     .text.MX_SPI1_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s:24     .text.MX_SPI1_Init:00000000 MX_SPI1_Init
+C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s:60     .text.MX_SPI1_Init:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s:158    .bss.hspi1:00000000 hspi1
+C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s:64     .text.HAL_SPI_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s:70     .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s:118    .text.HAL_SPI_MspInit:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s:122    .text.HAL_SPI_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s:128    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s:150    .text.HAL_SPI_MspDeInit:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCfRZsd.s:155    .bss.hspi1:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_SPI_Init

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 1
   59              		.thumb_func
   61              	Config_HSE:
   62              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s 			page 2
 
 
   63              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 1
  121 0008 0E4A     		ldr	r2, .L16
  122 000a 0021     		movs	r1, #0
  123 000c 0420     		movs	r0, #4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s 			page 3
 
 
  124 000e FFF7FEFF 		bl	UTIL_SEQ_RegTask
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 1
  180              		@ sp needed
  181 001a 00BD     		pop	{pc}
  182              	.L22:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s 			page 4
 
 
  183 001c FFF7FEFF 		bl	APPD_EnableCPU2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 1
  240              		.syntax unified
  241              		.thumb
  242              		.thumb_func
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s 			page 5
 
 
  244              	MX_APPE_Config:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 1
  304 000a 08BD     		pop	{r3, pc}
  306              		.section	.text.MX_APPE_Init,"ax",%progbits
  307              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s 			page 6
 
 
  308              		.global	MX_APPE_Init
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 1
  365              	.L53:
  366              		.align	2
  367              	.L52:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s 			page 7
 
 
  368 0030 00ED00E0 		.word	-536810240
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 1
  431              		.global	shci_cmd_resp_wait
  432              		.syntax unified
  433              		.thumb
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s 			page 8
 
 
  434              		.thumb_func
@@ -459,67 +459,67 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 1
  464      00000000 
  464      00000000 
  465              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 9
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 app_entry.c
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:18     .text.Init_Rtc:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:23     .text.Init_Rtc:00000000 Init_Rtc
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:41     .text.Init_Rtc:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:44     .text.APPE_SysStatusNot:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:49     .text.APPE_SysStatusNot:00000000 APPE_SysStatusNot
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:56     .text.Config_HSE:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:61     .text.Config_HSE:00000000 Config_HSE
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:81     .text.Config_HSE:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:84     .text.SystemPower_Config:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:89     .text.SystemPower_Config:00000000 SystemPower_Config
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:107    .text.SystemPower_Config:00000028 $d
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:110    .text.appe_Tl_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:115    .text.appe_Tl_Init:00000000 appe_Tl_Init
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:149    .text.appe_Tl_Init:00000044 $d
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:458    MB_MEM2:00000218 SystemCmdBuffer
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:217    .text.APPE_SysUserEvtRx:00000000 APPE_SysUserEvtRx
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:448    MB_MEM2:00000000 BleSpareEvtBuffer
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:453    MB_MEM2:0000010c SystemSpareEvtBuffer
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:463    MB_MEM2:00000324 EvtPool
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:158    .text.APPE_SysEvtReadyProcessing:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:163    .text.APPE_SysEvtReadyProcessing:00000000 APPE_SysEvtReadyProcessing
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:209    .text.APPE_SysEvtReadyProcessing:0000005c $d
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:212    .text.APPE_SysUserEvtRx:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:238    .text.MX_APPE_Config:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:244    .text.MX_APPE_Config:00000000 MX_APPE_Config
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:256    .text.MX_APPE_Config:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:259    .text.Init_Smps:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:265    .text.Init_Smps:00000000 Init_Smps
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:272    .text.Init_Exti:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:278    .text.Init_Exti:00000000 Init_Exti
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:290    .text.Init_Exti:00000010 $d
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:293    .text.System_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:298    .text.System_Init:00000000 System_Init
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:307    .text.MX_APPE_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:313    .text.MX_APPE_Init:00000000 MX_APPE_Init
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:327    .text.MX_APPE_Init:00000018 $d
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:330    .text.HAL_Delay:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:336    .text.HAL_Delay:00000000 HAL_Delay
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:368    .text.HAL_Delay:00000030 $d
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:371    .text.MX_APPE_Process:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:377    .text.MX_APPE_Process:00000000 MX_APPE_Process
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:386    .text.UTIL_SEQ_Idle:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:392    .text.UTIL_SEQ_Idle:00000000 UTIL_SEQ_Idle
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:399    .text.shci_notify_asynch_evt:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:405    .text.shci_notify_asynch_evt:00000000 shci_notify_asynch_evt
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:415    .text.shci_cmd_resp_release:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:421    .text.shci_cmd_resp_release:00000000 shci_cmd_resp_release
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:430    .text.shci_cmd_resp_wait:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:436    .text.shci_cmd_resp_wait:00000000 shci_cmd_resp_wait
-C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:445    MB_MEM2:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:18     .text.Init_Rtc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:23     .text.Init_Rtc:00000000 Init_Rtc
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:41     .text.Init_Rtc:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:44     .text.APPE_SysStatusNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:49     .text.APPE_SysStatusNot:00000000 APPE_SysStatusNot
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:56     .text.Config_HSE:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:61     .text.Config_HSE:00000000 Config_HSE
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:81     .text.Config_HSE:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:84     .text.SystemPower_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:89     .text.SystemPower_Config:00000000 SystemPower_Config
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:107    .text.SystemPower_Config:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:110    .text.appe_Tl_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:115    .text.appe_Tl_Init:00000000 appe_Tl_Init
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:149    .text.appe_Tl_Init:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:458    MB_MEM2:00000218 SystemCmdBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:217    .text.APPE_SysUserEvtRx:00000000 APPE_SysUserEvtRx
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:448    MB_MEM2:00000000 BleSpareEvtBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:453    MB_MEM2:0000010c SystemSpareEvtBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:463    MB_MEM2:00000324 EvtPool
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:158    .text.APPE_SysEvtReadyProcessing:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:163    .text.APPE_SysEvtReadyProcessing:00000000 APPE_SysEvtReadyProcessing
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:209    .text.APPE_SysEvtReadyProcessing:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:212    .text.APPE_SysUserEvtRx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:238    .text.MX_APPE_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:244    .text.MX_APPE_Config:00000000 MX_APPE_Config
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:256    .text.MX_APPE_Config:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:259    .text.Init_Smps:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:265    .text.Init_Smps:00000000 Init_Smps
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:272    .text.Init_Exti:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:278    .text.Init_Exti:00000000 Init_Exti
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:290    .text.Init_Exti:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:293    .text.System_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:298    .text.System_Init:00000000 System_Init
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:307    .text.MX_APPE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:313    .text.MX_APPE_Init:00000000 MX_APPE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:327    .text.MX_APPE_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:330    .text.HAL_Delay:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:336    .text.HAL_Delay:00000000 HAL_Delay
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:368    .text.HAL_Delay:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:371    .text.MX_APPE_Process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:377    .text.MX_APPE_Process:00000000 MX_APPE_Process
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:386    .text.UTIL_SEQ_Idle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:392    .text.UTIL_SEQ_Idle:00000000 UTIL_SEQ_Idle
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:399    .text.shci_notify_asynch_evt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:405    .text.shci_notify_asynch_evt:00000000 shci_notify_asynch_evt
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:415    .text.shci_cmd_resp_release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:421    .text.shci_cmd_resp_release:00000000 shci_cmd_resp_release
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:430    .text.shci_cmd_resp_wait:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:436    .text.shci_cmd_resp_wait:00000000 shci_cmd_resp_wait
+C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s:445    MB_MEM2:00000000 $d
 
 UNDEFINED SYMBOLS
 OTP_Read
 UTIL_LPM_Init
 TL_Init
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 10
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccubcLkd.s 			page 10
 
 
 UTIL_SEQ_RegTask
