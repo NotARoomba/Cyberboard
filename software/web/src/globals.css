@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Blender Pro";
+  src: url("/fonts/BlenderProBold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cynatar";
+  src: url("/fonts/Cynatar.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-background: #0a0a0a;
+  --color-foreground: #ededed;
+  --color-cyber: #f4f244;
+  --color-cyber-dim: rgba(244, 242, 68, 0.5);
+  --color-cyber-glow: rgba(244, 242, 68, 0.15);
+  --color-cyber-dark: #2a2a00;
+  --color-card: #0d0d0d;
+  --color-card-hover: #141414;
+  --color-border: #1a1a1a;
+  --color-border-cyber: rgba(244, 242, 68, 0.2);
+  --color-muted: #555555;
+  --color-text-dim: #888888;
+  --color-danger: #ff4444;
+  --color-success: #44ff88;
+  --font-display: "Blender Pro", "Segoe UI", system-ui, sans-serif;
+  --font-title: "Cynatar", "Blender Pro", "Segoe UI", sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #f4f244 #0a0a0a;
+}
+
+body {
+  background: #0a0a0a;
+  color: #ededed;
+  font-family: var(--font-display);
+}
+
+.font-title {
+  font-family: var(--font-title);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.glow-text {
+  text-shadow:
+    0 0 10px rgba(244, 242, 68, 0.5),
+    0 0 30px rgba(244, 242, 68, 0.2);
+}
+
+.glow-text-strong {
+  text-shadow:
+    0 0 10px rgba(244, 242, 68, 0.7),
+    0 0 40px rgba(244, 242, 68, 0.4),
+    0 0 80px rgba(244, 242, 68, 0.2);
+}
+
+.glow-border {
+  box-shadow:
+    0 0 10px rgba(244, 242, 68, 0.1),
+    inset 0 0 10px rgba(244, 242, 68, 0.03);
+}
+
+.glow-border-strong {
+  box-shadow:
+    0 0 20px rgba(244, 242, 68, 0.2),
+    inset 0 0 20px rgba(244, 242, 68, 0.05);
+}
+
+.scanlines {
+  position: relative;
+}
+
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes pulse-cyber {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(244, 242, 68, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(244, 242, 68, 0.8);
+  }
+}
+
+.pulse-cyber {
+  animation: pulse-cyber 2s ease-in-out infinite;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0.8;
+  }
+  94% {
+    opacity: 1;
+  }
+  96% {
+    opacity: 0.9;
+  }
+  97% {
+    opacity: 1;
+  }
+}
+
+.flicker {
+  animation: flicker 4s ease-in-out infinite;
+}
+
+/* Cyberpunk grid background */
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(244, 242, 68, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 242, 68, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Input styling */
+input[type="password"],
+input[type="text"] {
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
+  color: #ededed;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-display);
+  transition: border-color 0.2s;
+}
+
+input[type="password"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: rgba(244, 242, 68, 0.5);
+  box-shadow: 0 0 10px rgba(244, 242, 68, 0.1);
+}
