@@ -1,0 +1,731 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"tl_mbox.c"
+  16              		.text
+  17              		.section	.text.SendFreeBuf,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	SendFreeBuf:
+  24              		@ args = 0, pretend = 0, frame = 8
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 00B5     		push	{lr}
+  27 0002 83B0     		sub	sp, sp, #12
+  28 0004 09E0     		b	.L2
+  29              	.L3:
+  30 0006 01A9     		add	r1, sp, #4
+  31 0008 0748     		ldr	r0, .L5
+  32 000a FFF7FEFF 		bl	LST_remove_head
+  33 000e 074B     		ldr	r3, .L5+4
+  34 0010 1B69     		ldr	r3, [r3, #16]
+  35 0012 0199     		ldr	r1, [sp, #4]
+  36 0014 1869     		ldr	r0, [r3, #16]
+  37 0016 FFF7FEFF 		bl	LST_insert_tail
+  38              	.L2:
+  39 001a 0348     		ldr	r0, .L5
+  40 001c FFF7FEFF 		bl	LST_is_empty
+  41 0020 0028     		cmp	r0, #0
+  42 0022 F0D0     		beq	.L3
+  43 0024 03B0     		add	sp, sp, #12
+  44              		@ sp needed
+  45 0026 00BD     		pop	{pc}
+  46              	.L6:
+  47              		.align	2
+  48              	.L5:
+  49 0028 00000000 		.word	LocalFreeBufQueue
+  50 002c 00000000 		.word	TL_RefTable
+  52              		.section	.text.TL_Enable,"ax",%progbits
+  53              		.align	1
+  54              		.global	TL_Enable
+  55              		.syntax unified
+  56              		.thumb
+  57              		.thumb_func
+  59              	TL_Enable:
+  60              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 2
+
+
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62 0000 08B5     		push	{r3, lr}
+  63 0002 FFF7FEFF 		bl	HW_IPCC_Enable
+  64 0006 08BD     		pop	{r3, pc}
+  66              		.section	.text.TL_Init,"ax",%progbits
+  67              		.align	1
+  68              		.global	TL_Init
+  69              		.syntax unified
+  70              		.thumb
+  71              		.thumb_func
+  73              	TL_Init:
+  74              		@ args = 0, pretend = 0, frame = 0
+  75              		@ frame_needed = 0, uses_anonymous_args = 0
+  76 0000 08B5     		push	{r3, lr}
+  77 0002 0C4B     		ldr	r3, .L11
+  78 0004 0C4A     		ldr	r2, .L11+4
+  79 0006 1A60     		str	r2, [r3]
+  80 0008 0C4A     		ldr	r2, .L11+8
+  81 000a 5A60     		str	r2, [r3, #4]
+  82 000c 0C4A     		ldr	r2, .L11+12
+  83 000e 9A60     		str	r2, [r3, #8]
+  84 0010 0C4A     		ldr	r2, .L11+16
+  85 0012 1A62     		str	r2, [r3, #32]
+  86 0014 0C4A     		ldr	r2, .L11+20
+  87 0016 5A62     		str	r2, [r3, #36]
+  88 0018 0C4A     		ldr	r2, .L11+24
+  89 001a DA60     		str	r2, [r3, #12]
+  90 001c 0C4A     		ldr	r2, .L11+28
+  91 001e 1A61     		str	r2, [r3, #16]
+  92 0020 0C4A     		ldr	r2, .L11+32
+  93 0022 5A61     		str	r2, [r3, #20]
+  94 0024 0C4A     		ldr	r2, .L11+36
+  95 0026 9A61     		str	r2, [r3, #24]
+  96 0028 0C4A     		ldr	r2, .L11+40
+  97 002a DA61     		str	r2, [r3, #28]
+  98 002c FFF7FEFF 		bl	HW_IPCC_Init
+  99 0030 08BD     		pop	{r3, pc}
+ 100              	.L12:
+ 101 0032 00BF     		.align	2
+ 102              	.L11:
+ 103 0034 00000000 		.word	TL_RefTable
+ 104 0038 90000000 		.word	TL_DeviceInfoTable
+ 105 003c 80000000 		.word	TL_BleTable
+ 106 0040 70000000 		.word	TL_ThreadTable
+ 107 0044 68000000 		.word	TL_LldTestsTable
+ 108 0048 60000000 		.word	TL_BleLldTable
+ 109 004c 58000000 		.word	TL_SysTable
+ 110 0050 3C000000 		.word	TL_MemManagerTable
+ 111 0054 38000000 		.word	TL_TracesTable
+ 112 0058 2C000000 		.word	TL_Mac_802_15_4_Table
+ 113 005c 20000000 		.word	TL_Zigbee_Table
+ 115              		.section	.text.TL_BLE_Init,"ax",%progbits
+ 116              		.align	1
+ 117              		.global	TL_BLE_Init
+ 118              		.syntax unified
+ 119              		.thumb
+ 120              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 3
+
+
+ 122              	TL_BLE_Init:
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 0000 38B5     		push	{r3, r4, r5, lr}
+ 126 0002 0446     		mov	r4, r0
+ 127 0004 0B4D     		ldr	r5, .L15
+ 128 0006 2846     		mov	r0, r5
+ 129 0008 FFF7FEFF 		bl	LST_init_head
+ 130 000c 0A4B     		ldr	r3, .L15+4
+ 131 000e 5B68     		ldr	r3, [r3, #4]
+ 132 0010 A268     		ldr	r2, [r4, #8]
+ 133 0012 1A60     		str	r2, [r3]
+ 134 0014 E268     		ldr	r2, [r4, #12]
+ 135 0016 DA60     		str	r2, [r3, #12]
+ 136 0018 084A     		ldr	r2, .L15+8
+ 137 001a 5A60     		str	r2, [r3, #4]
+ 138 001c 9D60     		str	r5, [r3, #8]
+ 139 001e FFF7FEFF 		bl	HW_IPCC_BLE_Init
+ 140 0022 2268     		ldr	r2, [r4]
+ 141 0024 064B     		ldr	r3, .L15+12
+ 142 0026 1A60     		str	r2, [r3]
+ 143 0028 6268     		ldr	r2, [r4, #4]
+ 144 002a 064B     		ldr	r3, .L15+16
+ 145 002c 1A60     		str	r2, [r3]
+ 146 002e 0020     		movs	r0, #0
+ 147 0030 38BD     		pop	{r3, r4, r5, pc}
+ 148              	.L16:
+ 149 0032 00BF     		.align	2
+ 150              	.L15:
+ 151 0034 08000000 		.word	EvtQueue
+ 152 0038 00000000 		.word	TL_RefTable
+ 153 003c 00000000 		.word	CsBuffer
+ 154 0040 00000000 		.word	BLE_IoBusEvtCallBackFunction
+ 155 0044 00000000 		.word	BLE_IoBusAclDataTxAck
+ 157              		.section	.text.TL_BLE_SendCmd,"ax",%progbits
+ 158              		.align	1
+ 159              		.global	TL_BLE_SendCmd
+ 160              		.syntax unified
+ 161              		.thumb
+ 162              		.thumb_func
+ 164              	TL_BLE_SendCmd:
+ 165              		@ args = 0, pretend = 0, frame = 0
+ 166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 167 0000 08B5     		push	{r3, lr}
+ 168 0002 054B     		ldr	r3, .L19
+ 169 0004 5A68     		ldr	r2, [r3, #4]
+ 170 0006 1268     		ldr	r2, [r2]
+ 171 0008 0121     		movs	r1, #1
+ 172 000a 1172     		strb	r1, [r2, #8]
+ 173 000c 5B68     		ldr	r3, [r3, #4]
+ 174 000e FFF7FEFF 		bl	HW_IPCC_BLE_SendCmd
+ 175 0012 0020     		movs	r0, #0
+ 176 0014 08BD     		pop	{r3, pc}
+ 177              	.L20:
+ 178 0016 00BF     		.align	2
+ 179              	.L19:
+ 180 0018 00000000 		.word	TL_RefTable
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 4
+
+
+ 182              		.section	.text.HW_IPCC_BLE_RxEvtNot,"ax",%progbits
+ 183              		.align	1
+ 184              		.global	HW_IPCC_BLE_RxEvtNot
+ 185              		.syntax unified
+ 186              		.thumb
+ 187              		.thumb_func
+ 189              	HW_IPCC_BLE_RxEvtNot:
+ 190              		@ args = 0, pretend = 0, frame = 8
+ 191              		@ frame_needed = 0, uses_anonymous_args = 0
+ 192 0000 00B5     		push	{lr}
+ 193 0002 83B0     		sub	sp, sp, #12
+ 194 0004 07E0     		b	.L22
+ 195              	.L23:
+ 196 0006 01A9     		add	r1, sp, #4
+ 197 0008 0648     		ldr	r0, .L25
+ 198 000a FFF7FEFF 		bl	LST_remove_head
+ 199 000e 064B     		ldr	r3, .L25+4
+ 200 0010 1B68     		ldr	r3, [r3]
+ 201 0012 0198     		ldr	r0, [sp, #4]
+ 202 0014 9847     		blx	r3
+ 203              	.L22:
+ 204 0016 0348     		ldr	r0, .L25
+ 205 0018 FFF7FEFF 		bl	LST_is_empty
+ 206 001c 0028     		cmp	r0, #0
+ 207 001e F2D0     		beq	.L23
+ 208 0020 03B0     		add	sp, sp, #12
+ 209              		@ sp needed
+ 210 0022 00BD     		pop	{pc}
+ 211              	.L26:
+ 212              		.align	2
+ 213              	.L25:
+ 214 0024 08000000 		.word	EvtQueue
+ 215 0028 00000000 		.word	BLE_IoBusEvtCallBackFunction
+ 217              		.section	.text.TL_BLE_SendAclData,"ax",%progbits
+ 218              		.align	1
+ 219              		.global	TL_BLE_SendAclData
+ 220              		.syntax unified
+ 221              		.thumb
+ 222              		.thumb_func
+ 224              	TL_BLE_SendAclData:
+ 225              		@ args = 0, pretend = 0, frame = 0
+ 226              		@ frame_needed = 0, uses_anonymous_args = 0
+ 227 0000 08B5     		push	{r3, lr}
+ 228 0002 054B     		ldr	r3, .L29
+ 229 0004 5A68     		ldr	r2, [r3, #4]
+ 230 0006 D268     		ldr	r2, [r2, #12]
+ 231 0008 0221     		movs	r1, #2
+ 232 000a 1172     		strb	r1, [r2, #8]
+ 233 000c 5B68     		ldr	r3, [r3, #4]
+ 234 000e FFF7FEFF 		bl	HW_IPCC_BLE_SendAclData
+ 235 0012 0020     		movs	r0, #0
+ 236 0014 08BD     		pop	{r3, pc}
+ 237              	.L30:
+ 238 0016 00BF     		.align	2
+ 239              	.L29:
+ 240 0018 00000000 		.word	TL_RefTable
+ 242              		.section	.text.HW_IPCC_BLE_AclDataAckNot,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 5
+
+
+ 243              		.align	1
+ 244              		.global	HW_IPCC_BLE_AclDataAckNot
+ 245              		.syntax unified
+ 246              		.thumb
+ 247              		.thumb_func
+ 249              	HW_IPCC_BLE_AclDataAckNot:
+ 250              		@ args = 0, pretend = 0, frame = 0
+ 251              		@ frame_needed = 0, uses_anonymous_args = 0
+ 252 0000 08B5     		push	{r3, lr}
+ 253 0002 024B     		ldr	r3, .L33
+ 254 0004 1B68     		ldr	r3, [r3]
+ 255 0006 9847     		blx	r3
+ 256 0008 08BD     		pop	{r3, pc}
+ 257              	.L34:
+ 258 000a 00BF     		.align	2
+ 259              	.L33:
+ 260 000c 00000000 		.word	BLE_IoBusAclDataTxAck
+ 262              		.section	.text.TL_SYS_Init,"ax",%progbits
+ 263              		.align	1
+ 264              		.global	TL_SYS_Init
+ 265              		.syntax unified
+ 266              		.thumb
+ 267              		.thumb_func
+ 269              	TL_SYS_Init:
+ 270              		@ args = 0, pretend = 0, frame = 0
+ 271              		@ frame_needed = 0, uses_anonymous_args = 0
+ 272 0000 38B5     		push	{r3, r4, r5, lr}
+ 273 0002 0446     		mov	r4, r0
+ 274 0004 094D     		ldr	r5, .L37
+ 275 0006 2846     		mov	r0, r5
+ 276 0008 FFF7FEFF 		bl	LST_init_head
+ 277 000c 084B     		ldr	r3, .L37+4
+ 278 000e DB68     		ldr	r3, [r3, #12]
+ 279 0010 A268     		ldr	r2, [r4, #8]
+ 280 0012 1A60     		str	r2, [r3]
+ 281 0014 5D60     		str	r5, [r3, #4]
+ 282 0016 FFF7FEFF 		bl	HW_IPCC_SYS_Init
+ 283 001a 2268     		ldr	r2, [r4]
+ 284 001c 054B     		ldr	r3, .L37+8
+ 285 001e 1A60     		str	r2, [r3]
+ 286 0020 6268     		ldr	r2, [r4, #4]
+ 287 0022 054B     		ldr	r3, .L37+12
+ 288 0024 1A60     		str	r2, [r3]
+ 289 0026 0020     		movs	r0, #0
+ 290 0028 38BD     		pop	{r3, r4, r5, pc}
+ 291              	.L38:
+ 292 002a 00BF     		.align	2
+ 293              	.L37:
+ 294 002c 00000000 		.word	SystemEvtQueue
+ 295 0030 00000000 		.word	TL_RefTable
+ 296 0034 00000000 		.word	SYS_CMD_IoBusCallBackFunction
+ 297 0038 00000000 		.word	SYS_EVT_IoBusCallBackFunction
+ 299              		.section	.text.TL_SYS_SendCmd,"ax",%progbits
+ 300              		.align	1
+ 301              		.global	TL_SYS_SendCmd
+ 302              		.syntax unified
+ 303              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 6
+
+
+ 304              		.thumb_func
+ 306              	TL_SYS_SendCmd:
+ 307              		@ args = 0, pretend = 0, frame = 0
+ 308              		@ frame_needed = 0, uses_anonymous_args = 0
+ 309 0000 08B5     		push	{r3, lr}
+ 310 0002 054B     		ldr	r3, .L41
+ 311 0004 DA68     		ldr	r2, [r3, #12]
+ 312 0006 1268     		ldr	r2, [r2]
+ 313 0008 1021     		movs	r1, #16
+ 314 000a 1172     		strb	r1, [r2, #8]
+ 315 000c DB68     		ldr	r3, [r3, #12]
+ 316 000e FFF7FEFF 		bl	HW_IPCC_SYS_SendCmd
+ 317 0012 0020     		movs	r0, #0
+ 318 0014 08BD     		pop	{r3, pc}
+ 319              	.L42:
+ 320 0016 00BF     		.align	2
+ 321              	.L41:
+ 322 0018 00000000 		.word	TL_RefTable
+ 324              		.section	.text.HW_IPCC_SYS_CmdEvtNot,"ax",%progbits
+ 325              		.align	1
+ 326              		.global	HW_IPCC_SYS_CmdEvtNot
+ 327              		.syntax unified
+ 328              		.thumb
+ 329              		.thumb_func
+ 331              	HW_IPCC_SYS_CmdEvtNot:
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 0, uses_anonymous_args = 0
+ 334 0000 08B5     		push	{r3, lr}
+ 335 0002 044B     		ldr	r3, .L45
+ 336 0004 DA68     		ldr	r2, [r3, #12]
+ 337 0006 DA68     		ldr	r2, [r3, #12]
+ 338 0008 034B     		ldr	r3, .L45+4
+ 339 000a 1B68     		ldr	r3, [r3]
+ 340 000c 1068     		ldr	r0, [r2]
+ 341 000e 9847     		blx	r3
+ 342 0010 08BD     		pop	{r3, pc}
+ 343              	.L46:
+ 344 0012 00BF     		.align	2
+ 345              	.L45:
+ 346 0014 00000000 		.word	TL_RefTable
+ 347 0018 00000000 		.word	SYS_CMD_IoBusCallBackFunction
+ 349              		.section	.text.HW_IPCC_SYS_EvtNot,"ax",%progbits
+ 350              		.align	1
+ 351              		.global	HW_IPCC_SYS_EvtNot
+ 352              		.syntax unified
+ 353              		.thumb
+ 354              		.thumb_func
+ 356              	HW_IPCC_SYS_EvtNot:
+ 357              		@ args = 0, pretend = 0, frame = 8
+ 358              		@ frame_needed = 0, uses_anonymous_args = 0
+ 359 0000 00B5     		push	{lr}
+ 360 0002 83B0     		sub	sp, sp, #12
+ 361 0004 07E0     		b	.L48
+ 362              	.L49:
+ 363 0006 01A9     		add	r1, sp, #4
+ 364 0008 0648     		ldr	r0, .L51
+ 365 000a FFF7FEFF 		bl	LST_remove_head
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 7
+
+
+ 366 000e 064B     		ldr	r3, .L51+4
+ 367 0010 1B68     		ldr	r3, [r3]
+ 368 0012 0198     		ldr	r0, [sp, #4]
+ 369 0014 9847     		blx	r3
+ 370              	.L48:
+ 371 0016 0348     		ldr	r0, .L51
+ 372 0018 FFF7FEFF 		bl	LST_is_empty
+ 373 001c 0028     		cmp	r0, #0
+ 374 001e F2D0     		beq	.L49
+ 375 0020 03B0     		add	sp, sp, #12
+ 376              		@ sp needed
+ 377 0022 00BD     		pop	{pc}
+ 378              	.L52:
+ 379              		.align	2
+ 380              	.L51:
+ 381 0024 00000000 		.word	SystemEvtQueue
+ 382 0028 00000000 		.word	SYS_EVT_IoBusCallBackFunction
+ 384              		.section	.text.TL_MM_Init,"ax",%progbits
+ 385              		.align	1
+ 386              		.global	TL_MM_Init
+ 387              		.syntax unified
+ 388              		.thumb
+ 389              		.thumb_func
+ 391              	TL_MM_Init:
+ 392              		@ args = 0, pretend = 0, frame = 0
+ 393              		@ frame_needed = 0, uses_anonymous_args = 0
+ 394 0000 38B5     		push	{r3, r4, r5, lr}
+ 395 0002 0446     		mov	r4, r0
+ 396 0004 0C4D     		ldr	r5, .L55
+ 397 0006 2846     		mov	r0, r5
+ 398 0008 FFF7FEFF 		bl	LST_init_head
+ 399 000c 0B48     		ldr	r0, .L55+4
+ 400 000e FFF7FEFF 		bl	LST_init_head
+ 401 0012 0B4B     		ldr	r3, .L55+8
+ 402 0014 1B69     		ldr	r3, [r3, #16]
+ 403 0016 0B4A     		ldr	r2, .L55+12
+ 404 0018 1360     		str	r3, [r2]
+ 405 001a A268     		ldr	r2, [r4, #8]
+ 406 001c 9A60     		str	r2, [r3, #8]
+ 407 001e E268     		ldr	r2, [r4, #12]
+ 408 0020 DA60     		str	r2, [r3, #12]
+ 409 0022 1D61     		str	r5, [r3, #16]
+ 410 0024 2268     		ldr	r2, [r4]
+ 411 0026 1A60     		str	r2, [r3]
+ 412 0028 6268     		ldr	r2, [r4, #4]
+ 413 002a 5A60     		str	r2, [r3, #4]
+ 414 002c 2269     		ldr	r2, [r4, #16]
+ 415 002e 5A61     		str	r2, [r3, #20]
+ 416 0030 6269     		ldr	r2, [r4, #20]
+ 417 0032 9A61     		str	r2, [r3, #24]
+ 418 0034 38BD     		pop	{r3, r4, r5, pc}
+ 419              	.L56:
+ 420 0036 00BF     		.align	2
+ 421              	.L55:
+ 422 0038 18000000 		.word	FreeBufQueue
+ 423 003c 00000000 		.word	LocalFreeBufQueue
+ 424 0040 00000000 		.word	TL_RefTable
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 8
+
+
+ 425 0044 00000000 		.word	p_mem_manager_table.0
+ 427              		.section	.text.TL_MM_EvtDone,"ax",%progbits
+ 428              		.align	1
+ 429              		.global	TL_MM_EvtDone
+ 430              		.syntax unified
+ 431              		.thumb
+ 432              		.thumb_func
+ 434              	TL_MM_EvtDone:
+ 435              		@ args = 0, pretend = 0, frame = 0
+ 436              		@ frame_needed = 0, uses_anonymous_args = 0
+ 437 0000 08B5     		push	{r3, lr}
+ 438 0002 0146     		mov	r1, r0
+ 439 0004 0348     		ldr	r0, .L59
+ 440 0006 FFF7FEFF 		bl	LST_insert_tail
+ 441 000a 0348     		ldr	r0, .L59+4
+ 442 000c FFF7FEFF 		bl	HW_IPCC_MM_SendFreeBuf
+ 443 0010 08BD     		pop	{r3, pc}
+ 444              	.L60:
+ 445 0012 00BF     		.align	2
+ 446              	.L59:
+ 447 0014 00000000 		.word	LocalFreeBufQueue
+ 448 0018 00000000 		.word	SendFreeBuf
+ 450              		.section	.text.TL_TRACES_Init,"ax",%progbits
+ 451              		.align	1
+ 452              		.global	TL_TRACES_Init
+ 453              		.syntax unified
+ 454              		.thumb
+ 455              		.thumb_func
+ 457              	TL_TRACES_Init:
+ 458              		@ args = 0, pretend = 0, frame = 0
+ 459              		@ frame_needed = 0, uses_anonymous_args = 0
+ 460 0000 10B5     		push	{r4, lr}
+ 461 0002 054C     		ldr	r4, .L63
+ 462 0004 2046     		mov	r0, r4
+ 463 0006 FFF7FEFF 		bl	LST_init_head
+ 464 000a 044B     		ldr	r3, .L63+4
+ 465 000c 5B69     		ldr	r3, [r3, #20]
+ 466 000e 1C60     		str	r4, [r3]
+ 467 0010 FFF7FEFF 		bl	HW_IPCC_TRACES_Init
+ 468 0014 10BD     		pop	{r4, pc}
+ 469              	.L64:
+ 470 0016 00BF     		.align	2
+ 471              	.L63:
+ 472 0018 10000000 		.word	TracesEvtQueue
+ 473 001c 00000000 		.word	TL_RefTable
+ 475              		.section	.text.TL_TRACES_EvtReceived,"ax",%progbits
+ 476              		.align	1
+ 477              		.weak	TL_TRACES_EvtReceived
+ 478              		.syntax unified
+ 479              		.thumb
+ 480              		.thumb_func
+ 482              	TL_TRACES_EvtReceived:
+ 483              		@ args = 0, pretend = 0, frame = 0
+ 484              		@ frame_needed = 0, uses_anonymous_args = 0
+ 485              		@ link register save eliminated.
+ 486 0000 7047     		bx	lr
+ 488              		.section	.text.HW_IPCC_TRACES_EvtNot,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 9
+
+
+ 489              		.align	1
+ 490              		.global	HW_IPCC_TRACES_EvtNot
+ 491              		.syntax unified
+ 492              		.thumb
+ 493              		.thumb_func
+ 495              	HW_IPCC_TRACES_EvtNot:
+ 496              		@ args = 0, pretend = 0, frame = 8
+ 497              		@ frame_needed = 0, uses_anonymous_args = 0
+ 498 0000 00B5     		push	{lr}
+ 499 0002 83B0     		sub	sp, sp, #12
+ 500 0004 06E0     		b	.L67
+ 501              	.L68:
+ 502 0006 01A9     		add	r1, sp, #4
+ 503 0008 0648     		ldr	r0, .L70
+ 504 000a FFF7FEFF 		bl	LST_remove_head
+ 505 000e 0198     		ldr	r0, [sp, #4]
+ 506 0010 FFF7FEFF 		bl	TL_TRACES_EvtReceived
+ 507              	.L67:
+ 508 0014 0348     		ldr	r0, .L70
+ 509 0016 FFF7FEFF 		bl	LST_is_empty
+ 510 001a 0028     		cmp	r0, #0
+ 511 001c F3D0     		beq	.L68
+ 512 001e 03B0     		add	sp, sp, #12
+ 513              		@ sp needed
+ 514 0020 00BD     		pop	{pc}
+ 515              	.L71:
+ 516 0022 00BF     		.align	2
+ 517              	.L70:
+ 518 0024 10000000 		.word	TracesEvtQueue
+ 520              		.section	.bss.p_mem_manager_table.0,"aw",%nobits
+ 521              		.align	2
+ 524              	p_mem_manager_table.0:
+ 525 0000 00000000 		.space	4
+ 526              		.section	.bss.SYS_EVT_IoBusCallBackFunction,"aw",%nobits
+ 527              		.align	2
+ 530              	SYS_EVT_IoBusCallBackFunction:
+ 531 0000 00000000 		.space	4
+ 532              		.section	.bss.SYS_CMD_IoBusCallBackFunction,"aw",%nobits
+ 533              		.align	2
+ 536              	SYS_CMD_IoBusCallBackFunction:
+ 537 0000 00000000 		.space	4
+ 538              		.section	.bss.BLE_IoBusAclDataTxAck,"aw",%nobits
+ 539              		.align	2
+ 542              	BLE_IoBusAclDataTxAck:
+ 543 0000 00000000 		.space	4
+ 544              		.section	.bss.BLE_IoBusEvtCallBackFunction,"aw",%nobits
+ 545              		.align	2
+ 548              	BLE_IoBusEvtCallBackFunction:
+ 549 0000 00000000 		.space	4
+ 550              		.section	.bss.LocalFreeBufQueue,"aw",%nobits
+ 551              		.align	2
+ 554              	LocalFreeBufQueue:
+ 555 0000 00000000 		.space	8
+ 555      00000000 
+ 556              		.section	MB_MEM1,"aw"
+ 557              		.align	2
+ 560              	SystemEvtQueue:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 10
+
+
+ 561 0000 00000000 		.space	8
+ 561      00000000 
+ 562              		.align	2
+ 565              	EvtQueue:
+ 566 0008 00000000 		.space	8
+ 566      00000000 
+ 567              		.section	MB_MEM2,"aw"
+ 568              		.align	2
+ 571              	CsBuffer:
+ 572 0000 00000000 		.space	15
+ 572      00000000 
+ 572      00000000 
+ 572      000000
+ 573              		.section	MB_MEM1
+ 574              		.align	2
+ 577              	TracesEvtQueue:
+ 578 0010 00000000 		.space	8
+ 578      00000000 
+ 579              		.align	2
+ 582              	FreeBufQueue:
+ 583 0018 00000000 		.space	8
+ 583      00000000 
+ 584              		.align	2
+ 587              	TL_Zigbee_Table:
+ 588 0020 00000000 		.space	12
+ 588      00000000 
+ 588      00000000 
+ 589              		.align	2
+ 592              	TL_Mac_802_15_4_Table:
+ 593 002c 00000000 		.space	12
+ 593      00000000 
+ 593      00000000 
+ 594              		.align	2
+ 597              	TL_TracesTable:
+ 598 0038 00000000 		.space	4
+ 599              		.align	2
+ 602              	TL_MemManagerTable:
+ 603 003c 00000000 		.space	28
+ 603      00000000 
+ 603      00000000 
+ 603      00000000 
+ 603      00000000 
+ 604              		.align	2
+ 607              	TL_SysTable:
+ 608 0058 00000000 		.space	8
+ 608      00000000 
+ 609              		.align	2
+ 612              	TL_BleLldTable:
+ 613 0060 00000000 		.space	8
+ 613      00000000 
+ 614              		.align	2
+ 617              	TL_LldTestsTable:
+ 618 0068 00000000 		.space	8
+ 618      00000000 
+ 619              		.align	2
+ 622              	TL_ThreadTable:
+ 623 0070 00000000 		.space	16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 11
+
+
+ 623      00000000 
+ 623      00000000 
+ 623      00000000 
+ 624              		.align	2
+ 627              	TL_BleTable:
+ 628 0080 00000000 		.space	16
+ 628      00000000 
+ 628      00000000 
+ 628      00000000 
+ 629              		.align	2
+ 632              	TL_DeviceInfoTable:
+ 633 0090 00000000 		.space	32
+ 633      00000000 
+ 633      00000000 
+ 633      00000000 
+ 633      00000000 
+ 634              		.section	MAPPING_TABLE,"aw"
+ 635              		.align	2
+ 638              	TL_RefTable:
+ 639 0000 00000000 		.space	40
+ 639      00000000 
+ 639      00000000 
+ 639      00000000 
+ 639      00000000 
+ 640              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 12
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 tl_mbox.c
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:18     .text.SendFreeBuf:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:23     .text.SendFreeBuf:00000000 SendFreeBuf
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:49     .text.SendFreeBuf:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:554    .bss.LocalFreeBufQueue:00000000 LocalFreeBufQueue
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:638    MAPPING_TABLE:00000000 TL_RefTable
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:53     .text.TL_Enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:59     .text.TL_Enable:00000000 TL_Enable
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:67     .text.TL_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:73     .text.TL_Init:00000000 TL_Init
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:103    .text.TL_Init:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:632    MB_MEM1:00000090 TL_DeviceInfoTable
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:627    MB_MEM1:00000080 TL_BleTable
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:622    MB_MEM1:00000070 TL_ThreadTable
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:617    MB_MEM1:00000068 TL_LldTestsTable
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:612    MB_MEM1:00000060 TL_BleLldTable
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:607    MB_MEM1:00000058 TL_SysTable
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:602    MB_MEM1:0000003c TL_MemManagerTable
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:597    MB_MEM1:00000038 TL_TracesTable
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:592    MB_MEM1:0000002c TL_Mac_802_15_4_Table
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:587    MB_MEM1:00000020 TL_Zigbee_Table
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:116    .text.TL_BLE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:122    .text.TL_BLE_Init:00000000 TL_BLE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:151    .text.TL_BLE_Init:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:565    MB_MEM1:00000008 EvtQueue
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:571    MB_MEM2:00000000 CsBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:548    .bss.BLE_IoBusEvtCallBackFunction:00000000 BLE_IoBusEvtCallBackFunction
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:542    .bss.BLE_IoBusAclDataTxAck:00000000 BLE_IoBusAclDataTxAck
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:158    .text.TL_BLE_SendCmd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:164    .text.TL_BLE_SendCmd:00000000 TL_BLE_SendCmd
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:180    .text.TL_BLE_SendCmd:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:183    .text.HW_IPCC_BLE_RxEvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:189    .text.HW_IPCC_BLE_RxEvtNot:00000000 HW_IPCC_BLE_RxEvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:214    .text.HW_IPCC_BLE_RxEvtNot:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:218    .text.TL_BLE_SendAclData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:224    .text.TL_BLE_SendAclData:00000000 TL_BLE_SendAclData
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:240    .text.TL_BLE_SendAclData:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:243    .text.HW_IPCC_BLE_AclDataAckNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:249    .text.HW_IPCC_BLE_AclDataAckNot:00000000 HW_IPCC_BLE_AclDataAckNot
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:260    .text.HW_IPCC_BLE_AclDataAckNot:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:263    .text.TL_SYS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:269    .text.TL_SYS_Init:00000000 TL_SYS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:294    .text.TL_SYS_Init:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:560    MB_MEM1:00000000 SystemEvtQueue
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:536    .bss.SYS_CMD_IoBusCallBackFunction:00000000 SYS_CMD_IoBusCallBackFunction
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:530    .bss.SYS_EVT_IoBusCallBackFunction:00000000 SYS_EVT_IoBusCallBackFunction
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:300    .text.TL_SYS_SendCmd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:306    .text.TL_SYS_SendCmd:00000000 TL_SYS_SendCmd
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:322    .text.TL_SYS_SendCmd:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:325    .text.HW_IPCC_SYS_CmdEvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:331    .text.HW_IPCC_SYS_CmdEvtNot:00000000 HW_IPCC_SYS_CmdEvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:346    .text.HW_IPCC_SYS_CmdEvtNot:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:350    .text.HW_IPCC_SYS_EvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:356    .text.HW_IPCC_SYS_EvtNot:00000000 HW_IPCC_SYS_EvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:381    .text.HW_IPCC_SYS_EvtNot:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:385    .text.TL_MM_Init:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s 			page 13
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:391    .text.TL_MM_Init:00000000 TL_MM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:422    .text.TL_MM_Init:00000038 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:582    MB_MEM1:00000018 FreeBufQueue
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:524    .bss.p_mem_manager_table.0:00000000 p_mem_manager_table.0
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:428    .text.TL_MM_EvtDone:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:434    .text.TL_MM_EvtDone:00000000 TL_MM_EvtDone
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:447    .text.TL_MM_EvtDone:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:451    .text.TL_TRACES_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:457    .text.TL_TRACES_Init:00000000 TL_TRACES_Init
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:472    .text.TL_TRACES_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:577    MB_MEM1:00000010 TracesEvtQueue
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:476    .text.TL_TRACES_EvtReceived:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:482    .text.TL_TRACES_EvtReceived:00000000 TL_TRACES_EvtReceived
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:489    .text.HW_IPCC_TRACES_EvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:495    .text.HW_IPCC_TRACES_EvtNot:00000000 HW_IPCC_TRACES_EvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:518    .text.HW_IPCC_TRACES_EvtNot:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:521    .bss.p_mem_manager_table.0:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:527    .bss.SYS_EVT_IoBusCallBackFunction:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:533    .bss.SYS_CMD_IoBusCallBackFunction:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:539    .bss.BLE_IoBusAclDataTxAck:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:545    .bss.BLE_IoBusEvtCallBackFunction:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:551    .bss.LocalFreeBufQueue:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:557    MB_MEM1:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:568    MB_MEM2:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccUWBjih.s:635    MAPPING_TABLE:00000000 $d
+
+UNDEFINED SYMBOLS
+LST_remove_head
+LST_insert_tail
+LST_is_empty
+HW_IPCC_Enable
+HW_IPCC_Init
+LST_init_head
+HW_IPCC_BLE_Init
+HW_IPCC_BLE_SendCmd
+HW_IPCC_BLE_SendAclData
+HW_IPCC_SYS_Init
+HW_IPCC_SYS_SendCmd
+HW_IPCC_MM_SendFreeBuf
+HW_IPCC_TRACES_Init

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0TkeTH.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc5OEolh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -24,17 +24,36 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0TkeTH.s 			page 1
   21              		.thumb
   22              		.thumb_func
   24              	HAL_MspInit:
-  25              		@ args = 0, pretend = 0, frame = 0
+  25              		@ args = 0, pretend = 0, frame = 8
   26              		@ frame_needed = 0, uses_anonymous_args = 0
-  27              		@ link register save eliminated.
-  28 0000 7047     		bx	lr
-  30              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc0TkeTH.s 			page 2
+  27 0000 00B5     		push	{lr}
+  28 0002 83B0     		sub	sp, sp, #12
+  29 0004 4FF0B043 		mov	r3, #1476395008
+  30 0008 1A6D     		ldr	r2, [r3, #80]
+  31 000a 42F40022 		orr	r2, r2, #524288
+  32 000e 1A65     		str	r2, [r3, #80]
+  33 0010 1B6D     		ldr	r3, [r3, #80]
+  34 0012 03F40023 		and	r3, r3, #524288
+  35 0016 0193     		str	r3, [sp, #4]
+  36 0018 019B     		ldr	r3, [sp, #4]
+  37 001a 0022     		movs	r2, #0
+  38 001c 1146     		mov	r1, r2
+  39 001e 2E20     		movs	r0, #46
+  40 0020 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  41 0024 2E20     		movs	r0, #46
+  42 0026 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  43 002a 03B0     		add	sp, sp, #12
+  44              		@ sp needed
+  45 002c 00BD     		pop	{pc}
+  47              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc5OEolh.s 			page 2
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_msp.c
-C:\Users\Nathan\AppData\Local\Temp\cc0TkeTH.s:18     .text.HAL_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\cc0TkeTH.s:24     .text.HAL_MspInit:00000000 HAL_MspInit
+C:\Users\Nathan\AppData\Local\Temp\cc5OEolh.s:18     .text.HAL_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc5OEolh.s:24     .text.HAL_MspInit:00000000 HAL_MspInit
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ

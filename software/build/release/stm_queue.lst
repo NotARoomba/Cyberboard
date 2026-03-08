@@ -1,0 +1,693 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm_queue.c"
+  16              		.text
+  17              		.section	.text.CircularQueue_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	CircularQueue_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	CircularQueue_Init:
+  25              		@ args = 4, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 9DF800C0 		ldrb	ip, [sp]	@ zero_extendqisi2
+  29 0004 0160     		str	r1, [r0]
+  30 0006 0021     		movs	r1, #0
+  31 0008 C160     		str	r1, [r0, #12]
+  32 000a 0161     		str	r1, [r0, #16]
+  33 000c 4161     		str	r1, [r0, #20]
+  34 000e 8161     		str	r1, [r0, #24]
+  35 0010 4260     		str	r2, [r0, #4]
+  36 0012 0381     		strh	r3, [r0, #8]	@ movhi
+  37 0014 80F81CC0 		strb	ip, [r0, #28]
+  38 0018 1CF0020F 		tst	ip, #2
+  39 001c 02D0     		beq	.L3
+  40 001e 1BB9     		cbnz	r3, .L4
+  41 0020 1846     		mov	r0, r3
+  42 0022 7047     		bx	lr
+  43              	.L3:
+  44 0024 0020     		movs	r0, #0
+  45 0026 7047     		bx	lr
+  46              	.L4:
+  47 0028 4FF0FF30 		mov	r0, #-1
+  48 002c 7047     		bx	lr
+  50              		.section	.text.CircularQueue_Add,"ax",%progbits
+  51              		.align	1
+  52              		.global	CircularQueue_Add
+  53              		.syntax unified
+  54              		.thumb
+  55              		.thumb_func
+  57              	CircularQueue_Add:
+  58              		@ args = 0, pretend = 0, frame = 16
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 2
+
+
+  61 0004 85B0     		sub	sp, sp, #20
+  62 0006 0446     		mov	r4, r0
+  63 0008 0391     		str	r1, [sp, #12]
+  64 000a 9B46     		mov	fp, r3
+  65 000c 0589     		ldrh	r5, [r0, #8]
+  66 000e C5B9     		cbnz	r5, .L28
+  67 0010 0223     		movs	r3, #2
+  68 0012 0193     		str	r3, [sp, #4]
+  69              	.L6:
+  70 0014 6169     		ldr	r1, [r4, #20]
+  71 0016 B9B1     		cbz	r1, .L29
+  72 0018 0DBB     		cbnz	r5, .L30
+  73 001a 2668     		ldr	r6, [r4]
+  74 001c 2369     		ldr	r3, [r4, #16]
+  75 001e 16F80380 		ldrb	r8, [r6, r3]	@ zero_extendqisi2
+  76 0022 581C     		adds	r0, r3, #1
+  77 0024 6768     		ldr	r7, [r4, #4]
+  78 0026 B842     		cmp	r0, r7
+  79 0028 01D3     		bcc	.L8
+  80 002a DB1B     		subs	r3, r3, r7
+  81 002c 581C     		adds	r0, r3, #1
+  82              	.L8:
+  83 002e 335C     		ldrb	r3, [r6, r0]	@ zero_extendqisi2
+  84 0030 08EB0328 		add	r8, r8, r3, lsl #8
+  85 0034 1FFA88F8 		uxth	r8, r8
+  86 0038 08F10208 		add	r8, r8, #2
+  87 003c 1FFA88F8 		uxth	r8, r8
+  88 0040 03E0     		b	.L7
+  89              	.L28:
+  90 0042 0023     		movs	r3, #0
+  91 0044 0193     		str	r3, [sp, #4]
+  92 0046 E5E7     		b	.L6
+  93              	.L29:
+  94 0048 8846     		mov	r8, r1
+  95              	.L7:
+  96 004a 05B9     		cbnz	r5, .L9
+  97 004c 1546     		mov	r5, r2
+  98              	.L9:
+  99 004e 2269     		ldr	r2, [r4, #16]
+ 100 0050 E368     		ldr	r3, [r4, #12]
+ 101 0052 9A42     		cmp	r2, r3
+ 102 0054 05D3     		bcc	.L31
+ 103 0056 6368     		ldr	r3, [r4, #4]
+ 104 0058 4244     		add	r2, r2, r8
+ 105 005a 9B1A     		subs	r3, r3, r2
+ 106 005c 02E0     		b	.L10
+ 107              	.L30:
+ 108 005e A846     		mov	r8, r5
+ 109 0060 F3E7     		b	.L7
+ 110              	.L31:
+ 111 0062 0023     		movs	r3, #0
+ 112              	.L10:
+ 113 0064 019F     		ldr	r7, [sp, #4]
+ 114 0066 EA19     		adds	r2, r5, r7
+ 115 0068 0BFB02F0 		mul	r0, fp, r2
+ 116 006c 9842     		cmp	r0, r3
+ 117 006e 0CD3     		bcc	.L32
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 3
+
+
+ 118 0070 B3FBF2F6 		udiv	r6, r3, r2
+ 119 0074 02FB1633 		mls	r3, r2, r6, r3
+ 120 0078 DBB2     		uxtb	r3, r3
+ 121 007a 9F42     		cmp	r7, r3
+ 122 007c 1BD2     		bcs	.L33
+ 123 007e 227F     		ldrb	r2, [r4, #28]	@ zero_extendqisi2
+ 124 0080 12F0010F 		tst	r2, #1
+ 125 0084 19D0     		beq	.L34
+ 126 0086 1A46     		mov	r2, r3
+ 127 0088 01E0     		b	.L11
+ 128              	.L32:
+ 129 008a 0023     		movs	r3, #0
+ 130 008c 1A46     		mov	r2, r3
+ 131              	.L11:
+ 132 008e 019E     		ldr	r6, [sp, #4]
+ 133 0090 9E42     		cmp	r6, r3
+ 134 0092 04D2     		bcs	.L12
+ 135 0094 237F     		ldrb	r3, [r4, #28]	@ zero_extendqisi2
+ 136 0096 13F0020F 		tst	r3, #2
+ 137 009a 00D0     		beq	.L12
+ 138 009c 3246     		mov	r2, r6
+ 139              	.L12:
+ 140 009e 002D     		cmp	r5, #0
+ 141 00a0 00F0CB80 		beq	.L35
+ 142 00a4 0144     		add	r1, r1, r0
+ 143 00a6 0A44     		add	r2, r2, r1
+ 144 00a8 6368     		ldr	r3, [r4, #4]
+ 145 00aa 9A42     		cmp	r2, r3
+ 146 00ac 07D8     		bhi	.L41
+ 147 00ae 0023     		movs	r3, #0
+ 148 00b0 0293     		str	r3, [sp, #8]
+ 149 00b2 1F46     		mov	r7, r3
+ 150 00b4 21E0     		b	.L14
+ 151              	.L33:
+ 152 00b6 0022     		movs	r2, #0
+ 153 00b8 E9E7     		b	.L11
+ 154              	.L34:
+ 155 00ba 0022     		movs	r2, #0
+ 156 00bc E7E7     		b	.L11
+ 157              	.L41:
+ 158 00be 0020     		movs	r0, #0
+ 159 00c0 B8E0     		b	.L5
+ 160              	.L19:
+ 161 00c2 2068     		ldr	r0, [r4]
+ 162 00c4 3246     		mov	r2, r6
+ 163 00c6 0399     		ldr	r1, [sp, #12]
+ 164 00c8 07FB0911 		mla	r1, r7, r9, r1
+ 165 00cc 1844     		add	r0, r0, r3
+ 166 00ce FFF7FEFF 		bl	memcpy
+ 167 00d2 6369     		ldr	r3, [r4, #20]
+ 168 00d4 3344     		add	r3, r3, r6
+ 169 00d6 6361     		str	r3, [r4, #20]
+ 170 00d8 A9EB060A 		sub	r10, r9, r6
+ 171 00dc 019B     		ldr	r3, [sp, #4]
+ 172 00de 03EB0508 		add	r8, r3, r5
+ 173 00e2 1FFA88F8 		uxth	r8, r8
+ 174 00e6 0296     		str	r6, [sp, #8]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 4
+
+
+ 175 00e8 0023     		movs	r3, #0
+ 176              	.L21:
+ 177 00ea BAF1000F 		cmp	r10, #0
+ 178 00ee 40F08980 		bne	.L42
+ 179              	.L22:
+ 180 00f2 A369     		ldr	r3, [r4, #24]
+ 181 00f4 0133     		adds	r3, r3, #1
+ 182 00f6 A361     		str	r3, [r4, #24]
+ 183 00f8 0137     		adds	r7, r7, #1
+ 184              	.L14:
+ 185 00fa 5F45     		cmp	r7, fp
+ 186 00fc 80F09080 		bcs	.L43
+ 187 0100 2369     		ldr	r3, [r4, #16]
+ 188 0102 4344     		add	r3, r3, r8
+ 189 0104 6268     		ldr	r2, [r4, #4]
+ 190 0106 9342     		cmp	r3, r2
+ 191 0108 00D3     		bcc	.L15
+ 192 010a 9B1A     		subs	r3, r3, r2
+ 193              	.L15:
+ 194 010c 2361     		str	r3, [r4, #16]
+ 195 010e 2289     		ldrh	r2, [r4, #8]
+ 196 0110 8AB9     		cbnz	r2, .L16
+ 197 0112 2168     		ldr	r1, [r4]
+ 198 0114 5A1C     		adds	r2, r3, #1
+ 199 0116 CD54     		strb	r5, [r1, r3]
+ 200 0118 6368     		ldr	r3, [r4, #4]
+ 201 011a 9342     		cmp	r3, r2
+ 202 011c 00D8     		bhi	.L17
+ 203 011e D21A     		subs	r2, r2, r3
+ 204              	.L17:
+ 205 0120 290A     		lsrs	r1, r5, #8
+ 206 0122 2068     		ldr	r0, [r4]
+ 207 0124 531C     		adds	r3, r2, #1
+ 208 0126 8154     		strb	r1, [r0, r2]
+ 209 0128 6268     		ldr	r2, [r4, #4]
+ 210 012a 9A42     		cmp	r2, r3
+ 211 012c 00D8     		bhi	.L18
+ 212 012e 9B1A     		subs	r3, r3, r2
+ 213              	.L18:
+ 214 0130 6269     		ldr	r2, [r4, #20]
+ 215 0132 0232     		adds	r2, r2, #2
+ 216 0134 6261     		str	r2, [r4, #20]
+ 217              	.L16:
+ 218 0136 A946     		mov	r9, r5
+ 219 0138 6268     		ldr	r2, [r4, #4]
+ 220 013a D21A     		subs	r2, r2, r3
+ 221 013c 2E46     		mov	r6, r5
+ 222 013e 9542     		cmp	r5, r2
+ 223 0140 28BF     		it	cs
+ 224 0142 1646     		movcs	r6, r2
+ 225 0144 9542     		cmp	r5, r2
+ 226 0146 BCD9     		bls	.L19
+ 227 0148 02D9     		bls	.L20
+ 228 014a 227F     		ldrb	r2, [r4, #28]	@ zero_extendqisi2
+ 229 014c 002A     		cmp	r2, #0
+ 230 014e B8D0     		beq	.L19
+ 231              	.L20:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 5
+
+
+ 232 0150 002E     		cmp	r6, #0
+ 233 0152 CED0     		beq	.L22
+ 234 0154 227F     		ldrb	r2, [r4, #28]	@ zero_extendqisi2
+ 235 0156 12F0010F 		tst	r2, #1
+ 236 015a 23D0     		beq	.L23
+ 237 015c 2289     		ldrh	r2, [r4, #8]
+ 238 015e 32B9     		cbnz	r2, .L24
+ 239 0160 2068     		ldr	r0, [r4]
+ 240 0162 991E     		subs	r1, r3, #2
+ 241 0164 FF22     		movs	r2, #255
+ 242 0166 4254     		strb	r2, [r0, r1]
+ 243 0168 2168     		ldr	r1, [r4]
+ 244 016a 013B     		subs	r3, r3, #1
+ 245 016c CA54     		strb	r2, [r1, r3]
+ 246              	.L24:
+ 247 016e 6369     		ldr	r3, [r4, #20]
+ 248 0170 3344     		add	r3, r3, r6
+ 249 0172 6361     		str	r3, [r4, #20]
+ 250 0174 2389     		ldrh	r3, [r4, #8]
+ 251 0176 002B     		cmp	r3, #0
+ 252 0178 3ED1     		bne	.L37
+ 253 017a 2368     		ldr	r3, [r4]
+ 254 017c 1D70     		strb	r5, [r3]
+ 255 017e 4FEA1923 		lsr	r3, r9, #8
+ 256 0182 2268     		ldr	r2, [r4]
+ 257 0184 5370     		strb	r3, [r2, #1]
+ 258 0186 6369     		ldr	r3, [r4, #20]
+ 259 0188 0233     		adds	r3, r3, #2
+ 260 018a 6361     		str	r3, [r4, #20]
+ 261 018c CA46     		mov	r10, r9
+ 262 018e 0023     		movs	r3, #0
+ 263 0190 0293     		str	r3, [sp, #8]
+ 264 0192 0223     		movs	r3, #2
+ 265              	.L25:
+ 266 0194 019A     		ldr	r2, [sp, #4]
+ 267 0196 12FA8AF8 		uxtah	r8, r2, r10
+ 268 019a 1FFA88F8 		uxth	r8, r8
+ 269 019e 0022     		movs	r2, #0
+ 270 01a0 2261     		str	r2, [r4, #16]
+ 271 01a2 A2E7     		b	.L21
+ 272              	.L23:
+ 273 01a4 12F0020F 		tst	r2, #2
+ 274 01a8 2AD0     		beq	.L38
+ 275 01aa 2289     		ldrh	r2, [r4, #8]
+ 276 01ac 002A     		cmp	r2, #0
+ 277 01ae 46D1     		bne	.L39
+ 278 01b0 2168     		ldr	r1, [r4]
+ 279 01b2 9A1E     		subs	r2, r3, #2
+ 280 01b4 8E54     		strb	r6, [r1, r2]
+ 281 01b6 300A     		lsrs	r0, r6, #8
+ 282 01b8 2168     		ldr	r1, [r4]
+ 283 01ba 5A1E     		subs	r2, r3, #1
+ 284 01bc 8854     		strb	r0, [r1, r2]
+ 285 01be 2068     		ldr	r0, [r4]
+ 286 01c0 3246     		mov	r2, r6
+ 287 01c2 0399     		ldr	r1, [sp, #12]
+ 288 01c4 07FB0911 		mla	r1, r7, r9, r1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 6
+
+
+ 289 01c8 1844     		add	r0, r0, r3
+ 290 01ca FFF7FEFF 		bl	memcpy
+ 291 01ce 6369     		ldr	r3, [r4, #20]
+ 292 01d0 3344     		add	r3, r3, r6
+ 293 01d2 6361     		str	r3, [r4, #20]
+ 294 01d4 A9EB060A 		sub	r10, r9, r6
+ 295 01d8 A369     		ldr	r3, [r4, #24]
+ 296 01da 0133     		adds	r3, r3, #1
+ 297 01dc A361     		str	r3, [r4, #24]
+ 298 01de 2368     		ldr	r3, [r4]
+ 299 01e0 83F800A0 		strb	r10, [r3]
+ 300 01e4 4FEA1A22 		lsr	r2, r10, #8
+ 301 01e8 2368     		ldr	r3, [r4]
+ 302 01ea 5A70     		strb	r2, [r3, #1]
+ 303 01ec 6369     		ldr	r3, [r4, #20]
+ 304 01ee 0233     		adds	r3, r3, #2
+ 305 01f0 6361     		str	r3, [r4, #20]
+ 306 01f2 0296     		str	r6, [sp, #8]
+ 307 01f4 0223     		movs	r3, #2
+ 308 01f6 CDE7     		b	.L25
+ 309              	.L37:
+ 310 01f8 CA46     		mov	r10, r9
+ 311 01fa 0023     		movs	r3, #0
+ 312 01fc 0293     		str	r3, [sp, #8]
+ 313 01fe C9E7     		b	.L25
+ 314              	.L38:
+ 315 0200 B246     		mov	r10, r6
+ 316 0202 C7E7     		b	.L25
+ 317              	.L42:
+ 318 0204 2068     		ldr	r0, [r4]
+ 319 0206 029A     		ldr	r2, [sp, #8]
+ 320 0208 07FB0921 		mla	r1, r7, r9, r2
+ 321 020c 5246     		mov	r2, r10
+ 322 020e 039E     		ldr	r6, [sp, #12]
+ 323 0210 3144     		add	r1, r1, r6
+ 324 0212 1844     		add	r0, r0, r3
+ 325 0214 FFF7FEFF 		bl	memcpy
+ 326 0218 6369     		ldr	r3, [r4, #20]
+ 327 021a 5344     		add	r3, r3, r10
+ 328 021c 6361     		str	r3, [r4, #20]
+ 329 021e 68E7     		b	.L22
+ 330              	.L43:
+ 331 0220 2068     		ldr	r0, [r4]
+ 332 0222 2369     		ldr	r3, [r4, #16]
+ 333 0224 019A     		ldr	r2, [sp, #4]
+ 334 0226 1A44     		add	r2, r2, r3
+ 335 0228 1346     		mov	r3, r2
+ 336 022a 6268     		ldr	r2, [r4, #4]
+ 337 022c 9342     		cmp	r3, r2
+ 338 022e 00D3     		bcc	.L27
+ 339 0230 9B1A     		subs	r3, r3, r2
+ 340              	.L27:
+ 341 0232 1844     		add	r0, r0, r3
+ 342              	.L5:
+ 343 0234 05B0     		add	sp, sp, #20
+ 344              		@ sp needed
+ 345 0236 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 7
+
+
+ 346              	.L35:
+ 347 023a 2846     		mov	r0, r5
+ 348 023c FAE7     		b	.L5
+ 349              	.L39:
+ 350 023e 0020     		movs	r0, #0
+ 351 0240 F8E7     		b	.L5
+ 353              		.section	.text.CircularQueue_Remove_Copy,"ax",%progbits
+ 354              		.align	1
+ 355              		.global	CircularQueue_Remove_Copy
+ 356              		.syntax unified
+ 357              		.thumb
+ 358              		.thumb_func
+ 360              	CircularQueue_Remove_Copy:
+ 361              		@ args = 0, pretend = 0, frame = 0
+ 362              		@ frame_needed = 0, uses_anonymous_args = 0
+ 363              		@ link register save eliminated.
+ 364 0000 0020     		movs	r0, #0
+ 365 0002 7047     		bx	lr
+ 367              		.section	.text.CircularQueue_Remove,"ax",%progbits
+ 368              		.align	1
+ 369              		.global	CircularQueue_Remove
+ 370              		.syntax unified
+ 371              		.thumb
+ 372              		.thumb_func
+ 374              	CircularQueue_Remove:
+ 375              		@ args = 0, pretend = 0, frame = 0
+ 376              		@ frame_needed = 0, uses_anonymous_args = 0
+ 377 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 378 0002 0346     		mov	r3, r0
+ 379 0004 0089     		ldrh	r0, [r0, #8]
+ 380 0006 80BB     		cbnz	r0, .L58
+ 381 0008 4FF0020C 		mov	ip, #2
+ 382              	.L46:
+ 383 000c 5C69     		ldr	r4, [r3, #20]
+ 384 000e 002C     		cmp	r4, #0
+ 385 0010 74D0     		beq	.L59
+ 386 0012 68BB     		cbnz	r0, .L60
+ 387 0014 1A68     		ldr	r2, [r3]
+ 388 0016 1546     		mov	r5, r2
+ 389 0018 1646     		mov	r6, r2
+ 390 001a DA68     		ldr	r2, [r3, #12]
+ 391 001c AD5C     		ldrb	r5, [r5, r2]	@ zero_extendqisi2
+ 392 001e 2F46     		mov	r7, r5
+ 393 0020 02F1010E 		add	lr, r2, #1
+ 394 0024 5D68     		ldr	r5, [r3, #4]
+ 395 0026 AE45     		cmp	lr, r5
+ 396 0028 02D3     		bcc	.L49
+ 397 002a 521B     		subs	r2, r2, r5
+ 398 002c 02F1010E 		add	lr, r2, #1
+ 399              	.L49:
+ 400 0030 16F80E20 		ldrb	r2, [r6, lr]	@ zero_extendqisi2
+ 401 0034 07EB0222 		add	r2, r7, r2, lsl #8
+ 402 0038 92B2     		uxth	r2, r2
+ 403              	.L48:
+ 404 003a 93F81CE0 		ldrb	lr, [r3, #28]	@ zero_extendqisi2
+ 405 003e 1EF0010F 		tst	lr, #1
+ 406 0042 34D0     		beq	.L50
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 8
+
+
+ 407 0044 1EF0020F 		tst	lr, #2
+ 408 0048 31D1     		bne	.L50
+ 409 004a 4FF6FF7E 		movw	lr, #65535
+ 410 004e 7245     		cmp	r2, lr
+ 411 0050 10D0     		beq	.L64
+ 412              	.L51:
+ 413 0052 D3F80CE0 		ldr	lr, [r3, #12]
+ 414 0056 1D69     		ldr	r5, [r3, #16]
+ 415 0058 AE45     		cmp	lr, r5
+ 416 005a 28D9     		bls	.L50
+ 417 005c 38B3     		cbz	r0, .L50
+ 418 005e 5D68     		ldr	r5, [r3, #4]
+ 419 0060 A5EB0E0E 		sub	lr, r5, lr
+ 420 0064 8645     		cmp	lr, r0
+ 421 0066 22D2     		bcs	.L50
+ 422 0068 06E0     		b	.L52
+ 423              	.L58:
+ 424 006a 4FF0000C 		mov	ip, #0
+ 425 006e CDE7     		b	.L46
+ 426              	.L60:
+ 427 0070 0246     		mov	r2, r0
+ 428 0072 E2E7     		b	.L48
+ 429              	.L64:
+ 430 0074 0028     		cmp	r0, #0
+ 431 0076 ECD1     		bne	.L51
+ 432              	.L52:
+ 433 0078 DA68     		ldr	r2, [r3, #12]
+ 434 007a D3F804E0 		ldr	lr, [r3, #4]
+ 435 007e A2EB0E02 		sub	r2, r2, lr
+ 436 0082 2244     		add	r2, r2, r4
+ 437 0084 5A61     		str	r2, [r3, #20]
+ 438 0086 0022     		movs	r2, #0
+ 439 0088 DA60     		str	r2, [r3, #12]
+ 440 008a 78B9     		cbnz	r0, .L61
+ 441 008c 1868     		ldr	r0, [r3]
+ 442 008e 0278     		ldrb	r2, [r0]	@ zero_extendqisi2
+ 443 0090 BEF1010F 		cmp	lr, #1
+ 444 0094 07D9     		bls	.L65
+ 445 0096 4FF0010E 		mov	lr, #1
+ 446              	.L53:
+ 447 009a 10F80E00 		ldrb	r0, [r0, lr]	@ zero_extendqisi2
+ 448 009e 02EB0022 		add	r2, r2, r0, lsl #8
+ 449 00a2 92B2     		uxth	r2, r2
+ 450 00a4 03E0     		b	.L50
+ 451              	.L65:
+ 452 00a6 CEF1010E 		rsb	lr, lr, #1
+ 453 00aa F6E7     		b	.L53
+ 454              	.L61:
+ 455 00ac 0246     		mov	r2, r0
+ 456              	.L50:
+ 457 00ae 1868     		ldr	r0, [r3]
+ 458 00b0 DC68     		ldr	r4, [r3, #12]
+ 459 00b2 2646     		mov	r6, r4
+ 460 00b4 6746     		mov	r7, ip
+ 461 00b6 04EB0C0E 		add	lr, r4, ip
+ 462 00ba 5C68     		ldr	r4, [r3, #4]
+ 463 00bc A645     		cmp	lr, r4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 9
+
+
+ 464 00be 01D3     		bcc	.L54
+ 465 00c0 AEEB040E 		sub	lr, lr, r4
+ 466              	.L54:
+ 467 00c4 7044     		add	r0, r0, lr
+ 468 00c6 9444     		add	ip, ip, r2
+ 469 00c8 5D69     		ldr	r5, [r3, #20]
+ 470 00ca A5EB0C0C 		sub	ip, r5, ip
+ 471 00ce C3F814C0 		str	ip, [r3, #20]
+ 472 00d2 BCF1000F 		cmp	ip, #0
+ 473 00d6 0BD0     		beq	.L55
+ 474 00d8 3546     		mov	r5, r6
+ 475 00da 1544     		add	r5, r5, r2
+ 476 00dc AC46     		mov	ip, r5
+ 477 00de 3D46     		mov	r5, r7
+ 478 00e0 6544     		add	r5, r5, ip
+ 479 00e2 AC46     		mov	ip, r5
+ 480 00e4 AC42     		cmp	r4, r5
+ 481 00e6 01D8     		bhi	.L56
+ 482 00e8 A5EB040C 		sub	ip, r5, r4
+ 483              	.L56:
+ 484 00ec C3F80CC0 		str	ip, [r3, #12]
+ 485              	.L55:
+ 486 00f0 9C69     		ldr	r4, [r3, #24]
+ 487 00f2 013C     		subs	r4, r4, #1
+ 488 00f4 9C61     		str	r4, [r3, #24]
+ 489              	.L47:
+ 490 00f6 01B1     		cbz	r1, .L45
+ 491 00f8 0A80     		strh	r2, [r1]	@ movhi
+ 492              	.L45:
+ 493 00fa F0BD     		pop	{r4, r5, r6, r7, pc}
+ 494              	.L59:
+ 495 00fc 2246     		mov	r2, r4
+ 496 00fe 2046     		mov	r0, r4
+ 497 0100 F9E7     		b	.L47
+ 499              		.section	.text.CircularQueue_Sense_Copy,"ax",%progbits
+ 500              		.align	1
+ 501              		.global	CircularQueue_Sense_Copy
+ 502              		.syntax unified
+ 503              		.thumb
+ 504              		.thumb_func
+ 506              	CircularQueue_Sense_Copy:
+ 507              		@ args = 0, pretend = 0, frame = 0
+ 508              		@ frame_needed = 0, uses_anonymous_args = 0
+ 509              		@ link register save eliminated.
+ 510 0000 0020     		movs	r0, #0
+ 511 0002 7047     		bx	lr
+ 513              		.section	.text.CircularQueue_Sense,"ax",%progbits
+ 514              		.align	1
+ 515              		.global	CircularQueue_Sense
+ 516              		.syntax unified
+ 517              		.thumb
+ 518              		.thumb_func
+ 520              	CircularQueue_Sense:
+ 521              		@ args = 0, pretend = 0, frame = 0
+ 522              		@ frame_needed = 0, uses_anonymous_args = 0
+ 523 0000 70B5     		push	{r4, r5, r6, lr}
+ 524 0002 B0F808E0 		ldrh	lr, [r0, #8]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 10
+
+
+ 525 0006 BEF1000F 		cmp	lr, #0
+ 526 000a 30D1     		bne	.L78
+ 527 000c 0223     		movs	r3, #2
+ 528              	.L68:
+ 529 000e 4269     		ldr	r2, [r0, #20]
+ 530 0010 002A     		cmp	r2, #0
+ 531 0012 56D0     		beq	.L79
+ 532 0014 C468     		ldr	r4, [r0, #12]
+ 533 0016 BEF1000F 		cmp	lr, #0
+ 534 001a 2AD1     		bne	.L80
+ 535 001c 0268     		ldr	r2, [r0]
+ 536 001e 155D     		ldrb	r5, [r2, r4]	@ zero_extendqisi2
+ 537 0020 2E46     		mov	r6, r5
+ 538 0022 04F1010C 		add	ip, r4, #1
+ 539 0026 4568     		ldr	r5, [r0, #4]
+ 540 0028 AC45     		cmp	ip, r5
+ 541 002a 03D3     		bcc	.L71
+ 542 002c A4EB050C 		sub	ip, r4, r5
+ 543 0030 0CF1010C 		add	ip, ip, #1
+ 544              	.L71:
+ 545 0034 12F80CC0 		ldrb	ip, [r2, ip]	@ zero_extendqisi2
+ 546 0038 06EB0C22 		add	r2, r6, ip, lsl #8
+ 547 003c 92B2     		uxth	r2, r2
+ 548              	.L70:
+ 549 003e 90F81CC0 		ldrb	ip, [r0, #28]	@ zero_extendqisi2
+ 550 0042 1CF0010F 		tst	ip, #1
+ 551 0046 30D0     		beq	.L72
+ 552 0048 1CF0020F 		tst	ip, #2
+ 553 004c 2DD1     		bne	.L72
+ 554 004e 4FF6FF7C 		movw	ip, #65535
+ 555 0052 6245     		cmp	r2, ip
+ 556 0054 0FD0     		beq	.L84
+ 557              	.L73:
+ 558 0056 0569     		ldr	r5, [r0, #16]
+ 559 0058 A542     		cmp	r5, r4
+ 560 005a 26D2     		bcs	.L72
+ 561 005c BEF1000F 		cmp	lr, #0
+ 562 0060 23D0     		beq	.L72
+ 563 0062 4568     		ldr	r5, [r0, #4]
+ 564 0064 A5EB040C 		sub	ip, r5, r4
+ 565 0068 F445     		cmp	ip, lr
+ 566 006a 1ED2     		bcs	.L72
+ 567 006c 06E0     		b	.L74
+ 568              	.L78:
+ 569 006e 0023     		movs	r3, #0
+ 570 0070 CDE7     		b	.L68
+ 571              	.L80:
+ 572 0072 7246     		mov	r2, lr
+ 573 0074 E3E7     		b	.L70
+ 574              	.L84:
+ 575 0076 BEF1000F 		cmp	lr, #0
+ 576 007a ECD1     		bne	.L73
+ 577              	.L74:
+ 578 007c BEF1000F 		cmp	lr, #0
+ 579 0080 11D1     		bne	.L81
+ 580 0082 D0F800C0 		ldr	ip, [r0]
+ 581 0086 9CF80020 		ldrb	r2, [ip]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 11
+
+
+ 582 008a 4468     		ldr	r4, [r0, #4]
+ 583 008c 012C     		cmp	r4, #1
+ 584 008e 07D9     		bls	.L85
+ 585 0090 0124     		movs	r4, #1
+ 586              	.L75:
+ 587 0092 1CF80440 		ldrb	r4, [ip, r4]	@ zero_extendqisi2
+ 588 0096 02EB0422 		add	r2, r2, r4, lsl #8
+ 589 009a 92B2     		uxth	r2, r2
+ 590 009c 0024     		movs	r4, #0
+ 591 009e 04E0     		b	.L72
+ 592              	.L85:
+ 593 00a0 C4F10104 		rsb	r4, r4, #1
+ 594 00a4 F5E7     		b	.L75
+ 595              	.L81:
+ 596 00a6 7246     		mov	r2, lr
+ 597 00a8 0024     		movs	r4, #0
+ 598              	.L72:
+ 599 00aa D0F800C0 		ldr	ip, [r0]
+ 600 00ae 2344     		add	r3, r3, r4
+ 601 00b0 4068     		ldr	r0, [r0, #4]
+ 602 00b2 8342     		cmp	r3, r0
+ 603 00b4 00D3     		bcc	.L76
+ 604 00b6 1B1A     		subs	r3, r3, r0
+ 605              	.L76:
+ 606 00b8 0CEB0300 		add	r0, ip, r3
+ 607              	.L69:
+ 608 00bc 01B1     		cbz	r1, .L67
+ 609 00be 0A80     		strh	r2, [r1]	@ movhi
+ 610              	.L67:
+ 611 00c0 70BD     		pop	{r4, r5, r6, pc}
+ 612              	.L79:
+ 613 00c2 1046     		mov	r0, r2
+ 614 00c4 FAE7     		b	.L69
+ 616              		.section	.text.CircularQueue_Empty,"ax",%progbits
+ 617              		.align	1
+ 618              		.global	CircularQueue_Empty
+ 619              		.syntax unified
+ 620              		.thumb
+ 621              		.thumb_func
+ 623              	CircularQueue_Empty:
+ 624              		@ args = 0, pretend = 0, frame = 0
+ 625              		@ frame_needed = 0, uses_anonymous_args = 0
+ 626              		@ link register save eliminated.
+ 627 0000 4369     		ldr	r3, [r0, #20]
+ 628 0002 0BB1     		cbz	r3, .L88
+ 629 0004 0020     		movs	r0, #0
+ 630 0006 7047     		bx	lr
+ 631              	.L88:
+ 632 0008 0120     		movs	r0, #1
+ 633 000a 7047     		bx	lr
+ 635              		.section	.text.CircularQueue_NbElement,"ax",%progbits
+ 636              		.align	1
+ 637              		.global	CircularQueue_NbElement
+ 638              		.syntax unified
+ 639              		.thumb
+ 640              		.thumb_func
+ 642              	CircularQueue_NbElement:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 12
+
+
+ 643              		@ args = 0, pretend = 0, frame = 0
+ 644              		@ frame_needed = 0, uses_anonymous_args = 0
+ 645              		@ link register save eliminated.
+ 646 0000 8069     		ldr	r0, [r0, #24]
+ 647 0002 7047     		bx	lr
+ 649              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm_queue.c
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:18     .text.CircularQueue_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:24     .text.CircularQueue_Init:00000000 CircularQueue_Init
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:51     .text.CircularQueue_Add:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:57     .text.CircularQueue_Add:00000000 CircularQueue_Add
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:354    .text.CircularQueue_Remove_Copy:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:360    .text.CircularQueue_Remove_Copy:00000000 CircularQueue_Remove_Copy
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:368    .text.CircularQueue_Remove:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:374    .text.CircularQueue_Remove:00000000 CircularQueue_Remove
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:500    .text.CircularQueue_Sense_Copy:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:506    .text.CircularQueue_Sense_Copy:00000000 CircularQueue_Sense_Copy
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:514    .text.CircularQueue_Sense:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:520    .text.CircularQueue_Sense:00000000 CircularQueue_Sense
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:617    .text.CircularQueue_Empty:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:623    .text.CircularQueue_Empty:00000000 CircularQueue_Empty
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:636    .text.CircularQueue_NbElement:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cclfw81d.s:642    .text.CircularQueue_NbElement:00000000 CircularQueue_NbElement
+
+UNDEFINED SYMBOLS
+memcpy

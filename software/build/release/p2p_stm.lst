@@ -1,0 +1,308 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"p2p_stm.c"
+  16              		.text
+  17              		.section	.text.PeerToPeer_Event_Handler,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	PeerToPeer_Event_Handler:
+  24              		@ args = 0, pretend = 0, frame = 16
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 10B5     		push	{r4, lr}
+  27 0002 84B0     		sub	sp, sp, #16
+  28 0004 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+  29 0006 FF2B     		cmp	r3, #255
+  30 0008 04D0     		beq	.L9
+  31 000a 0023     		movs	r3, #0
+  32 000c 1C46     		mov	r4, r3
+  33              	.L2:
+  34 000e 2046     		mov	r0, r4
+  35 0010 04B0     		add	sp, sp, #16
+  36              		@ sp needed
+  37 0012 10BD     		pop	{r4, pc}
+  38              	.L9:
+  39 0014 B0F80320 		ldrh	r2, [r0, #3]	@ unaligned
+  40 0018 40F60143 		movw	r3, #3073
+  41 001c 9A42     		cmp	r2, r3
+  42 001e 02D0     		beq	.L10
+  43 0020 0023     		movs	r3, #0
+  44 0022 1C46     		mov	r4, r3
+  45 0024 F3E7     		b	.L2
+  46              	.L10:
+  47 0026 B0F80720 		ldrh	r2, [r0, #7]	@ unaligned
+  48 002a 194B     		ldr	r3, .L13
+  49 002c 9B88     		ldrh	r3, [r3, #4]
+  50 002e 0233     		adds	r3, r3, #2
+  51 0030 9A42     		cmp	r2, r3
+  52 0032 07D0     		beq	.L11
+  53 0034 164B     		ldr	r3, .L13
+  54 0036 5B88     		ldrh	r3, [r3, #2]
+  55 0038 0133     		adds	r3, r3, #1
+  56 003a 9A42     		cmp	r2, r3
+  57 003c 18D0     		beq	.L12
+  58 003e 0023     		movs	r3, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s 			page 2
+
+
+  59 0040 1C46     		mov	r4, r3
+  60 0042 E4E7     		b	.L2
+  61              	.L11:
+  62 0044 437B     		ldrb	r3, [r0, #13]	@ zero_extendqisi2
+  63 0046 13F00103 		ands	r3, r3, #1
+  64 004a 1C46     		mov	r4, r3
+  65 004c 06D0     		beq	.L4
+  66 004e 0023     		movs	r3, #0
+  67 0050 8DF80030 		strb	r3, [sp]
+  68 0054 6846     		mov	r0, sp
+  69 0056 FFF7FEFF 		bl	P2PS_STM_App_Notification
+  70 005a D8E7     		b	.L2
+  71              	.L4:
+  72 005c 4FF00103 		mov	r3, #1
+  73 0060 8DF80030 		strb	r3, [sp]
+  74 0064 6846     		mov	r0, sp
+  75 0066 FFF7FEFF 		bl	P2PS_STM_App_Notification
+  76 006a 0123     		movs	r3, #1
+  77 006c 1C46     		mov	r4, r3
+  78 006e CEE7     		b	.L2
+  79              	.L12:
+  80 0070 0323     		movs	r3, #3
+  81 0072 8DF80030 		strb	r3, [sp]
+  82 0076 B0F80B30 		ldrh	r3, [r0, #11]	@ unaligned
+  83 007a 8DF80830 		strb	r3, [sp, #8]
+  84 007e 0D30     		adds	r0, r0, #13
+  85 0080 0190     		str	r0, [sp, #4]
+  86 0082 6846     		mov	r0, sp
+  87 0084 FFF7FEFF 		bl	P2PS_STM_App_Notification
+  88 0088 0023     		movs	r3, #0
+  89 008a 1C46     		mov	r4, r3
+  90 008c BFE7     		b	.L2
+  91              	.L14:
+  92 008e 00BF     		.align	2
+  93              	.L13:
+  94 0090 00000000 		.word	aPeerToPeerContext
+  96              		.section	.text.P2PS_STM_Init,"ax",%progbits
+  97              		.align	1
+  98              		.global	P2PS_STM_Init
+  99              		.syntax unified
+ 100              		.thumb
+ 101              		.thumb_func
+ 103              	P2PS_STM_Init:
+ 104              		@ args = 0, pretend = 0, frame = 16
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 107 0004 8BB0     		sub	sp, sp, #44
+ 108 0006 6248     		ldr	r0, .L17
+ 109 0008 FFF7FEFF 		bl	SVCCTL_RegisterSvcHandler
+ 110 000c 8F23     		movs	r3, #143
+ 111 000e 8DF81830 		strb	r3, [sp, #24]
+ 112 0012 E523     		movs	r3, #229
+ 113 0014 8DF81930 		strb	r3, [sp, #25]
+ 114 0018 B323     		movs	r3, #179
+ 115 001a 8DF81A30 		strb	r3, [sp, #26]
+ 116 001e D523     		movs	r3, #213
+ 117 0020 8DF81B30 		strb	r3, [sp, #27]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s 			page 3
+
+
+ 118 0024 2E23     		movs	r3, #46
+ 119 0026 8DF81C30 		strb	r3, [sp, #28]
+ 120 002a 7F23     		movs	r3, #127
+ 121 002c 8DF81D30 		strb	r3, [sp, #29]
+ 122 0030 4A23     		movs	r3, #74
+ 123 0032 8DF81E30 		strb	r3, [sp, #30]
+ 124 0036 9823     		movs	r3, #152
+ 125 0038 8DF81F30 		strb	r3, [sp, #31]
+ 126 003c 2A23     		movs	r3, #42
+ 127 003e 8DF82030 		strb	r3, [sp, #32]
+ 128 0042 4823     		movs	r3, #72
+ 129 0044 8DF82130 		strb	r3, [sp, #33]
+ 130 0048 7A23     		movs	r3, #122
+ 131 004a 8DF82230 		strb	r3, [sp, #34]
+ 132 004e CC23     		movs	r3, #204
+ 133 0050 8DF82330 		strb	r3, [sp, #35]
+ 134 0054 4023     		movs	r3, #64
+ 135 0056 8DF82430 		strb	r3, [sp, #36]
+ 136 005a 4FF0FE08 		mov	r8, #254
+ 137 005e 8DF82580 		strb	r8, [sp, #37]
+ 138 0062 0024     		movs	r4, #0
+ 139 0064 8DF82640 		strb	r4, [sp, #38]
+ 140 0068 8DF82740 		strb	r4, [sp, #39]
+ 141 006c 06AF     		add	r7, sp, #24
+ 142 006e 494B     		ldr	r3, .L17+4
+ 143 0070 0093     		str	r3, [sp]
+ 144 0072 0623     		movs	r3, #6
+ 145 0074 0122     		movs	r2, #1
+ 146 0076 3946     		mov	r1, r7
+ 147 0078 0220     		movs	r0, #2
+ 148 007a FFF7FEFF 		bl	aci_gatt_add_service
+ 149 007e 4FF0190B 		mov	fp, #25
+ 150 0082 8DF818B0 		strb	fp, [sp, #24]
+ 151 0086 ED26     		movs	r6, #237
+ 152 0088 8DF81960 		strb	r6, [sp, #25]
+ 153 008c 6FF07D03 		mvn	r3, #125
+ 154 0090 8DF81A30 		strb	r3, [sp, #26]
+ 155 0094 6FF05101 		mvn	r1, #81
+ 156 0098 8DF81B10 		strb	r1, [sp, #27]
+ 157 009c 8DF81C60 		strb	r6, [sp, #28]
+ 158 00a0 4FF02100 		mov	r0, #33
+ 159 00a4 8DF81D00 		strb	r0, [sp, #29]
+ 160 00a8 4FF04C05 		mov	r5, #76
+ 161 00ac 8DF81E50 		strb	r5, [sp, #30]
+ 162 00b0 6FF0620C 		mvn	ip, #98
+ 163 00b4 8DF81FC0 		strb	ip, [sp, #31]
+ 164 00b8 4FF04109 		mov	r9, #65
+ 165 00bc 8DF82090 		strb	r9, [sp, #32]
+ 166 00c0 4FF0450E 		mov	lr, #69
+ 167 00c4 8DF821E0 		strb	lr, [sp, #33]
+ 168 00c8 4FF0220A 		mov	r10, #34
+ 169 00cc 8DF822A0 		strb	r10, [sp, #34]
+ 170 00d0 4FF08E0A 		mov	r10, #142
+ 171 00d4 8DF823A0 		strb	r10, [sp, #35]
+ 172 00d8 8DF82490 		strb	r9, [sp, #36]
+ 173 00dc 8DF82580 		strb	r8, [sp, #37]
+ 174 00e0 8DF82640 		strb	r4, [sp, #38]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s 			page 4
+
+
+ 175 00e4 8DF82740 		strb	r4, [sp, #39]
+ 176 00e8 2A4B     		ldr	r3, .L17+4
+ 177 00ea 33F8020B 		ldrh	r0, [r3], #2
+ 178 00ee 0593     		str	r3, [sp, #20]
+ 179 00f0 0125     		movs	r5, #1
+ 180 00f2 0495     		str	r5, [sp, #16]
+ 181 00f4 0A23     		movs	r3, #10
+ 182 00f6 0393     		str	r3, [sp, #12]
+ 183 00f8 0295     		str	r5, [sp, #8]
+ 184 00fa 0194     		str	r4, [sp, #4]
+ 185 00fc 0623     		movs	r3, #6
+ 186 00fe 0093     		str	r3, [sp]
+ 187 0100 0223     		movs	r3, #2
+ 188 0102 3A46     		mov	r2, r7
+ 189 0104 1946     		mov	r1, r3
+ 190 0106 FFF7FEFF 		bl	aci_gatt_add_char
+ 191 010a 8DF818B0 		strb	fp, [sp, #24]
+ 192 010e 8DF81960 		strb	r6, [sp, #25]
+ 193 0112 6FF07D02 		mvn	r2, #125
+ 194 0116 8DF81A20 		strb	r2, [sp, #26]
+ 195 011a 6FF05101 		mvn	r1, #81
+ 196 011e 8DF81B10 		strb	r1, [sp, #27]
+ 197 0122 8DF81C60 		strb	r6, [sp, #28]
+ 198 0126 4FF02100 		mov	r0, #33
+ 199 012a 8DF81D00 		strb	r0, [sp, #29]
+ 200 012e 4FF04C02 		mov	r2, #76
+ 201 0132 8DF81E20 		strb	r2, [sp, #30]
+ 202 0136 6FF0620C 		mvn	ip, #98
+ 203 013a 8DF81FC0 		strb	ip, [sp, #31]
+ 204 013e 8DF82090 		strb	r9, [sp, #32]
+ 205 0142 4FF0450E 		mov	lr, #69
+ 206 0146 8DF821E0 		strb	lr, [sp, #33]
+ 207 014a 4FF02202 		mov	r2, #34
+ 208 014e 8DF82220 		strb	r2, [sp, #34]
+ 209 0152 8DF823A0 		strb	r10, [sp, #35]
+ 210 0156 4223     		movs	r3, #66
+ 211 0158 8DF82430 		strb	r3, [sp, #36]
+ 212 015c 8DF82580 		strb	r8, [sp, #37]
+ 213 0160 8DF82640 		strb	r4, [sp, #38]
+ 214 0164 8DF82740 		strb	r4, [sp, #39]
+ 215 0168 0A4B     		ldr	r3, .L17+4
+ 216 016a 33F8040B 		ldrh	r0, [r3], #4
+ 217 016e 0593     		str	r3, [sp, #20]
+ 218 0170 0495     		str	r5, [sp, #16]
+ 219 0172 0A23     		movs	r3, #10
+ 220 0174 0393     		str	r3, [sp, #12]
+ 221 0176 0295     		str	r5, [sp, #8]
+ 222 0178 0194     		str	r4, [sp, #4]
+ 223 017a 1023     		movs	r3, #16
+ 224 017c 0093     		str	r3, [sp]
+ 225 017e 0223     		movs	r3, #2
+ 226 0180 3A46     		mov	r2, r7
+ 227 0182 1946     		mov	r1, r3
+ 228 0184 FFF7FEFF 		bl	aci_gatt_add_char
+ 229 0188 0BB0     		add	sp, sp, #44
+ 230              		@ sp needed
+ 231 018a BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s 			page 5
+
+
+ 232              	.L18:
+ 233 018e 00BF     		.align	2
+ 234              	.L17:
+ 235 0190 00000000 		.word	PeerToPeer_Event_Handler
+ 236 0194 00000000 		.word	aPeerToPeerContext
+ 238              		.section	.text.P2PS_STM_App_Update_Char,"ax",%progbits
+ 239              		.align	1
+ 240              		.global	P2PS_STM_App_Update_Char
+ 241              		.syntax unified
+ 242              		.thumb
+ 243              		.thumb_func
+ 245              	P2PS_STM_App_Update_Char:
+ 246              		@ args = 0, pretend = 0, frame = 0
+ 247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 248 0000 4FF64263 		movw	r3, #65090
+ 249 0004 9842     		cmp	r0, r3
+ 250 0006 01D0     		beq	.L26
+ 251 0008 9220     		movs	r0, #146
+ 252 000a 7047     		bx	lr
+ 253              	.L26:
+ 254 000c 00B5     		push	{lr}
+ 255 000e 83B0     		sub	sp, sp, #12
+ 256 0010 0448     		ldr	r0, .L27
+ 257 0012 0091     		str	r1, [sp]
+ 258 0014 0223     		movs	r3, #2
+ 259 0016 0022     		movs	r2, #0
+ 260 0018 8188     		ldrh	r1, [r0, #4]
+ 261 001a 0088     		ldrh	r0, [r0]
+ 262 001c FFF7FEFF 		bl	aci_gatt_update_char_value
+ 263 0020 03B0     		add	sp, sp, #12
+ 264              		@ sp needed
+ 265 0022 00BD     		pop	{pc}
+ 266              	.L28:
+ 267              		.align	2
+ 268              	.L27:
+ 269 0024 00000000 		.word	aPeerToPeerContext
+ 271              		.section	BLE_DRIVER_CONTEXT,"aw"
+ 272              		.align	2
+ 275              	aPeerToPeerContext:
+ 276 0000 00000000 		.space	6
+ 276      0000
+ 277              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 p2p_stm.c
+C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s:18     .text.PeerToPeer_Event_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s:23     .text.PeerToPeer_Event_Handler:00000000 PeerToPeer_Event_Handler
+C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s:94     .text.PeerToPeer_Event_Handler:00000090 $d
+C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s:275    BLE_DRIVER_CONTEXT:00000000 aPeerToPeerContext
+C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s:97     .text.P2PS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s:103    .text.P2PS_STM_Init:00000000 P2PS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s:235    .text.P2PS_STM_Init:00000190 $d
+C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s:239    .text.P2PS_STM_App_Update_Char:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s:245    .text.P2PS_STM_App_Update_Char:00000000 P2PS_STM_App_Update_Char
+C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s:269    .text.P2PS_STM_App_Update_Char:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cc280Vx8.s:272    BLE_DRIVER_CONTEXT:00000000 $d
+
+UNDEFINED SYMBOLS
+P2PS_STM_App_Notification
+SVCCTL_RegisterSvcHandler
+aci_gatt_add_service
+aci_gatt_add_char
+aci_gatt_update_char_value

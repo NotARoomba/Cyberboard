@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s 			page 1
   56 0056 9A61     		str	r2, [r3, #24]
   57 0058 7047     		bx	lr
   58              	.L3:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s 			page 2
 
 
   59 005a 00BF     		.align	2
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s 			page 1
  115 0064 114A     		ldr	r2, .L17+4
  116 0066 1360     		str	r3, [r2]
  117 0068 01E0     		b	.L11
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s 			page 3
 
 
  118              	.L7:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s 			page 1
  175 002c 04000000 		.word	4
  176 0030 04000000 		.word	4
  177 0034 0C000000 		.word	12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s 			page 4
 
 
  178 0038 08000000 		.word	8
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s 			page 1
  238 0020 02000000 		.word	2
  239 0024 04000000 		.word	4
  240 0028 08000000 		.word	8
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s 			page 5
 
 
  241 002c 10000000 		.word	16
@@ -252,26 +252,26 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s 			page 1
  251              	SystemCoreClock:
  252 0000 00093D00 		.word	4000000
  253              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 system_stm32wbxx.c
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:18     .text.SystemInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:24     .text.SystemInit:00000000 SystemInit
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:61     .text.SystemInit:0000005c $d
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:65     .text.SystemCoreClockUpdate:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:71     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:152    .text.SystemCoreClockUpdate:000000a8 $d
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:193    .rodata.MSIRangeTable:00000000 MSIRangeTable
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:251    .data.SystemCoreClock:00000000 SystemCoreClock
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:229    .rodata.AHBPrescTable:00000000 AHBPrescTable
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:163    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:160    .rodata.SmpsPrescalerTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:190    .rodata.MSIRangeTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:215    .rodata.APBPrescTable:00000000 APBPrescTable
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:212    .rodata.APBPrescTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:226    .rodata.AHBPrescTable:00000000 $d
-C:\Users\Nathan\AppData\Local\Temp\ccazVZ1y.s:248    .data.SystemCoreClock:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:18     .text.SystemInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:24     .text.SystemInit:00000000 SystemInit
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:61     .text.SystemInit:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:65     .text.SystemCoreClockUpdate:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:71     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:152    .text.SystemCoreClockUpdate:000000a8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:193    .rodata.MSIRangeTable:00000000 MSIRangeTable
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:251    .data.SystemCoreClock:00000000 SystemCoreClock
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:229    .rodata.AHBPrescTable:00000000 AHBPrescTable
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:163    .rodata.SmpsPrescalerTable:00000000 SmpsPrescalerTable
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:160    .rodata.SmpsPrescalerTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:190    .rodata.MSIRangeTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:215    .rodata.APBPrescTable:00000000 APBPrescTable
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:212    .rodata.APBPrescTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:226    .rodata.AHBPrescTable:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccQ4YZ7f.s:248    .data.SystemCoreClock:00000000 $d
 
 NO UNDEFINED SYMBOLS

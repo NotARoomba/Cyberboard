@@ -1,0 +1,590 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"custom_stm.c"
+  16              		.text
+  17              		.section	.text.aci_gatt_allow_read,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	aci_gatt_allow_read:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 08B5     		push	{r3, lr}
+  27 0002 0023     		movs	r3, #0
+  28 0004 1A46     		mov	r2, r3
+  29 0006 1946     		mov	r1, r3
+  30 0008 FFF7FEFF 		bl	aci_gatt_permit_read
+  31 000c 08BD     		pop	{r3, pc}
+  33              		.section	.text.Custom_STM_Event_Handler,"ax",%progbits
+  34              		.align	1
+  35              		.syntax unified
+  36              		.thumb
+  37              		.thumb_func
+  39              	Custom_STM_Event_Handler:
+  40              		@ args = 0, pretend = 0, frame = 24
+  41              		@ frame_needed = 0, uses_anonymous_args = 0
+  42 0000 10B5     		push	{r4, lr}
+  43 0002 86B0     		sub	sp, sp, #24
+  44 0004 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+  45 0006 FF2B     		cmp	r3, #255
+  46 0008 04D0     		beq	.L18
+  47 000a 0023     		movs	r3, #0
+  48 000c 1C46     		mov	r4, r3
+  49              	.L4:
+  50 000e 2046     		mov	r0, r4
+  51 0010 06B0     		add	sp, sp, #24
+  52              		@ sp needed
+  53 0012 10BD     		pop	{r4, pc}
+  54              	.L18:
+  55 0014 B0F80330 		ldrh	r3, [r0, #3]	@ unaligned
+  56 0018 40F61442 		movw	r2, #3092
+  57 001c 9342     		cmp	r3, r2
+  58 001e 47D0     		beq	.L5
+  59 0020 40F61B42 		movw	r2, #3099
+  60 0024 9342     		cmp	r3, r2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s 			page 2
+
+
+  61 0026 60D0     		beq	.L6
+  62 0028 40F60142 		movw	r2, #3073
+  63 002c 9342     		cmp	r3, r2
+  64 002e 69D1     		bne	.L14
+  65 0030 B0F80720 		ldrh	r2, [r0, #7]	@ unaligned
+  66 0034 354B     		ldr	r3, .L23
+  67 0036 5B88     		ldrh	r3, [r3, #2]
+  68 0038 0233     		adds	r3, r3, #2
+  69 003a 9A42     		cmp	r2, r3
+  70 003c 07D0     		beq	.L19
+  71 003e 334B     		ldr	r3, .L23
+  72 0040 9B88     		ldrh	r3, [r3, #4]
+  73 0042 0233     		adds	r3, r3, #2
+  74 0044 9A42     		cmp	r2, r3
+  75 0046 1AD0     		beq	.L20
+  76 0048 0023     		movs	r3, #0
+  77 004a 1C46     		mov	r4, r3
+  78 004c DFE7     		b	.L4
+  79              	.L19:
+  80 004e 437B     		ldrb	r3, [r0, #13]	@ zero_extendqisi2
+  81 0050 1C46     		mov	r4, r3
+  82 0052 23B1     		cbz	r3, .L8
+  83 0054 012B     		cmp	r3, #1
+  84 0056 0BD0     		beq	.L9
+  85 0058 0123     		movs	r3, #1
+  86 005a 1C46     		mov	r4, r3
+  87 005c D7E7     		b	.L4
+  88              	.L8:
+  89 005e 0223     		movs	r3, #2
+  90 0060 8DF80430 		strb	r3, [sp, #4]
+  91 0064 01A8     		add	r0, sp, #4
+  92 0066 FFF7FEFF 		bl	Custom_STM_App_Notification
+  93 006a 0123     		movs	r3, #1
+  94 006c 1C46     		mov	r4, r3
+  95 006e CEE7     		b	.L4
+  96              	.L9:
+  97 0070 0123     		movs	r3, #1
+  98 0072 8DF80430 		strb	r3, [sp, #4]
+  99 0076 01A8     		add	r0, sp, #4
+ 100 0078 FFF7FEFF 		bl	Custom_STM_App_Notification
+ 101 007c C7E7     		b	.L4
+ 102              	.L20:
+ 103 007e 437B     		ldrb	r3, [r0, #13]	@ zero_extendqisi2
+ 104 0080 1C46     		mov	r4, r3
+ 105 0082 23B1     		cbz	r3, .L10
+ 106 0084 012B     		cmp	r3, #1
+ 107 0086 0BD0     		beq	.L11
+ 108 0088 0123     		movs	r3, #1
+ 109 008a 1C46     		mov	r4, r3
+ 110 008c BFE7     		b	.L4
+ 111              	.L10:
+ 112 008e 0523     		movs	r3, #5
+ 113 0090 8DF80430 		strb	r3, [sp, #4]
+ 114 0094 01A8     		add	r0, sp, #4
+ 115 0096 FFF7FEFF 		bl	Custom_STM_App_Notification
+ 116 009a 0123     		movs	r3, #1
+ 117 009c 1C46     		mov	r4, r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s 			page 3
+
+
+ 118 009e B6E7     		b	.L4
+ 119              	.L11:
+ 120 00a0 0423     		movs	r3, #4
+ 121 00a2 8DF80430 		strb	r3, [sp, #4]
+ 122 00a6 0DEB0300 		add	r0, sp, r3
+ 123 00aa FFF7FEFF 		bl	Custom_STM_App_Notification
+ 124 00ae AEE7     		b	.L4
+ 125              	.L5:
+ 126 00b0 B0F80720 		ldrh	r2, [r0, #7]	@ unaligned
+ 127 00b4 154B     		ldr	r3, .L23
+ 128 00b6 5B88     		ldrh	r3, [r3, #2]
+ 129 00b8 0133     		adds	r3, r3, #1
+ 130 00ba 9A42     		cmp	r2, r3
+ 131 00bc 07D0     		beq	.L21
+ 132 00be 134B     		ldr	r3, .L23
+ 133 00c0 9B88     		ldrh	r3, [r3, #4]
+ 134 00c2 0133     		adds	r3, r3, #1
+ 135 00c4 9A42     		cmp	r2, r3
+ 136 00c6 09D0     		beq	.L22
+ 137 00c8 0023     		movs	r3, #0
+ 138 00ca 1C46     		mov	r4, r3
+ 139 00cc 9FE7     		b	.L4
+ 140              	.L21:
+ 141 00ce B0F80500 		ldrh	r0, [r0, #5]	@ unaligned
+ 142 00d2 FFF7FEFF 		bl	aci_gatt_allow_read
+ 143 00d6 0123     		movs	r3, #1
+ 144 00d8 1C46     		mov	r4, r3
+ 145 00da 98E7     		b	.L4
+ 146              	.L22:
+ 147 00dc B0F80500 		ldrh	r0, [r0, #5]	@ unaligned
+ 148 00e0 FFF7FEFF 		bl	aci_gatt_allow_read
+ 149 00e4 0123     		movs	r3, #1
+ 150 00e6 1C46     		mov	r4, r3
+ 151 00e8 91E7     		b	.L4
+ 152              	.L6:
+ 153 00ea 0623     		movs	r3, #6
+ 154 00ec 8DF80430 		strb	r3, [sp, #4]
+ 155 00f0 B0F80530 		ldrh	r3, [r0, #5]	@ unaligned
+ 156 00f4 ADF81430 		strh	r3, [sp, #20]	@ movhi
+ 157 00f8 01A8     		add	r0, sp, #4
+ 158 00fa FFF7FEFF 		bl	Custom_STM_App_Notification
+ 159 00fe 0023     		movs	r3, #0
+ 160 0100 1C46     		mov	r4, r3
+ 161 0102 84E7     		b	.L4
+ 162              	.L14:
+ 163 0104 0023     		movs	r3, #0
+ 164 0106 1C46     		mov	r4, r3
+ 165 0108 81E7     		b	.L4
+ 166              	.L24:
+ 167 010a 00BF     		.align	2
+ 168              	.L23:
+ 169 010c 00000000 		.word	CustomContext
+ 171              		.section	.text.Generic_STM_App_Update_Char_Ext,"ax",%progbits
+ 172              		.align	1
+ 173              		.syntax unified
+ 174              		.thumb
+ 175              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s 			page 4
+
+
+ 177              	Generic_STM_App_Update_Char_Ext:
+ 178              		@ args = 4, pretend = 0, frame = 0
+ 179              		@ frame_needed = 0, uses_anonymous_args = 0
+ 180 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 181 0004 84B0     		sub	sp, sp, #16
+ 182 0006 0746     		mov	r7, r0
+ 183 0008 8046     		mov	r8, r0
+ 184 000a 0E46     		mov	r6, r1
+ 185 000c 1546     		mov	r5, r2
+ 186 000e 1C46     		mov	r4, r3
+ 187 0010 0A9B     		ldr	r3, [sp, #40]
+ 188 0012 0393     		str	r3, [sp, #12]
+ 189 0014 F323     		movs	r3, #243
+ 190 0016 0293     		str	r3, [sp, #8]
+ 191 0018 0023     		movs	r3, #0
+ 192 001a 0193     		str	r3, [sp, #4]
+ 193 001c 0094     		str	r4, [sp]
+ 194 001e FFF7FEFF 		bl	aci_gatt_update_char_value_ext
+ 195 0022 B4F5F37F 		cmp	r4, #486
+ 196 0026 12D8     		bhi	.L26
+ 197 0028 0A9B     		ldr	r3, [sp, #40]
+ 198 002a F333     		adds	r3, r3, #243
+ 199 002c 0393     		str	r3, [sp, #12]
+ 200 002e 04F10D03 		add	r3, r4, #13
+ 201 0032 DBB2     		uxtb	r3, r3
+ 202 0034 0293     		str	r3, [sp, #8]
+ 203 0036 F323     		movs	r3, #243
+ 204 0038 0193     		str	r3, [sp, #4]
+ 205 003a 0094     		str	r4, [sp]
+ 206 003c 0123     		movs	r3, #1
+ 207 003e 2A46     		mov	r2, r5
+ 208 0040 3146     		mov	r1, r6
+ 209 0042 3846     		mov	r0, r7
+ 210 0044 FFF7FEFF 		bl	aci_gatt_update_char_value_ext
+ 211              	.L27:
+ 212 0048 04B0     		add	sp, sp, #16
+ 213              		@ sp needed
+ 214 004a BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 215              	.L26:
+ 216 004e 0A9B     		ldr	r3, [sp, #40]
+ 217 0050 F333     		adds	r3, r3, #243
+ 218 0052 0393     		str	r3, [sp, #12]
+ 219 0054 F323     		movs	r3, #243
+ 220 0056 0293     		str	r3, [sp, #8]
+ 221 0058 0193     		str	r3, [sp, #4]
+ 222 005a 0094     		str	r4, [sp]
+ 223 005c 0023     		movs	r3, #0
+ 224 005e 2A46     		mov	r2, r5
+ 225 0060 3146     		mov	r1, r6
+ 226 0062 4046     		mov	r0, r8
+ 227 0064 FFF7FEFF 		bl	aci_gatt_update_char_value_ext
+ 228 0068 0A9B     		ldr	r3, [sp, #40]
+ 229 006a 03F5F373 		add	r3, r3, #486
+ 230 006e 0393     		str	r3, [sp, #12]
+ 231 0070 04F11A03 		add	r3, r4, #26
+ 232 0074 DBB2     		uxtb	r3, r3
+ 233 0076 0293     		str	r3, [sp, #8]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s 			page 5
+
+
+ 234 0078 4FF4F373 		mov	r3, #486
+ 235 007c 0193     		str	r3, [sp, #4]
+ 236 007e 0094     		str	r4, [sp]
+ 237 0080 0123     		movs	r3, #1
+ 238 0082 2A46     		mov	r2, r5
+ 239 0084 3146     		mov	r1, r6
+ 240 0086 4046     		mov	r0, r8
+ 241 0088 FFF7FEFF 		bl	aci_gatt_update_char_value_ext
+ 242 008c DCE7     		b	.L27
+ 244              		.section	.text.SVCCTL_InitCustomSvc,"ax",%progbits
+ 245              		.align	1
+ 246              		.global	SVCCTL_InitCustomSvc
+ 247              		.syntax unified
+ 248              		.thumb
+ 249              		.thumb_func
+ 251              	SVCCTL_InitCustomSvc:
+ 252              		@ args = 0, pretend = 0, frame = 16
+ 253              		@ frame_needed = 0, uses_anonymous_args = 0
+ 254 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 255 0004 8BB0     		sub	sp, sp, #44
+ 256 0006 6048     		ldr	r0, .L31
+ 257 0008 FFF7FEFF 		bl	SVCCTL_RegisterSvcHandler
+ 258 000c 8F23     		movs	r3, #143
+ 259 000e 8DF81830 		strb	r3, [sp, #24]
+ 260 0012 E523     		movs	r3, #229
+ 261 0014 8DF81930 		strb	r3, [sp, #25]
+ 262 0018 B323     		movs	r3, #179
+ 263 001a 8DF81A30 		strb	r3, [sp, #26]
+ 264 001e D523     		movs	r3, #213
+ 265 0020 8DF81B30 		strb	r3, [sp, #27]
+ 266 0024 2E23     		movs	r3, #46
+ 267 0026 8DF81C30 		strb	r3, [sp, #28]
+ 268 002a 7F23     		movs	r3, #127
+ 269 002c 8DF81D30 		strb	r3, [sp, #29]
+ 270 0030 4A23     		movs	r3, #74
+ 271 0032 8DF81E30 		strb	r3, [sp, #30]
+ 272 0036 9823     		movs	r3, #152
+ 273 0038 8DF81F30 		strb	r3, [sp, #31]
+ 274 003c 2A23     		movs	r3, #42
+ 275 003e 8DF82030 		strb	r3, [sp, #32]
+ 276 0042 4823     		movs	r3, #72
+ 277 0044 8DF82130 		strb	r3, [sp, #33]
+ 278 0048 7A23     		movs	r3, #122
+ 279 004a 8DF82230 		strb	r3, [sp, #34]
+ 280 004e CC23     		movs	r3, #204
+ 281 0050 8DF82330 		strb	r3, [sp, #35]
+ 282 0054 0024     		movs	r4, #0
+ 283 0056 8DF82440 		strb	r4, [sp, #36]
+ 284 005a 8DF82540 		strb	r4, [sp, #37]
+ 285 005e 8DF82640 		strb	r4, [sp, #38]
+ 286 0062 8DF82740 		strb	r4, [sp, #39]
+ 287 0066 06AE     		add	r6, sp, #24
+ 288 0068 484B     		ldr	r3, .L31+4
+ 289 006a 0093     		str	r3, [sp]
+ 290 006c 0723     		movs	r3, #7
+ 291 006e 0122     		movs	r2, #1
+ 292 0070 3146     		mov	r1, r6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s 			page 6
+
+
+ 293 0072 0220     		movs	r0, #2
+ 294 0074 FFF7FEFF 		bl	aci_gatt_add_service
+ 295 0078 4FF0190B 		mov	fp, #25
+ 296 007c 8DF818B0 		strb	fp, [sp, #24]
+ 297 0080 ED25     		movs	r5, #237
+ 298 0082 8DF81950 		strb	r5, [sp, #25]
+ 299 0086 4FF0820A 		mov	r10, #130
+ 300 008a 8DF81AA0 		strb	r10, [sp, #26]
+ 301 008e 6FF05103 		mvn	r3, #81
+ 302 0092 8DF81B30 		strb	r3, [sp, #27]
+ 303 0096 8DF81C50 		strb	r5, [sp, #28]
+ 304 009a 4FF02102 		mov	r2, #33
+ 305 009e 8DF81D20 		strb	r2, [sp, #29]
+ 306 00a2 4FF04C00 		mov	r0, #76
+ 307 00a6 8DF81E00 		strb	r0, [sp, #30]
+ 308 00aa 6FF06207 		mvn	r7, #98
+ 309 00ae 8DF81F70 		strb	r7, [sp, #31]
+ 310 00b2 4FF0410C 		mov	ip, #65
+ 311 00b6 8DF820C0 		strb	ip, [sp, #32]
+ 312 00ba 4FF0450E 		mov	lr, #69
+ 313 00be 8DF821E0 		strb	lr, [sp, #33]
+ 314 00c2 4FF02209 		mov	r9, #34
+ 315 00c6 8DF82290 		strb	r9, [sp, #34]
+ 316 00ca 4FF08E08 		mov	r8, #142
+ 317 00ce 8DF82380 		strb	r8, [sp, #35]
+ 318 00d2 8DF82440 		strb	r4, [sp, #36]
+ 319 00d6 8DF82540 		strb	r4, [sp, #37]
+ 320 00da 8DF82640 		strb	r4, [sp, #38]
+ 321 00de 8DF82740 		strb	r4, [sp, #39]
+ 322 00e2 2A4B     		ldr	r3, .L31+4
+ 323 00e4 33F8020B 		ldrh	r0, [r3], #2
+ 324 00e8 0593     		str	r3, [sp, #20]
+ 325 00ea 0494     		str	r4, [sp, #16]
+ 326 00ec 1023     		movs	r3, #16
+ 327 00ee 0393     		str	r3, [sp, #12]
+ 328 00f0 0722     		movs	r2, #7
+ 329 00f2 0292     		str	r2, [sp, #8]
+ 330 00f4 0194     		str	r4, [sp, #4]
+ 331 00f6 1227     		movs	r7, #18
+ 332 00f8 0097     		str	r7, [sp]
+ 333 00fa 254B     		ldr	r3, .L31+8
+ 334 00fc 1B88     		ldrh	r3, [r3]
+ 335 00fe 3246     		mov	r2, r6
+ 336 0100 0221     		movs	r1, #2
+ 337 0102 FFF7FEFF 		bl	aci_gatt_add_char
+ 338 0106 8DF818B0 		strb	fp, [sp, #24]
+ 339 010a 8DF81950 		strb	r5, [sp, #25]
+ 340 010e 8DF81AA0 		strb	r10, [sp, #26]
+ 341 0112 6FF05101 		mvn	r1, #81
+ 342 0116 8DF81B10 		strb	r1, [sp, #27]
+ 343 011a 8DF81C50 		strb	r5, [sp, #28]
+ 344 011e 4FF02101 		mov	r1, #33
+ 345 0122 8DF81D10 		strb	r1, [sp, #29]
+ 346 0126 4FF04C00 		mov	r0, #76
+ 347 012a 8DF81E00 		strb	r0, [sp, #30]
+ 348 012e 6FF06201 		mvn	r1, #98
+ 349 0132 8DF81F10 		strb	r1, [sp, #31]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s 			page 7
+
+
+ 350 0136 4FF0410C 		mov	ip, #65
+ 351 013a 8DF820C0 		strb	ip, [sp, #32]
+ 352 013e 4FF0450E 		mov	lr, #69
+ 353 0142 8DF821E0 		strb	lr, [sp, #33]
+ 354 0146 8DF82290 		strb	r9, [sp, #34]
+ 355 014a 8DF82380 		strb	r8, [sp, #35]
+ 356 014e 8DF82440 		strb	r4, [sp, #36]
+ 357 0152 8DF82540 		strb	r4, [sp, #37]
+ 358 0156 8DF82640 		strb	r4, [sp, #38]
+ 359 015a 8DF82740 		strb	r4, [sp, #39]
+ 360 015e 0B4B     		ldr	r3, .L31+4
+ 361 0160 33F8040B 		ldrh	r0, [r3], #4
+ 362 0164 0593     		str	r3, [sp, #20]
+ 363 0166 0494     		str	r4, [sp, #16]
+ 364 0168 1023     		movs	r3, #16
+ 365 016a 0393     		str	r3, [sp, #12]
+ 366 016c 0722     		movs	r2, #7
+ 367 016e 0292     		str	r2, [sp, #8]
+ 368 0170 0194     		str	r4, [sp, #4]
+ 369 0172 0097     		str	r7, [sp]
+ 370 0174 074B     		ldr	r3, .L31+12
+ 371 0176 1B88     		ldrh	r3, [r3]
+ 372 0178 3246     		mov	r2, r6
+ 373 017a 0221     		movs	r1, #2
+ 374 017c FFF7FEFF 		bl	aci_gatt_add_char
+ 375 0180 0BB0     		add	sp, sp, #44
+ 376              		@ sp needed
+ 377 0182 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 378              	.L32:
+ 379 0186 00BF     		.align	2
+ 380              	.L31:
+ 381 0188 00000000 		.word	Custom_STM_Event_Handler
+ 382 018c 00000000 		.word	CustomContext
+ 383 0190 00000000 		.word	SizeImu_Data
+ 384 0194 00000000 		.word	SizeBaro_Data
+ 386              		.section	.text.Custom_STM_App_Update_Char,"ax",%progbits
+ 387              		.align	1
+ 388              		.global	Custom_STM_App_Update_Char
+ 389              		.syntax unified
+ 390              		.thumb
+ 391              		.thumb_func
+ 393              	Custom_STM_App_Update_Char:
+ 394              		@ args = 0, pretend = 0, frame = 0
+ 395              		@ frame_needed = 0, uses_anonymous_args = 0
+ 396 0000 00B5     		push	{lr}
+ 397 0002 83B0     		sub	sp, sp, #12
+ 398 0004 18B1     		cbz	r0, .L34
+ 399 0006 0128     		cmp	r0, #1
+ 400 0008 0CD0     		beq	.L35
+ 401 000a 9220     		movs	r0, #146
+ 402 000c 08E0     		b	.L36
+ 403              	.L34:
+ 404 000e 0A48     		ldr	r0, .L38
+ 405 0010 0091     		str	r1, [sp]
+ 406 0012 0A4B     		ldr	r3, .L38+4
+ 407 0014 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 408 0016 0022     		movs	r2, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s 			page 8
+
+
+ 409 0018 4188     		ldrh	r1, [r0, #2]
+ 410 001a 0088     		ldrh	r0, [r0]
+ 411 001c FFF7FEFF 		bl	aci_gatt_update_char_value
+ 412              	.L36:
+ 413 0020 03B0     		add	sp, sp, #12
+ 414              		@ sp needed
+ 415 0022 00BD     		pop	{pc}
+ 416              	.L35:
+ 417 0024 0448     		ldr	r0, .L38
+ 418 0026 0091     		str	r1, [sp]
+ 419 0028 054B     		ldr	r3, .L38+8
+ 420 002a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 421 002c 0022     		movs	r2, #0
+ 422 002e 8188     		ldrh	r1, [r0, #4]
+ 423 0030 0088     		ldrh	r0, [r0]
+ 424 0032 FFF7FEFF 		bl	aci_gatt_update_char_value
+ 425 0036 F3E7     		b	.L36
+ 426              	.L39:
+ 427              		.align	2
+ 428              	.L38:
+ 429 0038 00000000 		.word	CustomContext
+ 430 003c 00000000 		.word	SizeImu_Data
+ 431 0040 00000000 		.word	SizeBaro_Data
+ 433              		.section	.text.Custom_STM_App_Update_Char_Variable_Length,"ax",%progbits
+ 434              		.align	1
+ 435              		.global	Custom_STM_App_Update_Char_Variable_Length
+ 436              		.syntax unified
+ 437              		.thumb
+ 438              		.thumb_func
+ 440              	Custom_STM_App_Update_Char_Variable_Length:
+ 441              		@ args = 0, pretend = 0, frame = 0
+ 442              		@ frame_needed = 0, uses_anonymous_args = 0
+ 443 0000 00B5     		push	{lr}
+ 444 0002 83B0     		sub	sp, sp, #12
+ 445 0004 1346     		mov	r3, r2
+ 446 0006 18B1     		cbz	r0, .L41
+ 447 0008 0128     		cmp	r0, #1
+ 448 000a 0AD0     		beq	.L42
+ 449 000c 9220     		movs	r0, #146
+ 450 000e 06E0     		b	.L43
+ 451              	.L41:
+ 452 0010 0848     		ldr	r0, .L45
+ 453 0012 0091     		str	r1, [sp]
+ 454 0014 0022     		movs	r2, #0
+ 455 0016 4188     		ldrh	r1, [r0, #2]
+ 456 0018 0088     		ldrh	r0, [r0]
+ 457 001a FFF7FEFF 		bl	aci_gatt_update_char_value
+ 458              	.L43:
+ 459 001e 03B0     		add	sp, sp, #12
+ 460              		@ sp needed
+ 461 0020 00BD     		pop	{pc}
+ 462              	.L42:
+ 463 0022 0448     		ldr	r0, .L45
+ 464 0024 0091     		str	r1, [sp]
+ 465 0026 0022     		movs	r2, #0
+ 466 0028 8188     		ldrh	r1, [r0, #4]
+ 467 002a 0088     		ldrh	r0, [r0]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s 			page 9
+
+
+ 468 002c FFF7FEFF 		bl	aci_gatt_update_char_value
+ 469 0030 F5E7     		b	.L43
+ 470              	.L46:
+ 471 0032 00BF     		.align	2
+ 472              	.L45:
+ 473 0034 00000000 		.word	CustomContext
+ 475              		.section	.text.Custom_STM_App_Update_Char_Ext,"ax",%progbits
+ 476              		.align	1
+ 477              		.global	Custom_STM_App_Update_Char_Ext
+ 478              		.syntax unified
+ 479              		.thumb
+ 480              		.thumb_func
+ 482              	Custom_STM_App_Update_Char_Ext:
+ 483              		@ args = 0, pretend = 0, frame = 0
+ 484              		@ frame_needed = 0, uses_anonymous_args = 0
+ 485 0000 00B5     		push	{lr}
+ 486 0002 83B0     		sub	sp, sp, #12
+ 487 0004 19B1     		cbz	r1, .L48
+ 488 0006 0129     		cmp	r1, #1
+ 489 0008 0BD0     		beq	.L49
+ 490 000a 9220     		movs	r0, #146
+ 491 000c 07E0     		b	.L50
+ 492              	.L48:
+ 493 000e 0949     		ldr	r1, .L52
+ 494 0010 0092     		str	r2, [sp]
+ 495 0012 094B     		ldr	r3, .L52+4
+ 496 0014 1B88     		ldrh	r3, [r3]
+ 497 0016 4A88     		ldrh	r2, [r1, #2]
+ 498 0018 0988     		ldrh	r1, [r1]
+ 499 001a FFF7FEFF 		bl	Generic_STM_App_Update_Char_Ext
+ 500              	.L50:
+ 501 001e 03B0     		add	sp, sp, #12
+ 502              		@ sp needed
+ 503 0020 00BD     		pop	{pc}
+ 504              	.L49:
+ 505 0022 0449     		ldr	r1, .L52
+ 506 0024 0092     		str	r2, [sp]
+ 507 0026 054B     		ldr	r3, .L52+8
+ 508 0028 1B88     		ldrh	r3, [r3]
+ 509 002a 8A88     		ldrh	r2, [r1, #4]
+ 510 002c 0988     		ldrh	r1, [r1]
+ 511 002e FFF7FEFF 		bl	Generic_STM_App_Update_Char_Ext
+ 512 0032 F4E7     		b	.L50
+ 513              	.L53:
+ 514              		.align	2
+ 515              	.L52:
+ 516 0034 00000000 		.word	CustomContext
+ 517 0038 00000000 		.word	SizeImu_Data
+ 518 003c 00000000 		.word	SizeBaro_Data
+ 520              		.section	.bss.CustomContext,"aw",%nobits
+ 521              		.align	2
+ 524              	CustomContext:
+ 525 0000 00000000 		.space	6
+ 525      0000
+ 526              		.global	SizeBaro_Data
+ 527              		.section	.data.SizeBaro_Data,"aw"
+ 528              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s 			page 10
+
+
+ 531              	SizeBaro_Data:
+ 532 0000 0C00     		.short	12
+ 533              		.global	SizeImu_Data
+ 534              		.section	.data.SizeImu_Data,"aw"
+ 535              		.align	1
+ 538              	SizeImu_Data:
+ 539 0000 1C00     		.short	28
+ 540              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 custom_stm.c
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:18     .text.aci_gatt_allow_read:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:23     .text.aci_gatt_allow_read:00000000 aci_gatt_allow_read
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:34     .text.Custom_STM_Event_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:39     .text.Custom_STM_Event_Handler:00000000 Custom_STM_Event_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:169    .text.Custom_STM_Event_Handler:0000010c $d
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:524    .bss.CustomContext:00000000 CustomContext
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:172    .text.Generic_STM_App_Update_Char_Ext:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:177    .text.Generic_STM_App_Update_Char_Ext:00000000 Generic_STM_App_Update_Char_Ext
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:245    .text.SVCCTL_InitCustomSvc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:251    .text.SVCCTL_InitCustomSvc:00000000 SVCCTL_InitCustomSvc
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:381    .text.SVCCTL_InitCustomSvc:00000188 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:538    .data.SizeImu_Data:00000000 SizeImu_Data
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:531    .data.SizeBaro_Data:00000000 SizeBaro_Data
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:387    .text.Custom_STM_App_Update_Char:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:393    .text.Custom_STM_App_Update_Char:00000000 Custom_STM_App_Update_Char
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:429    .text.Custom_STM_App_Update_Char:00000038 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:434    .text.Custom_STM_App_Update_Char_Variable_Length:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:440    .text.Custom_STM_App_Update_Char_Variable_Length:00000000 Custom_STM_App_Update_Char_Variable_Length
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:473    .text.Custom_STM_App_Update_Char_Variable_Length:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:476    .text.Custom_STM_App_Update_Char_Ext:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:482    .text.Custom_STM_App_Update_Char_Ext:00000000 Custom_STM_App_Update_Char_Ext
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:516    .text.Custom_STM_App_Update_Char_Ext:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:521    .bss.CustomContext:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:528    .data.SizeBaro_Data:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccdCdyAW.s:535    .data.SizeImu_Data:00000000 $d
+
+UNDEFINED SYMBOLS
+aci_gatt_permit_read
+Custom_STM_App_Notification
+aci_gatt_update_char_value_ext
+SVCCTL_RegisterSvcHandler
+aci_gatt_add_service
+aci_gatt_add_char
+aci_gatt_update_char_value

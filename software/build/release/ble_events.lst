@@ -1,0 +1,2758 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"ble_events.c"
+  16              		.text
+  17              		.section	.text.hci_disconnection_complete_event,"ax",%progbits
+  18              		.align	1
+  19              		.weak	hci_disconnection_complete_event
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	hci_disconnection_complete_event:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 7047     		bx	lr
+  30              		.section	.text.hci_disconnection_complete_event_process,"ax",%progbits
+  31              		.align	1
+  32              		.syntax unified
+  33              		.thumb
+  34              		.thumb_func
+  36              	hci_disconnection_complete_event_process:
+  37              		@ args = 0, pretend = 0, frame = 0
+  38              		@ frame_needed = 0, uses_anonymous_args = 0
+  39 0000 08B5     		push	{r3, lr}
+  40 0002 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+  41 0004 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+  42 0008 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+  43 000a FFF7FEFF 		bl	hci_disconnection_complete_event
+  44 000e 08BD     		pop	{r3, pc}
+  46              		.section	.text.hci_encryption_change_event,"ax",%progbits
+  47              		.align	1
+  48              		.weak	hci_encryption_change_event
+  49              		.syntax unified
+  50              		.thumb
+  51              		.thumb_func
+  53              	hci_encryption_change_event:
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56              		@ link register save eliminated.
+  57 0000 7047     		bx	lr
+  59              		.section	.text.hci_encryption_change_event_process,"ax",%progbits
+  60              		.align	1
+  61              		.syntax unified
+  62              		.thumb
+  63              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 2
+
+
+  65              	hci_encryption_change_event_process:
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68 0000 08B5     		push	{r3, lr}
+  69 0002 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+  70 0004 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+  71 0008 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+  72 000a FFF7FEFF 		bl	hci_encryption_change_event
+  73 000e 08BD     		pop	{r3, pc}
+  75              		.section	.text.hci_read_remote_version_information_complete_event,"ax",%progbits
+  76              		.align	1
+  77              		.weak	hci_read_remote_version_information_complete_event
+  78              		.syntax unified
+  79              		.thumb
+  80              		.thumb_func
+  82              	hci_read_remote_version_information_complete_event:
+  83              		@ args = 4, pretend = 0, frame = 0
+  84              		@ frame_needed = 0, uses_anonymous_args = 0
+  85              		@ link register save eliminated.
+  86 0000 7047     		bx	lr
+  88              		.section	.text.hci_read_remote_version_information_complete_event_process,"ax",%progbits
+  89              		.align	1
+  90              		.syntax unified
+  91              		.thumb
+  92              		.thumb_func
+  94              	hci_read_remote_version_information_complete_event_process:
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97 0000 00B5     		push	{lr}
+  98 0002 83B0     		sub	sp, sp, #12
+  99 0004 C388     		ldrh	r3, [r0, #6]	@ unaligned
+ 100 0006 0093     		str	r3, [sp]
+ 101 0008 8388     		ldrh	r3, [r0, #4]	@ unaligned
+ 102 000a C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+ 103 000c B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+ 104 0010 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 105 0012 FFF7FEFF 		bl	hci_read_remote_version_information_complete_event
+ 106 0016 03B0     		add	sp, sp, #12
+ 107              		@ sp needed
+ 108 0018 00BD     		pop	{pc}
+ 110              		.section	.text.hci_hardware_error_event,"ax",%progbits
+ 111              		.align	1
+ 112              		.weak	hci_hardware_error_event
+ 113              		.syntax unified
+ 114              		.thumb
+ 115              		.thumb_func
+ 117              	hci_hardware_error_event:
+ 118              		@ args = 0, pretend = 0, frame = 0
+ 119              		@ frame_needed = 0, uses_anonymous_args = 0
+ 120              		@ link register save eliminated.
+ 121 0000 7047     		bx	lr
+ 123              		.section	.text.hci_hardware_error_event_process,"ax",%progbits
+ 124              		.align	1
+ 125              		.syntax unified
+ 126              		.thumb
+ 127              		.thumb_func
+ 129              	hci_hardware_error_event_process:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 3
+
+
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 0, uses_anonymous_args = 0
+ 132 0000 08B5     		push	{r3, lr}
+ 133 0002 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 134 0004 FFF7FEFF 		bl	hci_hardware_error_event
+ 135 0008 08BD     		pop	{r3, pc}
+ 137              		.section	.text.hci_number_of_completed_packets_event,"ax",%progbits
+ 138              		.align	1
+ 139              		.weak	hci_number_of_completed_packets_event
+ 140              		.syntax unified
+ 141              		.thumb
+ 142              		.thumb_func
+ 144              	hci_number_of_completed_packets_event:
+ 145              		@ args = 0, pretend = 0, frame = 0
+ 146              		@ frame_needed = 0, uses_anonymous_args = 0
+ 147              		@ link register save eliminated.
+ 148 0000 7047     		bx	lr
+ 150              		.section	.text.hci_number_of_completed_packets_event_process,"ax",%progbits
+ 151              		.align	1
+ 152              		.syntax unified
+ 153              		.thumb
+ 154              		.thumb_func
+ 156              	hci_number_of_completed_packets_event_process:
+ 157              		@ args = 0, pretend = 0, frame = 0
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159 0000 08B5     		push	{r3, lr}
+ 160 0002 0146     		mov	r1, r0
+ 161 0004 11F8010B 		ldrb	r0, [r1], #1	@ zero_extendqisi2
+ 162 0008 FFF7FEFF 		bl	hci_number_of_completed_packets_event
+ 163 000c 08BD     		pop	{r3, pc}
+ 165              		.section	.text.hci_encryption_key_refresh_complete_event,"ax",%progbits
+ 166              		.align	1
+ 167              		.weak	hci_encryption_key_refresh_complete_event
+ 168              		.syntax unified
+ 169              		.thumb
+ 170              		.thumb_func
+ 172              	hci_encryption_key_refresh_complete_event:
+ 173              		@ args = 0, pretend = 0, frame = 0
+ 174              		@ frame_needed = 0, uses_anonymous_args = 0
+ 175              		@ link register save eliminated.
+ 176 0000 7047     		bx	lr
+ 178              		.section	.text.hci_encryption_key_refresh_complete_event_process,"ax",%progbits
+ 179              		.align	1
+ 180              		.syntax unified
+ 181              		.thumb
+ 182              		.thumb_func
+ 184              	hci_encryption_key_refresh_complete_event_process:
+ 185              		@ args = 0, pretend = 0, frame = 0
+ 186              		@ frame_needed = 0, uses_anonymous_args = 0
+ 187 0000 08B5     		push	{r3, lr}
+ 188 0002 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+ 189 0006 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 190 0008 FFF7FEFF 		bl	hci_encryption_key_refresh_complete_event
+ 191 000c 08BD     		pop	{r3, pc}
+ 193              		.section	.text.hci_le_connection_complete_event,"ax",%progbits
+ 194              		.align	1
+ 195              		.weak	hci_le_connection_complete_event
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 4
+
+
+ 196              		.syntax unified
+ 197              		.thumb
+ 198              		.thumb_func
+ 200              	hci_le_connection_complete_event:
+ 201              		@ args = 20, pretend = 0, frame = 0
+ 202              		@ frame_needed = 0, uses_anonymous_args = 0
+ 203              		@ link register save eliminated.
+ 204 0000 7047     		bx	lr
+ 206              		.section	.text.hci_le_connection_complete_event_process,"ax",%progbits
+ 207              		.align	1
+ 208              		.syntax unified
+ 209              		.thumb
+ 210              		.thumb_func
+ 212              	hci_le_connection_complete_event_process:
+ 213              		@ args = 0, pretend = 0, frame = 0
+ 214              		@ frame_needed = 0, uses_anonymous_args = 0
+ 215 0000 00B5     		push	{lr}
+ 216 0002 87B0     		sub	sp, sp, #28
+ 217 0004 431D     		adds	r3, r0, #5
+ 218 0006 427C     		ldrb	r2, [r0, #17]	@ zero_extendqisi2
+ 219 0008 0492     		str	r2, [sp, #16]
+ 220 000a B0F80F20 		ldrh	r2, [r0, #15]	@ unaligned
+ 221 000e 0392     		str	r2, [sp, #12]
+ 222 0010 B0F80D20 		ldrh	r2, [r0, #13]	@ unaligned
+ 223 0014 0292     		str	r2, [sp, #8]
+ 224 0016 B0F80B20 		ldrh	r2, [r0, #11]	@ unaligned
+ 225 001a 0192     		str	r2, [sp, #4]
+ 226 001c 0093     		str	r3, [sp]
+ 227 001e 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+ 228 0020 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+ 229 0022 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+ 230 0026 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 231 0028 FFF7FEFF 		bl	hci_le_connection_complete_event
+ 232 002c 07B0     		add	sp, sp, #28
+ 233              		@ sp needed
+ 234 002e 00BD     		pop	{pc}
+ 236              		.section	.text.hci_le_advertising_report_event,"ax",%progbits
+ 237              		.align	1
+ 238              		.weak	hci_le_advertising_report_event
+ 239              		.syntax unified
+ 240              		.thumb
+ 241              		.thumb_func
+ 243              	hci_le_advertising_report_event:
+ 244              		@ args = 0, pretend = 0, frame = 0
+ 245              		@ frame_needed = 0, uses_anonymous_args = 0
+ 246              		@ link register save eliminated.
+ 247 0000 7047     		bx	lr
+ 249              		.section	.text.hci_le_advertising_report_event_process,"ax",%progbits
+ 250              		.align	1
+ 251              		.syntax unified
+ 252              		.thumb
+ 253              		.thumb_func
+ 255              	hci_le_advertising_report_event_process:
+ 256              		@ args = 0, pretend = 0, frame = 16
+ 257              		@ frame_needed = 0, uses_anonymous_args = 0
+ 258 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 259 0004 84B0     		sub	sp, sp, #16
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 5
+
+
+ 260 0006 8046     		mov	r8, r0
+ 261 0008 0446     		mov	r4, r0
+ 262 000a 0026     		movs	r6, #0
+ 263 000c 14E0     		b	.L24
+ 264              	.L25:
+ 265 000e 651C     		adds	r5, r4, #1
+ 266 0010 0922     		movs	r2, #9
+ 267 0012 2946     		mov	r1, r5
+ 268 0014 6846     		mov	r0, sp
+ 269 0016 FFF7FEFF 		bl	Osal_MemCpy
+ 270 001a 04F10A03 		add	r3, r4, #10
+ 271 001e CDF80930 		str	r3, [sp, #9]	@ unaligned
+ 272 0022 637A     		ldrb	r3, [r4, #9]	@ zero_extendqisi2
+ 273 0024 0933     		adds	r3, r3, #9
+ 274 0026 EC18     		adds	r4, r5, r3
+ 275 0028 EB5C     		ldrb	r3, [r5, r3]	@ zero_extendqisi2
+ 276 002a 8DF80D30 		strb	r3, [sp, #13]
+ 277 002e 6946     		mov	r1, sp
+ 278 0030 0120     		movs	r0, #1
+ 279 0032 FFF7FEFF 		bl	hci_le_advertising_report_event
+ 280 0036 0136     		adds	r6, r6, #1
+ 281              	.L24:
+ 282 0038 98F80030 		ldrb	r3, [r8]	@ zero_extendqisi2
+ 283 003c B342     		cmp	r3, r6
+ 284 003e E6DC     		bgt	.L25
+ 285 0040 04B0     		add	sp, sp, #16
+ 286              		@ sp needed
+ 287 0042 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 289              		.section	.text.hci_le_connection_update_complete_event,"ax",%progbits
+ 290              		.align	1
+ 291              		.weak	hci_le_connection_update_complete_event
+ 292              		.syntax unified
+ 293              		.thumb
+ 294              		.thumb_func
+ 296              	hci_le_connection_update_complete_event:
+ 297              		@ args = 4, pretend = 0, frame = 0
+ 298              		@ frame_needed = 0, uses_anonymous_args = 0
+ 299              		@ link register save eliminated.
+ 300 0000 7047     		bx	lr
+ 302              		.section	.text.hci_le_connection_update_complete_event_process,"ax",%progbits
+ 303              		.align	1
+ 304              		.syntax unified
+ 305              		.thumb
+ 306              		.thumb_func
+ 308              	hci_le_connection_update_complete_event_process:
+ 309              		@ args = 0, pretend = 0, frame = 0
+ 310              		@ frame_needed = 0, uses_anonymous_args = 0
+ 311 0000 00B5     		push	{lr}
+ 312 0002 83B0     		sub	sp, sp, #12
+ 313 0004 B0F80730 		ldrh	r3, [r0, #7]	@ unaligned
+ 314 0008 0093     		str	r3, [sp]
+ 315 000a B0F80530 		ldrh	r3, [r0, #5]	@ unaligned
+ 316 000e B0F80320 		ldrh	r2, [r0, #3]	@ unaligned
+ 317 0012 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+ 318 0016 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 319 0018 FFF7FEFF 		bl	hci_le_connection_update_complete_event
+ 320 001c 03B0     		add	sp, sp, #12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 6
+
+
+ 321              		@ sp needed
+ 322 001e 00BD     		pop	{pc}
+ 324              		.section	.text.hci_le_read_remote_features_page_0_complete_event,"ax",%progbits
+ 325              		.align	1
+ 326              		.weak	hci_le_read_remote_features_page_0_complete_event
+ 327              		.syntax unified
+ 328              		.thumb
+ 329              		.thumb_func
+ 331              	hci_le_read_remote_features_page_0_complete_event:
+ 332              		@ args = 0, pretend = 0, frame = 0
+ 333              		@ frame_needed = 0, uses_anonymous_args = 0
+ 334              		@ link register save eliminated.
+ 335 0000 7047     		bx	lr
+ 337              		.section	.text.hci_le_read_remote_features_page_0_complete_event_process,"ax",%progbits
+ 338              		.align	1
+ 339              		.syntax unified
+ 340              		.thumb
+ 341              		.thumb_func
+ 343              	hci_le_read_remote_features_page_0_complete_event_process:
+ 344              		@ args = 0, pretend = 0, frame = 0
+ 345              		@ frame_needed = 0, uses_anonymous_args = 0
+ 346 0000 08B5     		push	{r3, lr}
+ 347 0002 C21C     		adds	r2, r0, #3
+ 348 0004 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+ 349 0008 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 350 000a FFF7FEFF 		bl	hci_le_read_remote_features_page_0_complete_event
+ 351 000e 08BD     		pop	{r3, pc}
+ 353              		.section	.text.hci_le_long_term_key_request_event,"ax",%progbits
+ 354              		.align	1
+ 355              		.weak	hci_le_long_term_key_request_event
+ 356              		.syntax unified
+ 357              		.thumb
+ 358              		.thumb_func
+ 360              	hci_le_long_term_key_request_event:
+ 361              		@ args = 0, pretend = 0, frame = 0
+ 362              		@ frame_needed = 0, uses_anonymous_args = 0
+ 363              		@ link register save eliminated.
+ 364 0000 7047     		bx	lr
+ 366              		.section	.text.hci_le_long_term_key_request_event_process,"ax",%progbits
+ 367              		.align	1
+ 368              		.syntax unified
+ 369              		.thumb
+ 370              		.thumb_func
+ 372              	hci_le_long_term_key_request_event_process:
+ 373              		@ args = 0, pretend = 0, frame = 0
+ 374              		@ frame_needed = 0, uses_anonymous_args = 0
+ 375 0000 08B5     		push	{r3, lr}
+ 376 0002 4289     		ldrh	r2, [r0, #10]	@ unaligned
+ 377 0004 811C     		adds	r1, r0, #2
+ 378 0006 0088     		ldrh	r0, [r0]	@ unaligned
+ 379 0008 FFF7FEFF 		bl	hci_le_long_term_key_request_event
+ 380 000c 08BD     		pop	{r3, pc}
+ 382              		.section	.text.hci_le_data_length_change_event,"ax",%progbits
+ 383              		.align	1
+ 384              		.weak	hci_le_data_length_change_event
+ 385              		.syntax unified
+ 386              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 7
+
+
+ 387              		.thumb_func
+ 389              	hci_le_data_length_change_event:
+ 390              		@ args = 4, pretend = 0, frame = 0
+ 391              		@ frame_needed = 0, uses_anonymous_args = 0
+ 392              		@ link register save eliminated.
+ 393 0000 7047     		bx	lr
+ 395              		.section	.text.hci_le_data_length_change_event_process,"ax",%progbits
+ 396              		.align	1
+ 397              		.syntax unified
+ 398              		.thumb
+ 399              		.thumb_func
+ 401              	hci_le_data_length_change_event_process:
+ 402              		@ args = 0, pretend = 0, frame = 0
+ 403              		@ frame_needed = 0, uses_anonymous_args = 0
+ 404 0000 00B5     		push	{lr}
+ 405 0002 83B0     		sub	sp, sp, #12
+ 406 0004 0389     		ldrh	r3, [r0, #8]	@ unaligned
+ 407 0006 0093     		str	r3, [sp]
+ 408 0008 C388     		ldrh	r3, [r0, #6]	@ unaligned
+ 409 000a 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 410 000c 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 411 000e 0088     		ldrh	r0, [r0]	@ unaligned
+ 412 0010 FFF7FEFF 		bl	hci_le_data_length_change_event
+ 413 0014 03B0     		add	sp, sp, #12
+ 414              		@ sp needed
+ 415 0016 00BD     		pop	{pc}
+ 417              		.section	.text.hci_le_read_local_p256_public_key_complete_event,"ax",%progbits
+ 418              		.align	1
+ 419              		.weak	hci_le_read_local_p256_public_key_complete_event
+ 420              		.syntax unified
+ 421              		.thumb
+ 422              		.thumb_func
+ 424              	hci_le_read_local_p256_public_key_complete_event:
+ 425              		@ args = 0, pretend = 0, frame = 0
+ 426              		@ frame_needed = 0, uses_anonymous_args = 0
+ 427              		@ link register save eliminated.
+ 428 0000 7047     		bx	lr
+ 430              		.section	.text.hci_le_read_local_p256_public_key_complete_event_process,"ax",%progbits
+ 431              		.align	1
+ 432              		.syntax unified
+ 433              		.thumb
+ 434              		.thumb_func
+ 436              	hci_le_read_local_p256_public_key_complete_event_process:
+ 437              		@ args = 0, pretend = 0, frame = 0
+ 438              		@ frame_needed = 0, uses_anonymous_args = 0
+ 439 0000 08B5     		push	{r3, lr}
+ 440 0002 0146     		mov	r1, r0
+ 441 0004 11F8010B 		ldrb	r0, [r1], #1	@ zero_extendqisi2
+ 442 0008 FFF7FEFF 		bl	hci_le_read_local_p256_public_key_complete_event
+ 443 000c 08BD     		pop	{r3, pc}
+ 445              		.section	.text.hci_le_generate_dhkey_complete_event,"ax",%progbits
+ 446              		.align	1
+ 447              		.weak	hci_le_generate_dhkey_complete_event
+ 448              		.syntax unified
+ 449              		.thumb
+ 450              		.thumb_func
+ 452              	hci_le_generate_dhkey_complete_event:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 8
+
+
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 454              		@ frame_needed = 0, uses_anonymous_args = 0
+ 455              		@ link register save eliminated.
+ 456 0000 7047     		bx	lr
+ 458              		.section	.text.hci_le_generate_dhkey_complete_event_process,"ax",%progbits
+ 459              		.align	1
+ 460              		.syntax unified
+ 461              		.thumb
+ 462              		.thumb_func
+ 464              	hci_le_generate_dhkey_complete_event_process:
+ 465              		@ args = 0, pretend = 0, frame = 0
+ 466              		@ frame_needed = 0, uses_anonymous_args = 0
+ 467 0000 08B5     		push	{r3, lr}
+ 468 0002 0146     		mov	r1, r0
+ 469 0004 11F8010B 		ldrb	r0, [r1], #1	@ zero_extendqisi2
+ 470 0008 FFF7FEFF 		bl	hci_le_generate_dhkey_complete_event
+ 471 000c 08BD     		pop	{r3, pc}
+ 473              		.section	.text.hci_le_enhanced_connection_complete_event,"ax",%progbits
+ 474              		.align	1
+ 475              		.weak	hci_le_enhanced_connection_complete_event
+ 476              		.syntax unified
+ 477              		.thumb
+ 478              		.thumb_func
+ 480              	hci_le_enhanced_connection_complete_event:
+ 481              		@ args = 28, pretend = 0, frame = 0
+ 482              		@ frame_needed = 0, uses_anonymous_args = 0
+ 483              		@ link register save eliminated.
+ 484 0000 7047     		bx	lr
+ 486              		.section	.text.hci_le_enhanced_connection_complete_event_process,"ax",%progbits
+ 487              		.align	1
+ 488              		.syntax unified
+ 489              		.thumb
+ 490              		.thumb_func
+ 492              	hci_le_enhanced_connection_complete_event_process:
+ 493              		@ args = 0, pretend = 0, frame = 0
+ 494              		@ frame_needed = 0, uses_anonymous_args = 0
+ 495 0000 00B5     		push	{lr}
+ 496 0002 89B0     		sub	sp, sp, #36
+ 497 0004 431D     		adds	r3, r0, #5
+ 498 0006 00F10B02 		add	r2, r0, #11
+ 499 000a 00F11101 		add	r1, r0, #17
+ 500 000e 90F81DC0 		ldrb	ip, [r0, #29]	@ zero_extendqisi2
+ 501 0012 CDF818C0 		str	ip, [sp, #24]
+ 502 0016 B0F81BC0 		ldrh	ip, [r0, #27]	@ unaligned
+ 503 001a CDF814C0 		str	ip, [sp, #20]
+ 504 001e B0F819C0 		ldrh	ip, [r0, #25]	@ unaligned
+ 505 0022 CDF810C0 		str	ip, [sp, #16]
+ 506 0026 B0F817C0 		ldrh	ip, [r0, #23]	@ unaligned
+ 507 002a CDF80CC0 		str	ip, [sp, #12]
+ 508 002e 0291     		str	r1, [sp, #8]
+ 509 0030 0192     		str	r2, [sp, #4]
+ 510 0032 0093     		str	r3, [sp]
+ 511 0034 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+ 512 0036 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+ 513 0038 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+ 514 003c 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 515 003e FFF7FEFF 		bl	hci_le_enhanced_connection_complete_event
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 9
+
+
+ 516 0042 09B0     		add	sp, sp, #36
+ 517              		@ sp needed
+ 518 0044 00BD     		pop	{pc}
+ 520              		.section	.text.hci_le_directed_advertising_report_event,"ax",%progbits
+ 521              		.align	1
+ 522              		.weak	hci_le_directed_advertising_report_event
+ 523              		.syntax unified
+ 524              		.thumb
+ 525              		.thumb_func
+ 527              	hci_le_directed_advertising_report_event:
+ 528              		@ args = 0, pretend = 0, frame = 0
+ 529              		@ frame_needed = 0, uses_anonymous_args = 0
+ 530              		@ link register save eliminated.
+ 531 0000 7047     		bx	lr
+ 533              		.section	.text.hci_le_directed_advertising_report_event_process,"ax",%progbits
+ 534              		.align	1
+ 535              		.syntax unified
+ 536              		.thumb
+ 537              		.thumb_func
+ 539              	hci_le_directed_advertising_report_event_process:
+ 540              		@ args = 0, pretend = 0, frame = 0
+ 541              		@ frame_needed = 0, uses_anonymous_args = 0
+ 542 0000 08B5     		push	{r3, lr}
+ 543 0002 0146     		mov	r1, r0
+ 544 0004 11F8010B 		ldrb	r0, [r1], #1	@ zero_extendqisi2
+ 545 0008 FFF7FEFF 		bl	hci_le_directed_advertising_report_event
+ 546 000c 08BD     		pop	{r3, pc}
+ 548              		.section	.text.hci_le_phy_update_complete_event,"ax",%progbits
+ 549              		.align	1
+ 550              		.weak	hci_le_phy_update_complete_event
+ 551              		.syntax unified
+ 552              		.thumb
+ 553              		.thumb_func
+ 555              	hci_le_phy_update_complete_event:
+ 556              		@ args = 0, pretend = 0, frame = 0
+ 557              		@ frame_needed = 0, uses_anonymous_args = 0
+ 558              		@ link register save eliminated.
+ 559 0000 7047     		bx	lr
+ 561              		.section	.text.hci_le_phy_update_complete_event_process,"ax",%progbits
+ 562              		.align	1
+ 563              		.syntax unified
+ 564              		.thumb
+ 565              		.thumb_func
+ 567              	hci_le_phy_update_complete_event_process:
+ 568              		@ args = 0, pretend = 0, frame = 0
+ 569              		@ frame_needed = 0, uses_anonymous_args = 0
+ 570 0000 08B5     		push	{r3, lr}
+ 571 0002 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+ 572 0004 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+ 573 0006 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+ 574 000a 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 575 000c FFF7FEFF 		bl	hci_le_phy_update_complete_event
+ 576 0010 08BD     		pop	{r3, pc}
+ 578              		.section	.text.hci_le_extended_advertising_report_event,"ax",%progbits
+ 579              		.align	1
+ 580              		.weak	hci_le_extended_advertising_report_event
+ 581              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 10
+
+
+ 582              		.thumb
+ 583              		.thumb_func
+ 585              	hci_le_extended_advertising_report_event:
+ 586              		@ args = 40, pretend = 0, frame = 0
+ 587              		@ frame_needed = 0, uses_anonymous_args = 0
+ 588              		@ link register save eliminated.
+ 589 0000 7047     		bx	lr
+ 591              		.section	.text.hci_le_extended_advertising_report_event_process,"ax",%progbits
+ 592              		.align	1
+ 593              		.syntax unified
+ 594              		.thumb
+ 595              		.thumb_func
+ 597              	hci_le_extended_advertising_report_event_process:
+ 598              		@ args = 0, pretend = 0, frame = 0
+ 599              		@ frame_needed = 0, uses_anonymous_args = 0
+ 600 0000 00B5     		push	{lr}
+ 601 0002 8BB0     		sub	sp, sp, #44
+ 602 0004 00F11203 		add	r3, r0, #18
+ 603 0008 00F11902 		add	r2, r0, #25
+ 604 000c 0992     		str	r2, [sp, #36]
+ 605 000e 027E     		ldrb	r2, [r0, #24]	@ zero_extendqisi2
+ 606 0010 0892     		str	r2, [sp, #32]
+ 607 0012 0793     		str	r3, [sp, #28]
+ 608 0014 437C     		ldrb	r3, [r0, #17]	@ zero_extendqisi2
+ 609 0016 0693     		str	r3, [sp, #24]
+ 610 0018 B0F80F30 		ldrh	r3, [r0, #15]	@ unaligned
+ 611 001c 0593     		str	r3, [sp, #20]
+ 612 001e 837B     		ldrb	r3, [r0, #14]	@ zero_extendqisi2
+ 613 0020 0493     		str	r3, [sp, #16]
+ 614 0022 437B     		ldrb	r3, [r0, #13]	@ zero_extendqisi2
+ 615 0024 0393     		str	r3, [sp, #12]
+ 616 0026 037B     		ldrb	r3, [r0, #12]	@ zero_extendqisi2
+ 617 0028 0293     		str	r3, [sp, #8]
+ 618 002a C37A     		ldrb	r3, [r0, #11]	@ zero_extendqisi2
+ 619 002c 0193     		str	r3, [sp, #4]
+ 620 002e 837A     		ldrb	r3, [r0, #10]	@ zero_extendqisi2
+ 621 0030 0093     		str	r3, [sp]
+ 622 0032 031D     		adds	r3, r0, #4
+ 623 0034 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+ 624 0036 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+ 625 003a 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 626 003c FFF7FEFF 		bl	hci_le_extended_advertising_report_event
+ 627 0040 0BB0     		add	sp, sp, #44
+ 628              		@ sp needed
+ 629 0042 00BD     		pop	{pc}
+ 631              		.section	.text.hci_le_scan_timeout_event,"ax",%progbits
+ 632              		.align	1
+ 633              		.weak	hci_le_scan_timeout_event
+ 634              		.syntax unified
+ 635              		.thumb
+ 636              		.thumb_func
+ 638              	hci_le_scan_timeout_event:
+ 639              		@ args = 0, pretend = 0, frame = 0
+ 640              		@ frame_needed = 0, uses_anonymous_args = 0
+ 641              		@ link register save eliminated.
+ 642 0000 7047     		bx	lr
+ 644              		.section	.text.hci_le_scan_timeout_event_process,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 11
+
+
+ 645              		.align	1
+ 646              		.syntax unified
+ 647              		.thumb
+ 648              		.thumb_func
+ 650              	hci_le_scan_timeout_event_process:
+ 651              		@ args = 0, pretend = 0, frame = 0
+ 652              		@ frame_needed = 0, uses_anonymous_args = 0
+ 653 0000 08B5     		push	{r3, lr}
+ 654 0002 FFF7FEFF 		bl	hci_le_scan_timeout_event
+ 655 0006 08BD     		pop	{r3, pc}
+ 657              		.section	.text.hci_le_advertising_set_terminated_event,"ax",%progbits
+ 658              		.align	1
+ 659              		.weak	hci_le_advertising_set_terminated_event
+ 660              		.syntax unified
+ 661              		.thumb
+ 662              		.thumb_func
+ 664              	hci_le_advertising_set_terminated_event:
+ 665              		@ args = 0, pretend = 0, frame = 0
+ 666              		@ frame_needed = 0, uses_anonymous_args = 0
+ 667              		@ link register save eliminated.
+ 668 0000 7047     		bx	lr
+ 670              		.section	.text.hci_le_advertising_set_terminated_event_process,"ax",%progbits
+ 671              		.align	1
+ 672              		.syntax unified
+ 673              		.thumb
+ 674              		.thumb_func
+ 676              	hci_le_advertising_set_terminated_event_process:
+ 677              		@ args = 0, pretend = 0, frame = 0
+ 678              		@ frame_needed = 0, uses_anonymous_args = 0
+ 679 0000 08B5     		push	{r3, lr}
+ 680 0002 0379     		ldrb	r3, [r0, #4]	@ zero_extendqisi2
+ 681 0004 4288     		ldrh	r2, [r0, #2]	@ unaligned
+ 682 0006 4178     		ldrb	r1, [r0, #1]	@ zero_extendqisi2
+ 683 0008 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 684 000a FFF7FEFF 		bl	hci_le_advertising_set_terminated_event
+ 685 000e 08BD     		pop	{r3, pc}
+ 687              		.section	.text.hci_le_scan_request_received_event,"ax",%progbits
+ 688              		.align	1
+ 689              		.weak	hci_le_scan_request_received_event
+ 690              		.syntax unified
+ 691              		.thumb
+ 692              		.thumb_func
+ 694              	hci_le_scan_request_received_event:
+ 695              		@ args = 0, pretend = 0, frame = 0
+ 696              		@ frame_needed = 0, uses_anonymous_args = 0
+ 697              		@ link register save eliminated.
+ 698 0000 7047     		bx	lr
+ 700              		.section	.text.hci_le_scan_request_received_event_process,"ax",%progbits
+ 701              		.align	1
+ 702              		.syntax unified
+ 703              		.thumb
+ 704              		.thumb_func
+ 706              	hci_le_scan_request_received_event_process:
+ 707              		@ args = 0, pretend = 0, frame = 0
+ 708              		@ frame_needed = 0, uses_anonymous_args = 0
+ 709 0000 08B5     		push	{r3, lr}
+ 710 0002 821C     		adds	r2, r0, #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 12
+
+
+ 711 0004 4178     		ldrb	r1, [r0, #1]	@ zero_extendqisi2
+ 712 0006 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 713 0008 FFF7FEFF 		bl	hci_le_scan_request_received_event
+ 714 000c 08BD     		pop	{r3, pc}
+ 716              		.section	.text.hci_le_channel_selection_algorithm_event,"ax",%progbits
+ 717              		.align	1
+ 718              		.weak	hci_le_channel_selection_algorithm_event
+ 719              		.syntax unified
+ 720              		.thumb
+ 721              		.thumb_func
+ 723              	hci_le_channel_selection_algorithm_event:
+ 724              		@ args = 0, pretend = 0, frame = 0
+ 725              		@ frame_needed = 0, uses_anonymous_args = 0
+ 726              		@ link register save eliminated.
+ 727 0000 7047     		bx	lr
+ 729              		.section	.text.hci_le_channel_selection_algorithm_event_process,"ax",%progbits
+ 730              		.align	1
+ 731              		.syntax unified
+ 732              		.thumb
+ 733              		.thumb_func
+ 735              	hci_le_channel_selection_algorithm_event_process:
+ 736              		@ args = 0, pretend = 0, frame = 0
+ 737              		@ frame_needed = 0, uses_anonymous_args = 0
+ 738 0000 08B5     		push	{r3, lr}
+ 739 0002 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 740 0004 0088     		ldrh	r0, [r0]	@ unaligned
+ 741 0006 FFF7FEFF 		bl	hci_le_channel_selection_algorithm_event
+ 742 000a 08BD     		pop	{r3, pc}
+ 744              		.section	.text.aci_warning_event,"ax",%progbits
+ 745              		.align	1
+ 746              		.weak	aci_warning_event
+ 747              		.syntax unified
+ 748              		.thumb
+ 749              		.thumb_func
+ 751              	aci_warning_event:
+ 752              		@ args = 0, pretend = 0, frame = 0
+ 753              		@ frame_needed = 0, uses_anonymous_args = 0
+ 754              		@ link register save eliminated.
+ 755 0000 7047     		bx	lr
+ 757              		.section	.text.aci_warning_event_process,"ax",%progbits
+ 758              		.align	1
+ 759              		.syntax unified
+ 760              		.thumb
+ 761              		.thumb_func
+ 763              	aci_warning_event_process:
+ 764              		@ args = 0, pretend = 0, frame = 0
+ 765              		@ frame_needed = 0, uses_anonymous_args = 0
+ 766 0000 08B5     		push	{r3, lr}
+ 767 0002 821C     		adds	r2, r0, #2
+ 768 0004 4178     		ldrb	r1, [r0, #1]	@ zero_extendqisi2
+ 769 0006 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 770 0008 FFF7FEFF 		bl	aci_warning_event
+ 771 000c 08BD     		pop	{r3, pc}
+ 773              		.section	.text.aci_gap_limited_discoverable_event,"ax",%progbits
+ 774              		.align	1
+ 775              		.weak	aci_gap_limited_discoverable_event
+ 776              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 13
+
+
+ 777              		.thumb
+ 778              		.thumb_func
+ 780              	aci_gap_limited_discoverable_event:
+ 781              		@ args = 0, pretend = 0, frame = 0
+ 782              		@ frame_needed = 0, uses_anonymous_args = 0
+ 783              		@ link register save eliminated.
+ 784 0000 7047     		bx	lr
+ 786              		.section	.text.aci_gap_limited_discoverable_event_process,"ax",%progbits
+ 787              		.align	1
+ 788              		.syntax unified
+ 789              		.thumb
+ 790              		.thumb_func
+ 792              	aci_gap_limited_discoverable_event_process:
+ 793              		@ args = 0, pretend = 0, frame = 0
+ 794              		@ frame_needed = 0, uses_anonymous_args = 0
+ 795 0000 08B5     		push	{r3, lr}
+ 796 0002 FFF7FEFF 		bl	aci_gap_limited_discoverable_event
+ 797 0006 08BD     		pop	{r3, pc}
+ 799              		.section	.text.aci_gap_pairing_complete_event,"ax",%progbits
+ 800              		.align	1
+ 801              		.weak	aci_gap_pairing_complete_event
+ 802              		.syntax unified
+ 803              		.thumb
+ 804              		.thumb_func
+ 806              	aci_gap_pairing_complete_event:
+ 807              		@ args = 0, pretend = 0, frame = 0
+ 808              		@ frame_needed = 0, uses_anonymous_args = 0
+ 809              		@ link register save eliminated.
+ 810 0000 7047     		bx	lr
+ 812              		.section	.text.aci_gap_pairing_complete_event_process,"ax",%progbits
+ 813              		.align	1
+ 814              		.syntax unified
+ 815              		.thumb
+ 816              		.thumb_func
+ 818              	aci_gap_pairing_complete_event_process:
+ 819              		@ args = 0, pretend = 0, frame = 0
+ 820              		@ frame_needed = 0, uses_anonymous_args = 0
+ 821 0000 08B5     		push	{r3, lr}
+ 822 0002 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+ 823 0004 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 824 0006 0088     		ldrh	r0, [r0]	@ unaligned
+ 825 0008 FFF7FEFF 		bl	aci_gap_pairing_complete_event
+ 826 000c 08BD     		pop	{r3, pc}
+ 828              		.section	.text.aci_gap_pass_key_req_event,"ax",%progbits
+ 829              		.align	1
+ 830              		.weak	aci_gap_pass_key_req_event
+ 831              		.syntax unified
+ 832              		.thumb
+ 833              		.thumb_func
+ 835              	aci_gap_pass_key_req_event:
+ 836              		@ args = 0, pretend = 0, frame = 0
+ 837              		@ frame_needed = 0, uses_anonymous_args = 0
+ 838              		@ link register save eliminated.
+ 839 0000 7047     		bx	lr
+ 841              		.section	.text.aci_gap_pass_key_req_event_process,"ax",%progbits
+ 842              		.align	1
+ 843              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 14
+
+
+ 844              		.thumb
+ 845              		.thumb_func
+ 847              	aci_gap_pass_key_req_event_process:
+ 848              		@ args = 0, pretend = 0, frame = 0
+ 849              		@ frame_needed = 0, uses_anonymous_args = 0
+ 850 0000 08B5     		push	{r3, lr}
+ 851 0002 0088     		ldrh	r0, [r0]	@ unaligned
+ 852 0004 FFF7FEFF 		bl	aci_gap_pass_key_req_event
+ 853 0008 08BD     		pop	{r3, pc}
+ 855              		.section	.text.aci_gap_authorization_req_event,"ax",%progbits
+ 856              		.align	1
+ 857              		.weak	aci_gap_authorization_req_event
+ 858              		.syntax unified
+ 859              		.thumb
+ 860              		.thumb_func
+ 862              	aci_gap_authorization_req_event:
+ 863              		@ args = 0, pretend = 0, frame = 0
+ 864              		@ frame_needed = 0, uses_anonymous_args = 0
+ 865              		@ link register save eliminated.
+ 866 0000 7047     		bx	lr
+ 868              		.section	.text.aci_gap_authorization_req_event_process,"ax",%progbits
+ 869              		.align	1
+ 870              		.syntax unified
+ 871              		.thumb
+ 872              		.thumb_func
+ 874              	aci_gap_authorization_req_event_process:
+ 875              		@ args = 0, pretend = 0, frame = 0
+ 876              		@ frame_needed = 0, uses_anonymous_args = 0
+ 877 0000 08B5     		push	{r3, lr}
+ 878 0002 0088     		ldrh	r0, [r0]	@ unaligned
+ 879 0004 FFF7FEFF 		bl	aci_gap_authorization_req_event
+ 880 0008 08BD     		pop	{r3, pc}
+ 882              		.section	.text.aci_gap_bond_lost_event,"ax",%progbits
+ 883              		.align	1
+ 884              		.weak	aci_gap_bond_lost_event
+ 885              		.syntax unified
+ 886              		.thumb
+ 887              		.thumb_func
+ 889              	aci_gap_bond_lost_event:
+ 890              		@ args = 0, pretend = 0, frame = 0
+ 891              		@ frame_needed = 0, uses_anonymous_args = 0
+ 892              		@ link register save eliminated.
+ 893 0000 7047     		bx	lr
+ 895              		.section	.text.aci_gap_bond_lost_event_process,"ax",%progbits
+ 896              		.align	1
+ 897              		.syntax unified
+ 898              		.thumb
+ 899              		.thumb_func
+ 901              	aci_gap_bond_lost_event_process:
+ 902              		@ args = 0, pretend = 0, frame = 0
+ 903              		@ frame_needed = 0, uses_anonymous_args = 0
+ 904 0000 08B5     		push	{r3, lr}
+ 905 0002 0088     		ldrh	r0, [r0]	@ unaligned
+ 906 0004 FFF7FEFF 		bl	aci_gap_bond_lost_event
+ 907 0008 08BD     		pop	{r3, pc}
+ 909              		.section	.text.aci_gap_proc_complete_event,"ax",%progbits
+ 910              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 15
+
+
+ 911              		.weak	aci_gap_proc_complete_event
+ 912              		.syntax unified
+ 913              		.thumb
+ 914              		.thumb_func
+ 916              	aci_gap_proc_complete_event:
+ 917              		@ args = 0, pretend = 0, frame = 0
+ 918              		@ frame_needed = 0, uses_anonymous_args = 0
+ 919              		@ link register save eliminated.
+ 920 0000 7047     		bx	lr
+ 922              		.section	.text.aci_gap_proc_complete_event_process,"ax",%progbits
+ 923              		.align	1
+ 924              		.syntax unified
+ 925              		.thumb
+ 926              		.thumb_func
+ 928              	aci_gap_proc_complete_event_process:
+ 929              		@ args = 0, pretend = 0, frame = 0
+ 930              		@ frame_needed = 0, uses_anonymous_args = 0
+ 931 0000 08B5     		push	{r3, lr}
+ 932 0002 C31C     		adds	r3, r0, #3
+ 933 0004 8278     		ldrb	r2, [r0, #2]	@ zero_extendqisi2
+ 934 0006 4178     		ldrb	r1, [r0, #1]	@ zero_extendqisi2
+ 935 0008 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 936 000a FFF7FEFF 		bl	aci_gap_proc_complete_event
+ 937 000e 08BD     		pop	{r3, pc}
+ 939              		.section	.text.aci_gap_addr_not_resolved_event,"ax",%progbits
+ 940              		.align	1
+ 941              		.weak	aci_gap_addr_not_resolved_event
+ 942              		.syntax unified
+ 943              		.thumb
+ 944              		.thumb_func
+ 946              	aci_gap_addr_not_resolved_event:
+ 947              		@ args = 0, pretend = 0, frame = 0
+ 948              		@ frame_needed = 0, uses_anonymous_args = 0
+ 949              		@ link register save eliminated.
+ 950 0000 7047     		bx	lr
+ 952              		.section	.text.aci_gap_addr_not_resolved_event_process,"ax",%progbits
+ 953              		.align	1
+ 954              		.syntax unified
+ 955              		.thumb
+ 956              		.thumb_func
+ 958              	aci_gap_addr_not_resolved_event_process:
+ 959              		@ args = 0, pretend = 0, frame = 0
+ 960              		@ frame_needed = 0, uses_anonymous_args = 0
+ 961 0000 08B5     		push	{r3, lr}
+ 962 0002 0088     		ldrh	r0, [r0]	@ unaligned
+ 963 0004 FFF7FEFF 		bl	aci_gap_addr_not_resolved_event
+ 964 0008 08BD     		pop	{r3, pc}
+ 966              		.section	.text.aci_gap_numeric_comparison_value_event,"ax",%progbits
+ 967              		.align	1
+ 968              		.weak	aci_gap_numeric_comparison_value_event
+ 969              		.syntax unified
+ 970              		.thumb
+ 971              		.thumb_func
+ 973              	aci_gap_numeric_comparison_value_event:
+ 974              		@ args = 0, pretend = 0, frame = 0
+ 975              		@ frame_needed = 0, uses_anonymous_args = 0
+ 976              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 16
+
+
+ 977 0000 7047     		bx	lr
+ 979              		.section	.text.aci_gap_numeric_comparison_value_event_process,"ax",%progbits
+ 980              		.align	1
+ 981              		.syntax unified
+ 982              		.thumb
+ 983              		.thumb_func
+ 985              	aci_gap_numeric_comparison_value_event_process:
+ 986              		@ args = 0, pretend = 0, frame = 0
+ 987              		@ frame_needed = 0, uses_anonymous_args = 0
+ 988 0000 08B5     		push	{r3, lr}
+ 989 0002 D0F80210 		ldr	r1, [r0, #2]	@ unaligned
+ 990 0006 0088     		ldrh	r0, [r0]	@ unaligned
+ 991 0008 FFF7FEFF 		bl	aci_gap_numeric_comparison_value_event
+ 992 000c 08BD     		pop	{r3, pc}
+ 994              		.section	.text.aci_gap_keypress_notification_event,"ax",%progbits
+ 995              		.align	1
+ 996              		.weak	aci_gap_keypress_notification_event
+ 997              		.syntax unified
+ 998              		.thumb
+ 999              		.thumb_func
+ 1001              	aci_gap_keypress_notification_event:
+ 1002              		@ args = 0, pretend = 0, frame = 0
+ 1003              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1004              		@ link register save eliminated.
+ 1005 0000 7047     		bx	lr
+ 1007              		.section	.text.aci_gap_keypress_notification_event_process,"ax",%progbits
+ 1008              		.align	1
+ 1009              		.syntax unified
+ 1010              		.thumb
+ 1011              		.thumb_func
+ 1013              	aci_gap_keypress_notification_event_process:
+ 1014              		@ args = 0, pretend = 0, frame = 0
+ 1015              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1016 0000 08B5     		push	{r3, lr}
+ 1017 0002 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1018 0004 0088     		ldrh	r0, [r0]	@ unaligned
+ 1019 0006 FFF7FEFF 		bl	aci_gap_keypress_notification_event
+ 1020 000a 08BD     		pop	{r3, pc}
+ 1022              		.section	.text.aci_gap_pairing_request_event,"ax",%progbits
+ 1023              		.align	1
+ 1024              		.weak	aci_gap_pairing_request_event
+ 1025              		.syntax unified
+ 1026              		.thumb
+ 1027              		.thumb_func
+ 1029              	aci_gap_pairing_request_event:
+ 1030              		@ args = 0, pretend = 0, frame = 0
+ 1031              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1032              		@ link register save eliminated.
+ 1033 0000 7047     		bx	lr
+ 1035              		.section	.text.aci_gap_pairing_request_event_process,"ax",%progbits
+ 1036              		.align	1
+ 1037              		.syntax unified
+ 1038              		.thumb
+ 1039              		.thumb_func
+ 1041              	aci_gap_pairing_request_event_process:
+ 1042              		@ args = 0, pretend = 0, frame = 0
+ 1043              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 17
+
+
+ 1044 0000 08B5     		push	{r3, lr}
+ 1045 0002 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+ 1046 0004 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1047 0006 0088     		ldrh	r0, [r0]	@ unaligned
+ 1048 0008 FFF7FEFF 		bl	aci_gap_pairing_request_event
+ 1049 000c 08BD     		pop	{r3, pc}
+ 1051              		.section	.text.aci_l2cap_connection_update_resp_event,"ax",%progbits
+ 1052              		.align	1
+ 1053              		.weak	aci_l2cap_connection_update_resp_event
+ 1054              		.syntax unified
+ 1055              		.thumb
+ 1056              		.thumb_func
+ 1058              	aci_l2cap_connection_update_resp_event:
+ 1059              		@ args = 0, pretend = 0, frame = 0
+ 1060              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1061              		@ link register save eliminated.
+ 1062 0000 7047     		bx	lr
+ 1064              		.section	.text.aci_l2cap_connection_update_resp_event_process,"ax",%progbits
+ 1065              		.align	1
+ 1066              		.syntax unified
+ 1067              		.thumb
+ 1068              		.thumb_func
+ 1070              	aci_l2cap_connection_update_resp_event_process:
+ 1071              		@ args = 0, pretend = 0, frame = 0
+ 1072              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1073 0000 08B5     		push	{r3, lr}
+ 1074 0002 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1075 0004 0088     		ldrh	r0, [r0]	@ unaligned
+ 1076 0006 FFF7FEFF 		bl	aci_l2cap_connection_update_resp_event
+ 1077 000a 08BD     		pop	{r3, pc}
+ 1079              		.section	.text.aci_l2cap_proc_timeout_event,"ax",%progbits
+ 1080              		.align	1
+ 1081              		.weak	aci_l2cap_proc_timeout_event
+ 1082              		.syntax unified
+ 1083              		.thumb
+ 1084              		.thumb_func
+ 1086              	aci_l2cap_proc_timeout_event:
+ 1087              		@ args = 0, pretend = 0, frame = 0
+ 1088              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1089              		@ link register save eliminated.
+ 1090 0000 7047     		bx	lr
+ 1092              		.section	.text.aci_l2cap_proc_timeout_event_process,"ax",%progbits
+ 1093              		.align	1
+ 1094              		.syntax unified
+ 1095              		.thumb
+ 1096              		.thumb_func
+ 1098              	aci_l2cap_proc_timeout_event_process:
+ 1099              		@ args = 0, pretend = 0, frame = 0
+ 1100              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1101 0000 08B5     		push	{r3, lr}
+ 1102 0002 C21C     		adds	r2, r0, #3
+ 1103 0004 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1104 0006 0088     		ldrh	r0, [r0]	@ unaligned
+ 1105 0008 FFF7FEFF 		bl	aci_l2cap_proc_timeout_event
+ 1106 000c 08BD     		pop	{r3, pc}
+ 1108              		.section	.text.aci_l2cap_connection_update_req_event,"ax",%progbits
+ 1109              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 18
+
+
+ 1110              		.weak	aci_l2cap_connection_update_req_event
+ 1111              		.syntax unified
+ 1112              		.thumb
+ 1113              		.thumb_func
+ 1115              	aci_l2cap_connection_update_req_event:
+ 1116              		@ args = 12, pretend = 0, frame = 0
+ 1117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1118              		@ link register save eliminated.
+ 1119 0000 7047     		bx	lr
+ 1121              		.section	.text.aci_l2cap_connection_update_req_event_process,"ax",%progbits
+ 1122              		.align	1
+ 1123              		.syntax unified
+ 1124              		.thumb
+ 1125              		.thumb_func
+ 1127              	aci_l2cap_connection_update_req_event_process:
+ 1128              		@ args = 0, pretend = 0, frame = 0
+ 1129              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1130 0000 00B5     		push	{lr}
+ 1131 0002 85B0     		sub	sp, sp, #20
+ 1132 0004 B0F80B30 		ldrh	r3, [r0, #11]	@ unaligned
+ 1133 0008 0293     		str	r3, [sp, #8]
+ 1134 000a B0F80930 		ldrh	r3, [r0, #9]	@ unaligned
+ 1135 000e 0193     		str	r3, [sp, #4]
+ 1136 0010 B0F80730 		ldrh	r3, [r0, #7]	@ unaligned
+ 1137 0014 0093     		str	r3, [sp]
+ 1138 0016 B0F80530 		ldrh	r3, [r0, #5]	@ unaligned
+ 1139 001a B0F80320 		ldrh	r2, [r0, #3]	@ unaligned
+ 1140 001e 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1141 0020 0088     		ldrh	r0, [r0]	@ unaligned
+ 1142 0022 FFF7FEFF 		bl	aci_l2cap_connection_update_req_event
+ 1143 0026 05B0     		add	sp, sp, #20
+ 1144              		@ sp needed
+ 1145 0028 00BD     		pop	{pc}
+ 1147              		.section	.text.aci_l2cap_command_reject_event,"ax",%progbits
+ 1148              		.align	1
+ 1149              		.weak	aci_l2cap_command_reject_event
+ 1150              		.syntax unified
+ 1151              		.thumb
+ 1152              		.thumb_func
+ 1154              	aci_l2cap_command_reject_event:
+ 1155              		@ args = 4, pretend = 0, frame = 0
+ 1156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1157              		@ link register save eliminated.
+ 1158 0000 7047     		bx	lr
+ 1160              		.section	.text.aci_l2cap_command_reject_event_process,"ax",%progbits
+ 1161              		.align	1
+ 1162              		.syntax unified
+ 1163              		.thumb
+ 1164              		.thumb_func
+ 1166              	aci_l2cap_command_reject_event_process:
+ 1167              		@ args = 0, pretend = 0, frame = 0
+ 1168              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1169 0000 00B5     		push	{lr}
+ 1170 0002 83B0     		sub	sp, sp, #12
+ 1171 0004 831D     		adds	r3, r0, #6
+ 1172 0006 0093     		str	r3, [sp]
+ 1173 0008 4379     		ldrb	r3, [r0, #5]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 19
+
+
+ 1174 000a B0F80320 		ldrh	r2, [r0, #3]	@ unaligned
+ 1175 000e 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1176 0010 0088     		ldrh	r0, [r0]	@ unaligned
+ 1177 0012 FFF7FEFF 		bl	aci_l2cap_command_reject_event
+ 1178 0016 03B0     		add	sp, sp, #12
+ 1179              		@ sp needed
+ 1180 0018 00BD     		pop	{pc}
+ 1182              		.section	.text.aci_l2cap_coc_connect_event,"ax",%progbits
+ 1183              		.align	1
+ 1184              		.weak	aci_l2cap_coc_connect_event
+ 1185              		.syntax unified
+ 1186              		.thumb
+ 1187              		.thumb_func
+ 1189              	aci_l2cap_coc_connect_event:
+ 1190              		@ args = 8, pretend = 0, frame = 0
+ 1191              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1192              		@ link register save eliminated.
+ 1193 0000 7047     		bx	lr
+ 1195              		.section	.text.aci_l2cap_coc_connect_event_process,"ax",%progbits
+ 1196              		.align	1
+ 1197              		.syntax unified
+ 1198              		.thumb
+ 1199              		.thumb_func
+ 1201              	aci_l2cap_coc_connect_event_process:
+ 1202              		@ args = 0, pretend = 0, frame = 0
+ 1203              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1204 0000 00B5     		push	{lr}
+ 1205 0002 83B0     		sub	sp, sp, #12
+ 1206 0004 837A     		ldrb	r3, [r0, #10]	@ zero_extendqisi2
+ 1207 0006 0193     		str	r3, [sp, #4]
+ 1208 0008 0389     		ldrh	r3, [r0, #8]	@ unaligned
+ 1209 000a 0093     		str	r3, [sp]
+ 1210 000c C388     		ldrh	r3, [r0, #6]	@ unaligned
+ 1211 000e 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 1212 0010 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1213 0012 0088     		ldrh	r0, [r0]	@ unaligned
+ 1214 0014 FFF7FEFF 		bl	aci_l2cap_coc_connect_event
+ 1215 0018 03B0     		add	sp, sp, #12
+ 1216              		@ sp needed
+ 1217 001a 00BD     		pop	{pc}
+ 1219              		.section	.text.aci_l2cap_coc_connect_confirm_event,"ax",%progbits
+ 1220              		.align	1
+ 1221              		.weak	aci_l2cap_coc_connect_confirm_event
+ 1222              		.syntax unified
+ 1223              		.thumb
+ 1224              		.thumb_func
+ 1226              	aci_l2cap_coc_connect_confirm_event:
+ 1227              		@ args = 12, pretend = 0, frame = 0
+ 1228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1229              		@ link register save eliminated.
+ 1230 0000 7047     		bx	lr
+ 1232              		.section	.text.aci_l2cap_coc_connect_confirm_event_process,"ax",%progbits
+ 1233              		.align	1
+ 1234              		.syntax unified
+ 1235              		.thumb
+ 1236              		.thumb_func
+ 1238              	aci_l2cap_coc_connect_confirm_event_process:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 20
+
+
+ 1239              		@ args = 0, pretend = 0, frame = 0
+ 1240              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1241 0000 00B5     		push	{lr}
+ 1242 0002 85B0     		sub	sp, sp, #20
+ 1243 0004 00F10B03 		add	r3, r0, #11
+ 1244 0008 0293     		str	r3, [sp, #8]
+ 1245 000a 837A     		ldrb	r3, [r0, #10]	@ zero_extendqisi2
+ 1246 000c 0193     		str	r3, [sp, #4]
+ 1247 000e 0389     		ldrh	r3, [r0, #8]	@ unaligned
+ 1248 0010 0093     		str	r3, [sp]
+ 1249 0012 C388     		ldrh	r3, [r0, #6]	@ unaligned
+ 1250 0014 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 1251 0016 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1252 0018 0088     		ldrh	r0, [r0]	@ unaligned
+ 1253 001a FFF7FEFF 		bl	aci_l2cap_coc_connect_confirm_event
+ 1254 001e 05B0     		add	sp, sp, #20
+ 1255              		@ sp needed
+ 1256 0020 00BD     		pop	{pc}
+ 1258              		.section	.text.aci_l2cap_coc_reconf_event,"ax",%progbits
+ 1259              		.align	1
+ 1260              		.weak	aci_l2cap_coc_reconf_event
+ 1261              		.syntax unified
+ 1262              		.thumb
+ 1263              		.thumb_func
+ 1265              	aci_l2cap_coc_reconf_event:
+ 1266              		@ args = 4, pretend = 0, frame = 0
+ 1267              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1268              		@ link register save eliminated.
+ 1269 0000 7047     		bx	lr
+ 1271              		.section	.text.aci_l2cap_coc_reconf_event_process,"ax",%progbits
+ 1272              		.align	1
+ 1273              		.syntax unified
+ 1274              		.thumb
+ 1275              		.thumb_func
+ 1277              	aci_l2cap_coc_reconf_event_process:
+ 1278              		@ args = 0, pretend = 0, frame = 0
+ 1279              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1280 0000 00B5     		push	{lr}
+ 1281 0002 83B0     		sub	sp, sp, #12
+ 1282 0004 C31D     		adds	r3, r0, #7
+ 1283 0006 0093     		str	r3, [sp]
+ 1284 0008 8379     		ldrb	r3, [r0, #6]	@ zero_extendqisi2
+ 1285 000a 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 1286 000c 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1287 000e 0088     		ldrh	r0, [r0]	@ unaligned
+ 1288 0010 FFF7FEFF 		bl	aci_l2cap_coc_reconf_event
+ 1289 0014 03B0     		add	sp, sp, #12
+ 1290              		@ sp needed
+ 1291 0016 00BD     		pop	{pc}
+ 1293              		.section	.text.aci_l2cap_coc_reconf_confirm_event,"ax",%progbits
+ 1294              		.align	1
+ 1295              		.weak	aci_l2cap_coc_reconf_confirm_event
+ 1296              		.syntax unified
+ 1297              		.thumb
+ 1298              		.thumb_func
+ 1300              	aci_l2cap_coc_reconf_confirm_event:
+ 1301              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 21
+
+
+ 1302              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1303              		@ link register save eliminated.
+ 1304 0000 7047     		bx	lr
+ 1306              		.section	.text.aci_l2cap_coc_reconf_confirm_event_process,"ax",%progbits
+ 1307              		.align	1
+ 1308              		.syntax unified
+ 1309              		.thumb
+ 1310              		.thumb_func
+ 1312              	aci_l2cap_coc_reconf_confirm_event_process:
+ 1313              		@ args = 0, pretend = 0, frame = 0
+ 1314              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1315 0000 08B5     		push	{r3, lr}
+ 1316 0002 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1317 0004 0088     		ldrh	r0, [r0]	@ unaligned
+ 1318 0006 FFF7FEFF 		bl	aci_l2cap_coc_reconf_confirm_event
+ 1319 000a 08BD     		pop	{r3, pc}
+ 1321              		.section	.text.aci_l2cap_coc_disconnect_event,"ax",%progbits
+ 1322              		.align	1
+ 1323              		.weak	aci_l2cap_coc_disconnect_event
+ 1324              		.syntax unified
+ 1325              		.thumb
+ 1326              		.thumb_func
+ 1328              	aci_l2cap_coc_disconnect_event:
+ 1329              		@ args = 0, pretend = 0, frame = 0
+ 1330              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1331              		@ link register save eliminated.
+ 1332 0000 7047     		bx	lr
+ 1334              		.section	.text.aci_l2cap_coc_disconnect_event_process,"ax",%progbits
+ 1335              		.align	1
+ 1336              		.syntax unified
+ 1337              		.thumb
+ 1338              		.thumb_func
+ 1340              	aci_l2cap_coc_disconnect_event_process:
+ 1341              		@ args = 0, pretend = 0, frame = 0
+ 1342              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1343 0000 08B5     		push	{r3, lr}
+ 1344 0002 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 1345 0004 FFF7FEFF 		bl	aci_l2cap_coc_disconnect_event
+ 1346 0008 08BD     		pop	{r3, pc}
+ 1348              		.section	.text.aci_l2cap_coc_flow_control_event,"ax",%progbits
+ 1349              		.align	1
+ 1350              		.weak	aci_l2cap_coc_flow_control_event
+ 1351              		.syntax unified
+ 1352              		.thumb
+ 1353              		.thumb_func
+ 1355              	aci_l2cap_coc_flow_control_event:
+ 1356              		@ args = 0, pretend = 0, frame = 0
+ 1357              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1358              		@ link register save eliminated.
+ 1359 0000 7047     		bx	lr
+ 1361              		.section	.text.aci_l2cap_coc_flow_control_event_process,"ax",%progbits
+ 1362              		.align	1
+ 1363              		.syntax unified
+ 1364              		.thumb
+ 1365              		.thumb_func
+ 1367              	aci_l2cap_coc_flow_control_event_process:
+ 1368              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 22
+
+
+ 1369              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1370 0000 08B5     		push	{r3, lr}
+ 1371 0002 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+ 1372 0006 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 1373 0008 FFF7FEFF 		bl	aci_l2cap_coc_flow_control_event
+ 1374 000c 08BD     		pop	{r3, pc}
+ 1376              		.section	.text.aci_l2cap_coc_rx_data_event,"ax",%progbits
+ 1377              		.align	1
+ 1378              		.weak	aci_l2cap_coc_rx_data_event
+ 1379              		.syntax unified
+ 1380              		.thumb
+ 1381              		.thumb_func
+ 1383              	aci_l2cap_coc_rx_data_event:
+ 1384              		@ args = 0, pretend = 0, frame = 0
+ 1385              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1386              		@ link register save eliminated.
+ 1387 0000 7047     		bx	lr
+ 1389              		.section	.text.aci_l2cap_coc_rx_data_event_process,"ax",%progbits
+ 1390              		.align	1
+ 1391              		.syntax unified
+ 1392              		.thumb
+ 1393              		.thumb_func
+ 1395              	aci_l2cap_coc_rx_data_event_process:
+ 1396              		@ args = 0, pretend = 0, frame = 0
+ 1397              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1398 0000 08B5     		push	{r3, lr}
+ 1399 0002 C21C     		adds	r2, r0, #3
+ 1400 0004 B0F80110 		ldrh	r1, [r0, #1]	@ unaligned
+ 1401 0008 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 1402 000a FFF7FEFF 		bl	aci_l2cap_coc_rx_data_event
+ 1403 000e 08BD     		pop	{r3, pc}
+ 1405              		.section	.text.aci_l2cap_coc_tx_pool_available_event,"ax",%progbits
+ 1406              		.align	1
+ 1407              		.weak	aci_l2cap_coc_tx_pool_available_event
+ 1408              		.syntax unified
+ 1409              		.thumb
+ 1410              		.thumb_func
+ 1412              	aci_l2cap_coc_tx_pool_available_event:
+ 1413              		@ args = 0, pretend = 0, frame = 0
+ 1414              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1415              		@ link register save eliminated.
+ 1416 0000 7047     		bx	lr
+ 1418              		.section	.text.aci_l2cap_coc_tx_pool_available_event_process,"ax",%progbits
+ 1419              		.align	1
+ 1420              		.syntax unified
+ 1421              		.thumb
+ 1422              		.thumb_func
+ 1424              	aci_l2cap_coc_tx_pool_available_event_process:
+ 1425              		@ args = 0, pretend = 0, frame = 0
+ 1426              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1427 0000 08B5     		push	{r3, lr}
+ 1428 0002 FFF7FEFF 		bl	aci_l2cap_coc_tx_pool_available_event
+ 1429 0006 08BD     		pop	{r3, pc}
+ 1431              		.section	.text.aci_gatt_attribute_modified_event,"ax",%progbits
+ 1432              		.align	1
+ 1433              		.weak	aci_gatt_attribute_modified_event
+ 1434              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 23
+
+
+ 1435              		.thumb
+ 1436              		.thumb_func
+ 1438              	aci_gatt_attribute_modified_event:
+ 1439              		@ args = 4, pretend = 0, frame = 0
+ 1440              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1441              		@ link register save eliminated.
+ 1442 0000 7047     		bx	lr
+ 1444              		.section	.text.aci_gatt_attribute_modified_event_process,"ax",%progbits
+ 1445              		.align	1
+ 1446              		.syntax unified
+ 1447              		.thumb
+ 1448              		.thumb_func
+ 1450              	aci_gatt_attribute_modified_event_process:
+ 1451              		@ args = 0, pretend = 0, frame = 0
+ 1452              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1453 0000 00B5     		push	{lr}
+ 1454 0002 83B0     		sub	sp, sp, #12
+ 1455 0004 00F10803 		add	r3, r0, #8
+ 1456 0008 0093     		str	r3, [sp]
+ 1457 000a C388     		ldrh	r3, [r0, #6]	@ unaligned
+ 1458 000c 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 1459 000e 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1460 0010 0088     		ldrh	r0, [r0]	@ unaligned
+ 1461 0012 FFF7FEFF 		bl	aci_gatt_attribute_modified_event
+ 1462 0016 03B0     		add	sp, sp, #12
+ 1463              		@ sp needed
+ 1464 0018 00BD     		pop	{pc}
+ 1466              		.section	.text.aci_gatt_proc_timeout_event,"ax",%progbits
+ 1467              		.align	1
+ 1468              		.weak	aci_gatt_proc_timeout_event
+ 1469              		.syntax unified
+ 1470              		.thumb
+ 1471              		.thumb_func
+ 1473              	aci_gatt_proc_timeout_event:
+ 1474              		@ args = 0, pretend = 0, frame = 0
+ 1475              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1476              		@ link register save eliminated.
+ 1477 0000 7047     		bx	lr
+ 1479              		.section	.text.aci_gatt_proc_timeout_event_process,"ax",%progbits
+ 1480              		.align	1
+ 1481              		.syntax unified
+ 1482              		.thumb
+ 1483              		.thumb_func
+ 1485              	aci_gatt_proc_timeout_event_process:
+ 1486              		@ args = 0, pretend = 0, frame = 0
+ 1487              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1488 0000 08B5     		push	{r3, lr}
+ 1489 0002 0088     		ldrh	r0, [r0]	@ unaligned
+ 1490 0004 FFF7FEFF 		bl	aci_gatt_proc_timeout_event
+ 1491 0008 08BD     		pop	{r3, pc}
+ 1493              		.section	.text.aci_att_exchange_mtu_resp_event,"ax",%progbits
+ 1494              		.align	1
+ 1495              		.weak	aci_att_exchange_mtu_resp_event
+ 1496              		.syntax unified
+ 1497              		.thumb
+ 1498              		.thumb_func
+ 1500              	aci_att_exchange_mtu_resp_event:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 24
+
+
+ 1501              		@ args = 0, pretend = 0, frame = 0
+ 1502              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1503              		@ link register save eliminated.
+ 1504 0000 7047     		bx	lr
+ 1506              		.section	.text.aci_att_exchange_mtu_resp_event_process,"ax",%progbits
+ 1507              		.align	1
+ 1508              		.syntax unified
+ 1509              		.thumb
+ 1510              		.thumb_func
+ 1512              	aci_att_exchange_mtu_resp_event_process:
+ 1513              		@ args = 0, pretend = 0, frame = 0
+ 1514              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1515 0000 08B5     		push	{r3, lr}
+ 1516 0002 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1517 0004 0088     		ldrh	r0, [r0]	@ unaligned
+ 1518 0006 FFF7FEFF 		bl	aci_att_exchange_mtu_resp_event
+ 1519 000a 08BD     		pop	{r3, pc}
+ 1521              		.section	.text.aci_att_find_info_resp_event,"ax",%progbits
+ 1522              		.align	1
+ 1523              		.weak	aci_att_find_info_resp_event
+ 1524              		.syntax unified
+ 1525              		.thumb
+ 1526              		.thumb_func
+ 1528              	aci_att_find_info_resp_event:
+ 1529              		@ args = 0, pretend = 0, frame = 0
+ 1530              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1531              		@ link register save eliminated.
+ 1532 0000 7047     		bx	lr
+ 1534              		.section	.text.aci_att_find_info_resp_event_process,"ax",%progbits
+ 1535              		.align	1
+ 1536              		.syntax unified
+ 1537              		.thumb
+ 1538              		.thumb_func
+ 1540              	aci_att_find_info_resp_event_process:
+ 1541              		@ args = 0, pretend = 0, frame = 0
+ 1542              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1543 0000 08B5     		push	{r3, lr}
+ 1544 0002 031D     		adds	r3, r0, #4
+ 1545 0004 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+ 1546 0006 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1547 0008 0088     		ldrh	r0, [r0]	@ unaligned
+ 1548 000a FFF7FEFF 		bl	aci_att_find_info_resp_event
+ 1549 000e 08BD     		pop	{r3, pc}
+ 1551              		.section	.text.aci_att_find_by_type_value_resp_event,"ax",%progbits
+ 1552              		.align	1
+ 1553              		.weak	aci_att_find_by_type_value_resp_event
+ 1554              		.syntax unified
+ 1555              		.thumb
+ 1556              		.thumb_func
+ 1558              	aci_att_find_by_type_value_resp_event:
+ 1559              		@ args = 0, pretend = 0, frame = 0
+ 1560              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1561              		@ link register save eliminated.
+ 1562 0000 7047     		bx	lr
+ 1564              		.section	.text.aci_att_find_by_type_value_resp_event_process,"ax",%progbits
+ 1565              		.align	1
+ 1566              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 25
+
+
+ 1567              		.thumb
+ 1568              		.thumb_func
+ 1570              	aci_att_find_by_type_value_resp_event_process:
+ 1571              		@ args = 0, pretend = 0, frame = 0
+ 1572              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1573 0000 08B5     		push	{r3, lr}
+ 1574 0002 C21C     		adds	r2, r0, #3
+ 1575 0004 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1576 0006 0088     		ldrh	r0, [r0]	@ unaligned
+ 1577 0008 FFF7FEFF 		bl	aci_att_find_by_type_value_resp_event
+ 1578 000c 08BD     		pop	{r3, pc}
+ 1580              		.section	.text.aci_att_read_by_type_resp_event,"ax",%progbits
+ 1581              		.align	1
+ 1582              		.weak	aci_att_read_by_type_resp_event
+ 1583              		.syntax unified
+ 1584              		.thumb
+ 1585              		.thumb_func
+ 1587              	aci_att_read_by_type_resp_event:
+ 1588              		@ args = 0, pretend = 0, frame = 0
+ 1589              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1590              		@ link register save eliminated.
+ 1591 0000 7047     		bx	lr
+ 1593              		.section	.text.aci_att_read_by_type_resp_event_process,"ax",%progbits
+ 1594              		.align	1
+ 1595              		.syntax unified
+ 1596              		.thumb
+ 1597              		.thumb_func
+ 1599              	aci_att_read_by_type_resp_event_process:
+ 1600              		@ args = 0, pretend = 0, frame = 0
+ 1601              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1602 0000 08B5     		push	{r3, lr}
+ 1603 0002 031D     		adds	r3, r0, #4
+ 1604 0004 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+ 1605 0006 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1606 0008 0088     		ldrh	r0, [r0]	@ unaligned
+ 1607 000a FFF7FEFF 		bl	aci_att_read_by_type_resp_event
+ 1608 000e 08BD     		pop	{r3, pc}
+ 1610              		.section	.text.aci_att_read_resp_event,"ax",%progbits
+ 1611              		.align	1
+ 1612              		.weak	aci_att_read_resp_event
+ 1613              		.syntax unified
+ 1614              		.thumb
+ 1615              		.thumb_func
+ 1617              	aci_att_read_resp_event:
+ 1618              		@ args = 0, pretend = 0, frame = 0
+ 1619              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1620              		@ link register save eliminated.
+ 1621 0000 7047     		bx	lr
+ 1623              		.section	.text.aci_att_read_resp_event_process,"ax",%progbits
+ 1624              		.align	1
+ 1625              		.syntax unified
+ 1626              		.thumb
+ 1627              		.thumb_func
+ 1629              	aci_att_read_resp_event_process:
+ 1630              		@ args = 0, pretend = 0, frame = 0
+ 1631              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1632 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 26
+
+
+ 1633 0002 C21C     		adds	r2, r0, #3
+ 1634 0004 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1635 0006 0088     		ldrh	r0, [r0]	@ unaligned
+ 1636 0008 FFF7FEFF 		bl	aci_att_read_resp_event
+ 1637 000c 08BD     		pop	{r3, pc}
+ 1639              		.section	.text.aci_att_read_blob_resp_event,"ax",%progbits
+ 1640              		.align	1
+ 1641              		.weak	aci_att_read_blob_resp_event
+ 1642              		.syntax unified
+ 1643              		.thumb
+ 1644              		.thumb_func
+ 1646              	aci_att_read_blob_resp_event:
+ 1647              		@ args = 0, pretend = 0, frame = 0
+ 1648              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1649              		@ link register save eliminated.
+ 1650 0000 7047     		bx	lr
+ 1652              		.section	.text.aci_att_read_blob_resp_event_process,"ax",%progbits
+ 1653              		.align	1
+ 1654              		.syntax unified
+ 1655              		.thumb
+ 1656              		.thumb_func
+ 1658              	aci_att_read_blob_resp_event_process:
+ 1659              		@ args = 0, pretend = 0, frame = 0
+ 1660              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1661 0000 08B5     		push	{r3, lr}
+ 1662 0002 C21C     		adds	r2, r0, #3
+ 1663 0004 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1664 0006 0088     		ldrh	r0, [r0]	@ unaligned
+ 1665 0008 FFF7FEFF 		bl	aci_att_read_blob_resp_event
+ 1666 000c 08BD     		pop	{r3, pc}
+ 1668              		.section	.text.aci_att_read_multiple_resp_event,"ax",%progbits
+ 1669              		.align	1
+ 1670              		.weak	aci_att_read_multiple_resp_event
+ 1671              		.syntax unified
+ 1672              		.thumb
+ 1673              		.thumb_func
+ 1675              	aci_att_read_multiple_resp_event:
+ 1676              		@ args = 0, pretend = 0, frame = 0
+ 1677              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1678              		@ link register save eliminated.
+ 1679 0000 7047     		bx	lr
+ 1681              		.section	.text.aci_att_read_multiple_resp_event_process,"ax",%progbits
+ 1682              		.align	1
+ 1683              		.syntax unified
+ 1684              		.thumb
+ 1685              		.thumb_func
+ 1687              	aci_att_read_multiple_resp_event_process:
+ 1688              		@ args = 0, pretend = 0, frame = 0
+ 1689              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1690 0000 08B5     		push	{r3, lr}
+ 1691 0002 C21C     		adds	r2, r0, #3
+ 1692 0004 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1693 0006 0088     		ldrh	r0, [r0]	@ unaligned
+ 1694 0008 FFF7FEFF 		bl	aci_att_read_multiple_resp_event
+ 1695 000c 08BD     		pop	{r3, pc}
+ 1697              		.section	.text.aci_att_read_by_group_type_resp_event,"ax",%progbits
+ 1698              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 27
+
+
+ 1699              		.weak	aci_att_read_by_group_type_resp_event
+ 1700              		.syntax unified
+ 1701              		.thumb
+ 1702              		.thumb_func
+ 1704              	aci_att_read_by_group_type_resp_event:
+ 1705              		@ args = 0, pretend = 0, frame = 0
+ 1706              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1707              		@ link register save eliminated.
+ 1708 0000 7047     		bx	lr
+ 1710              		.section	.text.aci_att_read_by_group_type_resp_event_process,"ax",%progbits
+ 1711              		.align	1
+ 1712              		.syntax unified
+ 1713              		.thumb
+ 1714              		.thumb_func
+ 1716              	aci_att_read_by_group_type_resp_event_process:
+ 1717              		@ args = 0, pretend = 0, frame = 0
+ 1718              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1719 0000 08B5     		push	{r3, lr}
+ 1720 0002 031D     		adds	r3, r0, #4
+ 1721 0004 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+ 1722 0006 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1723 0008 0088     		ldrh	r0, [r0]	@ unaligned
+ 1724 000a FFF7FEFF 		bl	aci_att_read_by_group_type_resp_event
+ 1725 000e 08BD     		pop	{r3, pc}
+ 1727              		.section	.text.aci_att_prepare_write_resp_event,"ax",%progbits
+ 1728              		.align	1
+ 1729              		.weak	aci_att_prepare_write_resp_event
+ 1730              		.syntax unified
+ 1731              		.thumb
+ 1732              		.thumb_func
+ 1734              	aci_att_prepare_write_resp_event:
+ 1735              		@ args = 4, pretend = 0, frame = 0
+ 1736              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1737              		@ link register save eliminated.
+ 1738 0000 7047     		bx	lr
+ 1740              		.section	.text.aci_att_prepare_write_resp_event_process,"ax",%progbits
+ 1741              		.align	1
+ 1742              		.syntax unified
+ 1743              		.thumb
+ 1744              		.thumb_func
+ 1746              	aci_att_prepare_write_resp_event_process:
+ 1747              		@ args = 0, pretend = 0, frame = 0
+ 1748              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1749 0000 00B5     		push	{lr}
+ 1750 0002 83B0     		sub	sp, sp, #12
+ 1751 0004 C31D     		adds	r3, r0, #7
+ 1752 0006 0093     		str	r3, [sp]
+ 1753 0008 8379     		ldrb	r3, [r0, #6]	@ zero_extendqisi2
+ 1754 000a 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 1755 000c 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1756 000e 0088     		ldrh	r0, [r0]	@ unaligned
+ 1757 0010 FFF7FEFF 		bl	aci_att_prepare_write_resp_event
+ 1758 0014 03B0     		add	sp, sp, #12
+ 1759              		@ sp needed
+ 1760 0016 00BD     		pop	{pc}
+ 1762              		.section	.text.aci_att_exec_write_resp_event,"ax",%progbits
+ 1763              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 28
+
+
+ 1764              		.weak	aci_att_exec_write_resp_event
+ 1765              		.syntax unified
+ 1766              		.thumb
+ 1767              		.thumb_func
+ 1769              	aci_att_exec_write_resp_event:
+ 1770              		@ args = 0, pretend = 0, frame = 0
+ 1771              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1772              		@ link register save eliminated.
+ 1773 0000 7047     		bx	lr
+ 1775              		.section	.text.aci_att_exec_write_resp_event_process,"ax",%progbits
+ 1776              		.align	1
+ 1777              		.syntax unified
+ 1778              		.thumb
+ 1779              		.thumb_func
+ 1781              	aci_att_exec_write_resp_event_process:
+ 1782              		@ args = 0, pretend = 0, frame = 0
+ 1783              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1784 0000 08B5     		push	{r3, lr}
+ 1785 0002 0088     		ldrh	r0, [r0]	@ unaligned
+ 1786 0004 FFF7FEFF 		bl	aci_att_exec_write_resp_event
+ 1787 0008 08BD     		pop	{r3, pc}
+ 1789              		.section	.text.aci_gatt_indication_event,"ax",%progbits
+ 1790              		.align	1
+ 1791              		.weak	aci_gatt_indication_event
+ 1792              		.syntax unified
+ 1793              		.thumb
+ 1794              		.thumb_func
+ 1796              	aci_gatt_indication_event:
+ 1797              		@ args = 0, pretend = 0, frame = 0
+ 1798              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1799              		@ link register save eliminated.
+ 1800 0000 7047     		bx	lr
+ 1802              		.section	.text.aci_gatt_indication_event_process,"ax",%progbits
+ 1803              		.align	1
+ 1804              		.syntax unified
+ 1805              		.thumb
+ 1806              		.thumb_func
+ 1808              	aci_gatt_indication_event_process:
+ 1809              		@ args = 0, pretend = 0, frame = 0
+ 1810              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1811 0000 08B5     		push	{r3, lr}
+ 1812 0002 431D     		adds	r3, r0, #5
+ 1813 0004 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
+ 1814 0006 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1815 0008 0088     		ldrh	r0, [r0]	@ unaligned
+ 1816 000a FFF7FEFF 		bl	aci_gatt_indication_event
+ 1817 000e 08BD     		pop	{r3, pc}
+ 1819              		.section	.text.aci_gatt_notification_event,"ax",%progbits
+ 1820              		.align	1
+ 1821              		.weak	aci_gatt_notification_event
+ 1822              		.syntax unified
+ 1823              		.thumb
+ 1824              		.thumb_func
+ 1826              	aci_gatt_notification_event:
+ 1827              		@ args = 0, pretend = 0, frame = 0
+ 1828              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1829              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 29
+
+
+ 1830 0000 7047     		bx	lr
+ 1832              		.section	.text.aci_gatt_notification_event_process,"ax",%progbits
+ 1833              		.align	1
+ 1834              		.syntax unified
+ 1835              		.thumb
+ 1836              		.thumb_func
+ 1838              	aci_gatt_notification_event_process:
+ 1839              		@ args = 0, pretend = 0, frame = 0
+ 1840              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1841 0000 08B5     		push	{r3, lr}
+ 1842 0002 431D     		adds	r3, r0, #5
+ 1843 0004 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
+ 1844 0006 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1845 0008 0088     		ldrh	r0, [r0]	@ unaligned
+ 1846 000a FFF7FEFF 		bl	aci_gatt_notification_event
+ 1847 000e 08BD     		pop	{r3, pc}
+ 1849              		.section	.text.aci_gatt_proc_complete_event,"ax",%progbits
+ 1850              		.align	1
+ 1851              		.weak	aci_gatt_proc_complete_event
+ 1852              		.syntax unified
+ 1853              		.thumb
+ 1854              		.thumb_func
+ 1856              	aci_gatt_proc_complete_event:
+ 1857              		@ args = 0, pretend = 0, frame = 0
+ 1858              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1859              		@ link register save eliminated.
+ 1860 0000 7047     		bx	lr
+ 1862              		.section	.text.aci_gatt_proc_complete_event_process,"ax",%progbits
+ 1863              		.align	1
+ 1864              		.syntax unified
+ 1865              		.thumb
+ 1866              		.thumb_func
+ 1868              	aci_gatt_proc_complete_event_process:
+ 1869              		@ args = 0, pretend = 0, frame = 0
+ 1870              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1871 0000 08B5     		push	{r3, lr}
+ 1872 0002 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1873 0004 0088     		ldrh	r0, [r0]	@ unaligned
+ 1874 0006 FFF7FEFF 		bl	aci_gatt_proc_complete_event
+ 1875 000a 08BD     		pop	{r3, pc}
+ 1877              		.section	.text.aci_gatt_error_resp_event,"ax",%progbits
+ 1878              		.align	1
+ 1879              		.weak	aci_gatt_error_resp_event
+ 1880              		.syntax unified
+ 1881              		.thumb
+ 1882              		.thumb_func
+ 1884              	aci_gatt_error_resp_event:
+ 1885              		@ args = 0, pretend = 0, frame = 0
+ 1886              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1887              		@ link register save eliminated.
+ 1888 0000 7047     		bx	lr
+ 1890              		.section	.text.aci_gatt_error_resp_event_process,"ax",%progbits
+ 1891              		.align	1
+ 1892              		.syntax unified
+ 1893              		.thumb
+ 1894              		.thumb_func
+ 1896              	aci_gatt_error_resp_event_process:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 30
+
+
+ 1897              		@ args = 0, pretend = 0, frame = 0
+ 1898              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1899 0000 08B5     		push	{r3, lr}
+ 1900 0002 4379     		ldrb	r3, [r0, #5]	@ zero_extendqisi2
+ 1901 0004 B0F80320 		ldrh	r2, [r0, #3]	@ unaligned
+ 1902 0008 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 1903 000a 0088     		ldrh	r0, [r0]	@ unaligned
+ 1904 000c FFF7FEFF 		bl	aci_gatt_error_resp_event
+ 1905 0010 08BD     		pop	{r3, pc}
+ 1907              		.section	.text.aci_gatt_disc_read_char_by_uuid_resp_event,"ax",%progbits
+ 1908              		.align	1
+ 1909              		.weak	aci_gatt_disc_read_char_by_uuid_resp_event
+ 1910              		.syntax unified
+ 1911              		.thumb
+ 1912              		.thumb_func
+ 1914              	aci_gatt_disc_read_char_by_uuid_resp_event:
+ 1915              		@ args = 0, pretend = 0, frame = 0
+ 1916              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1917              		@ link register save eliminated.
+ 1918 0000 7047     		bx	lr
+ 1920              		.section	.text.aci_gatt_disc_read_char_by_uuid_resp_event_process,"ax",%progbits
+ 1921              		.align	1
+ 1922              		.syntax unified
+ 1923              		.thumb
+ 1924              		.thumb_func
+ 1926              	aci_gatt_disc_read_char_by_uuid_resp_event_process:
+ 1927              		@ args = 0, pretend = 0, frame = 0
+ 1928              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1929 0000 08B5     		push	{r3, lr}
+ 1930 0002 431D     		adds	r3, r0, #5
+ 1931 0004 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
+ 1932 0006 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1933 0008 0088     		ldrh	r0, [r0]	@ unaligned
+ 1934 000a FFF7FEFF 		bl	aci_gatt_disc_read_char_by_uuid_resp_event
+ 1935 000e 08BD     		pop	{r3, pc}
+ 1937              		.section	.text.aci_gatt_write_permit_req_event,"ax",%progbits
+ 1938              		.align	1
+ 1939              		.weak	aci_gatt_write_permit_req_event
+ 1940              		.syntax unified
+ 1941              		.thumb
+ 1942              		.thumb_func
+ 1944              	aci_gatt_write_permit_req_event:
+ 1945              		@ args = 0, pretend = 0, frame = 0
+ 1946              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1947              		@ link register save eliminated.
+ 1948 0000 7047     		bx	lr
+ 1950              		.section	.text.aci_gatt_write_permit_req_event_process,"ax",%progbits
+ 1951              		.align	1
+ 1952              		.syntax unified
+ 1953              		.thumb
+ 1954              		.thumb_func
+ 1956              	aci_gatt_write_permit_req_event_process:
+ 1957              		@ args = 0, pretend = 0, frame = 0
+ 1958              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1959 0000 08B5     		push	{r3, lr}
+ 1960 0002 431D     		adds	r3, r0, #5
+ 1961 0004 0279     		ldrb	r2, [r0, #4]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 31
+
+
+ 1962 0006 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1963 0008 0088     		ldrh	r0, [r0]	@ unaligned
+ 1964 000a FFF7FEFF 		bl	aci_gatt_write_permit_req_event
+ 1965 000e 08BD     		pop	{r3, pc}
+ 1967              		.section	.text.aci_gatt_read_permit_req_event,"ax",%progbits
+ 1968              		.align	1
+ 1969              		.weak	aci_gatt_read_permit_req_event
+ 1970              		.syntax unified
+ 1971              		.thumb
+ 1972              		.thumb_func
+ 1974              	aci_gatt_read_permit_req_event:
+ 1975              		@ args = 0, pretend = 0, frame = 0
+ 1976              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1977              		@ link register save eliminated.
+ 1978 0000 7047     		bx	lr
+ 1980              		.section	.text.aci_gatt_read_permit_req_event_process,"ax",%progbits
+ 1981              		.align	1
+ 1982              		.syntax unified
+ 1983              		.thumb
+ 1984              		.thumb_func
+ 1986              	aci_gatt_read_permit_req_event_process:
+ 1987              		@ args = 0, pretend = 0, frame = 0
+ 1988              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1989 0000 08B5     		push	{r3, lr}
+ 1990 0002 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 1991 0004 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 1992 0006 0088     		ldrh	r0, [r0]	@ unaligned
+ 1993 0008 FFF7FEFF 		bl	aci_gatt_read_permit_req_event
+ 1994 000c 08BD     		pop	{r3, pc}
+ 1996              		.section	.text.aci_gatt_read_multi_permit_req_event,"ax",%progbits
+ 1997              		.align	1
+ 1998              		.weak	aci_gatt_read_multi_permit_req_event
+ 1999              		.syntax unified
+ 2000              		.thumb
+ 2001              		.thumb_func
+ 2003              	aci_gatt_read_multi_permit_req_event:
+ 2004              		@ args = 0, pretend = 0, frame = 0
+ 2005              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2006              		@ link register save eliminated.
+ 2007 0000 7047     		bx	lr
+ 2009              		.section	.text.aci_gatt_read_multi_permit_req_event_process,"ax",%progbits
+ 2010              		.align	1
+ 2011              		.syntax unified
+ 2012              		.thumb
+ 2013              		.thumb_func
+ 2015              	aci_gatt_read_multi_permit_req_event_process:
+ 2016              		@ args = 0, pretend = 0, frame = 0
+ 2017              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2018 0000 08B5     		push	{r3, lr}
+ 2019 0002 C21C     		adds	r2, r0, #3
+ 2020 0004 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 2021 0006 0088     		ldrh	r0, [r0]	@ unaligned
+ 2022 0008 FFF7FEFF 		bl	aci_gatt_read_multi_permit_req_event
+ 2023 000c 08BD     		pop	{r3, pc}
+ 2025              		.section	.text.aci_gatt_tx_pool_available_event,"ax",%progbits
+ 2026              		.align	1
+ 2027              		.weak	aci_gatt_tx_pool_available_event
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 32
+
+
+ 2028              		.syntax unified
+ 2029              		.thumb
+ 2030              		.thumb_func
+ 2032              	aci_gatt_tx_pool_available_event:
+ 2033              		@ args = 0, pretend = 0, frame = 0
+ 2034              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2035              		@ link register save eliminated.
+ 2036 0000 7047     		bx	lr
+ 2038              		.section	.text.aci_gatt_tx_pool_available_event_process,"ax",%progbits
+ 2039              		.align	1
+ 2040              		.syntax unified
+ 2041              		.thumb
+ 2042              		.thumb_func
+ 2044              	aci_gatt_tx_pool_available_event_process:
+ 2045              		@ args = 0, pretend = 0, frame = 0
+ 2046              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2047 0000 08B5     		push	{r3, lr}
+ 2048 0002 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 2049 0004 0088     		ldrh	r0, [r0]	@ unaligned
+ 2050 0006 FFF7FEFF 		bl	aci_gatt_tx_pool_available_event
+ 2051 000a 08BD     		pop	{r3, pc}
+ 2053              		.section	.text.aci_gatt_server_confirmation_event,"ax",%progbits
+ 2054              		.align	1
+ 2055              		.weak	aci_gatt_server_confirmation_event
+ 2056              		.syntax unified
+ 2057              		.thumb
+ 2058              		.thumb_func
+ 2060              	aci_gatt_server_confirmation_event:
+ 2061              		@ args = 0, pretend = 0, frame = 0
+ 2062              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2063              		@ link register save eliminated.
+ 2064 0000 7047     		bx	lr
+ 2066              		.section	.text.aci_gatt_server_confirmation_event_process,"ax",%progbits
+ 2067              		.align	1
+ 2068              		.syntax unified
+ 2069              		.thumb
+ 2070              		.thumb_func
+ 2072              	aci_gatt_server_confirmation_event_process:
+ 2073              		@ args = 0, pretend = 0, frame = 0
+ 2074              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2075 0000 08B5     		push	{r3, lr}
+ 2076 0002 0088     		ldrh	r0, [r0]	@ unaligned
+ 2077 0004 FFF7FEFF 		bl	aci_gatt_server_confirmation_event
+ 2078 0008 08BD     		pop	{r3, pc}
+ 2080              		.section	.text.aci_gatt_prepare_write_permit_req_event,"ax",%progbits
+ 2081              		.align	1
+ 2082              		.weak	aci_gatt_prepare_write_permit_req_event
+ 2083              		.syntax unified
+ 2084              		.thumb
+ 2085              		.thumb_func
+ 2087              	aci_gatt_prepare_write_permit_req_event:
+ 2088              		@ args = 4, pretend = 0, frame = 0
+ 2089              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2090              		@ link register save eliminated.
+ 2091 0000 7047     		bx	lr
+ 2093              		.section	.text.aci_gatt_prepare_write_permit_req_event_process,"ax",%progbits
+ 2094              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 33
+
+
+ 2095              		.syntax unified
+ 2096              		.thumb
+ 2097              		.thumb_func
+ 2099              	aci_gatt_prepare_write_permit_req_event_process:
+ 2100              		@ args = 0, pretend = 0, frame = 0
+ 2101              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2102 0000 00B5     		push	{lr}
+ 2103 0002 83B0     		sub	sp, sp, #12
+ 2104 0004 C31D     		adds	r3, r0, #7
+ 2105 0006 0093     		str	r3, [sp]
+ 2106 0008 8379     		ldrb	r3, [r0, #6]	@ zero_extendqisi2
+ 2107 000a 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 2108 000c 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 2109 000e 0088     		ldrh	r0, [r0]	@ unaligned
+ 2110 0010 FFF7FEFF 		bl	aci_gatt_prepare_write_permit_req_event
+ 2111 0014 03B0     		add	sp, sp, #12
+ 2112              		@ sp needed
+ 2113 0016 00BD     		pop	{pc}
+ 2115              		.section	.text.aci_gatt_eatt_bearer_event,"ax",%progbits
+ 2116              		.align	1
+ 2117              		.weak	aci_gatt_eatt_bearer_event
+ 2118              		.syntax unified
+ 2119              		.thumb
+ 2120              		.thumb_func
+ 2122              	aci_gatt_eatt_bearer_event:
+ 2123              		@ args = 0, pretend = 0, frame = 0
+ 2124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2125              		@ link register save eliminated.
+ 2126 0000 7047     		bx	lr
+ 2128              		.section	.text.aci_gatt_eatt_bearer_event_process,"ax",%progbits
+ 2129              		.align	1
+ 2130              		.syntax unified
+ 2131              		.thumb
+ 2132              		.thumb_func
+ 2134              	aci_gatt_eatt_bearer_event_process:
+ 2135              		@ args = 0, pretend = 0, frame = 0
+ 2136              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2137 0000 08B5     		push	{r3, lr}
+ 2138 0002 8388     		ldrh	r3, [r0, #4]	@ unaligned
+ 2139 0004 C278     		ldrb	r2, [r0, #3]	@ zero_extendqisi2
+ 2140 0006 8178     		ldrb	r1, [r0, #2]	@ zero_extendqisi2
+ 2141 0008 0088     		ldrh	r0, [r0]	@ unaligned
+ 2142 000a FFF7FEFF 		bl	aci_gatt_eatt_bearer_event
+ 2143 000e 08BD     		pop	{r3, pc}
+ 2145              		.section	.text.aci_gatt_mult_notification_event,"ax",%progbits
+ 2146              		.align	1
+ 2147              		.weak	aci_gatt_mult_notification_event
+ 2148              		.syntax unified
+ 2149              		.thumb
+ 2150              		.thumb_func
+ 2152              	aci_gatt_mult_notification_event:
+ 2153              		@ args = 0, pretend = 0, frame = 0
+ 2154              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2155              		@ link register save eliminated.
+ 2156 0000 7047     		bx	lr
+ 2158              		.section	.text.aci_gatt_mult_notification_event_process,"ax",%progbits
+ 2159              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 34
+
+
+ 2160              		.syntax unified
+ 2161              		.thumb
+ 2162              		.thumb_func
+ 2164              	aci_gatt_mult_notification_event_process:
+ 2165              		@ args = 0, pretend = 0, frame = 0
+ 2166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2167 0000 08B5     		push	{r3, lr}
+ 2168 0002 831D     		adds	r3, r0, #6
+ 2169 0004 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 2170 0006 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 2171 0008 0088     		ldrh	r0, [r0]	@ unaligned
+ 2172 000a FFF7FEFF 		bl	aci_gatt_mult_notification_event
+ 2173 000e 08BD     		pop	{r3, pc}
+ 2175              		.section	.text.aci_gatt_notification_complete_event,"ax",%progbits
+ 2176              		.align	1
+ 2177              		.weak	aci_gatt_notification_complete_event
+ 2178              		.syntax unified
+ 2179              		.thumb
+ 2180              		.thumb_func
+ 2182              	aci_gatt_notification_complete_event:
+ 2183              		@ args = 0, pretend = 0, frame = 0
+ 2184              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2185              		@ link register save eliminated.
+ 2186 0000 7047     		bx	lr
+ 2188              		.section	.text.aci_gatt_notification_complete_event_process,"ax",%progbits
+ 2189              		.align	1
+ 2190              		.syntax unified
+ 2191              		.thumb
+ 2192              		.thumb_func
+ 2194              	aci_gatt_notification_complete_event_process:
+ 2195              		@ args = 0, pretend = 0, frame = 0
+ 2196              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2197 0000 08B5     		push	{r3, lr}
+ 2198 0002 0088     		ldrh	r0, [r0]	@ unaligned
+ 2199 0004 FFF7FEFF 		bl	aci_gatt_notification_complete_event
+ 2200 0008 08BD     		pop	{r3, pc}
+ 2202              		.section	.text.aci_gatt_read_ext_event,"ax",%progbits
+ 2203              		.align	1
+ 2204              		.weak	aci_gatt_read_ext_event
+ 2205              		.syntax unified
+ 2206              		.thumb
+ 2207              		.thumb_func
+ 2209              	aci_gatt_read_ext_event:
+ 2210              		@ args = 0, pretend = 0, frame = 0
+ 2211              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2212              		@ link register save eliminated.
+ 2213 0000 7047     		bx	lr
+ 2215              		.section	.text.aci_gatt_read_ext_event_process,"ax",%progbits
+ 2216              		.align	1
+ 2217              		.syntax unified
+ 2218              		.thumb
+ 2219              		.thumb_func
+ 2221              	aci_gatt_read_ext_event_process:
+ 2222              		@ args = 0, pretend = 0, frame = 0
+ 2223              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2224 0000 08B5     		push	{r3, lr}
+ 2225 0002 831D     		adds	r3, r0, #6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 35
+
+
+ 2226 0004 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 2227 0006 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 2228 0008 0088     		ldrh	r0, [r0]	@ unaligned
+ 2229 000a FFF7FEFF 		bl	aci_gatt_read_ext_event
+ 2230 000e 08BD     		pop	{r3, pc}
+ 2232              		.section	.text.aci_gatt_indication_ext_event,"ax",%progbits
+ 2233              		.align	1
+ 2234              		.weak	aci_gatt_indication_ext_event
+ 2235              		.syntax unified
+ 2236              		.thumb
+ 2237              		.thumb_func
+ 2239              	aci_gatt_indication_ext_event:
+ 2240              		@ args = 4, pretend = 0, frame = 0
+ 2241              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2242              		@ link register save eliminated.
+ 2243 0000 7047     		bx	lr
+ 2245              		.section	.text.aci_gatt_indication_ext_event_process,"ax",%progbits
+ 2246              		.align	1
+ 2247              		.syntax unified
+ 2248              		.thumb
+ 2249              		.thumb_func
+ 2251              	aci_gatt_indication_ext_event_process:
+ 2252              		@ args = 0, pretend = 0, frame = 0
+ 2253              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2254 0000 00B5     		push	{lr}
+ 2255 0002 83B0     		sub	sp, sp, #12
+ 2256 0004 00F10803 		add	r3, r0, #8
+ 2257 0008 0093     		str	r3, [sp]
+ 2258 000a C388     		ldrh	r3, [r0, #6]	@ unaligned
+ 2259 000c 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 2260 000e 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 2261 0010 0088     		ldrh	r0, [r0]	@ unaligned
+ 2262 0012 FFF7FEFF 		bl	aci_gatt_indication_ext_event
+ 2263 0016 03B0     		add	sp, sp, #12
+ 2264              		@ sp needed
+ 2265 0018 00BD     		pop	{pc}
+ 2267              		.section	.text.aci_gatt_notification_ext_event,"ax",%progbits
+ 2268              		.align	1
+ 2269              		.weak	aci_gatt_notification_ext_event
+ 2270              		.syntax unified
+ 2271              		.thumb
+ 2272              		.thumb_func
+ 2274              	aci_gatt_notification_ext_event:
+ 2275              		@ args = 4, pretend = 0, frame = 0
+ 2276              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2277              		@ link register save eliminated.
+ 2278 0000 7047     		bx	lr
+ 2280              		.section	.text.aci_gatt_notification_ext_event_process,"ax",%progbits
+ 2281              		.align	1
+ 2282              		.syntax unified
+ 2283              		.thumb
+ 2284              		.thumb_func
+ 2286              	aci_gatt_notification_ext_event_process:
+ 2287              		@ args = 0, pretend = 0, frame = 0
+ 2288              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2289 0000 00B5     		push	{lr}
+ 2290 0002 83B0     		sub	sp, sp, #12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 36
+
+
+ 2291 0004 00F10803 		add	r3, r0, #8
+ 2292 0008 0093     		str	r3, [sp]
+ 2293 000a C388     		ldrh	r3, [r0, #6]	@ unaligned
+ 2294 000c 8288     		ldrh	r2, [r0, #4]	@ unaligned
+ 2295 000e 4188     		ldrh	r1, [r0, #2]	@ unaligned
+ 2296 0010 0088     		ldrh	r0, [r0]	@ unaligned
+ 2297 0012 FFF7FEFF 		bl	aci_gatt_notification_ext_event
+ 2298 0016 03B0     		add	sp, sp, #12
+ 2299              		@ sp needed
+ 2300 0018 00BD     		pop	{pc}
+ 2302              		.section	.text.aci_hal_end_of_radio_activity_event,"ax",%progbits
+ 2303              		.align	1
+ 2304              		.weak	aci_hal_end_of_radio_activity_event
+ 2305              		.syntax unified
+ 2306              		.thumb
+ 2307              		.thumb_func
+ 2309              	aci_hal_end_of_radio_activity_event:
+ 2310              		@ args = 4, pretend = 0, frame = 0
+ 2311              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2312              		@ link register save eliminated.
+ 2313 0000 7047     		bx	lr
+ 2315              		.section	.text.aci_hal_end_of_radio_activity_event_process,"ax",%progbits
+ 2316              		.align	1
+ 2317              		.syntax unified
+ 2318              		.thumb
+ 2319              		.thumb_func
+ 2321              	aci_hal_end_of_radio_activity_event_process:
+ 2322              		@ args = 0, pretend = 0, frame = 0
+ 2323              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2324 0000 00B5     		push	{lr}
+ 2325 0002 83B0     		sub	sp, sp, #12
+ 2326 0004 C379     		ldrb	r3, [r0, #7]	@ zero_extendqisi2
+ 2327 0006 0093     		str	r3, [sp]
+ 2328 0008 8379     		ldrb	r3, [r0, #6]	@ zero_extendqisi2
+ 2329 000a D0F80220 		ldr	r2, [r0, #2]	@ unaligned
+ 2330 000e 4178     		ldrb	r1, [r0, #1]	@ zero_extendqisi2
+ 2331 0010 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 2332 0012 FFF7FEFF 		bl	aci_hal_end_of_radio_activity_event
+ 2333 0016 03B0     		add	sp, sp, #12
+ 2334              		@ sp needed
+ 2335 0018 00BD     		pop	{pc}
+ 2337              		.section	.text.aci_hal_scan_req_report_event,"ax",%progbits
+ 2338              		.align	1
+ 2339              		.weak	aci_hal_scan_req_report_event
+ 2340              		.syntax unified
+ 2341              		.thumb
+ 2342              		.thumb_func
+ 2344              	aci_hal_scan_req_report_event:
+ 2345              		@ args = 0, pretend = 0, frame = 0
+ 2346              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2347              		@ link register save eliminated.
+ 2348 0000 7047     		bx	lr
+ 2350              		.section	.text.aci_hal_scan_req_report_event_process,"ax",%progbits
+ 2351              		.align	1
+ 2352              		.syntax unified
+ 2353              		.thumb
+ 2354              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 37
+
+
+ 2356              	aci_hal_scan_req_report_event_process:
+ 2357              		@ args = 0, pretend = 0, frame = 0
+ 2358              		@ frame_needed = 0, uses_anonymous_args = 0
+ 2359 0000 08B5     		push	{r3, lr}
+ 2360 0002 821C     		adds	r2, r0, #2
+ 2361 0004 4178     		ldrb	r1, [r0, #1]	@ zero_extendqisi2
+ 2362 0006 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 2363 0008 FFF7FEFF 		bl	aci_hal_scan_req_report_event
+ 2364 000c 08BD     		pop	{r3, pc}
+ 2366              		.global	hci_vs_event_table
+ 2367              		.section	.rodata.hci_vs_event_table,"a"
+ 2368              		.align	2
+ 2371              	hci_vs_event_table:
+ 2372 0000 0600     		.short	6
+ 2373 0002 0000     		.space	2
+ 2374 0004 00000000 		.word	aci_warning_event_process
+ 2375 0008 0004     		.short	1024
+ 2376 000a 0000     		.space	2
+ 2377 000c 00000000 		.word	aci_gap_limited_discoverable_event_process
+ 2378 0010 0104     		.short	1025
+ 2379 0012 0000     		.space	2
+ 2380 0014 00000000 		.word	aci_gap_pairing_complete_event_process
+ 2381 0018 0204     		.short	1026
+ 2382 001a 0000     		.space	2
+ 2383 001c 00000000 		.word	aci_gap_pass_key_req_event_process
+ 2384 0020 0304     		.short	1027
+ 2385 0022 0000     		.space	2
+ 2386 0024 00000000 		.word	aci_gap_authorization_req_event_process
+ 2387 0028 0504     		.short	1029
+ 2388 002a 0000     		.space	2
+ 2389 002c 00000000 		.word	aci_gap_bond_lost_event_process
+ 2390 0030 0704     		.short	1031
+ 2391 0032 0000     		.space	2
+ 2392 0034 00000000 		.word	aci_gap_proc_complete_event_process
+ 2393 0038 0804     		.short	1032
+ 2394 003a 0000     		.space	2
+ 2395 003c 00000000 		.word	aci_gap_addr_not_resolved_event_process
+ 2396 0040 0904     		.short	1033
+ 2397 0042 0000     		.space	2
+ 2398 0044 00000000 		.word	aci_gap_numeric_comparison_value_event_process
+ 2399 0048 0A04     		.short	1034
+ 2400 004a 0000     		.space	2
+ 2401 004c 00000000 		.word	aci_gap_keypress_notification_event_process
+ 2402 0050 0B04     		.short	1035
+ 2403 0052 0000     		.space	2
+ 2404 0054 00000000 		.word	aci_gap_pairing_request_event_process
+ 2405 0058 0008     		.short	2048
+ 2406 005a 0000     		.space	2
+ 2407 005c 00000000 		.word	aci_l2cap_connection_update_resp_event_process
+ 2408 0060 0108     		.short	2049
+ 2409 0062 0000     		.space	2
+ 2410 0064 00000000 		.word	aci_l2cap_proc_timeout_event_process
+ 2411 0068 0208     		.short	2050
+ 2412 006a 0000     		.space	2
+ 2413 006c 00000000 		.word	aci_l2cap_connection_update_req_event_process
+ 2414 0070 0A08     		.short	2058
+ 2415 0072 0000     		.space	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 38
+
+
+ 2416 0074 00000000 		.word	aci_l2cap_command_reject_event_process
+ 2417 0078 1008     		.short	2064
+ 2418 007a 0000     		.space	2
+ 2419 007c 00000000 		.word	aci_l2cap_coc_connect_event_process
+ 2420 0080 1108     		.short	2065
+ 2421 0082 0000     		.space	2
+ 2422 0084 00000000 		.word	aci_l2cap_coc_connect_confirm_event_process
+ 2423 0088 1208     		.short	2066
+ 2424 008a 0000     		.space	2
+ 2425 008c 00000000 		.word	aci_l2cap_coc_reconf_event_process
+ 2426 0090 1308     		.short	2067
+ 2427 0092 0000     		.space	2
+ 2428 0094 00000000 		.word	aci_l2cap_coc_reconf_confirm_event_process
+ 2429 0098 1408     		.short	2068
+ 2430 009a 0000     		.space	2
+ 2431 009c 00000000 		.word	aci_l2cap_coc_disconnect_event_process
+ 2432 00a0 1508     		.short	2069
+ 2433 00a2 0000     		.space	2
+ 2434 00a4 00000000 		.word	aci_l2cap_coc_flow_control_event_process
+ 2435 00a8 1608     		.short	2070
+ 2436 00aa 0000     		.space	2
+ 2437 00ac 00000000 		.word	aci_l2cap_coc_rx_data_event_process
+ 2438 00b0 1708     		.short	2071
+ 2439 00b2 0000     		.space	2
+ 2440 00b4 00000000 		.word	aci_l2cap_coc_tx_pool_available_event_process
+ 2441 00b8 010C     		.short	3073
+ 2442 00ba 0000     		.space	2
+ 2443 00bc 00000000 		.word	aci_gatt_attribute_modified_event_process
+ 2444 00c0 020C     		.short	3074
+ 2445 00c2 0000     		.space	2
+ 2446 00c4 00000000 		.word	aci_gatt_proc_timeout_event_process
+ 2447 00c8 030C     		.short	3075
+ 2448 00ca 0000     		.space	2
+ 2449 00cc 00000000 		.word	aci_att_exchange_mtu_resp_event_process
+ 2450 00d0 040C     		.short	3076
+ 2451 00d2 0000     		.space	2
+ 2452 00d4 00000000 		.word	aci_att_find_info_resp_event_process
+ 2453 00d8 050C     		.short	3077
+ 2454 00da 0000     		.space	2
+ 2455 00dc 00000000 		.word	aci_att_find_by_type_value_resp_event_process
+ 2456 00e0 060C     		.short	3078
+ 2457 00e2 0000     		.space	2
+ 2458 00e4 00000000 		.word	aci_att_read_by_type_resp_event_process
+ 2459 00e8 070C     		.short	3079
+ 2460 00ea 0000     		.space	2
+ 2461 00ec 00000000 		.word	aci_att_read_resp_event_process
+ 2462 00f0 080C     		.short	3080
+ 2463 00f2 0000     		.space	2
+ 2464 00f4 00000000 		.word	aci_att_read_blob_resp_event_process
+ 2465 00f8 090C     		.short	3081
+ 2466 00fa 0000     		.space	2
+ 2467 00fc 00000000 		.word	aci_att_read_multiple_resp_event_process
+ 2468 0100 0A0C     		.short	3082
+ 2469 0102 0000     		.space	2
+ 2470 0104 00000000 		.word	aci_att_read_by_group_type_resp_event_process
+ 2471 0108 0C0C     		.short	3084
+ 2472 010a 0000     		.space	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 39
+
+
+ 2473 010c 00000000 		.word	aci_att_prepare_write_resp_event_process
+ 2474 0110 0D0C     		.short	3085
+ 2475 0112 0000     		.space	2
+ 2476 0114 00000000 		.word	aci_att_exec_write_resp_event_process
+ 2477 0118 0E0C     		.short	3086
+ 2478 011a 0000     		.space	2
+ 2479 011c 00000000 		.word	aci_gatt_indication_event_process
+ 2480 0120 0F0C     		.short	3087
+ 2481 0122 0000     		.space	2
+ 2482 0124 00000000 		.word	aci_gatt_notification_event_process
+ 2483 0128 100C     		.short	3088
+ 2484 012a 0000     		.space	2
+ 2485 012c 00000000 		.word	aci_gatt_proc_complete_event_process
+ 2486 0130 110C     		.short	3089
+ 2487 0132 0000     		.space	2
+ 2488 0134 00000000 		.word	aci_gatt_error_resp_event_process
+ 2489 0138 120C     		.short	3090
+ 2490 013a 0000     		.space	2
+ 2491 013c 00000000 		.word	aci_gatt_disc_read_char_by_uuid_resp_event_process
+ 2492 0140 130C     		.short	3091
+ 2493 0142 0000     		.space	2
+ 2494 0144 00000000 		.word	aci_gatt_write_permit_req_event_process
+ 2495 0148 140C     		.short	3092
+ 2496 014a 0000     		.space	2
+ 2497 014c 00000000 		.word	aci_gatt_read_permit_req_event_process
+ 2498 0150 150C     		.short	3093
+ 2499 0152 0000     		.space	2
+ 2500 0154 00000000 		.word	aci_gatt_read_multi_permit_req_event_process
+ 2501 0158 160C     		.short	3094
+ 2502 015a 0000     		.space	2
+ 2503 015c 00000000 		.word	aci_gatt_tx_pool_available_event_process
+ 2504 0160 170C     		.short	3095
+ 2505 0162 0000     		.space	2
+ 2506 0164 00000000 		.word	aci_gatt_server_confirmation_event_process
+ 2507 0168 180C     		.short	3096
+ 2508 016a 0000     		.space	2
+ 2509 016c 00000000 		.word	aci_gatt_prepare_write_permit_req_event_process
+ 2510 0170 190C     		.short	3097
+ 2511 0172 0000     		.space	2
+ 2512 0174 00000000 		.word	aci_gatt_eatt_bearer_event_process
+ 2513 0178 1A0C     		.short	3098
+ 2514 017a 0000     		.space	2
+ 2515 017c 00000000 		.word	aci_gatt_mult_notification_event_process
+ 2516 0180 1B0C     		.short	3099
+ 2517 0182 0000     		.space	2
+ 2518 0184 00000000 		.word	aci_gatt_notification_complete_event_process
+ 2519 0188 1D0C     		.short	3101
+ 2520 018a 0000     		.space	2
+ 2521 018c 00000000 		.word	aci_gatt_read_ext_event_process
+ 2522 0190 1E0C     		.short	3102
+ 2523 0192 0000     		.space	2
+ 2524 0194 00000000 		.word	aci_gatt_indication_ext_event_process
+ 2525 0198 1F0C     		.short	3103
+ 2526 019a 0000     		.space	2
+ 2527 019c 00000000 		.word	aci_gatt_notification_ext_event_process
+ 2528 01a0 0418     		.short	6148
+ 2529 01a2 0000     		.space	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 40
+
+
+ 2530 01a4 00000000 		.word	aci_hal_end_of_radio_activity_event_process
+ 2531 01a8 0518     		.short	6149
+ 2532 01aa 0000     		.space	2
+ 2533 01ac 00000000 		.word	aci_hal_scan_req_report_event_process
+ 2534              		.global	hci_le_event_table
+ 2535              		.section	.rodata.hci_le_event_table,"a"
+ 2536              		.align	2
+ 2539              	hci_le_event_table:
+ 2540 0000 0100     		.short	1
+ 2541 0002 0000     		.space	2
+ 2542 0004 00000000 		.word	hci_le_connection_complete_event_process
+ 2543 0008 0200     		.short	2
+ 2544 000a 0000     		.space	2
+ 2545 000c 00000000 		.word	hci_le_advertising_report_event_process
+ 2546 0010 0300     		.short	3
+ 2547 0012 0000     		.space	2
+ 2548 0014 00000000 		.word	hci_le_connection_update_complete_event_process
+ 2549 0018 0400     		.short	4
+ 2550 001a 0000     		.space	2
+ 2551 001c 00000000 		.word	hci_le_read_remote_features_page_0_complete_event_process
+ 2552 0020 0500     		.short	5
+ 2553 0022 0000     		.space	2
+ 2554 0024 00000000 		.word	hci_le_long_term_key_request_event_process
+ 2555 0028 0700     		.short	7
+ 2556 002a 0000     		.space	2
+ 2557 002c 00000000 		.word	hci_le_data_length_change_event_process
+ 2558 0030 0800     		.short	8
+ 2559 0032 0000     		.space	2
+ 2560 0034 00000000 		.word	hci_le_read_local_p256_public_key_complete_event_process
+ 2561 0038 0900     		.short	9
+ 2562 003a 0000     		.space	2
+ 2563 003c 00000000 		.word	hci_le_generate_dhkey_complete_event_process
+ 2564 0040 0A00     		.short	10
+ 2565 0042 0000     		.space	2
+ 2566 0044 00000000 		.word	hci_le_enhanced_connection_complete_event_process
+ 2567 0048 0B00     		.short	11
+ 2568 004a 0000     		.space	2
+ 2569 004c 00000000 		.word	hci_le_directed_advertising_report_event_process
+ 2570 0050 0C00     		.short	12
+ 2571 0052 0000     		.space	2
+ 2572 0054 00000000 		.word	hci_le_phy_update_complete_event_process
+ 2573 0058 0D00     		.short	13
+ 2574 005a 0000     		.space	2
+ 2575 005c 00000000 		.word	hci_le_extended_advertising_report_event_process
+ 2576 0060 1100     		.short	17
+ 2577 0062 0000     		.space	2
+ 2578 0064 00000000 		.word	hci_le_scan_timeout_event_process
+ 2579 0068 1200     		.short	18
+ 2580 006a 0000     		.space	2
+ 2581 006c 00000000 		.word	hci_le_advertising_set_terminated_event_process
+ 2582 0070 1300     		.short	19
+ 2583 0072 0000     		.space	2
+ 2584 0074 00000000 		.word	hci_le_scan_request_received_event_process
+ 2585 0078 1400     		.short	20
+ 2586 007a 0000     		.space	2
+ 2587 007c 00000000 		.word	hci_le_channel_selection_algorithm_event_process
+ 2588              		.global	hci_event_table
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 41
+
+
+ 2589              		.section	.rodata.hci_event_table,"a"
+ 2590              		.align	2
+ 2593              	hci_event_table:
+ 2594 0000 0500     		.short	5
+ 2595 0002 0000     		.space	2
+ 2596 0004 00000000 		.word	hci_disconnection_complete_event_process
+ 2597 0008 0800     		.short	8
+ 2598 000a 0000     		.space	2
+ 2599 000c 00000000 		.word	hci_encryption_change_event_process
+ 2600 0010 0C00     		.short	12
+ 2601 0012 0000     		.space	2
+ 2602 0014 00000000 		.word	hci_read_remote_version_information_complete_event_process
+ 2603 0018 1000     		.short	16
+ 2604 001a 0000     		.space	2
+ 2605 001c 00000000 		.word	hci_hardware_error_event_process
+ 2606 0020 1300     		.short	19
+ 2607 0022 0000     		.space	2
+ 2608 0024 00000000 		.word	hci_number_of_completed_packets_event_process
+ 2609 0028 3000     		.short	48
+ 2610 002a 0000     		.space	2
+ 2611 002c 00000000 		.word	hci_encryption_key_refresh_complete_event_process
+ 2612              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 42
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ble_events.c
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:18     .text.hci_disconnection_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:24     .text.hci_disconnection_complete_event:00000000 hci_disconnection_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:31     .text.hci_disconnection_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:36     .text.hci_disconnection_complete_event_process:00000000 hci_disconnection_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:47     .text.hci_encryption_change_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:53     .text.hci_encryption_change_event:00000000 hci_encryption_change_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:60     .text.hci_encryption_change_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:65     .text.hci_encryption_change_event_process:00000000 hci_encryption_change_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:76     .text.hci_read_remote_version_information_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:82     .text.hci_read_remote_version_information_complete_event:00000000 hci_read_remote_version_information_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:89     .text.hci_read_remote_version_information_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:94     .text.hci_read_remote_version_information_complete_event_process:00000000 hci_read_remote_version_information_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:111    .text.hci_hardware_error_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:117    .text.hci_hardware_error_event:00000000 hci_hardware_error_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:124    .text.hci_hardware_error_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:129    .text.hci_hardware_error_event_process:00000000 hci_hardware_error_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:138    .text.hci_number_of_completed_packets_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:144    .text.hci_number_of_completed_packets_event:00000000 hci_number_of_completed_packets_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:151    .text.hci_number_of_completed_packets_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:156    .text.hci_number_of_completed_packets_event_process:00000000 hci_number_of_completed_packets_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:166    .text.hci_encryption_key_refresh_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:172    .text.hci_encryption_key_refresh_complete_event:00000000 hci_encryption_key_refresh_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:179    .text.hci_encryption_key_refresh_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:184    .text.hci_encryption_key_refresh_complete_event_process:00000000 hci_encryption_key_refresh_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:194    .text.hci_le_connection_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:200    .text.hci_le_connection_complete_event:00000000 hci_le_connection_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:207    .text.hci_le_connection_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:212    .text.hci_le_connection_complete_event_process:00000000 hci_le_connection_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:237    .text.hci_le_advertising_report_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:243    .text.hci_le_advertising_report_event:00000000 hci_le_advertising_report_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:250    .text.hci_le_advertising_report_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:255    .text.hci_le_advertising_report_event_process:00000000 hci_le_advertising_report_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:290    .text.hci_le_connection_update_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:296    .text.hci_le_connection_update_complete_event:00000000 hci_le_connection_update_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:303    .text.hci_le_connection_update_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:308    .text.hci_le_connection_update_complete_event_process:00000000 hci_le_connection_update_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:325    .text.hci_le_read_remote_features_page_0_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:331    .text.hci_le_read_remote_features_page_0_complete_event:00000000 hci_le_read_remote_features_page_0_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:338    .text.hci_le_read_remote_features_page_0_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:343    .text.hci_le_read_remote_features_page_0_complete_event_process:00000000 hci_le_read_remote_features_page_0_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:354    .text.hci_le_long_term_key_request_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:360    .text.hci_le_long_term_key_request_event:00000000 hci_le_long_term_key_request_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:367    .text.hci_le_long_term_key_request_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:372    .text.hci_le_long_term_key_request_event_process:00000000 hci_le_long_term_key_request_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:383    .text.hci_le_data_length_change_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:389    .text.hci_le_data_length_change_event:00000000 hci_le_data_length_change_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:396    .text.hci_le_data_length_change_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:401    .text.hci_le_data_length_change_event_process:00000000 hci_le_data_length_change_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:418    .text.hci_le_read_local_p256_public_key_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:424    .text.hci_le_read_local_p256_public_key_complete_event:00000000 hci_le_read_local_p256_public_key_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:431    .text.hci_le_read_local_p256_public_key_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:436    .text.hci_le_read_local_p256_public_key_complete_event_process:00000000 hci_le_read_local_p256_public_key_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:446    .text.hci_le_generate_dhkey_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:452    .text.hci_le_generate_dhkey_complete_event:00000000 hci_le_generate_dhkey_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:459    .text.hci_le_generate_dhkey_complete_event_process:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 43
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:464    .text.hci_le_generate_dhkey_complete_event_process:00000000 hci_le_generate_dhkey_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:474    .text.hci_le_enhanced_connection_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:480    .text.hci_le_enhanced_connection_complete_event:00000000 hci_le_enhanced_connection_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:487    .text.hci_le_enhanced_connection_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:492    .text.hci_le_enhanced_connection_complete_event_process:00000000 hci_le_enhanced_connection_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:521    .text.hci_le_directed_advertising_report_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:527    .text.hci_le_directed_advertising_report_event:00000000 hci_le_directed_advertising_report_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:534    .text.hci_le_directed_advertising_report_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:539    .text.hci_le_directed_advertising_report_event_process:00000000 hci_le_directed_advertising_report_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:549    .text.hci_le_phy_update_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:555    .text.hci_le_phy_update_complete_event:00000000 hci_le_phy_update_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:562    .text.hci_le_phy_update_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:567    .text.hci_le_phy_update_complete_event_process:00000000 hci_le_phy_update_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:579    .text.hci_le_extended_advertising_report_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:585    .text.hci_le_extended_advertising_report_event:00000000 hci_le_extended_advertising_report_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:592    .text.hci_le_extended_advertising_report_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:597    .text.hci_le_extended_advertising_report_event_process:00000000 hci_le_extended_advertising_report_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:632    .text.hci_le_scan_timeout_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:638    .text.hci_le_scan_timeout_event:00000000 hci_le_scan_timeout_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:645    .text.hci_le_scan_timeout_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:650    .text.hci_le_scan_timeout_event_process:00000000 hci_le_scan_timeout_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:658    .text.hci_le_advertising_set_terminated_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:664    .text.hci_le_advertising_set_terminated_event:00000000 hci_le_advertising_set_terminated_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:671    .text.hci_le_advertising_set_terminated_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:676    .text.hci_le_advertising_set_terminated_event_process:00000000 hci_le_advertising_set_terminated_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:688    .text.hci_le_scan_request_received_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:694    .text.hci_le_scan_request_received_event:00000000 hci_le_scan_request_received_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:701    .text.hci_le_scan_request_received_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:706    .text.hci_le_scan_request_received_event_process:00000000 hci_le_scan_request_received_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:717    .text.hci_le_channel_selection_algorithm_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:723    .text.hci_le_channel_selection_algorithm_event:00000000 hci_le_channel_selection_algorithm_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:730    .text.hci_le_channel_selection_algorithm_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:735    .text.hci_le_channel_selection_algorithm_event_process:00000000 hci_le_channel_selection_algorithm_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:745    .text.aci_warning_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:751    .text.aci_warning_event:00000000 aci_warning_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:758    .text.aci_warning_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:763    .text.aci_warning_event_process:00000000 aci_warning_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:774    .text.aci_gap_limited_discoverable_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:780    .text.aci_gap_limited_discoverable_event:00000000 aci_gap_limited_discoverable_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:787    .text.aci_gap_limited_discoverable_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:792    .text.aci_gap_limited_discoverable_event_process:00000000 aci_gap_limited_discoverable_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:800    .text.aci_gap_pairing_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:806    .text.aci_gap_pairing_complete_event:00000000 aci_gap_pairing_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:813    .text.aci_gap_pairing_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:818    .text.aci_gap_pairing_complete_event_process:00000000 aci_gap_pairing_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:829    .text.aci_gap_pass_key_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:835    .text.aci_gap_pass_key_req_event:00000000 aci_gap_pass_key_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:842    .text.aci_gap_pass_key_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:847    .text.aci_gap_pass_key_req_event_process:00000000 aci_gap_pass_key_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:856    .text.aci_gap_authorization_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:862    .text.aci_gap_authorization_req_event:00000000 aci_gap_authorization_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:869    .text.aci_gap_authorization_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:874    .text.aci_gap_authorization_req_event_process:00000000 aci_gap_authorization_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:883    .text.aci_gap_bond_lost_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:889    .text.aci_gap_bond_lost_event:00000000 aci_gap_bond_lost_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:896    .text.aci_gap_bond_lost_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:901    .text.aci_gap_bond_lost_event_process:00000000 aci_gap_bond_lost_event_process
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 44
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:910    .text.aci_gap_proc_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:916    .text.aci_gap_proc_complete_event:00000000 aci_gap_proc_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:923    .text.aci_gap_proc_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:928    .text.aci_gap_proc_complete_event_process:00000000 aci_gap_proc_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:940    .text.aci_gap_addr_not_resolved_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:946    .text.aci_gap_addr_not_resolved_event:00000000 aci_gap_addr_not_resolved_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:953    .text.aci_gap_addr_not_resolved_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:958    .text.aci_gap_addr_not_resolved_event_process:00000000 aci_gap_addr_not_resolved_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:967    .text.aci_gap_numeric_comparison_value_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:973    .text.aci_gap_numeric_comparison_value_event:00000000 aci_gap_numeric_comparison_value_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:980    .text.aci_gap_numeric_comparison_value_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:985    .text.aci_gap_numeric_comparison_value_event_process:00000000 aci_gap_numeric_comparison_value_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:995    .text.aci_gap_keypress_notification_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1001   .text.aci_gap_keypress_notification_event:00000000 aci_gap_keypress_notification_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1008   .text.aci_gap_keypress_notification_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1013   .text.aci_gap_keypress_notification_event_process:00000000 aci_gap_keypress_notification_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1023   .text.aci_gap_pairing_request_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1029   .text.aci_gap_pairing_request_event:00000000 aci_gap_pairing_request_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1036   .text.aci_gap_pairing_request_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1041   .text.aci_gap_pairing_request_event_process:00000000 aci_gap_pairing_request_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1052   .text.aci_l2cap_connection_update_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1058   .text.aci_l2cap_connection_update_resp_event:00000000 aci_l2cap_connection_update_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1065   .text.aci_l2cap_connection_update_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1070   .text.aci_l2cap_connection_update_resp_event_process:00000000 aci_l2cap_connection_update_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1080   .text.aci_l2cap_proc_timeout_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1086   .text.aci_l2cap_proc_timeout_event:00000000 aci_l2cap_proc_timeout_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1093   .text.aci_l2cap_proc_timeout_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1098   .text.aci_l2cap_proc_timeout_event_process:00000000 aci_l2cap_proc_timeout_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1109   .text.aci_l2cap_connection_update_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1115   .text.aci_l2cap_connection_update_req_event:00000000 aci_l2cap_connection_update_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1122   .text.aci_l2cap_connection_update_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1127   .text.aci_l2cap_connection_update_req_event_process:00000000 aci_l2cap_connection_update_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1148   .text.aci_l2cap_command_reject_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1154   .text.aci_l2cap_command_reject_event:00000000 aci_l2cap_command_reject_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1161   .text.aci_l2cap_command_reject_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1166   .text.aci_l2cap_command_reject_event_process:00000000 aci_l2cap_command_reject_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1183   .text.aci_l2cap_coc_connect_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1189   .text.aci_l2cap_coc_connect_event:00000000 aci_l2cap_coc_connect_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1196   .text.aci_l2cap_coc_connect_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1201   .text.aci_l2cap_coc_connect_event_process:00000000 aci_l2cap_coc_connect_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1220   .text.aci_l2cap_coc_connect_confirm_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1226   .text.aci_l2cap_coc_connect_confirm_event:00000000 aci_l2cap_coc_connect_confirm_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1233   .text.aci_l2cap_coc_connect_confirm_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1238   .text.aci_l2cap_coc_connect_confirm_event_process:00000000 aci_l2cap_coc_connect_confirm_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1259   .text.aci_l2cap_coc_reconf_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1265   .text.aci_l2cap_coc_reconf_event:00000000 aci_l2cap_coc_reconf_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1272   .text.aci_l2cap_coc_reconf_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1277   .text.aci_l2cap_coc_reconf_event_process:00000000 aci_l2cap_coc_reconf_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1294   .text.aci_l2cap_coc_reconf_confirm_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1300   .text.aci_l2cap_coc_reconf_confirm_event:00000000 aci_l2cap_coc_reconf_confirm_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1307   .text.aci_l2cap_coc_reconf_confirm_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1312   .text.aci_l2cap_coc_reconf_confirm_event_process:00000000 aci_l2cap_coc_reconf_confirm_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1322   .text.aci_l2cap_coc_disconnect_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1328   .text.aci_l2cap_coc_disconnect_event:00000000 aci_l2cap_coc_disconnect_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1335   .text.aci_l2cap_coc_disconnect_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1340   .text.aci_l2cap_coc_disconnect_event_process:00000000 aci_l2cap_coc_disconnect_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1349   .text.aci_l2cap_coc_flow_control_event:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 45
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1355   .text.aci_l2cap_coc_flow_control_event:00000000 aci_l2cap_coc_flow_control_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1362   .text.aci_l2cap_coc_flow_control_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1367   .text.aci_l2cap_coc_flow_control_event_process:00000000 aci_l2cap_coc_flow_control_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1377   .text.aci_l2cap_coc_rx_data_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1383   .text.aci_l2cap_coc_rx_data_event:00000000 aci_l2cap_coc_rx_data_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1390   .text.aci_l2cap_coc_rx_data_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1395   .text.aci_l2cap_coc_rx_data_event_process:00000000 aci_l2cap_coc_rx_data_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1406   .text.aci_l2cap_coc_tx_pool_available_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1412   .text.aci_l2cap_coc_tx_pool_available_event:00000000 aci_l2cap_coc_tx_pool_available_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1419   .text.aci_l2cap_coc_tx_pool_available_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1424   .text.aci_l2cap_coc_tx_pool_available_event_process:00000000 aci_l2cap_coc_tx_pool_available_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1432   .text.aci_gatt_attribute_modified_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1438   .text.aci_gatt_attribute_modified_event:00000000 aci_gatt_attribute_modified_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1445   .text.aci_gatt_attribute_modified_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1450   .text.aci_gatt_attribute_modified_event_process:00000000 aci_gatt_attribute_modified_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1467   .text.aci_gatt_proc_timeout_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1473   .text.aci_gatt_proc_timeout_event:00000000 aci_gatt_proc_timeout_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1480   .text.aci_gatt_proc_timeout_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1485   .text.aci_gatt_proc_timeout_event_process:00000000 aci_gatt_proc_timeout_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1494   .text.aci_att_exchange_mtu_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1500   .text.aci_att_exchange_mtu_resp_event:00000000 aci_att_exchange_mtu_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1507   .text.aci_att_exchange_mtu_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1512   .text.aci_att_exchange_mtu_resp_event_process:00000000 aci_att_exchange_mtu_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1522   .text.aci_att_find_info_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1528   .text.aci_att_find_info_resp_event:00000000 aci_att_find_info_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1535   .text.aci_att_find_info_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1540   .text.aci_att_find_info_resp_event_process:00000000 aci_att_find_info_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1552   .text.aci_att_find_by_type_value_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1558   .text.aci_att_find_by_type_value_resp_event:00000000 aci_att_find_by_type_value_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1565   .text.aci_att_find_by_type_value_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1570   .text.aci_att_find_by_type_value_resp_event_process:00000000 aci_att_find_by_type_value_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1581   .text.aci_att_read_by_type_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1587   .text.aci_att_read_by_type_resp_event:00000000 aci_att_read_by_type_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1594   .text.aci_att_read_by_type_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1599   .text.aci_att_read_by_type_resp_event_process:00000000 aci_att_read_by_type_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1611   .text.aci_att_read_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1617   .text.aci_att_read_resp_event:00000000 aci_att_read_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1624   .text.aci_att_read_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1629   .text.aci_att_read_resp_event_process:00000000 aci_att_read_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1640   .text.aci_att_read_blob_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1646   .text.aci_att_read_blob_resp_event:00000000 aci_att_read_blob_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1653   .text.aci_att_read_blob_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1658   .text.aci_att_read_blob_resp_event_process:00000000 aci_att_read_blob_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1669   .text.aci_att_read_multiple_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1675   .text.aci_att_read_multiple_resp_event:00000000 aci_att_read_multiple_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1682   .text.aci_att_read_multiple_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1687   .text.aci_att_read_multiple_resp_event_process:00000000 aci_att_read_multiple_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1698   .text.aci_att_read_by_group_type_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1704   .text.aci_att_read_by_group_type_resp_event:00000000 aci_att_read_by_group_type_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1711   .text.aci_att_read_by_group_type_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1716   .text.aci_att_read_by_group_type_resp_event_process:00000000 aci_att_read_by_group_type_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1728   .text.aci_att_prepare_write_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1734   .text.aci_att_prepare_write_resp_event:00000000 aci_att_prepare_write_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1741   .text.aci_att_prepare_write_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1746   .text.aci_att_prepare_write_resp_event_process:00000000 aci_att_prepare_write_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1763   .text.aci_att_exec_write_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1769   .text.aci_att_exec_write_resp_event:00000000 aci_att_exec_write_resp_event
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 46
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1776   .text.aci_att_exec_write_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1781   .text.aci_att_exec_write_resp_event_process:00000000 aci_att_exec_write_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1790   .text.aci_gatt_indication_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1796   .text.aci_gatt_indication_event:00000000 aci_gatt_indication_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1803   .text.aci_gatt_indication_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1808   .text.aci_gatt_indication_event_process:00000000 aci_gatt_indication_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1820   .text.aci_gatt_notification_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1826   .text.aci_gatt_notification_event:00000000 aci_gatt_notification_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1833   .text.aci_gatt_notification_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1838   .text.aci_gatt_notification_event_process:00000000 aci_gatt_notification_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1850   .text.aci_gatt_proc_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1856   .text.aci_gatt_proc_complete_event:00000000 aci_gatt_proc_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1863   .text.aci_gatt_proc_complete_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1868   .text.aci_gatt_proc_complete_event_process:00000000 aci_gatt_proc_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1878   .text.aci_gatt_error_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1884   .text.aci_gatt_error_resp_event:00000000 aci_gatt_error_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1891   .text.aci_gatt_error_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1896   .text.aci_gatt_error_resp_event_process:00000000 aci_gatt_error_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1908   .text.aci_gatt_disc_read_char_by_uuid_resp_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1914   .text.aci_gatt_disc_read_char_by_uuid_resp_event:00000000 aci_gatt_disc_read_char_by_uuid_resp_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1921   .text.aci_gatt_disc_read_char_by_uuid_resp_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1926   .text.aci_gatt_disc_read_char_by_uuid_resp_event_process:00000000 aci_gatt_disc_read_char_by_uuid_resp_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1938   .text.aci_gatt_write_permit_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1944   .text.aci_gatt_write_permit_req_event:00000000 aci_gatt_write_permit_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1951   .text.aci_gatt_write_permit_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1956   .text.aci_gatt_write_permit_req_event_process:00000000 aci_gatt_write_permit_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1968   .text.aci_gatt_read_permit_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1974   .text.aci_gatt_read_permit_req_event:00000000 aci_gatt_read_permit_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1981   .text.aci_gatt_read_permit_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1986   .text.aci_gatt_read_permit_req_event_process:00000000 aci_gatt_read_permit_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:1997   .text.aci_gatt_read_multi_permit_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2003   .text.aci_gatt_read_multi_permit_req_event:00000000 aci_gatt_read_multi_permit_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2010   .text.aci_gatt_read_multi_permit_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2015   .text.aci_gatt_read_multi_permit_req_event_process:00000000 aci_gatt_read_multi_permit_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2026   .text.aci_gatt_tx_pool_available_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2032   .text.aci_gatt_tx_pool_available_event:00000000 aci_gatt_tx_pool_available_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2039   .text.aci_gatt_tx_pool_available_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2044   .text.aci_gatt_tx_pool_available_event_process:00000000 aci_gatt_tx_pool_available_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2054   .text.aci_gatt_server_confirmation_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2060   .text.aci_gatt_server_confirmation_event:00000000 aci_gatt_server_confirmation_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2067   .text.aci_gatt_server_confirmation_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2072   .text.aci_gatt_server_confirmation_event_process:00000000 aci_gatt_server_confirmation_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2081   .text.aci_gatt_prepare_write_permit_req_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2087   .text.aci_gatt_prepare_write_permit_req_event:00000000 aci_gatt_prepare_write_permit_req_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2094   .text.aci_gatt_prepare_write_permit_req_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2099   .text.aci_gatt_prepare_write_permit_req_event_process:00000000 aci_gatt_prepare_write_permit_req_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2116   .text.aci_gatt_eatt_bearer_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2122   .text.aci_gatt_eatt_bearer_event:00000000 aci_gatt_eatt_bearer_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2129   .text.aci_gatt_eatt_bearer_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2134   .text.aci_gatt_eatt_bearer_event_process:00000000 aci_gatt_eatt_bearer_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2146   .text.aci_gatt_mult_notification_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2152   .text.aci_gatt_mult_notification_event:00000000 aci_gatt_mult_notification_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2159   .text.aci_gatt_mult_notification_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2164   .text.aci_gatt_mult_notification_event_process:00000000 aci_gatt_mult_notification_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2176   .text.aci_gatt_notification_complete_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2182   .text.aci_gatt_notification_complete_event:00000000 aci_gatt_notification_complete_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2189   .text.aci_gatt_notification_complete_event_process:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s 			page 47
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2194   .text.aci_gatt_notification_complete_event_process:00000000 aci_gatt_notification_complete_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2203   .text.aci_gatt_read_ext_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2209   .text.aci_gatt_read_ext_event:00000000 aci_gatt_read_ext_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2216   .text.aci_gatt_read_ext_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2221   .text.aci_gatt_read_ext_event_process:00000000 aci_gatt_read_ext_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2233   .text.aci_gatt_indication_ext_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2239   .text.aci_gatt_indication_ext_event:00000000 aci_gatt_indication_ext_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2246   .text.aci_gatt_indication_ext_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2251   .text.aci_gatt_indication_ext_event_process:00000000 aci_gatt_indication_ext_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2268   .text.aci_gatt_notification_ext_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2274   .text.aci_gatt_notification_ext_event:00000000 aci_gatt_notification_ext_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2281   .text.aci_gatt_notification_ext_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2286   .text.aci_gatt_notification_ext_event_process:00000000 aci_gatt_notification_ext_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2303   .text.aci_hal_end_of_radio_activity_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2309   .text.aci_hal_end_of_radio_activity_event:00000000 aci_hal_end_of_radio_activity_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2316   .text.aci_hal_end_of_radio_activity_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2321   .text.aci_hal_end_of_radio_activity_event_process:00000000 aci_hal_end_of_radio_activity_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2338   .text.aci_hal_scan_req_report_event:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2344   .text.aci_hal_scan_req_report_event:00000000 aci_hal_scan_req_report_event
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2351   .text.aci_hal_scan_req_report_event_process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2356   .text.aci_hal_scan_req_report_event_process:00000000 aci_hal_scan_req_report_event_process
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2371   .rodata.hci_vs_event_table:00000000 hci_vs_event_table
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2368   .rodata.hci_vs_event_table:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2539   .rodata.hci_le_event_table:00000000 hci_le_event_table
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2536   .rodata.hci_le_event_table:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2593   .rodata.hci_event_table:00000000 hci_event_table
+C:\Users\Nathan\AppData\Local\Temp\ccTrnHFo.s:2590   .rodata.hci_event_table:00000000 $d
+
+UNDEFINED SYMBOLS
+Osal_MemCpy

@@ -1,0 +1,454 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"app_debug.c"
+  16              		.text
+  17              		.section	.text.APPD_SetCPU2GpioConfig,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	APPD_SetCPU2GpioConfig:
+  24              		@ args = 0, pretend = 0, frame = 48
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 70B5     		push	{r4, r5, r6, lr}
+  27 0002 8CB0     		sub	sp, sp, #48
+  28 0004 0023     		movs	r3, #0
+  29 0006 0793     		str	r3, [sp, #28]
+  30 0008 0893     		str	r3, [sp, #32]
+  31 000a 0993     		str	r3, [sp, #36]
+  32 000c 0A93     		str	r3, [sp, #40]
+  33 000e 0B93     		str	r3, [sp, #44]
+  34 0010 1C46     		mov	r4, r3
+  35 0012 1D46     		mov	r5, r3
+  36 0014 1E46     		mov	r6, r3
+  37 0016 06E0     		b	.L2
+  38              	.L4:
+  39 0018 4D4A     		ldr	r2, .L15
+  40 001a 02EBC302 		add	r2, r2, r3, lsl #3
+  41 001e 9288     		ldrh	r2, [r2, #4]
+  42 0020 1543     		orrs	r5, r5, r2
+  43              	.L3:
+  44 0022 0133     		adds	r3, r3, #1
+  45 0024 DBB2     		uxtb	r3, r3
+  46              	.L2:
+  47 0026 252B     		cmp	r3, #37
+  48 0028 1ED8     		bhi	.L11
+  49 002a 494A     		ldr	r2, .L15
+  50 002c 02EBC302 		add	r2, r2, r3, lsl #3
+  51 0030 9279     		ldrb	r2, [r2, #6]	@ zero_extendqisi2
+  52 0032 002A     		cmp	r2, #0
+  53 0034 F5D0     		beq	.L3
+  54 0036 464A     		ldr	r2, .L15
+  55 0038 52F83320 		ldr	r2, [r2, r3, lsl #3]
+  56 003c 4548     		ldr	r0, .L15+4
+  57 003e 8242     		cmp	r2, r0
+  58 0040 EAD0     		beq	.L4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s 			page 2
+
+
+  59 0042 00F58060 		add	r0, r0, #1024
+  60 0046 8242     		cmp	r2, r0
+  61 0048 08D0     		beq	.L5
+  62 004a B2F1904F 		cmp	r2, #1207959552
+  63 004e E8D1     		bne	.L3
+  64 0050 3F4A     		ldr	r2, .L15
+  65 0052 02EBC302 		add	r2, r2, r3, lsl #3
+  66 0056 9288     		ldrh	r2, [r2, #4]
+  67 0058 1643     		orrs	r6, r6, r2
+  68 005a E2E7     		b	.L3
+  69              	.L5:
+  70 005c 3C4A     		ldr	r2, .L15
+  71 005e 02EBC302 		add	r2, r2, r3, lsl #3
+  72 0062 9288     		ldrh	r2, [r2, #4]
+  73 0064 1443     		orrs	r4, r4, r2
+  74 0066 DCE7     		b	.L3
+  75              	.L11:
+  76 0068 0123     		movs	r3, #1
+  77 006a 0893     		str	r3, [sp, #32]
+  78 006c 0323     		movs	r3, #3
+  79 006e 0A93     		str	r3, [sp, #40]
+  80 0070 26B9     		cbnz	r6, .L12
+  81              	.L7:
+  82 0072 3DBB     		cbnz	r5, .L13
+  83              	.L8:
+  84 0074 002C     		cmp	r4, #0
+  85 0076 48D1     		bne	.L14
+  86              	.L1:
+  87 0078 0CB0     		add	sp, sp, #48
+  88              		@ sp needed
+  89 007a 70BD     		pop	{r4, r5, r6, pc}
+  90              	.L12:
+  91 007c 0796     		str	r6, [sp, #28]
+  92 007e 4FF0B043 		mov	r3, #1476395008
+  93 0082 DA6C     		ldr	r2, [r3, #76]
+  94 0084 42F00102 		orr	r2, r2, #1
+  95 0088 DA64     		str	r2, [r3, #76]
+  96 008a DA6C     		ldr	r2, [r3, #76]
+  97 008c 02F00102 		and	r2, r2, #1
+  98 0090 0292     		str	r2, [sp, #8]
+  99 0092 029A     		ldr	r2, [sp, #8]
+ 100 0094 D3F84C21 		ldr	r2, [r3, #332]
+ 101 0098 42F00102 		orr	r2, r2, #1
+ 102 009c C3F84C21 		str	r2, [r3, #332]
+ 103 00a0 D3F84C31 		ldr	r3, [r3, #332]
+ 104 00a4 03F00103 		and	r3, r3, #1
+ 105 00a8 0193     		str	r3, [sp, #4]
+ 106 00aa 019B     		ldr	r3, [sp, #4]
+ 107 00ac 07A9     		add	r1, sp, #28
+ 108 00ae 4FF09040 		mov	r0, #1207959552
+ 109 00b2 FFF7FEFF 		bl	HAL_GPIO_Init
+ 110 00b6 0022     		movs	r2, #0
+ 111 00b8 3146     		mov	r1, r6
+ 112 00ba 4FF09040 		mov	r0, #1207959552
+ 113 00be FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 114 00c2 D6E7     		b	.L7
+ 115              	.L13:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s 			page 3
+
+
+ 116 00c4 0795     		str	r5, [sp, #28]
+ 117 00c6 4FF0B043 		mov	r3, #1476395008
+ 118 00ca DA6C     		ldr	r2, [r3, #76]
+ 119 00cc 42F00202 		orr	r2, r2, #2
+ 120 00d0 DA64     		str	r2, [r3, #76]
+ 121 00d2 DA6C     		ldr	r2, [r3, #76]
+ 122 00d4 02F00202 		and	r2, r2, #2
+ 123 00d8 0492     		str	r2, [sp, #16]
+ 124 00da 049A     		ldr	r2, [sp, #16]
+ 125 00dc D3F84C21 		ldr	r2, [r3, #332]
+ 126 00e0 42F00202 		orr	r2, r2, #2
+ 127 00e4 C3F84C21 		str	r2, [r3, #332]
+ 128 00e8 D3F84C31 		ldr	r3, [r3, #332]
+ 129 00ec 03F00203 		and	r3, r3, #2
+ 130 00f0 0393     		str	r3, [sp, #12]
+ 131 00f2 039B     		ldr	r3, [sp, #12]
+ 132 00f4 174E     		ldr	r6, .L15+4
+ 133 00f6 07A9     		add	r1, sp, #28
+ 134 00f8 3046     		mov	r0, r6
+ 135 00fa FFF7FEFF 		bl	HAL_GPIO_Init
+ 136 00fe 0022     		movs	r2, #0
+ 137 0100 2946     		mov	r1, r5
+ 138 0102 3046     		mov	r0, r6
+ 139 0104 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 140 0108 B4E7     		b	.L8
+ 141              	.L14:
+ 142 010a 0794     		str	r4, [sp, #28]
+ 143 010c 4FF0B043 		mov	r3, #1476395008
+ 144 0110 DA6C     		ldr	r2, [r3, #76]
+ 145 0112 42F00402 		orr	r2, r2, #4
+ 146 0116 DA64     		str	r2, [r3, #76]
+ 147 0118 DA6C     		ldr	r2, [r3, #76]
+ 148 011a 02F00402 		and	r2, r2, #4
+ 149 011e 0692     		str	r2, [sp, #24]
+ 150 0120 069A     		ldr	r2, [sp, #24]
+ 151 0122 D3F84C21 		ldr	r2, [r3, #332]
+ 152 0126 42F00402 		orr	r2, r2, #4
+ 153 012a C3F84C21 		str	r2, [r3, #332]
+ 154 012e D3F84C31 		ldr	r3, [r3, #332]
+ 155 0132 03F00403 		and	r3, r3, #4
+ 156 0136 0593     		str	r3, [sp, #20]
+ 157 0138 059B     		ldr	r3, [sp, #20]
+ 158 013a 074D     		ldr	r5, .L15+8
+ 159 013c 07A9     		add	r1, sp, #28
+ 160 013e 2846     		mov	r0, r5
+ 161 0140 FFF7FEFF 		bl	HAL_GPIO_Init
+ 162 0144 0022     		movs	r2, #0
+ 163 0146 2146     		mov	r1, r4
+ 164 0148 2846     		mov	r0, r5
+ 165 014a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 166 014e 93E7     		b	.L1
+ 167              	.L16:
+ 168              		.align	2
+ 169              	.L15:
+ 170 0150 00000000 		.word	aGpioConfigList
+ 171 0154 00040048 		.word	1207960576
+ 172 0158 00080048 		.word	1207961600
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s 			page 4
+
+
+ 174              		.section	.text.APPD_Init,"ax",%progbits
+ 175              		.align	1
+ 176              		.global	APPD_Init
+ 177              		.syntax unified
+ 178              		.thumb
+ 179              		.thumb_func
+ 181              	APPD_Init:
+ 182              		@ args = 0, pretend = 0, frame = 0
+ 183              		@ frame_needed = 0, uses_anonymous_args = 0
+ 184 0000 08B5     		push	{r3, lr}
+ 185 0002 FFF7FEFF 		bl	HAL_DBGMCU_EnableDBGSleepMode
+ 186 0006 FFF7FEFF 		bl	HAL_DBGMCU_EnableDBGStopMode
+ 187 000a 054A     		ldr	r2, .L19
+ 188 000c D2F89030 		ldr	r3, [r2, #144]
+ 189 0010 43F48033 		orr	r3, r3, #65536
+ 190 0014 C2F89030 		str	r3, [r2, #144]
+ 191 0018 FFF7FEFF 		bl	APPD_SetCPU2GpioConfig
+ 192 001c 08BD     		pop	{r3, pc}
+ 193              	.L20:
+ 194 001e 00BF     		.align	2
+ 195              	.L19:
+ 196 0020 00080058 		.word	1476397056
+ 198              		.section	.text.APPD_EnableCPU2,"ax",%progbits
+ 199              		.align	1
+ 200              		.global	APPD_EnableCPU2
+ 201              		.syntax unified
+ 202              		.thumb
+ 203              		.thumb_func
+ 205              	APPD_EnableCPU2:
+ 206              		@ args = 0, pretend = 0, frame = 32
+ 207              		@ frame_needed = 0, uses_anonymous_args = 0
+ 208 0000 00B5     		push	{lr}
+ 209 0002 89B0     		sub	sp, sp, #36
+ 210 0004 0DF1040C 		add	ip, sp, #4
+ 211 0008 DFF828E0 		ldr	lr, .L23
+ 212 000c BEE80F00 		ldmia	lr!, {r0, r1, r2, r3}
+ 213 0010 ACE80F00 		stmia	ip!, {r0, r1, r2, r3}
+ 214 0014 9EE80700 		ldm	lr, {r0, r1, r2}
+ 215 0018 ACE80300 		stmia	ip!, {r0, r1}
+ 216 001c 2CF8022B 		strh	r2, [ip], #2	@ movhi
+ 217 0020 120C     		lsrs	r2, r2, #16
+ 218 0022 8CF80020 		strb	r2, [ip]
+ 219 0026 FFF7FEFF 		bl	TL_TRACES_Init
+ 220 002a 01A8     		add	r0, sp, #4
+ 221 002c FFF7FEFF 		bl	SHCI_C2_DEBUG_Init
+ 222 0030 09B0     		add	sp, sp, #36
+ 223              		@ sp needed
+ 224 0032 00BD     		pop	{pc}
+ 225              	.L24:
+ 226              		.align	2
+ 227              	.L23:
+ 228 0034 00000000 		.word	.LANCHOR0
+ 230              		.section	.rodata.aGpioConfigList,"a"
+ 231              		.align	2
+ 234              	aGpioConfigList:
+ 235 0000 00000048 		.word	1207959552
+ 236 0004 0100     		.short	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s 			page 5
+
+
+ 237 0006 00       		.byte	0
+ 238 0007 00       		.byte	0
+ 239 0008 00000048 		.word	1207959552
+ 240 000c 0100     		.short	1
+ 241 000e 00       		.byte	0
+ 242 000f 00       		.byte	0
+ 243 0010 00000048 		.word	1207959552
+ 244 0014 0100     		.short	1
+ 245 0016 00       		.byte	0
+ 246 0017 00       		.byte	0
+ 247 0018 00000048 		.word	1207959552
+ 248 001c 0100     		.short	1
+ 249 001e 00       		.byte	0
+ 250 001f 00       		.byte	0
+ 251 0020 00000048 		.word	1207959552
+ 252 0024 0100     		.short	1
+ 253 0026 00       		.byte	0
+ 254 0027 00       		.byte	0
+ 255 0028 00000048 		.word	1207959552
+ 256 002c 0100     		.short	1
+ 257 002e 00       		.byte	0
+ 258 002f 00       		.byte	0
+ 259 0030 00000048 		.word	1207959552
+ 260 0034 0100     		.short	1
+ 261 0036 00       		.byte	0
+ 262 0037 00       		.byte	0
+ 263 0038 00000048 		.word	1207959552
+ 264 003c 0100     		.short	1
+ 265 003e 00       		.byte	0
+ 266 003f 00       		.byte	0
+ 267 0040 00000048 		.word	1207959552
+ 268 0044 0100     		.short	1
+ 269 0046 00       		.byte	0
+ 270 0047 00       		.byte	0
+ 271 0048 00000048 		.word	1207959552
+ 272 004c 0100     		.short	1
+ 273 004e 00       		.byte	0
+ 274 004f 00       		.byte	0
+ 275 0050 00000048 		.word	1207959552
+ 276 0054 0100     		.short	1
+ 277 0056 00       		.byte	0
+ 278 0057 00       		.byte	0
+ 279 0058 00000048 		.word	1207959552
+ 280 005c 0100     		.short	1
+ 281 005e 00       		.byte	0
+ 282 005f 00       		.byte	0
+ 283 0060 00000048 		.word	1207959552
+ 284 0064 0100     		.short	1
+ 285 0066 00       		.byte	0
+ 286 0067 00       		.byte	0
+ 287 0068 00000048 		.word	1207959552
+ 288 006c 0100     		.short	1
+ 289 006e 00       		.byte	0
+ 290 006f 00       		.byte	0
+ 291 0070 00000048 		.word	1207959552
+ 292 0074 0100     		.short	1
+ 293 0076 00       		.byte	0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s 			page 6
+
+
+ 294 0077 00       		.byte	0
+ 295 0078 00000048 		.word	1207959552
+ 296 007c 0100     		.short	1
+ 297 007e 00       		.byte	0
+ 298 007f 00       		.byte	0
+ 299 0080 00000048 		.word	1207959552
+ 300 0084 0100     		.short	1
+ 301 0086 00       		.byte	0
+ 302 0087 00       		.byte	0
+ 303 0088 00000048 		.word	1207959552
+ 304 008c 0100     		.short	1
+ 305 008e 00       		.byte	0
+ 306 008f 00       		.byte	0
+ 307 0090 00000048 		.word	1207959552
+ 308 0094 0100     		.short	1
+ 309 0096 00       		.byte	0
+ 310 0097 00       		.byte	0
+ 311 0098 00000048 		.word	1207959552
+ 312 009c 0100     		.short	1
+ 313 009e 00       		.byte	0
+ 314 009f 00       		.byte	0
+ 315 00a0 00000048 		.word	1207959552
+ 316 00a4 0100     		.short	1
+ 317 00a6 00       		.byte	0
+ 318 00a7 00       		.byte	0
+ 319 00a8 00000048 		.word	1207959552
+ 320 00ac 0100     		.short	1
+ 321 00ae 00       		.byte	0
+ 322 00af 00       		.byte	0
+ 323 00b0 00000048 		.word	1207959552
+ 324 00b4 0100     		.short	1
+ 325 00b6 00       		.byte	0
+ 326 00b7 00       		.byte	0
+ 327 00b8 00000048 		.word	1207959552
+ 328 00bc 0100     		.short	1
+ 329 00be 00       		.byte	0
+ 330 00bf 00       		.byte	0
+ 331 00c0 00000048 		.word	1207959552
+ 332 00c4 0100     		.short	1
+ 333 00c6 00       		.byte	0
+ 334 00c7 00       		.byte	0
+ 335 00c8 00000048 		.word	1207959552
+ 336 00cc 0100     		.short	1
+ 337 00ce 00       		.byte	0
+ 338 00cf 00       		.byte	0
+ 339 00d0 00000048 		.word	1207959552
+ 340 00d4 0100     		.short	1
+ 341 00d6 00       		.byte	0
+ 342 00d7 00       		.byte	0
+ 343 00d8 00000048 		.word	1207959552
+ 344 00dc 0100     		.short	1
+ 345 00de 00       		.byte	0
+ 346 00df 00       		.byte	0
+ 347 00e0 00000048 		.word	1207959552
+ 348 00e4 0100     		.short	1
+ 349 00e6 00       		.byte	0
+ 350 00e7 00       		.byte	0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s 			page 7
+
+
+ 351 00e8 00000048 		.word	1207959552
+ 352 00ec 0100     		.short	1
+ 353 00ee 00       		.byte	0
+ 354 00ef 00       		.byte	0
+ 355 00f0 00000048 		.word	1207959552
+ 356 00f4 0100     		.short	1
+ 357 00f6 00       		.byte	0
+ 358 00f7 00       		.byte	0
+ 359 00f8 00000048 		.word	1207959552
+ 360 00fc 0100     		.short	1
+ 361 00fe 00       		.byte	0
+ 362 00ff 00       		.byte	0
+ 363 0100 00000048 		.word	1207959552
+ 364 0104 0100     		.short	1
+ 365 0106 00       		.byte	0
+ 366 0107 00       		.byte	0
+ 367 0108 00000048 		.word	1207959552
+ 368 010c 0100     		.short	1
+ 369 010e 00       		.byte	0
+ 370 010f 00       		.byte	0
+ 371 0110 00000048 		.word	1207959552
+ 372 0114 0100     		.short	1
+ 373 0116 00       		.byte	0
+ 374 0117 00       		.byte	0
+ 375 0118 00000048 		.word	1207959552
+ 376 011c 0100     		.short	1
+ 377 011e 00       		.byte	0
+ 378 011f 00       		.byte	0
+ 379 0120 00000048 		.word	1207959552
+ 380 0124 0100     		.short	1
+ 381 0126 00       		.byte	0
+ 382 0127 00       		.byte	0
+ 383 0128 00000048 		.word	1207959552
+ 384 012c 0100     		.short	1
+ 385 012e 00       		.byte	0
+ 386 012f 00       		.byte	0
+ 387              		.section	MB_MEM2,"aw"
+ 388              		.align	2
+ 391              	APPD_GeneralConfig:
+ 392 0000 00000000 		.space	14
+ 392      00000000 
+ 392      00000000 
+ 392      0000
+ 393 000e 0000     		.align	2
+ 396              	APPD_TracesConfig:
+ 397 0010 00000000 		.space	4
+ 398              		.section	.rodata
+ 399              		.align	2
+ 400              		.set	.LANCHOR0,. + 0
+ 401              	.LC1:
+ 402 0000 00000000 		.word	0
+ 403 0004 00000000 		.word	0
+ 404 0008 00000000 		.word	0
+ 405 000c 00000000 		.word	aGpioConfigList
+ 406 0010 10000000 		.word	APPD_TracesConfig
+ 407 0014 00000000 		.word	APPD_GeneralConfig
+ 408 0018 26       		.byte	38
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s 			page 8
+
+
+ 409 0019 04       		.byte	4
+ 410 001a 04       		.byte	4
+ 411              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 app_debug.c
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:18     .text.APPD_SetCPU2GpioConfig:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:23     .text.APPD_SetCPU2GpioConfig:00000000 APPD_SetCPU2GpioConfig
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:170    .text.APPD_SetCPU2GpioConfig:00000150 $d
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:234    .rodata.aGpioConfigList:00000000 aGpioConfigList
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:175    .text.APPD_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:181    .text.APPD_Init:00000000 APPD_Init
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:196    .text.APPD_Init:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:199    .text.APPD_EnableCPU2:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:205    .text.APPD_EnableCPU2:00000000 APPD_EnableCPU2
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:228    .text.APPD_EnableCPU2:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:231    .rodata.aGpioConfigList:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:388    MB_MEM2:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:391    MB_MEM2:00000000 APPD_GeneralConfig
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:396    MB_MEM2:00000010 APPD_TracesConfig
+C:\Users\Nathan\AppData\Local\Temp\ccj5pGOj.s:399    .rodata:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_GPIO_Init
+HAL_GPIO_WritePin
+HAL_DBGMCU_EnableDBGSleepMode
+HAL_DBGMCU_EnableDBGStopMode
+TL_TRACES_Init
+SHCI_C2_DEBUG_Init

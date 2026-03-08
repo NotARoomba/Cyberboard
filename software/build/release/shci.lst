@@ -1,0 +1,896 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"shci.c"
+  16              		.text
+  17              		.section	.text.SHCI_C2_FUS_GetState,"ax",%progbits
+  18              		.align	1
+  19              		.global	SHCI_C2_FUS_GetState
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	SHCI_C2_FUS_GetState:
+  25              		@ args = 0, pretend = 0, frame = 24
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 10B5     		push	{r4, lr}
+  28 0002 86B0     		sub	sp, sp, #24
+  29 0004 0446     		mov	r4, r0
+  30 0006 01AB     		add	r3, sp, #4
+  31 0008 0022     		movs	r2, #0
+  32 000a 1146     		mov	r1, r2
+  33 000c 4FF65240 		movw	r0, #64594
+  34 0010 FFF7FEFF 		bl	shci_send
+  35 0014 14B1     		cbz	r4, .L2
+  36 0016 9DF81330 		ldrb	r3, [sp, #19]	@ zero_extendqisi2
+  37 001a 2370     		strb	r3, [r4]
+  38              	.L2:
+  39 001c 9DF81200 		ldrb	r0, [sp, #18]	@ zero_extendqisi2
+  40 0020 06B0     		add	sp, sp, #24
+  41              		@ sp needed
+  42 0022 10BD     		pop	{r4, pc}
+  44              		.section	.text.SHCI_C2_FUS_FwUpgrade,"ax",%progbits
+  45              		.align	1
+  46              		.global	SHCI_C2_FUS_FwUpgrade
+  47              		.syntax unified
+  48              		.thumb
+  49              		.thumb_func
+  51              	SHCI_C2_FUS_FwUpgrade:
+  52              		@ args = 0, pretend = 0, frame = 16
+  53              		@ frame_needed = 0, uses_anonymous_args = 0
+  54 0000 00B5     		push	{lr}
+  55 0002 85B0     		sub	sp, sp, #20
+  56 0004 0B46     		mov	r3, r1
+  57 0006 78B1     		cbz	r0, .L7
+  58 0008 0090     		str	r0, [sp]
+  59 000a 0421     		movs	r1, #4
+  60              	.L5:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 2
+
+
+  61 000c 13B1     		cbz	r3, .L6
+  62 000e 0193     		str	r3, [sp, #4]
+  63 0010 0431     		adds	r1, r1, #4
+  64 0012 C9B2     		uxtb	r1, r1
+  65              	.L6:
+  66 0014 6A46     		mov	r2, sp
+  67 0016 6B46     		mov	r3, sp
+  68 0018 4FF65440 		movw	r0, #64596
+  69 001c FFF7FEFF 		bl	shci_send
+  70 0020 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+  71 0024 05B0     		add	sp, sp, #20
+  72              		@ sp needed
+  73 0026 00BD     		pop	{pc}
+  74              	.L7:
+  75 0028 0146     		mov	r1, r0
+  76 002a EFE7     		b	.L5
+  78              		.section	.text.SHCI_C2_FUS_FwDelete,"ax",%progbits
+  79              		.align	1
+  80              		.global	SHCI_C2_FUS_FwDelete
+  81              		.syntax unified
+  82              		.thumb
+  83              		.thumb_func
+  85              	SHCI_C2_FUS_FwDelete:
+  86              		@ args = 0, pretend = 0, frame = 16
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88 0000 00B5     		push	{lr}
+  89 0002 85B0     		sub	sp, sp, #20
+  90 0004 6B46     		mov	r3, sp
+  91 0006 0022     		movs	r2, #0
+  92 0008 1146     		mov	r1, r2
+  93 000a 4FF65540 		movw	r0, #64597
+  94 000e FFF7FEFF 		bl	shci_send
+  95 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+  96 0016 05B0     		add	sp, sp, #20
+  97              		@ sp needed
+  98 0018 00BD     		pop	{pc}
+ 100              		.section	.text.SHCI_C2_FUS_FwPurge,"ax",%progbits
+ 101              		.align	1
+ 102              		.global	SHCI_C2_FUS_FwPurge
+ 103              		.syntax unified
+ 104              		.thumb
+ 105              		.thumb_func
+ 107              	SHCI_C2_FUS_FwPurge:
+ 108              		@ args = 0, pretend = 0, frame = 16
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110 0000 00B5     		push	{lr}
+ 111 0002 85B0     		sub	sp, sp, #20
+ 112 0004 6B46     		mov	r3, sp
+ 113 0006 0022     		movs	r2, #0
+ 114 0008 1146     		mov	r1, r2
+ 115 000a 4FF65B40 		movw	r0, #64603
+ 116 000e FFF7FEFF 		bl	shci_send
+ 117 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 118 0016 05B0     		add	sp, sp, #20
+ 119              		@ sp needed
+ 120 0018 00BD     		pop	{pc}
+ 122              		.section	.text.SHCI_C2_FUS_UpdateAuthKey,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 3
+
+
+ 123              		.align	1
+ 124              		.global	SHCI_C2_FUS_UpdateAuthKey
+ 125              		.syntax unified
+ 126              		.thumb
+ 127              		.thumb_func
+ 129              	SHCI_C2_FUS_UpdateAuthKey:
+ 130              		@ args = 0, pretend = 0, frame = 16
+ 131              		@ frame_needed = 0, uses_anonymous_args = 0
+ 132 0000 00B5     		push	{lr}
+ 133 0002 85B0     		sub	sp, sp, #20
+ 134 0004 0246     		mov	r2, r0
+ 135 0006 6B46     		mov	r3, sp
+ 136 0008 4121     		movs	r1, #65
+ 137 000a 4FF65640 		movw	r0, #64598
+ 138 000e FFF7FEFF 		bl	shci_send
+ 139 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 140 0016 05B0     		add	sp, sp, #20
+ 141              		@ sp needed
+ 142 0018 00BD     		pop	{pc}
+ 144              		.section	.text.SHCI_C2_FUS_LockAuthKey,"ax",%progbits
+ 145              		.align	1
+ 146              		.global	SHCI_C2_FUS_LockAuthKey
+ 147              		.syntax unified
+ 148              		.thumb
+ 149              		.thumb_func
+ 151              	SHCI_C2_FUS_LockAuthKey:
+ 152              		@ args = 0, pretend = 0, frame = 16
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154 0000 00B5     		push	{lr}
+ 155 0002 85B0     		sub	sp, sp, #20
+ 156 0004 6B46     		mov	r3, sp
+ 157 0006 0022     		movs	r2, #0
+ 158 0008 1146     		mov	r1, r2
+ 159 000a 4FF65740 		movw	r0, #64599
+ 160 000e FFF7FEFF 		bl	shci_send
+ 161 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 162 0016 05B0     		add	sp, sp, #20
+ 163              		@ sp needed
+ 164 0018 00BD     		pop	{pc}
+ 166              		.section	.text.SHCI_C2_FUS_StoreUsrKey,"ax",%progbits
+ 167              		.align	1
+ 168              		.global	SHCI_C2_FUS_StoreUsrKey
+ 169              		.syntax unified
+ 170              		.thumb
+ 171              		.thumb_func
+ 173              	SHCI_C2_FUS_StoreUsrKey:
+ 174              		@ args = 0, pretend = 0, frame = 24
+ 175              		@ frame_needed = 0, uses_anonymous_args = 0
+ 176 0000 10B5     		push	{r4, lr}
+ 177 0002 86B0     		sub	sp, sp, #24
+ 178 0004 0246     		mov	r2, r0
+ 179 0006 0C46     		mov	r4, r1
+ 180 0008 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 181 000a 032B     		cmp	r3, #3
+ 182 000c 0ED0     		beq	.L21
+ 183 000e 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 184 0010 0233     		adds	r3, r3, #2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 4
+
+
+ 185 0012 D9B2     		uxtb	r1, r3
+ 186              	.L19:
+ 187 0014 01AB     		add	r3, sp, #4
+ 188 0016 4FF65840 		movw	r0, #64600
+ 189 001a FFF7FEFF 		bl	shci_send
+ 190 001e 9DF81330 		ldrb	r3, [sp, #19]	@ zero_extendqisi2
+ 191 0022 2370     		strb	r3, [r4]
+ 192 0024 9DF81200 		ldrb	r0, [sp, #18]	@ zero_extendqisi2
+ 193 0028 06B0     		add	sp, sp, #24
+ 194              		@ sp needed
+ 195 002a 10BD     		pop	{r4, pc}
+ 196              	.L21:
+ 197 002c 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 198 002e 0E33     		adds	r3, r3, #14
+ 199 0030 D9B2     		uxtb	r1, r3
+ 200 0032 EFE7     		b	.L19
+ 202              		.section	.text.SHCI_C2_FUS_LoadUsrKey,"ax",%progbits
+ 203              		.align	1
+ 204              		.global	SHCI_C2_FUS_LoadUsrKey
+ 205              		.syntax unified
+ 206              		.thumb
+ 207              		.thumb_func
+ 209              	SHCI_C2_FUS_LoadUsrKey:
+ 210              		@ args = 0, pretend = 0, frame = 16
+ 211              		@ frame_needed = 0, uses_anonymous_args = 0
+ 212 0000 00B5     		push	{lr}
+ 213 0002 85B0     		sub	sp, sp, #20
+ 214 0004 8DF80000 		strb	r0, [sp]
+ 215 0008 6A46     		mov	r2, sp
+ 216 000a 6B46     		mov	r3, sp
+ 217 000c 0121     		movs	r1, #1
+ 218 000e 4FF65940 		movw	r0, #64601
+ 219 0012 FFF7FEFF 		bl	shci_send
+ 220 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 221 001a 05B0     		add	sp, sp, #20
+ 222              		@ sp needed
+ 223 001c 00BD     		pop	{pc}
+ 225              		.section	.text.SHCI_C2_FUS_StartWs,"ax",%progbits
+ 226              		.align	1
+ 227              		.global	SHCI_C2_FUS_StartWs
+ 228              		.syntax unified
+ 229              		.thumb
+ 230              		.thumb_func
+ 232              	SHCI_C2_FUS_StartWs:
+ 233              		@ args = 0, pretend = 0, frame = 16
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235 0000 00B5     		push	{lr}
+ 236 0002 85B0     		sub	sp, sp, #20
+ 237 0004 6B46     		mov	r3, sp
+ 238 0006 0022     		movs	r2, #0
+ 239 0008 1146     		mov	r1, r2
+ 240 000a 4FF65A40 		movw	r0, #64602
+ 241 000e FFF7FEFF 		bl	shci_send
+ 242 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 243 0016 05B0     		add	sp, sp, #20
+ 244              		@ sp needed
+ 245 0018 00BD     		pop	{pc}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 5
+
+
+ 247              		.section	.text.SHCI_C2_FUS_LockUsrKey,"ax",%progbits
+ 248              		.align	1
+ 249              		.global	SHCI_C2_FUS_LockUsrKey
+ 250              		.syntax unified
+ 251              		.thumb
+ 252              		.thumb_func
+ 254              	SHCI_C2_FUS_LockUsrKey:
+ 255              		@ args = 0, pretend = 0, frame = 16
+ 256              		@ frame_needed = 0, uses_anonymous_args = 0
+ 257 0000 00B5     		push	{lr}
+ 258 0002 85B0     		sub	sp, sp, #20
+ 259 0004 8DF80000 		strb	r0, [sp]
+ 260 0008 6A46     		mov	r2, sp
+ 261 000a 6B46     		mov	r3, sp
+ 262 000c 0121     		movs	r1, #1
+ 263 000e 4FF65D40 		movw	r0, #64605
+ 264 0012 FFF7FEFF 		bl	shci_send
+ 265 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 266 001a 05B0     		add	sp, sp, #20
+ 267              		@ sp needed
+ 268 001c 00BD     		pop	{pc}
+ 270              		.section	.text.SHCI_C2_FUS_UnloadUsrKey,"ax",%progbits
+ 271              		.align	1
+ 272              		.global	SHCI_C2_FUS_UnloadUsrKey
+ 273              		.syntax unified
+ 274              		.thumb
+ 275              		.thumb_func
+ 277              	SHCI_C2_FUS_UnloadUsrKey:
+ 278              		@ args = 0, pretend = 0, frame = 16
+ 279              		@ frame_needed = 0, uses_anonymous_args = 0
+ 280 0000 00B5     		push	{lr}
+ 281 0002 85B0     		sub	sp, sp, #20
+ 282 0004 8DF80000 		strb	r0, [sp]
+ 283 0008 6A46     		mov	r2, sp
+ 284 000a 6B46     		mov	r3, sp
+ 285 000c 0121     		movs	r1, #1
+ 286 000e 4FF65E40 		movw	r0, #64606
+ 287 0012 FFF7FEFF 		bl	shci_send
+ 288 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 289 001a 05B0     		add	sp, sp, #20
+ 290              		@ sp needed
+ 291 001c 00BD     		pop	{pc}
+ 293              		.section	.text.SHCI_C2_FUS_ActivateAntiRollback,"ax",%progbits
+ 294              		.align	1
+ 295              		.global	SHCI_C2_FUS_ActivateAntiRollback
+ 296              		.syntax unified
+ 297              		.thumb
+ 298              		.thumb_func
+ 300              	SHCI_C2_FUS_ActivateAntiRollback:
+ 301              		@ args = 0, pretend = 0, frame = 16
+ 302              		@ frame_needed = 0, uses_anonymous_args = 0
+ 303 0000 00B5     		push	{lr}
+ 304 0002 85B0     		sub	sp, sp, #20
+ 305 0004 6B46     		mov	r3, sp
+ 306 0006 0022     		movs	r2, #0
+ 307 0008 1146     		mov	r1, r2
+ 308 000a 4FF65F40 		movw	r0, #64607
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 6
+
+
+ 309 000e FFF7FEFF 		bl	shci_send
+ 310 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 311 0016 05B0     		add	sp, sp, #20
+ 312              		@ sp needed
+ 313 0018 00BD     		pop	{pc}
+ 315              		.section	.text.SHCI_C2_BLE_Init,"ax",%progbits
+ 316              		.align	1
+ 317              		.global	SHCI_C2_BLE_Init
+ 318              		.syntax unified
+ 319              		.thumb
+ 320              		.thumb_func
+ 322              	SHCI_C2_BLE_Init:
+ 323              		@ args = 0, pretend = 0, frame = 16
+ 324              		@ frame_needed = 0, uses_anonymous_args = 0
+ 325 0000 00B5     		push	{lr}
+ 326 0002 85B0     		sub	sp, sp, #20
+ 327 0004 6B46     		mov	r3, sp
+ 328 0006 00F10C02 		add	r2, r0, #12
+ 329 000a 3721     		movs	r1, #55
+ 330 000c 4FF66640 		movw	r0, #64614
+ 331 0010 FFF7FEFF 		bl	shci_send
+ 332 0014 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 333 0018 05B0     		add	sp, sp, #20
+ 334              		@ sp needed
+ 335 001a 00BD     		pop	{pc}
+ 337              		.section	.text.SHCI_C2_THREAD_Init,"ax",%progbits
+ 338              		.align	1
+ 339              		.global	SHCI_C2_THREAD_Init
+ 340              		.syntax unified
+ 341              		.thumb
+ 342              		.thumb_func
+ 344              	SHCI_C2_THREAD_Init:
+ 345              		@ args = 0, pretend = 0, frame = 16
+ 346              		@ frame_needed = 0, uses_anonymous_args = 0
+ 347 0000 00B5     		push	{lr}
+ 348 0002 85B0     		sub	sp, sp, #20
+ 349 0004 6B46     		mov	r3, sp
+ 350 0006 0022     		movs	r2, #0
+ 351 0008 1146     		mov	r1, r2
+ 352 000a 4FF66740 		movw	r0, #64615
+ 353 000e FFF7FEFF 		bl	shci_send
+ 354 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 355 0016 05B0     		add	sp, sp, #20
+ 356              		@ sp needed
+ 357 0018 00BD     		pop	{pc}
+ 359              		.section	.text.SHCI_C2_LLDTESTS_Init,"ax",%progbits
+ 360              		.align	1
+ 361              		.global	SHCI_C2_LLDTESTS_Init
+ 362              		.syntax unified
+ 363              		.thumb
+ 364              		.thumb_func
+ 366              	SHCI_C2_LLDTESTS_Init:
+ 367              		@ args = 0, pretend = 0, frame = 16
+ 368              		@ frame_needed = 0, uses_anonymous_args = 0
+ 369 0000 00B5     		push	{lr}
+ 370 0002 85B0     		sub	sp, sp, #20
+ 371 0004 0A46     		mov	r2, r1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 7
+
+
+ 372 0006 6B46     		mov	r3, sp
+ 373 0008 0146     		mov	r1, r0
+ 374 000a 4FF67140 		movw	r0, #64625
+ 375 000e FFF7FEFF 		bl	shci_send
+ 376 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 377 0016 05B0     		add	sp, sp, #20
+ 378              		@ sp needed
+ 379 0018 00BD     		pop	{pc}
+ 381              		.section	.text.SHCI_C2_BLE_LLD_Init,"ax",%progbits
+ 382              		.align	1
+ 383              		.global	SHCI_C2_BLE_LLD_Init
+ 384              		.syntax unified
+ 385              		.thumb
+ 386              		.thumb_func
+ 388              	SHCI_C2_BLE_LLD_Init:
+ 389              		@ args = 0, pretend = 0, frame = 16
+ 390              		@ frame_needed = 0, uses_anonymous_args = 0
+ 391 0000 00B5     		push	{lr}
+ 392 0002 85B0     		sub	sp, sp, #20
+ 393 0004 0A46     		mov	r2, r1
+ 394 0006 6B46     		mov	r3, sp
+ 395 0008 0146     		mov	r1, r0
+ 396 000a 4FF67440 		movw	r0, #64628
+ 397 000e FFF7FEFF 		bl	shci_send
+ 398 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 399 0016 05B0     		add	sp, sp, #20
+ 400              		@ sp needed
+ 401 0018 00BD     		pop	{pc}
+ 403              		.section	.text.SHCI_C2_ZIGBEE_Init,"ax",%progbits
+ 404              		.align	1
+ 405              		.global	SHCI_C2_ZIGBEE_Init
+ 406              		.syntax unified
+ 407              		.thumb
+ 408              		.thumb_func
+ 410              	SHCI_C2_ZIGBEE_Init:
+ 411              		@ args = 0, pretend = 0, frame = 16
+ 412              		@ frame_needed = 0, uses_anonymous_args = 0
+ 413 0000 00B5     		push	{lr}
+ 414 0002 85B0     		sub	sp, sp, #20
+ 415 0004 6B46     		mov	r3, sp
+ 416 0006 0022     		movs	r2, #0
+ 417 0008 1146     		mov	r1, r2
+ 418 000a 4FF67040 		movw	r0, #64624
+ 419 000e FFF7FEFF 		bl	shci_send
+ 420 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 421 0016 05B0     		add	sp, sp, #20
+ 422              		@ sp needed
+ 423 0018 00BD     		pop	{pc}
+ 425              		.section	.text.SHCI_C2_DEBUG_Init,"ax",%progbits
+ 426              		.align	1
+ 427              		.global	SHCI_C2_DEBUG_Init
+ 428              		.syntax unified
+ 429              		.thumb
+ 430              		.thumb_func
+ 432              	SHCI_C2_DEBUG_Init:
+ 433              		@ args = 0, pretend = 0, frame = 16
+ 434              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 8
+
+
+ 435 0000 00B5     		push	{lr}
+ 436 0002 85B0     		sub	sp, sp, #20
+ 437 0004 6B46     		mov	r3, sp
+ 438 0006 00F10C02 		add	r2, r0, #12
+ 439 000a 0F21     		movs	r1, #15
+ 440 000c 4FF66840 		movw	r0, #64616
+ 441 0010 FFF7FEFF 		bl	shci_send
+ 442 0014 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 443 0018 05B0     		add	sp, sp, #20
+ 444              		@ sp needed
+ 445 001a 00BD     		pop	{pc}
+ 447              		.section	.text.SHCI_C2_FLASH_EraseActivity,"ax",%progbits
+ 448              		.align	1
+ 449              		.global	SHCI_C2_FLASH_EraseActivity
+ 450              		.syntax unified
+ 451              		.thumb
+ 452              		.thumb_func
+ 454              	SHCI_C2_FLASH_EraseActivity:
+ 455              		@ args = 0, pretend = 0, frame = 16
+ 456              		@ frame_needed = 0, uses_anonymous_args = 0
+ 457 0000 00B5     		push	{lr}
+ 458 0002 85B0     		sub	sp, sp, #20
+ 459 0004 8DF80000 		strb	r0, [sp]
+ 460 0008 6A46     		mov	r2, sp
+ 461 000a 6B46     		mov	r3, sp
+ 462 000c 0121     		movs	r1, #1
+ 463 000e 4FF66940 		movw	r0, #64617
+ 464 0012 FFF7FEFF 		bl	shci_send
+ 465 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 466 001a 05B0     		add	sp, sp, #20
+ 467              		@ sp needed
+ 468 001c 00BD     		pop	{pc}
+ 470              		.section	.text.SHCI_C2_CONCURRENT_SetMode,"ax",%progbits
+ 471              		.align	1
+ 472              		.global	SHCI_C2_CONCURRENT_SetMode
+ 473              		.syntax unified
+ 474              		.thumb
+ 475              		.thumb_func
+ 477              	SHCI_C2_CONCURRENT_SetMode:
+ 478              		@ args = 0, pretend = 0, frame = 16
+ 479              		@ frame_needed = 0, uses_anonymous_args = 0
+ 480 0000 00B5     		push	{lr}
+ 481 0002 85B0     		sub	sp, sp, #20
+ 482 0004 8DF80000 		strb	r0, [sp]
+ 483 0008 6A46     		mov	r2, sp
+ 484 000a 6B46     		mov	r3, sp
+ 485 000c 0121     		movs	r1, #1
+ 486 000e 4FF66A40 		movw	r0, #64618
+ 487 0012 FFF7FEFF 		bl	shci_send
+ 488 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 489 001a 05B0     		add	sp, sp, #20
+ 490              		@ sp needed
+ 491 001c 00BD     		pop	{pc}
+ 493              		.section	.text.SHCI_C2_CONCURRENT_GetNextBleEvtTime,"ax",%progbits
+ 494              		.align	1
+ 495              		.global	SHCI_C2_CONCURRENT_GetNextBleEvtTime
+ 496              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 9
+
+
+ 497              		.thumb
+ 498              		.thumb_func
+ 500              	SHCI_C2_CONCURRENT_GetNextBleEvtTime:
+ 501              		@ args = 0, pretend = 0, frame = 24
+ 502              		@ frame_needed = 0, uses_anonymous_args = 0
+ 503 0000 10B5     		push	{r4, lr}
+ 504 0002 86B0     		sub	sp, sp, #24
+ 505 0004 0446     		mov	r4, r0
+ 506 0006 01AB     		add	r3, sp, #4
+ 507 0008 0022     		movs	r2, #0
+ 508 000a 1146     		mov	r1, r2
+ 509 000c 4FF67640 		movw	r0, #64630
+ 510 0010 FFF7FEFF 		bl	shci_send
+ 511 0014 DDF81330 		ldr	r3, [sp, #19]	@ unaligned
+ 512 0018 2360     		str	r3, [r4]	@ unaligned
+ 513 001a 9DF81200 		ldrb	r0, [sp, #18]	@ zero_extendqisi2
+ 514 001e 06B0     		add	sp, sp, #24
+ 515              		@ sp needed
+ 516 0020 10BD     		pop	{r4, pc}
+ 518              		.section	.text.SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification,"ax",%progbits
+ 519              		.align	1
+ 520              		.global	SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification
+ 521              		.syntax unified
+ 522              		.thumb
+ 523              		.thumb_func
+ 525              	SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification:
+ 526              		@ args = 0, pretend = 0, frame = 16
+ 527              		@ frame_needed = 0, uses_anonymous_args = 0
+ 528 0000 00B5     		push	{lr}
+ 529 0002 85B0     		sub	sp, sp, #20
+ 530 0004 6B46     		mov	r3, sp
+ 531 0006 0022     		movs	r2, #0
+ 532 0008 1146     		mov	r1, r2
+ 533 000a 4FF67740 		movw	r0, #64631
+ 534 000e FFF7FEFF 		bl	shci_send
+ 535 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 536 0016 05B0     		add	sp, sp, #20
+ 537              		@ sp needed
+ 538 0018 00BD     		pop	{pc}
+ 540              		.section	.text.SHCI_C2_FLASH_StoreData,"ax",%progbits
+ 541              		.align	1
+ 542              		.global	SHCI_C2_FLASH_StoreData
+ 543              		.syntax unified
+ 544              		.thumb
+ 545              		.thumb_func
+ 547              	SHCI_C2_FLASH_StoreData:
+ 548              		@ args = 0, pretend = 0, frame = 16
+ 549              		@ frame_needed = 0, uses_anonymous_args = 0
+ 550 0000 00B5     		push	{lr}
+ 551 0002 85B0     		sub	sp, sp, #20
+ 552 0004 8DF80000 		strb	r0, [sp]
+ 553 0008 6A46     		mov	r2, sp
+ 554 000a 6B46     		mov	r3, sp
+ 555 000c 0121     		movs	r1, #1
+ 556 000e 4FF66B40 		movw	r0, #64619
+ 557 0012 FFF7FEFF 		bl	shci_send
+ 558 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 10
+
+
+ 559 001a 05B0     		add	sp, sp, #20
+ 560              		@ sp needed
+ 561 001c 00BD     		pop	{pc}
+ 563              		.section	.text.SHCI_C2_FLASH_EraseData,"ax",%progbits
+ 564              		.align	1
+ 565              		.global	SHCI_C2_FLASH_EraseData
+ 566              		.syntax unified
+ 567              		.thumb
+ 568              		.thumb_func
+ 570              	SHCI_C2_FLASH_EraseData:
+ 571              		@ args = 0, pretend = 0, frame = 16
+ 572              		@ frame_needed = 0, uses_anonymous_args = 0
+ 573 0000 00B5     		push	{lr}
+ 574 0002 85B0     		sub	sp, sp, #20
+ 575 0004 8DF80000 		strb	r0, [sp]
+ 576 0008 6A46     		mov	r2, sp
+ 577 000a 6B46     		mov	r3, sp
+ 578 000c 0121     		movs	r1, #1
+ 579 000e 4FF66C40 		movw	r0, #64620
+ 580 0012 FFF7FEFF 		bl	shci_send
+ 581 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 582 001a 05B0     		add	sp, sp, #20
+ 583              		@ sp needed
+ 584 001c 00BD     		pop	{pc}
+ 586              		.section	.text.SHCI_C2_RADIO_AllowLowPower,"ax",%progbits
+ 587              		.align	1
+ 588              		.global	SHCI_C2_RADIO_AllowLowPower
+ 589              		.syntax unified
+ 590              		.thumb
+ 591              		.thumb_func
+ 593              	SHCI_C2_RADIO_AllowLowPower:
+ 594              		@ args = 0, pretend = 0, frame = 16
+ 595              		@ frame_needed = 0, uses_anonymous_args = 0
+ 596 0000 00B5     		push	{lr}
+ 597 0002 85B0     		sub	sp, sp, #20
+ 598 0004 8DF80000 		strb	r0, [sp]
+ 599 0008 8DF80110 		strb	r1, [sp, #1]
+ 600 000c 6A46     		mov	r2, sp
+ 601 000e 6B46     		mov	r3, sp
+ 602 0010 0221     		movs	r1, #2
+ 603 0012 4FF66D40 		movw	r0, #64621
+ 604 0016 FFF7FEFF 		bl	shci_send
+ 605 001a 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 606 001e 05B0     		add	sp, sp, #20
+ 607              		@ sp needed
+ 608 0020 00BD     		pop	{pc}
+ 610              		.section	.text.SHCI_C2_MAC_802_15_4_Init,"ax",%progbits
+ 611              		.align	1
+ 612              		.global	SHCI_C2_MAC_802_15_4_Init
+ 613              		.syntax unified
+ 614              		.thumb
+ 615              		.thumb_func
+ 617              	SHCI_C2_MAC_802_15_4_Init:
+ 618              		@ args = 0, pretend = 0, frame = 16
+ 619              		@ frame_needed = 0, uses_anonymous_args = 0
+ 620 0000 00B5     		push	{lr}
+ 621 0002 85B0     		sub	sp, sp, #20
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 11
+
+
+ 622 0004 6B46     		mov	r3, sp
+ 623 0006 0022     		movs	r2, #0
+ 624 0008 1146     		mov	r1, r2
+ 625 000a 4FF66E40 		movw	r0, #64622
+ 626 000e FFF7FEFF 		bl	shci_send
+ 627 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 628 0016 05B0     		add	sp, sp, #20
+ 629              		@ sp needed
+ 630 0018 00BD     		pop	{pc}
+ 632              		.section	.text.SHCI_C2_Reinit,"ax",%progbits
+ 633              		.align	1
+ 634              		.global	SHCI_C2_Reinit
+ 635              		.syntax unified
+ 636              		.thumb
+ 637              		.thumb_func
+ 639              	SHCI_C2_Reinit:
+ 640              		@ args = 0, pretend = 0, frame = 16
+ 641              		@ frame_needed = 0, uses_anonymous_args = 0
+ 642 0000 00B5     		push	{lr}
+ 643 0002 85B0     		sub	sp, sp, #20
+ 644 0004 6B46     		mov	r3, sp
+ 645 0006 0022     		movs	r2, #0
+ 646 0008 1146     		mov	r1, r2
+ 647 000a 4FF66F40 		movw	r0, #64623
+ 648 000e FFF7FEFF 		bl	shci_send
+ 649 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 650 0016 05B0     		add	sp, sp, #20
+ 651              		@ sp needed
+ 652 0018 00BD     		pop	{pc}
+ 654              		.section	.text.SHCI_C2_ExtpaConfig,"ax",%progbits
+ 655              		.align	1
+ 656              		.global	SHCI_C2_ExtpaConfig
+ 657              		.syntax unified
+ 658              		.thumb
+ 659              		.thumb_func
+ 661              	SHCI_C2_ExtpaConfig:
+ 662              		@ args = 0, pretend = 0, frame = 16
+ 663              		@ frame_needed = 0, uses_anonymous_args = 0
+ 664 0000 00B5     		push	{lr}
+ 665 0002 85B0     		sub	sp, sp, #20
+ 666 0004 0090     		str	r0, [sp]
+ 667 0006 ADF80410 		strh	r1, [sp, #4]	@ movhi
+ 668 000a 8DF80620 		strb	r2, [sp, #6]
+ 669 000e 8DF80730 		strb	r3, [sp, #7]
+ 670 0012 6A46     		mov	r2, sp
+ 671 0014 6B46     		mov	r3, sp
+ 672 0016 0821     		movs	r1, #8
+ 673 0018 4FF67240 		movw	r0, #64626
+ 674 001c FFF7FEFF 		bl	shci_send
+ 675 0020 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 676 0024 05B0     		add	sp, sp, #20
+ 677              		@ sp needed
+ 678 0026 00BD     		pop	{pc}
+ 680              		.section	.text.SHCI_C2_SetFlashActivityControl,"ax",%progbits
+ 681              		.align	1
+ 682              		.global	SHCI_C2_SetFlashActivityControl
+ 683              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 12
+
+
+ 684              		.thumb
+ 685              		.thumb_func
+ 687              	SHCI_C2_SetFlashActivityControl:
+ 688              		@ args = 0, pretend = 0, frame = 16
+ 689              		@ frame_needed = 0, uses_anonymous_args = 0
+ 690 0000 00B5     		push	{lr}
+ 691 0002 85B0     		sub	sp, sp, #20
+ 692 0004 8DF80000 		strb	r0, [sp]
+ 693 0008 6A46     		mov	r2, sp
+ 694 000a 6B46     		mov	r3, sp
+ 695 000c 0121     		movs	r1, #1
+ 696 000e 4FF67340 		movw	r0, #64627
+ 697 0012 FFF7FEFF 		bl	shci_send
+ 698 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 699 001a 05B0     		add	sp, sp, #20
+ 700              		@ sp needed
+ 701 001c 00BD     		pop	{pc}
+ 703              		.section	.text.SHCI_C2_Config,"ax",%progbits
+ 704              		.align	1
+ 705              		.global	SHCI_C2_Config
+ 706              		.syntax unified
+ 707              		.thumb
+ 708              		.thumb_func
+ 710              	SHCI_C2_Config:
+ 711              		@ args = 0, pretend = 0, frame = 16
+ 712              		@ frame_needed = 0, uses_anonymous_args = 0
+ 713 0000 00B5     		push	{lr}
+ 714 0002 85B0     		sub	sp, sp, #20
+ 715 0004 0246     		mov	r2, r0
+ 716 0006 6B46     		mov	r3, sp
+ 717 0008 1021     		movs	r1, #16
+ 718 000a 4FF67540 		movw	r0, #64629
+ 719 000e FFF7FEFF 		bl	shci_send
+ 720 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 721 0016 05B0     		add	sp, sp, #20
+ 722              		@ sp needed
+ 723 0018 00BD     		pop	{pc}
+ 725              		.section	.text.SHCI_C2_802_15_4_DeInit,"ax",%progbits
+ 726              		.align	1
+ 727              		.global	SHCI_C2_802_15_4_DeInit
+ 728              		.syntax unified
+ 729              		.thumb
+ 730              		.thumb_func
+ 732              	SHCI_C2_802_15_4_DeInit:
+ 733              		@ args = 0, pretend = 0, frame = 16
+ 734              		@ frame_needed = 0, uses_anonymous_args = 0
+ 735 0000 00B5     		push	{lr}
+ 736 0002 85B0     		sub	sp, sp, #20
+ 737 0004 6B46     		mov	r3, sp
+ 738 0006 0022     		movs	r2, #0
+ 739 0008 1146     		mov	r1, r2
+ 740 000a 4FF67840 		movw	r0, #64632
+ 741 000e FFF7FEFF 		bl	shci_send
+ 742 0012 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 743 0016 05B0     		add	sp, sp, #20
+ 744              		@ sp needed
+ 745 0018 00BD     		pop	{pc}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 13
+
+
+ 747              		.section	.text.SHCI_C2_SetSystemClock,"ax",%progbits
+ 748              		.align	1
+ 749              		.global	SHCI_C2_SetSystemClock
+ 750              		.syntax unified
+ 751              		.thumb
+ 752              		.thumb_func
+ 754              	SHCI_C2_SetSystemClock:
+ 755              		@ args = 0, pretend = 0, frame = 16
+ 756              		@ frame_needed = 0, uses_anonymous_args = 0
+ 757 0000 00B5     		push	{lr}
+ 758 0002 85B0     		sub	sp, sp, #20
+ 759 0004 8DF80000 		strb	r0, [sp]
+ 760 0008 6A46     		mov	r2, sp
+ 761 000a 6B46     		mov	r3, sp
+ 762 000c 0121     		movs	r1, #1
+ 763 000e 4FF67940 		movw	r0, #64633
+ 764 0012 FFF7FEFF 		bl	shci_send
+ 765 0016 9DF80E00 		ldrb	r0, [sp, #14]	@ zero_extendqisi2
+ 766 001a 05B0     		add	sp, sp, #20
+ 767              		@ sp needed
+ 768 001c 00BD     		pop	{pc}
+ 770              		.section	.text.SHCI_GetWirelessFwInfo,"ax",%progbits
+ 771              		.align	1
+ 772              		.global	SHCI_GetWirelessFwInfo
+ 773              		.syntax unified
+ 774              		.thumb
+ 775              		.thumb_func
+ 777              	SHCI_GetWirelessFwInfo:
+ 778              		@ args = 0, pretend = 0, frame = 0
+ 779              		@ frame_needed = 0, uses_anonymous_args = 0
+ 780 0000 10B5     		push	{r4, lr}
+ 781 0002 214B     		ldr	r3, .L77
+ 782 0004 DB6B     		ldr	r3, [r3, #60]
+ 783 0006 C3F30D03 		ubfx	r3, r3, #0, #14
+ 784 000a 9B00     		lsls	r3, r3, #2
+ 785 000c 03F10053 		add	r3, r3, #536870912
+ 786 0010 03F54033 		add	r3, r3, #196608
+ 787 0014 1A68     		ldr	r2, [r3]
+ 788 0016 1168     		ldr	r1, [r2]
+ 789 0018 1C4B     		ldr	r3, .L77+4
+ 790 001a 9942     		cmp	r1, r3
+ 791 001c 2CD0     		beq	.L76
+ 792 001e 1369     		ldr	r3, [r2, #16]	@ unaligned
+ 793 0020 D2F814C0 		ldr	ip, [r2, #20]	@ unaligned
+ 794 0024 D2F818E0 		ldr	lr, [r2, #24]	@ unaligned
+ 795 0028 5168     		ldr	r1, [r2, #4]	@ unaligned
+ 796 002a 9268     		ldr	r2, [r2, #8]	@ unaligned
+ 797              	.L74:
+ 798 002c 1C0E     		lsrs	r4, r3, #24
+ 799 002e 0470     		strb	r4, [r0]
+ 800 0030 1C0C     		lsrs	r4, r3, #16
+ 801 0032 4470     		strb	r4, [r0, #1]
+ 802 0034 1C0A     		lsrs	r4, r3, #8
+ 803 0036 8470     		strb	r4, [r0, #2]
+ 804 0038 C3F30314 		ubfx	r4, r3, #4, #4
+ 805 003c C470     		strb	r4, [r0, #3]
+ 806 003e 03F00F03 		and	r3, r3, #15
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 14
+
+
+ 807 0042 0371     		strb	r3, [r0, #4]
+ 808 0044 4FEA1C63 		lsr	r3, ip, #24
+ 809 0048 4371     		strb	r3, [r0, #5]
+ 810 004a 4FEA1C43 		lsr	r3, ip, #16
+ 811 004e 8371     		strb	r3, [r0, #6]
+ 812 0050 4FEA1C23 		lsr	r3, ip, #8
+ 813 0054 C371     		strb	r3, [r0, #7]
+ 814 0056 80F808C0 		strb	ip, [r0, #8]
+ 815 005a 80F809E0 		strb	lr, [r0, #9]
+ 816 005e 0B0E     		lsrs	r3, r1, #24
+ 817 0060 8372     		strb	r3, [r0, #10]
+ 818 0062 0B0C     		lsrs	r3, r1, #16
+ 819 0064 C372     		strb	r3, [r0, #11]
+ 820 0066 090A     		lsrs	r1, r1, #8
+ 821 0068 0173     		strb	r1, [r0, #12]
+ 822 006a 130E     		lsrs	r3, r2, #24
+ 823 006c 4373     		strb	r3, [r0, #13]
+ 824 006e 130C     		lsrs	r3, r2, #16
+ 825 0070 8373     		strb	r3, [r0, #14]
+ 826 0072 C273     		strb	r2, [r0, #15]
+ 827 0074 0020     		movs	r0, #0
+ 828 0076 10BD     		pop	{r4, pc}
+ 829              	.L76:
+ 830 0078 5369     		ldr	r3, [r2, #20]
+ 831 007a D2F818C0 		ldr	ip, [r2, #24]
+ 832 007e D2F81CE0 		ldr	lr, [r2, #28]
+ 833 0082 D168     		ldr	r1, [r2, #12]
+ 834 0084 1269     		ldr	r2, [r2, #16]
+ 835 0086 D1E7     		b	.L74
+ 836              	.L78:
+ 837              		.align	2
+ 838              	.L77:
+ 839 0088 00400058 		.word	1476411392
+ 840 008c B95646A9 		.word	-1455008071
+ 842              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 shci.c
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:18     .text.SHCI_C2_FUS_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:24     .text.SHCI_C2_FUS_GetState:00000000 SHCI_C2_FUS_GetState
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:45     .text.SHCI_C2_FUS_FwUpgrade:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:51     .text.SHCI_C2_FUS_FwUpgrade:00000000 SHCI_C2_FUS_FwUpgrade
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:79     .text.SHCI_C2_FUS_FwDelete:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:85     .text.SHCI_C2_FUS_FwDelete:00000000 SHCI_C2_FUS_FwDelete
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:101    .text.SHCI_C2_FUS_FwPurge:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:107    .text.SHCI_C2_FUS_FwPurge:00000000 SHCI_C2_FUS_FwPurge
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:123    .text.SHCI_C2_FUS_UpdateAuthKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:129    .text.SHCI_C2_FUS_UpdateAuthKey:00000000 SHCI_C2_FUS_UpdateAuthKey
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:145    .text.SHCI_C2_FUS_LockAuthKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:151    .text.SHCI_C2_FUS_LockAuthKey:00000000 SHCI_C2_FUS_LockAuthKey
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:167    .text.SHCI_C2_FUS_StoreUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:173    .text.SHCI_C2_FUS_StoreUsrKey:00000000 SHCI_C2_FUS_StoreUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:203    .text.SHCI_C2_FUS_LoadUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:209    .text.SHCI_C2_FUS_LoadUsrKey:00000000 SHCI_C2_FUS_LoadUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:226    .text.SHCI_C2_FUS_StartWs:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:232    .text.SHCI_C2_FUS_StartWs:00000000 SHCI_C2_FUS_StartWs
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:248    .text.SHCI_C2_FUS_LockUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:254    .text.SHCI_C2_FUS_LockUsrKey:00000000 SHCI_C2_FUS_LockUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:271    .text.SHCI_C2_FUS_UnloadUsrKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:277    .text.SHCI_C2_FUS_UnloadUsrKey:00000000 SHCI_C2_FUS_UnloadUsrKey
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:294    .text.SHCI_C2_FUS_ActivateAntiRollback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:300    .text.SHCI_C2_FUS_ActivateAntiRollback:00000000 SHCI_C2_FUS_ActivateAntiRollback
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:316    .text.SHCI_C2_BLE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:322    .text.SHCI_C2_BLE_Init:00000000 SHCI_C2_BLE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:338    .text.SHCI_C2_THREAD_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:344    .text.SHCI_C2_THREAD_Init:00000000 SHCI_C2_THREAD_Init
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:360    .text.SHCI_C2_LLDTESTS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:366    .text.SHCI_C2_LLDTESTS_Init:00000000 SHCI_C2_LLDTESTS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:382    .text.SHCI_C2_BLE_LLD_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:388    .text.SHCI_C2_BLE_LLD_Init:00000000 SHCI_C2_BLE_LLD_Init
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:404    .text.SHCI_C2_ZIGBEE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:410    .text.SHCI_C2_ZIGBEE_Init:00000000 SHCI_C2_ZIGBEE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:426    .text.SHCI_C2_DEBUG_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:432    .text.SHCI_C2_DEBUG_Init:00000000 SHCI_C2_DEBUG_Init
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:448    .text.SHCI_C2_FLASH_EraseActivity:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:454    .text.SHCI_C2_FLASH_EraseActivity:00000000 SHCI_C2_FLASH_EraseActivity
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:471    .text.SHCI_C2_CONCURRENT_SetMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:477    .text.SHCI_C2_CONCURRENT_SetMode:00000000 SHCI_C2_CONCURRENT_SetMode
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:494    .text.SHCI_C2_CONCURRENT_GetNextBleEvtTime:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:500    .text.SHCI_C2_CONCURRENT_GetNextBleEvtTime:00000000 SHCI_C2_CONCURRENT_GetNextBleEvtTime
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:519    .text.SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:525    .text.SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification:00000000 SHCI_C2_CONCURRENT_EnableNext_802154_EvtNotification
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:541    .text.SHCI_C2_FLASH_StoreData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:547    .text.SHCI_C2_FLASH_StoreData:00000000 SHCI_C2_FLASH_StoreData
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:564    .text.SHCI_C2_FLASH_EraseData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:570    .text.SHCI_C2_FLASH_EraseData:00000000 SHCI_C2_FLASH_EraseData
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:587    .text.SHCI_C2_RADIO_AllowLowPower:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:593    .text.SHCI_C2_RADIO_AllowLowPower:00000000 SHCI_C2_RADIO_AllowLowPower
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:611    .text.SHCI_C2_MAC_802_15_4_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:617    .text.SHCI_C2_MAC_802_15_4_Init:00000000 SHCI_C2_MAC_802_15_4_Init
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:633    .text.SHCI_C2_Reinit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:639    .text.SHCI_C2_Reinit:00000000 SHCI_C2_Reinit
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:655    .text.SHCI_C2_ExtpaConfig:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s 			page 16
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:661    .text.SHCI_C2_ExtpaConfig:00000000 SHCI_C2_ExtpaConfig
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:681    .text.SHCI_C2_SetFlashActivityControl:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:687    .text.SHCI_C2_SetFlashActivityControl:00000000 SHCI_C2_SetFlashActivityControl
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:704    .text.SHCI_C2_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:710    .text.SHCI_C2_Config:00000000 SHCI_C2_Config
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:726    .text.SHCI_C2_802_15_4_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:732    .text.SHCI_C2_802_15_4_DeInit:00000000 SHCI_C2_802_15_4_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:748    .text.SHCI_C2_SetSystemClock:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:754    .text.SHCI_C2_SetSystemClock:00000000 SHCI_C2_SetSystemClock
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:771    .text.SHCI_GetWirelessFwInfo:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:777    .text.SHCI_GetWirelessFwInfo:00000000 SHCI_GetWirelessFwInfo
+C:\Users\Nathan\AppData\Local\Temp\ccAFvI6E.s:839    .text.SHCI_GetWirelessFwInfo:00000088 $d
+
+UNDEFINED SYMBOLS
+shci_send

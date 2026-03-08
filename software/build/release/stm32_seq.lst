@@ -1,0 +1,1018 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32_seq.c"
+  16              		.text
+  17              		.section	.text.UTIL_SEQ_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	UTIL_SEQ_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	UTIL_SEQ_Init:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 10B5     		push	{r4, lr}
+  28 0002 0024     		movs	r4, #0
+  29 0004 0F4B     		ldr	r3, .L5
+  30 0006 1C60     		str	r4, [r3]
+  31 0008 4FF0FF33 		mov	r3, #-1
+  32 000c 0E4A     		ldr	r2, .L5+4
+  33 000e 1360     		str	r3, [r2]
+  34 0010 0E4A     		ldr	r2, .L5+8
+  35 0012 1360     		str	r3, [r2]
+  36 0014 0E4B     		ldr	r3, .L5+12
+  37 0016 1C60     		str	r4, [r3]
+  38 0018 0E4B     		ldr	r3, .L5+16
+  39 001a 1C60     		str	r4, [r3]
+  40 001c 0E4B     		ldr	r3, .L5+20
+  41 001e 1C60     		str	r4, [r3]
+  42 0020 8022     		movs	r2, #128
+  43 0022 2146     		mov	r1, r4
+  44 0024 0D48     		ldr	r0, .L5+24
+  45 0026 FFF7FEFF 		bl	memset
+  46              	.L2:
+  47 002a 1CB1     		cbz	r4, .L3
+  48 002c 0C4B     		ldr	r3, .L5+28
+  49 002e 0022     		movs	r2, #0
+  50 0030 1A60     		str	r2, [r3]
+  51 0032 10BD     		pop	{r4, pc}
+  52              	.L3:
+  53 0034 0B4B     		ldr	r3, .L5+32
+  54 0036 43F83440 		str	r4, [r3, r4, lsl #3]
+  55 003a 03EBC403 		add	r3, r3, r4, lsl #3
+  56 003e 5C60     		str	r4, [r3, #4]
+  57 0040 0134     		adds	r4, r4, #1
+  58 0042 F2E7     		b	.L2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 2
+
+
+  59              	.L6:
+  60              		.align	2
+  61              	.L5:
+  62 0044 00000000 		.word	TaskSet
+  63 0048 00000000 		.word	TaskMask
+  64 004c 00000000 		.word	SuperMask
+  65 0050 00000000 		.word	EvtSet
+  66 0054 00000000 		.word	EvtWaited
+  67 0058 00000000 		.word	CurrentTaskIdx
+  68 005c 00000000 		.word	TaskCb
+  69 0060 00000000 		.word	TaskClearList
+  70 0064 00000000 		.word	TaskPrio
+  72              		.section	.text.UTIL_SEQ_DeInit,"ax",%progbits
+  73              		.align	1
+  74              		.global	UTIL_SEQ_DeInit
+  75              		.syntax unified
+  76              		.thumb
+  77              		.thumb_func
+  79              	UTIL_SEQ_DeInit:
+  80              		@ args = 0, pretend = 0, frame = 0
+  81              		@ frame_needed = 0, uses_anonymous_args = 0
+  82              		@ link register save eliminated.
+  83 0000 7047     		bx	lr
+  85              		.section	.text.UTIL_SEQ_SetTask,"ax",%progbits
+  86              		.align	1
+  87              		.global	UTIL_SEQ_SetTask
+  88              		.syntax unified
+  89              		.thumb
+  90              		.thumb_func
+  92              	UTIL_SEQ_SetTask:
+  93              		@ args = 0, pretend = 0, frame = 0
+  94              		@ frame_needed = 0, uses_anonymous_args = 0
+  95              		@ link register save eliminated.
+  96              		.syntax unified
+  97              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  98 0000 EFF3108C 		MRS ip, primask
+  99              	@ 0 "" 2
+ 100              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 101 0004 72B6     		cpsid i
+ 102              	@ 0 "" 2
+ 103              		.thumb
+ 104              		.syntax unified
+ 105 0006 064A     		ldr	r2, .L9
+ 106 0008 1368     		ldr	r3, [r2]
+ 107 000a 0343     		orrs	r3, r3, r0
+ 108 000c 1360     		str	r3, [r2]
+ 109 000e 054A     		ldr	r2, .L9+4
+ 110 0010 52F83130 		ldr	r3, [r2, r1, lsl #3]
+ 111 0014 0343     		orrs	r3, r3, r0
+ 112 0016 42F83130 		str	r3, [r2, r1, lsl #3]
+ 113              		.syntax unified
+ 114              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 115 001a 8CF31088 		MSR primask, ip
+ 116              	@ 0 "" 2
+ 117              		.thumb
+ 118              		.syntax unified
+ 119 001e 7047     		bx	lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 3
+
+
+ 120              	.L10:
+ 121              		.align	2
+ 122              	.L9:
+ 123 0020 00000000 		.word	TaskSet
+ 124 0024 00000000 		.word	TaskPrio
+ 126              		.section	.text.UTIL_SEQ_IsSchedulableTask,"ax",%progbits
+ 127              		.align	1
+ 128              		.global	UTIL_SEQ_IsSchedulableTask
+ 129              		.syntax unified
+ 130              		.thumb
+ 131              		.thumb_func
+ 133              	UTIL_SEQ_IsSchedulableTask:
+ 134              		@ args = 0, pretend = 0, frame = 0
+ 135              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136              		@ link register save eliminated.
+ 137              		.syntax unified
+ 138              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 139 0000 EFF31082 		MRS r2, primask
+ 140              	@ 0 "" 2
+ 141              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 142 0004 72B6     		cpsid i
+ 143              	@ 0 "" 2
+ 144              		.thumb
+ 145              		.syntax unified
+ 146 0006 084B     		ldr	r3, .L15
+ 147 0008 1968     		ldr	r1, [r3]
+ 148 000a 084B     		ldr	r3, .L15+4
+ 149 000c 1B68     		ldr	r3, [r3]
+ 150 000e 0B40     		ands	r3, r3, r1
+ 151 0010 0749     		ldr	r1, .L15+8
+ 152 0012 0968     		ldr	r1, [r1]
+ 153 0014 0B40     		ands	r3, r3, r1
+ 154 0016 9843     		bics	r0, r0, r3
+ 155 0018 03D0     		beq	.L14
+ 156 001a 0020     		movs	r0, #0
+ 157              	.L12:
+ 158              		.syntax unified
+ 159              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 160 001c 82F31088 		MSR primask, r2
+ 161              	@ 0 "" 2
+ 162              		.thumb
+ 163              		.syntax unified
+ 164 0020 7047     		bx	lr
+ 165              	.L14:
+ 166 0022 0120     		movs	r0, #1
+ 167 0024 FAE7     		b	.L12
+ 168              	.L16:
+ 169 0026 00BF     		.align	2
+ 170              	.L15:
+ 171 0028 00000000 		.word	TaskSet
+ 172 002c 00000000 		.word	TaskMask
+ 173 0030 00000000 		.word	SuperMask
+ 175              		.section	.text.UTIL_SEQ_PauseTask,"ax",%progbits
+ 176              		.align	1
+ 177              		.global	UTIL_SEQ_PauseTask
+ 178              		.syntax unified
+ 179              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 4
+
+
+ 180              		.thumb_func
+ 182              	UTIL_SEQ_PauseTask:
+ 183              		@ args = 0, pretend = 0, frame = 0
+ 184              		@ frame_needed = 0, uses_anonymous_args = 0
+ 185              		@ link register save eliminated.
+ 186              		.syntax unified
+ 187              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 188 0000 EFF31081 		MRS r1, primask
+ 189              	@ 0 "" 2
+ 190              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 191 0004 72B6     		cpsid i
+ 192              	@ 0 "" 2
+ 193              		.thumb
+ 194              		.syntax unified
+ 195 0006 044A     		ldr	r2, .L18
+ 196 0008 1368     		ldr	r3, [r2]
+ 197 000a 23EA0000 		bic	r0, r3, r0
+ 198 000e 1060     		str	r0, [r2]
+ 199              		.syntax unified
+ 200              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 201 0010 81F31088 		MSR primask, r1
+ 202              	@ 0 "" 2
+ 203              		.thumb
+ 204              		.syntax unified
+ 205 0014 7047     		bx	lr
+ 206              	.L19:
+ 207 0016 00BF     		.align	2
+ 208              	.L18:
+ 209 0018 00000000 		.word	TaskMask
+ 211              		.section	.text.UTIL_SEQ_IsPauseTask,"ax",%progbits
+ 212              		.align	1
+ 213              		.global	UTIL_SEQ_IsPauseTask
+ 214              		.syntax unified
+ 215              		.thumb
+ 216              		.thumb_func
+ 218              	UTIL_SEQ_IsPauseTask:
+ 219              		@ args = 0, pretend = 0, frame = 0
+ 220              		@ frame_needed = 0, uses_anonymous_args = 0
+ 221              		@ link register save eliminated.
+ 222              		.syntax unified
+ 223              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 224 0000 EFF31083 		MRS r3, primask
+ 225              	@ 0 "" 2
+ 226              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 227 0004 72B6     		cpsid i
+ 228              	@ 0 "" 2
+ 229              		.thumb
+ 230              		.syntax unified
+ 231 0006 044A     		ldr	r2, .L21
+ 232 0008 1268     		ldr	r2, [r2]
+ 233 000a 9043     		bics	r0, r0, r2
+ 234 000c 14BF     		ite	ne
+ 235 000e 0120     		movne	r0, #1
+ 236 0010 0020     		moveq	r0, #0
+ 237              		.syntax unified
+ 238              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 239 0012 83F31088 		MSR primask, r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 5
+
+
+ 240              	@ 0 "" 2
+ 241              		.thumb
+ 242              		.syntax unified
+ 243 0016 7047     		bx	lr
+ 244              	.L22:
+ 245              		.align	2
+ 246              	.L21:
+ 247 0018 00000000 		.word	TaskMask
+ 249              		.section	.text.UTIL_SEQ_ResumeTask,"ax",%progbits
+ 250              		.align	1
+ 251              		.global	UTIL_SEQ_ResumeTask
+ 252              		.syntax unified
+ 253              		.thumb
+ 254              		.thumb_func
+ 256              	UTIL_SEQ_ResumeTask:
+ 257              		@ args = 0, pretend = 0, frame = 0
+ 258              		@ frame_needed = 0, uses_anonymous_args = 0
+ 259              		@ link register save eliminated.
+ 260              		.syntax unified
+ 261              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 262 0000 EFF31081 		MRS r1, primask
+ 263              	@ 0 "" 2
+ 264              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 265 0004 72B6     		cpsid i
+ 266              	@ 0 "" 2
+ 267              		.thumb
+ 268              		.syntax unified
+ 269 0006 034A     		ldr	r2, .L24
+ 270 0008 1368     		ldr	r3, [r2]
+ 271 000a 1843     		orrs	r0, r0, r3
+ 272 000c 1060     		str	r0, [r2]
+ 273              		.syntax unified
+ 274              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 275 000e 81F31088 		MSR primask, r1
+ 276              	@ 0 "" 2
+ 277              		.thumb
+ 278              		.syntax unified
+ 279 0012 7047     		bx	lr
+ 280              	.L25:
+ 281              		.align	2
+ 282              	.L24:
+ 283 0014 00000000 		.word	TaskMask
+ 285              		.section	.text.UTIL_SEQ_SetEvt,"ax",%progbits
+ 286              		.align	1
+ 287              		.global	UTIL_SEQ_SetEvt
+ 288              		.syntax unified
+ 289              		.thumb
+ 290              		.thumb_func
+ 292              	UTIL_SEQ_SetEvt:
+ 293              		@ args = 0, pretend = 0, frame = 0
+ 294              		@ frame_needed = 0, uses_anonymous_args = 0
+ 295              		@ link register save eliminated.
+ 296              		.syntax unified
+ 297              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 298 0000 EFF31081 		MRS r1, primask
+ 299              	@ 0 "" 2
+ 300              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 6
+
+
+ 301 0004 72B6     		cpsid i
+ 302              	@ 0 "" 2
+ 303              		.thumb
+ 304              		.syntax unified
+ 305 0006 034A     		ldr	r2, .L27
+ 306 0008 1368     		ldr	r3, [r2]
+ 307 000a 1843     		orrs	r0, r0, r3
+ 308 000c 1060     		str	r0, [r2]
+ 309              		.syntax unified
+ 310              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 311 000e 81F31088 		MSR primask, r1
+ 312              	@ 0 "" 2
+ 313              		.thumb
+ 314              		.syntax unified
+ 315 0012 7047     		bx	lr
+ 316              	.L28:
+ 317              		.align	2
+ 318              	.L27:
+ 319 0014 00000000 		.word	EvtSet
+ 321              		.section	.text.UTIL_SEQ_ClrEvt,"ax",%progbits
+ 322              		.align	1
+ 323              		.global	UTIL_SEQ_ClrEvt
+ 324              		.syntax unified
+ 325              		.thumb
+ 326              		.thumb_func
+ 328              	UTIL_SEQ_ClrEvt:
+ 329              		@ args = 0, pretend = 0, frame = 0
+ 330              		@ frame_needed = 0, uses_anonymous_args = 0
+ 331              		@ link register save eliminated.
+ 332              		.syntax unified
+ 333              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 334 0000 EFF31081 		MRS r1, primask
+ 335              	@ 0 "" 2
+ 336              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 337 0004 72B6     		cpsid i
+ 338              	@ 0 "" 2
+ 339              		.thumb
+ 340              		.syntax unified
+ 341 0006 044A     		ldr	r2, .L30
+ 342 0008 1368     		ldr	r3, [r2]
+ 343 000a 23EA0000 		bic	r0, r3, r0
+ 344 000e 1060     		str	r0, [r2]
+ 345              		.syntax unified
+ 346              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 347 0010 81F31088 		MSR primask, r1
+ 348              	@ 0 "" 2
+ 349              		.thumb
+ 350              		.syntax unified
+ 351 0014 7047     		bx	lr
+ 352              	.L31:
+ 353 0016 00BF     		.align	2
+ 354              	.L30:
+ 355 0018 00000000 		.word	EvtSet
+ 357              		.section	.text.UTIL_SEQ_IsEvtPend,"ax",%progbits
+ 358              		.align	1
+ 359              		.global	UTIL_SEQ_IsEvtPend
+ 360              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 7
+
+
+ 361              		.thumb
+ 362              		.thumb_func
+ 364              	UTIL_SEQ_IsEvtPend:
+ 365              		@ args = 0, pretend = 0, frame = 0
+ 366              		@ frame_needed = 0, uses_anonymous_args = 0
+ 367              		@ link register save eliminated.
+ 368 0000 024B     		ldr	r3, .L33
+ 369 0002 1B68     		ldr	r3, [r3]
+ 370 0004 024A     		ldr	r2, .L33+4
+ 371 0006 1068     		ldr	r0, [r2]
+ 372 0008 1840     		ands	r0, r0, r3
+ 373 000a 7047     		bx	lr
+ 374              	.L34:
+ 375              		.align	2
+ 376              	.L33:
+ 377 000c 00000000 		.word	EvtWaited
+ 378 0010 00000000 		.word	EvtSet
+ 380              		.section	.text.UTIL_SEQ_Idle,"ax",%progbits
+ 381              		.align	1
+ 382              		.weak	UTIL_SEQ_Idle
+ 383              		.syntax unified
+ 384              		.thumb
+ 385              		.thumb_func
+ 387              	UTIL_SEQ_Idle:
+ 388              		@ args = 0, pretend = 0, frame = 0
+ 389              		@ frame_needed = 0, uses_anonymous_args = 0
+ 390              		@ link register save eliminated.
+ 391 0000 7047     		bx	lr
+ 393              		.section	.text.UTIL_SEQ_PreIdle,"ax",%progbits
+ 394              		.align	1
+ 395              		.weak	UTIL_SEQ_PreIdle
+ 396              		.syntax unified
+ 397              		.thumb
+ 398              		.thumb_func
+ 400              	UTIL_SEQ_PreIdle:
+ 401              		@ args = 0, pretend = 0, frame = 0
+ 402              		@ frame_needed = 0, uses_anonymous_args = 0
+ 403              		@ link register save eliminated.
+ 404 0000 7047     		bx	lr
+ 406              		.section	.text.UTIL_SEQ_PostIdle,"ax",%progbits
+ 407              		.align	1
+ 408              		.weak	UTIL_SEQ_PostIdle
+ 409              		.syntax unified
+ 410              		.thumb
+ 411              		.thumb_func
+ 413              	UTIL_SEQ_PostIdle:
+ 414              		@ args = 0, pretend = 0, frame = 0
+ 415              		@ frame_needed = 0, uses_anonymous_args = 0
+ 416              		@ link register save eliminated.
+ 417 0000 7047     		bx	lr
+ 419              		.section	.text.UTIL_SEQ_PreTask,"ax",%progbits
+ 420              		.align	1
+ 421              		.weak	UTIL_SEQ_PreTask
+ 422              		.syntax unified
+ 423              		.thumb
+ 424              		.thumb_func
+ 426              	UTIL_SEQ_PreTask:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 8
+
+
+ 427              		@ args = 0, pretend = 0, frame = 0
+ 428              		@ frame_needed = 0, uses_anonymous_args = 0
+ 429              		@ link register save eliminated.
+ 430 0000 7047     		bx	lr
+ 432              		.section	.text.UTIL_SEQ_PostTask,"ax",%progbits
+ 433              		.align	1
+ 434              		.weak	UTIL_SEQ_PostTask
+ 435              		.syntax unified
+ 436              		.thumb
+ 437              		.thumb_func
+ 439              	UTIL_SEQ_PostTask:
+ 440              		@ args = 0, pretend = 0, frame = 0
+ 441              		@ frame_needed = 0, uses_anonymous_args = 0
+ 442              		@ link register save eliminated.
+ 443 0000 7047     		bx	lr
+ 445              		.section	.text.UTIL_SEQ_CatchWarning,"ax",%progbits
+ 446              		.align	1
+ 447              		.weak	UTIL_SEQ_CatchWarning
+ 448              		.syntax unified
+ 449              		.thumb
+ 450              		.thumb_func
+ 452              	UTIL_SEQ_CatchWarning:
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 454              		@ frame_needed = 0, uses_anonymous_args = 0
+ 455              		@ link register save eliminated.
+ 456 0000 7047     		bx	lr
+ 458              		.section	.text.SEQ_BitPosition,"ax",%progbits
+ 459              		.align	1
+ 460              		.global	SEQ_BitPosition
+ 461              		.syntax unified
+ 462              		.thumb
+ 463              		.thumb_func
+ 465              	SEQ_BitPosition:
+ 466              		@ args = 0, pretend = 0, frame = 0
+ 467              		@ frame_needed = 0, uses_anonymous_args = 0
+ 468              		@ link register save eliminated.
+ 469 0000 28B1     		cbz	r0, .L43
+ 470 0002 B0FA80F0 		clz	r0, r0
+ 471              	.L42:
+ 472 0006 C0F11F00 		rsb	r0, r0, #31
+ 473 000a C0B2     		uxtb	r0, r0
+ 474 000c 7047     		bx	lr
+ 475              	.L43:
+ 476 000e 2020     		movs	r0, #32
+ 477 0010 F9E7     		b	.L42
+ 479              		.section	.text.UTIL_SEQ_Run,"ax",%progbits
+ 480              		.align	1
+ 481              		.global	UTIL_SEQ_Run
+ 482              		.syntax unified
+ 483              		.thumb
+ 484              		.thumb_func
+ 486              	UTIL_SEQ_Run:
+ 487              		@ args = 0, pretend = 0, frame = 8
+ 488              		@ frame_needed = 0, uses_anonymous_args = 0
+ 489 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 490 0004 83B0     		sub	sp, sp, #12
+ 491 0006 714B     		ldr	r3, .L67
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 9
+
+
+ 492 0008 D3F80090 		ldr	r9, [r3]
+ 493 000c 09EA0000 		and	r0, r9, r0
+ 494 0010 1860     		str	r0, [r3]
+ 495 0012 6F4B     		ldr	r3, .L67+4
+ 496 0014 D3F80080 		ldr	r8, [r3]
+ 497 0018 6E4B     		ldr	r3, .L67+8
+ 498 001a 1E68     		ldr	r6, [r3]
+ 499 001c 6E4B     		ldr	r3, .L67+12
+ 500 001e 1D68     		ldr	r5, [r3]
+ 501 0020 6E4B     		ldr	r3, .L67+16
+ 502 0022 D3F800B0 		ldr	fp, [r3]
+ 503 0026 31E0     		b	.L45
+ 504              	.L46:
+ 505 0028 0132     		adds	r2, r2, #1
+ 506 002a 38E0     		b	.L58
+ 507              	.L61:
+ 508 002c 1846     		mov	r0, r3
+ 509              	.L48:
+ 510 002e 6C4B     		ldr	r3, .L67+20
+ 511 0030 03EBC203 		add	r3, r3, r2, lsl #3
+ 512 0034 5B68     		ldr	r3, [r3, #4]
+ 513 0036 1840     		ands	r0, r0, r3
+ 514 0038 FFF7FEFF 		bl	SEQ_BitPosition
+ 515 003c 694B     		ldr	r3, .L67+24
+ 516 003e 1860     		str	r0, [r3]
+ 517              		.syntax unified
+ 518              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 519 0040 EFF31082 		MRS r2, primask
+ 520              	@ 0 "" 2
+ 521              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 522 0044 72B6     		cpsid i
+ 523              	@ 0 "" 2
+ 524              		.thumb
+ 525              		.syntax unified
+ 526 0046 0124     		movs	r4, #1
+ 527 0048 1B68     		ldr	r3, [r3]
+ 528 004a 04FA03F3 		lsl	r3, r4, r3
+ 529 004e D843     		mvns	r0, r3
+ 530 0050 DFF87CC1 		ldr	ip, .L67+4
+ 531 0054 DCF80010 		ldr	r1, [ip]
+ 532 0058 21EA0303 		bic	r3, r1, r3
+ 533 005c CCF80030 		str	r3, [ip]
+ 534              	.L49:
+ 535 0060 002C     		cmp	r4, #0
+ 536 0062 48D1     		bne	.L50
+ 537              		.syntax unified
+ 538              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 539 0064 82F31088 		MSR primask, r2
+ 540              	@ 0 "" 2
+ 541              		.thumb
+ 542              		.syntax unified
+ 543 0068 DFF878A1 		ldr	r10, .L67+24
+ 544 006c DAF80000 		ldr	r0, [r10]
+ 545 0070 FFF7FEFF 		bl	UTIL_SEQ_PreTask
+ 546 0074 DAF80030 		ldr	r3, [r10]
+ 547 0078 1F2B     		cmp	r3, #31
+ 548 007a 04D8     		bhi	.L51
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 10
+
+
+ 549 007c 5A4A     		ldr	r2, .L67+28
+ 550 007e 52F82300 		ldr	r0, [r2, r3, lsl #2]
+ 551 0082 0028     		cmp	r0, #0
+ 552 0084 69D1     		bne	.L64
+ 553              	.L51:
+ 554 0086 0020     		movs	r0, #0
+ 555 0088 FFF7FEFF 		bl	UTIL_SEQ_CatchWarning
+ 556              	.L45:
+ 557 008c 08EA0503 		and	r3, r8, r5
+ 558 0090 4E4A     		ldr	r2, .L67
+ 559 0092 1068     		ldr	r0, [r2]
+ 560 0094 0342     		tst	r3, r0
+ 561 0096 6FD0     		beq	.L57
+ 562 0098 16EA0B02 		ands	r2, r6, fp
+ 563 009c 6CD1     		bne	.L57
+ 564              	.L58:
+ 565 009e 504B     		ldr	r3, .L67+20
+ 566 00a0 53F83230 		ldr	r3, [r3, r2, lsl #3]
+ 567 00a4 2B40     		ands	r3, r3, r5
+ 568 00a6 0342     		tst	r3, r0
+ 569 00a8 BED0     		beq	.L46
+ 570 00aa 4D49     		ldr	r1, .L67+20
+ 571 00ac 51F83230 		ldr	r3, [r1, r2, lsl #3]
+ 572 00b0 2B40     		ands	r3, r3, r5
+ 573 00b2 0340     		ands	r3, r3, r0
+ 574 00b4 01EBC201 		add	r1, r1, r2, lsl #3
+ 575 00b8 4968     		ldr	r1, [r1, #4]
+ 576 00ba 1942     		tst	r1, r3
+ 577 00bc 05D1     		bne	.L47
+ 578 00be 4849     		ldr	r1, .L67+20
+ 579 00c0 01EBC201 		add	r1, r1, r2, lsl #3
+ 580 00c4 4FF0FF30 		mov	r0, #-1
+ 581 00c8 4860     		str	r0, [r1, #4]
+ 582              	.L47:
+ 583 00ca 4149     		ldr	r1, .L67+4
+ 584 00cc 0968     		ldr	r1, [r1]
+ 585 00ce 4448     		ldr	r0, .L67+20
+ 586 00d0 00EBC200 		add	r0, r0, r2, lsl #3
+ 587 00d4 4068     		ldr	r0, [r0, #4]
+ 588 00d6 454C     		ldr	r4, .L67+32
+ 589 00d8 2768     		ldr	r7, [r4]
+ 590 00da 67EA0000 		orn	r0, r7, r0
+ 591 00de 2060     		str	r0, [r4]
+ 592 00e0 21EA0001 		bic	r1, r1, r0
+ 593 00e4 13EA0100 		ands	r0, r3, r1
+ 594 00e8 A1D1     		bne	.L48
+ 595 00ea 0029     		cmp	r1, #0
+ 596 00ec 9ED1     		bne	.L61
+ 597 00ee 0020     		movs	r0, #0
+ 598 00f0 2060     		str	r0, [r4]
+ 599 00f2 1846     		mov	r0, r3
+ 600 00f4 9BE7     		b	.L48
+ 601              	.L50:
+ 602 00f6 013C     		subs	r4, r4, #1
+ 603 00f8 3949     		ldr	r1, .L67+20
+ 604 00fa 51F83430 		ldr	r3, [r1, r4, lsl #3]
+ 605 00fe 0340     		ands	r3, r3, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 11
+
+
+ 606 0100 41F83430 		str	r3, [r1, r4, lsl #3]
+ 607 0104 ACE7     		b	.L49
+ 608              	.L53:
+ 609 0106 3649     		ldr	r1, .L67+20
+ 610 0108 01EBC201 		add	r1, r1, r2, lsl #3
+ 611 010c 4D68     		ldr	r5, [r1, #4]
+ 612 010e 0126     		movs	r6, #1
+ 613 0110 9E40     		lsls	r6, r6, r3
+ 614 0112 25EA0605 		bic	r5, r5, r6
+ 615 0116 4D60     		str	r5, [r1, #4]
+ 616 0118 4D68     		ldr	r5, [r1, #4]
+ 617 011a 02A9     		add	r1, sp, #8
+ 618 011c 01EB8201 		add	r1, r1, r2, lsl #2
+ 619 0120 41F8045C 		str	r5, [r1, #-4]
+ 620 0124 0132     		adds	r2, r2, #1
+ 621              	.L52:
+ 622 0126 002A     		cmp	r2, #0
+ 623 0128 EDD0     		beq	.L53
+ 624 012a 8047     		blx	r0
+ 625              	.L54:
+ 626 012c BCB1     		cbz	r4, .L55
+ 627 012e 2D4C     		ldr	r4, .L67+24
+ 628 0130 2068     		ldr	r0, [r4]
+ 629 0132 FFF7FEFF 		bl	UTIL_SEQ_PostTask
+ 630 0136 264B     		ldr	r3, .L67+4
+ 631 0138 D3F80080 		ldr	r8, [r3]
+ 632 013c 254B     		ldr	r3, .L67+8
+ 633 013e 1E68     		ldr	r6, [r3]
+ 634 0140 254B     		ldr	r3, .L67+12
+ 635 0142 1D68     		ldr	r5, [r3]
+ 636 0144 254B     		ldr	r3, .L67+16
+ 637 0146 D3F800B0 		ldr	fp, [r3]
+ 638 014a 2368     		ldr	r3, [r4]
+ 639 014c 0122     		movs	r2, #1
+ 640 014e 9A40     		lsls	r2, r2, r3
+ 641 0150 2649     		ldr	r1, .L67+32
+ 642 0152 0B68     		ldr	r3, [r1]
+ 643 0154 1343     		orrs	r3, r3, r2
+ 644 0156 0B60     		str	r3, [r1]
+ 645 0158 98E7     		b	.L45
+ 646              	.L64:
+ 647 015a 2246     		mov	r2, r4
+ 648 015c E3E7     		b	.L52
+ 649              	.L55:
+ 650 015e 204B     		ldr	r3, .L67+20
+ 651 0160 03EBC403 		add	r3, r3, r4, lsl #3
+ 652 0164 5A68     		ldr	r2, [r3, #4]
+ 653 0166 02A9     		add	r1, sp, #8
+ 654 0168 01EB8401 		add	r1, r1, r4, lsl #2
+ 655 016c 51F8041C 		ldr	r1, [r1, #-4]
+ 656 0170 0A40     		ands	r2, r2, r1
+ 657 0172 5A60     		str	r2, [r3, #4]
+ 658 0174 0134     		adds	r4, r4, #1
+ 659 0176 D9E7     		b	.L54
+ 660              	.L57:
+ 661 0178 1A4B     		ldr	r3, .L67+24
+ 662 017a 4FF0FF32 		mov	r2, #-1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 12
+
+
+ 663 017e 1A60     		str	r2, [r3]
+ 664 0180 164B     		ldr	r3, .L67+16
+ 665 0182 1B68     		ldr	r3, [r3]
+ 666 0184 3342     		tst	r3, r6
+ 667 0186 05D0     		beq	.L65
+ 668              	.L59:
+ 669 0188 104B     		ldr	r3, .L67
+ 670 018a C3F80090 		str	r9, [r3]
+ 671 018e 03B0     		add	sp, sp, #12
+ 672              		@ sp needed
+ 673 0190 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 674              	.L65:
+ 675 0194 FFF7FEFF 		bl	UTIL_SEQ_PreIdle
+ 676              		.syntax unified
+ 677              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 678 0198 EFF31084 		MRS r4, primask
+ 679              	@ 0 "" 2
+ 680              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 681 019c 72B6     		cpsid i
+ 682              	@ 0 "" 2
+ 683              		.thumb
+ 684              		.syntax unified
+ 685 019e 0C4B     		ldr	r3, .L67+4
+ 686 01a0 1B68     		ldr	r3, [r3]
+ 687 01a2 0C4A     		ldr	r2, .L67+8
+ 688 01a4 1168     		ldr	r1, [r2]
+ 689 01a6 0C4A     		ldr	r2, .L67+12
+ 690 01a8 1268     		ldr	r2, [r2]
+ 691 01aa 1340     		ands	r3, r3, r2
+ 692 01ac 074A     		ldr	r2, .L67
+ 693 01ae 1268     		ldr	r2, [r2]
+ 694 01b0 1342     		tst	r3, r2
+ 695 01b2 03D1     		bne	.L60
+ 696 01b4 094B     		ldr	r3, .L67+16
+ 697 01b6 1B68     		ldr	r3, [r3]
+ 698 01b8 0B42     		tst	r3, r1
+ 699 01ba 04D0     		beq	.L66
+ 700              	.L60:
+ 701              		.syntax unified
+ 702              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 703 01bc 84F31088 		MSR primask, r4
+ 704              	@ 0 "" 2
+ 705              		.thumb
+ 706              		.syntax unified
+ 707 01c0 FFF7FEFF 		bl	UTIL_SEQ_PostIdle
+ 708 01c4 E0E7     		b	.L59
+ 709              	.L66:
+ 710 01c6 FFF7FEFF 		bl	UTIL_SEQ_Idle
+ 711 01ca F7E7     		b	.L60
+ 712              	.L68:
+ 713              		.align	2
+ 714              	.L67:
+ 715 01cc 00000000 		.word	SuperMask
+ 716 01d0 00000000 		.word	TaskSet
+ 717 01d4 00000000 		.word	EvtSet
+ 718 01d8 00000000 		.word	TaskMask
+ 719 01dc 00000000 		.word	EvtWaited
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 13
+
+
+ 720 01e0 00000000 		.word	TaskPrio
+ 721 01e4 00000000 		.word	CurrentTaskIdx
+ 722 01e8 00000000 		.word	TaskCb
+ 723 01ec 00000000 		.word	TaskClearList
+ 725              		.section	.text.UTIL_SEQ_EvtIdle,"ax",%progbits
+ 726              		.align	1
+ 727              		.weak	UTIL_SEQ_EvtIdle
+ 728              		.syntax unified
+ 729              		.thumb
+ 730              		.thumb_func
+ 732              	UTIL_SEQ_EvtIdle:
+ 733              		@ args = 0, pretend = 0, frame = 0
+ 734              		@ frame_needed = 0, uses_anonymous_args = 0
+ 735 0000 08B5     		push	{r3, lr}
+ 736 0002 C043     		mvns	r0, r0
+ 737 0004 FFF7FEFF 		bl	UTIL_SEQ_Run
+ 738 0008 08BD     		pop	{r3, pc}
+ 740              		.section	.text.UTIL_SEQ_WaitEvt,"ax",%progbits
+ 741              		.align	1
+ 742              		.global	UTIL_SEQ_WaitEvt
+ 743              		.syntax unified
+ 744              		.thumb
+ 745              		.thumb_func
+ 747              	UTIL_SEQ_WaitEvt:
+ 748              		@ args = 0, pretend = 0, frame = 0
+ 749              		@ frame_needed = 0, uses_anonymous_args = 0
+ 750 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 751 0002 0446     		mov	r4, r0
+ 752 0004 114B     		ldr	r3, .L77
+ 753 0006 1E68     		ldr	r6, [r3]
+ 754 0008 B6F1FF3F 		cmp	r6, #-1
+ 755 000c 05D0     		beq	.L75
+ 756 000e 0125     		movs	r5, #1
+ 757 0010 B540     		lsls	r5, r5, r6
+ 758              	.L72:
+ 759 0012 0F4B     		ldr	r3, .L77+4
+ 760 0014 1F68     		ldr	r7, [r3]
+ 761 0016 1C60     		str	r4, [r3]
+ 762 0018 05E0     		b	.L73
+ 763              	.L75:
+ 764 001a 0025     		movs	r5, #0
+ 765 001c F9E7     		b	.L72
+ 766              	.L74:
+ 767 001e 2146     		mov	r1, r4
+ 768 0020 2846     		mov	r0, r5
+ 769 0022 FFF7FEFF 		bl	UTIL_SEQ_EvtIdle
+ 770              	.L73:
+ 771 0026 0B4B     		ldr	r3, .L77+8
+ 772 0028 1B68     		ldr	r3, [r3]
+ 773 002a 2342     		tst	r3, r4
+ 774 002c F7D0     		beq	.L74
+ 775 002e 074B     		ldr	r3, .L77
+ 776 0030 1E60     		str	r6, [r3]
+ 777              		.syntax unified
+ 778              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 779 0032 EFF31081 		MRS r1, primask
+ 780              	@ 0 "" 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 14
+
+
+ 781              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 782 0036 72B6     		cpsid i
+ 783              	@ 0 "" 2
+ 784              		.thumb
+ 785              		.syntax unified
+ 786 0038 064A     		ldr	r2, .L77+8
+ 787 003a 1368     		ldr	r3, [r2]
+ 788 003c 23EA0403 		bic	r3, r3, r4
+ 789 0040 1360     		str	r3, [r2]
+ 790              		.syntax unified
+ 791              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 792 0042 81F31088 		MSR primask, r1
+ 793              	@ 0 "" 2
+ 794              		.thumb
+ 795              		.syntax unified
+ 796 0046 024B     		ldr	r3, .L77+4
+ 797 0048 1F60     		str	r7, [r3]
+ 798 004a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 799              	.L78:
+ 800              		.align	2
+ 801              	.L77:
+ 802 004c 00000000 		.word	CurrentTaskIdx
+ 803 0050 00000000 		.word	EvtWaited
+ 804 0054 00000000 		.word	EvtSet
+ 806              		.section	.text.UTIL_SEQ_RegTask,"ax",%progbits
+ 807              		.align	1
+ 808              		.global	UTIL_SEQ_RegTask
+ 809              		.syntax unified
+ 810              		.thumb
+ 811              		.thumb_func
+ 813              	UTIL_SEQ_RegTask:
+ 814              		@ args = 0, pretend = 0, frame = 0
+ 815              		@ frame_needed = 0, uses_anonymous_args = 0
+ 816 0000 38B5     		push	{r3, r4, r5, lr}
+ 817 0002 1546     		mov	r5, r2
+ 818              		.syntax unified
+ 819              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 820 0004 EFF31084 		MRS r4, primask
+ 821              	@ 0 "" 2
+ 822              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 823 0008 72B6     		cpsid i
+ 824              	@ 0 "" 2
+ 825              		.thumb
+ 826              		.syntax unified
+ 827 000a FFF7FEFF 		bl	SEQ_BitPosition
+ 828 000e 034B     		ldr	r3, .L81
+ 829 0010 43F82050 		str	r5, [r3, r0, lsl #2]
+ 830              		.syntax unified
+ 831              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 832 0014 84F31088 		MSR primask, r4
+ 833              	@ 0 "" 2
+ 834              		.thumb
+ 835              		.syntax unified
+ 836 0018 38BD     		pop	{r3, r4, r5, pc}
+ 837              	.L82:
+ 838 001a 00BF     		.align	2
+ 839              	.L81:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 15
+
+
+ 840 001c 00000000 		.word	TaskCb
+ 842              		.section	.text.UTIL_SEQ_IsRegisteredTask,"ax",%progbits
+ 843              		.align	1
+ 844              		.global	UTIL_SEQ_IsRegisteredTask
+ 845              		.syntax unified
+ 846              		.thumb
+ 847              		.thumb_func
+ 849              	UTIL_SEQ_IsRegisteredTask:
+ 850              		@ args = 0, pretend = 0, frame = 0
+ 851              		@ frame_needed = 0, uses_anonymous_args = 0
+ 852 0000 10B5     		push	{r4, lr}
+ 853              		.syntax unified
+ 854              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 855 0002 EFF31083 		MRS r3, primask
+ 856              	@ 0 "" 2
+ 857              		.thumb
+ 858              		.syntax unified
+ 859 0006 1C46     		mov	r4, r3
+ 860              		.syntax unified
+ 861              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 862 0008 72B6     		cpsid i
+ 863              	@ 0 "" 2
+ 864              		.thumb
+ 865              		.syntax unified
+ 866 000a FFF7FEFF 		bl	SEQ_BitPosition
+ 867 000e 054B     		ldr	r3, .L88
+ 868 0010 53F82030 		ldr	r3, [r3, r0, lsl #2]
+ 869 0014 1BB1     		cbz	r3, .L87
+ 870 0016 0120     		movs	r0, #1
+ 871              	.L84:
+ 872              		.syntax unified
+ 873              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 874 0018 84F31088 		MSR primask, r4
+ 875              	@ 0 "" 2
+ 876              		.thumb
+ 877              		.syntax unified
+ 878 001c 10BD     		pop	{r4, pc}
+ 879              	.L87:
+ 880 001e 1846     		mov	r0, r3
+ 881 0020 FAE7     		b	.L84
+ 882              	.L89:
+ 883 0022 00BF     		.align	2
+ 884              	.L88:
+ 885 0024 00000000 		.word	TaskCb
+ 887              		.section	.bss.TaskClearList,"aw",%nobits
+ 888              		.align	2
+ 891              	TaskClearList:
+ 892 0000 00000000 		.space	4
+ 893              		.section	.bss.TaskPrio,"aw",%nobits
+ 894              		.align	2
+ 897              	TaskPrio:
+ 898 0000 00000000 		.space	8
+ 898      00000000 
+ 899              		.section	.bss.TaskCb,"aw",%nobits
+ 900              		.align	2
+ 903              	TaskCb:
+ 904 0000 00000000 		.space	128
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 16
+
+
+ 904      00000000 
+ 904      00000000 
+ 904      00000000 
+ 904      00000000 
+ 905              		.section	.bss.CurrentTaskIdx,"aw",%nobits
+ 906              		.align	2
+ 909              	CurrentTaskIdx:
+ 910 0000 00000000 		.space	4
+ 911              		.section	.bss.EvtWaited,"aw",%nobits
+ 912              		.align	2
+ 915              	EvtWaited:
+ 916 0000 00000000 		.space	4
+ 917              		.section	.bss.EvtSet,"aw",%nobits
+ 918              		.align	2
+ 921              	EvtSet:
+ 922 0000 00000000 		.space	4
+ 923              		.section	.data.SuperMask,"aw"
+ 924              		.align	2
+ 927              	SuperMask:
+ 928 0000 FFFFFFFF 		.word	-1
+ 929              		.section	.data.TaskMask,"aw"
+ 930              		.align	2
+ 933              	TaskMask:
+ 934 0000 FFFFFFFF 		.word	-1
+ 935              		.section	.bss.TaskSet,"aw",%nobits
+ 936              		.align	2
+ 939              	TaskSet:
+ 940 0000 00000000 		.space	4
+ 941              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32_seq.c
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:18     .text.UTIL_SEQ_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:24     .text.UTIL_SEQ_Init:00000000 UTIL_SEQ_Init
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:62     .text.UTIL_SEQ_Init:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:939    .bss.TaskSet:00000000 TaskSet
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:933    .data.TaskMask:00000000 TaskMask
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:927    .data.SuperMask:00000000 SuperMask
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:921    .bss.EvtSet:00000000 EvtSet
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:915    .bss.EvtWaited:00000000 EvtWaited
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:909    .bss.CurrentTaskIdx:00000000 CurrentTaskIdx
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:903    .bss.TaskCb:00000000 TaskCb
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:891    .bss.TaskClearList:00000000 TaskClearList
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:897    .bss.TaskPrio:00000000 TaskPrio
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:73     .text.UTIL_SEQ_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:79     .text.UTIL_SEQ_DeInit:00000000 UTIL_SEQ_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:86     .text.UTIL_SEQ_SetTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:92     .text.UTIL_SEQ_SetTask:00000000 UTIL_SEQ_SetTask
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:123    .text.UTIL_SEQ_SetTask:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:127    .text.UTIL_SEQ_IsSchedulableTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:133    .text.UTIL_SEQ_IsSchedulableTask:00000000 UTIL_SEQ_IsSchedulableTask
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:171    .text.UTIL_SEQ_IsSchedulableTask:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:176    .text.UTIL_SEQ_PauseTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:182    .text.UTIL_SEQ_PauseTask:00000000 UTIL_SEQ_PauseTask
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:209    .text.UTIL_SEQ_PauseTask:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:212    .text.UTIL_SEQ_IsPauseTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:218    .text.UTIL_SEQ_IsPauseTask:00000000 UTIL_SEQ_IsPauseTask
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:247    .text.UTIL_SEQ_IsPauseTask:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:250    .text.UTIL_SEQ_ResumeTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:256    .text.UTIL_SEQ_ResumeTask:00000000 UTIL_SEQ_ResumeTask
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:283    .text.UTIL_SEQ_ResumeTask:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:286    .text.UTIL_SEQ_SetEvt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:292    .text.UTIL_SEQ_SetEvt:00000000 UTIL_SEQ_SetEvt
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:319    .text.UTIL_SEQ_SetEvt:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:322    .text.UTIL_SEQ_ClrEvt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:328    .text.UTIL_SEQ_ClrEvt:00000000 UTIL_SEQ_ClrEvt
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:355    .text.UTIL_SEQ_ClrEvt:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:358    .text.UTIL_SEQ_IsEvtPend:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:364    .text.UTIL_SEQ_IsEvtPend:00000000 UTIL_SEQ_IsEvtPend
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:377    .text.UTIL_SEQ_IsEvtPend:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:381    .text.UTIL_SEQ_Idle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:387    .text.UTIL_SEQ_Idle:00000000 UTIL_SEQ_Idle
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:394    .text.UTIL_SEQ_PreIdle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:400    .text.UTIL_SEQ_PreIdle:00000000 UTIL_SEQ_PreIdle
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:407    .text.UTIL_SEQ_PostIdle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:413    .text.UTIL_SEQ_PostIdle:00000000 UTIL_SEQ_PostIdle
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:420    .text.UTIL_SEQ_PreTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:426    .text.UTIL_SEQ_PreTask:00000000 UTIL_SEQ_PreTask
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:433    .text.UTIL_SEQ_PostTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:439    .text.UTIL_SEQ_PostTask:00000000 UTIL_SEQ_PostTask
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:446    .text.UTIL_SEQ_CatchWarning:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:452    .text.UTIL_SEQ_CatchWarning:00000000 UTIL_SEQ_CatchWarning
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:459    .text.SEQ_BitPosition:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:465    .text.SEQ_BitPosition:00000000 SEQ_BitPosition
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:480    .text.UTIL_SEQ_Run:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:486    .text.UTIL_SEQ_Run:00000000 UTIL_SEQ_Run
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:715    .text.UTIL_SEQ_Run:000001cc $d
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s 			page 18
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:726    .text.UTIL_SEQ_EvtIdle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:732    .text.UTIL_SEQ_EvtIdle:00000000 UTIL_SEQ_EvtIdle
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:741    .text.UTIL_SEQ_WaitEvt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:747    .text.UTIL_SEQ_WaitEvt:00000000 UTIL_SEQ_WaitEvt
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:802    .text.UTIL_SEQ_WaitEvt:0000004c $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:807    .text.UTIL_SEQ_RegTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:813    .text.UTIL_SEQ_RegTask:00000000 UTIL_SEQ_RegTask
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:840    .text.UTIL_SEQ_RegTask:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:843    .text.UTIL_SEQ_IsRegisteredTask:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:849    .text.UTIL_SEQ_IsRegisteredTask:00000000 UTIL_SEQ_IsRegisteredTask
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:885    .text.UTIL_SEQ_IsRegisteredTask:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:888    .bss.TaskClearList:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:894    .bss.TaskPrio:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:900    .bss.TaskCb:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:906    .bss.CurrentTaskIdx:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:912    .bss.EvtWaited:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:918    .bss.EvtSet:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:924    .data.SuperMask:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:930    .data.TaskMask:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccENDKeY.s:936    .bss.TaskSet:00000000 $d
+
+UNDEFINED SYMBOLS
+memset

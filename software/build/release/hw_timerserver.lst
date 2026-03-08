@@ -1,0 +1,1356 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"hw_timerserver.c"
+  16              		.text
+  17              		.section	.text.ReadRtcSsrValue,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	ReadRtcSsrValue:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 064A     		ldr	r2, .L4
+  28 0002 936A     		ldr	r3, [r2, #40]
+  29 0004 9BB2     		uxth	r3, r3
+  30 0006 906A     		ldr	r0, [r2, #40]
+  31 0008 80B2     		uxth	r0, r0
+  32 000a 03E0     		b	.L2
+  33              	.L3:
+  34 000c 034B     		ldr	r3, .L4
+  35 000e 9A6A     		ldr	r2, [r3, #40]
+  36 0010 0346     		mov	r3, r0
+  37 0012 90B2     		uxth	r0, r2
+  38              	.L2:
+  39 0014 8342     		cmp	r3, r0
+  40 0016 F9D1     		bne	.L3
+  41 0018 7047     		bx	lr
+  42              	.L5:
+  43 001a 00BF     		.align	2
+  44              	.L4:
+  45 001c 00280040 		.word	1073752064
+  47              		.section	.text.LinkTimerAfter,"ax",%progbits
+  48              		.align	1
+  49              		.syntax unified
+  50              		.thumb
+  51              		.thumb_func
+  53              	LinkTimerAfter:
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56              		@ link register save eliminated.
+  57 0000 01EB4102 		add	r2, r1, r1, lsl #1
+  58 0004 0F4B     		ldr	r3, .L8
+  59 0006 03EBC203 		add	r3, r3, r2, lsl #3
+  60 000a 5B7D     		ldrb	r3, [r3, #21]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 2
+
+
+  61 000c 5FFA83FC 		uxtb	ip, r3
+  62 0010 062B     		cmp	r3, #6
+  63 0012 05D0     		beq	.L7
+  64 0014 0CEB4C02 		add	r2, ip, ip, lsl #1
+  65 0018 0A4B     		ldr	r3, .L8
+  66 001a 03EBC203 		add	r3, r3, r2, lsl #3
+  67 001e 1875     		strb	r0, [r3, #20]
+  68              	.L7:
+  69 0020 084B     		ldr	r3, .L8
+  70 0022 00EB4002 		add	r2, r0, r0, lsl #1
+  71 0026 03EBC202 		add	r2, r3, r2, lsl #3
+  72 002a 82F815C0 		strb	ip, [r2, #21]
+  73 002e 00EB4002 		add	r2, r0, r0, lsl #1
+  74 0032 03EBC202 		add	r2, r3, r2, lsl #3
+  75 0036 1175     		strb	r1, [r2, #20]
+  76 0038 01EB4101 		add	r1, r1, r1, lsl #1
+  77 003c 03EBC103 		add	r3, r3, r1, lsl #3
+  78 0040 5875     		strb	r0, [r3, #21]
+  79 0042 7047     		bx	lr
+  80              	.L9:
+  81              		.align	2
+  82              	.L8:
+  83 0044 00000000 		.word	aTimerContext
+  85              		.section	.text.LinkTimerBefore,"ax",%progbits
+  86              		.align	1
+  87              		.syntax unified
+  88              		.thumb
+  89              		.thumb_func
+  91              	LinkTimerBefore:
+  92              		@ args = 0, pretend = 0, frame = 0
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94              		@ link register save eliminated.
+  95 0000 164B     		ldr	r3, .L13
+  96 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  97 0004 8B42     		cmp	r3, r1
+  98 0006 1DD0     		beq	.L11
+  99 0008 154B     		ldr	r3, .L13+4
+ 100 000a 01EB4102 		add	r2, r1, r1, lsl #1
+ 101 000e 03EBC202 		add	r2, r3, r2, lsl #3
+ 102 0012 127D     		ldrb	r2, [r2, #20]	@ zero_extendqisi2
+ 103 0014 5FFA82FC 		uxtb	ip, r2
+ 104 0018 02EB4202 		add	r2, r2, r2, lsl #1
+ 105 001c 03EBC202 		add	r2, r3, r2, lsl #3
+ 106 0020 5075     		strb	r0, [r2, #21]
+ 107 0022 00EB4002 		add	r2, r0, r0, lsl #1
+ 108 0026 03EBC202 		add	r2, r3, r2, lsl #3
+ 109 002a 5175     		strb	r1, [r2, #21]
+ 110 002c 00EB4002 		add	r2, r0, r0, lsl #1
+ 111 0030 03EBC202 		add	r2, r3, r2, lsl #3
+ 112 0034 82F814C0 		strb	ip, [r2, #20]
+ 113 0038 01EB4101 		add	r1, r1, r1, lsl #1
+ 114 003c 03EBC103 		add	r3, r3, r1, lsl #3
+ 115 0040 1875     		strb	r0, [r3, #20]
+ 116 0042 7047     		bx	lr
+ 117              	.L11:
+ 118 0044 064B     		ldr	r3, .L13+4
+ 119 0046 00EB4002 		add	r2, r0, r0, lsl #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 3
+
+
+ 120 004a 03EBC202 		add	r2, r3, r2, lsl #3
+ 121 004e 5175     		strb	r1, [r2, #21]
+ 122 0050 01EB4101 		add	r1, r1, r1, lsl #1
+ 123 0054 03EBC103 		add	r3, r3, r1, lsl #3
+ 124 0058 1875     		strb	r0, [r3, #20]
+ 125 005a 7047     		bx	lr
+ 126              	.L14:
+ 127              		.align	2
+ 128              	.L13:
+ 129 005c 00000000 		.word	CurrentRunningTimerID
+ 130 0060 00000000 		.word	aTimerContext
+ 132              		.section	.text.UnlinkTimer,"ax",%progbits
+ 133              		.align	1
+ 134              		.syntax unified
+ 135              		.thumb
+ 136              		.thumb_func
+ 138              	UnlinkTimer:
+ 139              		@ args = 0, pretend = 0, frame = 0
+ 140              		@ frame_needed = 0, uses_anonymous_args = 0
+ 141 0000 10B5     		push	{r4, lr}
+ 142 0002 0C46     		mov	r4, r1
+ 143 0004 214B     		ldr	r3, .L22
+ 144 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 145 0008 8342     		cmp	r3, r0
+ 146 000a 2AD0     		beq	.L20
+ 147 000c 204A     		ldr	r2, .L22+4
+ 148 000e 00EB4003 		add	r3, r0, r0, lsl #1
+ 149 0012 02EBC303 		add	r3, r2, r3, lsl #3
+ 150 0016 93F814C0 		ldrb	ip, [r3, #20]	@ zero_extendqisi2
+ 151 001a 597D     		ldrb	r1, [r3, #21]	@ zero_extendqisi2
+ 152 001c 5FFA81FE 		uxtb	lr, r1
+ 153 0020 5B7D     		ldrb	r3, [r3, #21]	@ zero_extendqisi2
+ 154 0022 DBB2     		uxtb	r3, r3
+ 155 0024 0CEB4C0C 		add	ip, ip, ip, lsl #1
+ 156 0028 02EBCC02 		add	r2, r2, ip, lsl #3
+ 157 002c 5375     		strb	r3, [r2, #21]
+ 158 002e 0629     		cmp	r1, #6
+ 159 0030 0BD0     		beq	.L17
+ 160 0032 174B     		ldr	r3, .L22+4
+ 161 0034 00EB4002 		add	r2, r0, r0, lsl #1
+ 162 0038 03EBC202 		add	r2, r3, r2, lsl #3
+ 163 003c 127D     		ldrb	r2, [r2, #20]	@ zero_extendqisi2
+ 164 003e D2B2     		uxtb	r2, r2
+ 165 0040 0EEB4E0E 		add	lr, lr, lr, lsl #1
+ 166 0044 03EBCE03 		add	r3, r3, lr, lsl #3
+ 167 0048 1A75     		strb	r2, [r3, #20]
+ 168              	.L17:
+ 169 004a 00EB4000 		add	r0, r0, r0, lsl #1
+ 170 004e 104B     		ldr	r3, .L22+4
+ 171 0050 03EBC003 		add	r3, r3, r0, lsl #3
+ 172 0054 0122     		movs	r2, #1
+ 173 0056 1A73     		strb	r2, [r3, #12]
+ 174 0058 0C4B     		ldr	r3, .L22
+ 175 005a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 176 005c 062B     		cmp	r3, #6
+ 177 005e 0ED0     		beq	.L21
+ 178              	.L15:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 4
+
+
+ 179 0060 10BD     		pop	{r4, pc}
+ 180              	.L20:
+ 181 0062 0A49     		ldr	r1, .L22
+ 182 0064 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
+ 183 0066 DBB2     		uxtb	r3, r3
+ 184 0068 0A4A     		ldr	r2, .L22+8
+ 185 006a 1370     		strb	r3, [r2]
+ 186 006c 00EB4002 		add	r2, r0, r0, lsl #1
+ 187 0070 074B     		ldr	r3, .L22+4
+ 188 0072 03EBC203 		add	r3, r3, r2, lsl #3
+ 189 0076 5B7D     		ldrb	r3, [r3, #21]	@ zero_extendqisi2
+ 190 0078 DBB2     		uxtb	r3, r3
+ 191 007a 0B70     		strb	r3, [r1]
+ 192 007c E5E7     		b	.L17
+ 193              	.L21:
+ 194 007e 002C     		cmp	r4, #0
+ 195 0080 EED1     		bne	.L15
+ 196 0082 054B     		ldr	r3, .L22+12
+ 197 0084 4FF0FF32 		mov	r2, #-1
+ 198 0088 1A60     		str	r2, [r3]
+ 199 008a E9E7     		b	.L15
+ 200              	.L23:
+ 201              		.align	2
+ 202              	.L22:
+ 203 008c 00000000 		.word	CurrentRunningTimerID
+ 204 0090 00000000 		.word	aTimerContext
+ 205 0094 00000000 		.word	PreviousRunningTimerID
+ 206 0098 00000000 		.word	SSRValueOnLastSetup
+ 208              		.section	.text.ReturnTimeElapsed,"ax",%progbits
+ 209              		.align	1
+ 210              		.syntax unified
+ 211              		.thumb
+ 212              		.thumb_func
+ 214              	ReturnTimeElapsed:
+ 215              		@ args = 0, pretend = 0, frame = 0
+ 216              		@ frame_needed = 0, uses_anonymous_args = 0
+ 217 0000 08B5     		push	{r3, lr}
+ 218 0002 104B     		ldr	r3, .L31
+ 219 0004 1B68     		ldr	r3, [r3]
+ 220 0006 B3F1FF3F 		cmp	r3, #-1
+ 221 000a 02D1     		bne	.L30
+ 222 000c 0020     		movs	r0, #0
+ 223              	.L25:
+ 224 000e 80B2     		uxth	r0, r0
+ 225 0010 08BD     		pop	{r3, pc}
+ 226              	.L30:
+ 227 0012 FFF7FEFF 		bl	ReadRtcSsrValue
+ 228 0016 0B4B     		ldr	r3, .L31
+ 229 0018 1B68     		ldr	r3, [r3]
+ 230 001a 8342     		cmp	r3, r0
+ 231 001c 0AD3     		bcc	.L26
+ 232 001e 094B     		ldr	r3, .L31
+ 233 0020 1B68     		ldr	r3, [r3]
+ 234 0022 1B1A     		subs	r3, r3, r0
+ 235              	.L27:
+ 236 0024 084A     		ldr	r2, .L31+4
+ 237 0026 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 5
+
+
+ 238 0028 03FB00F0 		mul	r0, r3, r0
+ 239 002c 074B     		ldr	r3, .L31+8
+ 240 002e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 241 0030 D840     		lsrs	r0, r0, r3
+ 242 0032 ECE7     		b	.L25
+ 243              	.L26:
+ 244 0034 064B     		ldr	r3, .L31+12
+ 245 0036 1A88     		ldrh	r2, [r3]
+ 246 0038 121A     		subs	r2, r2, r0
+ 247 003a 024B     		ldr	r3, .L31
+ 248 003c 1B68     		ldr	r3, [r3]
+ 249 003e 1344     		add	r3, r3, r2
+ 250 0040 F0E7     		b	.L27
+ 251              	.L32:
+ 252 0042 00BF     		.align	2
+ 253              	.L31:
+ 254 0044 00000000 		.word	SSRValueOnLastSetup
+ 255 0048 00000000 		.word	AsynchPrescalerUserConfig
+ 256 004c 00000000 		.word	WakeupTimerDivider
+ 257 0050 00000000 		.word	SynchPrescalerUserConfig
+ 259              		.section	.text.linkTimer,"ax",%progbits
+ 260              		.align	1
+ 261              		.syntax unified
+ 262              		.thumb
+ 263              		.thumb_func
+ 265              	linkTimer:
+ 266              		@ args = 0, pretend = 0, frame = 0
+ 267              		@ frame_needed = 0, uses_anonymous_args = 0
+ 268 0000 70B5     		push	{r4, r5, r6, lr}
+ 269 0002 0446     		mov	r4, r0
+ 270 0004 314B     		ldr	r3, .L41
+ 271 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 272 0008 062B     		cmp	r3, #6
+ 273 000a 14D1     		bne	.L34
+ 274 000c 2F4A     		ldr	r2, .L41
+ 275 000e 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 276 0010 DBB2     		uxtb	r3, r3
+ 277 0012 2F49     		ldr	r1, .L41+4
+ 278 0014 0B70     		strb	r3, [r1]
+ 279 0016 1070     		strb	r0, [r2]
+ 280 0018 00EB4004 		add	r4, r0, r0, lsl #1
+ 281 001c 2D4B     		ldr	r3, .L41+8
+ 282 001e 03EBC404 		add	r4, r3, r4, lsl #3
+ 283 0022 0623     		movs	r3, #6
+ 284 0024 6375     		strb	r3, [r4, #21]
+ 285 0026 2C4B     		ldr	r3, .L41+12
+ 286 0028 4FF0FF32 		mov	r2, #-1
+ 287 002c 1A60     		str	r2, [r3]
+ 288 002e 0023     		movs	r3, #0
+ 289 0030 1E46     		mov	r6, r3
+ 290              	.L35:
+ 291 0032 3046     		mov	r0, r6
+ 292 0034 70BD     		pop	{r4, r5, r6, pc}
+ 293              	.L34:
+ 294 0036 FFF7FEFF 		bl	ReturnTimeElapsed
+ 295 003a 0646     		mov	r6, r0
+ 296 003c 254B     		ldr	r3, .L41+8
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 6
+
+
+ 297 003e 04EB4402 		add	r2, r4, r4, lsl #1
+ 298 0042 03EBC202 		add	r2, r3, r2, lsl #3
+ 299 0046 9168     		ldr	r1, [r2, #8]
+ 300 0048 0144     		add	r1, r1, r0
+ 301 004a 9160     		str	r1, [r2, #8]
+ 302 004c 04EB4402 		add	r2, r4, r4, lsl #1
+ 303 0050 03EBC202 		add	r2, r3, r2, lsl #3
+ 304 0054 9068     		ldr	r0, [r2, #8]
+ 305 0056 1D4A     		ldr	r2, .L41
+ 306 0058 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 307 005a 02EB4202 		add	r2, r2, r2, lsl #1
+ 308 005e 03EBC203 		add	r3, r3, r2, lsl #3
+ 309 0062 9B68     		ldr	r3, [r3, #8]
+ 310 0064 8342     		cmp	r3, r0
+ 311 0066 25D8     		bhi	.L36
+ 312 0068 184B     		ldr	r3, .L41
+ 313 006a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 314 006c D9B2     		uxtb	r1, r3
+ 315 006e 03EB4303 		add	r3, r3, r3, lsl #1
+ 316 0072 184A     		ldr	r2, .L41+8
+ 317 0074 02EBC303 		add	r3, r2, r3, lsl #3
+ 318 0078 5B7D     		ldrb	r3, [r3, #21]	@ zero_extendqisi2
+ 319 007a DBB2     		uxtb	r3, r3
+ 320 007c 0CE0     		b	.L37
+ 321              	.L39:
+ 322 007e 154A     		ldr	r2, .L41+8
+ 323 0080 01EB4101 		add	r1, r1, r1, lsl #1
+ 324 0084 02EBC101 		add	r1, r2, r1, lsl #3
+ 325 0088 4B7D     		ldrb	r3, [r1, #21]	@ zero_extendqisi2
+ 326 008a D9B2     		uxtb	r1, r3
+ 327 008c 03EB4303 		add	r3, r3, r3, lsl #1
+ 328 0090 02EBC302 		add	r2, r2, r3, lsl #3
+ 329 0094 537D     		ldrb	r3, [r2, #21]	@ zero_extendqisi2
+ 330 0096 DBB2     		uxtb	r3, r3
+ 331              	.L37:
+ 332 0098 062B     		cmp	r3, #6
+ 333 009a 07D0     		beq	.L38
+ 334 009c 03EB4303 		add	r3, r3, r3, lsl #1
+ 335 00a0 0C4A     		ldr	r2, .L41+8
+ 336 00a2 02EBC303 		add	r3, r2, r3, lsl #3
+ 337 00a6 9B68     		ldr	r3, [r3, #8]
+ 338 00a8 8342     		cmp	r3, r0
+ 339 00aa E8D9     		bls	.L39
+ 340              	.L38:
+ 341 00ac 2046     		mov	r0, r4
+ 342 00ae FFF7FEFF 		bl	LinkTimerAfter
+ 343 00b2 BEE7     		b	.L35
+ 344              	.L36:
+ 345 00b4 054D     		ldr	r5, .L41
+ 346 00b6 2978     		ldrb	r1, [r5]	@ zero_extendqisi2
+ 347 00b8 2046     		mov	r0, r4
+ 348 00ba FFF7FEFF 		bl	LinkTimerBefore
+ 349 00be 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
+ 350 00c0 DBB2     		uxtb	r3, r3
+ 351 00c2 034A     		ldr	r2, .L41+4
+ 352 00c4 1370     		strb	r3, [r2]
+ 353 00c6 2C70     		strb	r4, [r5]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 7
+
+
+ 354 00c8 B3E7     		b	.L35
+ 355              	.L42:
+ 356 00ca 00BF     		.align	2
+ 357              	.L41:
+ 358 00cc 00000000 		.word	CurrentRunningTimerID
+ 359 00d0 00000000 		.word	PreviousRunningTimerID
+ 360 00d4 00000000 		.word	aTimerContext
+ 361 00d8 00000000 		.word	SSRValueOnLastSetup
+ 363              		.section	.text.RestartWakeupCounter,"ax",%progbits
+ 364              		.align	1
+ 365              		.syntax unified
+ 366              		.thumb
+ 367              		.thumb_func
+ 369              	RestartWakeupCounter:
+ 370              		@ args = 0, pretend = 0, frame = 0
+ 371              		@ frame_needed = 0, uses_anonymous_args = 0
+ 372 0000 10B5     		push	{r4, lr}
+ 373 0002 48B3     		cbz	r0, .L50
+ 374 0004 0446     		mov	r4, r0
+ 375 0006 0128     		cmp	r0, #1
+ 376 0008 2ED9     		bls	.L51
+ 377              	.L46:
+ 378 000a 013C     		subs	r4, r4, #1
+ 379 000c A4B2     		uxth	r4, r4
+ 380              	.L48:
+ 381 000e 194B     		ldr	r3, .L52
+ 382 0010 1B68     		ldr	r3, [r3]
+ 383 0012 DA68     		ldr	r2, [r3, #12]
+ 384 0014 12F0040F 		tst	r2, #4
+ 385 0018 F9D0     		beq	.L48
+ 386 001a DA68     		ldr	r2, [r3, #12]
+ 387 001c D2B2     		uxtb	r2, r2
+ 388 001e 62F49062 		orn	r2, r2, #1152
+ 389 0022 DA60     		str	r2, [r3, #12]
+ 390 0024 144B     		ldr	r3, .L52+4
+ 391 0026 4FF40022 		mov	r2, #524288
+ 392 002a DA60     		str	r2, [r3, #12]
+ 393 002c 0320     		movs	r0, #3
+ 394 002e FFF7FEFF 		bl	HAL_NVIC_ClearPendingIRQ
+ 395 0032 124A     		ldr	r2, .L52+8
+ 396 0034 5369     		ldr	r3, [r2, #20]
+ 397 0036 6FF30F03 		bfc	r3, #0, #16
+ 398 003a 1C43     		orrs	r4, r4, r3
+ 399 003c 5461     		str	r4, [r2, #20]
+ 400 003e FFF7FEFF 		bl	ReadRtcSsrValue
+ 401 0042 0F4B     		ldr	r3, .L52+12
+ 402 0044 1860     		str	r0, [r3]
+ 403 0046 0B4B     		ldr	r3, .L52
+ 404 0048 1A68     		ldr	r2, [r3]
+ 405 004a 9368     		ldr	r3, [r2, #8]
+ 406 004c 43F48063 		orr	r3, r3, #1024
+ 407 0050 9360     		str	r3, [r2, #8]
+ 408 0052 FFF7FEFF 		bl	HW_TS_RTC_CountUpdated_AppNot
+ 409              	.L43:
+ 410 0056 10BD     		pop	{r4, pc}
+ 411              	.L50:
+ 412 0058 FFF7FEFF 		bl	ReadRtcSsrValue
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 8
+
+
+ 413 005c 084B     		ldr	r3, .L52+12
+ 414 005e 1860     		str	r0, [r3]
+ 415 0060 0320     		movs	r0, #3
+ 416 0062 FFF7FEFF 		bl	HAL_NVIC_SetPendingIRQ
+ 417 0066 F6E7     		b	.L43
+ 418              	.L51:
+ 419 0068 064B     		ldr	r3, .L52+16
+ 420 006a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 421 006c 012B     		cmp	r3, #1
+ 422 006e CCD1     		bne	.L46
+ 423 0070 CDE7     		b	.L48
+ 424              	.L53:
+ 425 0072 00BF     		.align	2
+ 426              	.L52:
+ 427 0074 00000000 		.word	hrtc
+ 428 0078 00080058 		.word	1476397056
+ 429 007c 00280040 		.word	1073752064
+ 430 0080 00000000 		.word	SSRValueOnLastSetup
+ 431 0084 00000000 		.word	WakeupTimerDivider
+ 433              		.section	.text.RescheduleTimerList,"ax",%progbits
+ 434              		.align	1
+ 435              		.syntax unified
+ 436              		.thumb
+ 437              		.thumb_func
+ 439              	RescheduleTimerList:
+ 440              		@ args = 0, pretend = 0, frame = 0
+ 441              		@ frame_needed = 0, uses_anonymous_args = 0
+ 442 0000 38B5     		push	{r3, r4, r5, lr}
+ 443 0002 2E4B     		ldr	r3, .L66
+ 444 0004 9B68     		ldr	r3, [r3, #8]
+ 445 0006 13F4806F 		tst	r3, #1024
+ 446 000a 05D0     		beq	.L55
+ 447              	.L56:
+ 448 000c 2C4B     		ldr	r3, .L66+4
+ 449 000e 1B68     		ldr	r3, [r3]
+ 450 0010 DB68     		ldr	r3, [r3, #12]
+ 451 0012 13F0040F 		tst	r3, #4
+ 452 0016 F9D1     		bne	.L56
+ 453              	.L55:
+ 454 0018 294B     		ldr	r3, .L66+4
+ 455 001a 1A68     		ldr	r2, [r3]
+ 456 001c 9368     		ldr	r3, [r2, #8]
+ 457 001e 23F48063 		bic	r3, r3, #1024
+ 458 0022 9360     		str	r3, [r2, #8]
+ 459 0024 274B     		ldr	r3, .L66+8
+ 460 0026 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 461 0028 DCB2     		uxtb	r4, r3
+ 462 002a 03EB4303 		add	r3, r3, r3, lsl #1
+ 463 002e 264A     		ldr	r2, .L66+12
+ 464 0030 02EBC303 		add	r3, r2, r3, lsl #3
+ 465 0034 9D68     		ldr	r5, [r3, #8]
+ 466 0036 FFF7FEFF 		bl	ReturnTimeElapsed
+ 467 003a 8446     		mov	ip, r0
+ 468 003c A842     		cmp	r0, r5
+ 469 003e 04D9     		bls	.L57
+ 470 0040 224B     		ldr	r3, .L66+16
+ 471 0042 0122     		movs	r2, #1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 9
+
+
+ 472 0044 1A70     		strb	r2, [r3]
+ 473 0046 0020     		movs	r0, #0
+ 474 0048 24E0     		b	.L62
+ 475              	.L57:
+ 476 004a 214B     		ldr	r3, .L66+20
+ 477 004c 1B88     		ldrh	r3, [r3]
+ 478 004e 10FA83F3 		uxtah	r3, r0, r3
+ 479 0052 AB42     		cmp	r3, r5
+ 480 0054 06D2     		bcs	.L59
+ 481 0056 1E4B     		ldr	r3, .L66+20
+ 482 0058 1888     		ldrh	r0, [r3]
+ 483 005a 80B2     		uxth	r0, r0
+ 484 005c 1B4B     		ldr	r3, .L66+16
+ 485 005e 0022     		movs	r2, #0
+ 486 0060 1A70     		strb	r2, [r3]
+ 487 0062 17E0     		b	.L62
+ 488              	.L59:
+ 489 0064 A8B2     		uxth	r0, r5
+ 490 0066 A0EB0C00 		sub	r0, r0, ip
+ 491 006a 80B2     		uxth	r0, r0
+ 492 006c 174B     		ldr	r3, .L66+16
+ 493 006e 0122     		movs	r2, #1
+ 494 0070 1A70     		strb	r2, [r3]
+ 495 0072 0FE0     		b	.L62
+ 496              	.L60:
+ 497 0074 04EB4404 		add	r4, r4, r4, lsl #1
+ 498 0078 134A     		ldr	r2, .L66+12
+ 499 007a 02EBC404 		add	r4, r2, r4, lsl #3
+ 500 007e A268     		ldr	r2, [r4, #8]
+ 501 0080 A2EB0C02 		sub	r2, r2, ip
+ 502 0084 A260     		str	r2, [r4, #8]
+ 503              	.L61:
+ 504 0086 03EB4303 		add	r3, r3, r3, lsl #1
+ 505 008a 0F4A     		ldr	r2, .L66+12
+ 506 008c 02EBC303 		add	r3, r2, r3, lsl #3
+ 507 0090 5C7D     		ldrb	r4, [r3, #21]	@ zero_extendqisi2
+ 508 0092 E4B2     		uxtb	r4, r4
+ 509              	.L62:
+ 510 0094 062C     		cmp	r4, #6
+ 511 0096 0ED0     		beq	.L65
+ 512 0098 2346     		mov	r3, r4
+ 513 009a 04EB4401 		add	r1, r4, r4, lsl #1
+ 514 009e 0A4A     		ldr	r2, .L66+12
+ 515 00a0 02EBC102 		add	r2, r2, r1, lsl #3
+ 516 00a4 9268     		ldr	r2, [r2, #8]
+ 517 00a6 9445     		cmp	ip, r2
+ 518 00a8 E4D9     		bls	.L60
+ 519 00aa 074A     		ldr	r2, .L66+12
+ 520 00ac 02EBC104 		add	r4, r2, r1, lsl #3
+ 521 00b0 0022     		movs	r2, #0
+ 522 00b2 A260     		str	r2, [r4, #8]
+ 523 00b4 E7E7     		b	.L61
+ 524              	.L65:
+ 525 00b6 FFF7FEFF 		bl	RestartWakeupCounter
+ 526 00ba 38BD     		pop	{r3, r4, r5, pc}
+ 527              	.L67:
+ 528              		.align	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 10
+
+
+ 529              	.L66:
+ 530 00bc 00280040 		.word	1073752064
+ 531 00c0 00000000 		.word	hrtc
+ 532 00c4 00000000 		.word	CurrentRunningTimerID
+ 533 00c8 00000000 		.word	aTimerContext
+ 534 00cc 00000000 		.word	WakeupTimerLimitation
+ 535 00d0 00000000 		.word	MaxWakeupTimerSetup
+ 537              		.section	.text.HW_TS_Init,"ax",%progbits
+ 538              		.align	1
+ 539              		.global	HW_TS_Init
+ 540              		.syntax unified
+ 541              		.thumb
+ 542              		.thumb_func
+ 544              	HW_TS_Init:
+ 545              		@ args = 0, pretend = 0, frame = 0
+ 546              		@ frame_needed = 0, uses_anonymous_args = 0
+ 547 0000 10B5     		push	{r4, lr}
+ 548 0002 494B     		ldr	r3, .L78
+ 549 0004 1B68     		ldr	r3, [r3]
+ 550 0006 CA22     		movs	r2, #202
+ 551 0008 5A62     		str	r2, [r3, #36]
+ 552 000a 5322     		movs	r2, #83
+ 553 000c 5A62     		str	r2, [r3, #36]
+ 554 000e 474B     		ldr	r3, .L78+4
+ 555 0010 9A68     		ldr	r2, [r3, #8]
+ 556 0012 42F02002 		orr	r2, r2, #32
+ 557 0016 9A60     		str	r2, [r3, #8]
+ 558 0018 9A68     		ldr	r2, [r3, #8]
+ 559 001a 02F00702 		and	r2, r2, #7
+ 560 001e C2F10402 		rsb	r2, r2, #4
+ 561 0022 D2B2     		uxtb	r2, r2
+ 562 0024 4249     		ldr	r1, .L78+8
+ 563 0026 0A70     		strb	r2, [r1]
+ 564 0028 1B69     		ldr	r3, [r3, #16]
+ 565 002a 03F4FE03 		and	r3, r3, #8323072
+ 566 002e 4FF4FE01 		mov	r1, #8323072
+ 567              		.syntax unified
+ 568              	@ 1055 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 569 0032 91FAA1F1 		rbit r1, r1
+ 570              	@ 0 "" 2
+ 571              		.thumb
+ 572              		.syntax unified
+ 573 0036 0029     		cmp	r1, #0
+ 574 0038 33D0     		beq	.L76
+ 575 003a B1FA81F1 		clz	r1, r1
+ 576              	.L69:
+ 577 003e CB40     		lsrs	r3, r3, r1
+ 578 0040 DBB2     		uxtb	r3, r3
+ 579 0042 0133     		adds	r3, r3, #1
+ 580 0044 DBB2     		uxtb	r3, r3
+ 581 0046 3B49     		ldr	r1, .L78+12
+ 582 0048 0B70     		strb	r3, [r1]
+ 583 004a 3849     		ldr	r1, .L78+4
+ 584 004c 0969     		ldr	r1, [r1, #16]
+ 585 004e C1F30E01 		ubfx	r1, r1, #0, #15
+ 586 0052 0131     		adds	r1, r1, #1
+ 587 0054 DFF8F8C0 		ldr	ip, .L78+40
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 11
+
+
+ 588 0058 ACF80010 		strh	r1, [ip]	@ movhi
+ 589 005c 0139     		subs	r1, r1, #1
+ 590 005e 01FB03F3 		mul	r3, r1, r3
+ 591 0062 A3F5A073 		sub	r3, r3, #320
+ 592 0066 D340     		lsrs	r3, r3, r2
+ 593 0068 4FF6FE72 		movw	r2, #65534
+ 594 006c 9342     		cmp	r3, r2
+ 595 006e 1AD9     		bls	.L70
+ 596 0070 314B     		ldr	r3, .L78+16
+ 597 0072 4FF6FF72 		movw	r2, #65535
+ 598 0076 1A80     		strh	r2, [r3]	@ movhi
+ 599              	.L71:
+ 600 0078 304B     		ldr	r3, .L78+20
+ 601 007a 1A68     		ldr	r2, [r3]
+ 602 007c 42F40022 		orr	r2, r2, #524288
+ 603 0080 1A60     		str	r2, [r3]
+ 604 0082 D3F88020 		ldr	r2, [r3, #128]
+ 605 0086 42F40022 		orr	r2, r2, #524288
+ 606 008a C3F88020 		str	r2, [r3, #128]
+ 607 008e 0028     		cmp	r0, #0
+ 608 0090 3FD1     		bne	.L72
+ 609 0092 2B4B     		ldr	r3, .L78+24
+ 610 0094 0122     		movs	r2, #1
+ 611 0096 1A70     		strb	r2, [r3]
+ 612 0098 2A4B     		ldr	r3, .L78+28
+ 613 009a 4FF0FF32 		mov	r2, #-1
+ 614 009e 1A60     		str	r2, [r3]
+ 615 00a0 0EE0     		b	.L73
+ 616              	.L76:
+ 617 00a2 2021     		movs	r1, #32
+ 618 00a4 CBE7     		b	.L69
+ 619              	.L70:
+ 620 00a6 9BB2     		uxth	r3, r3
+ 621 00a8 234A     		ldr	r2, .L78+16
+ 622 00aa 1380     		strh	r3, [r2]	@ movhi
+ 623 00ac E4E7     		b	.L71
+ 624              	.L74:
+ 625 00ae 00EB4002 		add	r2, r0, r0, lsl #1
+ 626 00b2 254B     		ldr	r3, .L78+32
+ 627 00b4 03EBC203 		add	r3, r3, r2, lsl #3
+ 628 00b8 0022     		movs	r2, #0
+ 629 00ba 1A73     		strb	r2, [r3, #12]
+ 630 00bc 0130     		adds	r0, r0, #1
+ 631 00be C0B2     		uxtb	r0, r0
+ 632              	.L73:
+ 633 00c0 0528     		cmp	r0, #5
+ 634 00c2 F4D9     		bls	.L74
+ 635 00c4 214B     		ldr	r3, .L78+36
+ 636 00c6 0622     		movs	r2, #6
+ 637 00c8 1A70     		strb	r2, [r3]
+ 638 00ca 174C     		ldr	r4, .L78
+ 639 00cc 2268     		ldr	r2, [r4]
+ 640 00ce 9368     		ldr	r3, [r2, #8]
+ 641 00d0 23F48063 		bic	r3, r3, #1024
+ 642 00d4 9360     		str	r3, [r2, #8]
+ 643 00d6 D368     		ldr	r3, [r2, #12]
+ 644 00d8 DBB2     		uxtb	r3, r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 12
+
+
+ 645 00da 63F49063 		orn	r3, r3, #1152
+ 646 00de D360     		str	r3, [r2, #12]
+ 647 00e0 164B     		ldr	r3, .L78+20
+ 648 00e2 4FF40022 		mov	r2, #524288
+ 649 00e6 DA60     		str	r2, [r3, #12]
+ 650 00e8 0320     		movs	r0, #3
+ 651 00ea FFF7FEFF 		bl	HAL_NVIC_ClearPendingIRQ
+ 652 00ee 2268     		ldr	r2, [r4]
+ 653 00f0 9368     		ldr	r3, [r2, #8]
+ 654 00f2 43F48043 		orr	r3, r3, #16384
+ 655 00f6 9360     		str	r3, [r2, #8]
+ 656              	.L75:
+ 657 00f8 0B4B     		ldr	r3, .L78
+ 658 00fa 1B68     		ldr	r3, [r3]
+ 659 00fc FF22     		movs	r2, #255
+ 660 00fe 5A62     		str	r2, [r3, #36]
+ 661 0100 0022     		movs	r2, #0
+ 662 0102 0321     		movs	r1, #3
+ 663 0104 0846     		mov	r0, r1
+ 664 0106 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 665 010a 0320     		movs	r0, #3
+ 666 010c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 667 0110 10BD     		pop	{r4, pc}
+ 668              	.L72:
+ 669 0112 054B     		ldr	r3, .L78
+ 670 0114 1B68     		ldr	r3, [r3]
+ 671 0116 DB68     		ldr	r3, [r3, #12]
+ 672 0118 13F4806F 		tst	r3, #1024
+ 673 011c ECD0     		beq	.L75
+ 674 011e 0320     		movs	r0, #3
+ 675 0120 FFF7FEFF 		bl	HAL_NVIC_SetPendingIRQ
+ 676 0124 E8E7     		b	.L75
+ 677              	.L79:
+ 678 0126 00BF     		.align	2
+ 679              	.L78:
+ 680 0128 00000000 		.word	hrtc
+ 681 012c 00280040 		.word	1073752064
+ 682 0130 00000000 		.word	WakeupTimerDivider
+ 683 0134 00000000 		.word	AsynchPrescalerUserConfig
+ 684 0138 00000000 		.word	MaxWakeupTimerSetup
+ 685 013c 00080058 		.word	1476397056
+ 686 0140 00000000 		.word	WakeupTimerLimitation
+ 687 0144 00000000 		.word	SSRValueOnLastSetup
+ 688 0148 00000000 		.word	aTimerContext
+ 689 014c 00000000 		.word	CurrentRunningTimerID
+ 690 0150 00000000 		.word	SynchPrescalerUserConfig
+ 692              		.section	.text.HW_TS_Create,"ax",%progbits
+ 693              		.align	1
+ 694              		.global	HW_TS_Create
+ 695              		.syntax unified
+ 696              		.thumb
+ 697              		.thumb_func
+ 699              	HW_TS_Create:
+ 700              		@ args = 0, pretend = 0, frame = 0
+ 701              		@ frame_needed = 0, uses_anonymous_args = 0
+ 702 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 703 0002 0446     		mov	r4, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 13
+
+
+ 704 0004 0D46     		mov	r5, r1
+ 705 0006 1646     		mov	r6, r2
+ 706 0008 1F46     		mov	r7, r3
+ 707              		.syntax unified
+ 708              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 709 000a EFF31082 		MRS r2, primask
+ 710              	@ 0 "" 2
+ 711              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 712 000e 72B6     		cpsid i
+ 713              	@ 0 "" 2
+ 714              		.thumb
+ 715              		.syntax unified
+ 716 0010 4FF0000C 		mov	ip, #0
+ 717              	.L81:
+ 718 0014 BCF1050F 		cmp	ip, #5
+ 719 0018 0CD8     		bhi	.L82
+ 720 001a 0CEB4C0E 		add	lr, ip, ip, lsl #1
+ 721 001e 134B     		ldr	r3, .L87
+ 722 0020 03EBCE0E 		add	lr, r3, lr, lsl #3
+ 723 0024 9EF80C30 		ldrb	r3, [lr, #12]	@ zero_extendqisi2
+ 724 0028 23B1     		cbz	r3, .L82
+ 725 002a 0CF1010C 		add	ip, ip, #1
+ 726 002e 5FFA8CFC 		uxtb	ip, ip
+ 727 0032 EFE7     		b	.L81
+ 728              	.L82:
+ 729 0034 BCF1060F 		cmp	ip, #6
+ 730 0038 14D0     		beq	.L84
+ 731 003a 0C49     		ldr	r1, .L87
+ 732 003c 4FEA4C0E 		lsl	lr, ip, #1
+ 733 0040 0CEB4C03 		add	r3, ip, ip, lsl #1
+ 734 0044 01EBC303 		add	r3, r1, r3, lsl #3
+ 735 0048 0120     		movs	r0, #1
+ 736 004a 1873     		strb	r0, [r3, #12]
+ 737              		.syntax unified
+ 738              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 739 004c 82F31088 		MSR primask, r2
+ 740              	@ 0 "" 2
+ 741              		.thumb
+ 742              		.syntax unified
+ 743 0050 1C61     		str	r4, [r3, #16]
+ 744 0052 5E73     		strb	r6, [r3, #13]
+ 745 0054 0EEB0C02 		add	r2, lr, ip
+ 746 0058 D200     		lsls	r2, r2, #3
+ 747 005a 8F50     		str	r7, [r1, r2]
+ 748 005c 85F800C0 		strb	ip, [r5]
+ 749 0060 0020     		movs	r0, #0
+ 750              	.L85:
+ 751 0062 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 752              	.L84:
+ 753              		.syntax unified
+ 754              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 755 0064 82F31088 		MSR primask, r2
+ 756              	@ 0 "" 2
+ 757              		.thumb
+ 758              		.syntax unified
+ 759 0068 0120     		movs	r0, #1
+ 760 006a FAE7     		b	.L85
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 14
+
+
+ 761              	.L88:
+ 762              		.align	2
+ 763              	.L87:
+ 764 006c 00000000 		.word	aTimerContext
+ 766              		.section	.text.HW_TS_Stop,"ax",%progbits
+ 767              		.align	1
+ 768              		.global	HW_TS_Stop
+ 769              		.syntax unified
+ 770              		.thumb
+ 771              		.thumb_func
+ 773              	HW_TS_Stop:
+ 774              		@ args = 0, pretend = 0, frame = 0
+ 775              		@ frame_needed = 0, uses_anonymous_args = 0
+ 776 0000 38B5     		push	{r3, r4, r5, lr}
+ 777 0002 0446     		mov	r4, r0
+ 778              		.syntax unified
+ 779              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 780 0004 EFF31083 		MRS r3, primask
+ 781              	@ 0 "" 2
+ 782              		.thumb
+ 783              		.syntax unified
+ 784 0008 1D46     		mov	r5, r3
+ 785              		.syntax unified
+ 786              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 787 000a 72B6     		cpsid i
+ 788              	@ 0 "" 2
+ 789              		.thumb
+ 790              		.syntax unified
+ 791 000c 0320     		movs	r0, #3
+ 792 000e FFF7FEFF 		bl	HAL_NVIC_DisableIRQ
+ 793 0012 254B     		ldr	r3, .L98
+ 794 0014 1B68     		ldr	r3, [r3]
+ 795 0016 CA22     		movs	r2, #202
+ 796 0018 5A62     		str	r2, [r3, #36]
+ 797 001a 5322     		movs	r2, #83
+ 798 001c 5A62     		str	r2, [r3, #36]
+ 799 001e 04EB4402 		add	r2, r4, r4, lsl #1
+ 800 0022 224B     		ldr	r3, .L98+4
+ 801 0024 03EBC203 		add	r3, r3, r2, lsl #3
+ 802 0028 1B7B     		ldrb	r3, [r3, #12]	@ zero_extendqisi2
+ 803 002a 022B     		cmp	r3, #2
+ 804 002c 09D0     		beq	.L96
+ 805              	.L90:
+ 806 002e 1E4B     		ldr	r3, .L98
+ 807 0030 1B68     		ldr	r3, [r3]
+ 808 0032 FF22     		movs	r2, #255
+ 809 0034 5A62     		str	r2, [r3, #36]
+ 810 0036 0320     		movs	r0, #3
+ 811 0038 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 812              		.syntax unified
+ 813              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 814 003c 85F31088 		MSR primask, r5
+ 815              	@ 0 "" 2
+ 816              		.thumb
+ 817              		.syntax unified
+ 818 0040 38BD     		pop	{r3, r4, r5, pc}
+ 819              	.L96:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 15
+
+
+ 820 0042 0021     		movs	r1, #0
+ 821 0044 2046     		mov	r0, r4
+ 822 0046 FFF7FEFF 		bl	UnlinkTimer
+ 823 004a 194B     		ldr	r3, .L98+8
+ 824 004c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 825 004e DAB2     		uxtb	r2, r3
+ 826 0050 062B     		cmp	r3, #6
+ 827 0052 06D0     		beq	.L97
+ 828 0054 174B     		ldr	r3, .L98+12
+ 829 0056 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 830 0058 9342     		cmp	r3, r2
+ 831 005a E8D0     		beq	.L90
+ 832 005c FFF7FEFF 		bl	RescheduleTimerList
+ 833 0060 E5E7     		b	.L90
+ 834              	.L97:
+ 835 0062 154B     		ldr	r3, .L98+16
+ 836 0064 9B68     		ldr	r3, [r3, #8]
+ 837 0066 13F4806F 		tst	r3, #1024
+ 838 006a 05D0     		beq	.L92
+ 839              	.L93:
+ 840 006c 0E4B     		ldr	r3, .L98
+ 841 006e 1B68     		ldr	r3, [r3]
+ 842 0070 DB68     		ldr	r3, [r3, #12]
+ 843 0072 13F0040F 		tst	r3, #4
+ 844 0076 F9D1     		bne	.L93
+ 845              	.L92:
+ 846 0078 0B4B     		ldr	r3, .L98
+ 847 007a 1A68     		ldr	r2, [r3]
+ 848 007c 9368     		ldr	r3, [r2, #8]
+ 849 007e 23F48063 		bic	r3, r3, #1024
+ 850 0082 9360     		str	r3, [r2, #8]
+ 851              	.L94:
+ 852 0084 D368     		ldr	r3, [r2, #12]
+ 853 0086 13F0040F 		tst	r3, #4
+ 854 008a FBD0     		beq	.L94
+ 855 008c D368     		ldr	r3, [r2, #12]
+ 856 008e DBB2     		uxtb	r3, r3
+ 857 0090 63F49063 		orn	r3, r3, #1152
+ 858 0094 D360     		str	r3, [r2, #12]
+ 859 0096 094B     		ldr	r3, .L98+20
+ 860 0098 4FF40022 		mov	r2, #524288
+ 861 009c DA60     		str	r2, [r3, #12]
+ 862 009e 0320     		movs	r0, #3
+ 863 00a0 FFF7FEFF 		bl	HAL_NVIC_ClearPendingIRQ
+ 864 00a4 C3E7     		b	.L90
+ 865              	.L99:
+ 866 00a6 00BF     		.align	2
+ 867              	.L98:
+ 868 00a8 00000000 		.word	hrtc
+ 869 00ac 00000000 		.word	aTimerContext
+ 870 00b0 00000000 		.word	CurrentRunningTimerID
+ 871 00b4 00000000 		.word	PreviousRunningTimerID
+ 872 00b8 00280040 		.word	1073752064
+ 873 00bc 00080058 		.word	1476397056
+ 875              		.section	.text.HW_TS_Delete,"ax",%progbits
+ 876              		.align	1
+ 877              		.global	HW_TS_Delete
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 16
+
+
+ 878              		.syntax unified
+ 879              		.thumb
+ 880              		.thumb_func
+ 882              	HW_TS_Delete:
+ 883              		@ args = 0, pretend = 0, frame = 0
+ 884              		@ frame_needed = 0, uses_anonymous_args = 0
+ 885 0000 10B5     		push	{r4, lr}
+ 886 0002 0446     		mov	r4, r0
+ 887 0004 FFF7FEFF 		bl	HW_TS_Stop
+ 888 0008 04EB4404 		add	r4, r4, r4, lsl #1
+ 889 000c 024B     		ldr	r3, .L102
+ 890 000e 03EBC403 		add	r3, r3, r4, lsl #3
+ 891 0012 0022     		movs	r2, #0
+ 892 0014 1A73     		strb	r2, [r3, #12]
+ 893 0016 10BD     		pop	{r4, pc}
+ 894              	.L103:
+ 895              		.align	2
+ 896              	.L102:
+ 897 0018 00000000 		.word	aTimerContext
+ 899              		.section	.text.HW_TS_Start,"ax",%progbits
+ 900              		.align	1
+ 901              		.global	HW_TS_Start
+ 902              		.syntax unified
+ 903              		.thumb
+ 904              		.thumb_func
+ 906              	HW_TS_Start:
+ 907              		@ args = 0, pretend = 0, frame = 0
+ 908              		@ frame_needed = 0, uses_anonymous_args = 0
+ 909 0000 70B5     		push	{r4, r5, r6, lr}
+ 910 0002 0446     		mov	r4, r0
+ 911 0004 0D46     		mov	r5, r1
+ 912 0006 00EB4002 		add	r2, r0, r0, lsl #1
+ 913 000a 204B     		ldr	r3, .L111
+ 914 000c 03EBC203 		add	r3, r3, r2, lsl #3
+ 915 0010 1B7B     		ldrb	r3, [r3, #12]	@ zero_extendqisi2
+ 916 0012 022B     		cmp	r3, #2
+ 917 0014 34D0     		beq	.L109
+ 918              	.L105:
+ 919              		.syntax unified
+ 920              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 921 0016 EFF31083 		MRS r3, primask
+ 922              	@ 0 "" 2
+ 923              		.thumb
+ 924              		.syntax unified
+ 925 001a 1E46     		mov	r6, r3
+ 926              		.syntax unified
+ 927              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 928 001c 72B6     		cpsid i
+ 929              	@ 0 "" 2
+ 930              		.thumb
+ 931              		.syntax unified
+ 932 001e 0320     		movs	r0, #3
+ 933 0020 FFF7FEFF 		bl	HAL_NVIC_DisableIRQ
+ 934 0024 1A4B     		ldr	r3, .L111+4
+ 935 0026 1B68     		ldr	r3, [r3]
+ 936 0028 CA22     		movs	r2, #202
+ 937 002a 5A62     		str	r2, [r3, #36]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 17
+
+
+ 938 002c 5322     		movs	r2, #83
+ 939 002e 5A62     		str	r2, [r3, #36]
+ 940 0030 04EB4402 		add	r2, r4, r4, lsl #1
+ 941 0034 154B     		ldr	r3, .L111
+ 942 0036 03EBC203 		add	r3, r3, r2, lsl #3
+ 943 003a 0222     		movs	r2, #2
+ 944 003c 1A73     		strb	r2, [r3, #12]
+ 945 003e 9D60     		str	r5, [r3, #8]
+ 946 0040 5D60     		str	r5, [r3, #4]
+ 947 0042 2046     		mov	r0, r4
+ 948 0044 FFF7FEFF 		bl	linkTimer
+ 949 0048 124B     		ldr	r3, .L111+8
+ 950 004a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 951 004c 124A     		ldr	r2, .L111+12
+ 952 004e 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 953 0050 9A42     		cmp	r2, r3
+ 954 0052 18D1     		bne	.L110
+ 955 0054 0D4B     		ldr	r3, .L111
+ 956 0056 04EB4402 		add	r2, r4, r4, lsl #1
+ 957 005a 03EBC202 		add	r2, r3, r2, lsl #3
+ 958 005e 9268     		ldr	r2, [r2, #8]
+ 959 0060 121A     		subs	r2, r2, r0
+ 960 0062 04EB4404 		add	r4, r4, r4, lsl #1
+ 961 0066 03EBC403 		add	r3, r3, r4, lsl #3
+ 962 006a 9A60     		str	r2, [r3, #8]
+ 963              	.L107:
+ 964 006c 084B     		ldr	r3, .L111+4
+ 965 006e 1B68     		ldr	r3, [r3]
+ 966 0070 FF22     		movs	r2, #255
+ 967 0072 5A62     		str	r2, [r3, #36]
+ 968 0074 0320     		movs	r0, #3
+ 969 0076 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 970              		.syntax unified
+ 971              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 972 007a 86F31088 		MSR primask, r6
+ 973              	@ 0 "" 2
+ 974              		.thumb
+ 975              		.syntax unified
+ 976 007e 70BD     		pop	{r4, r5, r6, pc}
+ 977              	.L109:
+ 978 0080 FFF7FEFF 		bl	HW_TS_Stop
+ 979 0084 C7E7     		b	.L105
+ 980              	.L110:
+ 981 0086 FFF7FEFF 		bl	RescheduleTimerList
+ 982 008a EFE7     		b	.L107
+ 983              	.L112:
+ 984              		.align	2
+ 985              	.L111:
+ 986 008c 00000000 		.word	aTimerContext
+ 987 0090 00000000 		.word	hrtc
+ 988 0094 00000000 		.word	CurrentRunningTimerID
+ 989 0098 00000000 		.word	PreviousRunningTimerID
+ 991              		.section	.text.HW_TS_RTC_ReadLeftTicksToCount,"ax",%progbits
+ 992              		.align	1
+ 993              		.global	HW_TS_RTC_ReadLeftTicksToCount
+ 994              		.syntax unified
+ 995              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 18
+
+
+ 996              		.thumb_func
+ 998              	HW_TS_RTC_ReadLeftTicksToCount:
+ 999              		@ args = 0, pretend = 0, frame = 0
+ 1000              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1001 0000 38B5     		push	{r3, r4, r5, lr}
+ 1002              		.syntax unified
+ 1003              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1004 0002 EFF31083 		MRS r3, primask
+ 1005              	@ 0 "" 2
+ 1006              		.thumb
+ 1007              		.syntax unified
+ 1008 0006 1D46     		mov	r5, r3
+ 1009              		.syntax unified
+ 1010              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1011 0008 72B6     		cpsid i
+ 1012              	@ 0 "" 2
+ 1013              		.thumb
+ 1014              		.syntax unified
+ 1015 000a 0B4B     		ldr	r3, .L119
+ 1016 000c 9B68     		ldr	r3, [r3, #8]
+ 1017 000e 13F4806F 		tst	r3, #1024
+ 1018 0012 04D1     		bne	.L118
+ 1019 0014 4FF6FF70 		movw	r0, #65535
+ 1020              	.L114:
+ 1021              		.syntax unified
+ 1022              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1023 0018 85F31088 		MSR primask, r5
+ 1024              	@ 0 "" 2
+ 1025              		.thumb
+ 1026              		.syntax unified
+ 1027 001c 38BD     		pop	{r3, r4, r5, pc}
+ 1028              	.L118:
+ 1029 001e 064B     		ldr	r3, .L119
+ 1030 0020 5869     		ldr	r0, [r3, #20]
+ 1031 0022 84B2     		uxth	r4, r0
+ 1032 0024 FFF7FEFF 		bl	ReturnTimeElapsed
+ 1033 0028 8442     		cmp	r4, r0
+ 1034 002a 02D9     		bls	.L116
+ 1035 002c 201A     		subs	r0, r4, r0
+ 1036 002e 80B2     		uxth	r0, r0
+ 1037 0030 F2E7     		b	.L114
+ 1038              	.L116:
+ 1039 0032 0020     		movs	r0, #0
+ 1040 0034 F0E7     		b	.L114
+ 1041              	.L120:
+ 1042 0036 00BF     		.align	2
+ 1043              	.L119:
+ 1044 0038 00280040 		.word	1073752064
+ 1046              		.section	.text.HW_TS_RTC_Int_AppNot,"ax",%progbits
+ 1047              		.align	1
+ 1048              		.weak	HW_TS_RTC_Int_AppNot
+ 1049              		.syntax unified
+ 1050              		.thumb
+ 1051              		.thumb_func
+ 1053              	HW_TS_RTC_Int_AppNot:
+ 1054              		@ args = 0, pretend = 0, frame = 0
+ 1055              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 19
+
+
+ 1056 0000 08B5     		push	{r3, lr}
+ 1057 0002 9047     		blx	r2
+ 1058 0004 08BD     		pop	{r3, pc}
+ 1060              		.section	.text.HW_TS_RTC_Wakeup_Handler,"ax",%progbits
+ 1061              		.align	1
+ 1062              		.global	HW_TS_RTC_Wakeup_Handler
+ 1063              		.syntax unified
+ 1064              		.thumb
+ 1065              		.thumb_func
+ 1067              	HW_TS_RTC_Wakeup_Handler:
+ 1068              		@ args = 0, pretend = 0, frame = 0
+ 1069              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1070 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1071              		.syntax unified
+ 1072              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1073 0002 EFF31083 		MRS r3, primask
+ 1074              	@ 0 "" 2
+ 1075              		.thumb
+ 1076              		.syntax unified
+ 1077 0006 1D46     		mov	r5, r3
+ 1078              		.syntax unified
+ 1079              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1080 0008 72B6     		cpsid i
+ 1081              	@ 0 "" 2
+ 1082              		.thumb
+ 1083              		.syntax unified
+ 1084 000a 354B     		ldr	r3, .L132
+ 1085 000c 1B68     		ldr	r3, [r3]
+ 1086 000e CA22     		movs	r2, #202
+ 1087 0010 5A62     		str	r2, [r3, #36]
+ 1088 0012 5322     		movs	r2, #83
+ 1089 0014 5A62     		str	r2, [r3, #36]
+ 1090 0016 9A68     		ldr	r2, [r3, #8]
+ 1091 0018 22F48062 		bic	r2, r2, #1024
+ 1092 001c 9A60     		str	r2, [r3, #8]
+ 1093 001e 314A     		ldr	r2, .L132+4
+ 1094 0020 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 1095 0022 D4B2     		uxtb	r4, r2
+ 1096 0024 02EB4202 		add	r2, r2, r2, lsl #1
+ 1097 0028 2F49     		ldr	r1, .L132+8
+ 1098 002a 01EBC202 		add	r2, r1, r2, lsl #3
+ 1099 002e 127B     		ldrb	r2, [r2, #12]	@ zero_extendqisi2
+ 1100 0030 022A     		cmp	r2, #2
+ 1101 0032 13D0     		beq	.L130
+ 1102              	.L124:
+ 1103 0034 DA68     		ldr	r2, [r3, #12]
+ 1104 0036 12F0040F 		tst	r2, #4
+ 1105 003a FBD0     		beq	.L124
+ 1106 003c DA68     		ldr	r2, [r3, #12]
+ 1107 003e D2B2     		uxtb	r2, r2
+ 1108 0040 62F49062 		orn	r2, r2, #1152
+ 1109 0044 DA60     		str	r2, [r3, #12]
+ 1110 0046 294B     		ldr	r3, .L132+12
+ 1111 0048 4FF40022 		mov	r2, #524288
+ 1112 004c DA60     		str	r2, [r3, #12]
+ 1113              		.syntax unified
+ 1114              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 20
+
+
+ 1115 004e 85F31088 		MSR primask, r5
+ 1116              	@ 0 "" 2
+ 1117              		.thumb
+ 1118              		.syntax unified
+ 1119              	.L128:
+ 1120 0052 234B     		ldr	r3, .L132
+ 1121 0054 1B68     		ldr	r3, [r3]
+ 1122 0056 FF22     		movs	r2, #255
+ 1123 0058 5A62     		str	r2, [r3, #36]
+ 1124 005a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1125              	.L130:
+ 1126 005c 0A46     		mov	r2, r1
+ 1127 005e 04EB4403 		add	r3, r4, r4, lsl #1
+ 1128 0062 D900     		lsls	r1, r3, #3
+ 1129 0064 02EBC303 		add	r3, r2, r3, lsl #3
+ 1130 0068 5258     		ldr	r2, [r2, r1]
+ 1131 006a 1646     		mov	r6, r2
+ 1132 006c 1B69     		ldr	r3, [r3, #16]
+ 1133 006e 1F46     		mov	r7, r3
+ 1134 0070 1F4B     		ldr	r3, .L132+16
+ 1135 0072 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 1136 0074 73B3     		cbz	r3, .L125
+ 1137 0076 04EB4402 		add	r2, r4, r4, lsl #1
+ 1138 007a 1B4B     		ldr	r3, .L132+8
+ 1139 007c 03EBC203 		add	r3, r3, r2, lsl #3
+ 1140 0080 5B7B     		ldrb	r3, [r3, #13]	@ zero_extendqisi2
+ 1141 0082 012B     		cmp	r3, #1
+ 1142 0084 10D0     		beq	.L131
+ 1143              		.syntax unified
+ 1144              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1145 0086 85F31088 		MSR primask, r5
+ 1146              	@ 0 "" 2
+ 1147              		.thumb
+ 1148              		.syntax unified
+ 1149 008a 2046     		mov	r0, r4
+ 1150 008c FFF7FEFF 		bl	HW_TS_Stop
+ 1151 0090 134B     		ldr	r3, .L132
+ 1152 0092 1B68     		ldr	r3, [r3]
+ 1153 0094 CA22     		movs	r2, #202
+ 1154 0096 5A62     		str	r2, [r3, #36]
+ 1155 0098 5322     		movs	r2, #83
+ 1156 009a 5A62     		str	r2, [r3, #36]
+ 1157              	.L127:
+ 1158 009c 3246     		mov	r2, r6
+ 1159 009e 2146     		mov	r1, r4
+ 1160 00a0 3846     		mov	r0, r7
+ 1161 00a2 FFF7FEFF 		bl	HW_TS_RTC_Int_AppNot
+ 1162 00a6 D4E7     		b	.L128
+ 1163              	.L131:
+ 1164 00a8 0121     		movs	r1, #1
+ 1165 00aa 2046     		mov	r0, r4
+ 1166 00ac FFF7FEFF 		bl	UnlinkTimer
+ 1167              		.syntax unified
+ 1168              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1169 00b0 85F31088 		MSR primask, r5
+ 1170              	@ 0 "" 2
+ 1171              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 21
+
+
+ 1172              		.syntax unified
+ 1173 00b4 04EB4402 		add	r2, r4, r4, lsl #1
+ 1174 00b8 0B4B     		ldr	r3, .L132+8
+ 1175 00ba 03EBC203 		add	r3, r3, r2, lsl #3
+ 1176 00be 5968     		ldr	r1, [r3, #4]
+ 1177 00c0 2046     		mov	r0, r4
+ 1178 00c2 FFF7FEFF 		bl	HW_TS_Start
+ 1179 00c6 064B     		ldr	r3, .L132
+ 1180 00c8 1B68     		ldr	r3, [r3]
+ 1181 00ca CA22     		movs	r2, #202
+ 1182 00cc 5A62     		str	r2, [r3, #36]
+ 1183 00ce 5322     		movs	r2, #83
+ 1184 00d0 5A62     		str	r2, [r3, #36]
+ 1185 00d2 E3E7     		b	.L127
+ 1186              	.L125:
+ 1187 00d4 FFF7FEFF 		bl	RescheduleTimerList
+ 1188              		.syntax unified
+ 1189              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 1190 00d8 85F31088 		MSR primask, r5
+ 1191              	@ 0 "" 2
+ 1192              		.thumb
+ 1193              		.syntax unified
+ 1194 00dc B9E7     		b	.L128
+ 1195              	.L133:
+ 1196 00de 00BF     		.align	2
+ 1197              	.L132:
+ 1198 00e0 00000000 		.word	hrtc
+ 1199 00e4 00000000 		.word	CurrentRunningTimerID
+ 1200 00e8 00000000 		.word	aTimerContext
+ 1201 00ec 00080058 		.word	1476397056
+ 1202 00f0 00000000 		.word	WakeupTimerLimitation
+ 1204              		.section	.bss.MaxWakeupTimerSetup,"aw",%nobits
+ 1205              		.align	1
+ 1208              	MaxWakeupTimerSetup:
+ 1209 0000 0000     		.space	2
+ 1210              		.section	.bss.SynchPrescalerUserConfig,"aw",%nobits
+ 1211              		.align	1
+ 1214              	SynchPrescalerUserConfig:
+ 1215 0000 0000     		.space	2
+ 1216              		.section	.bss.AsynchPrescalerUserConfig,"aw",%nobits
+ 1219              	AsynchPrescalerUserConfig:
+ 1220 0000 00       		.space	1
+ 1221              		.section	.bss.WakeupTimerDivider,"aw",%nobits
+ 1224              	WakeupTimerDivider:
+ 1225 0000 00       		.space	1
+ 1226              		.section	.bss.WakeupTimerLimitation,"aw",%nobits
+ 1229              	WakeupTimerLimitation:
+ 1230 0000 00       		.space	1
+ 1231              		.section	.bss.SSRValueOnLastSetup,"aw",%nobits
+ 1232              		.align	2
+ 1235              	SSRValueOnLastSetup:
+ 1236 0000 00000000 		.space	4
+ 1237              		.section	.bss.PreviousRunningTimerID,"aw",%nobits
+ 1240              	PreviousRunningTimerID:
+ 1241 0000 00       		.space	1
+ 1242              		.section	.bss.CurrentRunningTimerID,"aw",%nobits
+ 1245              	CurrentRunningTimerID:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 22
+
+
+ 1246 0000 00       		.space	1
+ 1247              		.section	.bss.aTimerContext,"aw",%nobits
+ 1248              		.align	2
+ 1251              	aTimerContext:
+ 1252 0000 00000000 		.space	144
+ 1252      00000000 
+ 1252      00000000 
+ 1252      00000000 
+ 1252      00000000 
+ 1253              		.weak	HW_TS_RTC_CountUpdated_AppNot
+ 1254              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 23
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 hw_timerserver.c
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:18     .text.ReadRtcSsrValue:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:23     .text.ReadRtcSsrValue:00000000 ReadRtcSsrValue
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:45     .text.ReadRtcSsrValue:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:48     .text.LinkTimerAfter:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:53     .text.LinkTimerAfter:00000000 LinkTimerAfter
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:83     .text.LinkTimerAfter:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1251   .bss.aTimerContext:00000000 aTimerContext
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:86     .text.LinkTimerBefore:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:91     .text.LinkTimerBefore:00000000 LinkTimerBefore
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:129    .text.LinkTimerBefore:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1245   .bss.CurrentRunningTimerID:00000000 CurrentRunningTimerID
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:133    .text.UnlinkTimer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:138    .text.UnlinkTimer:00000000 UnlinkTimer
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:203    .text.UnlinkTimer:0000008c $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1240   .bss.PreviousRunningTimerID:00000000 PreviousRunningTimerID
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1235   .bss.SSRValueOnLastSetup:00000000 SSRValueOnLastSetup
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:209    .text.ReturnTimeElapsed:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:214    .text.ReturnTimeElapsed:00000000 ReturnTimeElapsed
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:254    .text.ReturnTimeElapsed:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1219   .bss.AsynchPrescalerUserConfig:00000000 AsynchPrescalerUserConfig
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1224   .bss.WakeupTimerDivider:00000000 WakeupTimerDivider
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1214   .bss.SynchPrescalerUserConfig:00000000 SynchPrescalerUserConfig
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:260    .text.linkTimer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:265    .text.linkTimer:00000000 linkTimer
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:358    .text.linkTimer:000000cc $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:364    .text.RestartWakeupCounter:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:369    .text.RestartWakeupCounter:00000000 RestartWakeupCounter
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:427    .text.RestartWakeupCounter:00000074 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:434    .text.RescheduleTimerList:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:439    .text.RescheduleTimerList:00000000 RescheduleTimerList
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:530    .text.RescheduleTimerList:000000bc $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1229   .bss.WakeupTimerLimitation:00000000 WakeupTimerLimitation
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1208   .bss.MaxWakeupTimerSetup:00000000 MaxWakeupTimerSetup
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:538    .text.HW_TS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:544    .text.HW_TS_Init:00000000 HW_TS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:680    .text.HW_TS_Init:00000128 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:693    .text.HW_TS_Create:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:699    .text.HW_TS_Create:00000000 HW_TS_Create
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:764    .text.HW_TS_Create:0000006c $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:767    .text.HW_TS_Stop:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:773    .text.HW_TS_Stop:00000000 HW_TS_Stop
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:868    .text.HW_TS_Stop:000000a8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:876    .text.HW_TS_Delete:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:882    .text.HW_TS_Delete:00000000 HW_TS_Delete
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:897    .text.HW_TS_Delete:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:900    .text.HW_TS_Start:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:906    .text.HW_TS_Start:00000000 HW_TS_Start
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:986    .text.HW_TS_Start:0000008c $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:992    .text.HW_TS_RTC_ReadLeftTicksToCount:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:998    .text.HW_TS_RTC_ReadLeftTicksToCount:00000000 HW_TS_RTC_ReadLeftTicksToCount
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1044   .text.HW_TS_RTC_ReadLeftTicksToCount:00000038 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1047   .text.HW_TS_RTC_Int_AppNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1053   .text.HW_TS_RTC_Int_AppNot:00000000 HW_TS_RTC_Int_AppNot
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1061   .text.HW_TS_RTC_Wakeup_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1067   .text.HW_TS_RTC_Wakeup_Handler:00000000 HW_TS_RTC_Wakeup_Handler
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s 			page 24
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1198   .text.HW_TS_RTC_Wakeup_Handler:000000e0 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1205   .bss.MaxWakeupTimerSetup:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1211   .bss.SynchPrescalerUserConfig:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1220   .bss.AsynchPrescalerUserConfig:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1225   .bss.WakeupTimerDivider:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1230   .bss.WakeupTimerLimitation:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1232   .bss.SSRValueOnLastSetup:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1241   .bss.PreviousRunningTimerID:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1246   .bss.CurrentRunningTimerID:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccWu9ayi.s:1248   .bss.aTimerContext:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_NVIC_ClearPendingIRQ
+HW_TS_RTC_CountUpdated_AppNot
+HAL_NVIC_SetPendingIRQ
+hrtc
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_NVIC_DisableIRQ

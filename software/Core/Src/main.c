@@ -19,6 +19,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "i2c.h"
+#include "ipcc.h"
+#include "rf.h"
+#include "rtc.h"
 #include "spi.h"
 #include "usb_device.h"
 #include "gpio.h"
@@ -31,6 +34,30 @@
 #include "usbd_cdc_if.h"
 #include <stdio.h>
 #include <string.h>
+
+/* Debug: blink LED N times (works even before HAL GPIO init, using raw registers) */
+static void dbg_blink(int n)
+{
+  /* Enable GPIOC clock */
+  RCC->AHB2ENR |= RCC_AHB2ENR_GPIOCEN;
+  /* PC13 as output (MODER bits [27:26] = 01) */
+  GPIOC->MODER = (GPIOC->MODER & ~(3u << 26)) | (1u << 26);
+
+  for (int i = 0; i < n; i++) {
+    GPIOC->BSRR = (1u << 13);       /* LED off (active low) */
+    for (volatile int d = 0; d < 200000; d++);
+    GPIOC->BSRR = (1u << (13+16));  /* LED on */
+    for (volatile int d = 0; d < 200000; d++);
+  }
+  GPIOC->BSRR = (1u << 13);         /* LED off */
+  for (volatile int d = 0; d < 400000; d++);  /* pause between stages */
+}
+
+static void dbg_print(const char *msg)
+{
+  CDC_Transmit_FS((uint8_t *)msg, strlen(msg));
+  HAL_Delay(10);
+}
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -81,13 +108,20 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+  /* Early LED blink pattern for debugging startup hangs.
+   * Each stage blinks N times before proceeding.
+   * Count the blinks to see where it hangs. */
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  dbg_blink(1);  /* 1 blink = entering HAL_Init */
   HAL_Init();
+  dbg_blink(2);  /* 2 blinks = HAL_Init done, entering MX_APPE_Config */
+  /* Config code for STM32_WPAN (HSE Tuning must be done before system clock configuration) */
+  MX_APPE_Config();
+  dbg_blink(3);  /* 3 blinks = MX_APPE_Config done */
 
   /* USER CODE BEGIN Init */
 
@@ -95,9 +129,14 @@ int main(void)
 
   /* Configure the system clock */
   SystemClock_Config();
+  dbg_blink(4);  /* 4 blinks = clocks configured */
 
   /* Configure the peripherals common clocks */
   PeriphCommonClock_Config();
+
+  /* IPCC initialisation */
+  MX_IPCC_Init();
+  dbg_blink(5);  /* 5 blinks = IPCC done */
 
   /* USER CODE BEGIN SysInit */
 
@@ -108,10 +147,16 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   MX_USB_Device_Init();
+  MX_RTC_Init();
+  MX_RF_Init();
+  dbg_blink(6);  /* 6 blinks = all peripherals initialized */
   /* USER CODE BEGIN 2 */
   /* Give USB time to enumerate before any CDC transmits */
   HAL_Delay(2000);
+  dbg_print("=== Cyberboard startup ===\r\n");
+  dbg_print("[OK] HAL, clocks, IPCC, peripherals initialized\r\n");
 
+  dbg_print("[  ] I2C bus scan...\r\n");
   /* I2C bus scan – report every device that ACKs */
   {
     int len = snprintf(serial_buf, sizeof(serial_buf), "I2C scan:\r\n");
@@ -136,6 +181,7 @@ int main(void)
     HAL_Delay(10);
   }
 
+  dbg_print("[  ] ICM-42688-PC setup...\r\n");
   /* ICM-42688-PC IMU setup */
   icm.hspi    = &hspi1;
   icm.cs_port = ICM_CS_GPIO_Port;
@@ -158,6 +204,7 @@ int main(void)
     HAL_Delay(10);
   }
 
+  dbg_print("[  ] BMP580 setup...\r\n");
   /* BMP580 barometric pressure sensor setup */
   int8_t bmp_err = BMP580_Setup();
   if (bmp_err != BMP5_OK) {
@@ -176,6 +223,13 @@ int main(void)
     }
   }
   /* USER CODE END 2 */
+
+  dbg_print("[  ] MX_APPE_Init (BLE stack)...\r\n");
+  dbg_blink(7);  /* 7 blinks = entering BLE init */
+  /* Init code for STM32_WPAN */
+  MX_APPE_Init();
+  dbg_blink(8);  /* 8 blinks = BLE init done */
+  dbg_print("[OK] MX_APPE_Init done\r\n");
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -207,6 +261,7 @@ int main(void)
     HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
     HAL_Delay(100);
     /* USER CODE END WHILE */
+    MX_APPE_Process();
 
     /* USER CODE BEGIN 3 */
   }
@@ -222,6 +277,11 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
+  /** Configure LSE Drive Capability
+  */
+  HAL_PWR_EnableBkUpAccess();
+  __HAL_RCC_LSEDRIVE_CONFIG(RCC_LSEDRIVE_MEDIUMHIGH);
+
   /** Configure the main internal regulator output voltage
   */
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
@@ -229,12 +289,17 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_MSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI1
+                              |RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE
+                              |RCC_OSCILLATORTYPE_MSI;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.MSIState = RCC_MSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.MSICalibrationValue = RCC_MSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.MSIClockRange = RCC_MSIRANGE_6;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_MSI;
   RCC_OscInitStruct.PLL.PLLM = RCC_PLLM_DIV1;
@@ -263,6 +328,10 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+
+  /** Enable MSI Auto calibration
+  */
+  HAL_RCCEx_EnableMSIPLLMode();
 }
 
 /**
@@ -275,7 +344,8 @@ void PeriphCommonClock_Config(void)
 
   /** Initializes the peripherals clock
   */
-  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_SMPS;
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_SMPS|RCC_PERIPHCLK_RFWAKEUP;
+  PeriphClkInitStruct.RFWakeUpClockSelection = RCC_RFWKPCLKSOURCE_HSE_DIV1024;
   PeriphClkInitStruct.SmpsClockSelection = RCC_SMPSCLKSOURCE_HSI;
   PeriphClkInitStruct.SmpsDivSelection = RCC_SMPSCLKDIV_RANGE1;
 

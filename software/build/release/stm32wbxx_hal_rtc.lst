@@ -1,0 +1,1518 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_rtc.c"
+  16              		.text
+  17              		.section	.text.HAL_RTC_MspInit,"ax",%progbits
+  18              		.align	1
+  19              		.weak	HAL_RTC_MspInit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_RTC_MspInit:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 7047     		bx	lr
+  30              		.section	.text.HAL_RTC_MspDeInit,"ax",%progbits
+  31              		.align	1
+  32              		.weak	HAL_RTC_MspDeInit
+  33              		.syntax unified
+  34              		.thumb
+  35              		.thumb_func
+  37              	HAL_RTC_MspDeInit:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40              		@ link register save eliminated.
+  41 0000 7047     		bx	lr
+  43              		.section	.text.HAL_RTC_DeactivateAlarm,"ax",%progbits
+  44              		.align	1
+  45              		.global	HAL_RTC_DeactivateAlarm
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  50              	HAL_RTC_DeactivateAlarm:
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53 0000 38B5     		push	{r3, r4, r5, lr}
+  54 0002 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+  55 0006 012B     		cmp	r3, #1
+  56 0008 5DD0     		beq	.L11
+  57 000a 0446     		mov	r4, r0
+  58 000c 0123     		movs	r3, #1
+  59 000e 80F82030 		strb	r3, [r0, #32]
+  60 0012 0223     		movs	r3, #2
+  61 0014 80F82130 		strb	r3, [r0, #33]
+  62 0018 0368     		ldr	r3, [r0]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 2
+
+
+  63 001a CA22     		movs	r2, #202
+  64 001c 5A62     		str	r2, [r3, #36]
+  65 001e 0368     		ldr	r3, [r0]
+  66 0020 5322     		movs	r2, #83
+  67 0022 5A62     		str	r2, [r3, #36]
+  68 0024 B1F5807F 		cmp	r1, #256
+  69 0028 21D0     		beq	.L13
+  70 002a 0268     		ldr	r2, [r0]
+  71 002c 9368     		ldr	r3, [r2, #8]
+  72 002e 23F40073 		bic	r3, r3, #512
+  73 0032 9360     		str	r3, [r2, #8]
+  74 0034 0268     		ldr	r2, [r0]
+  75 0036 9368     		ldr	r3, [r2, #8]
+  76 0038 23F40053 		bic	r3, r3, #8192
+  77 003c 9360     		str	r3, [r2, #8]
+  78 003e FFF7FEFF 		bl	HAL_GetTick
+  79 0042 0546     		mov	r5, r0
+  80              	.L9:
+  81 0044 2368     		ldr	r3, [r4]
+  82 0046 DB68     		ldr	r3, [r3, #12]
+  83 0048 13F0020F 		tst	r3, #2
+  84 004c 31D1     		bne	.L8
+  85 004e FFF7FEFF 		bl	HAL_GetTick
+  86 0052 431B     		subs	r3, r0, r5
+  87 0054 B3F57A7F 		cmp	r3, #1000
+  88 0058 F4D9     		bls	.L9
+  89 005a 2368     		ldr	r3, [r4]
+  90 005c FF22     		movs	r2, #255
+  91 005e 5A62     		str	r2, [r3, #36]
+  92 0060 0320     		movs	r0, #3
+  93 0062 84F82100 		strb	r0, [r4, #33]
+  94 0066 0023     		movs	r3, #0
+  95 0068 84F82030 		strb	r3, [r4, #32]
+  96 006c 2AE0     		b	.L4
+  97              	.L13:
+  98 006e 0268     		ldr	r2, [r0]
+  99 0070 9368     		ldr	r3, [r2, #8]
+ 100 0072 23F48073 		bic	r3, r3, #256
+ 101 0076 9360     		str	r3, [r2, #8]
+ 102 0078 0268     		ldr	r2, [r0]
+ 103 007a 9368     		ldr	r3, [r2, #8]
+ 104 007c 23F48053 		bic	r3, r3, #4096
+ 105 0080 9360     		str	r3, [r2, #8]
+ 106 0082 FFF7FEFF 		bl	HAL_GetTick
+ 107 0086 0546     		mov	r5, r0
+ 108              	.L6:
+ 109 0088 2368     		ldr	r3, [r4]
+ 110 008a DB68     		ldr	r3, [r3, #12]
+ 111 008c 13F0010F 		tst	r3, #1
+ 112 0090 0FD1     		bne	.L8
+ 113 0092 FFF7FEFF 		bl	HAL_GetTick
+ 114 0096 401B     		subs	r0, r0, r5
+ 115 0098 B0F57A7F 		cmp	r0, #1000
+ 116 009c F4D9     		bls	.L6
+ 117 009e 2368     		ldr	r3, [r4]
+ 118 00a0 FF22     		movs	r2, #255
+ 119 00a2 5A62     		str	r2, [r3, #36]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 3
+
+
+ 120 00a4 0320     		movs	r0, #3
+ 121 00a6 84F82100 		strb	r0, [r4, #33]
+ 122 00aa 0023     		movs	r3, #0
+ 123 00ac 84F82030 		strb	r3, [r4, #32]
+ 124 00b0 08E0     		b	.L4
+ 125              	.L8:
+ 126 00b2 2368     		ldr	r3, [r4]
+ 127 00b4 FF22     		movs	r2, #255
+ 128 00b6 5A62     		str	r2, [r3, #36]
+ 129 00b8 0123     		movs	r3, #1
+ 130 00ba 84F82130 		strb	r3, [r4, #33]
+ 131 00be 0020     		movs	r0, #0
+ 132 00c0 84F82000 		strb	r0, [r4, #32]
+ 133              	.L4:
+ 134 00c4 38BD     		pop	{r3, r4, r5, pc}
+ 135              	.L11:
+ 136 00c6 0220     		movs	r0, #2
+ 137 00c8 FCE7     		b	.L4
+ 139              		.section	.text.HAL_RTC_AlarmAEventCallback,"ax",%progbits
+ 140              		.align	1
+ 141              		.weak	HAL_RTC_AlarmAEventCallback
+ 142              		.syntax unified
+ 143              		.thumb
+ 144              		.thumb_func
+ 146              	HAL_RTC_AlarmAEventCallback:
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149              		@ link register save eliminated.
+ 150 0000 7047     		bx	lr
+ 152              		.section	.text.HAL_RTC_AlarmIRQHandler,"ax",%progbits
+ 153              		.align	1
+ 154              		.global	HAL_RTC_AlarmIRQHandler
+ 155              		.syntax unified
+ 156              		.thumb
+ 157              		.thumb_func
+ 159              	HAL_RTC_AlarmIRQHandler:
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 0, uses_anonymous_args = 0
+ 162 0000 10B5     		push	{r4, lr}
+ 163 0002 0446     		mov	r4, r0
+ 164 0004 154B     		ldr	r3, .L21
+ 165 0006 4FF40032 		mov	r2, #131072
+ 166 000a DA60     		str	r2, [r3, #12]
+ 167 000c 0368     		ldr	r3, [r0]
+ 168 000e 9A68     		ldr	r2, [r3, #8]
+ 169 0010 12F4805F 		tst	r2, #4096
+ 170 0014 03D0     		beq	.L16
+ 171 0016 DA68     		ldr	r2, [r3, #12]
+ 172 0018 12F4807F 		tst	r2, #256
+ 173 001c 0CD1     		bne	.L19
+ 174              	.L16:
+ 175 001e 2368     		ldr	r3, [r4]
+ 176 0020 9A68     		ldr	r2, [r3, #8]
+ 177 0022 12F4005F 		tst	r2, #8192
+ 178 0026 03D0     		beq	.L17
+ 179 0028 DA68     		ldr	r2, [r3, #12]
+ 180 002a 12F4007F 		tst	r2, #512
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 4
+
+
+ 181 002e 0BD1     		bne	.L20
+ 182              	.L17:
+ 183 0030 0123     		movs	r3, #1
+ 184 0032 84F82130 		strb	r3, [r4, #33]
+ 185 0036 10BD     		pop	{r4, pc}
+ 186              	.L19:
+ 187 0038 DA68     		ldr	r2, [r3, #12]
+ 188 003a D2B2     		uxtb	r2, r2
+ 189 003c 62F4C072 		orn	r2, r2, #384
+ 190 0040 DA60     		str	r2, [r3, #12]
+ 191 0042 FFF7FEFF 		bl	HAL_RTC_AlarmAEventCallback
+ 192 0046 EAE7     		b	.L16
+ 193              	.L20:
+ 194 0048 DA68     		ldr	r2, [r3, #12]
+ 195 004a D2B2     		uxtb	r2, r2
+ 196 004c 62F42072 		orn	r2, r2, #640
+ 197 0050 DA60     		str	r2, [r3, #12]
+ 198 0052 2046     		mov	r0, r4
+ 199 0054 FFF7FEFF 		bl	HAL_RTCEx_AlarmBEventCallback
+ 200 0058 EAE7     		b	.L17
+ 201              	.L22:
+ 202 005a 00BF     		.align	2
+ 203              	.L21:
+ 204 005c 00080058 		.word	1476397056
+ 206              		.section	.text.HAL_RTC_PollForAlarmAEvent,"ax",%progbits
+ 207              		.align	1
+ 208              		.global	HAL_RTC_PollForAlarmAEvent
+ 209              		.syntax unified
+ 210              		.thumb
+ 211              		.thumb_func
+ 213              	HAL_RTC_PollForAlarmAEvent:
+ 214              		@ args = 0, pretend = 0, frame = 0
+ 215              		@ frame_needed = 0, uses_anonymous_args = 0
+ 216 0000 70B5     		push	{r4, r5, r6, lr}
+ 217 0002 0446     		mov	r4, r0
+ 218 0004 0D46     		mov	r5, r1
+ 219 0006 FFF7FEFF 		bl	HAL_GetTick
+ 220 000a 0646     		mov	r6, r0
+ 221              	.L25:
+ 222 000c 2368     		ldr	r3, [r4]
+ 223 000e DA68     		ldr	r2, [r3, #12]
+ 224 0010 12F4807F 		tst	r2, #256
+ 225 0014 0DD1     		bne	.L30
+ 226 0016 B5F1FF3F 		cmp	r5, #-1
+ 227 001a F7D0     		beq	.L25
+ 228 001c FFF7FEFF 		bl	HAL_GetTick
+ 229 0020 801B     		subs	r0, r0, r6
+ 230 0022 A842     		cmp	r0, r5
+ 231 0024 01D8     		bhi	.L26
+ 232 0026 002D     		cmp	r5, #0
+ 233 0028 F0D1     		bne	.L25
+ 234              	.L26:
+ 235 002a 0320     		movs	r0, #3
+ 236 002c 84F82100 		strb	r0, [r4, #33]
+ 237 0030 08E0     		b	.L27
+ 238              	.L30:
+ 239 0032 DA68     		ldr	r2, [r3, #12]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 5
+
+
+ 240 0034 D2B2     		uxtb	r2, r2
+ 241 0036 62F4C072 		orn	r2, r2, #384
+ 242 003a DA60     		str	r2, [r3, #12]
+ 243 003c 0123     		movs	r3, #1
+ 244 003e 84F82130 		strb	r3, [r4, #33]
+ 245 0042 0020     		movs	r0, #0
+ 246              	.L27:
+ 247 0044 70BD     		pop	{r4, r5, r6, pc}
+ 249              		.section	.text.HAL_RTC_WaitForSynchro,"ax",%progbits
+ 250              		.align	1
+ 251              		.global	HAL_RTC_WaitForSynchro
+ 252              		.syntax unified
+ 253              		.thumb
+ 254              		.thumb_func
+ 256              	HAL_RTC_WaitForSynchro:
+ 257              		@ args = 0, pretend = 0, frame = 0
+ 258              		@ frame_needed = 0, uses_anonymous_args = 0
+ 259 0000 38B5     		push	{r3, r4, r5, lr}
+ 260 0002 0446     		mov	r4, r0
+ 261 0004 0368     		ldr	r3, [r0]
+ 262 0006 0A4A     		ldr	r2, .L38
+ 263 0008 DA60     		str	r2, [r3, #12]
+ 264 000a FFF7FEFF 		bl	HAL_GetTick
+ 265 000e 0546     		mov	r5, r0
+ 266              	.L32:
+ 267 0010 2368     		ldr	r3, [r4]
+ 268 0012 DB68     		ldr	r3, [r3, #12]
+ 269 0014 13F0200F 		tst	r3, #32
+ 270 0018 07D1     		bne	.L37
+ 271 001a FFF7FEFF 		bl	HAL_GetTick
+ 272 001e 401B     		subs	r0, r0, r5
+ 273 0020 B0F57A7F 		cmp	r0, #1000
+ 274 0024 F4D9     		bls	.L32
+ 275 0026 0320     		movs	r0, #3
+ 276 0028 00E0     		b	.L33
+ 277              	.L37:
+ 278 002a 0020     		movs	r0, #0
+ 279              	.L33:
+ 280 002c 38BD     		pop	{r3, r4, r5, pc}
+ 281              	.L39:
+ 282 002e 00BF     		.align	2
+ 283              	.L38:
+ 284 0030 5FFF0100 		.word	130911
+ 286              		.section	.text.HAL_RTC_DST_Add1Hour,"ax",%progbits
+ 287              		.align	1
+ 288              		.global	HAL_RTC_DST_Add1Hour
+ 289              		.syntax unified
+ 290              		.thumb
+ 291              		.thumb_func
+ 293              	HAL_RTC_DST_Add1Hour:
+ 294              		@ args = 0, pretend = 0, frame = 0
+ 295              		@ frame_needed = 0, uses_anonymous_args = 0
+ 296              		@ link register save eliminated.
+ 297 0000 0368     		ldr	r3, [r0]
+ 298 0002 CA22     		movs	r2, #202
+ 299 0004 5A62     		str	r2, [r3, #36]
+ 300 0006 0368     		ldr	r3, [r0]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 6
+
+
+ 301 0008 5322     		movs	r2, #83
+ 302 000a 5A62     		str	r2, [r3, #36]
+ 303 000c 0268     		ldr	r2, [r0]
+ 304 000e 9368     		ldr	r3, [r2, #8]
+ 305 0010 43F48033 		orr	r3, r3, #65536
+ 306 0014 9360     		str	r3, [r2, #8]
+ 307 0016 0368     		ldr	r3, [r0]
+ 308 0018 FF22     		movs	r2, #255
+ 309 001a 5A62     		str	r2, [r3, #36]
+ 310 001c 7047     		bx	lr
+ 312              		.section	.text.HAL_RTC_DST_Sub1Hour,"ax",%progbits
+ 313              		.align	1
+ 314              		.global	HAL_RTC_DST_Sub1Hour
+ 315              		.syntax unified
+ 316              		.thumb
+ 317              		.thumb_func
+ 319              	HAL_RTC_DST_Sub1Hour:
+ 320              		@ args = 0, pretend = 0, frame = 0
+ 321              		@ frame_needed = 0, uses_anonymous_args = 0
+ 322              		@ link register save eliminated.
+ 323 0000 0368     		ldr	r3, [r0]
+ 324 0002 CA22     		movs	r2, #202
+ 325 0004 5A62     		str	r2, [r3, #36]
+ 326 0006 0368     		ldr	r3, [r0]
+ 327 0008 5322     		movs	r2, #83
+ 328 000a 5A62     		str	r2, [r3, #36]
+ 329 000c 0268     		ldr	r2, [r0]
+ 330 000e 9368     		ldr	r3, [r2, #8]
+ 331 0010 43F40033 		orr	r3, r3, #131072
+ 332 0014 9360     		str	r3, [r2, #8]
+ 333 0016 0368     		ldr	r3, [r0]
+ 334 0018 FF22     		movs	r2, #255
+ 335 001a 5A62     		str	r2, [r3, #36]
+ 336 001c 7047     		bx	lr
+ 338              		.section	.text.HAL_RTC_DST_SetStoreOperation,"ax",%progbits
+ 339              		.align	1
+ 340              		.global	HAL_RTC_DST_SetStoreOperation
+ 341              		.syntax unified
+ 342              		.thumb
+ 343              		.thumb_func
+ 345              	HAL_RTC_DST_SetStoreOperation:
+ 346              		@ args = 0, pretend = 0, frame = 0
+ 347              		@ frame_needed = 0, uses_anonymous_args = 0
+ 348              		@ link register save eliminated.
+ 349 0000 0368     		ldr	r3, [r0]
+ 350 0002 CA22     		movs	r2, #202
+ 351 0004 5A62     		str	r2, [r3, #36]
+ 352 0006 0368     		ldr	r3, [r0]
+ 353 0008 5322     		movs	r2, #83
+ 354 000a 5A62     		str	r2, [r3, #36]
+ 355 000c 0268     		ldr	r2, [r0]
+ 356 000e 9368     		ldr	r3, [r2, #8]
+ 357 0010 43F48023 		orr	r3, r3, #262144
+ 358 0014 9360     		str	r3, [r2, #8]
+ 359 0016 0368     		ldr	r3, [r0]
+ 360 0018 FF22     		movs	r2, #255
+ 361 001a 5A62     		str	r2, [r3, #36]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 7
+
+
+ 362 001c 7047     		bx	lr
+ 364              		.section	.text.HAL_RTC_DST_ClearStoreOperation,"ax",%progbits
+ 365              		.align	1
+ 366              		.global	HAL_RTC_DST_ClearStoreOperation
+ 367              		.syntax unified
+ 368              		.thumb
+ 369              		.thumb_func
+ 371              	HAL_RTC_DST_ClearStoreOperation:
+ 372              		@ args = 0, pretend = 0, frame = 0
+ 373              		@ frame_needed = 0, uses_anonymous_args = 0
+ 374              		@ link register save eliminated.
+ 375 0000 0368     		ldr	r3, [r0]
+ 376 0002 CA22     		movs	r2, #202
+ 377 0004 5A62     		str	r2, [r3, #36]
+ 378 0006 0368     		ldr	r3, [r0]
+ 379 0008 5322     		movs	r2, #83
+ 380 000a 5A62     		str	r2, [r3, #36]
+ 381 000c 0268     		ldr	r2, [r0]
+ 382 000e 9368     		ldr	r3, [r2, #8]
+ 383 0010 23F48023 		bic	r3, r3, #262144
+ 384 0014 9360     		str	r3, [r2, #8]
+ 385 0016 0368     		ldr	r3, [r0]
+ 386 0018 FF22     		movs	r2, #255
+ 387 001a 5A62     		str	r2, [r3, #36]
+ 388 001c 7047     		bx	lr
+ 390              		.section	.text.HAL_RTC_DST_ReadStoreOperation,"ax",%progbits
+ 391              		.align	1
+ 392              		.global	HAL_RTC_DST_ReadStoreOperation
+ 393              		.syntax unified
+ 394              		.thumb
+ 395              		.thumb_func
+ 397              	HAL_RTC_DST_ReadStoreOperation:
+ 398              		@ args = 0, pretend = 0, frame = 0
+ 399              		@ frame_needed = 0, uses_anonymous_args = 0
+ 400              		@ link register save eliminated.
+ 401 0000 0368     		ldr	r3, [r0]
+ 402 0002 9868     		ldr	r0, [r3, #8]
+ 403 0004 00F48020 		and	r0, r0, #262144
+ 404 0008 7047     		bx	lr
+ 406              		.section	.text.HAL_RTC_GetState,"ax",%progbits
+ 407              		.align	1
+ 408              		.global	HAL_RTC_GetState
+ 409              		.syntax unified
+ 410              		.thumb
+ 411              		.thumb_func
+ 413              	HAL_RTC_GetState:
+ 414              		@ args = 0, pretend = 0, frame = 0
+ 415              		@ frame_needed = 0, uses_anonymous_args = 0
+ 416              		@ link register save eliminated.
+ 417 0000 90F82100 		ldrb	r0, [r0, #33]	@ zero_extendqisi2
+ 418 0004 7047     		bx	lr
+ 420              		.section	.text.RTC_EnterInitMode,"ax",%progbits
+ 421              		.align	1
+ 422              		.global	RTC_EnterInitMode
+ 423              		.syntax unified
+ 424              		.thumb
+ 425              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 8
+
+
+ 427              	RTC_EnterInitMode:
+ 428              		@ args = 0, pretend = 0, frame = 0
+ 429              		@ frame_needed = 0, uses_anonymous_args = 0
+ 430 0000 70B5     		push	{r4, r5, r6, lr}
+ 431 0002 0368     		ldr	r3, [r0]
+ 432 0004 DA68     		ldr	r2, [r3, #12]
+ 433 0006 12F0400F 		tst	r2, #64
+ 434 000a 02D0     		beq	.L53
+ 435 000c 0025     		movs	r5, #0
+ 436              	.L47:
+ 437 000e 2846     		mov	r0, r5
+ 438 0010 70BD     		pop	{r4, r5, r6, pc}
+ 439              	.L53:
+ 440 0012 0446     		mov	r4, r0
+ 441 0014 DA68     		ldr	r2, [r3, #12]
+ 442 0016 42F08002 		orr	r2, r2, #128
+ 443 001a DA60     		str	r2, [r3, #12]
+ 444 001c FFF7FEFF 		bl	HAL_GetTick
+ 445 0020 0646     		mov	r6, r0
+ 446 0022 0025     		movs	r5, #0
+ 447              	.L49:
+ 448 0024 2368     		ldr	r3, [r4]
+ 449 0026 DB68     		ldr	r3, [r3, #12]
+ 450 0028 13F0400F 		tst	r3, #64
+ 451 002c EFD1     		bne	.L47
+ 452 002e 002D     		cmp	r5, #0
+ 453 0030 EDD1     		bne	.L47
+ 454 0032 FFF7FEFF 		bl	HAL_GetTick
+ 455 0036 831B     		subs	r3, r0, r6
+ 456 0038 B3F57A7F 		cmp	r3, #1000
+ 457 003c F2D9     		bls	.L49
+ 458 003e 0423     		movs	r3, #4
+ 459 0040 84F82130 		strb	r3, [r4, #33]
+ 460 0044 0125     		movs	r5, #1
+ 461 0046 EDE7     		b	.L49
+ 463              		.section	.text.RTC_ExitInitMode,"ax",%progbits
+ 464              		.align	1
+ 465              		.global	RTC_ExitInitMode
+ 466              		.syntax unified
+ 467              		.thumb
+ 468              		.thumb_func
+ 470              	RTC_ExitInitMode:
+ 471              		@ args = 0, pretend = 0, frame = 0
+ 472              		@ frame_needed = 0, uses_anonymous_args = 0
+ 473 0000 0268     		ldr	r2, [r0]
+ 474 0002 D368     		ldr	r3, [r2, #12]
+ 475 0004 23F08003 		bic	r3, r3, #128
+ 476 0008 D360     		str	r3, [r2, #12]
+ 477 000a 0368     		ldr	r3, [r0]
+ 478 000c 9B68     		ldr	r3, [r3, #8]
+ 479 000e 13F0200F 		tst	r3, #32
+ 480 0012 01D0     		beq	.L61
+ 481 0014 0020     		movs	r0, #0
+ 482 0016 7047     		bx	lr
+ 483              	.L61:
+ 484 0018 10B5     		push	{r4, lr}
+ 485 001a 0446     		mov	r4, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 9
+
+
+ 486 001c FFF7FEFF 		bl	HAL_RTC_WaitForSynchro
+ 487 0020 18B1     		cbz	r0, .L55
+ 488 0022 0423     		movs	r3, #4
+ 489 0024 84F82130 		strb	r3, [r4, #33]
+ 490 0028 0120     		movs	r0, #1
+ 491              	.L55:
+ 492 002a 10BD     		pop	{r4, pc}
+ 494              		.section	.text.HAL_RTC_Init,"ax",%progbits
+ 495              		.align	1
+ 496              		.global	HAL_RTC_Init
+ 497              		.syntax unified
+ 498              		.thumb
+ 499              		.thumb_func
+ 501              	HAL_RTC_Init:
+ 502              		@ args = 0, pretend = 0, frame = 0
+ 503              		@ frame_needed = 0, uses_anonymous_args = 0
+ 504 0000 0028     		cmp	r0, #0
+ 505 0002 50D0     		beq	.L67
+ 506 0004 38B5     		push	{r3, r4, r5, lr}
+ 507 0006 0446     		mov	r4, r0
+ 508 0008 90F82130 		ldrb	r3, [r0, #33]	@ zero_extendqisi2
+ 509 000c 63B1     		cbz	r3, .L73
+ 510              	.L64:
+ 511 000e 0223     		movs	r3, #2
+ 512 0010 84F82130 		strb	r3, [r4, #33]
+ 513 0014 2368     		ldr	r3, [r4]
+ 514 0016 DA68     		ldr	r2, [r3, #12]
+ 515 0018 12F0100F 		tst	r2, #16
+ 516 001c 09D0     		beq	.L74
+ 517 001e 0020     		movs	r0, #0
+ 518              	.L65:
+ 519 0020 0123     		movs	r3, #1
+ 520 0022 84F82130 		strb	r3, [r4, #33]
+ 521              	.L63:
+ 522 0026 38BD     		pop	{r3, r4, r5, pc}
+ 523              	.L73:
+ 524 0028 80F82030 		strb	r3, [r0, #32]
+ 525 002c FFF7FEFF 		bl	HAL_RTC_MspInit
+ 526 0030 EDE7     		b	.L64
+ 527              	.L74:
+ 528 0032 CA22     		movs	r2, #202
+ 529 0034 5A62     		str	r2, [r3, #36]
+ 530 0036 2368     		ldr	r3, [r4]
+ 531 0038 5322     		movs	r2, #83
+ 532 003a 5A62     		str	r2, [r3, #36]
+ 533 003c 2046     		mov	r0, r4
+ 534 003e FFF7FEFF 		bl	RTC_EnterInitMode
+ 535 0042 28B1     		cbz	r0, .L75
+ 536              	.L66:
+ 537 0044 2368     		ldr	r3, [r4]
+ 538 0046 FF22     		movs	r2, #255
+ 539 0048 5A62     		str	r2, [r3, #36]
+ 540 004a 0028     		cmp	r0, #0
+ 541 004c EBD1     		bne	.L63
+ 542 004e E7E7     		b	.L65
+ 543              	.L75:
+ 544 0050 2268     		ldr	r2, [r4]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 10
+
+
+ 545 0052 9368     		ldr	r3, [r2, #8]
+ 546 0054 23F4E003 		bic	r3, r3, #7340032
+ 547 0058 23F04003 		bic	r3, r3, #64
+ 548 005c 9360     		str	r3, [r2, #8]
+ 549 005e 2168     		ldr	r1, [r4]
+ 550 0060 8A68     		ldr	r2, [r1, #8]
+ 551 0062 6368     		ldr	r3, [r4, #4]
+ 552 0064 2069     		ldr	r0, [r4, #16]
+ 553 0066 0343     		orrs	r3, r3, r0
+ 554 0068 A069     		ldr	r0, [r4, #24]
+ 555 006a 0343     		orrs	r3, r3, r0
+ 556 006c 1343     		orrs	r3, r3, r2
+ 557 006e 8B60     		str	r3, [r1, #8]
+ 558 0070 2368     		ldr	r3, [r4]
+ 559 0072 E268     		ldr	r2, [r4, #12]
+ 560 0074 1A61     		str	r2, [r3, #16]
+ 561 0076 2268     		ldr	r2, [r4]
+ 562 0078 1369     		ldr	r3, [r2, #16]
+ 563 007a A168     		ldr	r1, [r4, #8]
+ 564 007c 43EA0143 		orr	r3, r3, r1, lsl #16
+ 565 0080 1361     		str	r3, [r2, #16]
+ 566 0082 2046     		mov	r0, r4
+ 567 0084 FFF7FEFF 		bl	RTC_ExitInitMode
+ 568 0088 0028     		cmp	r0, #0
+ 569 008a DBD1     		bne	.L66
+ 570 008c 2268     		ldr	r2, [r4]
+ 571 008e D36C     		ldr	r3, [r2, #76]
+ 572 0090 23F00303 		bic	r3, r3, #3
+ 573 0094 D364     		str	r3, [r2, #76]
+ 574 0096 2168     		ldr	r1, [r4]
+ 575 0098 CB6C     		ldr	r3, [r1, #76]
+ 576 009a E269     		ldr	r2, [r4, #28]
+ 577 009c 6569     		ldr	r5, [r4, #20]
+ 578 009e 2A43     		orrs	r2, r2, r5
+ 579 00a0 1343     		orrs	r3, r3, r2
+ 580 00a2 CB64     		str	r3, [r1, #76]
+ 581 00a4 CEE7     		b	.L66
+ 582              	.L67:
+ 583 00a6 0120     		movs	r0, #1
+ 584 00a8 7047     		bx	lr
+ 586              		.section	.text.HAL_RTC_DeInit,"ax",%progbits
+ 587              		.align	1
+ 588              		.global	HAL_RTC_DeInit
+ 589              		.syntax unified
+ 590              		.thumb
+ 591              		.thumb_func
+ 593              	HAL_RTC_DeInit:
+ 594              		@ args = 0, pretend = 0, frame = 0
+ 595              		@ frame_needed = 0, uses_anonymous_args = 0
+ 596 0000 38B5     		push	{r3, r4, r5, lr}
+ 597 0002 0446     		mov	r4, r0
+ 598 0004 0223     		movs	r3, #2
+ 599 0006 80F82130 		strb	r3, [r0, #33]
+ 600 000a 0368     		ldr	r3, [r0]
+ 601 000c CA22     		movs	r2, #202
+ 602 000e 5A62     		str	r2, [r3, #36]
+ 603 0010 0368     		ldr	r3, [r0]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 11
+
+
+ 604 0012 5322     		movs	r2, #83
+ 605 0014 5A62     		str	r2, [r3, #36]
+ 606 0016 FFF7FEFF 		bl	RTC_EnterInitMode
+ 607 001a 0546     		mov	r5, r0
+ 608 001c 40B1     		cbz	r0, .L80
+ 609              	.L77:
+ 610 001e 2368     		ldr	r3, [r4]
+ 611 0020 FF22     		movs	r2, #255
+ 612 0022 5A62     		str	r2, [r3, #36]
+ 613 0024 25B3     		cbz	r5, .L81
+ 614              	.L78:
+ 615 0026 0023     		movs	r3, #0
+ 616 0028 84F82030 		strb	r3, [r4, #32]
+ 617 002c 2846     		mov	r0, r5
+ 618 002e 38BD     		pop	{r3, r4, r5, pc}
+ 619              	.L80:
+ 620 0030 2268     		ldr	r2, [r4]
+ 621 0032 1060     		str	r0, [r2]
+ 622 0034 2268     		ldr	r2, [r4]
+ 623 0036 42F20111 		movw	r1, #8449
+ 624 003a 5160     		str	r1, [r2, #4]
+ 625 003c 2268     		ldr	r2, [r4]
+ 626 003e 9060     		str	r0, [r2, #8]
+ 627 0040 2268     		ldr	r2, [r4]
+ 628 0042 4FF6FF71 		movw	r1, #65535
+ 629 0046 5161     		str	r1, [r2, #20]
+ 630 0048 2268     		ldr	r2, [r4]
+ 631 004a 0F49     		ldr	r1, .L82
+ 632 004c 1161     		str	r1, [r2, #16]
+ 633 004e 2268     		ldr	r2, [r4]
+ 634 0050 D061     		str	r0, [r2, #28]
+ 635 0052 2268     		ldr	r2, [r4]
+ 636 0054 1062     		str	r0, [r2, #32]
+ 637 0056 2268     		ldr	r2, [r4]
+ 638 0058 D063     		str	r0, [r2, #60]
+ 639 005a 2268     		ldr	r2, [r4]
+ 640 005c D062     		str	r0, [r2, #44]
+ 641 005e 2268     		ldr	r2, [r4]
+ 642 0060 5064     		str	r0, [r2, #68]
+ 643 0062 2268     		ldr	r2, [r4]
+ 644 0064 9064     		str	r0, [r2, #72]
+ 645 0066 2046     		mov	r0, r4
+ 646 0068 FFF7FEFF 		bl	RTC_ExitInitMode
+ 647 006c 0546     		mov	r5, r0
+ 648 006e D6E7     		b	.L77
+ 649              	.L81:
+ 650 0070 2368     		ldr	r3, [r4]
+ 651 0072 1D64     		str	r5, [r3, #64]
+ 652 0074 2368     		ldr	r3, [r4]
+ 653 0076 DD64     		str	r5, [r3, #76]
+ 654 0078 2046     		mov	r0, r4
+ 655 007a FFF7FEFF 		bl	HAL_RTC_MspDeInit
+ 656 007e 4FF00003 		mov	r3, #0
+ 657 0082 84F82130 		strb	r3, [r4, #33]
+ 658 0086 CEE7     		b	.L78
+ 659              	.L83:
+ 660              		.align	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 12
+
+
+ 661              	.L82:
+ 662 0088 FF007F00 		.word	8323327
+ 664              		.section	.text.RTC_ByteToBcd2,"ax",%progbits
+ 665              		.align	1
+ 666              		.global	RTC_ByteToBcd2
+ 667              		.syntax unified
+ 668              		.thumb
+ 669              		.thumb_func
+ 671              	RTC_ByteToBcd2:
+ 672              		@ args = 0, pretend = 0, frame = 0
+ 673              		@ frame_needed = 0, uses_anonymous_args = 0
+ 674              		@ link register save eliminated.
+ 675 0000 0023     		movs	r3, #0
+ 676 0002 02E0     		b	.L85
+ 677              	.L86:
+ 678 0004 0133     		adds	r3, r3, #1
+ 679 0006 0A38     		subs	r0, r0, #10
+ 680 0008 C0B2     		uxtb	r0, r0
+ 681              	.L85:
+ 682 000a 0928     		cmp	r0, #9
+ 683 000c FAD8     		bhi	.L86
+ 684 000e 1B01     		lsls	r3, r3, #4
+ 685 0010 DBB2     		uxtb	r3, r3
+ 686 0012 1843     		orrs	r0, r0, r3
+ 687 0014 7047     		bx	lr
+ 689              		.section	.text.HAL_RTC_SetTime,"ax",%progbits
+ 690              		.align	1
+ 691              		.global	HAL_RTC_SetTime
+ 692              		.syntax unified
+ 693              		.thumb
+ 694              		.thumb_func
+ 696              	HAL_RTC_SetTime:
+ 697              		@ args = 0, pretend = 0, frame = 0
+ 698              		@ frame_needed = 0, uses_anonymous_args = 0
+ 699 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 700 0004 012B     		cmp	r3, #1
+ 701 0006 61D0     		beq	.L94
+ 702 0008 70B5     		push	{r4, r5, r6, lr}
+ 703 000a 0446     		mov	r4, r0
+ 704 000c 0D46     		mov	r5, r1
+ 705 000e 0123     		movs	r3, #1
+ 706 0010 80F82030 		strb	r3, [r0, #32]
+ 707 0014 0223     		movs	r3, #2
+ 708 0016 80F82130 		strb	r3, [r0, #33]
+ 709 001a 4ABB     		cbnz	r2, .L89
+ 710 001c 0368     		ldr	r3, [r0]
+ 711 001e 9B68     		ldr	r3, [r3, #8]
+ 712 0020 13F0400F 		tst	r3, #64
+ 713 0024 00D1     		bne	.L90
+ 714 0026 CA70     		strb	r2, [r1, #3]
+ 715              	.L90:
+ 716 0028 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
+ 717 002a FFF7FEFF 		bl	RTC_ByteToBcd2
+ 718 002e 0304     		lsls	r3, r0, #16
+ 719 0030 1E46     		mov	r6, r3
+ 720 0032 6878     		ldrb	r0, [r5, #1]	@ zero_extendqisi2
+ 721 0034 FFF7FEFF 		bl	RTC_ByteToBcd2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 13
+
+
+ 722 0038 46EA0023 		orr	r3, r6, r0, lsl #8
+ 723 003c 1E46     		mov	r6, r3
+ 724 003e A878     		ldrb	r0, [r5, #2]	@ zero_extendqisi2
+ 725 0040 FFF7FEFF 		bl	RTC_ByteToBcd2
+ 726 0044 3043     		orrs	r0, r0, r6
+ 727 0046 EB78     		ldrb	r3, [r5, #3]	@ zero_extendqisi2
+ 728 0048 40EA8353 		orr	r3, r0, r3, lsl #22
+ 729 004c 1E46     		mov	r6, r3
+ 730              	.L91:
+ 731 004e 2368     		ldr	r3, [r4]
+ 732 0050 CA22     		movs	r2, #202
+ 733 0052 5A62     		str	r2, [r3, #36]
+ 734 0054 2368     		ldr	r3, [r4]
+ 735 0056 5322     		movs	r2, #83
+ 736 0058 5A62     		str	r2, [r3, #36]
+ 737 005a 2046     		mov	r0, r4
+ 738 005c FFF7FEFF 		bl	RTC_EnterInitMode
+ 739 0060 C8B1     		cbz	r0, .L99
+ 740              	.L93:
+ 741 0062 2368     		ldr	r3, [r4]
+ 742 0064 FF22     		movs	r2, #255
+ 743 0066 5A62     		str	r2, [r3, #36]
+ 744 0068 0023     		movs	r3, #0
+ 745 006a 84F82030 		strb	r3, [r4, #32]
+ 746 006e 70BD     		pop	{r4, r5, r6, pc}
+ 747              	.L89:
+ 748 0070 0368     		ldr	r3, [r0]
+ 749 0072 9B68     		ldr	r3, [r3, #8]
+ 750 0074 13F0400F 		tst	r3, #64
+ 751 0078 01D1     		bne	.L92
+ 752 007a 0023     		movs	r3, #0
+ 753 007c CB70     		strb	r3, [r1, #3]
+ 754              	.L92:
+ 755 007e 2A78     		ldrb	r2, [r5]	@ zero_extendqisi2
+ 756 0080 6B78     		ldrb	r3, [r5, #1]	@ zero_extendqisi2
+ 757 0082 1B02     		lsls	r3, r3, #8
+ 758 0084 43EA0243 		orr	r3, r3, r2, lsl #16
+ 759 0088 AA78     		ldrb	r2, [r5, #2]	@ zero_extendqisi2
+ 760 008a 1343     		orrs	r3, r3, r2
+ 761 008c EA78     		ldrb	r2, [r5, #3]	@ zero_extendqisi2
+ 762 008e 43EA8253 		orr	r3, r3, r2, lsl #22
+ 763 0092 1E46     		mov	r6, r3
+ 764 0094 DBE7     		b	.L91
+ 765              	.L99:
+ 766 0096 2268     		ldr	r2, [r4]
+ 767 0098 06F07F33 		and	r3, r6, #2139062143
+ 768 009c 23F0FE43 		bic	r3, r3, #2130706432
+ 769 00a0 1360     		str	r3, [r2]
+ 770 00a2 2268     		ldr	r2, [r4]
+ 771 00a4 9368     		ldr	r3, [r2, #8]
+ 772 00a6 23F48023 		bic	r3, r3, #262144
+ 773 00aa 9360     		str	r3, [r2, #8]
+ 774 00ac 2168     		ldr	r1, [r4]
+ 775 00ae 8B68     		ldr	r3, [r1, #8]
+ 776 00b0 EA68     		ldr	r2, [r5, #12]
+ 777 00b2 2869     		ldr	r0, [r5, #16]
+ 778 00b4 0243     		orrs	r2, r2, r0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 14
+
+
+ 779 00b6 1343     		orrs	r3, r3, r2
+ 780 00b8 8B60     		str	r3, [r1, #8]
+ 781 00ba 2046     		mov	r0, r4
+ 782 00bc FFF7FEFF 		bl	RTC_ExitInitMode
+ 783 00c0 0028     		cmp	r0, #0
+ 784 00c2 CED1     		bne	.L93
+ 785 00c4 0123     		movs	r3, #1
+ 786 00c6 84F82130 		strb	r3, [r4, #33]
+ 787 00ca CAE7     		b	.L93
+ 788              	.L94:
+ 789 00cc 0220     		movs	r0, #2
+ 790 00ce 7047     		bx	lr
+ 792              		.section	.text.HAL_RTC_SetDate,"ax",%progbits
+ 793              		.align	1
+ 794              		.global	HAL_RTC_SetDate
+ 795              		.syntax unified
+ 796              		.thumb
+ 797              		.thumb_func
+ 799              	HAL_RTC_SetDate:
+ 800              		@ args = 0, pretend = 0, frame = 0
+ 801              		@ frame_needed = 0, uses_anonymous_args = 0
+ 802 0000 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 803 0004 012B     		cmp	r3, #1
+ 804 0006 4ED0     		beq	.L106
+ 805 0008 70B5     		push	{r4, r5, r6, lr}
+ 806 000a 0446     		mov	r4, r0
+ 807 000c 0D46     		mov	r5, r1
+ 808 000e 0123     		movs	r3, #1
+ 809 0010 80F82030 		strb	r3, [r0, #32]
+ 810 0014 0223     		movs	r3, #2
+ 811 0016 80F82130 		strb	r3, [r0, #33]
+ 812 001a D2B1     		cbz	r2, .L102
+ 813 001c CA78     		ldrb	r2, [r1, #3]	@ zero_extendqisi2
+ 814 001e 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
+ 815 0020 1B02     		lsls	r3, r3, #8
+ 816 0022 43EA0243 		orr	r3, r3, r2, lsl #16
+ 817 0026 8A78     		ldrb	r2, [r1, #2]	@ zero_extendqisi2
+ 818 0028 1343     		orrs	r3, r3, r2
+ 819 002a 0A78     		ldrb	r2, [r1]	@ zero_extendqisi2
+ 820 002c 43EA4235 		orr	r5, r3, r2, lsl #13
+ 821              	.L103:
+ 822 0030 2368     		ldr	r3, [r4]
+ 823 0032 CA22     		movs	r2, #202
+ 824 0034 5A62     		str	r2, [r3, #36]
+ 825 0036 2368     		ldr	r3, [r4]
+ 826 0038 5322     		movs	r2, #83
+ 827 003a 5A62     		str	r2, [r3, #36]
+ 828 003c 2046     		mov	r0, r4
+ 829 003e FFF7FEFF 		bl	RTC_EnterInitMode
+ 830 0042 08B3     		cbz	r0, .L111
+ 831              	.L105:
+ 832 0044 2368     		ldr	r3, [r4]
+ 833 0046 FF22     		movs	r2, #255
+ 834 0048 5A62     		str	r2, [r3, #36]
+ 835 004a 0023     		movs	r3, #0
+ 836 004c 84F82030 		strb	r3, [r4, #32]
+ 837 0050 70BD     		pop	{r4, r5, r6, pc}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 15
+
+
+ 838              	.L102:
+ 839 0052 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
+ 840 0054 13F0100F 		tst	r3, #16
+ 841 0058 03D0     		beq	.L104
+ 842 005a 03F0EF03 		and	r3, r3, #239
+ 843 005e 0A33     		adds	r3, r3, #10
+ 844 0060 4B70     		strb	r3, [r1, #1]
+ 845              	.L104:
+ 846 0062 E878     		ldrb	r0, [r5, #3]	@ zero_extendqisi2
+ 847 0064 FFF7FEFF 		bl	RTC_ByteToBcd2
+ 848 0068 0304     		lsls	r3, r0, #16
+ 849 006a 1E46     		mov	r6, r3
+ 850 006c 6878     		ldrb	r0, [r5, #1]	@ zero_extendqisi2
+ 851 006e FFF7FEFF 		bl	RTC_ByteToBcd2
+ 852 0072 46EA0023 		orr	r3, r6, r0, lsl #8
+ 853 0076 1E46     		mov	r6, r3
+ 854 0078 A878     		ldrb	r0, [r5, #2]	@ zero_extendqisi2
+ 855 007a FFF7FEFF 		bl	RTC_ByteToBcd2
+ 856 007e 3043     		orrs	r0, r0, r6
+ 857 0080 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
+ 858 0082 40EA4335 		orr	r5, r0, r3, lsl #13
+ 859 0086 D3E7     		b	.L103
+ 860              	.L111:
+ 861 0088 2268     		ldr	r2, [r4]
+ 862 008a 25F07F43 		bic	r3, r5, #-16777216
+ 863 008e 23F0C003 		bic	r3, r3, #192
+ 864 0092 5360     		str	r3, [r2, #4]
+ 865 0094 2046     		mov	r0, r4
+ 866 0096 FFF7FEFF 		bl	RTC_ExitInitMode
+ 867 009a 0028     		cmp	r0, #0
+ 868 009c D2D1     		bne	.L105
+ 869 009e 0123     		movs	r3, #1
+ 870 00a0 84F82130 		strb	r3, [r4, #33]
+ 871 00a4 CEE7     		b	.L105
+ 872              	.L106:
+ 873 00a6 0220     		movs	r0, #2
+ 874 00a8 7047     		bx	lr
+ 876              		.section	.text.HAL_RTC_SetAlarm,"ax",%progbits
+ 877              		.align	1
+ 878              		.global	HAL_RTC_SetAlarm
+ 879              		.syntax unified
+ 880              		.thumb
+ 881              		.thumb_func
+ 883              	HAL_RTC_SetAlarm:
+ 884              		@ args = 0, pretend = 0, frame = 0
+ 885              		@ frame_needed = 0, uses_anonymous_args = 0
+ 886 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 887 0002 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 888 0006 012B     		cmp	r3, #1
+ 889 0008 00F0C280 		beq	.L124
+ 890 000c 0446     		mov	r4, r0
+ 891 000e 0D46     		mov	r5, r1
+ 892 0010 0123     		movs	r3, #1
+ 893 0012 80F82030 		strb	r3, [r0, #32]
+ 894 0016 0223     		movs	r3, #2
+ 895 0018 80F82130 		strb	r3, [r0, #33]
+ 896 001c 002A     		cmp	r2, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 16
+
+
+ 897 001e 59D1     		bne	.L114
+ 898 0020 0368     		ldr	r3, [r0]
+ 899 0022 9B68     		ldr	r3, [r3, #8]
+ 900 0024 13F0400F 		tst	r3, #64
+ 901 0028 00D1     		bne	.L115
+ 902 002a CA70     		strb	r2, [r1, #3]
+ 903              	.L115:
+ 904 002c 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
+ 905 002e FFF7FEFF 		bl	RTC_ByteToBcd2
+ 906 0032 0304     		lsls	r3, r0, #16
+ 907 0034 1E46     		mov	r6, r3
+ 908 0036 6878     		ldrb	r0, [r5, #1]	@ zero_extendqisi2
+ 909 0038 FFF7FEFF 		bl	RTC_ByteToBcd2
+ 910 003c 46EA0023 		orr	r3, r6, r0, lsl #8
+ 911 0040 1E46     		mov	r6, r3
+ 912 0042 A878     		ldrb	r0, [r5, #2]	@ zero_extendqisi2
+ 913 0044 FFF7FEFF 		bl	RTC_ByteToBcd2
+ 914 0048 3043     		orrs	r0, r0, r6
+ 915 004a EB78     		ldrb	r3, [r5, #3]	@ zero_extendqisi2
+ 916 004c 40EA8353 		orr	r3, r0, r3, lsl #22
+ 917 0050 1E46     		mov	r6, r3
+ 918 0052 95F82000 		ldrb	r0, [r5, #32]	@ zero_extendqisi2
+ 919 0056 FFF7FEFF 		bl	RTC_ByteToBcd2
+ 920 005a 46EA0060 		orr	r0, r6, r0, lsl #24
+ 921 005e EB69     		ldr	r3, [r5, #28]
+ 922 0060 1843     		orrs	r0, r0, r3
+ 923 0062 6B69     		ldr	r3, [r5, #20]
+ 924 0064 0343     		orrs	r3, r3, r0
+ 925 0066 1E46     		mov	r6, r3
+ 926              	.L116:
+ 927 0068 6A68     		ldr	r2, [r5, #4]
+ 928 006a AB69     		ldr	r3, [r5, #24]
+ 929 006c 1343     		orrs	r3, r3, r2
+ 930 006e 1F46     		mov	r7, r3
+ 931 0070 2368     		ldr	r3, [r4]
+ 932 0072 CA22     		movs	r2, #202
+ 933 0074 5A62     		str	r2, [r3, #36]
+ 934 0076 2368     		ldr	r3, [r4]
+ 935 0078 5322     		movs	r2, #83
+ 936 007a 5A62     		str	r2, [r3, #36]
+ 937 007c 6B6A     		ldr	r3, [r5, #36]
+ 938 007e B3F5807F 		cmp	r3, #256
+ 939 0082 42D0     		beq	.L126
+ 940 0084 2268     		ldr	r2, [r4]
+ 941 0086 9368     		ldr	r3, [r2, #8]
+ 942 0088 23F40073 		bic	r3, r3, #512
+ 943 008c 9360     		str	r3, [r2, #8]
+ 944 008e 2268     		ldr	r2, [r4]
+ 945 0090 9368     		ldr	r3, [r2, #8]
+ 946 0092 23F40053 		bic	r3, r3, #8192
+ 947 0096 9360     		str	r3, [r2, #8]
+ 948 0098 2268     		ldr	r2, [r4]
+ 949 009a D368     		ldr	r3, [r2, #12]
+ 950 009c DBB2     		uxtb	r3, r3
+ 951 009e 63F42073 		orn	r3, r3, #640
+ 952 00a2 D360     		str	r3, [r2, #12]
+ 953 00a4 FFF7FEFF 		bl	HAL_GetTick
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 17
+
+
+ 954 00a8 0546     		mov	r5, r0
+ 955              	.L122:
+ 956 00aa 2368     		ldr	r3, [r4]
+ 957 00ac DA68     		ldr	r2, [r3, #12]
+ 958 00ae 12F0020F 		tst	r2, #2
+ 959 00b2 5BD1     		bne	.L127
+ 960 00b4 FFF7FEFF 		bl	HAL_GetTick
+ 961 00b8 401B     		subs	r0, r0, r5
+ 962 00ba B0F57A7F 		cmp	r0, #1000
+ 963 00be F4D9     		bls	.L122
+ 964 00c0 2368     		ldr	r3, [r4]
+ 965 00c2 FF22     		movs	r2, #255
+ 966 00c4 5A62     		str	r2, [r3, #36]
+ 967 00c6 0320     		movs	r0, #3
+ 968 00c8 84F82100 		strb	r0, [r4, #33]
+ 969 00cc 0023     		movs	r3, #0
+ 970 00ce 84F82030 		strb	r3, [r4, #32]
+ 971 00d2 5CE0     		b	.L113
+ 972              	.L114:
+ 973 00d4 0368     		ldr	r3, [r0]
+ 974 00d6 9B68     		ldr	r3, [r3, #8]
+ 975 00d8 13F0400F 		tst	r3, #64
+ 976 00dc 01D1     		bne	.L117
+ 977 00de 0023     		movs	r3, #0
+ 978 00e0 CB70     		strb	r3, [r1, #3]
+ 979              	.L117:
+ 980 00e2 2A78     		ldrb	r2, [r5]	@ zero_extendqisi2
+ 981 00e4 6B78     		ldrb	r3, [r5, #1]	@ zero_extendqisi2
+ 982 00e6 1B02     		lsls	r3, r3, #8
+ 983 00e8 43EA0243 		orr	r3, r3, r2, lsl #16
+ 984 00ec AA78     		ldrb	r2, [r5, #2]	@ zero_extendqisi2
+ 985 00ee 1343     		orrs	r3, r3, r2
+ 986 00f0 EA78     		ldrb	r2, [r5, #3]	@ zero_extendqisi2
+ 987 00f2 43EA8253 		orr	r3, r3, r2, lsl #22
+ 988 00f6 95F82020 		ldrb	r2, [r5, #32]	@ zero_extendqisi2
+ 989 00fa 43EA0263 		orr	r3, r3, r2, lsl #24
+ 990 00fe EA69     		ldr	r2, [r5, #28]
+ 991 0100 1343     		orrs	r3, r3, r2
+ 992 0102 6A69     		ldr	r2, [r5, #20]
+ 993 0104 1343     		orrs	r3, r3, r2
+ 994 0106 1E46     		mov	r6, r3
+ 995 0108 AEE7     		b	.L116
+ 996              	.L126:
+ 997 010a 2268     		ldr	r2, [r4]
+ 998 010c 9368     		ldr	r3, [r2, #8]
+ 999 010e 23F48073 		bic	r3, r3, #256
+ 1000 0112 9360     		str	r3, [r2, #8]
+ 1001 0114 2268     		ldr	r2, [r4]
+ 1002 0116 9368     		ldr	r3, [r2, #8]
+ 1003 0118 23F48053 		bic	r3, r3, #4096
+ 1004 011c 9360     		str	r3, [r2, #8]
+ 1005 011e 2268     		ldr	r2, [r4]
+ 1006 0120 D368     		ldr	r3, [r2, #12]
+ 1007 0122 DBB2     		uxtb	r3, r3
+ 1008 0124 63F4C073 		orn	r3, r3, #384
+ 1009 0128 D360     		str	r3, [r2, #12]
+ 1010 012a FFF7FEFF 		bl	HAL_GetTick
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 18
+
+
+ 1011 012e 0546     		mov	r5, r0
+ 1012              	.L119:
+ 1013 0130 2368     		ldr	r3, [r4]
+ 1014 0132 DA68     		ldr	r2, [r3, #12]
+ 1015 0134 12F0010F 		tst	r2, #1
+ 1016 0138 0FD1     		bne	.L128
+ 1017 013a FFF7FEFF 		bl	HAL_GetTick
+ 1018 013e 401B     		subs	r0, r0, r5
+ 1019 0140 B0F57A7F 		cmp	r0, #1000
+ 1020 0144 F4D9     		bls	.L119
+ 1021 0146 2368     		ldr	r3, [r4]
+ 1022 0148 FF22     		movs	r2, #255
+ 1023 014a 5A62     		str	r2, [r3, #36]
+ 1024 014c 0320     		movs	r0, #3
+ 1025 014e 84F82100 		strb	r0, [r4, #33]
+ 1026 0152 0023     		movs	r3, #0
+ 1027 0154 84F82030 		strb	r3, [r4, #32]
+ 1028 0158 19E0     		b	.L113
+ 1029              	.L128:
+ 1030 015a DE61     		str	r6, [r3, #28]
+ 1031 015c 2368     		ldr	r3, [r4]
+ 1032 015e 5F64     		str	r7, [r3, #68]
+ 1033 0160 2268     		ldr	r2, [r4]
+ 1034 0162 9368     		ldr	r3, [r2, #8]
+ 1035 0164 43F48073 		orr	r3, r3, #256
+ 1036 0168 9360     		str	r3, [r2, #8]
+ 1037 016a 07E0     		b	.L121
+ 1038              	.L127:
+ 1039 016c 1E62     		str	r6, [r3, #32]
+ 1040 016e 2368     		ldr	r3, [r4]
+ 1041 0170 9F64     		str	r7, [r3, #72]
+ 1042 0172 2268     		ldr	r2, [r4]
+ 1043 0174 9368     		ldr	r3, [r2, #8]
+ 1044 0176 43F40073 		orr	r3, r3, #512
+ 1045 017a 9360     		str	r3, [r2, #8]
+ 1046              	.L121:
+ 1047 017c 2368     		ldr	r3, [r4]
+ 1048 017e FF22     		movs	r2, #255
+ 1049 0180 5A62     		str	r2, [r3, #36]
+ 1050 0182 0123     		movs	r3, #1
+ 1051 0184 84F82130 		strb	r3, [r4, #33]
+ 1052 0188 0020     		movs	r0, #0
+ 1053 018a 84F82000 		strb	r0, [r4, #32]
+ 1054              	.L113:
+ 1055 018e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1056              	.L124:
+ 1057 0190 0220     		movs	r0, #2
+ 1058 0192 FCE7     		b	.L113
+ 1060              		.section	.text.HAL_RTC_SetAlarm_IT,"ax",%progbits
+ 1061              		.align	1
+ 1062              		.global	HAL_RTC_SetAlarm_IT
+ 1063              		.syntax unified
+ 1064              		.thumb
+ 1065              		.thumb_func
+ 1067              	HAL_RTC_SetAlarm_IT:
+ 1068              		@ args = 0, pretend = 0, frame = 8
+ 1069              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 19
+
+
+ 1070 0000 70B5     		push	{r4, r5, r6, lr}
+ 1071 0002 82B0     		sub	sp, sp, #8
+ 1072 0004 0D46     		mov	r5, r1
+ 1073 0006 704B     		ldr	r3, .L146
+ 1074 0008 1B68     		ldr	r3, [r3]
+ 1075 000a 7049     		ldr	r1, .L146+4
+ 1076 000c A1FB0313 		umull	r1, r3, r1, r3
+ 1077 0010 DB0A     		lsrs	r3, r3, #11
+ 1078 0012 4FF47A71 		mov	r1, #1000
+ 1079 0016 01FB03F3 		mul	r3, r1, r3
+ 1080 001a 0193     		str	r3, [sp, #4]
+ 1081 001c 90F82030 		ldrb	r3, [r0, #32]	@ zero_extendqisi2
+ 1082 0020 012B     		cmp	r3, #1
+ 1083 0022 00F0CE80 		beq	.L141
+ 1084 0026 0446     		mov	r4, r0
+ 1085 0028 0123     		movs	r3, #1
+ 1086 002a 80F82030 		strb	r3, [r0, #32]
+ 1087 002e 0223     		movs	r3, #2
+ 1088 0030 80F82130 		strb	r3, [r0, #33]
+ 1089 0034 002A     		cmp	r2, #0
+ 1090 0036 73D1     		bne	.L131
+ 1091 0038 0368     		ldr	r3, [r0]
+ 1092 003a 9B68     		ldr	r3, [r3, #8]
+ 1093 003c 13F0400F 		tst	r3, #64
+ 1094 0040 00D1     		bne	.L132
+ 1095 0042 EA70     		strb	r2, [r5, #3]
+ 1096              	.L132:
+ 1097 0044 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
+ 1098 0046 FFF7FEFF 		bl	RTC_ByteToBcd2
+ 1099 004a 0304     		lsls	r3, r0, #16
+ 1100 004c 1E46     		mov	r6, r3
+ 1101 004e 6878     		ldrb	r0, [r5, #1]	@ zero_extendqisi2
+ 1102 0050 FFF7FEFF 		bl	RTC_ByteToBcd2
+ 1103 0054 46EA0023 		orr	r3, r6, r0, lsl #8
+ 1104 0058 1E46     		mov	r6, r3
+ 1105 005a A878     		ldrb	r0, [r5, #2]	@ zero_extendqisi2
+ 1106 005c FFF7FEFF 		bl	RTC_ByteToBcd2
+ 1107 0060 3043     		orrs	r0, r0, r6
+ 1108 0062 EB78     		ldrb	r3, [r5, #3]	@ zero_extendqisi2
+ 1109 0064 40EA8353 		orr	r3, r0, r3, lsl #22
+ 1110 0068 1E46     		mov	r6, r3
+ 1111 006a 95F82000 		ldrb	r0, [r5, #32]	@ zero_extendqisi2
+ 1112 006e FFF7FEFF 		bl	RTC_ByteToBcd2
+ 1113 0072 46EA0062 		orr	r2, r6, r0, lsl #24
+ 1114 0076 EB69     		ldr	r3, [r5, #28]
+ 1115 0078 1A43     		orrs	r2, r2, r3
+ 1116 007a 6B69     		ldr	r3, [r5, #20]
+ 1117 007c 1A43     		orrs	r2, r2, r3
+ 1118              	.L133:
+ 1119 007e 6868     		ldr	r0, [r5, #4]
+ 1120 0080 AB69     		ldr	r3, [r5, #24]
+ 1121 0082 1843     		orrs	r0, r0, r3
+ 1122 0084 2368     		ldr	r3, [r4]
+ 1123 0086 CA21     		movs	r1, #202
+ 1124 0088 5962     		str	r1, [r3, #36]
+ 1125 008a 2368     		ldr	r3, [r4]
+ 1126 008c 5321     		movs	r1, #83
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 20
+
+
+ 1127 008e 5962     		str	r1, [r3, #36]
+ 1128 0090 6B6A     		ldr	r3, [r5, #36]
+ 1129 0092 B3F5807F 		cmp	r3, #256
+ 1130 0096 5DD0     		beq	.L143
+ 1131 0098 2168     		ldr	r1, [r4]
+ 1132 009a 8B68     		ldr	r3, [r1, #8]
+ 1133 009c 23F40073 		bic	r3, r3, #512
+ 1134 00a0 8B60     		str	r3, [r1, #8]
+ 1135 00a2 2168     		ldr	r1, [r4]
+ 1136 00a4 CB68     		ldr	r3, [r1, #12]
+ 1137 00a6 DBB2     		uxtb	r3, r3
+ 1138 00a8 63F42073 		orn	r3, r3, #640
+ 1139 00ac CB60     		str	r3, [r1, #12]
+ 1140 00ae 464B     		ldr	r3, .L146
+ 1141 00b0 1B68     		ldr	r3, [r3]
+ 1142 00b2 4649     		ldr	r1, .L146+4
+ 1143 00b4 A1FB0313 		umull	r1, r3, r1, r3
+ 1144 00b8 DB0A     		lsrs	r3, r3, #11
+ 1145 00ba 4FF47A71 		mov	r1, #1000
+ 1146 00be 01FB03F3 		mul	r3, r1, r3
+ 1147 00c2 0193     		str	r3, [sp, #4]
+ 1148              	.L140:
+ 1149 00c4 019B     		ldr	r3, [sp, #4]
+ 1150 00c6 013B     		subs	r3, r3, #1
+ 1151 00c8 0193     		str	r3, [sp, #4]
+ 1152 00ca 019B     		ldr	r3, [sp, #4]
+ 1153 00cc 002B     		cmp	r3, #0
+ 1154 00ce 6ED0     		beq	.L144
+ 1155 00d0 2368     		ldr	r3, [r4]
+ 1156 00d2 D968     		ldr	r1, [r3, #12]
+ 1157 00d4 11F0020F 		tst	r1, #2
+ 1158 00d8 F4D0     		beq	.L140
+ 1159 00da 1A62     		str	r2, [r3, #32]
+ 1160 00dc 2368     		ldr	r3, [r4]
+ 1161 00de 9864     		str	r0, [r3, #72]
+ 1162 00e0 2268     		ldr	r2, [r4]
+ 1163 00e2 9368     		ldr	r3, [r2, #8]
+ 1164 00e4 43F40073 		orr	r3, r3, #512
+ 1165 00e8 9360     		str	r3, [r2, #8]
+ 1166 00ea 2268     		ldr	r2, [r4]
+ 1167 00ec 9368     		ldr	r3, [r2, #8]
+ 1168 00ee 43F40053 		orr	r3, r3, #8192
+ 1169 00f2 9360     		str	r3, [r2, #8]
+ 1170              	.L138:
+ 1171 00f4 364B     		ldr	r3, .L146+8
+ 1172 00f6 D3F88020 		ldr	r2, [r3, #128]
+ 1173 00fa 42F40032 		orr	r2, r2, #131072
+ 1174 00fe C3F88020 		str	r2, [r3, #128]
+ 1175 0102 1A68     		ldr	r2, [r3]
+ 1176 0104 42F40032 		orr	r2, r2, #131072
+ 1177 0108 1A60     		str	r2, [r3]
+ 1178 010a 2368     		ldr	r3, [r4]
+ 1179 010c FF22     		movs	r2, #255
+ 1180 010e 5A62     		str	r2, [r3, #36]
+ 1181 0110 0123     		movs	r3, #1
+ 1182 0112 84F82130 		strb	r3, [r4, #33]
+ 1183 0116 0020     		movs	r0, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 21
+
+
+ 1184 0118 84F82000 		strb	r0, [r4, #32]
+ 1185              	.L130:
+ 1186 011c 02B0     		add	sp, sp, #8
+ 1187              		@ sp needed
+ 1188 011e 70BD     		pop	{r4, r5, r6, pc}
+ 1189              	.L131:
+ 1190 0120 0368     		ldr	r3, [r0]
+ 1191 0122 9B68     		ldr	r3, [r3, #8]
+ 1192 0124 13F0400F 		tst	r3, #64
+ 1193 0128 01D1     		bne	.L134
+ 1194 012a 0023     		movs	r3, #0
+ 1195 012c EB70     		strb	r3, [r5, #3]
+ 1196              	.L134:
+ 1197 012e 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
+ 1198 0130 6A78     		ldrb	r2, [r5, #1]	@ zero_extendqisi2
+ 1199 0132 1202     		lsls	r2, r2, #8
+ 1200 0134 42EA0342 		orr	r2, r2, r3, lsl #16
+ 1201 0138 AB78     		ldrb	r3, [r5, #2]	@ zero_extendqisi2
+ 1202 013a 1A43     		orrs	r2, r2, r3
+ 1203 013c EB78     		ldrb	r3, [r5, #3]	@ zero_extendqisi2
+ 1204 013e 42EA8352 		orr	r2, r2, r3, lsl #22
+ 1205 0142 95F82030 		ldrb	r3, [r5, #32]	@ zero_extendqisi2
+ 1206 0146 42EA0362 		orr	r2, r2, r3, lsl #24
+ 1207 014a EB69     		ldr	r3, [r5, #28]
+ 1208 014c 1A43     		orrs	r2, r2, r3
+ 1209 014e 6B69     		ldr	r3, [r5, #20]
+ 1210 0150 1A43     		orrs	r2, r2, r3
+ 1211 0152 94E7     		b	.L133
+ 1212              	.L143:
+ 1213 0154 2168     		ldr	r1, [r4]
+ 1214 0156 8B68     		ldr	r3, [r1, #8]
+ 1215 0158 23F48073 		bic	r3, r3, #256
+ 1216 015c 8B60     		str	r3, [r1, #8]
+ 1217 015e 2168     		ldr	r1, [r4]
+ 1218 0160 CB68     		ldr	r3, [r1, #12]
+ 1219 0162 DBB2     		uxtb	r3, r3
+ 1220 0164 63F4C073 		orn	r3, r3, #384
+ 1221 0168 CB60     		str	r3, [r1, #12]
+ 1222              	.L137:
+ 1223 016a 019B     		ldr	r3, [sp, #4]
+ 1224 016c 013B     		subs	r3, r3, #1
+ 1225 016e 0193     		str	r3, [sp, #4]
+ 1226 0170 019B     		ldr	r3, [sp, #4]
+ 1227 0172 93B1     		cbz	r3, .L145
+ 1228 0174 2368     		ldr	r3, [r4]
+ 1229 0176 D968     		ldr	r1, [r3, #12]
+ 1230 0178 11F0010F 		tst	r1, #1
+ 1231 017c F5D0     		beq	.L137
+ 1232 017e DA61     		str	r2, [r3, #28]
+ 1233 0180 2368     		ldr	r3, [r4]
+ 1234 0182 5864     		str	r0, [r3, #68]
+ 1235 0184 2268     		ldr	r2, [r4]
+ 1236 0186 9368     		ldr	r3, [r2, #8]
+ 1237 0188 43F48073 		orr	r3, r3, #256
+ 1238 018c 9360     		str	r3, [r2, #8]
+ 1239 018e 2268     		ldr	r2, [r4]
+ 1240 0190 9368     		ldr	r3, [r2, #8]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 22
+
+
+ 1241 0192 43F48053 		orr	r3, r3, #4096
+ 1242 0196 9360     		str	r3, [r2, #8]
+ 1243 0198 ACE7     		b	.L138
+ 1244              	.L145:
+ 1245 019a 2368     		ldr	r3, [r4]
+ 1246 019c FF22     		movs	r2, #255
+ 1247 019e 5A62     		str	r2, [r3, #36]
+ 1248 01a0 0320     		movs	r0, #3
+ 1249 01a2 84F82100 		strb	r0, [r4, #33]
+ 1250 01a6 0023     		movs	r3, #0
+ 1251 01a8 84F82030 		strb	r3, [r4, #32]
+ 1252 01ac B6E7     		b	.L130
+ 1253              	.L144:
+ 1254 01ae 2368     		ldr	r3, [r4]
+ 1255 01b0 FF22     		movs	r2, #255
+ 1256 01b2 5A62     		str	r2, [r3, #36]
+ 1257 01b4 0320     		movs	r0, #3
+ 1258 01b6 84F82100 		strb	r0, [r4, #33]
+ 1259 01ba 0023     		movs	r3, #0
+ 1260 01bc 84F82030 		strb	r3, [r4, #32]
+ 1261 01c0 ACE7     		b	.L130
+ 1262              	.L141:
+ 1263 01c2 0220     		movs	r0, #2
+ 1264 01c4 AAE7     		b	.L130
+ 1265              	.L147:
+ 1266 01c6 00BF     		.align	2
+ 1267              	.L146:
+ 1268 01c8 00000000 		.word	SystemCoreClock
+ 1269 01cc D34D6210 		.word	274877907
+ 1270 01d0 00080058 		.word	1476397056
+ 1272              		.section	.text.RTC_Bcd2ToByte,"ax",%progbits
+ 1273              		.align	1
+ 1274              		.global	RTC_Bcd2ToByte
+ 1275              		.syntax unified
+ 1276              		.thumb
+ 1277              		.thumb_func
+ 1279              	RTC_Bcd2ToByte:
+ 1280              		@ args = 0, pretend = 0, frame = 0
+ 1281              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1282              		@ link register save eliminated.
+ 1283 0000 0309     		lsrs	r3, r0, #4
+ 1284 0002 03EB8303 		add	r3, r3, r3, lsl #2
+ 1285 0006 00F00F00 		and	r0, r0, #15
+ 1286 000a 00EB4300 		add	r0, r0, r3, lsl #1
+ 1287 000e C0B2     		uxtb	r0, r0
+ 1288 0010 7047     		bx	lr
+ 1290              		.section	.text.HAL_RTC_GetTime,"ax",%progbits
+ 1291              		.align	1
+ 1292              		.global	HAL_RTC_GetTime
+ 1293              		.syntax unified
+ 1294              		.thumb
+ 1295              		.thumb_func
+ 1297              	HAL_RTC_GetTime:
+ 1298              		@ args = 0, pretend = 0, frame = 0
+ 1299              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1300 0000 70B5     		push	{r4, r5, r6, lr}
+ 1301 0002 0368     		ldr	r3, [r0]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 23
+
+
+ 1302 0004 9B6A     		ldr	r3, [r3, #40]
+ 1303 0006 4B60     		str	r3, [r1, #4]
+ 1304 0008 0368     		ldr	r3, [r0]
+ 1305 000a 1B69     		ldr	r3, [r3, #16]
+ 1306 000c C3F30E03 		ubfx	r3, r3, #0, #15
+ 1307 0010 8B60     		str	r3, [r1, #8]
+ 1308 0012 0368     		ldr	r3, [r0]
+ 1309 0014 1B68     		ldr	r3, [r3]
+ 1310 0016 C3F30540 		ubfx	r0, r3, #16, #6
+ 1311 001a 0870     		strb	r0, [r1]
+ 1312 001c C3F30626 		ubfx	r6, r3, #8, #7
+ 1313 0020 4E70     		strb	r6, [r1, #1]
+ 1314 0022 03F07F05 		and	r5, r3, #127
+ 1315 0026 8D70     		strb	r5, [r1, #2]
+ 1316 0028 C3F38053 		ubfx	r3, r3, #22, #1
+ 1317 002c CB70     		strb	r3, [r1, #3]
+ 1318 002e 5AB9     		cbnz	r2, .L150
+ 1319 0030 0C46     		mov	r4, r1
+ 1320 0032 FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 1321 0036 2070     		strb	r0, [r4]
+ 1322 0038 3046     		mov	r0, r6
+ 1323 003a FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 1324 003e 6070     		strb	r0, [r4, #1]
+ 1325 0040 2846     		mov	r0, r5
+ 1326 0042 FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 1327 0046 A070     		strb	r0, [r4, #2]
+ 1328              	.L150:
+ 1329 0048 0020     		movs	r0, #0
+ 1330 004a 70BD     		pop	{r4, r5, r6, pc}
+ 1332              		.section	.text.HAL_RTC_GetDate,"ax",%progbits
+ 1333              		.align	1
+ 1334              		.global	HAL_RTC_GetDate
+ 1335              		.syntax unified
+ 1336              		.thumb
+ 1337              		.thumb_func
+ 1339              	HAL_RTC_GetDate:
+ 1340              		@ args = 0, pretend = 0, frame = 0
+ 1341              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1342 0000 70B5     		push	{r4, r5, r6, lr}
+ 1343 0002 0368     		ldr	r3, [r0]
+ 1344 0004 5B68     		ldr	r3, [r3, #4]
+ 1345 0006 C3F30740 		ubfx	r0, r3, #16, #8
+ 1346 000a C870     		strb	r0, [r1, #3]
+ 1347 000c C3F30426 		ubfx	r6, r3, #8, #5
+ 1348 0010 4E70     		strb	r6, [r1, #1]
+ 1349 0012 03F03F05 		and	r5, r3, #63
+ 1350 0016 8D70     		strb	r5, [r1, #2]
+ 1351 0018 C3F34233 		ubfx	r3, r3, #13, #3
+ 1352 001c 0B70     		strb	r3, [r1]
+ 1353 001e 5AB9     		cbnz	r2, .L153
+ 1354 0020 0C46     		mov	r4, r1
+ 1355 0022 FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 1356 0026 E070     		strb	r0, [r4, #3]
+ 1357 0028 3046     		mov	r0, r6
+ 1358 002a FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 1359 002e 6070     		strb	r0, [r4, #1]
+ 1360 0030 2846     		mov	r0, r5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 24
+
+
+ 1361 0032 FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 1362 0036 A070     		strb	r0, [r4, #2]
+ 1363              	.L153:
+ 1364 0038 0020     		movs	r0, #0
+ 1365 003a 70BD     		pop	{r4, r5, r6, pc}
+ 1367              		.section	.text.HAL_RTC_GetAlarm,"ax",%progbits
+ 1368              		.align	1
+ 1369              		.global	HAL_RTC_GetAlarm
+ 1370              		.syntax unified
+ 1371              		.thumb
+ 1372              		.thumb_func
+ 1374              	HAL_RTC_GetAlarm:
+ 1375              		@ args = 0, pretend = 0, frame = 0
+ 1376              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1377 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1378 0002 0C46     		mov	r4, r1
+ 1379 0004 B2F5807F 		cmp	r2, #256
+ 1380 0008 31D0     		beq	.L160
+ 1381 000a 4FF40072 		mov	r2, #512
+ 1382 000e 4A62     		str	r2, [r1, #36]
+ 1383 0010 0168     		ldr	r1, [r0]
+ 1384 0012 0A6A     		ldr	r2, [r1, #32]
+ 1385 0014 896C     		ldr	r1, [r1, #72]
+ 1386 0016 C1F30E01 		ubfx	r1, r1, #0, #15
+ 1387              	.L157:
+ 1388 001a C2F30540 		ubfx	r0, r2, #16, #6
+ 1389 001e 2070     		strb	r0, [r4]
+ 1390 0020 C2F30627 		ubfx	r7, r2, #8, #7
+ 1391 0024 6770     		strb	r7, [r4, #1]
+ 1392 0026 02F07F06 		and	r6, r2, #127
+ 1393 002a A670     		strb	r6, [r4, #2]
+ 1394 002c C2F38055 		ubfx	r5, r2, #22, #1
+ 1395 0030 E570     		strb	r5, [r4, #3]
+ 1396 0032 6160     		str	r1, [r4, #4]
+ 1397 0034 C2F30565 		ubfx	r5, r2, #24, #6
+ 1398 0038 84F82050 		strb	r5, [r4, #32]
+ 1399 003c 02F08041 		and	r1, r2, #1073741824
+ 1400 0040 E161     		str	r1, [r4, #28]
+ 1401 0042 02F08032 		and	r2, r2, #-2139062144
+ 1402 0046 6261     		str	r2, [r4, #20]
+ 1403 0048 7BB9     		cbnz	r3, .L158
+ 1404 004a FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 1405 004e 2070     		strb	r0, [r4]
+ 1406 0050 3846     		mov	r0, r7
+ 1407 0052 FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 1408 0056 6070     		strb	r0, [r4, #1]
+ 1409 0058 3046     		mov	r0, r6
+ 1410 005a FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 1411 005e A070     		strb	r0, [r4, #2]
+ 1412 0060 2846     		mov	r0, r5
+ 1413 0062 FFF7FEFF 		bl	RTC_Bcd2ToByte
+ 1414 0066 84F82000 		strb	r0, [r4, #32]
+ 1415              	.L158:
+ 1416 006a 0020     		movs	r0, #0
+ 1417 006c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1418              	.L160:
+ 1419 006e 4A62     		str	r2, [r1, #36]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 25
+
+
+ 1420 0070 0168     		ldr	r1, [r0]
+ 1421 0072 CA69     		ldr	r2, [r1, #28]
+ 1422 0074 496C     		ldr	r1, [r1, #68]
+ 1423 0076 C1F30E01 		ubfx	r1, r1, #0, #15
+ 1424 007a CEE7     		b	.L157
+ 1426              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 26
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_rtc.c
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:18     .text.HAL_RTC_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:24     .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:31     .text.HAL_RTC_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:37     .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:44     .text.HAL_RTC_DeactivateAlarm:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:50     .text.HAL_RTC_DeactivateAlarm:00000000 HAL_RTC_DeactivateAlarm
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:140    .text.HAL_RTC_AlarmAEventCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:146    .text.HAL_RTC_AlarmAEventCallback:00000000 HAL_RTC_AlarmAEventCallback
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:153    .text.HAL_RTC_AlarmIRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:159    .text.HAL_RTC_AlarmIRQHandler:00000000 HAL_RTC_AlarmIRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:204    .text.HAL_RTC_AlarmIRQHandler:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:207    .text.HAL_RTC_PollForAlarmAEvent:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:213    .text.HAL_RTC_PollForAlarmAEvent:00000000 HAL_RTC_PollForAlarmAEvent
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:250    .text.HAL_RTC_WaitForSynchro:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:256    .text.HAL_RTC_WaitForSynchro:00000000 HAL_RTC_WaitForSynchro
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:284    .text.HAL_RTC_WaitForSynchro:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:287    .text.HAL_RTC_DST_Add1Hour:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:293    .text.HAL_RTC_DST_Add1Hour:00000000 HAL_RTC_DST_Add1Hour
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:313    .text.HAL_RTC_DST_Sub1Hour:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:319    .text.HAL_RTC_DST_Sub1Hour:00000000 HAL_RTC_DST_Sub1Hour
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:339    .text.HAL_RTC_DST_SetStoreOperation:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:345    .text.HAL_RTC_DST_SetStoreOperation:00000000 HAL_RTC_DST_SetStoreOperation
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:365    .text.HAL_RTC_DST_ClearStoreOperation:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:371    .text.HAL_RTC_DST_ClearStoreOperation:00000000 HAL_RTC_DST_ClearStoreOperation
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:391    .text.HAL_RTC_DST_ReadStoreOperation:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:397    .text.HAL_RTC_DST_ReadStoreOperation:00000000 HAL_RTC_DST_ReadStoreOperation
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:407    .text.HAL_RTC_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:413    .text.HAL_RTC_GetState:00000000 HAL_RTC_GetState
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:421    .text.RTC_EnterInitMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:427    .text.RTC_EnterInitMode:00000000 RTC_EnterInitMode
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:464    .text.RTC_ExitInitMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:470    .text.RTC_ExitInitMode:00000000 RTC_ExitInitMode
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:495    .text.HAL_RTC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:501    .text.HAL_RTC_Init:00000000 HAL_RTC_Init
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:587    .text.HAL_RTC_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:593    .text.HAL_RTC_DeInit:00000000 HAL_RTC_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:662    .text.HAL_RTC_DeInit:00000088 $d
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:665    .text.RTC_ByteToBcd2:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:671    .text.RTC_ByteToBcd2:00000000 RTC_ByteToBcd2
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:690    .text.HAL_RTC_SetTime:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:696    .text.HAL_RTC_SetTime:00000000 HAL_RTC_SetTime
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:793    .text.HAL_RTC_SetDate:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:799    .text.HAL_RTC_SetDate:00000000 HAL_RTC_SetDate
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:877    .text.HAL_RTC_SetAlarm:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:883    .text.HAL_RTC_SetAlarm:00000000 HAL_RTC_SetAlarm
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:1061   .text.HAL_RTC_SetAlarm_IT:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:1067   .text.HAL_RTC_SetAlarm_IT:00000000 HAL_RTC_SetAlarm_IT
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:1268   .text.HAL_RTC_SetAlarm_IT:000001c8 $d
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:1273   .text.RTC_Bcd2ToByte:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:1279   .text.RTC_Bcd2ToByte:00000000 RTC_Bcd2ToByte
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:1291   .text.HAL_RTC_GetTime:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:1297   .text.HAL_RTC_GetTime:00000000 HAL_RTC_GetTime
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:1333   .text.HAL_RTC_GetDate:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:1339   .text.HAL_RTC_GetDate:00000000 HAL_RTC_GetDate
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:1368   .text.HAL_RTC_GetAlarm:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s 			page 27
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccnSzzhJ.s:1374   .text.HAL_RTC_GetAlarm:00000000 HAL_RTC_GetAlarm
+
+UNDEFINED SYMBOLS
+HAL_GetTick
+HAL_RTCEx_AlarmBEventCallback
+SystemCoreClock

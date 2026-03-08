@@ -289,6 +289,25 @@ def quat_slerp(a, b, t):
     ))
 
 
+def quat_multiply(a, b):
+    """Hamilton product of two quaternions."""
+    aw, ax, ay, az = a
+    bw, bx, by, bz = b
+    return (
+        aw*bw - ax*bx - ay*by - az*bz,
+        aw*bx + ax*bw + ay*bz - az*by,
+        aw*by - ax*bz + ay*bw + az*bx,
+        aw*bz + ax*by - ay*bx + az*bw,
+    )
+
+
+def quat_from_axis_angle(axis, angle_rad):
+    """Create quaternion from axis (unit vector) and angle in radians."""
+    half = angle_rad * 0.5
+    s = math.sin(half)
+    return quat_normalize((math.cos(half), axis[0]*s, axis[1]*s, axis[2]*s))
+
+
 def quat_to_matrix(q):
     w, x, y, z = q
     return [
@@ -353,6 +372,7 @@ def serial_reader(port, baud, shared):
                         shared["gx"] = gx
                         shared["gy"] = gy
                         shared["gz"] = gz
+                        shared["gyro_time"] = time.monotonic()
 
                     if len(parts) >= 3 and parts[2].startswith("T:"):
                         shared["imu_temp"] = float(parts[2][2:])
@@ -394,6 +414,7 @@ def main():
     shared = {
         "ax": 0.0, "ay": 0.0, "az": 1.0,
         "gx": 0.0, "gy": 0.0, "gz": 0.0,
+        "gyro_time": 0.0,
         "imu_temp": 0.0,
         "pressure": 0.0, "bmp_temp": 0.0,
         "running": True, "connected": False,
@@ -426,6 +447,8 @@ def main():
     clock = pygame.time.Clock()
 
     smooth_q = (1.0, 0.0, 0.0, 0.0)
+    yaw_angle = 0.0  # integrated gyro yaw in radians
+    last_gyro_time = 0.0
     alpha = 0.15
 
     # Camera orbit state (left-click drag to rotate, scroll to zoom)
@@ -458,8 +481,39 @@ def main():
                 cam_dist = max(2.0, min(20.0, cam_dist))
 
         ax, ay, az = shared["ax"], shared["ay"], shared["az"]
+        gx, gy, gz = shared["gx"], shared["gy"], shared["gz"]
+        gyro_time = shared["gyro_time"]
 
-        target_q = quat_from_gravity(ax, ay, az)
+        # Integrate gyro yaw (rotation around gravity axis)
+        if last_gyro_time > 0 and gyro_time > last_gyro_time:
+            dt = gyro_time - last_gyro_time
+            dt = min(dt, 0.1)  # clamp to avoid jumps on reconnect
+
+            # Project gyro onto gravity direction to get yaw rate
+            # Gravity vector (normalized)
+            g_mag = math.sqrt(ax*ax + ay*ay + az*az)
+            if g_mag > 0.1:
+                gnx, gny, gnz = ax/g_mag, ay/g_mag, az/g_mag
+                # Gyro component along gravity = dot(gyro, gravity_unit)
+                yaw_rate_dps = gx*gnx + gy*gny + gz*gnz
+                yaw_angle += math.radians(yaw_rate_dps) * dt
+        last_gyro_time = gyro_time
+
+        # Accel quaternion gives pitch/roll (tilt relative to gravity)
+        tilt_q = quat_from_gravity(ax, ay, az)
+
+        # Yaw quaternion rotates around the gravity axis
+        # Gravity direction in body frame (normalized)
+        g_mag = math.sqrt(ax*ax + ay*ay + az*az)
+        if g_mag > 0.1:
+            gn = (ax/g_mag, ay/g_mag, az/g_mag)
+        else:
+            gn = (0, 0, 1)
+        yaw_q = quat_from_axis_angle(gn, yaw_angle)
+
+        # Combined: first tilt, then yaw around gravity
+        target_q = quat_multiply(yaw_q, tilt_q)
+
         smooth_q = quat_slerp(smooth_q, target_q, alpha)
         mat = quat_to_matrix(smooth_q)
 

@@ -1,0 +1,448 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"svc_ctl.c"
+  16              		.text
+  17              		.section	.text.BAS_Init,"ax",%progbits
+  18              		.align	1
+  19              		.weak	BAS_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	BAS_Init:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 7047     		bx	lr
+  30              		.section	.text.BLS_Init,"ax",%progbits
+  31              		.align	1
+  32              		.weak	BLS_Init
+  33              		.syntax unified
+  34              		.thumb
+  35              		.thumb_func
+  37              	BLS_Init:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40              		@ link register save eliminated.
+  41 0000 7047     		bx	lr
+  43              		.section	.text.CRS_STM_Init,"ax",%progbits
+  44              		.align	1
+  45              		.weak	CRS_STM_Init
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  50              	CRS_STM_Init:
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  54 0000 7047     		bx	lr
+  56              		.section	.text.DIS_Init,"ax",%progbits
+  57              		.align	1
+  58              		.weak	DIS_Init
+  59              		.syntax unified
+  60              		.thumb
+  61              		.thumb_func
+  63              	DIS_Init:
+  64              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 2
+
+
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67 0000 7047     		bx	lr
+  69              		.section	.text.EDS_STM_Init,"ax",%progbits
+  70              		.align	1
+  71              		.weak	EDS_STM_Init
+  72              		.syntax unified
+  73              		.thumb
+  74              		.thumb_func
+  76              	EDS_STM_Init:
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79              		@ link register save eliminated.
+  80 0000 7047     		bx	lr
+  82              		.section	.text.HIDS_Init,"ax",%progbits
+  83              		.align	1
+  84              		.weak	HIDS_Init
+  85              		.syntax unified
+  86              		.thumb
+  87              		.thumb_func
+  89              	HIDS_Init:
+  90              		@ args = 0, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92              		@ link register save eliminated.
+  93 0000 7047     		bx	lr
+  95              		.section	.text.HRS_Init,"ax",%progbits
+  96              		.align	1
+  97              		.weak	HRS_Init
+  98              		.syntax unified
+  99              		.thumb
+ 100              		.thumb_func
+ 102              	HRS_Init:
+ 103              		@ args = 0, pretend = 0, frame = 0
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105              		@ link register save eliminated.
+ 106 0000 7047     		bx	lr
+ 108              		.section	.text.HTS_Init,"ax",%progbits
+ 109              		.align	1
+ 110              		.weak	HTS_Init
+ 111              		.syntax unified
+ 112              		.thumb
+ 113              		.thumb_func
+ 115              	HTS_Init:
+ 116              		@ args = 0, pretend = 0, frame = 0
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118              		@ link register save eliminated.
+ 119 0000 7047     		bx	lr
+ 121              		.section	.text.IAS_Init,"ax",%progbits
+ 122              		.align	1
+ 123              		.weak	IAS_Init
+ 124              		.syntax unified
+ 125              		.thumb
+ 126              		.thumb_func
+ 128              	IAS_Init:
+ 129              		@ args = 0, pretend = 0, frame = 0
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 3
+
+
+ 132 0000 7047     		bx	lr
+ 134              		.section	.text.LLS_Init,"ax",%progbits
+ 135              		.align	1
+ 136              		.weak	LLS_Init
+ 137              		.syntax unified
+ 138              		.thumb
+ 139              		.thumb_func
+ 141              	LLS_Init:
+ 142              		@ args = 0, pretend = 0, frame = 0
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144              		@ link register save eliminated.
+ 145 0000 7047     		bx	lr
+ 147              		.section	.text.TPS_Init,"ax",%progbits
+ 148              		.align	1
+ 149              		.weak	TPS_Init
+ 150              		.syntax unified
+ 151              		.thumb
+ 152              		.thumb_func
+ 154              	TPS_Init:
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157              		@ link register save eliminated.
+ 158 0000 7047     		bx	lr
+ 160              		.section	.text.MOTENV_STM_Init,"ax",%progbits
+ 161              		.align	1
+ 162              		.weak	MOTENV_STM_Init
+ 163              		.syntax unified
+ 164              		.thumb
+ 165              		.thumb_func
+ 167              	MOTENV_STM_Init:
+ 168              		@ args = 0, pretend = 0, frame = 0
+ 169              		@ frame_needed = 0, uses_anonymous_args = 0
+ 170              		@ link register save eliminated.
+ 171 0000 7047     		bx	lr
+ 173              		.section	.text.P2PS_STM_Init,"ax",%progbits
+ 174              		.align	1
+ 175              		.weak	P2PS_STM_Init
+ 176              		.syntax unified
+ 177              		.thumb
+ 178              		.thumb_func
+ 180              	P2PS_STM_Init:
+ 181              		@ args = 0, pretend = 0, frame = 0
+ 182              		@ frame_needed = 0, uses_anonymous_args = 0
+ 183              		@ link register save eliminated.
+ 184 0000 7047     		bx	lr
+ 186              		.section	.text.ZDD_STM_Init,"ax",%progbits
+ 187              		.align	1
+ 188              		.weak	ZDD_STM_Init
+ 189              		.syntax unified
+ 190              		.thumb
+ 191              		.thumb_func
+ 193              	ZDD_STM_Init:
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196              		@ link register save eliminated.
+ 197 0000 7047     		bx	lr
+ 199              		.section	.text.OTAS_STM_Init,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 4
+
+
+ 200              		.align	1
+ 201              		.weak	OTAS_STM_Init
+ 202              		.syntax unified
+ 203              		.thumb
+ 204              		.thumb_func
+ 206              	OTAS_STM_Init:
+ 207              		@ args = 0, pretend = 0, frame = 0
+ 208              		@ frame_needed = 0, uses_anonymous_args = 0
+ 209              		@ link register save eliminated.
+ 210 0000 7047     		bx	lr
+ 212              		.section	.text.MESH_Init,"ax",%progbits
+ 213              		.align	1
+ 214              		.weak	MESH_Init
+ 215              		.syntax unified
+ 216              		.thumb
+ 217              		.thumb_func
+ 219              	MESH_Init:
+ 220              		@ args = 0, pretend = 0, frame = 0
+ 221              		@ frame_needed = 0, uses_anonymous_args = 0
+ 222              		@ link register save eliminated.
+ 223 0000 7047     		bx	lr
+ 225              		.section	.text.BVOPUS_STM_Init,"ax",%progbits
+ 226              		.align	1
+ 227              		.weak	BVOPUS_STM_Init
+ 228              		.syntax unified
+ 229              		.thumb
+ 230              		.thumb_func
+ 232              	BVOPUS_STM_Init:
+ 233              		@ args = 0, pretend = 0, frame = 0
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235              		@ link register save eliminated.
+ 236 0000 7047     		bx	lr
+ 238              		.section	.text.SVCCTL_InitCustomSvc,"ax",%progbits
+ 239              		.align	1
+ 240              		.weak	SVCCTL_InitCustomSvc
+ 241              		.syntax unified
+ 242              		.thumb
+ 243              		.thumb_func
+ 245              	SVCCTL_InitCustomSvc:
+ 246              		@ args = 0, pretend = 0, frame = 0
+ 247              		@ frame_needed = 0, uses_anonymous_args = 0
+ 248              		@ link register save eliminated.
+ 249 0000 7047     		bx	lr
+ 251              		.section	.text.SVCCTL_SvcInit,"ax",%progbits
+ 252              		.align	1
+ 253              		.weak	SVCCTL_SvcInit
+ 254              		.syntax unified
+ 255              		.thumb
+ 256              		.thumb_func
+ 258              	SVCCTL_SvcInit:
+ 259              		@ args = 0, pretend = 0, frame = 0
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261 0000 08B5     		push	{r3, lr}
+ 262 0002 FFF7FEFF 		bl	BAS_Init
+ 263 0006 FFF7FEFF 		bl	BLS_Init
+ 264 000a FFF7FEFF 		bl	CRS_STM_Init
+ 265 000e FFF7FEFF 		bl	DIS_Init
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 5
+
+
+ 266 0012 FFF7FEFF 		bl	EDS_STM_Init
+ 267 0016 FFF7FEFF 		bl	HIDS_Init
+ 268 001a FFF7FEFF 		bl	HRS_Init
+ 269 001e FFF7FEFF 		bl	HTS_Init
+ 270 0022 FFF7FEFF 		bl	IAS_Init
+ 271 0026 FFF7FEFF 		bl	LLS_Init
+ 272 002a FFF7FEFF 		bl	TPS_Init
+ 273 002e FFF7FEFF 		bl	MOTENV_STM_Init
+ 274 0032 FFF7FEFF 		bl	P2PS_STM_Init
+ 275 0036 FFF7FEFF 		bl	ZDD_STM_Init
+ 276 003a FFF7FEFF 		bl	OTAS_STM_Init
+ 277 003e FFF7FEFF 		bl	BVOPUS_STM_Init
+ 278 0042 FFF7FEFF 		bl	MESH_Init
+ 279 0046 FFF7FEFF 		bl	SVCCTL_InitCustomSvc
+ 280 004a 08BD     		pop	{r3, pc}
+ 282              		.section	.text.SVCCTL_Init,"ax",%progbits
+ 283              		.align	1
+ 284              		.global	SVCCTL_Init
+ 285              		.syntax unified
+ 286              		.thumb
+ 287              		.thumb_func
+ 289              	SVCCTL_Init:
+ 290              		@ args = 0, pretend = 0, frame = 0
+ 291              		@ frame_needed = 0, uses_anonymous_args = 0
+ 292 0000 08B5     		push	{r3, lr}
+ 293 0002 0023     		movs	r3, #0
+ 294 0004 034A     		ldr	r2, .L23
+ 295 0006 1377     		strb	r3, [r2, #28]
+ 296 0008 034A     		ldr	r2, .L23+4
+ 297 000a 1370     		strb	r3, [r2]
+ 298 000c FFF7FEFF 		bl	SVCCTL_SvcInit
+ 299 0010 08BD     		pop	{r3, pc}
+ 300              	.L24:
+ 301 0012 00BF     		.align	2
+ 302              	.L23:
+ 303 0014 00000000 		.word	SVCCTL_EvtHandler
+ 304 0018 00000000 		.word	SVCCTL_CltHandler
+ 306              		.section	.text.SVCCTL_RegisterSvcHandler,"ax",%progbits
+ 307              		.align	1
+ 308              		.global	SVCCTL_RegisterSvcHandler
+ 309              		.syntax unified
+ 310              		.thumb
+ 311              		.thumb_func
+ 313              	SVCCTL_RegisterSvcHandler:
+ 314              		@ args = 0, pretend = 0, frame = 0
+ 315              		@ frame_needed = 0, uses_anonymous_args = 0
+ 316              		@ link register save eliminated.
+ 317 0000 034A     		ldr	r2, .L26
+ 318 0002 137F     		ldrb	r3, [r2, #28]	@ zero_extendqisi2
+ 319 0004 42F82300 		str	r0, [r2, r3, lsl #2]
+ 320 0008 0133     		adds	r3, r3, #1
+ 321 000a 1377     		strb	r3, [r2, #28]
+ 322 000c 7047     		bx	lr
+ 323              	.L27:
+ 324 000e 00BF     		.align	2
+ 325              	.L26:
+ 326 0010 00000000 		.word	SVCCTL_EvtHandler
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 6
+
+
+ 328              		.section	.text.SVCCTL_RegisterCltHandler,"ax",%progbits
+ 329              		.align	1
+ 330              		.global	SVCCTL_RegisterCltHandler
+ 331              		.syntax unified
+ 332              		.thumb
+ 333              		.thumb_func
+ 335              	SVCCTL_RegisterCltHandler:
+ 336              		@ args = 0, pretend = 0, frame = 0
+ 337              		@ frame_needed = 0, uses_anonymous_args = 0
+ 338              		@ link register save eliminated.
+ 339 0000 7047     		bx	lr
+ 341              		.section	.text.SVCCTL_UserEvtRx,"ax",%progbits
+ 342              		.align	1
+ 343              		.weak	SVCCTL_UserEvtRx
+ 344              		.syntax unified
+ 345              		.thumb
+ 346              		.thumb_func
+ 348              	SVCCTL_UserEvtRx:
+ 349              		@ args = 0, pretend = 0, frame = 0
+ 350              		@ frame_needed = 0, uses_anonymous_args = 0
+ 351 0000 38B5     		push	{r3, r4, r5, lr}
+ 352 0002 0546     		mov	r5, r0
+ 353 0004 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 354 0006 FF2B     		cmp	r3, #255
+ 355 0008 06D1     		bne	.L30
+ 356 000a B0F80330 		ldrh	r3, [r0, #3]	@ unaligned
+ 357 000e 03F47F43 		and	r3, r3, #65280
+ 358 0012 B3F5406F 		cmp	r3, #3072
+ 359 0016 03D0     		beq	.L38
+ 360              	.L30:
+ 361 0018 2846     		mov	r0, r5
+ 362 001a FFF7FEFF 		bl	SVCCTL_App_Notification
+ 363              	.L34:
+ 364 001e 38BD     		pop	{r3, r4, r5, pc}
+ 365              	.L38:
+ 366 0020 0024     		movs	r4, #0
+ 367 0022 2246     		mov	r2, r4
+ 368              	.L31:
+ 369 0024 0A4B     		ldr	r3, .L39
+ 370 0026 1B7F     		ldrb	r3, [r3, #28]	@ zero_extendqisi2
+ 371 0028 A342     		cmp	r3, r4
+ 372 002a 09D9     		bls	.L32
+ 373 002c 084B     		ldr	r3, .L39
+ 374 002e 53F82430 		ldr	r3, [r3, r4, lsl #2]
+ 375 0032 2846     		mov	r0, r5
+ 376 0034 9847     		blx	r3
+ 377 0036 0246     		mov	r2, r0
+ 378 0038 10B9     		cbnz	r0, .L32
+ 379 003a 0134     		adds	r4, r4, #1
+ 380 003c E4B2     		uxtb	r4, r4
+ 381 003e F1E7     		b	.L31
+ 382              	.L32:
+ 383 0040 002A     		cmp	r2, #0
+ 384 0042 E9D0     		beq	.L30
+ 385 0044 022A     		cmp	r2, #2
+ 386 0046 01D1     		bne	.L36
+ 387 0048 0020     		movs	r0, #0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 7
+
+
+ 388 004a E8E7     		b	.L34
+ 389              	.L36:
+ 390 004c 0120     		movs	r0, #1
+ 391 004e E6E7     		b	.L34
+ 392              	.L40:
+ 393              		.align	2
+ 394              	.L39:
+ 395 0050 00000000 		.word	SVCCTL_EvtHandler
+ 397              		.global	SVCCTL_CltHandler
+ 398              		.section	BLE_DRIVER_CONTEXT,"aw"
+ 399              		.align	2
+ 402              	SVCCTL_CltHandler:
+ 403 0000 00       		.space	1
+ 404              		.global	SVCCTL_EvtHandler
+ 405 0001 000000   		.align	2
+ 408              	SVCCTL_EvtHandler:
+ 409 0004 00000000 		.space	32
+ 409      00000000 
+ 409      00000000 
+ 409      00000000 
+ 409      00000000 
+ 410              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 svc_ctl.c
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:18     .text.BAS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:24     .text.BAS_Init:00000000 BAS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:31     .text.BLS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:37     .text.BLS_Init:00000000 BLS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:44     .text.CRS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:50     .text.CRS_STM_Init:00000000 CRS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:57     .text.DIS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:63     .text.DIS_Init:00000000 DIS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:70     .text.EDS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:76     .text.EDS_STM_Init:00000000 EDS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:83     .text.HIDS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:89     .text.HIDS_Init:00000000 HIDS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:96     .text.HRS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:102    .text.HRS_Init:00000000 HRS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:109    .text.HTS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:115    .text.HTS_Init:00000000 HTS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:122    .text.IAS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:128    .text.IAS_Init:00000000 IAS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:135    .text.LLS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:141    .text.LLS_Init:00000000 LLS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:148    .text.TPS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:154    .text.TPS_Init:00000000 TPS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:161    .text.MOTENV_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:167    .text.MOTENV_STM_Init:00000000 MOTENV_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:174    .text.P2PS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:180    .text.P2PS_STM_Init:00000000 P2PS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:187    .text.ZDD_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:193    .text.ZDD_STM_Init:00000000 ZDD_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:200    .text.OTAS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:206    .text.OTAS_STM_Init:00000000 OTAS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:213    .text.MESH_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:219    .text.MESH_Init:00000000 MESH_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:226    .text.BVOPUS_STM_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:232    .text.BVOPUS_STM_Init:00000000 BVOPUS_STM_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:239    .text.SVCCTL_InitCustomSvc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:245    .text.SVCCTL_InitCustomSvc:00000000 SVCCTL_InitCustomSvc
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:252    .text.SVCCTL_SvcInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:258    .text.SVCCTL_SvcInit:00000000 SVCCTL_SvcInit
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:283    .text.SVCCTL_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:289    .text.SVCCTL_Init:00000000 SVCCTL_Init
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:303    .text.SVCCTL_Init:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:408    BLE_DRIVER_CONTEXT:00000004 SVCCTL_EvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:402    BLE_DRIVER_CONTEXT:00000000 SVCCTL_CltHandler
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:307    .text.SVCCTL_RegisterSvcHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:313    .text.SVCCTL_RegisterSvcHandler:00000000 SVCCTL_RegisterSvcHandler
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:326    .text.SVCCTL_RegisterSvcHandler:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:329    .text.SVCCTL_RegisterCltHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:335    .text.SVCCTL_RegisterCltHandler:00000000 SVCCTL_RegisterCltHandler
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:342    .text.SVCCTL_UserEvtRx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:348    .text.SVCCTL_UserEvtRx:00000000 SVCCTL_UserEvtRx
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:395    .text.SVCCTL_UserEvtRx:00000050 $d
+C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s:399    BLE_DRIVER_CONTEXT:00000000 $d
+
+UNDEFINED SYMBOLS
+SVCCTL_App_Notification
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccRhrSKj.s 			page 9
+
+

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,8 +27,8 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s 			page 1
   25              		@ args = 0, pretend = 0, frame = 0
   26              		@ frame_needed = 0, uses_anonymous_args = 0
   27 0000 08B5     		push	{r3, lr}
-  28 0002 1148     		ldr	r0, .L5
-  29 0004 114B     		ldr	r3, .L5+4
+  28 0002 1048     		ldr	r0, .L5
+  29 0004 104B     		ldr	r3, .L5+4
   30 0006 0360     		str	r3, [r0]
   31 0008 4FF48273 		mov	r3, #260
   32 000c 4360     		str	r3, [r0, #4]
@@ -36,151 +36,149 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s 			page 1
   34 0010 8360     		str	r3, [r0, #8]
   35 0012 4FF4E062 		mov	r2, #1792
   36 0016 C260     		str	r2, [r0, #12]
-  37 0018 0222     		movs	r2, #2
-  38 001a 0261     		str	r2, [r0, #16]
-  39 001c 0122     		movs	r2, #1
-  40 001e 4261     		str	r2, [r0, #20]
-  41 0020 4FF40072 		mov	r2, #512
-  42 0024 8261     		str	r2, [r0, #24]
-  43 0026 3022     		movs	r2, #48
-  44 0028 C261     		str	r2, [r0, #28]
-  45 002a 0362     		str	r3, [r0, #32]
-  46 002c 4362     		str	r3, [r0, #36]
-  47 002e 8362     		str	r3, [r0, #40]
-  48 0030 0722     		movs	r2, #7
-  49 0032 C262     		str	r2, [r0, #44]
-  50 0034 0363     		str	r3, [r0, #48]
-  51 0036 4363     		str	r3, [r0, #52]
-  52 0038 FFF7FEFF 		bl	HAL_SPI_Init
-  53 003c 00B9     		cbnz	r0, .L4
-  54              	.L1:
-  55 003e 08BD     		pop	{r3, pc}
-  56              	.L4:
-  57 0040 FFF7FEFF 		bl	Error_Handler
-  58 0044 FBE7     		b	.L1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s 			page 2
+  37 0018 0361     		str	r3, [r0, #16]
+  38 001a 4361     		str	r3, [r0, #20]
+  39 001c 4FF40072 		mov	r2, #512
+  40 0020 8261     		str	r2, [r0, #24]
+  41 0022 0822     		movs	r2, #8
+  42 0024 C261     		str	r2, [r0, #28]
+  43 0026 0362     		str	r3, [r0, #32]
+  44 0028 4362     		str	r3, [r0, #36]
+  45 002a 8362     		str	r3, [r0, #40]
+  46 002c 0721     		movs	r1, #7
+  47 002e C162     		str	r1, [r0, #44]
+  48 0030 0363     		str	r3, [r0, #48]
+  49 0032 4263     		str	r2, [r0, #52]
+  50 0034 FFF7FEFF 		bl	HAL_SPI_Init
+  51 0038 00B9     		cbnz	r0, .L4
+  52              	.L1:
+  53 003a 08BD     		pop	{r3, pc}
+  54              	.L4:
+  55 003c FFF7FEFF 		bl	Error_Handler
+  56 0040 FBE7     		b	.L1
+  57              	.L6:
+  58 0042 00BF     		.align	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s 			page 2
 
 
-  59              	.L6:
-  60 0046 00BF     		.align	2
-  61              	.L5:
-  62 0048 00000000 		.word	hspi1
-  63 004c 00300140 		.word	1073819648
-  65              		.section	.text.HAL_SPI_MspInit,"ax",%progbits
-  66              		.align	1
-  67              		.global	HAL_SPI_MspInit
-  68              		.syntax unified
-  69              		.thumb
-  70              		.thumb_func
-  72              	HAL_SPI_MspInit:
-  73              		@ args = 0, pretend = 0, frame = 32
-  74              		@ frame_needed = 0, uses_anonymous_args = 0
-  75 0000 00B5     		push	{lr}
-  76 0002 89B0     		sub	sp, sp, #36
-  77 0004 0023     		movs	r3, #0
-  78 0006 0393     		str	r3, [sp, #12]
-  79 0008 0493     		str	r3, [sp, #16]
-  80 000a 0593     		str	r3, [sp, #20]
-  81 000c 0693     		str	r3, [sp, #24]
-  82 000e 0793     		str	r3, [sp, #28]
-  83 0010 0268     		ldr	r2, [r0]
-  84 0012 124B     		ldr	r3, .L11
-  85 0014 9A42     		cmp	r2, r3
-  86 0016 01D0     		beq	.L10
-  87              	.L7:
-  88 0018 09B0     		add	sp, sp, #36
-  89              		@ sp needed
-  90 001a 00BD     		pop	{pc}
-  91              	.L10:
-  92 001c 4FF0B043 		mov	r3, #1476395008
-  93 0020 1A6E     		ldr	r2, [r3, #96]
-  94 0022 42F48052 		orr	r2, r2, #4096
-  95 0026 1A66     		str	r2, [r3, #96]
-  96 0028 1A6E     		ldr	r2, [r3, #96]
-  97 002a 02F48052 		and	r2, r2, #4096
-  98 002e 0292     		str	r2, [sp, #8]
-  99 0030 029A     		ldr	r2, [sp, #8]
- 100 0032 DA6C     		ldr	r2, [r3, #76]
- 101 0034 42F00202 		orr	r2, r2, #2
- 102 0038 DA64     		str	r2, [r3, #76]
- 103 003a DB6C     		ldr	r3, [r3, #76]
- 104 003c 03F00203 		and	r3, r3, #2
- 105 0040 0193     		str	r3, [sp, #4]
- 106 0042 019B     		ldr	r3, [sp, #4]
- 107 0044 3823     		movs	r3, #56
- 108 0046 0393     		str	r3, [sp, #12]
- 109 0048 0223     		movs	r3, #2
- 110 004a 0493     		str	r3, [sp, #16]
- 111 004c 0523     		movs	r3, #5
- 112 004e 0793     		str	r3, [sp, #28]
- 113 0050 03A9     		add	r1, sp, #12
- 114 0052 0348     		ldr	r0, .L11+4
- 115 0054 FFF7FEFF 		bl	HAL_GPIO_Init
- 116 0058 DEE7     		b	.L7
- 117              	.L12:
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s 			page 3
+  59              	.L5:
+  60 0044 00000000 		.word	hspi1
+  61 0048 00300140 		.word	1073819648
+  63              		.section	.text.HAL_SPI_MspInit,"ax",%progbits
+  64              		.align	1
+  65              		.global	HAL_SPI_MspInit
+  66              		.syntax unified
+  67              		.thumb
+  68              		.thumb_func
+  70              	HAL_SPI_MspInit:
+  71              		@ args = 0, pretend = 0, frame = 32
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73 0000 00B5     		push	{lr}
+  74 0002 89B0     		sub	sp, sp, #36
+  75 0004 0023     		movs	r3, #0
+  76 0006 0393     		str	r3, [sp, #12]
+  77 0008 0493     		str	r3, [sp, #16]
+  78 000a 0593     		str	r3, [sp, #20]
+  79 000c 0693     		str	r3, [sp, #24]
+  80 000e 0793     		str	r3, [sp, #28]
+  81 0010 0268     		ldr	r2, [r0]
+  82 0012 124B     		ldr	r3, .L11
+  83 0014 9A42     		cmp	r2, r3
+  84 0016 01D0     		beq	.L10
+  85              	.L7:
+  86 0018 09B0     		add	sp, sp, #36
+  87              		@ sp needed
+  88 001a 00BD     		pop	{pc}
+  89              	.L10:
+  90 001c 4FF0B043 		mov	r3, #1476395008
+  91 0020 1A6E     		ldr	r2, [r3, #96]
+  92 0022 42F48052 		orr	r2, r2, #4096
+  93 0026 1A66     		str	r2, [r3, #96]
+  94 0028 1A6E     		ldr	r2, [r3, #96]
+  95 002a 02F48052 		and	r2, r2, #4096
+  96 002e 0292     		str	r2, [sp, #8]
+  97 0030 029A     		ldr	r2, [sp, #8]
+  98 0032 DA6C     		ldr	r2, [r3, #76]
+  99 0034 42F00202 		orr	r2, r2, #2
+ 100 0038 DA64     		str	r2, [r3, #76]
+ 101 003a DB6C     		ldr	r3, [r3, #76]
+ 102 003c 03F00203 		and	r3, r3, #2
+ 103 0040 0193     		str	r3, [sp, #4]
+ 104 0042 019B     		ldr	r3, [sp, #4]
+ 105 0044 3823     		movs	r3, #56
+ 106 0046 0393     		str	r3, [sp, #12]
+ 107 0048 0223     		movs	r3, #2
+ 108 004a 0493     		str	r3, [sp, #16]
+ 109 004c 0523     		movs	r3, #5
+ 110 004e 0793     		str	r3, [sp, #28]
+ 111 0050 03A9     		add	r1, sp, #12
+ 112 0052 0348     		ldr	r0, .L11+4
+ 113 0054 FFF7FEFF 		bl	HAL_GPIO_Init
+ 114 0058 DEE7     		b	.L7
+ 115              	.L12:
+ 116 005a 00BF     		.align	2
+ 117              	.L11:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s 			page 3
 
 
- 118 005a 00BF     		.align	2
- 119              	.L11:
- 120 005c 00300140 		.word	1073819648
- 121 0060 00040048 		.word	1207960576
- 123              		.section	.text.HAL_SPI_MspDeInit,"ax",%progbits
- 124              		.align	1
- 125              		.global	HAL_SPI_MspDeInit
- 126              		.syntax unified
- 127              		.thumb
- 128              		.thumb_func
- 130              	HAL_SPI_MspDeInit:
- 131              		@ args = 0, pretend = 0, frame = 0
- 132              		@ frame_needed = 0, uses_anonymous_args = 0
- 133 0000 08B5     		push	{r3, lr}
- 134 0002 0268     		ldr	r2, [r0]
- 135 0004 074B     		ldr	r3, .L17
- 136 0006 9A42     		cmp	r2, r3
- 137 0008 00D0     		beq	.L16
- 138              	.L13:
- 139 000a 08BD     		pop	{r3, pc}
- 140              	.L16:
- 141 000c 4FF0B042 		mov	r2, #1476395008
- 142 0010 136E     		ldr	r3, [r2, #96]
- 143 0012 23F48053 		bic	r3, r3, #4096
- 144 0016 1366     		str	r3, [r2, #96]
- 145 0018 3821     		movs	r1, #56
- 146 001a 0348     		ldr	r0, .L17+4
- 147 001c FFF7FEFF 		bl	HAL_GPIO_DeInit
- 148 0020 F3E7     		b	.L13
- 149              	.L18:
- 150 0022 00BF     		.align	2
- 151              	.L17:
- 152 0024 00300140 		.word	1073819648
- 153 0028 00040048 		.word	1207960576
- 155              		.global	hspi1
- 156              		.section	.bss.hspi1,"aw",%nobits
- 157              		.align	2
- 160              	hspi1:
- 161 0000 00000000 		.space	100
- 161      00000000 
- 161      00000000 
- 161      00000000 
- 161      00000000 
- 162              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s 			page 4
+ 118 005c 00300140 		.word	1073819648
+ 119 0060 00040048 		.word	1207960576
+ 121              		.section	.text.HAL_SPI_MspDeInit,"ax",%progbits
+ 122              		.align	1
+ 123              		.global	HAL_SPI_MspDeInit
+ 124              		.syntax unified
+ 125              		.thumb
+ 126              		.thumb_func
+ 128              	HAL_SPI_MspDeInit:
+ 129              		@ args = 0, pretend = 0, frame = 0
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131 0000 08B5     		push	{r3, lr}
+ 132 0002 0268     		ldr	r2, [r0]
+ 133 0004 074B     		ldr	r3, .L17
+ 134 0006 9A42     		cmp	r2, r3
+ 135 0008 00D0     		beq	.L16
+ 136              	.L13:
+ 137 000a 08BD     		pop	{r3, pc}
+ 138              	.L16:
+ 139 000c 4FF0B042 		mov	r2, #1476395008
+ 140 0010 136E     		ldr	r3, [r2, #96]
+ 141 0012 23F48053 		bic	r3, r3, #4096
+ 142 0016 1366     		str	r3, [r2, #96]
+ 143 0018 3821     		movs	r1, #56
+ 144 001a 0348     		ldr	r0, .L17+4
+ 145 001c FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 146 0020 F3E7     		b	.L13
+ 147              	.L18:
+ 148 0022 00BF     		.align	2
+ 149              	.L17:
+ 150 0024 00300140 		.word	1073819648
+ 151 0028 00040048 		.word	1207960576
+ 153              		.global	hspi1
+ 154              		.section	.bss.hspi1,"aw",%nobits
+ 155              		.align	2
+ 158              	hspi1:
+ 159 0000 00000000 		.space	100
+ 159      00000000 
+ 159      00000000 
+ 159      00000000 
+ 159      00000000 
+ 160              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 spi.c
-C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s:18     .text.MX_SPI1_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s:24     .text.MX_SPI1_Init:00000000 MX_SPI1_Init
-C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s:62     .text.MX_SPI1_Init:00000048 $d
-C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s:160    .bss.hspi1:00000000 hspi1
-C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s:66     .text.HAL_SPI_MspInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s:72     .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s:120    .text.HAL_SPI_MspInit:0000005c $d
-C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s:124    .text.HAL_SPI_MspDeInit:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s:130    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s:152    .text.HAL_SPI_MspDeInit:00000024 $d
-C:\Users\Nathan\AppData\Local\Temp\ccbFSiKF.s:157    .bss.hspi1:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:18     .text.MX_SPI1_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:24     .text.MX_SPI1_Init:00000000 MX_SPI1_Init
+C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:60     .text.MX_SPI1_Init:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:158    .bss.hspi1:00000000 hspi1
+C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:64     .text.HAL_SPI_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:70     .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:118    .text.HAL_SPI_MspInit:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:122    .text.HAL_SPI_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:128    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:150    .text.HAL_SPI_MspDeInit:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccGwgfMO.s:155    .bss.hspi1:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_SPI_Init

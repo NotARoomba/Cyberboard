@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccZNOVIT.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -17,11 +17,276 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccZNOVIT.s 			page 1
   14              		.eabi_attribute 18, 4
   15              		.file	"stm32wbxx_hal_hsem.c"
   16              		.text
-  17              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccZNOVIT.s 			page 2
+  17              		.section	.text.HAL_HSEM_Take,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_HSEM_Take
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_HSEM_Take:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 41F00041 		orr	r1, r1, #-2147483648
+  29 0004 41F48061 		orr	r1, r1, #1024
+  30 0008 054B     		ldr	r3, .L4
+  31 000a 43F82010 		str	r1, [r3, r0, lsl #2]
+  32 000e 53F82030 		ldr	r3, [r3, r0, lsl #2]
+  33 0012 9942     		cmp	r1, r3
+  34 0014 01D0     		beq	.L3
+  35 0016 0120     		movs	r0, #1
+  36 0018 7047     		bx	lr
+  37              	.L3:
+  38 001a 0020     		movs	r0, #0
+  39 001c 7047     		bx	lr
+  40              	.L5:
+  41 001e 00BF     		.align	2
+  42              	.L4:
+  43 0020 00140058 		.word	1476400128
+  45              		.section	.text.HAL_HSEM_FastTake,"ax",%progbits
+  46              		.align	1
+  47              		.global	HAL_HSEM_FastTake
+  48              		.syntax unified
+  49              		.thumb
+  50              		.thumb_func
+  52              	HAL_HSEM_FastTake:
+  53              		@ args = 0, pretend = 0, frame = 0
+  54              		@ frame_needed = 0, uses_anonymous_args = 0
+  55              		@ link register save eliminated.
+  56 0000 2030     		adds	r0, r0, #32
+  57 0002 054B     		ldr	r3, .L9
+  58 0004 53F82020 		ldr	r2, [r3, r0, lsl #2]
+  59 0008 044B     		ldr	r3, .L9+4
+  60 000a 9A42     		cmp	r2, r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 2
+
+
+  61 000c 01D0     		beq	.L8
+  62 000e 0120     		movs	r0, #1
+  63 0010 7047     		bx	lr
+  64              	.L8:
+  65 0012 0020     		movs	r0, #0
+  66 0014 7047     		bx	lr
+  67              	.L10:
+  68 0016 00BF     		.align	2
+  69              	.L9:
+  70 0018 00140058 		.word	1476400128
+  71 001c 00040080 		.word	-2147482624
+  73              		.section	.text.HAL_HSEM_IsSemTaken,"ax",%progbits
+  74              		.align	1
+  75              		.global	HAL_HSEM_IsSemTaken
+  76              		.syntax unified
+  77              		.thumb
+  78              		.thumb_func
+  80              	HAL_HSEM_IsSemTaken:
+  81              		@ args = 0, pretend = 0, frame = 0
+  82              		@ frame_needed = 0, uses_anonymous_args = 0
+  83              		@ link register save eliminated.
+  84 0000 044B     		ldr	r3, .L15
+  85 0002 53F82030 		ldr	r3, [r3, r0, lsl #2]
+  86 0006 002B     		cmp	r3, #0
+  87 0008 01DB     		blt	.L14
+  88 000a 0020     		movs	r0, #0
+  89 000c 7047     		bx	lr
+  90              	.L14:
+  91 000e 0120     		movs	r0, #1
+  92 0010 7047     		bx	lr
+  93              	.L16:
+  94 0012 00BF     		.align	2
+  95              	.L15:
+  96 0014 00140058 		.word	1476400128
+  98              		.section	.text.HAL_HSEM_Release,"ax",%progbits
+  99              		.align	1
+ 100              		.global	HAL_HSEM_Release
+ 101              		.syntax unified
+ 102              		.thumb
+ 103              		.thumb_func
+ 105              	HAL_HSEM_Release:
+ 106              		@ args = 0, pretend = 0, frame = 0
+ 107              		@ frame_needed = 0, uses_anonymous_args = 0
+ 108              		@ link register save eliminated.
+ 109 0000 41F48061 		orr	r1, r1, #1024
+ 110 0004 014B     		ldr	r3, .L18
+ 111 0006 43F82010 		str	r1, [r3, r0, lsl #2]
+ 112 000a 7047     		bx	lr
+ 113              	.L19:
+ 114              		.align	2
+ 115              	.L18:
+ 116 000c 00140058 		.word	1476400128
+ 118              		.section	.text.HAL_HSEM_ReleaseAll,"ax",%progbits
+ 119              		.align	1
+ 120              		.global	HAL_HSEM_ReleaseAll
+ 121              		.syntax unified
+ 122              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 3
+
+
+ 123              		.thumb_func
+ 125              	HAL_HSEM_ReleaseAll:
+ 126              		@ args = 0, pretend = 0, frame = 0
+ 127              		@ frame_needed = 0, uses_anonymous_args = 0
+ 128              		@ link register save eliminated.
+ 129 0000 0902     		lsls	r1, r1, #8
+ 130 0002 41EA0041 		orr	r1, r1, r0, lsl #16
+ 131 0006 024B     		ldr	r3, .L21
+ 132 0008 C3F84011 		str	r1, [r3, #320]
+ 133 000c 7047     		bx	lr
+ 134              	.L22:
+ 135 000e 00BF     		.align	2
+ 136              	.L21:
+ 137 0010 00140058 		.word	1476400128
+ 139              		.section	.text.HAL_HSEM_SetClearKey,"ax",%progbits
+ 140              		.align	1
+ 141              		.global	HAL_HSEM_SetClearKey
+ 142              		.syntax unified
+ 143              		.thumb
+ 144              		.thumb_func
+ 146              	HAL_HSEM_SetClearKey:
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 149              		@ link register save eliminated.
+ 150 0000 044A     		ldr	r2, .L24
+ 151 0002 D2F84431 		ldr	r3, [r2, #324]
+ 152 0006 9BB2     		uxth	r3, r3
+ 153 0008 43EA0043 		orr	r3, r3, r0, lsl #16
+ 154 000c C2F84431 		str	r3, [r2, #324]
+ 155 0010 7047     		bx	lr
+ 156              	.L25:
+ 157 0012 00BF     		.align	2
+ 158              	.L24:
+ 159 0014 00140058 		.word	1476400128
+ 161              		.section	.text.HAL_HSEM_GetClearKey,"ax",%progbits
+ 162              		.align	1
+ 163              		.global	HAL_HSEM_GetClearKey
+ 164              		.syntax unified
+ 165              		.thumb
+ 166              		.thumb_func
+ 168              	HAL_HSEM_GetClearKey:
+ 169              		@ args = 0, pretend = 0, frame = 0
+ 170              		@ frame_needed = 0, uses_anonymous_args = 0
+ 171              		@ link register save eliminated.
+ 172 0000 024B     		ldr	r3, .L27
+ 173 0002 D3F84401 		ldr	r0, [r3, #324]
+ 174 0006 000C     		lsrs	r0, r0, #16
+ 175 0008 7047     		bx	lr
+ 176              	.L28:
+ 177 000a 00BF     		.align	2
+ 178              	.L27:
+ 179 000c 00140058 		.word	1476400128
+ 181              		.section	.text.HAL_HSEM_ActivateNotification,"ax",%progbits
+ 182              		.align	1
+ 183              		.global	HAL_HSEM_ActivateNotification
+ 184              		.syntax unified
+ 185              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 4
+
+
+ 186              		.thumb_func
+ 188              	HAL_HSEM_ActivateNotification:
+ 189              		@ args = 0, pretend = 0, frame = 0
+ 190              		@ frame_needed = 0, uses_anonymous_args = 0
+ 191              		@ link register save eliminated.
+ 192 0000 024A     		ldr	r2, .L30
+ 193 0002 1368     		ldr	r3, [r2]
+ 194 0004 0343     		orrs	r3, r3, r0
+ 195 0006 1360     		str	r3, [r2]
+ 196 0008 7047     		bx	lr
+ 197              	.L31:
+ 198 000a 00BF     		.align	2
+ 199              	.L30:
+ 200 000c 00150058 		.word	1476400384
+ 202              		.section	.text.HAL_HSEM_DeactivateNotification,"ax",%progbits
+ 203              		.align	1
+ 204              		.global	HAL_HSEM_DeactivateNotification
+ 205              		.syntax unified
+ 206              		.thumb
+ 207              		.thumb_func
+ 209              	HAL_HSEM_DeactivateNotification:
+ 210              		@ args = 0, pretend = 0, frame = 0
+ 211              		@ frame_needed = 0, uses_anonymous_args = 0
+ 212              		@ link register save eliminated.
+ 213 0000 024A     		ldr	r2, .L33
+ 214 0002 1368     		ldr	r3, [r2]
+ 215 0004 23EA0003 		bic	r3, r3, r0
+ 216 0008 1360     		str	r3, [r2]
+ 217 000a 7047     		bx	lr
+ 218              	.L34:
+ 219              		.align	2
+ 220              	.L33:
+ 221 000c 00150058 		.word	1476400384
+ 223              		.section	.text.HAL_HSEM_FreeCallback,"ax",%progbits
+ 224              		.align	1
+ 225              		.weak	HAL_HSEM_FreeCallback
+ 226              		.syntax unified
+ 227              		.thumb
+ 228              		.thumb_func
+ 230              	HAL_HSEM_FreeCallback:
+ 231              		@ args = 0, pretend = 0, frame = 0
+ 232              		@ frame_needed = 0, uses_anonymous_args = 0
+ 233              		@ link register save eliminated.
+ 234 0000 7047     		bx	lr
+ 236              		.section	.text.HAL_HSEM_IRQHandler,"ax",%progbits
+ 237              		.align	1
+ 238              		.global	HAL_HSEM_IRQHandler
+ 239              		.syntax unified
+ 240              		.thumb
+ 241              		.thumb_func
+ 243              	HAL_HSEM_IRQHandler:
+ 244              		@ args = 0, pretend = 0, frame = 0
+ 245              		@ frame_needed = 0, uses_anonymous_args = 0
+ 246 0000 08B5     		push	{r3, lr}
+ 247 0002 054B     		ldr	r3, .L38
+ 248 0004 D868     		ldr	r0, [r3, #12]
+ 249 0006 1A68     		ldr	r2, [r3]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 5
+
+
+ 250 0008 22EA0002 		bic	r2, r2, r0
+ 251 000c 1A60     		str	r2, [r3]
+ 252 000e 5860     		str	r0, [r3, #4]
+ 253 0010 FFF7FEFF 		bl	HAL_HSEM_FreeCallback
+ 254 0014 08BD     		pop	{r3, pc}
+ 255              	.L39:
+ 256 0016 00BF     		.align	2
+ 257              	.L38:
+ 258 0018 00150058 		.word	1476400384
+ 260              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_hal_hsem.c
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:18     .text.HAL_HSEM_Take:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:24     .text.HAL_HSEM_Take:00000000 HAL_HSEM_Take
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:43     .text.HAL_HSEM_Take:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:46     .text.HAL_HSEM_FastTake:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:52     .text.HAL_HSEM_FastTake:00000000 HAL_HSEM_FastTake
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:70     .text.HAL_HSEM_FastTake:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:74     .text.HAL_HSEM_IsSemTaken:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:80     .text.HAL_HSEM_IsSemTaken:00000000 HAL_HSEM_IsSemTaken
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:96     .text.HAL_HSEM_IsSemTaken:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:99     .text.HAL_HSEM_Release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:105    .text.HAL_HSEM_Release:00000000 HAL_HSEM_Release
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:116    .text.HAL_HSEM_Release:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:119    .text.HAL_HSEM_ReleaseAll:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:125    .text.HAL_HSEM_ReleaseAll:00000000 HAL_HSEM_ReleaseAll
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:137    .text.HAL_HSEM_ReleaseAll:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:140    .text.HAL_HSEM_SetClearKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:146    .text.HAL_HSEM_SetClearKey:00000000 HAL_HSEM_SetClearKey
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:159    .text.HAL_HSEM_SetClearKey:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:162    .text.HAL_HSEM_GetClearKey:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:168    .text.HAL_HSEM_GetClearKey:00000000 HAL_HSEM_GetClearKey
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:179    .text.HAL_HSEM_GetClearKey:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:182    .text.HAL_HSEM_ActivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:188    .text.HAL_HSEM_ActivateNotification:00000000 HAL_HSEM_ActivateNotification
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:200    .text.HAL_HSEM_ActivateNotification:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:203    .text.HAL_HSEM_DeactivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:209    .text.HAL_HSEM_DeactivateNotification:00000000 HAL_HSEM_DeactivateNotification
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:221    .text.HAL_HSEM_DeactivateNotification:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:224    .text.HAL_HSEM_FreeCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:230    .text.HAL_HSEM_FreeCallback:00000000 HAL_HSEM_FreeCallback
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:237    .text.HAL_HSEM_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:243    .text.HAL_HSEM_IRQHandler:00000000 HAL_HSEM_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\cczKFQ9d.s:258    .text.HAL_HSEM_IRQHandler:00000018 $d
 
 NO UNDEFINED SYMBOLS

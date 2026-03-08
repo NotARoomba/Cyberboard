@@ -1,0 +1,40 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGghDFA.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"rf.c"
+  16              		.text
+  17              		.section	.text.MX_RF_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	MX_RF_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	MX_RF_Init:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 7047     		bx	lr
+  30              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccGghDFA.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 rf.c
+C:\Users\Nathan\AppData\Local\Temp\ccGghDFA.s:18     .text.MX_RF_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccGghDFA.s:24     .text.MX_RF_Init:00000000 MX_RF_Init
+
+NO UNDEFINED SYMBOLS

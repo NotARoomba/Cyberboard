@@ -1,0 +1,175 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"rtc.c"
+  16              		.text
+  17              		.section	.text.MX_RTC_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	MX_RTC_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	MX_RTC_Init:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 08B5     		push	{r3, lr}
+  28 0002 0A48     		ldr	r0, .L5
+  29 0004 0A4B     		ldr	r3, .L5+4
+  30 0006 0360     		str	r3, [r0]
+  31 0008 0023     		movs	r3, #0
+  32 000a 4360     		str	r3, [r0, #4]
+  33 000c 0F22     		movs	r2, #15
+  34 000e 8260     		str	r2, [r0, #8]
+  35 0010 47F6FF72 		movw	r2, #32767
+  36 0014 C260     		str	r2, [r0, #12]
+  37 0016 0361     		str	r3, [r0, #16]
+  38 0018 8361     		str	r3, [r0, #24]
+  39 001a C361     		str	r3, [r0, #28]
+  40 001c 4361     		str	r3, [r0, #20]
+  41 001e FFF7FEFF 		bl	HAL_RTC_Init
+  42 0022 00B9     		cbnz	r0, .L4
+  43              	.L1:
+  44 0024 08BD     		pop	{r3, pc}
+  45              	.L4:
+  46 0026 FFF7FEFF 		bl	Error_Handler
+  47 002a FBE7     		b	.L1
+  48              	.L6:
+  49              		.align	2
+  50              	.L5:
+  51 002c 00000000 		.word	hrtc
+  52 0030 00280040 		.word	1073752064
+  54              		.section	.text.HAL_RTC_MspInit,"ax",%progbits
+  55              		.align	1
+  56              		.global	HAL_RTC_MspInit
+  57              		.syntax unified
+  58              		.thumb
+  59              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s 			page 2
+
+
+  61              	HAL_RTC_MspInit:
+  62              		@ args = 0, pretend = 0, frame = 88
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64 0000 10B5     		push	{r4, lr}
+  65 0002 96B0     		sub	sp, sp, #88
+  66 0004 0446     		mov	r4, r0
+  67 0006 5022     		movs	r2, #80
+  68 0008 0021     		movs	r1, #0
+  69 000a 02A8     		add	r0, sp, #8
+  70 000c FFF7FEFF 		bl	memset
+  71 0010 2268     		ldr	r2, [r4]
+  72 0012 134B     		ldr	r3, .L13
+  73 0014 9A42     		cmp	r2, r3
+  74 0016 01D0     		beq	.L11
+  75              	.L7:
+  76 0018 16B0     		add	sp, sp, #88
+  77              		@ sp needed
+  78 001a 10BD     		pop	{r4, pc}
+  79              	.L11:
+  80 001c FFF7FEFF 		bl	HAL_PWR_EnableBkUpAccess
+  81 0020 4FF40063 		mov	r3, #2048
+  82 0024 0293     		str	r3, [sp, #8]
+  83 0026 4FF40073 		mov	r3, #512
+  84 002a 1293     		str	r3, [sp, #72]
+  85 002c 02A8     		add	r0, sp, #8
+  86 002e FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+  87 0032 88B9     		cbnz	r0, .L12
+  88              	.L9:
+  89 0034 4FF0B043 		mov	r3, #1476395008
+  90 0038 D3F89020 		ldr	r2, [r3, #144]
+  91 003c 42F40042 		orr	r2, r2, #32768
+  92 0040 C3F89020 		str	r2, [r3, #144]
+  93 0044 9A6D     		ldr	r2, [r3, #88]
+  94 0046 42F48062 		orr	r2, r2, #1024
+  95 004a 9A65     		str	r2, [r3, #88]
+  96 004c 9B6D     		ldr	r3, [r3, #88]
+  97 004e 03F48063 		and	r3, r3, #1024
+  98 0052 0193     		str	r3, [sp, #4]
+  99 0054 019B     		ldr	r3, [sp, #4]
+ 100 0056 DFE7     		b	.L7
+ 101              	.L12:
+ 102 0058 FFF7FEFF 		bl	Error_Handler
+ 103 005c EAE7     		b	.L9
+ 104              	.L14:
+ 105 005e 00BF     		.align	2
+ 106              	.L13:
+ 107 0060 00280040 		.word	1073752064
+ 109              		.section	.text.HAL_RTC_MspDeInit,"ax",%progbits
+ 110              		.align	1
+ 111              		.global	HAL_RTC_MspDeInit
+ 112              		.syntax unified
+ 113              		.thumb
+ 114              		.thumb_func
+ 116              	HAL_RTC_MspDeInit:
+ 117              		@ args = 0, pretend = 0, frame = 0
+ 118              		@ frame_needed = 0, uses_anonymous_args = 0
+ 119              		@ link register save eliminated.
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s 			page 3
+
+
+ 120 0000 0268     		ldr	r2, [r0]
+ 121 0002 084B     		ldr	r3, .L18
+ 122 0004 9A42     		cmp	r2, r3
+ 123 0006 00D0     		beq	.L17
+ 124              	.L15:
+ 125 0008 7047     		bx	lr
+ 126              	.L17:
+ 127 000a 4FF0B043 		mov	r3, #1476395008
+ 128 000e D3F89020 		ldr	r2, [r3, #144]
+ 129 0012 22F40042 		bic	r2, r2, #32768
+ 130 0016 C3F89020 		str	r2, [r3, #144]
+ 131 001a 9A6D     		ldr	r2, [r3, #88]
+ 132 001c 22F48062 		bic	r2, r2, #1024
+ 133 0020 9A65     		str	r2, [r3, #88]
+ 134 0022 F1E7     		b	.L15
+ 135              	.L19:
+ 136              		.align	2
+ 137              	.L18:
+ 138 0024 00280040 		.word	1073752064
+ 140              		.global	hrtc
+ 141              		.section	.bss.hrtc,"aw",%nobits
+ 142              		.align	2
+ 145              	hrtc:
+ 146 0000 00000000 		.space	36
+ 146      00000000 
+ 146      00000000 
+ 146      00000000 
+ 146      00000000 
+ 147              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 rtc.c
+C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s:18     .text.MX_RTC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s:24     .text.MX_RTC_Init:00000000 MX_RTC_Init
+C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s:51     .text.MX_RTC_Init:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s:145    .bss.hrtc:00000000 hrtc
+C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s:55     .text.HAL_RTC_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s:61     .text.HAL_RTC_MspInit:00000000 HAL_RTC_MspInit
+C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s:107    .text.HAL_RTC_MspInit:00000060 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s:110    .text.HAL_RTC_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s:116    .text.HAL_RTC_MspDeInit:00000000 HAL_RTC_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s:138    .text.HAL_RTC_MspDeInit:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\cc6pAppD.s:142    .bss.hrtc:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_RTC_Init
+Error_Handler
+memset
+HAL_PWR_EnableBkUpAccess
+HAL_RCCEx_PeriphCLKConfig

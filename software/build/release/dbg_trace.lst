@@ -1,0 +1,121 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPNmqOY.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"dbg_trace.c"
+  16              		.text
+  17              		.section	.text.DbgTraceGetFileName,"ax",%progbits
+  18              		.align	1
+  19              		.global	DbgTraceGetFileName
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	DbgTraceGetFileName:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 10B5     		push	{r4, lr}
+  28 0002 0446     		mov	r4, r0
+  29 0004 5C21     		movs	r1, #92
+  30 0006 FFF7FEFF 		bl	strrchr
+  31 000a 08B1     		cbz	r0, .L2
+  32 000c 0130     		adds	r0, r0, #1
+  33              	.L1:
+  34 000e 10BD     		pop	{r4, pc}
+  35              	.L2:
+  36 0010 2F21     		movs	r1, #47
+  37 0012 2046     		mov	r0, r4
+  38 0014 FFF7FEFF 		bl	strrchr
+  39 0018 08B1     		cbz	r0, .L4
+  40 001a 0130     		adds	r0, r0, #1
+  41 001c F7E7     		b	.L1
+  42              	.L4:
+  43 001e 2046     		mov	r0, r4
+  44 0020 F5E7     		b	.L1
+  46              		.section	.rodata.DbgTraceBuffer.str1.4,"aMS",%progbits,1
+  47              		.align	2
+  48              	.LC0:
+  49 0000 20253032 		.ascii	" %02X\000"
+  49      5800
+  50              		.section	.text.DbgTraceBuffer,"ax",%progbits
+  51              		.align	1
+  52              		.global	DbgTraceBuffer
+  53              		.syntax unified
+  54              		.thumb
+  55              		.thumb_func
+  57              	DbgTraceBuffer:
+  58              		@ args = 4, pretend = 8, frame = 8
+  59              		@ frame_needed = 0, uses_anonymous_args = 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPNmqOY.s 			page 2
+
+
+  60 0000 0CB4     		push	{r2, r3}
+  61 0002 70B5     		push	{r4, r5, r6, lr}
+  62 0004 82B0     		sub	sp, sp, #8
+  63 0006 0646     		mov	r6, r0
+  64 0008 0D46     		mov	r5, r1
+  65 000a 06A9     		add	r1, sp, #24
+  66 000c 51F8040B 		ldr	r0, [r1], #4
+  67 0010 0191     		str	r1, [sp, #4]
+  68 0012 FFF7FEFF 		bl	vprintf
+  69 0016 0024     		movs	r4, #0
+  70 0018 04E0     		b	.L7
+  71              	.L8:
+  72 001a 315D     		ldrb	r1, [r6, r4]	@ zero_extendqisi2
+  73 001c 0548     		ldr	r0, .L10
+  74 001e FFF7FEFF 		bl	printf
+  75 0022 0134     		adds	r4, r4, #1
+  76              	.L7:
+  77 0024 AC42     		cmp	r4, r5
+  78 0026 F8D3     		bcc	.L8
+  79 0028 02B0     		add	sp, sp, #8
+  80              		@ sp needed
+  81 002a BDE87040 		pop	{r4, r5, r6, lr}
+  82 002e 02B0     		add	sp, sp, #8
+  83 0030 7047     		bx	lr
+  84              	.L11:
+  85 0032 00BF     		.align	2
+  86              	.L10:
+  87 0034 00000000 		.word	.LC0
+  89              		.section	.text.DbgTraceInit,"ax",%progbits
+  90              		.align	1
+  91              		.global	DbgTraceInit
+  92              		.syntax unified
+  93              		.thumb
+  94              		.thumb_func
+  96              	DbgTraceInit:
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99              		@ link register save eliminated.
+ 100 0000 7047     		bx	lr
+ 102              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccPNmqOY.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 dbg_trace.c
+C:\Users\Nathan\AppData\Local\Temp\ccPNmqOY.s:18     .text.DbgTraceGetFileName:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPNmqOY.s:24     .text.DbgTraceGetFileName:00000000 DbgTraceGetFileName
+C:\Users\Nathan\AppData\Local\Temp\ccPNmqOY.s:47     .rodata.DbgTraceBuffer.str1.4:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPNmqOY.s:51     .text.DbgTraceBuffer:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPNmqOY.s:57     .text.DbgTraceBuffer:00000000 DbgTraceBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccPNmqOY.s:87     .text.DbgTraceBuffer:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccPNmqOY.s:90     .text.DbgTraceInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccPNmqOY.s:96     .text.DbgTraceInit:00000000 DbgTraceInit
+
+UNDEFINED SYMBOLS
+strrchr
+vprintf
+printf

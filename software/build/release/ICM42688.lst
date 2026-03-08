@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 1
   56 0048 6068     		ldr	r0, [r4, #4]
   57 004a FFF7FEFF 		bl	HAL_GPIO_WritePin
   58 004e 66B9     		cbnz	r6, .L4
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s 			page 2
 
 
   59 0050 2A46     		mov	r2, r5
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 1
  117 0020 0223     		movs	r3, #2
  118 0022 02AA     		add	r2, sp, #8
  119 0024 03A9     		add	r1, sp, #12
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s 			page 3
 
 
  120 0026 2068     		ldr	r0, [r4]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 1
  178 0028 0120     		movs	r0, #1
  179 002a FFF7FEFF 		bl	HAL_Delay
  180 002e 0021     		movs	r1, #0
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s 			page 4
 
 
  181 0030 2046     		mov	r0, r4
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 1
  237 001c 032B     		cmp	r3, #3
  238 001e 11D0     		beq	.L27
  239 0020 0DF10F03 		add	r3, sp, #15
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 5
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s 			page 5
 
 
  240 0024 0122     		movs	r2, #1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 1
  294 00ba 1343     		orrs	r3, r3, r2
  295 00bc 06EE903A 		vmov	s13, r3	@ int
  296 00c0 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 6
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s 			page 6
 
 
  297 00c4 1B02     		lsls	r3, r3, #8
@@ -350,24 +350,24 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 1
  343              	.L28:
  344 0154 0000803B 		.word	998244352
  346              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s 			page 7
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ICM42688.c
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:18     .text.read_regs:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:23     .text.read_regs:00000000 read_regs
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:76     .text.read_reg:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:81     .text.read_reg:00000000 read_reg
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:97     .text.write_reg:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:102    .text.write_reg:00000000 write_reg
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:138    .text.ICM42688_WhoAmI:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:144    .text.ICM42688_WhoAmI:00000000 ICM42688_WhoAmI
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:153    .text.ICM42688_Init:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:159    .text.ICM42688_Init:00000000 ICM42688_Init
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:217    .text.ICM42688_ReadOnce:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:223    .text.ICM42688_ReadOnce:00000000 ICM42688_ReadOnce
-C:\Users\Nathan\AppData\Local\Temp\ccB8M9Lq.s:344    .text.ICM42688_ReadOnce:00000154 $d
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:18     .text.read_regs:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:23     .text.read_regs:00000000 read_regs
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:76     .text.read_reg:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:81     .text.read_reg:00000000 read_reg
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:97     .text.write_reg:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:102    .text.write_reg:00000000 write_reg
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:138    .text.ICM42688_WhoAmI:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:144    .text.ICM42688_WhoAmI:00000000 ICM42688_WhoAmI
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:153    .text.ICM42688_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:159    .text.ICM42688_Init:00000000 ICM42688_Init
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:217    .text.ICM42688_ReadOnce:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:223    .text.ICM42688_ReadOnce:00000000 ICM42688_ReadOnce
+C:\Users\Nathan\AppData\Local\Temp\cc1RIRSf.s:344    .text.ICM42688_ReadOnce:00000154 $d
 
 UNDEFINED SYMBOLS
 memset

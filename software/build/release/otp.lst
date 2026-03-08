@@ -1,0 +1,64 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKoeTxy.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"otp.c"
+  16              		.text
+  17              		.section	.text.OTP_Read,"ax",%progbits
+  18              		.align	1
+  19              		.global	OTP_Read
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	OTP_Read:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 0146     		mov	r1, r0
+  29 0002 0748     		ldr	r0, .L8
+  30              	.L2:
+  31 0004 C379     		ldrb	r3, [r0, #7]	@ zero_extendqisi2
+  32 0006 8B42     		cmp	r3, r1
+  33 0008 04D0     		beq	.L3
+  34 000a 064A     		ldr	r2, .L8+4
+  35 000c 9042     		cmp	r0, r2
+  36 000e 01D0     		beq	.L3
+  37 0010 0838     		subs	r0, r0, #8
+  38 0012 F7E7     		b	.L2
+  39              	.L3:
+  40 0014 8B42     		cmp	r3, r1
+  41 0016 00D1     		bne	.L7
+  42              	.L1:
+  43 0018 7047     		bx	lr
+  44              	.L7:
+  45 001a 0020     		movs	r0, #0
+  46 001c FCE7     		b	.L1
+  47              	.L9:
+  48 001e 00BF     		.align	2
+  49              	.L8:
+  50 0020 F873FF1F 		.word	536835064
+  51 0024 0070FF1F 		.word	536834048
+  53              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccKoeTxy.s 			page 2
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 otp.c
+C:\Users\Nathan\AppData\Local\Temp\ccKoeTxy.s:18     .text.OTP_Read:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccKoeTxy.s:24     .text.OTP_Read:00000000 OTP_Read
+C:\Users\Nathan\AppData\Local\Temp\ccKoeTxy.s:50     .text.OTP_Read:00000020 $d
+
+NO UNDEFINED SYMBOLS

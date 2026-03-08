@@ -1,0 +1,628 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32wbxx_hal_ipcc.c"
+  16              		.text
+  17              		.section	.text.HAL_IPCC_RxCallback,"ax",%progbits
+  18              		.align	1
+  19              		.weak	HAL_IPCC_RxCallback
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_IPCC_RxCallback:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 7047     		bx	lr
+  30              		.section	.text.HAL_IPCC_TxCallback,"ax",%progbits
+  31              		.align	1
+  32              		.weak	HAL_IPCC_TxCallback
+  33              		.syntax unified
+  34              		.thumb
+  35              		.thumb_func
+  37              	HAL_IPCC_TxCallback:
+  38              		@ args = 0, pretend = 0, frame = 0
+  39              		@ frame_needed = 0, uses_anonymous_args = 0
+  40              		@ link register save eliminated.
+  41 0000 7047     		bx	lr
+  43              		.section	.text.HAL_IPCC_MspInit,"ax",%progbits
+  44              		.align	1
+  45              		.weak	HAL_IPCC_MspInit
+  46              		.syntax unified
+  47              		.thumb
+  48              		.thumb_func
+  50              	HAL_IPCC_MspInit:
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  54 0000 7047     		bx	lr
+  56              		.section	.text.HAL_IPCC_MspDeInit,"ax",%progbits
+  57              		.align	1
+  58              		.weak	HAL_IPCC_MspDeInit
+  59              		.syntax unified
+  60              		.thumb
+  61              		.thumb_func
+  63              	HAL_IPCC_MspDeInit:
+  64              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s 			page 2
+
+
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67 0000 7047     		bx	lr
+  69              		.section	.text.HAL_IPCC_GetChannelStatus,"ax",%progbits
+  70              		.align	1
+  71              		.global	HAL_IPCC_GetChannelStatus
+  72              		.syntax unified
+  73              		.thumb
+  74              		.thumb_func
+  76              	HAL_IPCC_GetChannelStatus:
+  77              		@ args = 0, pretend = 0, frame = 0
+  78              		@ frame_needed = 0, uses_anonymous_args = 0
+  79              		@ link register save eliminated.
+  80 0000 52B9     		cbnz	r2, .L6
+  81 0002 094B     		ldr	r3, .L8
+  82 0004 D868     		ldr	r0, [r3, #12]
+  83 0006 01F00F01 		and	r1, r1, #15
+  84 000a 0123     		movs	r3, #1
+  85 000c 8B40     		lsls	r3, r3, r1
+  86 000e 1840     		ands	r0, r0, r3
+  87              	.L7:
+  88 0010 0038     		subs	r0, r0, #0
+  89 0012 18BF     		it	ne
+  90 0014 0120     		movne	r0, #1
+  91 0016 7047     		bx	lr
+  92              	.L6:
+  93 0018 034B     		ldr	r3, .L8
+  94 001a D869     		ldr	r0, [r3, #28]
+  95 001c 01F00F01 		and	r1, r1, #15
+  96 0020 0123     		movs	r3, #1
+  97 0022 8B40     		lsls	r3, r3, r1
+  98 0024 1840     		ands	r0, r0, r3
+  99 0026 F3E7     		b	.L7
+ 100              	.L9:
+ 101              		.align	2
+ 102              	.L8:
+ 103 0028 000C0058 		.word	1476398080
+ 105              		.section	.text.HAL_IPCC_TX_IRQHandler,"ax",%progbits
+ 106              		.align	1
+ 107              		.global	HAL_IPCC_TX_IRQHandler
+ 108              		.syntax unified
+ 109              		.thumb
+ 110              		.thumb_func
+ 112              	HAL_IPCC_TX_IRQHandler:
+ 113              		@ args = 0, pretend = 0, frame = 0
+ 114              		@ frame_needed = 0, uses_anonymous_args = 0
+ 115 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 116 0002 0746     		mov	r7, r0
+ 117 0004 124B     		ldr	r3, .L18
+ 118 0006 5D68     		ldr	r5, [r3, #4]
+ 119 0008 ED43     		mvns	r5, r5
+ 120 000a 05F47C15 		and	r5, r5, #4128768
+ 121 000e DB68     		ldr	r3, [r3, #12]
+ 122 0010 25EA0345 		bic	r5, r5, r3, lsl #16
+ 123 0014 0026     		movs	r6, #0
+ 124 0016 06E0     		b	.L11
+ 125              	.L17:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s 			page 3
+
+
+ 126 0018 0022     		movs	r2, #0
+ 127 001a 3146     		mov	r1, r6
+ 128 001c 3846     		mov	r0, r7
+ 129 001e 9847     		blx	r3
+ 130              	.L13:
+ 131 0020 25EA0405 		bic	r5, r5, r4
+ 132              	.L12:
+ 133 0024 0136     		adds	r6, r6, #1
+ 134              	.L11:
+ 135 0026 8DB1     		cbz	r5, .L16
+ 136 0028 06F00F03 		and	r3, r6, #15
+ 137 002c 1033     		adds	r3, r3, #16
+ 138 002e 0124     		movs	r4, #1
+ 139 0030 9C40     		lsls	r4, r4, r3
+ 140 0032 2542     		tst	r5, r4
+ 141 0034 F6D0     		beq	.L12
+ 142 0036 064A     		ldr	r2, .L18
+ 143 0038 5368     		ldr	r3, [r2, #4]
+ 144 003a 2343     		orrs	r3, r3, r4
+ 145 003c 5360     		str	r3, [r2, #4]
+ 146 003e B31D     		adds	r3, r6, #6
+ 147 0040 07EB8303 		add	r3, r7, r3, lsl #2
+ 148 0044 5B68     		ldr	r3, [r3, #4]
+ 149 0046 002B     		cmp	r3, #0
+ 150 0048 E6D1     		bne	.L17
+ 151 004a E9E7     		b	.L13
+ 152              	.L16:
+ 153 004c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 154              	.L19:
+ 155 004e 00BF     		.align	2
+ 156              	.L18:
+ 157 0050 000C0058 		.word	1476398080
+ 159              		.section	.text.HAL_IPCC_RX_IRQHandler,"ax",%progbits
+ 160              		.align	1
+ 161              		.global	HAL_IPCC_RX_IRQHandler
+ 162              		.syntax unified
+ 163              		.thumb
+ 164              		.thumb_func
+ 166              	HAL_IPCC_RX_IRQHandler:
+ 167              		@ args = 0, pretend = 0, frame = 0
+ 168              		@ frame_needed = 0, uses_anonymous_args = 0
+ 169 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 170 0002 0746     		mov	r7, r0
+ 171 0004 104A     		ldr	r2, .L28
+ 172 0006 5368     		ldr	r3, [r2, #4]
+ 173 0008 DB43     		mvns	r3, r3
+ 174 000a 03F03F03 		and	r3, r3, #63
+ 175 000e D669     		ldr	r6, [r2, #28]
+ 176 0010 1E40     		ands	r6, r6, r3
+ 177 0012 0025     		movs	r5, #0
+ 178 0014 06E0     		b	.L21
+ 179              	.L27:
+ 180 0016 0122     		movs	r2, #1
+ 181 0018 2946     		mov	r1, r5
+ 182 001a 3846     		mov	r0, r7
+ 183 001c 9847     		blx	r3
+ 184              	.L23:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s 			page 4
+
+
+ 185 001e 26EA0406 		bic	r6, r6, r4
+ 186              	.L22:
+ 187 0022 0135     		adds	r5, r5, #1
+ 188              	.L21:
+ 189 0024 7EB1     		cbz	r6, .L26
+ 190 0026 05F00F03 		and	r3, r5, #15
+ 191 002a 0124     		movs	r4, #1
+ 192 002c 9C40     		lsls	r4, r4, r3
+ 193 002e 2642     		tst	r6, r4
+ 194 0030 F7D0     		beq	.L22
+ 195 0032 054A     		ldr	r2, .L28
+ 196 0034 5368     		ldr	r3, [r2, #4]
+ 197 0036 2343     		orrs	r3, r3, r4
+ 198 0038 5360     		str	r3, [r2, #4]
+ 199 003a 07EB8503 		add	r3, r7, r5, lsl #2
+ 200 003e 5B68     		ldr	r3, [r3, #4]
+ 201 0040 002B     		cmp	r3, #0
+ 202 0042 E8D1     		bne	.L27
+ 203 0044 EBE7     		b	.L23
+ 204              	.L26:
+ 205 0046 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 206              	.L29:
+ 207              		.align	2
+ 208              	.L28:
+ 209 0048 000C0058 		.word	1476398080
+ 211              		.section	.text.HAL_IPCC_GetState,"ax",%progbits
+ 212              		.align	1
+ 213              		.global	HAL_IPCC_GetState
+ 214              		.syntax unified
+ 215              		.thumb
+ 216              		.thumb_func
+ 218              	HAL_IPCC_GetState:
+ 219              		@ args = 0, pretend = 0, frame = 0
+ 220              		@ frame_needed = 0, uses_anonymous_args = 0
+ 221              		@ link register save eliminated.
+ 222 0000 90F83800 		ldrb	r0, [r0, #56]	@ zero_extendqisi2
+ 223 0004 7047     		bx	lr
+ 225              		.section	.text.IPCC_MaskInterrupt,"ax",%progbits
+ 226              		.align	1
+ 227              		.global	IPCC_MaskInterrupt
+ 228              		.syntax unified
+ 229              		.thumb
+ 230              		.thumb_func
+ 232              	IPCC_MaskInterrupt:
+ 233              		@ args = 0, pretend = 0, frame = 0
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235              		@ link register save eliminated.
+ 236 0000 49B9     		cbnz	r1, .L32
+ 237 0002 0949     		ldr	r1, .L34
+ 238 0004 4B68     		ldr	r3, [r1, #4]
+ 239 0006 00F00F00 		and	r0, r0, #15
+ 240 000a 4FF48032 		mov	r2, #65536
+ 241 000e 8240     		lsls	r2, r2, r0
+ 242 0010 1343     		orrs	r3, r3, r2
+ 243 0012 4B60     		str	r3, [r1, #4]
+ 244 0014 7047     		bx	lr
+ 245              	.L32:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s 			page 5
+
+
+ 246 0016 0449     		ldr	r1, .L34
+ 247 0018 4B68     		ldr	r3, [r1, #4]
+ 248 001a 00F00F00 		and	r0, r0, #15
+ 249 001e 0122     		movs	r2, #1
+ 250 0020 8240     		lsls	r2, r2, r0
+ 251 0022 1343     		orrs	r3, r3, r2
+ 252 0024 4B60     		str	r3, [r1, #4]
+ 253 0026 7047     		bx	lr
+ 254              	.L35:
+ 255              		.align	2
+ 256              	.L34:
+ 257 0028 000C0058 		.word	1476398080
+ 259              		.section	.text.HAL_IPCC_DeActivateNotification,"ax",%progbits
+ 260              		.align	1
+ 261              		.global	HAL_IPCC_DeActivateNotification
+ 262              		.syntax unified
+ 263              		.thumb
+ 264              		.thumb_func
+ 266              	HAL_IPCC_DeActivateNotification:
+ 267              		@ args = 0, pretend = 0, frame = 0
+ 268              		@ frame_needed = 0, uses_anonymous_args = 0
+ 269 0000 68B3     		cbz	r0, .L40
+ 270 0002 08B5     		push	{r3, lr}
+ 271 0004 8C46     		mov	ip, r1
+ 272 0006 0346     		mov	r3, r0
+ 273 0008 90F83810 		ldrb	r1, [r0, #56]	@ zero_extendqisi2
+ 274 000c 0129     		cmp	r1, #1
+ 275 000e 01D0     		beq	.L46
+ 276 0010 0120     		movs	r0, #1
+ 277              	.L37:
+ 278 0012 08BD     		pop	{r3, pc}
+ 279              	.L46:
+ 280 0014 AAB9     		cbnz	r2, .L38
+ 281 0016 0CF10601 		add	r1, ip, #6
+ 282 001a 00EB8101 		add	r1, r0, r1, lsl #2
+ 283 001e 1148     		ldr	r0, .L47
+ 284 0020 4860     		str	r0, [r1, #4]
+ 285 0022 596B     		ldr	r1, [r3, #52]
+ 286 0024 0CF00F0E 		and	lr, ip, #15
+ 287 0028 4FF48030 		mov	r0, #65536
+ 288 002c 00FA0EF0 		lsl	r0, r0, lr
+ 289 0030 21EA0001 		bic	r1, r1, r0
+ 290 0034 5963     		str	r1, [r3, #52]
+ 291              	.L39:
+ 292 0036 1146     		mov	r1, r2
+ 293 0038 6046     		mov	r0, ip
+ 294 003a FFF7FEFF 		bl	IPCC_MaskInterrupt
+ 295 003e 0020     		movs	r0, #0
+ 296 0040 E7E7     		b	.L37
+ 297              	.L38:
+ 298 0042 00EB8C01 		add	r1, r0, ip, lsl #2
+ 299 0046 0848     		ldr	r0, .L47+4
+ 300 0048 4860     		str	r0, [r1, #4]
+ 301 004a 596B     		ldr	r1, [r3, #52]
+ 302 004c 0CF00F0E 		and	lr, ip, #15
+ 303 0050 0120     		movs	r0, #1
+ 304 0052 00FA0EF0 		lsl	r0, r0, lr
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s 			page 6
+
+
+ 305 0056 21EA0001 		bic	r1, r1, r0
+ 306 005a 5963     		str	r1, [r3, #52]
+ 307 005c EBE7     		b	.L39
+ 308              	.L40:
+ 309 005e 0120     		movs	r0, #1
+ 310 0060 7047     		bx	lr
+ 311              	.L48:
+ 312 0062 00BF     		.align	2
+ 313              	.L47:
+ 314 0064 00000000 		.word	HAL_IPCC_TxCallback
+ 315 0068 00000000 		.word	HAL_IPCC_RxCallback
+ 317              		.section	.text.IPCC_UnmaskInterrupt,"ax",%progbits
+ 318              		.align	1
+ 319              		.global	IPCC_UnmaskInterrupt
+ 320              		.syntax unified
+ 321              		.thumb
+ 322              		.thumb_func
+ 324              	IPCC_UnmaskInterrupt:
+ 325              		@ args = 0, pretend = 0, frame = 0
+ 326              		@ frame_needed = 0, uses_anonymous_args = 0
+ 327              		@ link register save eliminated.
+ 328 0000 51B9     		cbnz	r1, .L50
+ 329 0002 0A49     		ldr	r1, .L52
+ 330 0004 4B68     		ldr	r3, [r1, #4]
+ 331 0006 00F00F00 		and	r0, r0, #15
+ 332 000a 4FF48032 		mov	r2, #65536
+ 333 000e 8240     		lsls	r2, r2, r0
+ 334 0010 23EA0203 		bic	r3, r3, r2
+ 335 0014 4B60     		str	r3, [r1, #4]
+ 336 0016 7047     		bx	lr
+ 337              	.L50:
+ 338 0018 0449     		ldr	r1, .L52
+ 339 001a 4B68     		ldr	r3, [r1, #4]
+ 340 001c 00F00F00 		and	r0, r0, #15
+ 341 0020 0122     		movs	r2, #1
+ 342 0022 8240     		lsls	r2, r2, r0
+ 343 0024 23EA0203 		bic	r3, r3, r2
+ 344 0028 4B60     		str	r3, [r1, #4]
+ 345 002a 7047     		bx	lr
+ 346              	.L53:
+ 347              		.align	2
+ 348              	.L52:
+ 349 002c 000C0058 		.word	1476398080
+ 351              		.section	.text.HAL_IPCC_ActivateNotification,"ax",%progbits
+ 352              		.align	1
+ 353              		.global	HAL_IPCC_ActivateNotification
+ 354              		.syntax unified
+ 355              		.thumb
+ 356              		.thumb_func
+ 358              	HAL_IPCC_ActivateNotification:
+ 359              		@ args = 0, pretend = 0, frame = 0
+ 360              		@ frame_needed = 0, uses_anonymous_args = 0
+ 361 0000 68B3     		cbz	r0, .L58
+ 362 0002 08B5     		push	{r3, lr}
+ 363 0004 8E46     		mov	lr, r1
+ 364 0006 8446     		mov	ip, r0
+ 365 0008 90F83810 		ldrb	r1, [r0, #56]	@ zero_extendqisi2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s 			page 7
+
+
+ 366 000c 0129     		cmp	r1, #1
+ 367 000e 01D0     		beq	.L65
+ 368 0010 0120     		movs	r0, #1
+ 369              	.L55:
+ 370 0012 08BD     		pop	{r3, pc}
+ 371              	.L65:
+ 372 0014 8AB9     		cbnz	r2, .L56
+ 373 0016 0EF10601 		add	r1, lr, #6
+ 374 001a 00EB8101 		add	r1, r0, r1, lsl #2
+ 375 001e 4B60     		str	r3, [r1, #4]
+ 376 0020 436B     		ldr	r3, [r0, #52]
+ 377 0022 0EF00F00 		and	r0, lr, #15
+ 378 0026 4FF48031 		mov	r1, #65536
+ 379 002a 8140     		lsls	r1, r1, r0
+ 380 002c 0B43     		orrs	r3, r3, r1
+ 381 002e CCF83430 		str	r3, [ip, #52]
+ 382              	.L57:
+ 383 0032 012A     		cmp	r2, #1
+ 384 0034 0DD0     		beq	.L66
+ 385 0036 0020     		movs	r0, #0
+ 386 0038 EBE7     		b	.L55
+ 387              	.L56:
+ 388 003a 00EB8E01 		add	r1, r0, lr, lsl #2
+ 389 003e 4B60     		str	r3, [r1, #4]
+ 390 0040 436B     		ldr	r3, [r0, #52]
+ 391 0042 0EF00F00 		and	r0, lr, #15
+ 392 0046 0121     		movs	r1, #1
+ 393 0048 8140     		lsls	r1, r1, r0
+ 394 004a 0B43     		orrs	r3, r3, r1
+ 395 004c CCF83430 		str	r3, [ip, #52]
+ 396 0050 EFE7     		b	.L57
+ 397              	.L66:
+ 398 0052 1146     		mov	r1, r2
+ 399 0054 7046     		mov	r0, lr
+ 400 0056 FFF7FEFF 		bl	IPCC_UnmaskInterrupt
+ 401 005a 0020     		movs	r0, #0
+ 402 005c D9E7     		b	.L55
+ 403              	.L58:
+ 404 005e 0120     		movs	r0, #1
+ 405 0060 7047     		bx	lr
+ 407              		.section	.text.HAL_IPCC_NotifyCPU,"ax",%progbits
+ 408              		.align	1
+ 409              		.global	HAL_IPCC_NotifyCPU
+ 410              		.syntax unified
+ 411              		.thumb
+ 412              		.thumb_func
+ 414              	HAL_IPCC_NotifyCPU:
+ 415              		@ args = 0, pretend = 0, frame = 0
+ 416              		@ frame_needed = 0, uses_anonymous_args = 0
+ 417 0000 08B5     		push	{r3, lr}
+ 418 0002 90F83830 		ldrb	r3, [r0, #56]	@ zero_extendqisi2
+ 419 0006 012B     		cmp	r3, #1
+ 420 0008 01D0     		beq	.L74
+ 421 000a 0120     		movs	r0, #1
+ 422              	.L68:
+ 423 000c 08BD     		pop	{r3, pc}
+ 424              	.L74:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s 			page 8
+
+
+ 425 000e 8C46     		mov	ip, r1
+ 426 0010 0D4B     		ldr	r3, .L76
+ 427 0012 9968     		ldr	r1, [r3, #8]
+ 428 0014 7AB9     		cbnz	r2, .L71
+ 429 0016 4FF48033 		mov	r3, #65536
+ 430              	.L69:
+ 431 001a 0CF00F0E 		and	lr, ip, #15
+ 432 001e 03FA0EF3 		lsl	r3, r3, lr
+ 433 0022 1943     		orrs	r1, r1, r3
+ 434 0024 DFF820E0 		ldr	lr, .L76
+ 435 0028 CEF80810 		str	r1, [lr, #8]
+ 436 002c 416B     		ldr	r1, [r0, #52]
+ 437 002e 8B43     		bics	r3, r3, r1
+ 438 0030 03D0     		beq	.L75
+ 439 0032 0020     		movs	r0, #0
+ 440 0034 EAE7     		b	.L68
+ 441              	.L71:
+ 442 0036 0123     		movs	r3, #1
+ 443 0038 EFE7     		b	.L69
+ 444              	.L75:
+ 445 003a 1146     		mov	r1, r2
+ 446 003c 6046     		mov	r0, ip
+ 447 003e FFF7FEFF 		bl	IPCC_UnmaskInterrupt
+ 448 0042 0020     		movs	r0, #0
+ 449 0044 E2E7     		b	.L68
+ 450              	.L77:
+ 451 0046 00BF     		.align	2
+ 452              	.L76:
+ 453 0048 000C0058 		.word	1476398080
+ 455              		.section	.text.IPCC_SetDefaultCallbacks,"ax",%progbits
+ 456              		.align	1
+ 457              		.global	IPCC_SetDefaultCallbacks
+ 458              		.syntax unified
+ 459              		.thumb
+ 460              		.thumb_func
+ 462              	IPCC_SetDefaultCallbacks:
+ 463              		@ args = 0, pretend = 0, frame = 0
+ 464              		@ frame_needed = 0, uses_anonymous_args = 0
+ 465              		@ link register save eliminated.
+ 466 0000 0023     		movs	r3, #0
+ 467 0002 09E0     		b	.L79
+ 468              	.L80:
+ 469 0004 00EB8302 		add	r2, r0, r3, lsl #2
+ 470 0008 0549     		ldr	r1, .L81
+ 471 000a 5160     		str	r1, [r2, #4]
+ 472 000c 9A1D     		adds	r2, r3, #6
+ 473 000e 00EB8202 		add	r2, r0, r2, lsl #2
+ 474 0012 0449     		ldr	r1, .L81+4
+ 475 0014 5160     		str	r1, [r2, #4]
+ 476 0016 0133     		adds	r3, r3, #1
+ 477              	.L79:
+ 478 0018 052B     		cmp	r3, #5
+ 479 001a F3D9     		bls	.L80
+ 480 001c 7047     		bx	lr
+ 481              	.L82:
+ 482 001e 00BF     		.align	2
+ 483              	.L81:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s 			page 9
+
+
+ 484 0020 00000000 		.word	HAL_IPCC_RxCallback
+ 485 0024 00000000 		.word	HAL_IPCC_TxCallback
+ 487              		.section	.text.IPCC_Reset_Register,"ax",%progbits
+ 488              		.align	1
+ 489              		.global	IPCC_Reset_Register
+ 490              		.syntax unified
+ 491              		.thumb
+ 492              		.thumb_func
+ 494              	IPCC_Reset_Register:
+ 495              		@ args = 0, pretend = 0, frame = 0
+ 496              		@ frame_needed = 0, uses_anonymous_args = 0
+ 497              		@ link register save eliminated.
+ 498 0000 0023     		movs	r3, #0
+ 499 0002 0360     		str	r3, [r0]
+ 500 0004 4FF03F13 		mov	r3, #4128831
+ 501 0008 4360     		str	r3, [r0, #4]
+ 502 000a 3F23     		movs	r3, #63
+ 503 000c 8360     		str	r3, [r0, #8]
+ 504 000e 7047     		bx	lr
+ 506              		.section	.text.HAL_IPCC_Init,"ax",%progbits
+ 507              		.align	1
+ 508              		.global	HAL_IPCC_Init
+ 509              		.syntax unified
+ 510              		.thumb
+ 511              		.thumb_func
+ 513              	HAL_IPCC_Init:
+ 514              		@ args = 0, pretend = 0, frame = 0
+ 515              		@ frame_needed = 0, uses_anonymous_args = 0
+ 516 0000 C0B1     		cbz	r0, .L87
+ 517 0002 38B5     		push	{r3, r4, r5, lr}
+ 518 0004 0446     		mov	r4, r0
+ 519 0006 90F83830 		ldrb	r3, [r0, #56]	@ zero_extendqisi2
+ 520 000a 83B1     		cbz	r3, .L92
+ 521              	.L86:
+ 522 000c 0A4D     		ldr	r5, .L93
+ 523 000e 2846     		mov	r0, r5
+ 524 0010 FFF7FEFF 		bl	IPCC_Reset_Register
+ 525 0014 2B68     		ldr	r3, [r5]
+ 526 0016 43F00113 		orr	r3, r3, #65537
+ 527 001a 2B60     		str	r3, [r5]
+ 528 001c 2046     		mov	r0, r4
+ 529 001e FFF7FEFF 		bl	IPCC_SetDefaultCallbacks
+ 530 0022 0020     		movs	r0, #0
+ 531 0024 6063     		str	r0, [r4, #52]
+ 532 0026 0123     		movs	r3, #1
+ 533 0028 84F83830 		strb	r3, [r4, #56]
+ 534 002c 38BD     		pop	{r3, r4, r5, pc}
+ 535              	.L92:
+ 536 002e FFF7FEFF 		bl	HAL_IPCC_MspInit
+ 537 0032 EBE7     		b	.L86
+ 538              	.L87:
+ 539 0034 0120     		movs	r0, #1
+ 540 0036 7047     		bx	lr
+ 541              	.L94:
+ 542              		.align	2
+ 543              	.L93:
+ 544 0038 000C0058 		.word	1476398080
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s 			page 10
+
+
+ 546              		.section	.text.HAL_IPCC_DeInit,"ax",%progbits
+ 547              		.align	1
+ 548              		.global	HAL_IPCC_DeInit
+ 549              		.syntax unified
+ 550              		.thumb
+ 551              		.thumb_func
+ 553              	HAL_IPCC_DeInit:
+ 554              		@ args = 0, pretend = 0, frame = 0
+ 555              		@ frame_needed = 0, uses_anonymous_args = 0
+ 556 0000 A8B1     		cbz	r0, .L97
+ 557 0002 10B5     		push	{r4, lr}
+ 558 0004 0446     		mov	r4, r0
+ 559 0006 0223     		movs	r3, #2
+ 560 0008 80F83830 		strb	r3, [r0, #56]
+ 561 000c 0948     		ldr	r0, .L102
+ 562 000e FFF7FEFF 		bl	IPCC_Reset_Register
+ 563 0012 2046     		mov	r0, r4
+ 564 0014 FFF7FEFF 		bl	IPCC_SetDefaultCallbacks
+ 565 0018 0023     		movs	r3, #0
+ 566 001a 6363     		str	r3, [r4, #52]
+ 567 001c 2046     		mov	r0, r4
+ 568 001e FFF7FEFF 		bl	HAL_IPCC_MspDeInit
+ 569 0022 4FF00003 		mov	r3, #0
+ 570 0026 84F83830 		strb	r3, [r4, #56]
+ 571 002a 0020     		movs	r0, #0
+ 572 002c 10BD     		pop	{r4, pc}
+ 573              	.L97:
+ 574 002e 0120     		movs	r0, #1
+ 575 0030 7047     		bx	lr
+ 576              	.L103:
+ 577 0032 00BF     		.align	2
+ 578              	.L102:
+ 579 0034 000C0058 		.word	1476398080
+ 581              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32wbxx_hal_ipcc.c
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:18     .text.HAL_IPCC_RxCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:24     .text.HAL_IPCC_RxCallback:00000000 HAL_IPCC_RxCallback
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:31     .text.HAL_IPCC_TxCallback:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:37     .text.HAL_IPCC_TxCallback:00000000 HAL_IPCC_TxCallback
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:44     .text.HAL_IPCC_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:50     .text.HAL_IPCC_MspInit:00000000 HAL_IPCC_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:57     .text.HAL_IPCC_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:63     .text.HAL_IPCC_MspDeInit:00000000 HAL_IPCC_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:70     .text.HAL_IPCC_GetChannelStatus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:76     .text.HAL_IPCC_GetChannelStatus:00000000 HAL_IPCC_GetChannelStatus
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:103    .text.HAL_IPCC_GetChannelStatus:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:106    .text.HAL_IPCC_TX_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:112    .text.HAL_IPCC_TX_IRQHandler:00000000 HAL_IPCC_TX_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:157    .text.HAL_IPCC_TX_IRQHandler:00000050 $d
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:160    .text.HAL_IPCC_RX_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:166    .text.HAL_IPCC_RX_IRQHandler:00000000 HAL_IPCC_RX_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:209    .text.HAL_IPCC_RX_IRQHandler:00000048 $d
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:212    .text.HAL_IPCC_GetState:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:218    .text.HAL_IPCC_GetState:00000000 HAL_IPCC_GetState
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:226    .text.IPCC_MaskInterrupt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:232    .text.IPCC_MaskInterrupt:00000000 IPCC_MaskInterrupt
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:257    .text.IPCC_MaskInterrupt:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:260    .text.HAL_IPCC_DeActivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:266    .text.HAL_IPCC_DeActivateNotification:00000000 HAL_IPCC_DeActivateNotification
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:314    .text.HAL_IPCC_DeActivateNotification:00000064 $d
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:318    .text.IPCC_UnmaskInterrupt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:324    .text.IPCC_UnmaskInterrupt:00000000 IPCC_UnmaskInterrupt
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:349    .text.IPCC_UnmaskInterrupt:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:352    .text.HAL_IPCC_ActivateNotification:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:358    .text.HAL_IPCC_ActivateNotification:00000000 HAL_IPCC_ActivateNotification
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:408    .text.HAL_IPCC_NotifyCPU:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:414    .text.HAL_IPCC_NotifyCPU:00000000 HAL_IPCC_NotifyCPU
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:453    .text.HAL_IPCC_NotifyCPU:00000048 $d
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:456    .text.IPCC_SetDefaultCallbacks:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:462    .text.IPCC_SetDefaultCallbacks:00000000 IPCC_SetDefaultCallbacks
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:484    .text.IPCC_SetDefaultCallbacks:00000020 $d
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:488    .text.IPCC_Reset_Register:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:494    .text.IPCC_Reset_Register:00000000 IPCC_Reset_Register
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:507    .text.HAL_IPCC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:513    .text.HAL_IPCC_Init:00000000 HAL_IPCC_Init
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:544    .text.HAL_IPCC_Init:00000038 $d
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:547    .text.HAL_IPCC_DeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:553    .text.HAL_IPCC_DeInit:00000000 HAL_IPCC_DeInit
+C:\Users\Nathan\AppData\Local\Temp\ccnsY49e.s:579    .text.HAL_IPCC_DeInit:00000034 $d
+
+NO UNDEFINED SYMBOLS

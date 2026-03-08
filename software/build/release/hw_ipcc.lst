@@ -1,0 +1,773 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"hw_ipcc.c"
+  16              		.text
+  17              		.section	.text.HW_IPCC_MM_FreeBufHandler,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	HW_IPCC_MM_FreeBufHandler:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 10B5     		push	{r4, lr}
+  27              		.syntax unified
+  28              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  29 0002 EFF31082 		MRS r2, primask
+  30              	@ 0 "" 2
+  31              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  32 0006 72B6     		cpsid i
+  33              	@ 0 "" 2
+  34              		.thumb
+  35              		.syntax unified
+  36 0008 064C     		ldr	r4, .L3
+  37 000a 6368     		ldr	r3, [r4, #4]
+  38 000c 43F40023 		orr	r3, r3, #524288
+  39 0010 6360     		str	r3, [r4, #4]
+  40              		.syntax unified
+  41              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  42 0012 82F31088 		MSR primask, r2
+  43              	@ 0 "" 2
+  44              		.thumb
+  45              		.syntax unified
+  46 0016 044B     		ldr	r3, .L3+4
+  47 0018 1B68     		ldr	r3, [r3]
+  48 001a 9847     		blx	r3
+  49 001c 4FF40023 		mov	r3, #524288
+  50 0020 A360     		str	r3, [r4, #8]
+  51 0022 10BD     		pop	{r4, pc}
+  52              	.L4:
+  53              		.align	2
+  54              	.L3:
+  55 0024 000C0058 		.word	1476398080
+  56 0028 00000000 		.word	FreeBufCb
+  58              		.section	.text.HW_IPCC_Enable,"ax",%progbits
+  59              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 2
+
+
+  60              		.global	HW_IPCC_Enable
+  61              		.syntax unified
+  62              		.thumb
+  63              		.thumb_func
+  65              	HW_IPCC_Enable:
+  66              		@ args = 0, pretend = 0, frame = 8
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68              		@ link register save eliminated.
+  69 0000 82B0     		sub	sp, sp, #8
+  70 0002 4FF0B043 		mov	r3, #1476395008
+  71 0006 D3F85021 		ldr	r2, [r3, #336]
+  72 000a 42F48012 		orr	r2, r2, #1048576
+  73 000e C3F85021 		str	r2, [r3, #336]
+  74 0012 D3F85031 		ldr	r3, [r3, #336]
+  75 0016 03F48013 		and	r3, r3, #1048576
+  76 001a 0193     		str	r3, [sp, #4]
+  77 001c 019B     		ldr	r3, [sp, #4]
+  78 001e 0A4B     		ldr	r3, .L7
+  79 0020 1A6A     		ldr	r2, [r3, #32]
+  80 0022 42F40072 		orr	r2, r2, #512
+  81 0026 1A62     		str	r2, [r3, #32]
+  82 0028 D3F8D420 		ldr	r2, [r3, #212]
+  83 002c 42F40072 		orr	r2, r2, #512
+  84 0030 C3F8D420 		str	r2, [r3, #212]
+  85              		.syntax unified
+  86              	@ 205 "STM32_WPAN/Target/hw_ipcc.c" 1
+  87 0034 40BF     		sev
+  88              	@ 0 "" 2
+  89              	@ 206 "STM32_WPAN/Target/hw_ipcc.c" 1
+  90 0036 20BF     		wfe
+  91              	@ 0 "" 2
+  92              		.thumb
+  93              		.syntax unified
+  94 0038 044A     		ldr	r2, .L7+4
+  95 003a D368     		ldr	r3, [r2, #12]
+  96 003c 43F40043 		orr	r3, r3, #32768
+  97 0040 D360     		str	r3, [r2, #12]
+  98 0042 02B0     		add	sp, sp, #8
+  99              		@ sp needed
+ 100 0044 7047     		bx	lr
+ 101              	.L8:
+ 102 0046 00BF     		.align	2
+ 103              	.L7:
+ 104 0048 00080058 		.word	1476397056
+ 105 004c 00040058 		.word	1476396032
+ 107              		.section	.text.HW_IPCC_Init,"ax",%progbits
+ 108              		.align	1
+ 109              		.global	HW_IPCC_Init
+ 110              		.syntax unified
+ 111              		.thumb
+ 112              		.thumb_func
+ 114              	HW_IPCC_Init:
+ 115              		@ args = 0, pretend = 0, frame = 8
+ 116              		@ frame_needed = 0, uses_anonymous_args = 0
+ 117 0000 00B5     		push	{lr}
+ 118 0002 83B0     		sub	sp, sp, #12
+ 119 0004 4FF0B043 		mov	r3, #1476395008
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 3
+
+
+ 120 0008 1A6D     		ldr	r2, [r3, #80]
+ 121 000a 42F48012 		orr	r2, r2, #1048576
+ 122 000e 1A65     		str	r2, [r3, #80]
+ 123 0010 1B6D     		ldr	r3, [r3, #80]
+ 124 0012 03F48013 		and	r3, r3, #1048576
+ 125 0016 0193     		str	r3, [sp, #4]
+ 126 0018 019B     		ldr	r3, [sp, #4]
+ 127 001a 084B     		ldr	r3, .L11
+ 128 001c 1A68     		ldr	r2, [r3]
+ 129 001e 42F00102 		orr	r2, r2, #1
+ 130 0022 1A60     		str	r2, [r3]
+ 131 0024 1A68     		ldr	r2, [r3]
+ 132 0026 42F48032 		orr	r2, r2, #65536
+ 133 002a 1A60     		str	r2, [r3]
+ 134 002c 2C20     		movs	r0, #44
+ 135 002e FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 136 0032 2D20     		movs	r0, #45
+ 137 0034 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 138 0038 03B0     		add	sp, sp, #12
+ 139              		@ sp needed
+ 140 003a 00BD     		pop	{pc}
+ 141              	.L12:
+ 142              		.align	2
+ 143              	.L11:
+ 144 003c 000C0058 		.word	1476398080
+ 146              		.section	.text.HW_IPCC_BLE_Init,"ax",%progbits
+ 147              		.align	1
+ 148              		.global	HW_IPCC_BLE_Init
+ 149              		.syntax unified
+ 150              		.thumb
+ 151              		.thumb_func
+ 153              	HW_IPCC_BLE_Init:
+ 154              		@ args = 0, pretend = 0, frame = 0
+ 155              		@ frame_needed = 0, uses_anonymous_args = 0
+ 156              		@ link register save eliminated.
+ 157              		.syntax unified
+ 158              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 159 0000 EFF31081 		MRS r1, primask
+ 160              	@ 0 "" 2
+ 161              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 162 0004 72B6     		cpsid i
+ 163              	@ 0 "" 2
+ 164              		.thumb
+ 165              		.syntax unified
+ 166 0006 044A     		ldr	r2, .L14
+ 167 0008 5368     		ldr	r3, [r2, #4]
+ 168 000a 23F00103 		bic	r3, r3, #1
+ 169 000e 5360     		str	r3, [r2, #4]
+ 170              		.syntax unified
+ 171              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 172 0010 81F31088 		MSR primask, r1
+ 173              	@ 0 "" 2
+ 174              		.thumb
+ 175              		.syntax unified
+ 176 0014 7047     		bx	lr
+ 177              	.L15:
+ 178 0016 00BF     		.align	2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 4
+
+
+ 179              	.L14:
+ 180 0018 000C0058 		.word	1476398080
+ 182              		.section	.text.HW_IPCC_BLE_SendCmd,"ax",%progbits
+ 183              		.align	1
+ 184              		.global	HW_IPCC_BLE_SendCmd
+ 185              		.syntax unified
+ 186              		.thumb
+ 187              		.thumb_func
+ 189              	HW_IPCC_BLE_SendCmd:
+ 190              		@ args = 0, pretend = 0, frame = 0
+ 191              		@ frame_needed = 0, uses_anonymous_args = 0
+ 192              		@ link register save eliminated.
+ 193 0000 024B     		ldr	r3, .L17
+ 194 0002 4FF48032 		mov	r2, #65536
+ 195 0006 9A60     		str	r2, [r3, #8]
+ 196 0008 7047     		bx	lr
+ 197              	.L18:
+ 198 000a 00BF     		.align	2
+ 199              	.L17:
+ 200 000c 000C0058 		.word	1476398080
+ 202              		.section	.text.HW_IPCC_BLE_SendAclData,"ax",%progbits
+ 203              		.align	1
+ 204              		.global	HW_IPCC_BLE_SendAclData
+ 205              		.syntax unified
+ 206              		.thumb
+ 207              		.thumb_func
+ 209              	HW_IPCC_BLE_SendAclData:
+ 210              		@ args = 0, pretend = 0, frame = 0
+ 211              		@ frame_needed = 0, uses_anonymous_args = 0
+ 212              		@ link register save eliminated.
+ 213 0000 064B     		ldr	r3, .L20
+ 214 0002 4FF40012 		mov	r2, #2097152
+ 215 0006 9A60     		str	r2, [r3, #8]
+ 216              		.syntax unified
+ 217              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 218 0008 EFF31081 		MRS r1, primask
+ 219              	@ 0 "" 2
+ 220              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 221 000c 72B6     		cpsid i
+ 222              	@ 0 "" 2
+ 223              		.thumb
+ 224              		.syntax unified
+ 225 000e 5A68     		ldr	r2, [r3, #4]
+ 226 0010 22F40012 		bic	r2, r2, #2097152
+ 227 0014 5A60     		str	r2, [r3, #4]
+ 228              		.syntax unified
+ 229              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 230 0016 81F31088 		MSR primask, r1
+ 231              	@ 0 "" 2
+ 232              		.thumb
+ 233              		.syntax unified
+ 234 001a 7047     		bx	lr
+ 235              	.L21:
+ 236              		.align	2
+ 237              	.L20:
+ 238 001c 000C0058 		.word	1476398080
+ 240              		.section	.text.HW_IPCC_BLE_AclDataAckNot,"ax",%progbits
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 5
+
+
+ 241              		.align	1
+ 242              		.weak	HW_IPCC_BLE_AclDataAckNot
+ 243              		.syntax unified
+ 244              		.thumb
+ 245              		.thumb_func
+ 247              	HW_IPCC_BLE_AclDataAckNot:
+ 248              		@ args = 0, pretend = 0, frame = 0
+ 249              		@ frame_needed = 0, uses_anonymous_args = 0
+ 250              		@ link register save eliminated.
+ 251 0000 7047     		bx	lr
+ 253              		.section	.text.HW_IPCC_BLE_AclDataEvtHandler,"ax",%progbits
+ 254              		.align	1
+ 255              		.syntax unified
+ 256              		.thumb
+ 257              		.thumb_func
+ 259              	HW_IPCC_BLE_AclDataEvtHandler:
+ 260              		@ args = 0, pretend = 0, frame = 0
+ 261              		@ frame_needed = 0, uses_anonymous_args = 0
+ 262 0000 08B5     		push	{r3, lr}
+ 263              		.syntax unified
+ 264              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 265 0002 EFF31081 		MRS r1, primask
+ 266              	@ 0 "" 2
+ 267              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 268 0006 72B6     		cpsid i
+ 269              	@ 0 "" 2
+ 270              		.thumb
+ 271              		.syntax unified
+ 272 0008 044A     		ldr	r2, .L25
+ 273 000a 5368     		ldr	r3, [r2, #4]
+ 274 000c 43F40013 		orr	r3, r3, #2097152
+ 275 0010 5360     		str	r3, [r2, #4]
+ 276              		.syntax unified
+ 277              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 278 0012 81F31088 		MSR primask, r1
+ 279              	@ 0 "" 2
+ 280              		.thumb
+ 281              		.syntax unified
+ 282 0016 FFF7FEFF 		bl	HW_IPCC_BLE_AclDataAckNot
+ 283 001a 08BD     		pop	{r3, pc}
+ 284              	.L26:
+ 285              		.align	2
+ 286              	.L25:
+ 287 001c 000C0058 		.word	1476398080
+ 289              		.section	.text.HW_IPCC_BLE_RxEvtNot,"ax",%progbits
+ 290              		.align	1
+ 291              		.weak	HW_IPCC_BLE_RxEvtNot
+ 292              		.syntax unified
+ 293              		.thumb
+ 294              		.thumb_func
+ 296              	HW_IPCC_BLE_RxEvtNot:
+ 297              		@ args = 0, pretend = 0, frame = 0
+ 298              		@ frame_needed = 0, uses_anonymous_args = 0
+ 299              		@ link register save eliminated.
+ 300 0000 7047     		bx	lr
+ 302              		.section	.text.HW_IPCC_BLE_EvtHandler,"ax",%progbits
+ 303              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 6
+
+
+ 304              		.syntax unified
+ 305              		.thumb
+ 306              		.thumb_func
+ 308              	HW_IPCC_BLE_EvtHandler:
+ 309              		@ args = 0, pretend = 0, frame = 0
+ 310              		@ frame_needed = 0, uses_anonymous_args = 0
+ 311 0000 08B5     		push	{r3, lr}
+ 312 0002 FFF7FEFF 		bl	HW_IPCC_BLE_RxEvtNot
+ 313 0006 024B     		ldr	r3, .L30
+ 314 0008 0122     		movs	r2, #1
+ 315 000a 9A60     		str	r2, [r3, #8]
+ 316 000c 08BD     		pop	{r3, pc}
+ 317              	.L31:
+ 318 000e 00BF     		.align	2
+ 319              	.L30:
+ 320 0010 000C0058 		.word	1476398080
+ 322              		.section	.text.HW_IPCC_SYS_Init,"ax",%progbits
+ 323              		.align	1
+ 324              		.global	HW_IPCC_SYS_Init
+ 325              		.syntax unified
+ 326              		.thumb
+ 327              		.thumb_func
+ 329              	HW_IPCC_SYS_Init:
+ 330              		@ args = 0, pretend = 0, frame = 0
+ 331              		@ frame_needed = 0, uses_anonymous_args = 0
+ 332              		@ link register save eliminated.
+ 333              		.syntax unified
+ 334              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 335 0000 EFF31081 		MRS r1, primask
+ 336              	@ 0 "" 2
+ 337              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 338 0004 72B6     		cpsid i
+ 339              	@ 0 "" 2
+ 340              		.thumb
+ 341              		.syntax unified
+ 342 0006 044A     		ldr	r2, .L33
+ 343 0008 5368     		ldr	r3, [r2, #4]
+ 344 000a 23F00203 		bic	r3, r3, #2
+ 345 000e 5360     		str	r3, [r2, #4]
+ 346              		.syntax unified
+ 347              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 348 0010 81F31088 		MSR primask, r1
+ 349              	@ 0 "" 2
+ 350              		.thumb
+ 351              		.syntax unified
+ 352 0014 7047     		bx	lr
+ 353              	.L34:
+ 354 0016 00BF     		.align	2
+ 355              	.L33:
+ 356 0018 000C0058 		.word	1476398080
+ 358              		.section	.text.HW_IPCC_SYS_SendCmd,"ax",%progbits
+ 359              		.align	1
+ 360              		.global	HW_IPCC_SYS_SendCmd
+ 361              		.syntax unified
+ 362              		.thumb
+ 363              		.thumb_func
+ 365              	HW_IPCC_SYS_SendCmd:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 7
+
+
+ 366              		@ args = 0, pretend = 0, frame = 0
+ 367              		@ frame_needed = 0, uses_anonymous_args = 0
+ 368              		@ link register save eliminated.
+ 369 0000 064B     		ldr	r3, .L36
+ 370 0002 4FF40032 		mov	r2, #131072
+ 371 0006 9A60     		str	r2, [r3, #8]
+ 372              		.syntax unified
+ 373              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 374 0008 EFF31081 		MRS r1, primask
+ 375              	@ 0 "" 2
+ 376              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 377 000c 72B6     		cpsid i
+ 378              	@ 0 "" 2
+ 379              		.thumb
+ 380              		.syntax unified
+ 381 000e 5A68     		ldr	r2, [r3, #4]
+ 382 0010 22F40032 		bic	r2, r2, #131072
+ 383 0014 5A60     		str	r2, [r3, #4]
+ 384              		.syntax unified
+ 385              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 386 0016 81F31088 		MSR primask, r1
+ 387              	@ 0 "" 2
+ 388              		.thumb
+ 389              		.syntax unified
+ 390 001a 7047     		bx	lr
+ 391              	.L37:
+ 392              		.align	2
+ 393              	.L36:
+ 394 001c 000C0058 		.word	1476398080
+ 396              		.section	.text.HW_IPCC_SYS_CmdEvtNot,"ax",%progbits
+ 397              		.align	1
+ 398              		.weak	HW_IPCC_SYS_CmdEvtNot
+ 399              		.syntax unified
+ 400              		.thumb
+ 401              		.thumb_func
+ 403              	HW_IPCC_SYS_CmdEvtNot:
+ 404              		@ args = 0, pretend = 0, frame = 0
+ 405              		@ frame_needed = 0, uses_anonymous_args = 0
+ 406              		@ link register save eliminated.
+ 407 0000 7047     		bx	lr
+ 409              		.section	.text.HW_IPCC_SYS_CmdEvtHandler,"ax",%progbits
+ 410              		.align	1
+ 411              		.syntax unified
+ 412              		.thumb
+ 413              		.thumb_func
+ 415              	HW_IPCC_SYS_CmdEvtHandler:
+ 416              		@ args = 0, pretend = 0, frame = 0
+ 417              		@ frame_needed = 0, uses_anonymous_args = 0
+ 418 0000 08B5     		push	{r3, lr}
+ 419              		.syntax unified
+ 420              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 421 0002 EFF31081 		MRS r1, primask
+ 422              	@ 0 "" 2
+ 423              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 424 0006 72B6     		cpsid i
+ 425              	@ 0 "" 2
+ 426              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 8
+
+
+ 427              		.syntax unified
+ 428 0008 044A     		ldr	r2, .L41
+ 429 000a 5368     		ldr	r3, [r2, #4]
+ 430 000c 43F40033 		orr	r3, r3, #131072
+ 431 0010 5360     		str	r3, [r2, #4]
+ 432              		.syntax unified
+ 433              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 434 0012 81F31088 		MSR primask, r1
+ 435              	@ 0 "" 2
+ 436              		.thumb
+ 437              		.syntax unified
+ 438 0016 FFF7FEFF 		bl	HW_IPCC_SYS_CmdEvtNot
+ 439 001a 08BD     		pop	{r3, pc}
+ 440              	.L42:
+ 441              		.align	2
+ 442              	.L41:
+ 443 001c 000C0058 		.word	1476398080
+ 445              		.section	.text.HW_IPCC_Tx_Handler,"ax",%progbits
+ 446              		.align	1
+ 447              		.global	HW_IPCC_Tx_Handler
+ 448              		.syntax unified
+ 449              		.thumb
+ 450              		.thumb_func
+ 452              	HW_IPCC_Tx_Handler:
+ 453              		@ args = 0, pretend = 0, frame = 0
+ 454              		@ frame_needed = 0, uses_anonymous_args = 0
+ 455 0000 08B5     		push	{r3, lr}
+ 456 0002 144B     		ldr	r3, .L51
+ 457 0004 DB68     		ldr	r3, [r3, #12]
+ 458 0006 13F0020F 		tst	r3, #2
+ 459 000a 04D1     		bne	.L44
+ 460 000c 114B     		ldr	r3, .L51
+ 461 000e 5B68     		ldr	r3, [r3, #4]
+ 462 0010 13F4003F 		tst	r3, #131072
+ 463 0014 14D0     		beq	.L48
+ 464              	.L44:
+ 465 0016 0F4B     		ldr	r3, .L51
+ 466 0018 DB68     		ldr	r3, [r3, #12]
+ 467 001a 13F0080F 		tst	r3, #8
+ 468 001e 04D1     		bne	.L46
+ 469 0020 0C4B     		ldr	r3, .L51
+ 470 0022 5B68     		ldr	r3, [r3, #4]
+ 471 0024 13F4002F 		tst	r3, #524288
+ 472 0028 0DD0     		beq	.L49
+ 473              	.L46:
+ 474 002a 0A4B     		ldr	r3, .L51
+ 475 002c DB68     		ldr	r3, [r3, #12]
+ 476 002e 13F0200F 		tst	r3, #32
+ 477 0032 04D1     		bne	.L43
+ 478 0034 074B     		ldr	r3, .L51
+ 479 0036 5B68     		ldr	r3, [r3, #4]
+ 480 0038 13F4001F 		tst	r3, #2097152
+ 481 003c 06D0     		beq	.L50
+ 482              	.L43:
+ 483 003e 08BD     		pop	{r3, pc}
+ 484              	.L48:
+ 485 0040 FFF7FEFF 		bl	HW_IPCC_SYS_CmdEvtHandler
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 9
+
+
+ 486 0044 FBE7     		b	.L43
+ 487              	.L49:
+ 488 0046 FFF7FEFF 		bl	HW_IPCC_MM_FreeBufHandler
+ 489 004a F8E7     		b	.L43
+ 490              	.L50:
+ 491 004c FFF7FEFF 		bl	HW_IPCC_BLE_AclDataEvtHandler
+ 492 0050 F5E7     		b	.L43
+ 493              	.L52:
+ 494 0052 00BF     		.align	2
+ 495              	.L51:
+ 496 0054 000C0058 		.word	1476398080
+ 498              		.section	.text.HW_IPCC_SYS_EvtNot,"ax",%progbits
+ 499              		.align	1
+ 500              		.weak	HW_IPCC_SYS_EvtNot
+ 501              		.syntax unified
+ 502              		.thumb
+ 503              		.thumb_func
+ 505              	HW_IPCC_SYS_EvtNot:
+ 506              		@ args = 0, pretend = 0, frame = 0
+ 507              		@ frame_needed = 0, uses_anonymous_args = 0
+ 508              		@ link register save eliminated.
+ 509 0000 7047     		bx	lr
+ 511              		.section	.text.HW_IPCC_SYS_EvtHandler,"ax",%progbits
+ 512              		.align	1
+ 513              		.syntax unified
+ 514              		.thumb
+ 515              		.thumb_func
+ 517              	HW_IPCC_SYS_EvtHandler:
+ 518              		@ args = 0, pretend = 0, frame = 0
+ 519              		@ frame_needed = 0, uses_anonymous_args = 0
+ 520 0000 08B5     		push	{r3, lr}
+ 521 0002 FFF7FEFF 		bl	HW_IPCC_SYS_EvtNot
+ 522 0006 024B     		ldr	r3, .L56
+ 523 0008 0222     		movs	r2, #2
+ 524 000a 9A60     		str	r2, [r3, #8]
+ 525 000c 08BD     		pop	{r3, pc}
+ 526              	.L57:
+ 527 000e 00BF     		.align	2
+ 528              	.L56:
+ 529 0010 000C0058 		.word	1476398080
+ 531              		.section	.text.HW_IPCC_MM_SendFreeBuf,"ax",%progbits
+ 532              		.align	1
+ 533              		.global	HW_IPCC_MM_SendFreeBuf
+ 534              		.syntax unified
+ 535              		.thumb
+ 536              		.thumb_func
+ 538              	HW_IPCC_MM_SendFreeBuf:
+ 539              		@ args = 0, pretend = 0, frame = 0
+ 540              		@ frame_needed = 0, uses_anonymous_args = 0
+ 541 0000 08B5     		push	{r3, lr}
+ 542 0002 0C4B     		ldr	r3, .L63
+ 543 0004 DB68     		ldr	r3, [r3, #12]
+ 544 0006 13F0080F 		tst	r3, #8
+ 545 000a 05D1     		bne	.L62
+ 546 000c 8047     		blx	r0
+ 547 000e 094B     		ldr	r3, .L63
+ 548 0010 4FF40022 		mov	r2, #524288
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 10
+
+
+ 549 0014 9A60     		str	r2, [r3, #8]
+ 550              	.L58:
+ 551 0016 08BD     		pop	{r3, pc}
+ 552              	.L62:
+ 553 0018 074B     		ldr	r3, .L63+4
+ 554 001a 1860     		str	r0, [r3]
+ 555              		.syntax unified
+ 556              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 557 001c EFF31081 		MRS r1, primask
+ 558              	@ 0 "" 2
+ 559              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 560 0020 72B6     		cpsid i
+ 561              	@ 0 "" 2
+ 562              		.thumb
+ 563              		.syntax unified
+ 564 0022 044A     		ldr	r2, .L63
+ 565 0024 5368     		ldr	r3, [r2, #4]
+ 566 0026 23F40023 		bic	r3, r3, #524288
+ 567 002a 5360     		str	r3, [r2, #4]
+ 568              		.syntax unified
+ 569              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 570 002c 81F31088 		MSR primask, r1
+ 571              	@ 0 "" 2
+ 572              		.thumb
+ 573              		.syntax unified
+ 574 0030 F1E7     		b	.L58
+ 575              	.L64:
+ 576 0032 00BF     		.align	2
+ 577              	.L63:
+ 578 0034 000C0058 		.word	1476398080
+ 579 0038 00000000 		.word	FreeBufCb
+ 581              		.section	.text.HW_IPCC_TRACES_Init,"ax",%progbits
+ 582              		.align	1
+ 583              		.global	HW_IPCC_TRACES_Init
+ 584              		.syntax unified
+ 585              		.thumb
+ 586              		.thumb_func
+ 588              	HW_IPCC_TRACES_Init:
+ 589              		@ args = 0, pretend = 0, frame = 0
+ 590              		@ frame_needed = 0, uses_anonymous_args = 0
+ 591              		@ link register save eliminated.
+ 592              		.syntax unified
+ 593              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 594 0000 EFF31081 		MRS r1, primask
+ 595              	@ 0 "" 2
+ 596              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 597 0004 72B6     		cpsid i
+ 598              	@ 0 "" 2
+ 599              		.thumb
+ 600              		.syntax unified
+ 601 0006 044A     		ldr	r2, .L66
+ 602 0008 5368     		ldr	r3, [r2, #4]
+ 603 000a 23F00803 		bic	r3, r3, #8
+ 604 000e 5360     		str	r3, [r2, #4]
+ 605              		.syntax unified
+ 606              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 607 0010 81F31088 		MSR primask, r1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 11
+
+
+ 608              	@ 0 "" 2
+ 609              		.thumb
+ 610              		.syntax unified
+ 611 0014 7047     		bx	lr
+ 612              	.L67:
+ 613 0016 00BF     		.align	2
+ 614              	.L66:
+ 615 0018 000C0058 		.word	1476398080
+ 617              		.section	.text.HW_IPCC_TRACES_EvtNot,"ax",%progbits
+ 618              		.align	1
+ 619              		.weak	HW_IPCC_TRACES_EvtNot
+ 620              		.syntax unified
+ 621              		.thumb
+ 622              		.thumb_func
+ 624              	HW_IPCC_TRACES_EvtNot:
+ 625              		@ args = 0, pretend = 0, frame = 0
+ 626              		@ frame_needed = 0, uses_anonymous_args = 0
+ 627              		@ link register save eliminated.
+ 628 0000 7047     		bx	lr
+ 630              		.section	.text.HW_IPCC_TRACES_EvtHandler,"ax",%progbits
+ 631              		.align	1
+ 632              		.syntax unified
+ 633              		.thumb
+ 634              		.thumb_func
+ 636              	HW_IPCC_TRACES_EvtHandler:
+ 637              		@ args = 0, pretend = 0, frame = 0
+ 638              		@ frame_needed = 0, uses_anonymous_args = 0
+ 639 0000 08B5     		push	{r3, lr}
+ 640 0002 FFF7FEFF 		bl	HW_IPCC_TRACES_EvtNot
+ 641 0006 024B     		ldr	r3, .L71
+ 642 0008 0822     		movs	r2, #8
+ 643 000a 9A60     		str	r2, [r3, #8]
+ 644 000c 08BD     		pop	{r3, pc}
+ 645              	.L72:
+ 646 000e 00BF     		.align	2
+ 647              	.L71:
+ 648 0010 000C0058 		.word	1476398080
+ 650              		.section	.text.HW_IPCC_Rx_Handler,"ax",%progbits
+ 651              		.align	1
+ 652              		.global	HW_IPCC_Rx_Handler
+ 653              		.syntax unified
+ 654              		.thumb
+ 655              		.thumb_func
+ 657              	HW_IPCC_Rx_Handler:
+ 658              		@ args = 0, pretend = 0, frame = 0
+ 659              		@ frame_needed = 0, uses_anonymous_args = 0
+ 660 0000 08B5     		push	{r3, lr}
+ 661 0002 144B     		ldr	r3, .L81
+ 662 0004 DB69     		ldr	r3, [r3, #28]
+ 663 0006 13F0020F 		tst	r3, #2
+ 664 000a 0AD1     		bne	.L78
+ 665              	.L74:
+ 666 000c 114B     		ldr	r3, .L81
+ 667 000e DB69     		ldr	r3, [r3, #28]
+ 668 0010 13F0010F 		tst	r3, #1
+ 669 0014 0DD1     		bne	.L79
+ 670              	.L76:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 12
+
+
+ 671 0016 0F4B     		ldr	r3, .L81
+ 672 0018 DB69     		ldr	r3, [r3, #28]
+ 673 001a 13F0080F 		tst	r3, #8
+ 674 001e 10D1     		bne	.L80
+ 675              	.L73:
+ 676 0020 08BD     		pop	{r3, pc}
+ 677              	.L78:
+ 678 0022 0C4B     		ldr	r3, .L81
+ 679 0024 5B68     		ldr	r3, [r3, #4]
+ 680 0026 13F0020F 		tst	r3, #2
+ 681 002a EFD1     		bne	.L74
+ 682 002c FFF7FEFF 		bl	HW_IPCC_SYS_EvtHandler
+ 683 0030 F6E7     		b	.L73
+ 684              	.L79:
+ 685 0032 084B     		ldr	r3, .L81
+ 686 0034 5B68     		ldr	r3, [r3, #4]
+ 687 0036 13F0010F 		tst	r3, #1
+ 688 003a ECD1     		bne	.L76
+ 689 003c FFF7FEFF 		bl	HW_IPCC_BLE_EvtHandler
+ 690 0040 EEE7     		b	.L73
+ 691              	.L80:
+ 692 0042 044B     		ldr	r3, .L81
+ 693 0044 5B68     		ldr	r3, [r3, #4]
+ 694 0046 13F0080F 		tst	r3, #8
+ 695 004a E9D1     		bne	.L73
+ 696 004c FFF7FEFF 		bl	HW_IPCC_TRACES_EvtHandler
+ 697 0050 E6E7     		b	.L73
+ 698              	.L82:
+ 699 0052 00BF     		.align	2
+ 700              	.L81:
+ 701 0054 000C0058 		.word	1476398080
+ 703              		.section	.bss.FreeBufCb,"aw",%nobits
+ 704              		.align	2
+ 707              	FreeBufCb:
+ 708 0000 00000000 		.space	4
+ 709              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 hw_ipcc.c
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:18     .text.HW_IPCC_MM_FreeBufHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:23     .text.HW_IPCC_MM_FreeBufHandler:00000000 HW_IPCC_MM_FreeBufHandler
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:55     .text.HW_IPCC_MM_FreeBufHandler:00000024 $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:707    .bss.FreeBufCb:00000000 FreeBufCb
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:59     .text.HW_IPCC_Enable:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:65     .text.HW_IPCC_Enable:00000000 HW_IPCC_Enable
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:104    .text.HW_IPCC_Enable:00000048 $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:108    .text.HW_IPCC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:114    .text.HW_IPCC_Init:00000000 HW_IPCC_Init
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:144    .text.HW_IPCC_Init:0000003c $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:147    .text.HW_IPCC_BLE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:153    .text.HW_IPCC_BLE_Init:00000000 HW_IPCC_BLE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:180    .text.HW_IPCC_BLE_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:183    .text.HW_IPCC_BLE_SendCmd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:189    .text.HW_IPCC_BLE_SendCmd:00000000 HW_IPCC_BLE_SendCmd
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:200    .text.HW_IPCC_BLE_SendCmd:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:203    .text.HW_IPCC_BLE_SendAclData:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:209    .text.HW_IPCC_BLE_SendAclData:00000000 HW_IPCC_BLE_SendAclData
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:238    .text.HW_IPCC_BLE_SendAclData:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:241    .text.HW_IPCC_BLE_AclDataAckNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:247    .text.HW_IPCC_BLE_AclDataAckNot:00000000 HW_IPCC_BLE_AclDataAckNot
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:254    .text.HW_IPCC_BLE_AclDataEvtHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:259    .text.HW_IPCC_BLE_AclDataEvtHandler:00000000 HW_IPCC_BLE_AclDataEvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:287    .text.HW_IPCC_BLE_AclDataEvtHandler:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:290    .text.HW_IPCC_BLE_RxEvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:296    .text.HW_IPCC_BLE_RxEvtNot:00000000 HW_IPCC_BLE_RxEvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:303    .text.HW_IPCC_BLE_EvtHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:308    .text.HW_IPCC_BLE_EvtHandler:00000000 HW_IPCC_BLE_EvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:320    .text.HW_IPCC_BLE_EvtHandler:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:323    .text.HW_IPCC_SYS_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:329    .text.HW_IPCC_SYS_Init:00000000 HW_IPCC_SYS_Init
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:356    .text.HW_IPCC_SYS_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:359    .text.HW_IPCC_SYS_SendCmd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:365    .text.HW_IPCC_SYS_SendCmd:00000000 HW_IPCC_SYS_SendCmd
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:394    .text.HW_IPCC_SYS_SendCmd:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:397    .text.HW_IPCC_SYS_CmdEvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:403    .text.HW_IPCC_SYS_CmdEvtNot:00000000 HW_IPCC_SYS_CmdEvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:410    .text.HW_IPCC_SYS_CmdEvtHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:415    .text.HW_IPCC_SYS_CmdEvtHandler:00000000 HW_IPCC_SYS_CmdEvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:443    .text.HW_IPCC_SYS_CmdEvtHandler:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:446    .text.HW_IPCC_Tx_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:452    .text.HW_IPCC_Tx_Handler:00000000 HW_IPCC_Tx_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:496    .text.HW_IPCC_Tx_Handler:00000054 $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:499    .text.HW_IPCC_SYS_EvtNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:505    .text.HW_IPCC_SYS_EvtNot:00000000 HW_IPCC_SYS_EvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:512    .text.HW_IPCC_SYS_EvtHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:517    .text.HW_IPCC_SYS_EvtHandler:00000000 HW_IPCC_SYS_EvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:529    .text.HW_IPCC_SYS_EvtHandler:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:532    .text.HW_IPCC_MM_SendFreeBuf:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:538    .text.HW_IPCC_MM_SendFreeBuf:00000000 HW_IPCC_MM_SendFreeBuf
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:578    .text.HW_IPCC_MM_SendFreeBuf:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:582    .text.HW_IPCC_TRACES_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:588    .text.HW_IPCC_TRACES_Init:00000000 HW_IPCC_TRACES_Init
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:615    .text.HW_IPCC_TRACES_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:618    .text.HW_IPCC_TRACES_EvtNot:00000000 $t
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s 			page 14
+
+
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:624    .text.HW_IPCC_TRACES_EvtNot:00000000 HW_IPCC_TRACES_EvtNot
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:631    .text.HW_IPCC_TRACES_EvtHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:636    .text.HW_IPCC_TRACES_EvtHandler:00000000 HW_IPCC_TRACES_EvtHandler
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:648    .text.HW_IPCC_TRACES_EvtHandler:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:651    .text.HW_IPCC_Rx_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:657    .text.HW_IPCC_Rx_Handler:00000000 HW_IPCC_Rx_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:701    .text.HW_IPCC_Rx_Handler:00000054 $d
+C:\Users\Nathan\AppData\Local\Temp\ccK2btcg.s:704    .bss.FreeBufCb:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_NVIC_EnableIRQ

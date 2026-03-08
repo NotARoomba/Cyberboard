@@ -1,0 +1,438 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"shci_tl.c"
+  16              		.text
+  17              		.section	.text.Cmd_SetStatus,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	Cmd_SetStatus:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 08B5     		push	{r3, lr}
+  27 0002 38B9     		cbnz	r0, .L2
+  28 0004 084B     		ldr	r3, .L6
+  29 0006 1B68     		ldr	r3, [r3]
+  30 0008 03B1     		cbz	r3, .L3
+  31 000a 9847     		blx	r3
+  32              	.L3:
+  33 000c 074B     		ldr	r3, .L6+4
+  34 000e 0022     		movs	r2, #0
+  35 0010 1A70     		strb	r2, [r3]
+  36              	.L1:
+  37 0012 08BD     		pop	{r3, pc}
+  38              	.L2:
+  39 0014 054B     		ldr	r3, .L6+4
+  40 0016 0122     		movs	r2, #1
+  41 0018 1A70     		strb	r2, [r3]
+  42 001a 034B     		ldr	r3, .L6
+  43 001c 1B68     		ldr	r3, [r3]
+  44 001e 002B     		cmp	r3, #0
+  45 0020 F7D0     		beq	.L1
+  46 0022 1046     		mov	r0, r2
+  47 0024 9847     		blx	r3
+  48 0026 F4E7     		b	.L1
+  49              	.L7:
+  50              		.align	2
+  51              	.L6:
+  52 0028 00000000 		.word	StatusNotCallBackFunction
+  53 002c 08000000 		.word	SHCICmdStatus
+  55              		.section	.text.TlInit,"ax",%progbits
+  56              		.align	1
+  57              		.syntax unified
+  58              		.thumb
+  59              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 2
+
+
+  61              	TlInit:
+  62              		@ args = 0, pretend = 0, frame = 16
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64 0000 10B5     		push	{r4, lr}
+  65 0002 84B0     		sub	sp, sp, #16
+  66 0004 0446     		mov	r4, r0
+  67 0006 0B4B     		ldr	r3, .L11
+  68 0008 1860     		str	r0, [r3]
+  69 000a 0B48     		ldr	r0, .L11+4
+  70 000c FFF7FEFF 		bl	LST_init_head
+  71 0010 0120     		movs	r0, #1
+  72 0012 FFF7FEFF 		bl	Cmd_SetStatus
+  73 0016 094B     		ldr	r3, .L11+8
+  74 0018 0122     		movs	r2, #1
+  75 001a 1A70     		strb	r2, [r3]
+  76 001c 084B     		ldr	r3, .L11+12
+  77 001e 1B68     		ldr	r3, [r3]
+  78 0020 33B1     		cbz	r3, .L8
+  79 0022 0394     		str	r4, [sp, #12]
+  80 0024 074A     		ldr	r2, .L11+16
+  81 0026 0192     		str	r2, [sp, #4]
+  82 0028 074A     		ldr	r2, .L11+20
+  83 002a 0292     		str	r2, [sp, #8]
+  84 002c 01A8     		add	r0, sp, #4
+  85 002e 9847     		blx	r3
+  86              	.L8:
+  87 0030 04B0     		add	sp, sp, #16
+  88              		@ sp needed
+  89 0032 10BD     		pop	{r4, pc}
+  90              	.L12:
+  91              		.align	2
+  92              	.L11:
+  93 0034 04000000 		.word	pCmdBuffer
+  94 0038 0C000000 		.word	SHciAsynchEventQueue
+  95 003c 00000000 		.word	SHCI_TL_UserEventFlow
+  96 0040 00000000 		.word	shciContext
+  97 0044 00000000 		.word	TlCmdEvtReceived
+  98 0048 00000000 		.word	TlUserEvtReceived
+ 100              		.section	.text.TlUserEvtReceived,"ax",%progbits
+ 101              		.align	1
+ 102              		.syntax unified
+ 103              		.thumb
+ 104              		.thumb_func
+ 106              	TlUserEvtReceived:
+ 107              		@ args = 0, pretend = 0, frame = 0
+ 108              		@ frame_needed = 0, uses_anonymous_args = 0
+ 109 0000 10B5     		push	{r4, lr}
+ 110 0002 0146     		mov	r1, r0
+ 111 0004 034C     		ldr	r4, .L15
+ 112 0006 2046     		mov	r0, r4
+ 113 0008 FFF7FEFF 		bl	LST_insert_tail
+ 114 000c 2046     		mov	r0, r4
+ 115 000e FFF7FEFF 		bl	shci_notify_asynch_evt
+ 116 0012 10BD     		pop	{r4, pc}
+ 117              	.L16:
+ 118              		.align	2
+ 119              	.L15:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 3
+
+
+ 120 0014 0C000000 		.word	SHciAsynchEventQueue
+ 122              		.section	.text.shci_init,"ax",%progbits
+ 123              		.align	1
+ 124              		.global	shci_init
+ 125              		.syntax unified
+ 126              		.thumb
+ 127              		.thumb_func
+ 129              	shci_init:
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 0, uses_anonymous_args = 0
+ 132 0000 10B5     		push	{r4, lr}
+ 133 0002 0C46     		mov	r4, r1
+ 134 0004 4A68     		ldr	r2, [r1, #4]
+ 135 0006 054B     		ldr	r3, .L19
+ 136 0008 1A60     		str	r2, [r3]
+ 137 000a 054B     		ldr	r3, .L19+4
+ 138 000c D861     		str	r0, [r3, #28]
+ 139 000e 1846     		mov	r0, r3
+ 140 0010 FFF7FEFF 		bl	shci_register_io_bus
+ 141 0014 2068     		ldr	r0, [r4]
+ 142 0016 FFF7FEFF 		bl	TlInit
+ 143 001a 10BD     		pop	{r4, pc}
+ 144              	.L20:
+ 145              		.align	2
+ 146              	.L19:
+ 147 001c 00000000 		.word	StatusNotCallBackFunction
+ 148 0020 00000000 		.word	shciContext
+ 150              		.section	.text.shci_user_evt_proc,"ax",%progbits
+ 151              		.align	1
+ 152              		.global	shci_user_evt_proc
+ 153              		.syntax unified
+ 154              		.thumb
+ 155              		.thumb_func
+ 157              	shci_user_evt_proc:
+ 158              		@ args = 0, pretend = 0, frame = 16
+ 159              		@ frame_needed = 0, uses_anonymous_args = 0
+ 160 0000 00B5     		push	{lr}
+ 161 0002 85B0     		sub	sp, sp, #20
+ 162 0004 1A48     		ldr	r0, .L30
+ 163 0006 FFF7FEFF 		bl	LST_is_empty
+ 164 000a 10B9     		cbnz	r0, .L22
+ 165 000c 194B     		ldr	r3, .L30+4
+ 166 000e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 167 0010 43B9     		cbnz	r3, .L28
+ 168              	.L22:
+ 169 0012 1748     		ldr	r0, .L30
+ 170 0014 FFF7FEFF 		bl	LST_is_empty
+ 171 0018 10B9     		cbnz	r0, .L21
+ 172 001a 164B     		ldr	r3, .L30+4
+ 173 001c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 174 001e 1BBB     		cbnz	r3, .L29
+ 175              	.L21:
+ 176 0020 05B0     		add	sp, sp, #20
+ 177              		@ sp needed
+ 178 0022 00BD     		pop	{pc}
+ 179              	.L28:
+ 180 0024 03A9     		add	r1, sp, #12
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 4
+
+
+ 181 0026 1248     		ldr	r0, .L30
+ 182 0028 FFF7FEFF 		bl	LST_remove_head
+ 183 002c 124B     		ldr	r3, .L30+8
+ 184 002e DB69     		ldr	r3, [r3, #28]
+ 185 0030 8BB1     		cbz	r3, .L23
+ 186 0032 039A     		ldr	r2, [sp, #12]
+ 187 0034 0292     		str	r2, [sp, #8]
+ 188 0036 0122     		movs	r2, #1
+ 189 0038 8DF80420 		strb	r2, [sp, #4]
+ 190 003c 01A8     		add	r0, sp, #4
+ 191 003e 9847     		blx	r3
+ 192 0040 9DF80420 		ldrb	r2, [sp, #4]	@ zero_extendqisi2
+ 193 0044 0B4B     		ldr	r3, .L30+4
+ 194 0046 1A70     		strb	r2, [r3]
+ 195              	.L24:
+ 196 0048 0A4B     		ldr	r3, .L30+4
+ 197 004a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 198 004c 3BB1     		cbz	r3, .L25
+ 199 004e 0398     		ldr	r0, [sp, #12]
+ 200 0050 FFF7FEFF 		bl	TL_MM_EvtDone
+ 201 0054 DDE7     		b	.L22
+ 202              	.L23:
+ 203 0056 074B     		ldr	r3, .L30+4
+ 204 0058 0122     		movs	r2, #1
+ 205 005a 1A70     		strb	r2, [r3]
+ 206 005c F4E7     		b	.L24
+ 207              	.L25:
+ 208 005e 0399     		ldr	r1, [sp, #12]
+ 209 0060 0348     		ldr	r0, .L30
+ 210 0062 FFF7FEFF 		bl	LST_insert_head
+ 211 0066 D4E7     		b	.L22
+ 212              	.L29:
+ 213 0068 0148     		ldr	r0, .L30
+ 214 006a FFF7FEFF 		bl	shci_notify_asynch_evt
+ 215 006e D7E7     		b	.L21
+ 216              	.L31:
+ 217              		.align	2
+ 218              	.L30:
+ 219 0070 0C000000 		.word	SHciAsynchEventQueue
+ 220 0074 00000000 		.word	SHCI_TL_UserEventFlow
+ 221 0078 00000000 		.word	shciContext
+ 223              		.section	.text.shci_resume_flow,"ax",%progbits
+ 224              		.align	1
+ 225              		.global	shci_resume_flow
+ 226              		.syntax unified
+ 227              		.thumb
+ 228              		.thumb_func
+ 230              	shci_resume_flow:
+ 231              		@ args = 0, pretend = 0, frame = 0
+ 232              		@ frame_needed = 0, uses_anonymous_args = 0
+ 233 0000 08B5     		push	{r3, lr}
+ 234 0002 034B     		ldr	r3, .L34
+ 235 0004 0122     		movs	r2, #1
+ 236 0006 1A70     		strb	r2, [r3]
+ 237 0008 0248     		ldr	r0, .L34+4
+ 238 000a FFF7FEFF 		bl	shci_notify_asynch_evt
+ 239 000e 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 5
+
+
+ 240              	.L35:
+ 241              		.align	2
+ 242              	.L34:
+ 243 0010 00000000 		.word	SHCI_TL_UserEventFlow
+ 244 0014 0C000000 		.word	SHciAsynchEventQueue
+ 246              		.section	.text.shci_cmd_resp_wait,"ax",%progbits
+ 247              		.align	1
+ 248              		.weak	shci_cmd_resp_wait
+ 249              		.syntax unified
+ 250              		.thumb
+ 251              		.thumb_func
+ 253              	shci_cmd_resp_wait:
+ 254              		@ args = 0, pretend = 0, frame = 0
+ 255              		@ frame_needed = 0, uses_anonymous_args = 0
+ 256              		@ link register save eliminated.
+ 257              	.L37:
+ 258 0000 024B     		ldr	r3, .L38
+ 259 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 260 0004 002B     		cmp	r3, #0
+ 261 0006 FBD1     		bne	.L37
+ 262 0008 7047     		bx	lr
+ 263              	.L39:
+ 264 000a 00BF     		.align	2
+ 265              	.L38:
+ 266 000c 00000000 		.word	CmdRspStatusFlag
+ 268              		.section	.text.shci_send,"ax",%progbits
+ 269              		.align	1
+ 270              		.global	shci_send
+ 271              		.syntax unified
+ 272              		.thumb
+ 273              		.thumb_func
+ 275              	shci_send:
+ 276              		@ args = 0, pretend = 0, frame = 0
+ 277              		@ frame_needed = 0, uses_anonymous_args = 0
+ 278 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 279 0004 8046     		mov	r8, r0
+ 280 0006 0C46     		mov	r4, r1
+ 281 0008 1746     		mov	r7, r2
+ 282 000a 1E46     		mov	r6, r3
+ 283 000c 0020     		movs	r0, #0
+ 284 000e FFF7FEFF 		bl	Cmd_SetStatus
+ 285 0012 114D     		ldr	r5, .L42
+ 286 0014 2868     		ldr	r0, [r5]
+ 287 0016 A0F80980 		strh	r8, [r0, #9]	@ unaligned
+ 288 001a C472     		strb	r4, [r0, #11]
+ 289 001c 2246     		mov	r2, r4
+ 290 001e 3946     		mov	r1, r7
+ 291 0020 0C30     		adds	r0, r0, #12
+ 292 0022 FFF7FEFF 		bl	memcpy
+ 293 0026 0124     		movs	r4, #1
+ 294 0028 0C4B     		ldr	r3, .L42+4
+ 295 002a 1C70     		strb	r4, [r3]
+ 296 002c 0C4B     		ldr	r3, .L42+8
+ 297 002e 1B69     		ldr	r3, [r3, #16]
+ 298 0030 0021     		movs	r1, #0
+ 299 0032 0846     		mov	r0, r1
+ 300 0034 9847     		blx	r3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 6
+
+
+ 301 0036 48F2E800 		movw	r0, #33000
+ 302 003a FFF7FEFF 		bl	shci_cmd_resp_wait
+ 303 003e 2968     		ldr	r1, [r5]
+ 304 0040 8A78     		ldrb	r2, [r1, #2]	@ zero_extendqisi2
+ 305 0042 0332     		adds	r2, r2, #3
+ 306 0044 3046     		mov	r0, r6
+ 307 0046 0830     		adds	r0, r0, #8
+ 308 0048 FFF7FEFF 		bl	memcpy
+ 309 004c 2046     		mov	r0, r4
+ 310 004e FFF7FEFF 		bl	Cmd_SetStatus
+ 311 0052 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 312              	.L43:
+ 313 0056 00BF     		.align	2
+ 314              	.L42:
+ 315 0058 04000000 		.word	pCmdBuffer
+ 316 005c 00000000 		.word	CmdRspStatusFlag
+ 317 0060 00000000 		.word	shciContext
+ 319              		.section	.text.shci_cmd_resp_release,"ax",%progbits
+ 320              		.align	1
+ 321              		.weak	shci_cmd_resp_release
+ 322              		.syntax unified
+ 323              		.thumb
+ 324              		.thumb_func
+ 326              	shci_cmd_resp_release:
+ 327              		@ args = 0, pretend = 0, frame = 0
+ 328              		@ frame_needed = 0, uses_anonymous_args = 0
+ 329              		@ link register save eliminated.
+ 330 0000 014B     		ldr	r3, .L45
+ 331 0002 0022     		movs	r2, #0
+ 332 0004 1A70     		strb	r2, [r3]
+ 333 0006 7047     		bx	lr
+ 334              	.L46:
+ 335              		.align	2
+ 336              	.L45:
+ 337 0008 00000000 		.word	CmdRspStatusFlag
+ 339              		.section	.text.TlCmdEvtReceived,"ax",%progbits
+ 340              		.align	1
+ 341              		.syntax unified
+ 342              		.thumb
+ 343              		.thumb_func
+ 345              	TlCmdEvtReceived:
+ 346              		@ args = 0, pretend = 0, frame = 0
+ 347              		@ frame_needed = 0, uses_anonymous_args = 0
+ 348 0000 08B5     		push	{r3, lr}
+ 349 0002 0020     		movs	r0, #0
+ 350 0004 FFF7FEFF 		bl	shci_cmd_resp_release
+ 351 0008 08BD     		pop	{r3, pc}
+ 353              		.section	.bss.CmdRspStatusFlag,"aw",%nobits
+ 356              	CmdRspStatusFlag:
+ 357 0000 00       		.space	1
+ 358              		.section	.bss.StatusNotCallBackFunction,"aw",%nobits
+ 359              		.align	2
+ 362              	StatusNotCallBackFunction:
+ 363 0000 00000000 		.space	4
+ 364              		.section	.bss.shciContext,"aw",%nobits
+ 365              		.align	2
+ 368              	shciContext:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 7
+
+
+ 369 0000 00000000 		.space	32
+ 369      00000000 
+ 369      00000000 
+ 369      00000000 
+ 369      00000000 
+ 370              		.global	SHCI_TL_UserEventFlow
+ 371              		.section	SYSTEM_DRIVER_CONTEXT,"aw"
+ 374              	SHCI_TL_UserEventFlow:
+ 375 0000 00       		.space	1
+ 376 0001 000000   		.align	2
+ 379              	pCmdBuffer:
+ 380 0004 00000000 		.space	4
+ 383              	SHCICmdStatus:
+ 384 0008 00       		.space	1
+ 385 0009 000000   		.align	2
+ 388              	SHciAsynchEventQueue:
+ 389 000c 00000000 		.space	8
+ 389      00000000 
+ 390              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 shci_tl.c
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:18     .text.Cmd_SetStatus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:23     .text.Cmd_SetStatus:00000000 Cmd_SetStatus
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:52     .text.Cmd_SetStatus:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:362    .bss.StatusNotCallBackFunction:00000000 StatusNotCallBackFunction
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:383    SYSTEM_DRIVER_CONTEXT:00000008 SHCICmdStatus
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:56     .text.TlInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:61     .text.TlInit:00000000 TlInit
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:93     .text.TlInit:00000034 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:379    SYSTEM_DRIVER_CONTEXT:00000004 pCmdBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:388    SYSTEM_DRIVER_CONTEXT:0000000c SHciAsynchEventQueue
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:374    SYSTEM_DRIVER_CONTEXT:00000000 SHCI_TL_UserEventFlow
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:368    .bss.shciContext:00000000 shciContext
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:345    .text.TlCmdEvtReceived:00000000 TlCmdEvtReceived
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:106    .text.TlUserEvtReceived:00000000 TlUserEvtReceived
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:101    .text.TlUserEvtReceived:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:120    .text.TlUserEvtReceived:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:123    .text.shci_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:129    .text.shci_init:00000000 shci_init
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:147    .text.shci_init:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:151    .text.shci_user_evt_proc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:157    .text.shci_user_evt_proc:00000000 shci_user_evt_proc
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:219    .text.shci_user_evt_proc:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:224    .text.shci_resume_flow:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:230    .text.shci_resume_flow:00000000 shci_resume_flow
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:243    .text.shci_resume_flow:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:247    .text.shci_cmd_resp_wait:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:253    .text.shci_cmd_resp_wait:00000000 shci_cmd_resp_wait
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:266    .text.shci_cmd_resp_wait:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:356    .bss.CmdRspStatusFlag:00000000 CmdRspStatusFlag
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:269    .text.shci_send:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:275    .text.shci_send:00000000 shci_send
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:315    .text.shci_send:00000058 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:320    .text.shci_cmd_resp_release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:326    .text.shci_cmd_resp_release:00000000 shci_cmd_resp_release
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:337    .text.shci_cmd_resp_release:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:340    .text.TlCmdEvtReceived:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:357    .bss.CmdRspStatusFlag:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:359    .bss.StatusNotCallBackFunction:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:365    .bss.shciContext:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccOoGa8H.s:375    SYSTEM_DRIVER_CONTEXT:00000000 $d
+
+UNDEFINED SYMBOLS
+LST_init_head
+LST_insert_tail
+shci_notify_asynch_evt
+shci_register_io_bus
+LST_is_empty
+LST_remove_head
+TL_MM_EvtDone
+LST_insert_head
+memcpy

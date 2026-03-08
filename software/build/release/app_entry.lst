@@ -1,0 +1,542 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"app_entry.c"
+  16              		.text
+  17              		.section	.text.Init_Rtc,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	Init_Rtc:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 054B     		ldr	r3, .L2
+  28 0002 CA22     		movs	r2, #202
+  29 0004 5A62     		str	r2, [r3, #36]
+  30 0006 5322     		movs	r2, #83
+  31 0008 5A62     		str	r2, [r3, #36]
+  32 000a 9A68     		ldr	r2, [r3, #8]
+  33 000c 22F00702 		bic	r2, r2, #7
+  34 0010 9A60     		str	r2, [r3, #8]
+  35 0012 FF22     		movs	r2, #255
+  36 0014 5A62     		str	r2, [r3, #36]
+  37 0016 7047     		bx	lr
+  38              	.L3:
+  39              		.align	2
+  40              	.L2:
+  41 0018 00280040 		.word	1073752064
+  43              		.section	.text.APPE_SysStatusNot,"ax",%progbits
+  44              		.align	1
+  45              		.syntax unified
+  46              		.thumb
+  47              		.thumb_func
+  49              	APPE_SysStatusNot:
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52              		@ link register save eliminated.
+  53 0000 7047     		bx	lr
+  55              		.section	.text.Config_HSE,"ax",%progbits
+  56              		.align	1
+  57              		.syntax unified
+  58              		.thumb
+  59              		.thumb_func
+  61              	Config_HSE:
+  62              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 2
+
+
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64 0000 08B5     		push	{r3, lr}
+  65 0002 0020     		movs	r0, #0
+  66 0004 FFF7FEFF 		bl	OTP_Read
+  67 0008 68B1     		cbz	r0, .L5
+  68 000a 8179     		ldrb	r1, [r0, #6]	@ zero_extendqisi2
+  69 000c 4FF0B042 		mov	r2, #1476395008
+  70 0010 054B     		ldr	r3, .L8
+  71 0012 C2F89C30 		str	r3, [r2, #156]
+  72 0016 D2F89C30 		ldr	r3, [r2, #156]
+  73 001a 23F47C53 		bic	r3, r3, #16128
+  74 001e 43EA0123 		orr	r3, r3, r1, lsl #8
+  75 0022 C2F89C30 		str	r3, [r2, #156]
+  76              	.L5:
+  77 0026 08BD     		pop	{r3, pc}
+  78              	.L9:
+  79              		.align	2
+  80              	.L8:
+  81 0028 FECAFECA 		.word	-889271554
+  83              		.section	.text.SystemPower_Config,"ax",%progbits
+  84              		.align	1
+  85              		.syntax unified
+  86              		.thumb
+  87              		.thumb_func
+  89              	SystemPower_Config:
+  90              		@ args = 0, pretend = 0, frame = 0
+  91              		@ frame_needed = 0, uses_anonymous_args = 0
+  92 0000 08B5     		push	{r3, lr}
+  93 0002 4FF0B042 		mov	r2, #1476395008
+  94 0006 9368     		ldr	r3, [r2, #8]
+  95 0008 43F40043 		orr	r3, r3, #32768
+  96 000c 9360     		str	r3, [r2, #8]
+  97 000e FFF7FEFF 		bl	UTIL_LPM_Init
+  98 0012 054A     		ldr	r2, .L12
+  99 0014 D2F88030 		ldr	r3, [r2, #128]
+ 100 0018 23F00703 		bic	r3, r3, #7
+ 101 001c 43F00403 		orr	r3, r3, #4
+ 102 0020 C2F88030 		str	r3, [r2, #128]
+ 103 0024 08BD     		pop	{r3, pc}
+ 104              	.L13:
+ 105 0026 00BF     		.align	2
+ 106              	.L12:
+ 107 0028 00040058 		.word	1476396032
+ 109              		.section	.text.appe_Tl_Init,"ax",%progbits
+ 110              		.align	1
+ 111              		.syntax unified
+ 112              		.thumb
+ 113              		.thumb_func
+ 115              	appe_Tl_Init:
+ 116              		@ args = 0, pretend = 0, frame = 32
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118 0000 00B5     		push	{lr}
+ 119 0002 89B0     		sub	sp, sp, #36
+ 120 0004 FFF7FEFF 		bl	TL_Init
+ 121 0008 0E4A     		ldr	r2, .L16
+ 122 000a 0021     		movs	r1, #0
+ 123 000c 0420     		movs	r0, #4
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 3
+
+
+ 124 000e FFF7FEFF 		bl	UTIL_SEQ_RegTask
+ 125 0012 0D4B     		ldr	r3, .L16+4
+ 126 0014 0093     		str	r3, [sp]
+ 127 0016 0D4B     		ldr	r3, .L16+8
+ 128 0018 0193     		str	r3, [sp, #4]
+ 129 001a 6946     		mov	r1, sp
+ 130 001c 0C48     		ldr	r0, .L16+12
+ 131 001e FFF7FEFF 		bl	shci_init
+ 132 0022 0C4B     		ldr	r3, .L16+16
+ 133 0024 0293     		str	r3, [sp, #8]
+ 134 0026 0C4B     		ldr	r3, .L16+20
+ 135 0028 0393     		str	r3, [sp, #12]
+ 136 002a 0C4B     		ldr	r3, .L16+24
+ 137 002c 0493     		str	r3, [sp, #16]
+ 138 002e 40F23C53 		movw	r3, #1340
+ 139 0032 0593     		str	r3, [sp, #20]
+ 140 0034 02A8     		add	r0, sp, #8
+ 141 0036 FFF7FEFF 		bl	TL_MM_Init
+ 142 003a FFF7FEFF 		bl	TL_Enable
+ 143 003e 09B0     		add	sp, sp, #36
+ 144              		@ sp needed
+ 145 0040 00BD     		pop	{pc}
+ 146              	.L17:
+ 147 0042 00BF     		.align	2
+ 148              	.L16:
+ 149 0044 00000000 		.word	shci_user_evt_proc
+ 150 0048 18020000 		.word	SystemCmdBuffer
+ 151 004c 00000000 		.word	APPE_SysStatusNot
+ 152 0050 00000000 		.word	APPE_SysUserEvtRx
+ 153 0054 00000000 		.word	BleSpareEvtBuffer
+ 154 0058 0C010000 		.word	SystemSpareEvtBuffer
+ 155 005c 24030000 		.word	EvtPool
+ 157              		.section	.text.APPE_SysEvtReadyProcessing,"ax",%progbits
+ 158              		.align	1
+ 159              		.syntax unified
+ 160              		.thumb
+ 161              		.thumb_func
+ 163              	APPE_SysEvtReadyProcessing:
+ 164              		@ args = 0, pretend = 0, frame = 16
+ 165              		@ frame_needed = 0, uses_anonymous_args = 0
+ 166 0000 00B5     		push	{lr}
+ 167 0002 85B0     		sub	sp, sp, #20
+ 168 0004 0023     		movs	r3, #0
+ 169 0006 0093     		str	r3, [sp]
+ 170 0008 0193     		str	r3, [sp, #4]
+ 171 000a 0293     		str	r3, [sp, #8]
+ 172 000c 0393     		str	r3, [sp, #12]
+ 173 000e 4368     		ldr	r3, [r0, #4]
+ 174 0010 5B7B     		ldrb	r3, [r3, #13]	@ zero_extendqisi2
+ 175 0012 1BB1     		cbz	r3, .L22
+ 176 0014 012B     		cmp	r3, #1
+ 177 0016 1DD0     		beq	.L23
+ 178              	.L18:
+ 179 0018 05B0     		add	sp, sp, #20
+ 180              		@ sp needed
+ 181 001a 00BD     		pop	{pc}
+ 182              	.L22:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 4
+
+
+ 183 001c FFF7FEFF 		bl	APPD_EnableCPU2
+ 184 0020 0F23     		movs	r3, #15
+ 185 0022 8DF80030 		strb	r3, [sp]
+ 186 0026 7F23     		movs	r3, #127
+ 187 0028 8DF80230 		strb	r3, [sp, #2]
+ 188 002c 0B4A     		ldr	r2, .L24
+ 189 002e 1368     		ldr	r3, [r2]
+ 190 0030 1B0C     		lsrs	r3, r3, #16
+ 191 0032 ADF80C30 		strh	r3, [sp, #12]	@ movhi
+ 192 0036 1368     		ldr	r3, [r2]
+ 193 0038 C3F30B03 		ubfx	r3, r3, #0, #12
+ 194 003c ADF80E30 		strh	r3, [sp, #14]	@ movhi
+ 195 0040 6846     		mov	r0, sp
+ 196 0042 FFF7FEFF 		bl	SHCI_C2_Config
+ 197 0046 FFF7FEFF 		bl	APP_BLE_Init
+ 198 004a 0021     		movs	r1, #0
+ 199 004c 0120     		movs	r0, #1
+ 200 004e FFF7FEFF 		bl	UTIL_LPM_SetOffMode
+ 201 0052 E1E7     		b	.L18
+ 202              	.L23:
+ 203 0054 0023     		movs	r3, #0
+ 204 0056 0370     		strb	r3, [r0]
+ 205 0058 DEE7     		b	.L18
+ 206              	.L25:
+ 207 005a 00BF     		.align	2
+ 208              	.L24:
+ 209 005c 002004E0 		.word	-536600576
+ 211              		.section	.text.APPE_SysUserEvtRx,"ax",%progbits
+ 212              		.align	1
+ 213              		.syntax unified
+ 214              		.thumb
+ 215              		.thumb_func
+ 217              	APPE_SysUserEvtRx:
+ 218              		@ args = 0, pretend = 0, frame = 16
+ 219              		@ frame_needed = 0, uses_anonymous_args = 0
+ 220 0000 4368     		ldr	r3, [r0, #4]
+ 221 0002 B3F80B30 		ldrh	r3, [r3, #11]	@ unaligned
+ 222 0006 B3F5124F 		cmp	r3, #37376
+ 223 000a 00D0     		beq	.L32
+ 224 000c 7047     		bx	lr
+ 225              	.L32:
+ 226 000e 10B5     		push	{r4, lr}
+ 227 0010 84B0     		sub	sp, sp, #16
+ 228 0012 0446     		mov	r4, r0
+ 229 0014 6846     		mov	r0, sp
+ 230 0016 FFF7FEFF 		bl	SHCI_GetWirelessFwInfo
+ 231 001a 2046     		mov	r0, r4
+ 232 001c FFF7FEFF 		bl	APPE_SysEvtReadyProcessing
+ 233 0020 04B0     		add	sp, sp, #16
+ 234              		@ sp needed
+ 235 0022 10BD     		pop	{r4, pc}
+ 237              		.section	.text.MX_APPE_Config,"ax",%progbits
+ 238              		.align	1
+ 239              		.global	MX_APPE_Config
+ 240              		.syntax unified
+ 241              		.thumb
+ 242              		.thumb_func
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 5
+
+
+ 244              	MX_APPE_Config:
+ 245              		@ args = 0, pretend = 0, frame = 0
+ 246              		@ frame_needed = 0, uses_anonymous_args = 0
+ 247 0000 08B5     		push	{r3, lr}
+ 248 0002 034B     		ldr	r3, .L35
+ 249 0004 4FF40042 		mov	r2, #32768
+ 250 0008 1A61     		str	r2, [r3, #16]
+ 251 000a FFF7FEFF 		bl	Config_HSE
+ 252 000e 08BD     		pop	{r3, pc}
+ 253              	.L36:
+ 254              		.align	2
+ 255              	.L35:
+ 256 0010 00400058 		.word	1476411392
+ 258              		.section	.text.Init_Smps,"ax",%progbits
+ 259              		.align	1
+ 260              		.global	Init_Smps
+ 261              		.syntax unified
+ 262              		.thumb
+ 263              		.thumb_func
+ 265              	Init_Smps:
+ 266              		@ args = 0, pretend = 0, frame = 0
+ 267              		@ frame_needed = 0, uses_anonymous_args = 0
+ 268              		@ link register save eliminated.
+ 269 0000 7047     		bx	lr
+ 271              		.section	.text.Init_Exti,"ax",%progbits
+ 272              		.align	1
+ 273              		.global	Init_Exti
+ 274              		.syntax unified
+ 275              		.thumb
+ 276              		.thumb_func
+ 278              	Init_Exti:
+ 279              		@ args = 0, pretend = 0, frame = 0
+ 280              		@ frame_needed = 0, uses_anonymous_args = 0
+ 281              		@ link register save eliminated.
+ 282 0000 034A     		ldr	r2, .L39
+ 283 0002 D2F89030 		ldr	r3, [r2, #144]
+ 284 0006 43F05003 		orr	r3, r3, #80
+ 285 000a C2F89030 		str	r3, [r2, #144]
+ 286 000e 7047     		bx	lr
+ 287              	.L40:
+ 288              		.align	2
+ 289              	.L39:
+ 290 0010 00080058 		.word	1476397056
+ 292              		.section	.text.System_Init,"ax",%progbits
+ 293              		.align	1
+ 294              		.syntax unified
+ 295              		.thumb
+ 296              		.thumb_func
+ 298              	System_Init:
+ 299              		@ args = 0, pretend = 0, frame = 0
+ 300              		@ frame_needed = 0, uses_anonymous_args = 0
+ 301 0000 08B5     		push	{r3, lr}
+ 302 0002 FFF7FEFF 		bl	Init_Exti
+ 303 0006 FFF7FEFF 		bl	Init_Rtc
+ 304 000a 08BD     		pop	{r3, pc}
+ 306              		.section	.text.MX_APPE_Init,"ax",%progbits
+ 307              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 6
+
+
+ 308              		.global	MX_APPE_Init
+ 309              		.syntax unified
+ 310              		.thumb
+ 311              		.thumb_func
+ 313              	MX_APPE_Init:
+ 314              		@ args = 0, pretend = 0, frame = 0
+ 315              		@ frame_needed = 0, uses_anonymous_args = 0
+ 316 0000 08B5     		push	{r3, lr}
+ 317 0002 FFF7FEFF 		bl	System_Init
+ 318 0006 FFF7FEFF 		bl	SystemPower_Config
+ 319 000a 0349     		ldr	r1, .L45
+ 320 000c 0020     		movs	r0, #0
+ 321 000e FFF7FEFF 		bl	HW_TS_Init
+ 322 0012 FFF7FEFF 		bl	appe_Tl_Init
+ 323 0016 08BD     		pop	{r3, pc}
+ 324              	.L46:
+ 325              		.align	2
+ 326              	.L45:
+ 327 0018 00000000 		.word	hrtc
+ 329              		.section	.text.HAL_Delay,"ax",%progbits
+ 330              		.align	1
+ 331              		.global	HAL_Delay
+ 332              		.syntax unified
+ 333              		.thumb
+ 334              		.thumb_func
+ 336              	HAL_Delay:
+ 337              		@ args = 0, pretend = 0, frame = 0
+ 338              		@ frame_needed = 0, uses_anonymous_args = 0
+ 339 0000 38B5     		push	{r3, r4, r5, lr}
+ 340 0002 0446     		mov	r4, r0
+ 341 0004 FFF7FEFF 		bl	HAL_GetTick
+ 342 0008 0546     		mov	r5, r0
+ 343 000a B4F1FF3F 		cmp	r4, #-1
+ 344 000e 09D0     		beq	.L49
+ 345 0010 FFF7FEFF 		bl	HAL_GetTickFreq
+ 346 0014 0444     		add	r4, r4, r0
+ 347 0016 05E0     		b	.L49
+ 348              	.L50:
+ 349 0018 054A     		ldr	r2, .L52
+ 350 001a 1369     		ldr	r3, [r2, #16]
+ 351 001c 23F00403 		bic	r3, r3, #4
+ 352 0020 1361     		str	r3, [r2, #16]
+ 353              		.syntax unified
+ 354              	@ 541 "Core/Src/app_entry.c" 1
+ 355 0022 30BF     		wfi
+ 356              	@ 0 "" 2
+ 357              		.thumb
+ 358              		.syntax unified
+ 359              	.L49:
+ 360 0024 FFF7FEFF 		bl	HAL_GetTick
+ 361 0028 401B     		subs	r0, r0, r5
+ 362 002a A042     		cmp	r0, r4
+ 363 002c F4D3     		bcc	.L50
+ 364 002e 38BD     		pop	{r3, r4, r5, pc}
+ 365              	.L53:
+ 366              		.align	2
+ 367              	.L52:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 7
+
+
+ 368 0030 00ED00E0 		.word	-536810240
+ 370              		.section	.text.MX_APPE_Process,"ax",%progbits
+ 371              		.align	1
+ 372              		.global	MX_APPE_Process
+ 373              		.syntax unified
+ 374              		.thumb
+ 375              		.thumb_func
+ 377              	MX_APPE_Process:
+ 378              		@ args = 0, pretend = 0, frame = 0
+ 379              		@ frame_needed = 0, uses_anonymous_args = 0
+ 380 0000 08B5     		push	{r3, lr}
+ 381 0002 4FF0FF30 		mov	r0, #-1
+ 382 0006 FFF7FEFF 		bl	UTIL_SEQ_Run
+ 383 000a 08BD     		pop	{r3, pc}
+ 385              		.section	.text.UTIL_SEQ_Idle,"ax",%progbits
+ 386              		.align	1
+ 387              		.global	UTIL_SEQ_Idle
+ 388              		.syntax unified
+ 389              		.thumb
+ 390              		.thumb_func
+ 392              	UTIL_SEQ_Idle:
+ 393              		@ args = 0, pretend = 0, frame = 0
+ 394              		@ frame_needed = 0, uses_anonymous_args = 0
+ 395              		@ link register save eliminated.
+ 396 0000 7047     		bx	lr
+ 398              		.section	.text.shci_notify_asynch_evt,"ax",%progbits
+ 399              		.align	1
+ 400              		.global	shci_notify_asynch_evt
+ 401              		.syntax unified
+ 402              		.thumb
+ 403              		.thumb_func
+ 405              	shci_notify_asynch_evt:
+ 406              		@ args = 0, pretend = 0, frame = 0
+ 407              		@ frame_needed = 0, uses_anonymous_args = 0
+ 408 0000 08B5     		push	{r3, lr}
+ 409 0002 0021     		movs	r1, #0
+ 410 0004 0420     		movs	r0, #4
+ 411 0006 FFF7FEFF 		bl	UTIL_SEQ_SetTask
+ 412 000a 08BD     		pop	{r3, pc}
+ 414              		.section	.text.shci_cmd_resp_release,"ax",%progbits
+ 415              		.align	1
+ 416              		.global	shci_cmd_resp_release
+ 417              		.syntax unified
+ 418              		.thumb
+ 419              		.thumb_func
+ 421              	shci_cmd_resp_release:
+ 422              		@ args = 0, pretend = 0, frame = 0
+ 423              		@ frame_needed = 0, uses_anonymous_args = 0
+ 424 0000 08B5     		push	{r3, lr}
+ 425 0002 0220     		movs	r0, #2
+ 426 0004 FFF7FEFF 		bl	UTIL_SEQ_SetEvt
+ 427 0008 08BD     		pop	{r3, pc}
+ 429              		.section	.text.shci_cmd_resp_wait,"ax",%progbits
+ 430              		.align	1
+ 431              		.global	shci_cmd_resp_wait
+ 432              		.syntax unified
+ 433              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 8
+
+
+ 434              		.thumb_func
+ 436              	shci_cmd_resp_wait:
+ 437              		@ args = 0, pretend = 0, frame = 0
+ 438              		@ frame_needed = 0, uses_anonymous_args = 0
+ 439 0000 08B5     		push	{r3, lr}
+ 440 0002 0220     		movs	r0, #2
+ 441 0004 FFF7FEFF 		bl	UTIL_SEQ_WaitEvt
+ 442 0008 08BD     		pop	{r3, pc}
+ 444              		.section	MB_MEM2,"aw"
+ 445              		.align	2
+ 448              	BleSpareEvtBuffer:
+ 449 0000 00000000 		.space	266
+ 449      00000000 
+ 449      00000000 
+ 449      00000000 
+ 449      00000000 
+ 450 010a 0000     		.align	2
+ 453              	SystemSpareEvtBuffer:
+ 454 010c 00000000 		.space	266
+ 454      00000000 
+ 454      00000000 
+ 454      00000000 
+ 454      00000000 
+ 455 0216 0000     		.align	2
+ 458              	SystemCmdBuffer:
+ 459 0218 00000000 		.space	267
+ 459      00000000 
+ 459      00000000 
+ 459      00000000 
+ 459      00000000 
+ 460 0323 00       		.align	2
+ 463              	EvtPool:
+ 464 0324 00000000 		.space	1340
+ 464      00000000 
+ 464      00000000 
+ 464      00000000 
+ 464      00000000 
+ 465              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 app_entry.c
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:18     .text.Init_Rtc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:23     .text.Init_Rtc:00000000 Init_Rtc
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:41     .text.Init_Rtc:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:44     .text.APPE_SysStatusNot:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:49     .text.APPE_SysStatusNot:00000000 APPE_SysStatusNot
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:56     .text.Config_HSE:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:61     .text.Config_HSE:00000000 Config_HSE
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:81     .text.Config_HSE:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:84     .text.SystemPower_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:89     .text.SystemPower_Config:00000000 SystemPower_Config
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:107    .text.SystemPower_Config:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:110    .text.appe_Tl_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:115    .text.appe_Tl_Init:00000000 appe_Tl_Init
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:149    .text.appe_Tl_Init:00000044 $d
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:458    MB_MEM2:00000218 SystemCmdBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:217    .text.APPE_SysUserEvtRx:00000000 APPE_SysUserEvtRx
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:448    MB_MEM2:00000000 BleSpareEvtBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:453    MB_MEM2:0000010c SystemSpareEvtBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:463    MB_MEM2:00000324 EvtPool
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:158    .text.APPE_SysEvtReadyProcessing:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:163    .text.APPE_SysEvtReadyProcessing:00000000 APPE_SysEvtReadyProcessing
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:209    .text.APPE_SysEvtReadyProcessing:0000005c $d
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:212    .text.APPE_SysUserEvtRx:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:238    .text.MX_APPE_Config:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:244    .text.MX_APPE_Config:00000000 MX_APPE_Config
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:256    .text.MX_APPE_Config:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:259    .text.Init_Smps:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:265    .text.Init_Smps:00000000 Init_Smps
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:272    .text.Init_Exti:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:278    .text.Init_Exti:00000000 Init_Exti
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:290    .text.Init_Exti:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:293    .text.System_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:298    .text.System_Init:00000000 System_Init
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:307    .text.MX_APPE_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:313    .text.MX_APPE_Init:00000000 MX_APPE_Init
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:327    .text.MX_APPE_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:330    .text.HAL_Delay:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:336    .text.HAL_Delay:00000000 HAL_Delay
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:368    .text.HAL_Delay:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:371    .text.MX_APPE_Process:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:377    .text.MX_APPE_Process:00000000 MX_APPE_Process
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:386    .text.UTIL_SEQ_Idle:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:392    .text.UTIL_SEQ_Idle:00000000 UTIL_SEQ_Idle
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:399    .text.shci_notify_asynch_evt:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:405    .text.shci_notify_asynch_evt:00000000 shci_notify_asynch_evt
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:415    .text.shci_cmd_resp_release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:421    .text.shci_cmd_resp_release:00000000 shci_cmd_resp_release
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:430    .text.shci_cmd_resp_wait:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:436    .text.shci_cmd_resp_wait:00000000 shci_cmd_resp_wait
+C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s:445    MB_MEM2:00000000 $d
+
+UNDEFINED SYMBOLS
+OTP_Read
+UTIL_LPM_Init
+TL_Init
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccxQY3Wm.s 			page 10
+
+
+UTIL_SEQ_RegTask
+shci_init
+TL_MM_Init
+TL_Enable
+shci_user_evt_proc
+APPD_EnableCPU2
+SHCI_C2_Config
+APP_BLE_Init
+UTIL_LPM_SetOffMode
+SHCI_GetWirelessFwInfo
+HW_TS_Init
+hrtc
+HAL_GetTick
+HAL_GetTickFreq
+UTIL_SEQ_Run
+UTIL_SEQ_SetTask
+UTIL_SEQ_SetEvt
+UTIL_SEQ_WaitEvt

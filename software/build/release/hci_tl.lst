@@ -1,0 +1,513 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"hci_tl.c"
+  16              		.text
+  17              		.section	.text.NotifyCmdStatus,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	NotifyCmdStatus:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 08B5     		push	{r3, lr}
+  27 0002 20B9     		cbnz	r0, .L2
+  28 0004 054B     		ldr	r3, .L5
+  29 0006 1B68     		ldr	r3, [r3]
+  30 0008 03B1     		cbz	r3, .L1
+  31 000a 9847     		blx	r3
+  32              	.L1:
+  33 000c 08BD     		pop	{r3, pc}
+  34              	.L2:
+  35 000e 034B     		ldr	r3, .L5
+  36 0010 1B68     		ldr	r3, [r3]
+  37 0012 002B     		cmp	r3, #0
+  38 0014 FAD0     		beq	.L1
+  39 0016 0120     		movs	r0, #1
+  40 0018 9847     		blx	r3
+  41 001a F7E7     		b	.L1
+  42              	.L6:
+  43              		.align	2
+  44              	.L5:
+  45 001c 00000000 		.word	StatusNotCallBackFunction
+  47              		.section	.text.TlInit,"ax",%progbits
+  48              		.align	1
+  49              		.syntax unified
+  50              		.thumb
+  51              		.thumb_func
+  53              	TlInit:
+  54              		@ args = 0, pretend = 0, frame = 16
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56 0000 10B5     		push	{r4, lr}
+  57 0002 84B0     		sub	sp, sp, #16
+  58 0004 0446     		mov	r4, r0
+  59 0006 0A48     		ldr	r0, .L10
+  60 0008 FFF7FEFF 		bl	LST_init_head
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s 			page 2
+
+
+  61 000c 094B     		ldr	r3, .L10+4
+  62 000e 1C60     		str	r4, [r3]
+  63 0010 0948     		ldr	r0, .L10+8
+  64 0012 FFF7FEFF 		bl	LST_init_head
+  65 0016 094B     		ldr	r3, .L10+12
+  66 0018 0122     		movs	r2, #1
+  67 001a 1A70     		strb	r2, [r3]
+  68 001c 084B     		ldr	r3, .L10+16
+  69 001e 1B68     		ldr	r3, [r3]
+  70 0020 23B1     		cbz	r3, .L7
+  71 0022 0294     		str	r4, [sp, #8]
+  72 0024 074A     		ldr	r2, .L10+20
+  73 0026 0092     		str	r2, [sp]
+  74 0028 6846     		mov	r0, sp
+  75 002a 9847     		blx	r3
+  76              	.L7:
+  77 002c 04B0     		add	sp, sp, #16
+  78              		@ sp needed
+  79 002e 10BD     		pop	{r4, pc}
+  80              	.L11:
+  81              		.align	2
+  82              	.L10:
+  83 0030 00000000 		.word	HciCmdEventQueue
+  84 0034 04000000 		.word	pCmdBuffer
+  85 0038 08000000 		.word	HciAsynchEventQueue
+  86 003c 00000000 		.word	UserEventFlow
+  87 0040 00000000 		.word	hciContext
+  88 0044 00000000 		.word	TlEvtReceived
+  90              		.section	.text.SendCmd,"ax",%progbits
+  91              		.align	1
+  92              		.syntax unified
+  93              		.thumb
+  94              		.thumb_func
+  96              	SendCmd:
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99 0000 08B5     		push	{r3, lr}
+ 100 0002 0B46     		mov	r3, r1
+ 101 0004 1146     		mov	r1, r2
+ 102 0006 094A     		ldr	r2, .L14
+ 103 0008 D2F800C0 		ldr	ip, [r2]
+ 104 000c ACF80900 		strh	r0, [ip, #9]	@ unaligned
+ 105 0010 8CF80B30 		strb	r3, [ip, #11]
+ 106 0014 1A46     		mov	r2, r3
+ 107 0016 0CF10C00 		add	r0, ip, #12
+ 108 001a FFF7FEFF 		bl	memcpy
+ 109 001e 044B     		ldr	r3, .L14+4
+ 110 0020 1B69     		ldr	r3, [r3, #16]
+ 111 0022 0021     		movs	r1, #0
+ 112 0024 0846     		mov	r0, r1
+ 113 0026 9847     		blx	r3
+ 114 0028 08BD     		pop	{r3, pc}
+ 115              	.L15:
+ 116 002a 00BF     		.align	2
+ 117              	.L14:
+ 118 002c 04000000 		.word	pCmdBuffer
+ 119 0030 00000000 		.word	hciContext
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s 			page 3
+
+
+ 121              		.section	.text.hci_init,"ax",%progbits
+ 122              		.align	1
+ 123              		.global	hci_init
+ 124              		.syntax unified
+ 125              		.thumb
+ 126              		.thumb_func
+ 128              	hci_init:
+ 129              		@ args = 0, pretend = 0, frame = 0
+ 130              		@ frame_needed = 0, uses_anonymous_args = 0
+ 131 0000 10B5     		push	{r4, lr}
+ 132 0002 0C46     		mov	r4, r1
+ 133 0004 4A68     		ldr	r2, [r1, #4]
+ 134 0006 054B     		ldr	r3, .L18
+ 135 0008 1A60     		str	r2, [r3]
+ 136 000a 054B     		ldr	r3, .L18+4
+ 137 000c D861     		str	r0, [r3, #28]
+ 138 000e 1846     		mov	r0, r3
+ 139 0010 FFF7FEFF 		bl	hci_register_io_bus
+ 140 0014 2068     		ldr	r0, [r4]
+ 141 0016 FFF7FEFF 		bl	TlInit
+ 142 001a 10BD     		pop	{r4, pc}
+ 143              	.L19:
+ 144              		.align	2
+ 145              	.L18:
+ 146 001c 00000000 		.word	StatusNotCallBackFunction
+ 147 0020 00000000 		.word	hciContext
+ 149              		.section	.text.hci_user_evt_proc,"ax",%progbits
+ 150              		.align	1
+ 151              		.global	hci_user_evt_proc
+ 152              		.syntax unified
+ 153              		.thumb
+ 154              		.thumb_func
+ 156              	hci_user_evt_proc:
+ 157              		@ args = 0, pretend = 0, frame = 16
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159 0000 00B5     		push	{lr}
+ 160 0002 85B0     		sub	sp, sp, #20
+ 161 0004 1A48     		ldr	r0, .L29
+ 162 0006 FFF7FEFF 		bl	LST_is_empty
+ 163 000a 10B9     		cbnz	r0, .L21
+ 164 000c 194B     		ldr	r3, .L29+4
+ 165 000e 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 166 0010 43B9     		cbnz	r3, .L27
+ 167              	.L21:
+ 168 0012 1748     		ldr	r0, .L29
+ 169 0014 FFF7FEFF 		bl	LST_is_empty
+ 170 0018 10B9     		cbnz	r0, .L20
+ 171 001a 164B     		ldr	r3, .L29+4
+ 172 001c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 173 001e 1BBB     		cbnz	r3, .L28
+ 174              	.L20:
+ 175 0020 05B0     		add	sp, sp, #20
+ 176              		@ sp needed
+ 177 0022 00BD     		pop	{pc}
+ 178              	.L27:
+ 179 0024 03A9     		add	r1, sp, #12
+ 180 0026 1248     		ldr	r0, .L29
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s 			page 4
+
+
+ 181 0028 FFF7FEFF 		bl	LST_remove_head
+ 182 002c 124B     		ldr	r3, .L29+8
+ 183 002e DB69     		ldr	r3, [r3, #28]
+ 184 0030 8BB1     		cbz	r3, .L22
+ 185 0032 039A     		ldr	r2, [sp, #12]
+ 186 0034 0292     		str	r2, [sp, #8]
+ 187 0036 0122     		movs	r2, #1
+ 188 0038 8DF80420 		strb	r2, [sp, #4]
+ 189 003c 01A8     		add	r0, sp, #4
+ 190 003e 9847     		blx	r3
+ 191 0040 9DF80420 		ldrb	r2, [sp, #4]	@ zero_extendqisi2
+ 192 0044 0B4B     		ldr	r3, .L29+4
+ 193 0046 1A70     		strb	r2, [r3]
+ 194              	.L23:
+ 195 0048 0A4B     		ldr	r3, .L29+4
+ 196 004a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 197 004c 3BB1     		cbz	r3, .L24
+ 198 004e 0398     		ldr	r0, [sp, #12]
+ 199 0050 FFF7FEFF 		bl	TL_MM_EvtDone
+ 200 0054 DDE7     		b	.L21
+ 201              	.L22:
+ 202 0056 074B     		ldr	r3, .L29+4
+ 203 0058 0122     		movs	r2, #1
+ 204 005a 1A70     		strb	r2, [r3]
+ 205 005c F4E7     		b	.L23
+ 206              	.L24:
+ 207 005e 0399     		ldr	r1, [sp, #12]
+ 208 0060 0348     		ldr	r0, .L29
+ 209 0062 FFF7FEFF 		bl	LST_insert_head
+ 210 0066 D4E7     		b	.L21
+ 211              	.L28:
+ 212 0068 0148     		ldr	r0, .L29
+ 213 006a FFF7FEFF 		bl	hci_notify_asynch_evt
+ 214 006e D7E7     		b	.L20
+ 215              	.L30:
+ 216              		.align	2
+ 217              	.L29:
+ 218 0070 08000000 		.word	HciAsynchEventQueue
+ 219 0074 00000000 		.word	UserEventFlow
+ 220 0078 00000000 		.word	hciContext
+ 222              		.section	.text.hci_resume_flow,"ax",%progbits
+ 223              		.align	1
+ 224              		.global	hci_resume_flow
+ 225              		.syntax unified
+ 226              		.thumb
+ 227              		.thumb_func
+ 229              	hci_resume_flow:
+ 230              		@ args = 0, pretend = 0, frame = 0
+ 231              		@ frame_needed = 0, uses_anonymous_args = 0
+ 232 0000 08B5     		push	{r3, lr}
+ 233 0002 034B     		ldr	r3, .L33
+ 234 0004 0122     		movs	r2, #1
+ 235 0006 1A70     		strb	r2, [r3]
+ 236 0008 0248     		ldr	r0, .L33+4
+ 237 000a FFF7FEFF 		bl	hci_notify_asynch_evt
+ 238 000e 08BD     		pop	{r3, pc}
+ 239              	.L34:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s 			page 5
+
+
+ 240              		.align	2
+ 241              	.L33:
+ 242 0010 00000000 		.word	UserEventFlow
+ 243 0014 08000000 		.word	HciAsynchEventQueue
+ 245              		.section	.text.hci_cmd_resp_wait,"ax",%progbits
+ 246              		.align	1
+ 247              		.weak	hci_cmd_resp_wait
+ 248              		.syntax unified
+ 249              		.thumb
+ 250              		.thumb_func
+ 252              	hci_cmd_resp_wait:
+ 253              		@ args = 0, pretend = 0, frame = 0
+ 254              		@ frame_needed = 0, uses_anonymous_args = 0
+ 255              		@ link register save eliminated.
+ 256              	.L36:
+ 257 0000 024B     		ldr	r3, .L37
+ 258 0002 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 259 0004 002B     		cmp	r3, #0
+ 260 0006 FBD1     		bne	.L36
+ 261 0008 7047     		bx	lr
+ 262              	.L38:
+ 263 000a 00BF     		.align	2
+ 264              	.L37:
+ 265 000c 00000000 		.word	CmdRspStatusFlag
+ 267              		.section	.text.hci_send_req,"ax",%progbits
+ 268              		.align	1
+ 269              		.global	hci_send_req
+ 270              		.syntax unified
+ 271              		.thumb
+ 272              		.thumb_func
+ 274              	hci_send_req:
+ 275              		@ args = 0, pretend = 0, frame = 8
+ 276              		@ frame_needed = 0, uses_anonymous_args = 0
+ 277 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 278 0002 83B0     		sub	sp, sp, #12
+ 279 0004 0746     		mov	r7, r0
+ 280 0006 0020     		movs	r0, #0
+ 281 0008 FFF7FEFF 		bl	NotifyCmdStatus
+ 282 000c 7D88     		ldrh	r5, [r7, #2]
+ 283 000e 3B88     		ldrh	r3, [r7]
+ 284 0010 C5F30905 		ubfx	r5, r5, #0, #10
+ 285 0014 45EA8325 		orr	r5, r5, r3, lsl #10
+ 286 0018 ADB2     		uxth	r5, r5
+ 287 001a 224B     		ldr	r3, .L55
+ 288 001c 0122     		movs	r2, #1
+ 289 001e 1A70     		strb	r2, [r3]
+ 290 0020 BA68     		ldr	r2, [r7, #8]
+ 291 0022 397B     		ldrb	r1, [r7, #12]	@ zero_extendqisi2
+ 292 0024 2846     		mov	r0, r5
+ 293 0026 FFF7FEFF 		bl	SendCmd
+ 294 002a 0026     		movs	r6, #0
+ 295              	.L40:
+ 296 002c 002E     		cmp	r6, #0
+ 297 002e 33D1     		bne	.L51
+ 298 0030 48F2E800 		movw	r0, #33000
+ 299 0034 FFF7FEFF 		bl	hci_cmd_resp_wait
+ 300 0038 05E0     		b	.L41
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s 			page 6
+
+
+ 301              	.L53:
+ 302 003a B4F80D30 		ldrh	r3, [r4, #13]	@ unaligned
+ 303 003e AB42     		cmp	r3, r5
+ 304 0040 16D0     		beq	.L52
+ 305              	.L43:
+ 306 0042 237B     		ldrb	r3, [r4, #12]	@ zero_extendqisi2
+ 307 0044 33BB     		cbnz	r3, .L48
+ 308              	.L41:
+ 309 0046 1848     		ldr	r0, .L55+4
+ 310 0048 FFF7FEFF 		bl	LST_is_empty
+ 311 004c 0028     		cmp	r0, #0
+ 312 004e EDD1     		bne	.L40
+ 313 0050 01A9     		add	r1, sp, #4
+ 314 0052 1548     		ldr	r0, .L55+4
+ 315 0054 FFF7FEFF 		bl	LST_remove_head
+ 316 0058 019C     		ldr	r4, [sp, #4]
+ 317 005a 637A     		ldrb	r3, [r4, #9]	@ zero_extendqisi2
+ 318 005c 0F2B     		cmp	r3, #15
+ 319 005e ECD0     		beq	.L53
+ 320 0060 A389     		ldrh	r3, [r4, #12]	@ unaligned
+ 321 0062 AB42     		cmp	r3, r5
+ 322 0064 08D0     		beq	.L54
+ 323              	.L45:
+ 324 0066 E37A     		ldrb	r3, [r4, #11]	@ zero_extendqisi2
+ 325 0068 002B     		cmp	r3, #0
+ 326 006a ECD0     		beq	.L41
+ 327 006c 0126     		movs	r6, #1
+ 328 006e EAE7     		b	.L41
+ 329              	.L52:
+ 330 0070 3B69     		ldr	r3, [r7, #16]
+ 331 0072 E27A     		ldrb	r2, [r4, #11]	@ zero_extendqisi2
+ 332 0074 1A70     		strb	r2, [r3]
+ 333 0076 E4E7     		b	.L43
+ 334              	.L54:
+ 335 0078 A27A     		ldrb	r2, [r4, #10]	@ zero_extendqisi2
+ 336 007a 033A     		subs	r2, r2, #3
+ 337 007c D2B2     		uxtb	r2, r2
+ 338 007e 7B69     		ldr	r3, [r7, #20]
+ 339 0080 9A42     		cmp	r2, r3
+ 340 0082 A8BF     		it	ge
+ 341 0084 1A46     		movge	r2, r3
+ 342 0086 7A61     		str	r2, [r7, #20]
+ 343 0088 04F10E01 		add	r1, r4, #14
+ 344 008c 3869     		ldr	r0, [r7, #16]
+ 345 008e FFF7FEFF 		bl	memcpy
+ 346 0092 E8E7     		b	.L45
+ 347              	.L48:
+ 348 0094 0126     		movs	r6, #1
+ 349 0096 D6E7     		b	.L41
+ 350              	.L51:
+ 351 0098 0120     		movs	r0, #1
+ 352 009a FFF7FEFF 		bl	NotifyCmdStatus
+ 353 009e 0020     		movs	r0, #0
+ 354 00a0 03B0     		add	sp, sp, #12
+ 355              		@ sp needed
+ 356 00a2 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 357              	.L56:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s 			page 7
+
+
+ 358              		.align	2
+ 359              	.L55:
+ 360 00a4 00000000 		.word	CmdRspStatusFlag
+ 361 00a8 00000000 		.word	HciCmdEventQueue
+ 363              		.section	.text.hci_cmd_resp_release,"ax",%progbits
+ 364              		.align	1
+ 365              		.weak	hci_cmd_resp_release
+ 366              		.syntax unified
+ 367              		.thumb
+ 368              		.thumb_func
+ 370              	hci_cmd_resp_release:
+ 371              		@ args = 0, pretend = 0, frame = 0
+ 372              		@ frame_needed = 0, uses_anonymous_args = 0
+ 373              		@ link register save eliminated.
+ 374 0000 014B     		ldr	r3, .L58
+ 375 0002 0022     		movs	r2, #0
+ 376 0004 1A70     		strb	r2, [r3]
+ 377 0006 7047     		bx	lr
+ 378              	.L59:
+ 379              		.align	2
+ 380              	.L58:
+ 381 0008 00000000 		.word	CmdRspStatusFlag
+ 383              		.section	.text.TlEvtReceived,"ax",%progbits
+ 384              		.align	1
+ 385              		.syntax unified
+ 386              		.thumb
+ 387              		.thumb_func
+ 389              	TlEvtReceived:
+ 390              		@ args = 0, pretend = 0, frame = 0
+ 391              		@ frame_needed = 0, uses_anonymous_args = 0
+ 392 0000 08B5     		push	{r3, lr}
+ 393 0002 0146     		mov	r1, r0
+ 394 0004 437A     		ldrb	r3, [r0, #9]	@ zero_extendqisi2
+ 395 0006 0E3B     		subs	r3, r3, #14
+ 396 0008 DBB2     		uxtb	r3, r3
+ 397 000a 012B     		cmp	r3, #1
+ 398 000c 06D9     		bls	.L64
+ 399 000e 0748     		ldr	r0, .L65
+ 400 0010 FFF7FEFF 		bl	LST_insert_tail
+ 401 0014 0548     		ldr	r0, .L65
+ 402 0016 FFF7FEFF 		bl	hci_notify_asynch_evt
+ 403              	.L60:
+ 404 001a 08BD     		pop	{r3, pc}
+ 405              	.L64:
+ 406 001c 0448     		ldr	r0, .L65+4
+ 407 001e FFF7FEFF 		bl	LST_insert_tail
+ 408 0022 0020     		movs	r0, #0
+ 409 0024 FFF7FEFF 		bl	hci_cmd_resp_release
+ 410 0028 F7E7     		b	.L60
+ 411              	.L66:
+ 412 002a 00BF     		.align	2
+ 413              	.L65:
+ 414 002c 08000000 		.word	HciAsynchEventQueue
+ 415 0030 00000000 		.word	HciCmdEventQueue
+ 417              		.section	.bss.CmdRspStatusFlag,"aw",%nobits
+ 420              	CmdRspStatusFlag:
+ 421 0000 00       		.space	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s 			page 8
+
+
+ 422              		.section	.bss.StatusNotCallBackFunction,"aw",%nobits
+ 423              		.align	2
+ 426              	StatusNotCallBackFunction:
+ 427 0000 00000000 		.space	4
+ 428              		.section	.bss.HciCmdEventQueue,"aw",%nobits
+ 429              		.align	2
+ 432              	HciCmdEventQueue:
+ 433 0000 00000000 		.space	8
+ 433      00000000 
+ 434              		.section	.bss.hciContext,"aw",%nobits
+ 435              		.align	2
+ 438              	hciContext:
+ 439 0000 00000000 		.space	32
+ 439      00000000 
+ 439      00000000 
+ 439      00000000 
+ 439      00000000 
+ 440              		.global	UserEventFlow
+ 441              		.section	BLE_DRIVER_CONTEXT,"aw"
+ 444              	UserEventFlow:
+ 445 0000 00       		.space	1
+ 446 0001 000000   		.align	2
+ 449              	pCmdBuffer:
+ 450 0004 00000000 		.space	4
+ 451              		.align	2
+ 454              	HciAsynchEventQueue:
+ 455 0008 00000000 		.space	8
+ 455      00000000 
+ 458              	hci_timer_id:
+ 459 0010 00       		.space	1
+ 460              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 hci_tl.c
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:18     .text.NotifyCmdStatus:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:23     .text.NotifyCmdStatus:00000000 NotifyCmdStatus
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:45     .text.NotifyCmdStatus:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:426    .bss.StatusNotCallBackFunction:00000000 StatusNotCallBackFunction
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:48     .text.TlInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:53     .text.TlInit:00000000 TlInit
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:83     .text.TlInit:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:432    .bss.HciCmdEventQueue:00000000 HciCmdEventQueue
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:449    BLE_DRIVER_CONTEXT:00000004 pCmdBuffer
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:454    BLE_DRIVER_CONTEXT:00000008 HciAsynchEventQueue
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:444    BLE_DRIVER_CONTEXT:00000000 UserEventFlow
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:438    .bss.hciContext:00000000 hciContext
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:389    .text.TlEvtReceived:00000000 TlEvtReceived
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:91     .text.SendCmd:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:96     .text.SendCmd:00000000 SendCmd
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:118    .text.SendCmd:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:122    .text.hci_init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:128    .text.hci_init:00000000 hci_init
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:146    .text.hci_init:0000001c $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:150    .text.hci_user_evt_proc:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:156    .text.hci_user_evt_proc:00000000 hci_user_evt_proc
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:218    .text.hci_user_evt_proc:00000070 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:223    .text.hci_resume_flow:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:229    .text.hci_resume_flow:00000000 hci_resume_flow
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:242    .text.hci_resume_flow:00000010 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:246    .text.hci_cmd_resp_wait:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:252    .text.hci_cmd_resp_wait:00000000 hci_cmd_resp_wait
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:265    .text.hci_cmd_resp_wait:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:420    .bss.CmdRspStatusFlag:00000000 CmdRspStatusFlag
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:268    .text.hci_send_req:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:274    .text.hci_send_req:00000000 hci_send_req
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:360    .text.hci_send_req:000000a4 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:364    .text.hci_cmd_resp_release:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:370    .text.hci_cmd_resp_release:00000000 hci_cmd_resp_release
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:381    .text.hci_cmd_resp_release:00000008 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:384    .text.TlEvtReceived:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:414    .text.TlEvtReceived:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:421    .bss.CmdRspStatusFlag:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:423    .bss.StatusNotCallBackFunction:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:429    .bss.HciCmdEventQueue:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:435    .bss.hciContext:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:445    BLE_DRIVER_CONTEXT:00000000 $d
+C:\Users\Nathan\AppData\Local\Temp\ccEfrXPb.s:458    BLE_DRIVER_CONTEXT:00000010 hci_timer_id
+
+UNDEFINED SYMBOLS
+LST_init_head
+memcpy
+hci_register_io_bus
+LST_is_empty
+LST_remove_head
+TL_MM_EvtDone
+LST_insert_head
+hci_notify_asynch_evt
+LST_insert_tail

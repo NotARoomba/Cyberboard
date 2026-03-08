@@ -1,0 +1,135 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"ipcc.c"
+  16              		.text
+  17              		.section	.text.MX_IPCC_Init,"ax",%progbits
+  18              		.align	1
+  19              		.global	MX_IPCC_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	MX_IPCC_Init:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27 0000 08B5     		push	{r3, lr}
+  28 0002 0548     		ldr	r0, .L5
+  29 0004 054B     		ldr	r3, .L5+4
+  30 0006 0360     		str	r3, [r0]
+  31 0008 FFF7FEFF 		bl	HAL_IPCC_Init
+  32 000c 00B9     		cbnz	r0, .L4
+  33              	.L1:
+  34 000e 08BD     		pop	{r3, pc}
+  35              	.L4:
+  36 0010 FFF7FEFF 		bl	Error_Handler
+  37 0014 FBE7     		b	.L1
+  38              	.L6:
+  39 0016 00BF     		.align	2
+  40              	.L5:
+  41 0018 00000000 		.word	hipcc
+  42 001c 000C0058 		.word	1476398080
+  44              		.section	.text.HAL_IPCC_MspInit,"ax",%progbits
+  45              		.align	1
+  46              		.global	HAL_IPCC_MspInit
+  47              		.syntax unified
+  48              		.thumb
+  49              		.thumb_func
+  51              	HAL_IPCC_MspInit:
+  52              		@ args = 0, pretend = 0, frame = 8
+  53              		@ frame_needed = 0, uses_anonymous_args = 0
+  54              		@ link register save eliminated.
+  55 0000 0268     		ldr	r2, [r0]
+  56 0002 094B     		ldr	r3, .L14
+  57 0004 9A42     		cmp	r2, r3
+  58 0006 00D0     		beq	.L13
+  59 0008 7047     		bx	lr
+  60              	.L13:
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s 			page 2
+
+
+  61 000a 82B0     		sub	sp, sp, #8
+  62 000c 4FF0B043 		mov	r3, #1476395008
+  63 0010 1A6D     		ldr	r2, [r3, #80]
+  64 0012 42F48012 		orr	r2, r2, #1048576
+  65 0016 1A65     		str	r2, [r3, #80]
+  66 0018 1B6D     		ldr	r3, [r3, #80]
+  67 001a 03F48013 		and	r3, r3, #1048576
+  68 001e 0193     		str	r3, [sp, #4]
+  69 0020 019B     		ldr	r3, [sp, #4]
+  70 0022 02B0     		add	sp, sp, #8
+  71              		@ sp needed
+  72 0024 7047     		bx	lr
+  73              	.L15:
+  74 0026 00BF     		.align	2
+  75              	.L14:
+  76 0028 000C0058 		.word	1476398080
+  78              		.section	.text.HAL_IPCC_MspDeInit,"ax",%progbits
+  79              		.align	1
+  80              		.global	HAL_IPCC_MspDeInit
+  81              		.syntax unified
+  82              		.thumb
+  83              		.thumb_func
+  85              	HAL_IPCC_MspDeInit:
+  86              		@ args = 0, pretend = 0, frame = 0
+  87              		@ frame_needed = 0, uses_anonymous_args = 0
+  88              		@ link register save eliminated.
+  89 0000 0268     		ldr	r2, [r0]
+  90 0002 054B     		ldr	r3, .L19
+  91 0004 9A42     		cmp	r2, r3
+  92 0006 00D0     		beq	.L18
+  93              	.L16:
+  94 0008 7047     		bx	lr
+  95              	.L18:
+  96 000a 4FF0B042 		mov	r2, #1476395008
+  97 000e 136D     		ldr	r3, [r2, #80]
+  98 0010 23F48013 		bic	r3, r3, #1048576
+  99 0014 1365     		str	r3, [r2, #80]
+ 100 0016 F7E7     		b	.L16
+ 101              	.L20:
+ 102              		.align	2
+ 103              	.L19:
+ 104 0018 000C0058 		.word	1476398080
+ 106              		.global	hipcc
+ 107              		.section	.bss.hipcc,"aw",%nobits
+ 108              		.align	2
+ 111              	hipcc:
+ 112 0000 00000000 		.space	60
+ 112      00000000 
+ 112      00000000 
+ 112      00000000 
+ 112      00000000 
+ 113              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ipcc.c
+C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s:18     .text.MX_IPCC_Init:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s:24     .text.MX_IPCC_Init:00000000 MX_IPCC_Init
+C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s:41     .text.MX_IPCC_Init:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s:111    .bss.hipcc:00000000 hipcc
+C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s:45     .text.HAL_IPCC_MspInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s:51     .text.HAL_IPCC_MspInit:00000000 HAL_IPCC_MspInit
+C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s:76     .text.HAL_IPCC_MspInit:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s:79     .text.HAL_IPCC_MspDeInit:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s:85     .text.HAL_IPCC_MspDeInit:00000000 HAL_IPCC_MspDeInit
+C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s:104    .text.HAL_IPCC_MspDeInit:00000018 $d
+C:\Users\Nathan\AppData\Local\Temp\ccA9HgBn.s:108    .bss.hipcc:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_IPCC_Init
+Error_Handler

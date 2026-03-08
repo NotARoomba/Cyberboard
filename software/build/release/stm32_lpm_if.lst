@@ -1,0 +1,350 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32_lpm_if.c"
+  16              		.text
+  17              		.section	.text.ExitLowPower,"ax",%progbits
+  18              		.align	1
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	ExitLowPower:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26              		@ link register save eliminated.
+  27 0000 0B4B     		ldr	r3, .L6
+  28 0002 4FF48062 		mov	r2, #1024
+  29 0006 1A61     		str	r2, [r3, #16]
+  30 0008 01E0     		b	.L3
+  31              	.L4:
+  32 000a 0023     		movs	r3, #0
+  33              	.L2:
+  34 000c 3BB1     		cbz	r3, .L5
+  35              	.L3:
+  36 000e 084B     		ldr	r3, .L6
+  37 0010 D3F88C20 		ldr	r2, [r3, #140]
+  38 0014 074B     		ldr	r3, .L6+4
+  39 0016 9A42     		cmp	r2, r3
+  40 0018 F7D0     		beq	.L4
+  41 001a 0123     		movs	r3, #1
+  42 001c F6E7     		b	.L2
+  43              	.L5:
+  44 001e 4FF0B043 		mov	r3, #1476395008
+  45 0022 9B68     		ldr	r3, [r3, #8]
+  46 0024 024B     		ldr	r3, .L6
+  47 0026 4FF48062 		mov	r2, #1024
+  48 002a DA60     		str	r2, [r3, #12]
+  49 002c 7047     		bx	lr
+  50              	.L7:
+  51 002e 00BF     		.align	2
+  52              	.L6:
+  53 0030 00140058 		.word	1476400128
+  54 0034 00040080 		.word	-2147482624
+  56              		.section	.text.Switch_On_HSI,"ax",%progbits
+  57              		.align	1
+  58              		.syntax unified
+  59              		.thumb
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 2
+
+
+  60              		.thumb_func
+  62              	Switch_On_HSI:
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65              		@ link register save eliminated.
+  66 0000 4FF0B042 		mov	r2, #1476395008
+  67 0004 1368     		ldr	r3, [r2]
+  68 0006 43F48073 		orr	r3, r3, #256
+  69 000a 1360     		str	r3, [r2]
+  70 000c 00E0     		b	.L10
+  71              	.L9:
+  72 000e 3BB9     		cbnz	r3, .L12
+  73              	.L10:
+  74 0010 4FF0B043 		mov	r3, #1476395008
+  75 0014 1B68     		ldr	r3, [r3]
+  76 0016 13F48063 		ands	r3, r3, #1024
+  77 001a F8D0     		beq	.L9
+  78 001c 0123     		movs	r3, #1
+  79 001e F6E7     		b	.L9
+  80              	.L12:
+  81 0020 4FF0B042 		mov	r2, #1476395008
+  82 0024 9368     		ldr	r3, [r2, #8]
+  83 0026 23F00303 		bic	r3, r3, #3
+  84 002a 43F00103 		orr	r3, r3, #1
+  85 002e 9360     		str	r3, [r2, #8]
+  86 0030 536A     		ldr	r3, [r2, #36]
+  87 0032 23F00303 		bic	r3, r3, #3
+  88 0036 5362     		str	r3, [r2, #36]
+  89              	.L11:
+  90 0038 4FF0B043 		mov	r3, #1476395008
+  91 003c 9B68     		ldr	r3, [r3, #8]
+  92 003e 03F00C03 		and	r3, r3, #12
+  93 0042 042B     		cmp	r3, #4
+  94 0044 F8D1     		bne	.L11
+  95 0046 7047     		bx	lr
+  97              		.section	.text.EnterLowPower,"ax",%progbits
+  98              		.align	1
+  99              		.syntax unified
+ 100              		.thumb
+ 101              		.thumb_func
+ 103              	EnterLowPower:
+ 104              		@ args = 0, pretend = 0, frame = 0
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106 0000 08B5     		push	{r3, lr}
+ 107 0002 01E0     		b	.L15
+ 108              	.L19:
+ 109 0004 0023     		movs	r3, #0
+ 110              	.L14:
+ 111 0006 3BB1     		cbz	r3, .L21
+ 112              	.L15:
+ 113 0008 184B     		ldr	r3, .L22
+ 114 000a D3F88C20 		ldr	r2, [r3, #140]
+ 115 000e 184B     		ldr	r3, .L22+4
+ 116 0010 9A42     		cmp	r2, r3
+ 117 0012 F7D0     		beq	.L19
+ 118 0014 0123     		movs	r3, #1
+ 119 0016 F6E7     		b	.L14
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 3
+
+
+ 120              	.L21:
+ 121 0018 144B     		ldr	r3, .L22
+ 122 001a D3F89020 		ldr	r2, [r3, #144]
+ 123 001e 144B     		ldr	r3, .L22+4
+ 124 0020 9A42     		cmp	r2, r3
+ 125 0022 0BD0     		beq	.L16
+ 126 0024 FFF7FEFF 		bl	Switch_On_HSI
+ 127 0028 124A     		ldr	r2, .L22+8
+ 128 002a 1368     		ldr	r3, [r2]
+ 129 002c 23F00703 		bic	r3, r3, #7
+ 130 0030 1360     		str	r3, [r2]
+ 131              	.L17:
+ 132 0032 0E4B     		ldr	r3, .L22
+ 133 0034 4FF48062 		mov	r2, #1024
+ 134 0038 DA60     		str	r2, [r3, #12]
+ 135 003a 08BD     		pop	{r3, pc}
+ 136              	.L16:
+ 137 003c 0E4B     		ldr	r3, .L22+12
+ 138 003e D3F88830 		ldr	r3, [r3, #136]
+ 139 0042 13F4004F 		tst	r3, #32768
+ 140 0046 05D1     		bne	.L18
+ 141 0048 0B4B     		ldr	r3, .L22+12
+ 142 004a D3F88830 		ldr	r3, [r3, #136]
+ 143 004e 13F4806F 		tst	r3, #1024
+ 144 0052 EED0     		beq	.L17
+ 145              	.L18:
+ 146 0054 054B     		ldr	r3, .L22
+ 147 0056 4FF48062 		mov	r2, #1024
+ 148 005a 1A61     		str	r2, [r3, #16]
+ 149 005c FFF7FEFF 		bl	Switch_On_HSI
+ 150 0060 044A     		ldr	r2, .L22+8
+ 151 0062 1368     		ldr	r3, [r2]
+ 152 0064 23F00703 		bic	r3, r3, #7
+ 153 0068 1360     		str	r3, [r2]
+ 154 006a E2E7     		b	.L17
+ 155              	.L23:
+ 156              		.align	2
+ 157              	.L22:
+ 158 006c 00140058 		.word	1476400128
+ 159 0070 00040080 		.word	-2147482624
+ 160 0074 00400058 		.word	1476411392
+ 161 0078 00040058 		.word	1476396032
+ 163              		.section	.text.PWR_EnterOffMode,"ax",%progbits
+ 164              		.align	1
+ 165              		.global	PWR_EnterOffMode
+ 166              		.syntax unified
+ 167              		.thumb
+ 168              		.thumb_func
+ 170              	PWR_EnterOffMode:
+ 171              		@ args = 0, pretend = 0, frame = 0
+ 172              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173 0000 08B5     		push	{r3, lr}
+ 174 0002 FFF7FEFF 		bl	HAL_SuspendTick
+ 175 0006 FFF7FEFF 		bl	EnterLowPower
+ 176 000a 084A     		ldr	r2, .L26
+ 177 000c 1F23     		movs	r3, #31
+ 178 000e 9361     		str	r3, [r2, #24]
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 4
+
+
+ 179 0010 1368     		ldr	r3, [r2]
+ 180 0012 23F00703 		bic	r3, r3, #7
+ 181 0016 43F00303 		orr	r3, r3, #3
+ 182 001a 1360     		str	r3, [r2]
+ 183 001c 044A     		ldr	r2, .L26+4
+ 184 001e 1369     		ldr	r3, [r2, #16]
+ 185 0020 43F00403 		orr	r3, r3, #4
+ 186 0024 1361     		str	r3, [r2, #16]
+ 187              		.syntax unified
+ 188              	@ 108 "Core/Src/stm32_lpm_if.c" 1
+ 189 0026 30BF     		wfi
+ 190              	@ 0 "" 2
+ 191              		.thumb
+ 192              		.syntax unified
+ 193 0028 08BD     		pop	{r3, pc}
+ 194              	.L27:
+ 195 002a 00BF     		.align	2
+ 196              	.L26:
+ 197 002c 00040058 		.word	1476396032
+ 198 0030 00ED00E0 		.word	-536810240
+ 200              		.section	.text.PWR_EnterStopMode,"ax",%progbits
+ 201              		.align	1
+ 202              		.global	PWR_EnterStopMode
+ 203              		.syntax unified
+ 204              		.thumb
+ 205              		.thumb_func
+ 207              	PWR_EnterStopMode:
+ 208              		@ args = 0, pretend = 0, frame = 0
+ 209              		@ frame_needed = 0, uses_anonymous_args = 0
+ 210 0000 08B5     		push	{r3, lr}
+ 211 0002 FFF7FEFF 		bl	HAL_SuspendTick
+ 212 0006 FFF7FEFF 		bl	EnterLowPower
+ 213 000a 074A     		ldr	r2, .L30
+ 214 000c 1368     		ldr	r3, [r2]
+ 215 000e 23F00703 		bic	r3, r3, #7
+ 216 0012 43F00203 		orr	r3, r3, #2
+ 217 0016 1360     		str	r3, [r2]
+ 218 0018 044A     		ldr	r2, .L30+4
+ 219 001a 1369     		ldr	r3, [r2, #16]
+ 220 001c 43F00403 		orr	r3, r3, #4
+ 221 0020 1361     		str	r3, [r2, #16]
+ 222              		.syntax unified
+ 223              	@ 173 "Core/Src/stm32_lpm_if.c" 1
+ 224 0022 30BF     		wfi
+ 225              	@ 0 "" 2
+ 226              		.thumb
+ 227              		.syntax unified
+ 228 0024 08BD     		pop	{r3, pc}
+ 229              	.L31:
+ 230 0026 00BF     		.align	2
+ 231              	.L30:
+ 232 0028 00040058 		.word	1476396032
+ 233 002c 00ED00E0 		.word	-536810240
+ 235              		.section	.text.PWR_EnterSleepMode,"ax",%progbits
+ 236              		.align	1
+ 237              		.global	PWR_EnterSleepMode
+ 238              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 5
+
+
+ 239              		.thumb
+ 240              		.thumb_func
+ 242              	PWR_EnterSleepMode:
+ 243              		@ args = 0, pretend = 0, frame = 0
+ 244              		@ frame_needed = 0, uses_anonymous_args = 0
+ 245 0000 08B5     		push	{r3, lr}
+ 246 0002 FFF7FEFF 		bl	HAL_SuspendTick
+ 247 0006 034A     		ldr	r2, .L34
+ 248 0008 1369     		ldr	r3, [r2, #16]
+ 249 000a 23F00403 		bic	r3, r3, #4
+ 250 000e 1361     		str	r3, [r2, #16]
+ 251              		.syntax unified
+ 252              	@ 230 "Core/Src/stm32_lpm_if.c" 1
+ 253 0010 30BF     		wfi
+ 254              	@ 0 "" 2
+ 255              		.thumb
+ 256              		.syntax unified
+ 257 0012 08BD     		pop	{r3, pc}
+ 258              	.L35:
+ 259              		.align	2
+ 260              	.L34:
+ 261 0014 00ED00E0 		.word	-536810240
+ 263              		.section	.text.PWR_ExitOffMode,"ax",%progbits
+ 264              		.align	1
+ 265              		.global	PWR_ExitOffMode
+ 266              		.syntax unified
+ 267              		.thumb
+ 268              		.thumb_func
+ 270              	PWR_ExitOffMode:
+ 271              		@ args = 0, pretend = 0, frame = 0
+ 272              		@ frame_needed = 0, uses_anonymous_args = 0
+ 273 0000 08B5     		push	{r3, lr}
+ 274 0002 FFF7FEFF 		bl	HAL_ResumeTick
+ 275 0006 08BD     		pop	{r3, pc}
+ 277              		.section	.text.PWR_ExitStopMode,"ax",%progbits
+ 278              		.align	1
+ 279              		.global	PWR_ExitStopMode
+ 280              		.syntax unified
+ 281              		.thumb
+ 282              		.thumb_func
+ 284              	PWR_ExitStopMode:
+ 285              		@ args = 0, pretend = 0, frame = 0
+ 286              		@ frame_needed = 0, uses_anonymous_args = 0
+ 287 0000 08B5     		push	{r3, lr}
+ 288 0002 FFF7FEFF 		bl	ExitLowPower
+ 289 0006 FFF7FEFF 		bl	HAL_ResumeTick
+ 290 000a 08BD     		pop	{r3, pc}
+ 292              		.section	.text.PWR_ExitSleepMode,"ax",%progbits
+ 293              		.align	1
+ 294              		.global	PWR_ExitSleepMode
+ 295              		.syntax unified
+ 296              		.thumb
+ 297              		.thumb_func
+ 299              	PWR_ExitSleepMode:
+ 300              		@ args = 0, pretend = 0, frame = 0
+ 301              		@ frame_needed = 0, uses_anonymous_args = 0
+ 302 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 6
+
+
+ 303 0002 FFF7FEFF 		bl	HAL_ResumeTick
+ 304 0006 08BD     		pop	{r3, pc}
+ 306              		.global	UTIL_PowerDriver
+ 307              		.section	.rodata.UTIL_PowerDriver,"a"
+ 308              		.align	2
+ 311              	UTIL_PowerDriver:
+ 312 0000 00000000 		.word	PWR_EnterSleepMode
+ 313 0004 00000000 		.word	PWR_ExitSleepMode
+ 314 0008 00000000 		.word	PWR_EnterStopMode
+ 315 000c 00000000 		.word	PWR_ExitStopMode
+ 316 0010 00000000 		.word	PWR_EnterOffMode
+ 317 0014 00000000 		.word	PWR_ExitOffMode
+ 318              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32_lpm_if.c
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:18     .text.ExitLowPower:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:23     .text.ExitLowPower:00000000 ExitLowPower
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:53     .text.ExitLowPower:00000030 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:57     .text.Switch_On_HSI:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:62     .text.Switch_On_HSI:00000000 Switch_On_HSI
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:98     .text.EnterLowPower:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:103    .text.EnterLowPower:00000000 EnterLowPower
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:158    .text.EnterLowPower:0000006c $d
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:164    .text.PWR_EnterOffMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:170    .text.PWR_EnterOffMode:00000000 PWR_EnterOffMode
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:197    .text.PWR_EnterOffMode:0000002c $d
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:201    .text.PWR_EnterStopMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:207    .text.PWR_EnterStopMode:00000000 PWR_EnterStopMode
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:232    .text.PWR_EnterStopMode:00000028 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:236    .text.PWR_EnterSleepMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:242    .text.PWR_EnterSleepMode:00000000 PWR_EnterSleepMode
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:261    .text.PWR_EnterSleepMode:00000014 $d
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:264    .text.PWR_ExitOffMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:270    .text.PWR_ExitOffMode:00000000 PWR_ExitOffMode
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:278    .text.PWR_ExitStopMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:284    .text.PWR_ExitStopMode:00000000 PWR_ExitStopMode
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:293    .text.PWR_ExitSleepMode:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:299    .text.PWR_ExitSleepMode:00000000 PWR_ExitSleepMode
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:311    .rodata.UTIL_PowerDriver:00000000 UTIL_PowerDriver
+C:\Users\Nathan\AppData\Local\Temp\ccCUyNdW.s:308    .rodata.UTIL_PowerDriver:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_SuspendTick
+HAL_ResumeTick

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s 			page 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s 			page 1
   60 0000 FEE7     		b	.L6
   62              		.section	.text.BusFault_Handler,"ax",%progbits
   63              		.align	1
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s 			page 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s 			page 2
 
 
   64              		.global	BusFault_Handler
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s 			page 1
  127              		@ frame_needed = 0, uses_anonymous_args = 0
  128              		@ link register save eliminated.
  129 0000 7047     		bx	lr
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s 			page 3
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s 			page 3
 
 
  131              		.section	.text.SysTick_Handler,"ax",%progbits
@@ -150,35 +150,83 @@ ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s 			page 1
  160 000a 00BF     		.align	2
  161              	.L18:
  162 000c 00000000 		.word	hpcd_USB_FS
- 164              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
-ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s 			page 4
+ 164              		.section	.text.HSEM_IRQHandler,"ax",%progbits
+ 165              		.align	1
+ 166              		.global	HSEM_IRQHandler
+ 167              		.syntax unified
+ 168              		.thumb
+ 169              		.thumb_func
+ 171              	HSEM_IRQHandler:
+ 172              		@ args = 0, pretend = 0, frame = 0
+ 173              		@ frame_needed = 0, uses_anonymous_args = 0
+ 174 0000 08B5     		push	{r3, lr}
+ 175 0002 FFF7FEFF 		bl	HAL_HSEM_IRQHandler
+ 176 0006 08BD     		pop	{r3, pc}
+ 178              		.section	.text.IPCC_C1_RX_IRQHandler,"ax",%progbits
+ 179              		.align	1
+ 180              		.global	IPCC_C1_RX_IRQHandler
+ 181              		.syntax unified
+ 182              		.thumb
+ 183              		.thumb_func
+ 185              	IPCC_C1_RX_IRQHandler:
+ 186              		@ args = 0, pretend = 0, frame = 0
+ 187              		@ frame_needed = 0, uses_anonymous_args = 0
+ 188 0000 08B5     		push	{r3, lr}
+ 189 0002 FFF7FEFF 		bl	HW_IPCC_Rx_Handler
+ 190 0006 08BD     		pop	{r3, pc}
+ 192              		.section	.text.IPCC_C1_TX_IRQHandler,"ax",%progbits
+ 193              		.align	1
+ 194              		.global	IPCC_C1_TX_IRQHandler
+ 195              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s 			page 4
+
+
+ 196              		.thumb
+ 197              		.thumb_func
+ 199              	IPCC_C1_TX_IRQHandler:
+ 200              		@ args = 0, pretend = 0, frame = 0
+ 201              		@ frame_needed = 0, uses_anonymous_args = 0
+ 202 0000 08B5     		push	{r3, lr}
+ 203 0002 FFF7FEFF 		bl	HW_IPCC_Tx_Handler
+ 204 0006 08BD     		pop	{r3, pc}
+ 206              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32wbxx_it.c
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:18     .text.NMI_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:24     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:33     .text.HardFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:39     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:48     .text.MemManage_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:54     .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:63     .text.BusFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:69     .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:78     .text.UsageFault_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:84     .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:93     .text.SVC_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:99     .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:106    .text.DebugMon_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:112    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:119    .text.PendSV_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:125    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:132    .text.SysTick_Handler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:138    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:146    .text.USB_LP_IRQHandler:00000000 $t
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:152    .text.USB_LP_IRQHandler:00000000 USB_LP_IRQHandler
-C:\Users\Nathan\AppData\Local\Temp\ccUEKLdh.s:162    .text.USB_LP_IRQHandler:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:18     .text.NMI_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:24     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:33     .text.HardFault_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:39     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:48     .text.MemManage_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:54     .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:63     .text.BusFault_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:69     .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:78     .text.UsageFault_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:84     .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:93     .text.SVC_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:99     .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:106    .text.DebugMon_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:112    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:119    .text.PendSV_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:125    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:132    .text.SysTick_Handler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:138    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:146    .text.USB_LP_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:152    .text.USB_LP_IRQHandler:00000000 USB_LP_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:162    .text.USB_LP_IRQHandler:0000000c $d
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:165    .text.HSEM_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:171    .text.HSEM_IRQHandler:00000000 HSEM_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:179    .text.IPCC_C1_RX_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:185    .text.IPCC_C1_RX_IRQHandler:00000000 IPCC_C1_RX_IRQHandler
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:193    .text.IPCC_C1_TX_IRQHandler:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccbSeSc3.s:199    .text.IPCC_C1_TX_IRQHandler:00000000 IPCC_C1_TX_IRQHandler
 
 UNDEFINED SYMBOLS
 HAL_IncTick
 HAL_PCD_IRQHandler
 hpcd_USB_FS
+HAL_HSEM_IRQHandler
+HW_IPCC_Rx_Handler
+HW_IPCC_Tx_Handler

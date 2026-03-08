@@ -1,0 +1,428 @@
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm_list.c"
+  16              		.text
+  17              		.section	.text.LST_init_head,"ax",%progbits
+  18              		.align	1
+  19              		.global	LST_init_head
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	LST_init_head:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 0060     		str	r0, [r0]	@ unaligned
+  29 0002 4060     		str	r0, [r0, #4]	@ unaligned
+  30 0004 7047     		bx	lr
+  32              		.section	.text.LST_is_empty,"ax",%progbits
+  33              		.align	1
+  34              		.global	LST_is_empty
+  35              		.syntax unified
+  36              		.thumb
+  37              		.thumb_func
+  39              	LST_is_empty:
+  40              		@ args = 0, pretend = 0, frame = 0
+  41              		@ frame_needed = 0, uses_anonymous_args = 0
+  42              		@ link register save eliminated.
+  43              		.syntax unified
+  44              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  45 0000 EFF31083 		MRS r3, primask
+  46              	@ 0 "" 2
+  47              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  48 0004 72B6     		cpsid i
+  49              	@ 0 "" 2
+  50              		.thumb
+  51              		.syntax unified
+  52 0006 0268     		ldr	r2, [r0]	@ unaligned
+  53 0008 8242     		cmp	r2, r0
+  54 000a 03D0     		beq	.L5
+  55 000c 0020     		movs	r0, #0
+  56              	.L3:
+  57              		.syntax unified
+  58              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  59 000e 83F31088 		MSR primask, r3
+  60              	@ 0 "" 2
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 2
+
+
+  61              		.thumb
+  62              		.syntax unified
+  63 0012 7047     		bx	lr
+  64              	.L5:
+  65 0014 0120     		movs	r0, #1
+  66 0016 FAE7     		b	.L3
+  68              		.section	.text.LST_insert_head,"ax",%progbits
+  69              		.align	1
+  70              		.global	LST_insert_head
+  71              		.syntax unified
+  72              		.thumb
+  73              		.thumb_func
+  75              	LST_insert_head:
+  76              		@ args = 0, pretend = 0, frame = 0
+  77              		@ frame_needed = 0, uses_anonymous_args = 0
+  78              		@ link register save eliminated.
+  79              		.syntax unified
+  80              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  81 0000 EFF31083 		MRS r3, primask
+  82              	@ 0 "" 2
+  83              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  84 0004 72B6     		cpsid i
+  85              	@ 0 "" 2
+  86              		.thumb
+  87              		.syntax unified
+  88 0006 0268     		ldr	r2, [r0]	@ unaligned
+  89 0008 0A60     		str	r2, [r1]	@ unaligned
+  90 000a 4860     		str	r0, [r1, #4]	@ unaligned
+  91 000c 0160     		str	r1, [r0]	@ unaligned
+  92 000e 0A68     		ldr	r2, [r1]	@ unaligned
+  93 0010 5160     		str	r1, [r2, #4]	@ unaligned
+  94              		.syntax unified
+  95              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  96 0012 83F31088 		MSR primask, r3
+  97              	@ 0 "" 2
+  98              		.thumb
+  99              		.syntax unified
+ 100 0016 7047     		bx	lr
+ 102              		.section	.text.LST_insert_tail,"ax",%progbits
+ 103              		.align	1
+ 104              		.global	LST_insert_tail
+ 105              		.syntax unified
+ 106              		.thumb
+ 107              		.thumb_func
+ 109              	LST_insert_tail:
+ 110              		@ args = 0, pretend = 0, frame = 0
+ 111              		@ frame_needed = 0, uses_anonymous_args = 0
+ 112              		@ link register save eliminated.
+ 113              		.syntax unified
+ 114              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 115 0000 EFF31083 		MRS r3, primask
+ 116              	@ 0 "" 2
+ 117              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 118 0004 72B6     		cpsid i
+ 119              	@ 0 "" 2
+ 120              		.thumb
+ 121              		.syntax unified
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 3
+
+
+ 122 0006 0860     		str	r0, [r1]	@ unaligned
+ 123 0008 4268     		ldr	r2, [r0, #4]	@ unaligned
+ 124 000a 4A60     		str	r2, [r1, #4]	@ unaligned
+ 125 000c 4160     		str	r1, [r0, #4]	@ unaligned
+ 126 000e 4A68     		ldr	r2, [r1, #4]	@ unaligned
+ 127 0010 1160     		str	r1, [r2]	@ unaligned
+ 128              		.syntax unified
+ 129              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 130 0012 83F31088 		MSR primask, r3
+ 131              	@ 0 "" 2
+ 132              		.thumb
+ 133              		.syntax unified
+ 134 0016 7047     		bx	lr
+ 136              		.section	.text.LST_remove_node,"ax",%progbits
+ 137              		.align	1
+ 138              		.global	LST_remove_node
+ 139              		.syntax unified
+ 140              		.thumb
+ 141              		.thumb_func
+ 143              	LST_remove_node:
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146              		@ link register save eliminated.
+ 147              		.syntax unified
+ 148              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 149 0000 EFF31083 		MRS r3, primask
+ 150              	@ 0 "" 2
+ 151              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 152 0004 72B6     		cpsid i
+ 153              	@ 0 "" 2
+ 154              		.thumb
+ 155              		.syntax unified
+ 156 0006 4268     		ldr	r2, [r0, #4]	@ unaligned
+ 157 0008 0168     		ldr	r1, [r0]	@ unaligned
+ 158 000a 1160     		str	r1, [r2]	@ unaligned
+ 159 000c 0268     		ldr	r2, [r0]	@ unaligned
+ 160 000e 4168     		ldr	r1, [r0, #4]	@ unaligned
+ 161 0010 5160     		str	r1, [r2, #4]	@ unaligned
+ 162              		.syntax unified
+ 163              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 164 0012 83F31088 		MSR primask, r3
+ 165              	@ 0 "" 2
+ 166              		.thumb
+ 167              		.syntax unified
+ 168 0016 7047     		bx	lr
+ 170              		.section	.text.LST_remove_head,"ax",%progbits
+ 171              		.align	1
+ 172              		.global	LST_remove_head
+ 173              		.syntax unified
+ 174              		.thumb
+ 175              		.thumb_func
+ 177              	LST_remove_head:
+ 178              		@ args = 0, pretend = 0, frame = 0
+ 179              		@ frame_needed = 0, uses_anonymous_args = 0
+ 180 0000 10B5     		push	{r4, lr}
+ 181              		.syntax unified
+ 182              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 4
+
+
+ 183 0002 EFF31084 		MRS r4, primask
+ 184              	@ 0 "" 2
+ 185              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 186 0006 72B6     		cpsid i
+ 187              	@ 0 "" 2
+ 188              		.thumb
+ 189              		.syntax unified
+ 190 0008 0368     		ldr	r3, [r0]	@ unaligned
+ 191 000a 0B60     		str	r3, [r1]
+ 192 000c 0068     		ldr	r0, [r0]	@ unaligned
+ 193 000e FFF7FEFF 		bl	LST_remove_node
+ 194              		.syntax unified
+ 195              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 196 0012 84F31088 		MSR primask, r4
+ 197              	@ 0 "" 2
+ 198              		.thumb
+ 199              		.syntax unified
+ 200 0016 10BD     		pop	{r4, pc}
+ 202              		.section	.text.LST_remove_tail,"ax",%progbits
+ 203              		.align	1
+ 204              		.global	LST_remove_tail
+ 205              		.syntax unified
+ 206              		.thumb
+ 207              		.thumb_func
+ 209              	LST_remove_tail:
+ 210              		@ args = 0, pretend = 0, frame = 0
+ 211              		@ frame_needed = 0, uses_anonymous_args = 0
+ 212 0000 10B5     		push	{r4, lr}
+ 213              		.syntax unified
+ 214              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 215 0002 EFF31084 		MRS r4, primask
+ 216              	@ 0 "" 2
+ 217              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 218 0006 72B6     		cpsid i
+ 219              	@ 0 "" 2
+ 220              		.thumb
+ 221              		.syntax unified
+ 222 0008 4368     		ldr	r3, [r0, #4]	@ unaligned
+ 223 000a 0B60     		str	r3, [r1]
+ 224 000c 4068     		ldr	r0, [r0, #4]	@ unaligned
+ 225 000e FFF7FEFF 		bl	LST_remove_node
+ 226              		.syntax unified
+ 227              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 228 0012 84F31088 		MSR primask, r4
+ 229              	@ 0 "" 2
+ 230              		.thumb
+ 231              		.syntax unified
+ 232 0016 10BD     		pop	{r4, pc}
+ 234              		.section	.text.LST_insert_node_after,"ax",%progbits
+ 235              		.align	1
+ 236              		.global	LST_insert_node_after
+ 237              		.syntax unified
+ 238              		.thumb
+ 239              		.thumb_func
+ 241              	LST_insert_node_after:
+ 242              		@ args = 0, pretend = 0, frame = 0
+ 243              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 5
+
+
+ 244              		@ link register save eliminated.
+ 245              		.syntax unified
+ 246              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 247 0000 EFF31083 		MRS r3, primask
+ 248              	@ 0 "" 2
+ 249              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 250 0004 72B6     		cpsid i
+ 251              	@ 0 "" 2
+ 252              		.thumb
+ 253              		.syntax unified
+ 254 0006 0A68     		ldr	r2, [r1]	@ unaligned
+ 255 0008 0260     		str	r2, [r0]	@ unaligned
+ 256 000a 4160     		str	r1, [r0, #4]	@ unaligned
+ 257 000c 0860     		str	r0, [r1]	@ unaligned
+ 258 000e 0268     		ldr	r2, [r0]	@ unaligned
+ 259 0010 5060     		str	r0, [r2, #4]	@ unaligned
+ 260              		.syntax unified
+ 261              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 262 0012 83F31088 		MSR primask, r3
+ 263              	@ 0 "" 2
+ 264              		.thumb
+ 265              		.syntax unified
+ 266 0016 7047     		bx	lr
+ 268              		.section	.text.LST_insert_node_before,"ax",%progbits
+ 269              		.align	1
+ 270              		.global	LST_insert_node_before
+ 271              		.syntax unified
+ 272              		.thumb
+ 273              		.thumb_func
+ 275              	LST_insert_node_before:
+ 276              		@ args = 0, pretend = 0, frame = 0
+ 277              		@ frame_needed = 0, uses_anonymous_args = 0
+ 278              		@ link register save eliminated.
+ 279              		.syntax unified
+ 280              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 281 0000 EFF31083 		MRS r3, primask
+ 282              	@ 0 "" 2
+ 283              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 284 0004 72B6     		cpsid i
+ 285              	@ 0 "" 2
+ 286              		.thumb
+ 287              		.syntax unified
+ 288 0006 0160     		str	r1, [r0]	@ unaligned
+ 289 0008 4A68     		ldr	r2, [r1, #4]	@ unaligned
+ 290 000a 4260     		str	r2, [r0, #4]	@ unaligned
+ 291 000c 4860     		str	r0, [r1, #4]	@ unaligned
+ 292 000e 4268     		ldr	r2, [r0, #4]	@ unaligned
+ 293 0010 1060     		str	r0, [r2]	@ unaligned
+ 294              		.syntax unified
+ 295              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 296 0012 83F31088 		MSR primask, r3
+ 297              	@ 0 "" 2
+ 298              		.thumb
+ 299              		.syntax unified
+ 300 0016 7047     		bx	lr
+ 302              		.section	.text.LST_get_size,"ax",%progbits
+ 303              		.align	1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 6
+
+
+ 304              		.global	LST_get_size
+ 305              		.syntax unified
+ 306              		.thumb
+ 307              		.thumb_func
+ 309              	LST_get_size:
+ 310              		@ args = 0, pretend = 0, frame = 0
+ 311              		@ frame_needed = 0, uses_anonymous_args = 0
+ 312              		@ link register save eliminated.
+ 313 0000 0246     		mov	r2, r0
+ 314              		.syntax unified
+ 315              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 316 0002 EFF31081 		MRS r1, primask
+ 317              	@ 0 "" 2
+ 318              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 319 0006 72B6     		cpsid i
+ 320              	@ 0 "" 2
+ 321              		.thumb
+ 322              		.syntax unified
+ 323 0008 0368     		ldr	r3, [r0]	@ unaligned
+ 324 000a 0020     		movs	r0, #0
+ 325 000c 01E0     		b	.L16
+ 326              	.L17:
+ 327 000e 0130     		adds	r0, r0, #1
+ 328 0010 1B68     		ldr	r3, [r3]	@ unaligned
+ 329              	.L16:
+ 330 0012 9342     		cmp	r3, r2
+ 331 0014 FBD1     		bne	.L17
+ 332              		.syntax unified
+ 333              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 334 0016 81F31088 		MSR primask, r1
+ 335              	@ 0 "" 2
+ 336              		.thumb
+ 337              		.syntax unified
+ 338 001a 7047     		bx	lr
+ 340              		.section	.text.LST_get_next_node,"ax",%progbits
+ 341              		.align	1
+ 342              		.global	LST_get_next_node
+ 343              		.syntax unified
+ 344              		.thumb
+ 345              		.thumb_func
+ 347              	LST_get_next_node:
+ 348              		@ args = 0, pretend = 0, frame = 0
+ 349              		@ frame_needed = 0, uses_anonymous_args = 0
+ 350              		@ link register save eliminated.
+ 351              		.syntax unified
+ 352              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 353 0000 EFF31083 		MRS r3, primask
+ 354              	@ 0 "" 2
+ 355              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 356 0004 72B6     		cpsid i
+ 357              	@ 0 "" 2
+ 358              		.thumb
+ 359              		.syntax unified
+ 360 0006 0268     		ldr	r2, [r0]	@ unaligned
+ 361 0008 0A60     		str	r2, [r1]
+ 362              		.syntax unified
+ 363              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 7
+
+
+ 364 000a 83F31088 		MSR primask, r3
+ 365              	@ 0 "" 2
+ 366              		.thumb
+ 367              		.syntax unified
+ 368 000e 7047     		bx	lr
+ 370              		.section	.text.LST_get_prev_node,"ax",%progbits
+ 371              		.align	1
+ 372              		.global	LST_get_prev_node
+ 373              		.syntax unified
+ 374              		.thumb
+ 375              		.thumb_func
+ 377              	LST_get_prev_node:
+ 378              		@ args = 0, pretend = 0, frame = 0
+ 379              		@ frame_needed = 0, uses_anonymous_args = 0
+ 380              		@ link register save eliminated.
+ 381              		.syntax unified
+ 382              	@ 453 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 383 0000 EFF31083 		MRS r3, primask
+ 384              	@ 0 "" 2
+ 385              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 386 0004 72B6     		cpsid i
+ 387              	@ 0 "" 2
+ 388              		.thumb
+ 389              		.syntax unified
+ 390 0006 4268     		ldr	r2, [r0, #4]	@ unaligned
+ 391 0008 0A60     		str	r2, [r1]
+ 392              		.syntax unified
+ 393              	@ 481 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 394 000a 83F31088 		MSR primask, r3
+ 395              	@ 0 "" 2
+ 396              		.thumb
+ 397              		.syntax unified
+ 398 000e 7047     		bx	lr
+ 400              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 15.2.1 20251203"
+ARM GAS  C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm_list.c
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:18     .text.LST_init_head:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:24     .text.LST_init_head:00000000 LST_init_head
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:33     .text.LST_is_empty:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:39     .text.LST_is_empty:00000000 LST_is_empty
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:69     .text.LST_insert_head:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:75     .text.LST_insert_head:00000000 LST_insert_head
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:103    .text.LST_insert_tail:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:109    .text.LST_insert_tail:00000000 LST_insert_tail
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:137    .text.LST_remove_node:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:143    .text.LST_remove_node:00000000 LST_remove_node
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:171    .text.LST_remove_head:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:177    .text.LST_remove_head:00000000 LST_remove_head
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:203    .text.LST_remove_tail:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:209    .text.LST_remove_tail:00000000 LST_remove_tail
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:235    .text.LST_insert_node_after:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:241    .text.LST_insert_node_after:00000000 LST_insert_node_after
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:269    .text.LST_insert_node_before:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:275    .text.LST_insert_node_before:00000000 LST_insert_node_before
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:303    .text.LST_get_size:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:309    .text.LST_get_size:00000000 LST_get_size
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:341    .text.LST_get_next_node:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:347    .text.LST_get_next_node:00000000 LST_get_next_node
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:371    .text.LST_get_prev_node:00000000 $t
+C:\Users\Nathan\AppData\Local\Temp\ccz0SLwb.s:377    .text.LST_get_prev_node:00000000 LST_get_prev_node
+
+NO UNDEFINED SYMBOLS
