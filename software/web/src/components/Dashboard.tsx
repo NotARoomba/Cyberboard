@@ -242,67 +242,14 @@ export default function Dashboard() {
   const isLive = adminOnline || bleConnected || demoMode;
 
   return (
-    <div className="cyber-grid h-screen w-full overflow-hidden p-2 xl:p-3">
+    <div className="cyber-grid min-h-screen w-full overflow-y-auto p-2 md:h-screen md:overflow-hidden xl:p-3">
       {/* 3x3 Bento Grid — fits 16:9 viewport, wraps on mobile */}
-      <div className="grid h-full grid-cols-1 gap-2 md:grid-cols-3 md:grid-rows-3 xl:gap-3">
+      <div className="grid grid-cols-1 gap-2 md:h-full md:grid-cols-3 md:grid-rows-3 xl:gap-3">
 
         {/* ═══ ROW 1 ═══ */}
 
-        {/* (1,1) Acceleration Values */}
-        <Bento className="flex flex-col items-center justify-center gap-2 p-4">
-          <span className="text-[10px] tracking-widest text-cyber uppercase">
-            // Acceleration
-          </span>
-          <div className="flex flex-col gap-2">
-            <AxisValue axis="X" value={d?.accelX ?? 0} color="#ff4444" unit="g" />
-            <AxisValue axis="Y" value={d?.accelY ?? 0} color="#44ff88" unit="g" />
-            <AxisValue axis="Z" value={d?.accelZ ?? 0} color="#4488ff" unit="g" />
-          </div>
-        </Bento>
-
-        {/* (1,2) 3D Model */}
-        <Bento className="relative overflow-hidden">
-          <Suspense
-            fallback={
-              <div className="flex h-full items-center justify-center text-muted">
-                Loading 3D...
-              </div>
-            }
-          >
-            <BoardVisualizer
-              accelX={d?.accelX ?? 0}
-              accelY={d?.accelY ?? 0}
-              accelZ={d?.accelZ ?? 1}
-            />
-          </Suspense>
-        </Bento>
-
-        {/* (1,3) Gyroscope Values */}
-        <Bento className="flex flex-col items-center justify-center gap-2 p-4">
-          <span className="text-[10px] tracking-widest text-cyber uppercase">
-            // Gyroscope
-          </span>
-          <div className="flex flex-col gap-2">
-            <AxisValue axis="X" value={d?.gyroX ?? 0} color="#ff4444" unit="°/s" />
-            <AxisValue axis="Y" value={d?.gyroY ?? 0} color="#44ff88" unit="°/s" />
-            <AxisValue axis="Z" value={d?.gyroZ ?? 0} color="#4488ff" unit="°/s" />
-          </div>
-        </Bento>
-
-        {/* ═══ ROW 2 ═══ */}
-
-        {/* (2,1) Acceleration Chart */}
-        <Bento className="flex flex-col overflow-hidden">
-          <div className="border-b border-border px-3 py-1">
-            <span className="text-[10px] tracking-wider text-cyber">// ACCEL</span>
-          </div>
-          <div className="flex-1" style={{ minHeight: 0 }}>
-            <DataCharts history={history} type="accel" />
-          </div>
-        </Bento>
-
-        {/* (2,2) ★ CYBERBOARD — CENTER ★ */}
-        <Bento className="flex flex-col items-center justify-center p-4">
+        {/* ★ CYBERBOARD — CENTER (top on mobile, grid 2,2 on desktop) ★ */}
+        <Bento className="order-0 flex flex-col items-center justify-center p-4 md:col-start-2 md:row-start-2">
           <h1 className="font-title glow-text-strong flicker text-3xl tracking-widest text-cyber xl:text-5xl">
             CYBERBOARD
           </h1>
@@ -365,8 +312,42 @@ export default function Dashboard() {
           )}
         </Bento>
 
-        {/* (2,3) Gyroscope Chart */}
-        <Bento className="flex flex-col overflow-hidden">
+        {/* (1,1) Acceleration Values */}
+        <Bento className="order-1 flex flex-col items-center justify-center gap-2 p-4 md:col-start-1 md:row-start-1">
+          <span className="text-[10px] tracking-widest text-cyber uppercase">
+            // Acceleration
+          </span>
+          <div className="flex flex-col gap-2">
+            <AxisValue axis="X" value={d?.accelX ?? 0} color="#ff4444" unit="g" />
+            <AxisValue axis="Y" value={d?.accelY ?? 0} color="#44ff88" unit="g" />
+            <AxisValue axis="Z" value={d?.accelZ ?? 0} color="#4488ff" unit="g" />
+          </div>
+        </Bento>
+
+        {/* (2,1) Acceleration Chart — right after accel values on mobile */}
+        <Bento className="order-2 flex min-h-48 flex-col overflow-hidden md:col-start-1 md:row-start-2 md:min-h-0">
+          <div className="border-b border-border px-3 py-1">
+            <span className="text-[10px] tracking-wider text-cyber">// ACCEL</span>
+          </div>
+          <div className="flex-1" style={{ minHeight: 0 }}>
+            <DataCharts history={history} type="accel" />
+          </div>
+        </Bento>
+
+        {/* (1,3) Gyroscope Values */}
+        <Bento className="order-3 flex flex-col items-center justify-center gap-2 p-4 md:col-start-3 md:row-start-1">
+          <span className="text-[10px] tracking-widest text-cyber uppercase">
+            // Gyroscope
+          </span>
+          <div className="flex flex-col gap-2">
+            <AxisValue axis="X" value={d?.gyroX ?? 0} color="#ff4444" unit="°/s" />
+            <AxisValue axis="Y" value={d?.gyroY ?? 0} color="#44ff88" unit="°/s" />
+            <AxisValue axis="Z" value={d?.gyroZ ?? 0} color="#4488ff" unit="°/s" />
+          </div>
+        </Bento>
+
+        {/* (2,3) Gyroscope Chart — right after gyro values on mobile */}
+        <Bento className="order-4 flex min-h-48 flex-col overflow-hidden md:col-start-3 md:row-start-2 md:min-h-0">
           <div className="border-b border-border px-3 py-1">
             <span className="text-[10px] tracking-wider text-cyber">// GYRO</span>
           </div>
@@ -375,10 +356,27 @@ export default function Dashboard() {
           </div>
         </Bento>
 
+        {/* (1,2) 3D Model */}
+        <Bento className="order-5 relative min-h-75 overflow-hidden md:col-start-2 md:row-start-1">
+          <Suspense
+            fallback={
+              <div className="flex h-full items-center justify-center text-muted">
+                Loading 3D...
+              </div>
+            }
+          >
+            <BoardVisualizer
+              accelX={d?.accelX ?? 0}
+              accelY={d?.accelY ?? 0}
+              accelZ={d?.accelZ ?? 1}
+            />
+          </Suspense>
+        </Bento>
+
         {/* ═══ ROW 3 ═══ */}
 
         {/* (3,1) Temperature */}
-        <Bento className="flex items-center justify-center p-3">
+        <Bento className="order-6 flex items-center justify-center p-3 md:col-start-1 md:row-start-3">
           <Metric
             label="Temperature"
             value={d?.imuTemp ?? 0}
@@ -389,7 +387,7 @@ export default function Dashboard() {
         </Bento>
 
         {/* (3,2) Altitude */}
-        <Bento className="flex items-center justify-center p-3">
+        <Bento className="order-7 flex items-center justify-center p-3 md:col-start-2 md:row-start-3">
           <Metric
             label="Altitude"
             value={altitude}
@@ -401,7 +399,7 @@ export default function Dashboard() {
         </Bento>
 
         {/* (3,3) Pressure */}
-        <Bento className="flex items-center justify-center p-3">
+        <Bento className="order-8 flex items-center justify-center p-3 md:col-start-3 md:row-start-3">
           <Metric
             label="Pressure"
             value={(d?.pressure ?? 0) / 1000}

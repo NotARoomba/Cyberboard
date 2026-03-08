@@ -186,7 +186,7 @@ export default function BoardVisualizer(props: BoardProps) {
     >
       <Canvas
         camera={{ position: [3, 2.5, 3], fov: 40 }}
-        style={{ background: "transparent" }}
+        style={{ background: "transparent", touchAction: "pan-y" }}
         gl={{ antialias: true, alpha: true, powerPreference: "default" }}
         onCreated={({ gl }) => {
           gl.domElement.addEventListener("webglcontextlost", (e) =>
